@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<occi:Extension
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:occi="http://schemas.ogf.org/occi/core/ecore/2.0"
+    xsi:schemaLocation="http://schemas.ogf.org/occi/core/ecore/2.0 OCCI.ecore"
+    name="platform"
+    scheme="http://schemas.ogf.org/occi/platform#"
+    description="OCCI Platform Extension, version 1.2."
+    specification="https://www.ogf.org/documents/GFD.227.pdf">
+  <import href="CoreExtension.xmi#/"/>
+  <kinds name="Application"
+      scheme="http://schemas.ogf.org/occi/platform#"
+      title="Application">
+    <attributes
+        name="occi.app.name"
+        required="true"
+        description="Name of the application.">
+      <type
+          xsi:type="ecore:EDataType"
+          href="CoreExtension.xmi#//@types.0"/>
+    </attributes>
+    <attributes
+        name="occi.app.context"
+        mutable="false"
+        required="true"
+        description="URL for contextualizing the app."
+        type="//@types.0"/>
+    <attributes
+        name="occi.app.url"
+        mutable="false"
+        required="true"
+        description="DNS entry."
+        type="//@types.0"/>
+    <attributes
+        name="occi.app.state"
+        mutable="false"
+        description="State of the application."
+        type="//@types.2"/>
+    <attributes
+        name="occi.app.state.message"
+        mutable="false"
+        description="Human-readable explanation of the current instance state.">
+      <type
+          xsi:type="ecore:EDataType"
+          href="CoreExtension.xmi#//@types.0"/>
+    </attributes>
+    <actions
+        name="Start"
+        scheme="http://schemas.ogf.org/occi/platform/application/action#"
+        title="Start the application."/>
+    <actions
+        name="Stop"
+        scheme="http://schemas.ogf.org/occi/platform/application/action#"
+        title="Stop the application."/>
+    <parent
+        href="CoreExtension.xmi#//@kinds[term='resource']"/>
+    <fsm name="ApplicationFSM"
+        initialState="//@kinds[term='application']/@fsm/@ownedState.0"
+        finalState="//@kinds[term='application']/@fsm/@ownedState.0"
+        attribute="//@kinds[term='application']/@attributes.3">
+      <ownedState
+          literal="//@types.2/active"
+          incomingTransition="//@kinds[term='application']/@fsm/@ownedState.1/@outgoingTransition.0">
+        <outgoingTransition
+            target="//@kinds[term='application']/@fsm/@ownedState.1"
+            action="//@kinds[term='application']/@actions.1"/>
+        <outgoingTransition
+            target="//@kinds[term='application']/@fsm/@ownedState.2"/>
+      </ownedState>
+      <ownedState
+          literal="//@types.2/inactive"
+          incomingTransition="//@kinds[term='application']/@fsm/@ownedState.0/@outgoingTransition.0">
+        <outgoingTransition
+            target="//@kinds[term='application']/@fsm/@ownedState.0"
+            action="//@kinds[term='application']/@actions.0"/>
+        <outgoingTransition
+            target="//@kinds[term='application']/@fsm/@ownedState.2"/>
+      </ownedState>
+      <ownedState
+          literal="//@types.2/error"
+          incomingTransition="//@kinds[term='application']/@fsm/@ownedState.0/@outgoingTransition.1 //@kinds[term='application']/@fsm/@ownedState.1/@outgoingTransition.1"/>
+    </fsm>
+  </kinds>
+  <kinds name="Component"
+      scheme="http://schemas.ogf.org/occi/platform#"
+      title="Component">
+    <attributes
+        name="occi.component.state"
+        mutable="false"
+        required="true"
+        description="State of the component."
+        type="//@types.2"/>
+    <attributes
+        name="occi.component.state.message"
+        mutable="false"
+        description="Human-readable explanation of the current instance state.">
+      <type
+          xsi:type="ecore:EDataType"
+          href="CoreExtension.xmi#//@types.0"/>
+    </attributes>
+    <actions
+        name="Start"
+        scheme="http://schemas.ogf.org/occi/platform/component/action#"
+        title="Start the application."/>
+    <actions
+        name="Stop"
+        scheme="http://schemas.ogf.org/occi/platform/component/action#"
+        title="Stop the application."/>
+    <parent
+        href="CoreExtension.xmi#//@kinds[term='resource']"/>
+    <fsm name="ComponentFSM"
+        initialState="//@kinds[term='component']/@fsm/@ownedState.0"
+        finalState="//@kinds[term='component']/@fsm/@ownedState.0"
+        attribute="//@kinds[term='component']/@attributes.0">
+      <ownedState
+          literal="//@types.2/active"
+          incomingTransition="//@kinds[term='component']/@fsm/@ownedState.1/@outgoingTransition.0">
+        <outgoingTransition
+            target="//@kinds[term='component']/@fsm/@ownedState.1"
+            action="//@kinds[term='component']/@actions.1"/>
+        <outgoingTransition
+            target="//@kinds[term='component']/@fsm/@ownedState.2"/>
+      </ownedState>
+      <ownedState
+          literal="//@types.2/inactive"
+          incomingTransition="//@kinds[term='component']/@fsm/@ownedState.0/@outgoingTransition.0">
+        <outgoingTransition
+            target="//@kinds[term='component']/@fsm/@ownedState.0"
+            action="//@kinds[term='component']/@actions.0"/>
+        <outgoingTransition
+            target="//@kinds[term='component']/@fsm/@ownedState.2"/>
+      </ownedState>
+      <ownedState
+          literal="//@types.2/error"
+          incomingTransition="//@kinds[term='component']/@fsm/@ownedState.0/@outgoingTransition.1 //@kinds[term='component']/@fsm/@ownedState.1/@outgoingTransition.1"/>
+    </fsm>
+  </kinds>
+  <kinds name="ComponentLink"
+      scheme="http://schemas.ogf.org/occi/platform#"
+      title="ComponentLink">
+    <parent
+        href="CoreExtension.xmi#//@kinds[term='link']"/>
+  </kinds>
+  <mixins name="AppTpl"
+      scheme="http://schemas.ogf.org/occi/platform#"
+      title="Application Template"/>
+  <mixins name="ResTpl"
+      scheme="http://schemas.ogf.org/occi/platform#"
+      title="Resource Template"/>
+  <mixins name="DataBase"
+      scheme="http://schemas.ogf.org/occi/platform#"
+      title="Database Mixin">
+    <attributes
+        name="occi.database.version"
+        mutable="false"
+        required="true"
+        description="Version of the database.">
+      <type
+          xsi:type="ecore:EDataType"
+          href="CoreExtension.xmi#//@types.0"/>
+    </attributes>
+  </mixins>
+  <mixins name="DataBaseLink"
+      scheme="http://schemas.ogf.org/occi/platform#"
+      title="Database Link">
+    <attributes
+        name="occi.database.uri"
+        mutable="false"
+        required="true"
+        description="Connection URI for the database."
+        type="//@types.1"/>
+    <attributes
+        name="occi.database.username"
+        mutable="false"
+        description="Username."
+        type="//@types.1"/>
+    <attributes
+        name="occi.database.token"
+        mutable="false"
+        description="Token."
+        type="//@types.1"/>
+  </mixins>
+  <types xsi:type="ecore:EDataType"
+      name="URL"
+      instanceClassName="java.net.URL"/>
+  <types xsi:type="ecore:EDataType"
+      name="URI"
+      instanceClassName="java.net.URI"/>
+  <types xsi:type="ecore:EEnum"
+      name="Status">
+    <eLiterals
+        name="active"/>
+    <eLiterals
+        name="inactive"
+        value="1"/>
+    <eLiterals
+        name="error"
+        value="2"/>
+  </types>
+</occi:Extension>

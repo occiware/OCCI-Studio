@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<occi:Extension
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:occi="http://schemas.ogf.org/occi/core/ecore/2.0"
+    xsi:schemaLocation="http://schemas.ogf.org/occi/core/ecore/2.0 OCCI.ecore"
+    name="infrastructure"
+    scheme="http://schemas.ogf.org/occi/infrastructure#"
+    specification="https://www.ogf.org/documents/GFD.224.pdf">
+  <import href="CoreExtension.xmi#/"/>
+  <kinds name="Network"
+      scheme="http://schemas.ogf.org/occi/infrastructure#"
+      title="Network Resource">
+    <attributes
+        name="occi.network.vlan"
+        description="802.1q VLAN Identifier (e.g., 343)"
+        type="//@types.1"/>
+    <attributes
+        name="occi.network.label"
+        description="Tag based VLANs (e.g., external-dmz)"
+        type="//@types.2"/>
+    <attributes
+        name="occi.network.state"
+        default="inactive"
+        description="Current state of the instance"
+        type="//@types.3"/>
+    <attributes
+        name="occi.network.state.message"
+        mutable="false"
+        description="Human-readable explanation of the current instance state">
+      <type
+          xsi:type="ecore:EDataType"
+          href="CoreExtension.xmi#//@types.0"/>
+    </attributes>
+    <actions
+        name="up"
+        scheme="http://schemas.ogf.org/occi/infrastructure/network/action#"/>
+    <actions
+        name="down"
+        scheme="http://schemas.ogf.org/occi/infrastructure/network/action#"/>
+    <parent
+        href="CoreExtension.xmi#//@kinds[term='resource']"/>
+    <fsm name="NetworkFSM"
+        initialState="//@kinds[term='network']/@fsm/@ownedState.0"
+        finalState="//@kinds[term='network']/@fsm/@ownedState.0"
+        attribute="//@kinds[term='network']/@attributes.2">
+      <ownedState
+          literal="//@types.3/inactive"
+          incomingTransition="//@kinds[term='network']/@fsm/@ownedState.1/@outgoingTransition.0">
+        <outgoingTransition
+            target="//@kinds[term='network']/@fsm/@ownedState.1"
+            action="//@kinds[term='network']/@actions.0"/>
+        <outgoingTransition
+            target="//@kinds[term='network']/@fsm/@ownedState.2"
+            action="//@kinds[term='network']/@actions.0"/>
+      </ownedState>
+      <ownedState
+          literal="//@types.3/active"
+          incomingTransition="//@kinds[term='network']/@fsm/@ownedState.0/@outgoingTransition.0">
+        <outgoingTransition
+            target="//@kinds[term='network']/@fsm/@ownedState.0"
+            action="//@kinds[term='network']/@actions.1"/>
+        <outgoingTransition
+            target="//@kinds[term='network']/@fsm/@ownedState.2"
+            action="//@kinds[term='network']/@actions.1"/>
+      </ownedState>
+      <ownedState
+          literal="//@types.3/error"
+          incomingTransition="//@kinds[term='network']/@fsm/@ownedState.0/@outgoingTransition.1 //@kinds[term='network']/@fsm/@ownedState.1/@outgoingTransition.1"/>
+    </fsm>
+  </kinds>
+  <kinds name="Compute"
+      scheme="http://schemas.ogf.org/occi/infrastructure#"
+      title="Compute Resource">
+    <attributes
+        name="occi.compute.architecture"
+        description="CPU Architecture of the instance"
+        type="//@types.6"/>
+    <attributes
+        name="occi.compute.cores"
+        description="Number of CPU cores assigned to the instance"
+        type="//@types.13"/>
+    <attributes
+        name="occi.compute.hostname"
+        description="Fully Qualified DNS hostname for the instance">
+      <type
+          xsi:type="ecore:EDataType"
+          href="CoreExtension.xmi#//@types.0"/>
+    </attributes>
+    <attributes
+        name="occi.compute.share"
+        description="Relative number of CPU shares for the instance"
+        type="//@types.18"/>
+    <attributes
+        name="occi.compute.speed"
+        description="CPU Clock frequency (speed) in gigahertz"
+        type="//@types.14"/>
+    <attributes
+        name="occi.compute.memory"
+        description="Maximum RAM in gigabytes allocated to the instance"
+        type="//@types.15"/>
+    <attributes
+        name="occi.compute.state"
+        mutable="false"
+        required="true"
+        description="Current state of the instance"
+        type="//@types.4"/>
+    <attributes
+        name="occi.compute.state.message"
+        mutable="false"
+        description="Human-readable explanation of the current instance state">
+      <type
+          xsi:type="ecore:EDataType"
+          href="CoreExtension.xmi#//@types.0"/>
+    </attributes>
+    <actions
+        name="Start"
+        scheme="http://schemas.ogf.org/occi/infrastructure/compute/action#"
+        title="Start the system"/>
+    <actions
+        name="Stop"
+        scheme="http://schemas.ogf.org/occi/infrastructure/compute/action#"
+        title="Stop the system (graceful, acpioff or poweroff)">
+      <attributes
+          name="method"
+          type="//@types.7"/>
+    </actions>
+    <actions
+        name="Restart"
+        scheme="http://schemas.ogf.org/occi/infrastructure/compute/action#"
+        title="Restart the system (graceful, warm or cold)">
+      <attributes
+          name="method"
+          required="true"
+          type="//@types.8"/>
+    </actions>
+    <actions
+        name="Suspend"
+        scheme="http://schemas.ogf.org/occi/infrastructure/compute/action#"
+        title="Suspend the system (hibernate or in RAM)">
+      <attributes
+          name="method"
+          type="//@types.0"/>
+    </actions>
+    <actions
+        name="Save"
+        scheme="http://schemas.ogf.org/occi/infrastructure/compute/action#"
+        title="Save the system (hot, deferred)"/>
+    <parent
+        href="CoreExtension.xmi#//@kinds[term='resource']"/>
+    <fsm name="ComputeFSM"
+        initialState="//@kinds[term='compute']/@fsm/@ownedState.0"
+        finalState="//@kinds[term='compute']/@fsm/@ownedState.0"
+        attribute="//@kinds[term='compute']/@attributes.6">
+      <ownedState
+          literal="//@types.4/inactive"
+          incomingTransition="//@kinds[term='compute']/@fsm/@ownedState.1/@outgoingTransition.0">
+        <outgoingTransition
+            target="//@kinds[term='compute']/@fsm/@ownedState.1"
+            action="//@kinds[term='compute']/@actions.0"/>
+        <outgoingTransition
+            target="//@kinds[term='compute']/@fsm/@ownedState.3"
+            action="//@kinds[term='compute']/@actions.0"/>
+      </ownedState>
+      <ownedState
+          literal="//@types.4/active"
+          incomingTransition="//@kinds[term='compute']/@fsm/@ownedState.0/@outgoingTransition.0 //@kinds[term='compute']/@fsm/@ownedState.2/@outgoingTransition.1">
+        <outgoingTransition
+            target="//@kinds[term='compute']/@fsm/@ownedState.0"
+            action="//@kinds[term='compute']/@actions.1"/>
+        <outgoingTransition
+            target="//@kinds[term='compute']/@fsm/@ownedState.2"
+            action="//@kinds[term='compute']/@actions.3"/>
+        <outgoingTransition
+            target="//@kinds[term='compute']/@fsm/@ownedState.3"
+            action="//@kinds[term='compute']/@actions.1"/>
+        <outgoingTransition
+            target="//@kinds[term='compute']/@fsm/@ownedState.3"
+            action="//@kinds[term='compute']/@actions.3"/>
+      </ownedState>
+      <ownedState
+          literal="//@types.4/suspended"
+          incomingTransition="//@kinds[term='compute']/@fsm/@ownedState.1/@outgoingTransition.1">
+        <outgoingTransition
+            target="//@kinds[term='compute']/@fsm/@ownedState.3"
+            action="//@kinds[term='compute']/@actions.0"/>
+        <outgoingTransition
+            target="//@kinds[term='compute']/@fsm/@ownedState.1"
+            action="//@kinds[term='compute']/@actions.0"/>
+      </ownedState>
+      <ownedState
+          literal="//@types.4/error"
+          incomingTransition="//@kinds[term='compute']/@fsm/@ownedState.0/@outgoingTransition.1 //@kinds[term='compute']/@fsm/@ownedState.1/@outgoingTransition.2 //@kinds[term='compute']/@fsm/@ownedState.1/@outgoingTransition.3 //@kinds[term='compute']/@fsm/@ownedState.2/@outgoingTransition.0"/>
+    </fsm>
+  </kinds>
+  <kinds name="Storage"
+      scheme="http://schemas.ogf.org/occi/infrastructure#"
+      title="Storage Resource">
+    <attributes
+        name="occi.storage.size"
+        description="Storage size of the instance in gigabytes"
+        type="//@types.15"/>
+    <attributes
+        name="occi.storage.state"
+        mutable="false"
+        required="true"
+        description="Current status of the instance"
+        type="//@types.11"/>
+    <attributes
+        name="occi.storage.state.message"
+        mutable="false"
+        description="Human-readable explanation of the current instance state">
+      <type
+          xsi:type="ecore:EDataType"
+          href="CoreExtension.xmi#//@types.0"/>
+    </attributes>
+    <actions
+        name="Online"
+        scheme="http://schemas.ogf.org/occi/infrastructure/storage/action#"
+        title="Set storage online"/>
+    <actions
+        name="Offline"
+        scheme="http://schemas.ogf.org/occi/infrastructure/storage/action#"
+        title="Set storage offline"/>
+    <parent
+        href="CoreExtension.xmi#//@kinds[term='resource']"/>
+    <fsm name="StorageFSM"
+        initialState="//@kinds[term='storage']/@fsm/@ownedState.0"
+        finalState="//@kinds[term='storage']/@fsm/@ownedState.0"
+        attribute="//@kinds[term='storage']/@attributes.1">
+      <ownedState
+          literal="//@types.11/offline"
+          incomingTransition="//@kinds[term='storage']/@fsm/@ownedState.1/@outgoingTransition.0">
+        <outgoingTransition
+            target="//@kinds[term='storage']/@fsm/@ownedState.1"
+            action="//@kinds[term='storage']/@actions.0"/>
+        <outgoingTransition
+            target="//@kinds[term='storage']/@fsm/@ownedState.2"
+            action="//@kinds[term='storage']/@actions.0"/>
+      </ownedState>
+      <ownedState
+          literal="//@types.11/online"
+          incomingTransition="//@kinds[term='storage']/@fsm/@ownedState.0/@outgoingTransition.0">
+        <outgoingTransition
+            target="//@kinds[term='storage']/@fsm/@ownedState.0"
+            action="//@kinds[term='storage']/@actions.1"/>
+        <outgoingTransition
+            target="//@kinds[term='storage']/@fsm/@ownedState.2"
+            action="//@kinds[term='storage']/@actions.1"/>
+      </ownedState>
+      <ownedState
+          literal="//@types.11/error"
+          incomingTransition="//@kinds[term='storage']/@fsm/@ownedState.0/@outgoingTransition.1 //@kinds[term='storage']/@fsm/@ownedState.1/@outgoingTransition.1"/>
+    </fsm>
+  </kinds>
+  <kinds name="StorageLink"
+      scheme="http://schemas.ogf.org/occi/infrastructure#"
+      title="StorageLink Link">
+    <attributes
+        name="occi.storagelink.deviceid"
+        required="true"
+        description="Device identifier as defined by the OCCI service provider">
+      <type
+          xsi:type="ecore:EDataType"
+          href="CoreExtension.xmi#//@types.0"/>
+    </attributes>
+    <attributes
+        name="occi.storagelink.mountpoint"
+        default=""
+        description="Point to where the storage is mounted in the guest OS">
+      <type
+          xsi:type="ecore:EDataType"
+          href="CoreExtension.xmi#//@types.0"/>
+    </attributes>
+    <attributes
+        name="occi.storagelink.state"
+        required="true"
+        description="Current status of the instance"
+        type="//@types.12"/>
+    <attributes
+        name="occi.storagelink.state.message"
+        mutable="false"
+        description="Human-readable explanation of the current instance state">
+      <type
+          xsi:type="ecore:EDataType"
+          href="CoreExtension.xmi#//@types.0"/>
+    </attributes>
+    <parent
+        href="CoreExtension.xmi#//@kinds[term='link']"/>
+    <fsm name="StorageLinkFSM"
+        initialState="//@kinds[term='storagelink']/@fsm/@ownedState.0"
+        finalState="//@kinds[term='storagelink']/@fsm/@ownedState.0">
+      <ownedState
+          literal="//@types.12/inactive"
+          incomingTransition="//@kinds[term='storagelink']/@fsm/@ownedState.1/@outgoingTransition.0">
+        <outgoingTransition
+            target="//@kinds[term='storagelink']/@fsm/@ownedState.1"/>
+        <outgoingTransition
+            target="//@kinds[term='storagelink']/@fsm/@ownedState.2"/>
+      </ownedState>
+      <ownedState
+          literal="//@types.12/active"
+          incomingTransition="//@kinds[term='storagelink']/@fsm/@ownedState.0/@outgoingTransition.0">
+        <outgoingTransition
+            target="//@kinds[term='storagelink']/@fsm/@ownedState.0"/>
+        <outgoingTransition
+            target="//@kinds[term='storagelink']/@fsm/@ownedState.2"/>
+      </ownedState>
+      <ownedState
+          literal="//@types.12/error"
+          incomingTransition="//@kinds[term='storagelink']/@fsm/@ownedState.0/@outgoingTransition.1 //@kinds[term='storagelink']/@fsm/@ownedState.1/@outgoingTransition.1"/>
+    </fsm>
+  </kinds>
+  <kinds name="NetworkInterface"
+      scheme="http://schemas.ogf.org/occi/infrastructure#"
+      title="NetworkInterface Link">
+    <attributes
+        name="occi.networkinterface.interface"
+        mutable="false"
+        required="true"
+        description="Identifier that relates the link to the link's device interface">
+      <type
+          xsi:type="ecore:EDataType"
+          href="CoreExtension.xmi#//@types.0"/>
+    </attributes>
+    <attributes
+        name="occi.networkinterface.mac"
+        required="true"
+        description="MAC address associated with the link's device interface"
+        type="//@types.17"/>
+    <attributes
+        name="occi.networkinterface.state"
+        mutable="false"
+        required="true"
+        description="Current status of the instance"
+        type="//@types.5"/>
+    <attributes
+        name="occi.networkinterface.state.message"
+        mutable="false"
+        description="Human-readable explanation of the current instance state">
+      <type
+          xsi:type="ecore:EDataType"
+          href="CoreExtension.xmi#//@types.0"/>
+    </attributes>
+    <parent
+        href="CoreExtension.xmi#//@kinds[term='link']"/>
+    <fsm name="NetworkInterfaceFSM"
+        initialState="//@kinds[term='networkinterface']/@fsm/@ownedState.0"
+        finalState="//@kinds[term='networkinterface']/@fsm/@ownedState.0"
+        attribute="//@kinds[term='networkinterface']/@attributes.2">
+      <ownedState
+          literal="//@types.5/inactive"
+          incomingTransition="//@kinds[term='networkinterface']/@fsm/@ownedState.1/@outgoingTransition.0">
+        <outgoingTransition
+            target="//@kinds[term='networkinterface']/@fsm/@ownedState.1"/>
+        <outgoingTransition
+            target="//@kinds[term='networkinterface']/@fsm/@ownedState.2"/>
+      </ownedState>
+      <ownedState
+          literal="//@types.5/active"
+          incomingTransition="//@kinds[term='networkinterface']/@fsm/@ownedState.0/@outgoingTransition.0">
+        <outgoingTransition
+            target="//@kinds[term='networkinterface']/@fsm/@ownedState.0"/>
+        <outgoingTransition
+            target="//@kinds[term='networkinterface']/@fsm/@ownedState.2"/>
+      </ownedState>
+      <ownedState
+          literal="//@types.5/error"
+          incomingTransition="//@kinds[term='networkinterface']/@fsm/@ownedState.0/@outgoingTransition.1 //@kinds[term='networkinterface']/@fsm/@ownedState.1/@outgoingTransition.1"/>
+    </fsm>
+  </kinds>
+  <mixins name="IpNetwork"
+      scheme="http://schemas.ogf.org/occi/infrastructure/network#"
+      title="An IP Networking Mixin">
+    <attributes
+        name="occi.network.address"
+        description="Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7)"
+        type="//@types.16"/>
+    <attributes
+        name="occi.network.gateway"
+        description="Internet Protocol (IP) network address (e.g., 192.168.0.1, fc00::)"
+        type="//@types.9"/>
+    <attributes
+        name="occi.network.allocation"
+        description="Address allocation mechanism: dynamic e.g., uses the dynamic host configuration protocol, static e.g., uses user supplied static network configurations"
+        type="//@types.10"/>
+  </mixins>
+  <mixins name="IpNetworkInterface"
+      scheme="http://schemas.ogf.org/occi/infrastructure/networkinterface#"
+      title="IP NetworkInterface Mixin">
+    <attributes
+        name="occi.networkinterface.address"
+        required="true"
+        description="Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7) of the link"
+        type="//@types.9"/>
+    <attributes
+        name="occi.networkinterface.gateway"
+        description="Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7)"
+        type="//@types.9"/>
+    <attributes
+        name="occi.networkinterface.allocation"
+        required="true"
+        description="Address mechanism: dynamic e.g., uses the dynamic host configuration protocol, static e.g., uses user supplied static network configurations"
+        type="//@types.10"/>
+  </mixins>
+  <mixins name="OsTpl"
+      scheme="http://schemas.ogf.org/occi/infrastructure#"
+      title="OS Template"/>
+  <mixins name="ResourceTpl"
+      scheme="http://schemas.ogf.org/occi/infrastructure#"
+      title="Resource template"/>
+  <mixins name="SSHKey"
+      scheme="http://schemas.ogf.org/occi/infrastructure/credentials#"
+      title="Credentials Mixin">
+    <attributes
+        name="occi.credentials.ssh.publickey"
+        description="The contents of the public key file to be injected into the Compute Resource">
+      <type
+          xsi:type="ecore:EDataType"
+          href="CoreExtension.xmi#//@types.0"/>
+    </attributes>
+  </mixins>
+  <mixins name="UserData"
+      scheme="http://schemas.ogf.org/occi/infrastructure/compute#"
+      title="Contextualization Mixin">
+    <attributes
+        name="occi.compute.userdata"
+        mutable="false"
+        required="true"
+        description="Contextualization data (e.g., script, executable) that the client supplies once and only once. It cannot be updated">
+      <type
+          xsi:type="ecore:EDataType"
+          href="CoreExtension.xmi#//@types.0"/>
+    </attributes>
+  </mixins>
+  <types xsi:type="ecore:EEnum"
+      name="SuspendMethod">
+    <eLiterals
+        name="hibernate"/>
+    <eLiterals
+        name="suspend"
+        value="1"/>
+  </types>
+  <types xsi:type="ecore:EDataType"
+      name="Vlan"
+      instanceClassName="int">
+    <eAnnotations
+        source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details
+          key="minInclusive"
+          value="0"/>
+      <details
+          key="maxInclusive"
+          value="4095"/>
+    </eAnnotations>
+  </types>
+  <types xsi:type="ecore:EDataType"
+      name="Token"
+      instanceClassName="java.lang.String"/>
+  <types xsi:type="ecore:EEnum"
+      name="NetworkStatus">
+    <eLiterals
+        name="active"/>
+    <eLiterals
+        name="inactive"
+        value="1"/>
+    <eLiterals
+        name="error"
+        value="2"/>
+  </types>
+  <types xsi:type="ecore:EEnum"
+      name="ComputeStatus">
+    <eLiterals
+        name="active"/>
+    <eLiterals
+        name="inactive"
+        value="1"/>
+    <eLiterals
+        name="suspended"
+        value="2"/>
+    <eLiterals
+        name="error"
+        value="3"/>
+  </types>
+  <types xsi:type="ecore:EEnum"
+      name="NetworkInterfaceStatus">
+    <eLiterals
+        name="active"/>
+    <eLiterals
+        name="inactive"
+        value="1"/>
+    <eLiterals
+        name="error"
+        value="2"/>
+  </types>
+  <types xsi:type="ecore:EEnum"
+      name="Architecture">
+    <eLiterals
+        name="x86"/>
+    <eLiterals
+        name="x64"
+        value="1"/>
+  </types>
+  <types xsi:type="ecore:EEnum"
+      name="StopMethod">
+    <eLiterals
+        name="graceful"/>
+    <eLiterals
+        name="acpioff"
+        value="1"/>
+    <eLiterals
+        name="poweroff"
+        value="2"/>
+  </types>
+  <types xsi:type="ecore:EEnum"
+      name="RestartMethod">
+    <eLiterals
+        name="graceful"/>
+    <eLiterals
+        name="warm"
+        value="1"/>
+    <eLiterals
+        name="cold"
+        value="2"/>
+  </types>
+  <types xsi:type="ecore:EDataType"
+      name="IpAddress"
+      instanceClassName="java.lang.String"/>
+  <types xsi:type="ecore:EEnum"
+      name="Allocation">
+    <eLiterals
+        name="dynamic"/>
+    <eLiterals
+        name="static"
+        value="1"/>
+  </types>
+  <types xsi:type="ecore:EEnum"
+      name="StorageStatus">
+    <eLiterals
+        name="online"/>
+    <eLiterals
+        name="offline"
+        value="1"/>
+    <eLiterals
+        name="error"
+        value="2"/>
+  </types>
+  <types xsi:type="ecore:EEnum"
+      name="StorageLinkStatus">
+    <eLiterals
+        name="active"/>
+    <eLiterals
+        name="inactive"
+        value="1"/>
+    <eLiterals
+        name="error"
+        value="2"/>
+  </types>
+  <types xsi:type="ecore:EDataType"
+      name="Core"
+      instanceClassName="int">
+    <eAnnotations
+        source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details
+          key="minExclusive"
+          value="0"/>
+    </eAnnotations>
+  </types>
+  <types xsi:type="ecore:EDataType"
+      name="GHz"
+      instanceClassName="float">
+    <eAnnotations
+        source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details
+          key="minExclusive"
+          value="0"/>
+    </eAnnotations>
+  </types>
+  <types xsi:type="ecore:EDataType"
+      name="GiB"
+      instanceClassName="float">
+    <eAnnotations
+        source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details
+          key="minExclusive"
+          value="0"/>
+    </eAnnotations>
+  </types>
+  <types xsi:type="ecore:EDataType"
+      name="IpAddressRange"
+      instanceClassName="java.lang.String"/>
+  <types xsi:type="ecore:EDataType"
+      name="Mac"
+      instanceClassName="java.lang.String"/>
+  <types xsi:type="ecore:EDataType"
+      name="Share"
+      instanceClassName="int">
+    <eAnnotations
+        source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details
+          key="minInclusive"
+          value="0"/>
+    </eAnnotations>
+  </types>
+  <types xsi:type="ecore:EEnum"
+      name="SaveMethod">
+    <eLiterals
+        name="hot"/>
+    <eLiterals
+        name="deferred"
+        value="1"/>
+  </types>
+</occi:Extension>
