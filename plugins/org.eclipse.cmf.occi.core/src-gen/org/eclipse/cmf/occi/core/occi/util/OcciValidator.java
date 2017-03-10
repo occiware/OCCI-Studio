@@ -122,8 +122,6 @@ public class OcciValidator extends EObjectValidator {
 				return validateExtension((Extension)value, diagnostics, context);
 			case OcciPackage.CONFIGURATION:
 				return validateConfiguration((Configuration)value, diagnostics, context);
-			case OcciPackage.DATA_TYPE:
-				return validateDataType((DataType)value, diagnostics, context);
 			case OcciPackage.RECORD_TYPE:
 				return validateRecordType((RecordType)value, diagnostics, context);
 			case OcciPackage.RECORD_FIELD_DECLARATION:
@@ -420,7 +418,7 @@ public class OcciValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATE__STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE__EEXPRESSION = "owningFSM.attribute.type.oclAsType(ecore::EEnum)=literal.eEnum";
+	protected static final String STATE__STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE__EEXPRESSION = "owningFSM.attribute.type=literal.eEnum";
 
 	/**
 	 * Validates the StateLiteralAlreadyDefinedInFSMAttributeType constraint of '<em>State</em>'.
@@ -1456,65 +1454,8 @@ public class OcciValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDataType(DataType dataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(dataType, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(dataType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(dataType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(dataType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(dataType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(dataType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(dataType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dataType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dataType, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDataType_ActionTermUnicity(dataType, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * Validates the ActionTermUnicity constraint of '<em>Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDataType_ActionTermUnicity(DataType dataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "ActionTermUnicity", getObjectLabel(dataType, context) },
-						 new Object[] { dataType },
-						 context));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateRecordType(RecordType recordType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(recordType, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(recordType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(recordType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(recordType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(recordType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(recordType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(recordType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(recordType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(recordType, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDataType_ActionTermUnicity(recordType, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(recordType, diagnostics, context);
 	}
 
 	/**
@@ -1532,17 +1473,7 @@ public class OcciValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateArrayType(ArrayType arrayType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(arrayType, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(arrayType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(arrayType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(arrayType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(arrayType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(arrayType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(arrayType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(arrayType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(arrayType, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDataType_ActionTermUnicity(arrayType, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(arrayType, diagnostics, context);
 	}
 
 	/**
@@ -1657,7 +1588,7 @@ public class OcciValidator extends EObjectValidator {
 	public static final  PatternMatcher [][] NAME__PATTERN__VALUES =
 		new PatternMatcher [][] {
 			new PatternMatcher [] {
-				XMLTypeUtil.createPatternMatcher("[a-zA-Z][a-zA-Z0-9]*")
+				XMLTypeUtil.createPatternMatcher("[a-zA-Z][a-zA-Z0-9-_]*")
 			}
 		};
 
@@ -1690,7 +1621,7 @@ public class OcciValidator extends EObjectValidator {
 	public static final  PatternMatcher [][] SCHEME__PATTERN__VALUES =
 		new PatternMatcher [][] {
 			new PatternMatcher [] {
-				XMLTypeUtil.createPatternMatcher("[A-Za-z][A-Za-z0-9+-.]*:(//(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]|%[0-9A-Fa-f]{2})*@)?(\\[(((([0-9A-Fa-f]{1,4}:){6}|::([0-9A-Fa-f]{1,4}:){5}|([0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){4}|(([0-9A-Fa-f]{1,4}:){0,1}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){3}|(([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){2}|(([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:)|(([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})?::)([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]))|(([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}|(([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})?::)|[Vv][0-9A-Fa-f]+\\.[A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]+)\\]|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=]|%[0-9A-Fa-f]{2})*)(:[0-9]*)?(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|/(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*)?|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|.{0})(\\?([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@/?]|%[0-9A-Fa-f]{2})*)?(\\#)")
+				XMLTypeUtil.createPatternMatcher("[A-Za-z][A-Za-z0-9+-.]*:(//(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]|%[0-9A-Fa-f]{2})*@)?(\\[(((([0-9A-Fa-f]{1,4}:){6}|::([0-9A-Fa-f]{1,4}:){5}|([0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){4}|(([0-9A-Fa-f]{1,4}:){0,1}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){3}|(([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){2}|(([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:)|(([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})?::)([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]))|(([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}|(([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})?::)|[Vv][0-9A-Fa-f]+\\.[A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]+)\\]|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=]|%[0-9A-Fa-f]{2})*)(:[0-9]*)?(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|/(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*)?|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|.{0})(\\#)")
 			}
 		};
 

@@ -32,7 +32,7 @@
         eType="#//Attribute" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constraint">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//Name"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="#//Name"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" lowerBound="1" eType="#//OCL"/>
   </eClassifiers>
@@ -56,21 +56,17 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="AttributeTypeMustBeEEnum" value="attribute.type.oclIsTypeOf(ecore::EEnum)"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedState" upperBound="-1"
         eType="#//State" containment="true" eOpposite="#//State/owningFSM"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="initialState" lowerBound="1"
-        eType="#//State"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="finalState" lowerBound="1"
-        upperBound="-1" eType="#//State"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
+        eType="#//Attribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="State">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="StateLiteralAlreadyDefinedInFSMAttributeType"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="StateLiteralAlreadyDefinedInFSMAttributeType" value="owningFSM.attribute.type.oclAsType(ecore::EEnum)=literal.eEnum"/>
+      <details key="StateLiteralAlreadyDefinedInFSMAttributeType" value="owningFSM.attribute.type=literal.eEnum"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="literal" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EEnumLiteral"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="owningFSM" lowerBound="1"
@@ -79,6 +75,10 @@
         eType="#//Transition" containment="true" eOpposite="#//Transition/source"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="incomingTransition" upperBound="-1"
         eType="#//Transition" eOpposite="#//Transition/target"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInitial" lowerBound="1"
+        eType="#//Boolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFinal" lowerBound="1"
+        eType="#//Boolean" defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
@@ -257,21 +257,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="mixins" upperBound="-1"
         eType="#//Mixin" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="ActionTermUnicity"/>
-    </eAnnotations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RecordType" eSuperTypes="#//DataType">
+  <eClassifiers xsi:type="ecore:EClass" name="RecordType" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EClassifier">
     <eStructuralFeatures xsi:type="ecore:EReference" name="recordFiledDeclarations"
         lowerBound="1" upperBound="-1" eType="#//RecordFieldDeclaration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RecordFieldDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClassifier"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArrayType" eSuperTypes="#//DataType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//DataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArrayType" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClassifier"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="URI" instanceClassName="java.lang.String">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -288,12 +283,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Name" instanceClassName="java.lang.String">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="pattern" value="[a-zA-Z][a-zA-Z0-9]*"/>
+      <details key="pattern" value="[a-zA-Z][a-zA-Z0-9-_]*"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Scheme" instanceClassName="java.lang.String">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="pattern" value="[A-Za-z][A-Za-z0-9+-.]*:(//(([A-Za-z0-9\-_~\.!$&amp;'()*+,;=:]|%[0-9A-Fa-f]{2})*@)?(\[(((([0-9A-Fa-f]{1,4}:){6}|::([0-9A-Fa-f]{1,4}:){5}|([0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){4}|(([0-9A-Fa-f]{1,4}:){0,1}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){3}|(([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){2}|(([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:)|(([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})?::)([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]))|(([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}|(([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})?::)|[Vv][0-9A-Fa-f]+\.[A-Za-z0-9\-_~\.!$&amp;'()*+,;=:]+)\]|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])|([A-Za-z0-9\-_~\.!$&amp;'()*+,;=]|%[0-9A-Fa-f]{2})*)(:[0-9]*)?(/([A-Za-z0-9\-_~\.!$&amp;'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|/(([A-Za-z0-9\-_~\.!$&amp;'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\-_~\.!$&amp;'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*)?|([A-Za-z0-9\-_~\.!$&amp;'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\-_~\.!$&amp;'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|.{0})(\?([A-Za-z0-9\-_~\.!$&amp;'()*+,;=:@/?]|%[0-9A-Fa-f]{2})*)?(\#)"/>
+      <details key="pattern" value="[A-Za-z][A-Za-z0-9+-.]*:(//(([A-Za-z0-9\-_~\.!$&amp;'()*+,;=:]|%[0-9A-Fa-f]{2})*@)?(\[(((([0-9A-Fa-f]{1,4}:){6}|::([0-9A-Fa-f]{1,4}:){5}|([0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){4}|(([0-9A-Fa-f]{1,4}:){0,1}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){3}|(([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){2}|(([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:)|(([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})?::)([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]))|(([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}|(([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})?::)|[Vv][0-9A-Fa-f]+\.[A-Za-z0-9\-_~\.!$&amp;'()*+,;=:]+)\]|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])|([A-Za-z0-9\-_~\.!$&amp;'()*+,;=]|%[0-9A-Fa-f]{2})*)(:[0-9]*)?(/([A-Za-z0-9\-_~\.!$&amp;'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|/(([A-Za-z0-9\-_~\.!$&amp;'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\-_~\.!$&amp;'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*)?|([A-Za-z0-9\-_~\.!$&amp;'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\-_~\.!$&amp;'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|.{0})(\#)"/>
     </eAnnotations>
   </eClassifiers>
 </ecore:EPackage>

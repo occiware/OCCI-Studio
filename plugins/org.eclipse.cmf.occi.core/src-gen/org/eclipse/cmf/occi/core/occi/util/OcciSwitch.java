@@ -4,6 +4,9 @@ package org.eclipse.cmf.occi.core.occi.util;
 
 import org.eclipse.cmf.occi.core.occi.*;
 
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EModelElement;
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -176,16 +179,12 @@ public class OcciSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OcciPackage.DATA_TYPE: {
-				DataType dataType = (DataType)theEObject;
-				T result = caseDataType(dataType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case OcciPackage.RECORD_TYPE: {
 				RecordType recordType = (RecordType)theEObject;
 				T result = caseRecordType(recordType);
-				if (result == null) result = caseDataType(recordType);
+				if (result == null) result = caseEClassifier(recordType);
+				if (result == null) result = caseENamedElement(recordType);
+				if (result == null) result = caseEModelElement(recordType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -198,7 +197,9 @@ public class OcciSwitch<T> extends Switch<T> {
 			case OcciPackage.ARRAY_TYPE: {
 				ArrayType arrayType = (ArrayType)theEObject;
 				T result = caseArrayType(arrayType);
-				if (result == null) result = caseDataType(arrayType);
+				if (result == null) result = caseEClassifier(arrayType);
+				if (result == null) result = caseENamedElement(arrayType);
+				if (result == null) result = caseEModelElement(arrayType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -462,21 +463,6 @@ public class OcciSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDataType(DataType object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Record Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -518,6 +504,51 @@ public class OcciSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseArrayType(ArrayType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEModelElement(EModelElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ENamed Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ENamed Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseENamedElement(ENamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EClassifier</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EClassifier</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEClassifier(EClassifier object) {
 		return null;
 	}
 

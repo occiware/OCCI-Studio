@@ -2,6 +2,8 @@
  */
 package org.eclipse.cmf.occi.core.occi.tests;
 
+import junit.framework.TestCase;
+
 import junit.textui.TestRunner;
 
 import org.eclipse.cmf.occi.core.occi.ArrayType;
@@ -13,7 +15,15 @@ import org.eclipse.cmf.occi.core.occi.OcciFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ArrayTypeTest extends DataTypeTest {
+public class ArrayTypeTest extends TestCase {
+
+	/**
+	 * The fixture for this Array Type test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ArrayType fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -35,14 +45,23 @@ public class ArrayTypeTest extends DataTypeTest {
 	}
 
 	/**
+	 * Sets the fixture for this Array Type test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(ArrayType fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Array Type test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected ArrayType getFixture() {
-		return (ArrayType)fixture;
+		return fixture;
 	}
 
 	/**

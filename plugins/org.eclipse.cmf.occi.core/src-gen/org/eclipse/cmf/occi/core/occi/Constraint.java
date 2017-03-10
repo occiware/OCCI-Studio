@@ -34,7 +34,7 @@ public interface Constraint extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.cmf.occi.core.occi.OcciPackage#getConstraint_Name()
-	 * @model dataType="org.eclipse.cmf.occi.core.occi.Name"
+	 * @model dataType="org.eclipse.cmf.occi.core.occi.Name" required="true"
 	 * @generated
 	 */
 	String getName();

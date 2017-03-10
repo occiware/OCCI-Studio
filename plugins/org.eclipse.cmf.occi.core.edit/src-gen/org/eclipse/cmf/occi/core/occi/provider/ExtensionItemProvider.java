@@ -287,6 +287,16 @@ public class ExtensionItemProvider
 			(createChildParameter
 				(OcciPackage.Literals.EXTENSION__MIXINS,
 				 OcciFactory.eINSTANCE.createMixin()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OcciPackage.Literals.EXTENSION__TYPES,
+				 OcciFactory.eINSTANCE.createRecordType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OcciPackage.Literals.EXTENSION__TYPES,
+				 OcciFactory.eINSTANCE.createArrayType()));
 	}
 
 	/**

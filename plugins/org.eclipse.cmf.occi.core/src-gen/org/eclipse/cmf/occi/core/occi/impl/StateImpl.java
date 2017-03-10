@@ -38,6 +38,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link org.eclipse.cmf.occi.core.occi.impl.StateImpl#getOwningFSM <em>Owning FSM</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.occi.impl.StateImpl#getOutgoingTransition <em>Outgoing Transition</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.occi.impl.StateImpl#getIncomingTransition <em>Incoming Transition</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.occi.impl.StateImpl#isIsInitial <em>Is Initial</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.occi.impl.StateImpl#isIsFinal <em>Is Final</em>}</li>
  * </ul>
  *
  * @generated
@@ -72,6 +74,46 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	 * @ordered
 	 */
 	protected EList<Transition> incomingTransition;
+
+	/**
+	 * The default value of the '{@link #isIsInitial() <em>Is Initial</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsInitial()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_INITIAL_EDEFAULT = false; // TODO The default value literal "" is not valid.
+
+	/**
+	 * The cached value of the '{@link #isIsInitial() <em>Is Initial</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsInitial()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isInitial = IS_INITIAL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isIsFinal() <em>Is Final</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsFinal()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_FINAL_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsFinal() <em>Is Final</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsFinal()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isFinal = IS_FINAL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -200,6 +242,48 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isIsInitial() {
+		return isInitial;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsInitial(boolean newIsInitial) {
+		boolean oldIsInitial = isInitial;
+		isInitial = newIsInitial;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OcciPackage.STATE__IS_INITIAL, oldIsInitial, isInitial));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isIsFinal() {
+		return isFinal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsFinal(boolean newIsFinal) {
+		boolean oldIsFinal = isFinal;
+		isFinal = newIsFinal;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OcciPackage.STATE__IS_FINAL, oldIsFinal, isFinal));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -265,6 +349,10 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 				return getOutgoingTransition();
 			case OcciPackage.STATE__INCOMING_TRANSITION:
 				return getIncomingTransition();
+			case OcciPackage.STATE__IS_INITIAL:
+				return isIsInitial();
+			case OcciPackage.STATE__IS_FINAL:
+				return isIsFinal();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -292,6 +380,12 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 				getIncomingTransition().clear();
 				getIncomingTransition().addAll((Collection<? extends Transition>)newValue);
 				return;
+			case OcciPackage.STATE__IS_INITIAL:
+				setIsInitial((Boolean)newValue);
+				return;
+			case OcciPackage.STATE__IS_FINAL:
+				setIsFinal((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -316,6 +410,12 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 			case OcciPackage.STATE__INCOMING_TRANSITION:
 				getIncomingTransition().clear();
 				return;
+			case OcciPackage.STATE__IS_INITIAL:
+				setIsInitial(IS_INITIAL_EDEFAULT);
+				return;
+			case OcciPackage.STATE__IS_FINAL:
+				setIsFinal(IS_FINAL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -336,8 +436,30 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 				return outgoingTransition != null && !outgoingTransition.isEmpty();
 			case OcciPackage.STATE__INCOMING_TRANSITION:
 				return incomingTransition != null && !incomingTransition.isEmpty();
+			case OcciPackage.STATE__IS_INITIAL:
+				return isInitial != IS_INITIAL_EDEFAULT;
+			case OcciPackage.STATE__IS_FINAL:
+				return isFinal != IS_FINAL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (isInitial: ");
+		result.append(isInitial);
+		result.append(", isFinal: ");
+		result.append(isFinal);
+		result.append(')');
+		return result.toString();
 	}
 
 } //StateImpl

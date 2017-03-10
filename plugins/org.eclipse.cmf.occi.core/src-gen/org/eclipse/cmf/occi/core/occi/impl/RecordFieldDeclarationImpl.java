@@ -2,12 +2,12 @@
  */
 package org.eclipse.cmf.occi.core.occi.impl;
 
-import org.eclipse.cmf.occi.core.occi.DataType;
 import org.eclipse.cmf.occi.core.occi.OcciPackage;
 import org.eclipse.cmf.occi.core.occi.RecordFieldDeclaration;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -36,7 +36,7 @@ public class RecordFieldDeclarationImpl extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType type;
+	protected EClassifier type;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -82,10 +82,10 @@ public class RecordFieldDeclarationImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType getType() {
+	public EClassifier getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
-			type = (DataType)eResolveProxy(oldType);
+			type = (EClassifier)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OcciPackage.RECORD_FIELD_DECLARATION__TYPE, oldType, type));
@@ -99,7 +99,7 @@ public class RecordFieldDeclarationImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetType() {
+	public EClassifier basicGetType() {
 		return type;
 	}
 
@@ -108,8 +108,8 @@ public class RecordFieldDeclarationImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(DataType newType) {
-		DataType oldType = type;
+	public void setType(EClassifier newType) {
+		EClassifier oldType = type;
 		type = newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OcciPackage.RECORD_FIELD_DECLARATION__TYPE, oldType, type));
@@ -162,7 +162,7 @@ public class RecordFieldDeclarationImpl extends MinimalEObjectImpl.Container imp
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case OcciPackage.RECORD_FIELD_DECLARATION__TYPE:
-				setType((DataType)newValue);
+				setType((EClassifier)newValue);
 				return;
 			case OcciPackage.RECORD_FIELD_DECLARATION__NAME:
 				setName((String)newValue);
@@ -180,7 +180,7 @@ public class RecordFieldDeclarationImpl extends MinimalEObjectImpl.Container imp
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case OcciPackage.RECORD_FIELD_DECLARATION__TYPE:
-				setType((DataType)null);
+				setType((EClassifier)null);
 				return;
 			case OcciPackage.RECORD_FIELD_DECLARATION__NAME:
 				setName(NAME_EDEFAULT);

@@ -20,11 +20,13 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.cmf.occi.core.occi.State#getOwningFSM <em>Owning FSM</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.occi.State#getOutgoingTransition <em>Outgoing Transition</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.occi.State#getIncomingTransition <em>Incoming Transition</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.occi.State#isIsInitial <em>Is Initial</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.occi.State#isIsFinal <em>Is Final</em>}</li>
  * </ul>
  *
  * @see org.eclipse.cmf.occi.core.occi.OcciPackage#getState()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='StateLiteralAlreadyDefinedInFSMAttributeType'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot StateLiteralAlreadyDefinedInFSMAttributeType='owningFSM.attribute.type.oclAsType(ecore::EEnum)=literal.eEnum'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot StateLiteralAlreadyDefinedInFSMAttributeType='owningFSM.attribute.type=literal.eEnum'"
  * @generated
  */
 public interface State extends EObject {
@@ -117,5 +119,59 @@ public interface State extends EObject {
 	 * @generated
 	 */
 	EList<Transition> getIncomingTransition();
+
+	/**
+	 * Returns the value of the '<em><b>Is Initial</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Initial</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Initial</em>' attribute.
+	 * @see #setIsInitial(boolean)
+	 * @see org.eclipse.cmf.occi.core.occi.OcciPackage#getState_IsInitial()
+	 * @model default="false" dataType="org.eclipse.cmf.occi.core.occi.Boolean" required="true"
+	 * @generated
+	 */
+	boolean isIsInitial();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.core.occi.State#isIsInitial <em>Is Initial</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Initial</em>' attribute.
+	 * @see #isIsInitial()
+	 * @generated
+	 */
+	void setIsInitial(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Final</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Final</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Final</em>' attribute.
+	 * @see #setIsFinal(boolean)
+	 * @see org.eclipse.cmf.occi.core.occi.OcciPackage#getState_IsFinal()
+	 * @model default="false" dataType="org.eclipse.cmf.occi.core.occi.Boolean" required="true"
+	 * @generated
+	 */
+	boolean isIsFinal();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.core.occi.State#isIsFinal <em>Is Final</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Final</em>' attribute.
+	 * @see #isIsFinal()
+	 * @generated
+	 */
+	void setIsFinal(boolean value);
 
 } // State

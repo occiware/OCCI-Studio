@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -290,40 +291,13 @@ public interface OcciPackage extends EPackage {
 	int FSM = 3;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FSM__NAME = 0;
-
-	/**
 	 * The feature id for the '<em><b>Owned State</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FSM__OWNED_STATE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Initial State</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FSM__INITIAL_STATE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Final State</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FSM__FINAL_STATE = 3;
+	int FSM__OWNED_STATE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' reference.
@@ -332,7 +306,7 @@ public interface OcciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FSM__ATTRIBUTE = 4;
+	int FSM__ATTRIBUTE = 1;
 
 	/**
 	 * The number of structural features of the '<em>FSM</em>' class.
@@ -341,7 +315,7 @@ public interface OcciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FSM_FEATURE_COUNT = 5;
+	int FSM_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>FSM</em>' class.
@@ -399,13 +373,31 @@ public interface OcciPackage extends EPackage {
 	int STATE__INCOMING_TRANSITION = 3;
 
 	/**
+	 * The feature id for the '<em><b>Is Initial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__IS_INITIAL = 4;
+
+	/**
+	 * The feature id for the '<em><b>Is Final</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__IS_FINAL = 5;
+
+	/**
 	 * The number of structural features of the '<em>State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = 4;
+	int STATE_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>State</em>' class.
@@ -1536,34 +1528,6 @@ public interface OcciPackage extends EPackage {
 	int CONFIGURATION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.occi.impl.DataTypeImpl <em>Data Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.core.occi.impl.DataTypeImpl
-	 * @see org.eclipse.cmf.occi.core.occi.impl.OcciPackageImpl#getDataType()
-	 * @generated
-	 */
-	int DATA_TYPE = 17;
-
-	/**
-	 * The number of structural features of the '<em>Data Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Data Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.occi.impl.RecordTypeImpl <em>Record Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1571,7 +1535,79 @@ public interface OcciPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.occi.impl.OcciPackageImpl#getRecordType()
 	 * @generated
 	 */
-	int RECORD_TYPE = 18;
+	int RECORD_TYPE = 17;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_TYPE__EANNOTATIONS = EcorePackage.ECLASSIFIER__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_TYPE__NAME = EcorePackage.ECLASSIFIER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Instance Class Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_TYPE__INSTANCE_CLASS_NAME = EcorePackage.ECLASSIFIER__INSTANCE_CLASS_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Instance Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_TYPE__INSTANCE_CLASS = EcorePackage.ECLASSIFIER__INSTANCE_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_TYPE__DEFAULT_VALUE = EcorePackage.ECLASSIFIER__DEFAULT_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Instance Type Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_TYPE__INSTANCE_TYPE_NAME = EcorePackage.ECLASSIFIER__INSTANCE_TYPE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>EPackage</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_TYPE__EPACKAGE = EcorePackage.ECLASSIFIER__EPACKAGE;
+
+	/**
+	 * The feature id for the '<em><b>EType Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_TYPE__ETYPE_PARAMETERS = EcorePackage.ECLASSIFIER__ETYPE_PARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>Record Filed Declarations</b></em>' reference list.
@@ -1580,7 +1616,7 @@ public interface OcciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECORD_TYPE__RECORD_FILED_DECLARATIONS = DATA_TYPE_FEATURE_COUNT + 0;
+	int RECORD_TYPE__RECORD_FILED_DECLARATIONS = EcorePackage.ECLASSIFIER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Record Type</em>' class.
@@ -1589,7 +1625,34 @@ public interface OcciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECORD_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+	int RECORD_TYPE_FEATURE_COUNT = EcorePackage.ECLASSIFIER_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_TYPE___GET_EANNOTATION__STRING = EcorePackage.ECLASSIFIER___GET_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Is Instance</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_TYPE___IS_INSTANCE__OBJECT = EcorePackage.ECLASSIFIER___IS_INSTANCE__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Get Classifier ID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_TYPE___GET_CLASSIFIER_ID = EcorePackage.ECLASSIFIER___GET_CLASSIFIER_ID;
 
 	/**
 	 * The number of operations of the '<em>Record Type</em>' class.
@@ -1598,7 +1661,7 @@ public interface OcciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECORD_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+	int RECORD_TYPE_OPERATION_COUNT = EcorePackage.ECLASSIFIER_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.occi.impl.RecordFieldDeclarationImpl <em>Record Field Declaration</em>}' class.
@@ -1608,7 +1671,7 @@ public interface OcciPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.occi.impl.OcciPackageImpl#getRecordFieldDeclaration()
 	 * @generated
 	 */
-	int RECORD_FIELD_DECLARATION = 19;
+	int RECORD_FIELD_DECLARATION = 18;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1654,7 +1717,79 @@ public interface OcciPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.occi.impl.OcciPackageImpl#getArrayType()
 	 * @generated
 	 */
-	int ARRAY_TYPE = 20;
+	int ARRAY_TYPE = 19;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_TYPE__EANNOTATIONS = EcorePackage.ECLASSIFIER__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_TYPE__NAME = EcorePackage.ECLASSIFIER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Instance Class Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_TYPE__INSTANCE_CLASS_NAME = EcorePackage.ECLASSIFIER__INSTANCE_CLASS_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Instance Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_TYPE__INSTANCE_CLASS = EcorePackage.ECLASSIFIER__INSTANCE_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_TYPE__DEFAULT_VALUE = EcorePackage.ECLASSIFIER__DEFAULT_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Instance Type Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_TYPE__INSTANCE_TYPE_NAME = EcorePackage.ECLASSIFIER__INSTANCE_TYPE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>EPackage</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_TYPE__EPACKAGE = EcorePackage.ECLASSIFIER__EPACKAGE;
+
+	/**
+	 * The feature id for the '<em><b>EType Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_TYPE__ETYPE_PARAMETERS = EcorePackage.ECLASSIFIER__ETYPE_PARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1663,7 +1798,7 @@ public interface OcciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_TYPE__TYPE = DATA_TYPE_FEATURE_COUNT + 0;
+	int ARRAY_TYPE__TYPE = EcorePackage.ECLASSIFIER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Array Type</em>' class.
@@ -1672,7 +1807,34 @@ public interface OcciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+	int ARRAY_TYPE_FEATURE_COUNT = EcorePackage.ECLASSIFIER_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_TYPE___GET_EANNOTATION__STRING = EcorePackage.ECLASSIFIER___GET_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Is Instance</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_TYPE___IS_INSTANCE__OBJECT = EcorePackage.ECLASSIFIER___IS_INSTANCE__OBJECT;
+
+	/**
+	 * The operation id for the '<em>Get Classifier ID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_TYPE___GET_CLASSIFIER_ID = EcorePackage.ECLASSIFIER___GET_CLASSIFIER_ID;
 
 	/**
 	 * The number of operations of the '<em>Array Type</em>' class.
@@ -1681,7 +1843,7 @@ public interface OcciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+	int ARRAY_TYPE_OPERATION_COUNT = EcorePackage.ECLASSIFIER_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '<em>URI</em>' data type.
@@ -1691,7 +1853,7 @@ public interface OcciPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.occi.impl.OcciPackageImpl#getURI()
 	 * @generated
 	 */
-	int URI = 21;
+	int URI = 20;
 
 	/**
 	 * The meta object id for the '<em>OCL</em>' data type.
@@ -1701,7 +1863,7 @@ public interface OcciPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.occi.impl.OcciPackageImpl#getOCL()
 	 * @generated
 	 */
-	int OCL = 22;
+	int OCL = 21;
 
 	/**
 	 * The meta object id for the '<em>String</em>' data type.
@@ -1711,7 +1873,7 @@ public interface OcciPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.occi.impl.OcciPackageImpl#getString()
 	 * @generated
 	 */
-	int STRING = 23;
+	int STRING = 22;
 
 	/**
 	 * The meta object id for the '<em>Boolean</em>' data type.
@@ -1720,7 +1882,7 @@ public interface OcciPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.occi.impl.OcciPackageImpl#getBoolean()
 	 * @generated
 	 */
-	int BOOLEAN = 24;
+	int BOOLEAN = 23;
 
 	/**
 	 * The meta object id for the '<em>Attribute Name</em>' data type.
@@ -1730,7 +1892,7 @@ public interface OcciPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.occi.impl.OcciPackageImpl#getAttributeName()
 	 * @generated
 	 */
-	int ATTRIBUTE_NAME = 25;
+	int ATTRIBUTE_NAME = 24;
 
 	/**
 	 * The meta object id for the '<em>Name</em>' data type.
@@ -1740,7 +1902,7 @@ public interface OcciPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.occi.impl.OcciPackageImpl#getName_()
 	 * @generated
 	 */
-	int NAME = 26;
+	int NAME = 25;
 
 	/**
 	 * The meta object id for the '<em>Scheme</em>' data type.
@@ -1750,7 +1912,7 @@ public interface OcciPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.occi.impl.OcciPackageImpl#getScheme()
 	 * @generated
 	 */
-	int SCHEME = 27;
+	int SCHEME = 26;
 
 
 	/**
@@ -1904,17 +2066,6 @@ public interface OcciPackage extends EPackage {
 	EClass getFSM();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.occi.FSM#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.eclipse.cmf.occi.core.occi.FSM#getName()
-	 * @see #getFSM()
-	 * @generated
-	 */
-	EAttribute getFSM_Name();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.cmf.occi.core.occi.FSM#getOwnedState <em>Owned State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1924,28 +2075,6 @@ public interface OcciPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getFSM_OwnedState();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.cmf.occi.core.occi.FSM#getInitialState <em>Initial State</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Initial State</em>'.
-	 * @see org.eclipse.cmf.occi.core.occi.FSM#getInitialState()
-	 * @see #getFSM()
-	 * @generated
-	 */
-	EReference getFSM_InitialState();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.cmf.occi.core.occi.FSM#getFinalState <em>Final State</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Final State</em>'.
-	 * @see org.eclipse.cmf.occi.core.occi.FSM#getFinalState()
-	 * @see #getFSM()
-	 * @generated
-	 */
-	EReference getFSM_FinalState();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.eclipse.cmf.occi.core.occi.FSM#getAttribute <em>Attribute</em>}'.
@@ -2011,6 +2140,28 @@ public interface OcciPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getState_IncomingTransition();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.occi.State#isIsInitial <em>Is Initial</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Initial</em>'.
+	 * @see org.eclipse.cmf.occi.core.occi.State#isIsInitial()
+	 * @see #getState()
+	 * @generated
+	 */
+	EAttribute getState_IsInitial();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.occi.State#isIsFinal <em>Is Final</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Final</em>'.
+	 * @see org.eclipse.cmf.occi.core.occi.State#isIsFinal()
+	 * @see #getState()
+	 * @generated
+	 */
+	EAttribute getState_IsFinal();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.occi.Transition <em>Transition</em>}'.
@@ -2657,16 +2808,6 @@ public interface OcciPackage extends EPackage {
 	EReference getConfiguration_Mixins();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.occi.DataType <em>Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Data Type</em>'.
-	 * @see org.eclipse.cmf.occi.core.occi.DataType
-	 * @generated
-	 */
-	EClass getDataType();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.occi.RecordType <em>Record Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2803,7 +2944,7 @@ public interface OcciPackage extends EPackage {
 	 * @return the meta object for data type '<em>Name</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
-	 *        extendedMetaData="pattern='[a-zA-Z][a-zA-Z0-9]*'"
+	 *        extendedMetaData="pattern='[a-zA-Z][a-zA-Z0-9-_]*'"
 	 * @generated
 	 */
 	EDataType getName_();
@@ -2815,7 +2956,7 @@ public interface OcciPackage extends EPackage {
 	 * @return the meta object for data type '<em>Scheme</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
-	 *        extendedMetaData="pattern='[A-Za-z][A-Za-z0-9+-.]*:(//(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]|%[0-9A-Fa-f]{2})*@)?(\\[(((([0-9A-Fa-f]{1,4}:){6}|::([0-9A-Fa-f]{1,4}:){5}|([0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){4}|(([0-9A-Fa-f]{1,4}:){0,1}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){3}|(([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){2}|(([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:)|(([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})?::)([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]))|(([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}|(([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})?::)|[Vv][0-9A-Fa-f]+\\.[A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]+)\\]|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=]|%[0-9A-Fa-f]{2})*)(:[0-9]*)?(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|/(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*)?|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|.{0})(\\?([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@/?]|%[0-9A-Fa-f]{2})*)?(\\#)'"
+	 *        extendedMetaData="pattern='[A-Za-z][A-Za-z0-9+-.]*:(//(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]|%[0-9A-Fa-f]{2})*@)?(\\[(((([0-9A-Fa-f]{1,4}:){6}|::([0-9A-Fa-f]{1,4}:){5}|([0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){4}|(([0-9A-Fa-f]{1,4}:){0,1}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){3}|(([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){2}|(([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:)|(([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})?::)([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]))|(([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}|(([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})?::)|[Vv][0-9A-Fa-f]+\\.[A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]+)\\]|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=]|%[0-9A-Fa-f]{2})*)(:[0-9]*)?(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|/(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*)?|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|.{0})(\\#)'"
 	 * @generated
 	 */
 	EDataType getScheme();
@@ -2964,36 +3105,12 @@ public interface OcciPackage extends EPackage {
 		EClass FSM = eINSTANCE.getFSM();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FSM__NAME = eINSTANCE.getFSM_Name();
-
-		/**
 		 * The meta object literal for the '<em><b>Owned State</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference FSM__OWNED_STATE = eINSTANCE.getFSM_OwnedState();
-
-		/**
-		 * The meta object literal for the '<em><b>Initial State</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FSM__INITIAL_STATE = eINSTANCE.getFSM_InitialState();
-
-		/**
-		 * The meta object literal for the '<em><b>Final State</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FSM__FINAL_STATE = eINSTANCE.getFSM_FinalState();
 
 		/**
 		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
@@ -3044,6 +3161,22 @@ public interface OcciPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STATE__INCOMING_TRANSITION = eINSTANCE.getState_IncomingTransition();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Initial</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATE__IS_INITIAL = eINSTANCE.getState_IsInitial();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Final</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATE__IS_FINAL = eINSTANCE.getState_IsFinal();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.occi.impl.TransitionImpl <em>Transition</em>}' class.
@@ -3548,16 +3681,6 @@ public interface OcciPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONFIGURATION__MIXINS = eINSTANCE.getConfiguration_Mixins();
-
-		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.occi.impl.DataTypeImpl <em>Data Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.core.occi.impl.DataTypeImpl
-		 * @see org.eclipse.cmf.occi.core.occi.impl.OcciPackageImpl#getDataType()
-		 * @generated
-		 */
-		EClass DATA_TYPE = eINSTANCE.getDataType();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.occi.impl.RecordTypeImpl <em>Record Type</em>}' class.
