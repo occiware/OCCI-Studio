@@ -2,6 +2,15 @@
 <?eclipse version="3.0"?>
 
 <!--
+ Copyright (c) 2017 Inria
+  
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+ - Faiez Zalila <faiez.zalila@inria.fr>
 -->
 
 <plugin>
@@ -10,8 +19,18 @@
       <!-- @generated OCCI -->
       <package
             uri="http://schemas.ogf.org/occi/core/ecore/2.0"
-            class="org.eclipse.cmf.occi.core.occi.OcciPackage"
+            class="org.eclipse.cmf.occi.core.OCCIPackage"
             genModel="model/OCCI.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated OCCI -->
+      <parser
+            type="occie"
+            class="org.eclipse.cmf.occi.util.OCCIResourceFactoryImpl"/>
+      <parser
+            type="occic"
+            class="org.eclipse.cmf.occi.util.OCCIResourceFactoryImpl"/>
    </extension>
 
 </plugin>
