@@ -4,7 +4,8 @@
     editorDirectory="/org.eclipse.cmf.occi.core.editor/src-gen" modelPluginID="org.eclipse.cmf.occi.core"
     modelName="OCCI" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     testsDirectory="/org.eclipse.cmf.occi.core.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>OCCI.ecore</foreignModel>
   <genPackages prefix="Occi" basePackage="org.eclipse.cmf.occi.core" disposableProviderFactory="true"
       ecorePackage="OCCI.ecore#/">
@@ -36,12 +37,12 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//FSM/attribute"/>
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//State">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//State/literal"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//State/sliteral"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//State/isInitial"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//State/isFinal"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference OCCI.ecore#//State/owningFSM"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OCCI.ecore#//State/outgoingTransition"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//State/incomingTransition"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//State/isInitial"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//State/isFinal"/>
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//Transition">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference OCCI.ecore#//Transition/source"/>
@@ -72,6 +73,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Entity/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Entity/title"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//Entity/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Entity/location"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OCCI.ecore#//Entity/attributes"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference OCCI.ecore#//Entity/mixins"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OCCI.ecore#//Entity/parts"/>

@@ -3,7 +3,6 @@
 package org.eclipse.cmf.occi.core.occi;
 
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EObject;
 
 
 /**
@@ -22,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ArrayType extends EObject, EClassifier {
+public interface ArrayType extends EClassifier {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->

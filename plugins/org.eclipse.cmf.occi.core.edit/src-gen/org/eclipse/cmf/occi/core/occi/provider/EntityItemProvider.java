@@ -66,6 +66,7 @@ public class EntityItemProvider
 			addIdPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 			addKindPropertyDescriptor(object);
+			addLocationPropertyDescriptor(object);
 			addMixinsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -133,6 +134,28 @@ public class EntityItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Location feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLocationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_location_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_location_feature", "_UI_Entity_type"),
+				 OcciPackage.Literals.ENTITY__LOCATION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -219,6 +242,7 @@ public class EntityItemProvider
 		switch (notification.getFeatureID(Entity.class)) {
 			case OcciPackage.ENTITY__ID:
 			case OcciPackage.ENTITY__TITLE:
+			case OcciPackage.ENTITY__LOCATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OcciPackage.ENTITY__ATTRIBUTES:

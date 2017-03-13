@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.cmf.occi.core.occi.Entity#getId <em>Id</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.occi.Entity#getTitle <em>Title</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.occi.Entity#getKind <em>Kind</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.occi.Entity#getLocation <em>Location</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.occi.Entity#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.occi.Entity#getMixins <em>Mixins</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.occi.Entity#getParts <em>Parts</em>}</li>
@@ -107,6 +108,32 @@ public interface Entity extends EObject {
 	 * @generated
 	 */
 	void setKind(Kind value);
+
+	/**
+	 * Returns the value of the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Location</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Location</em>' attribute.
+	 * @see #setLocation(String)
+	 * @see org.eclipse.cmf.occi.core.occi.OcciPackage#getEntity_Location()
+	 * @model dataType="org.eclipse.cmf.occi.core.occi.String"
+	 * @generated
+	 */
+	String getLocation();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.core.occi.Entity#getLocation <em>Location</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Location</em>' attribute.
+	 * @see #getLocation()
+	 * @generated
+	 */
+	void setLocation(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.

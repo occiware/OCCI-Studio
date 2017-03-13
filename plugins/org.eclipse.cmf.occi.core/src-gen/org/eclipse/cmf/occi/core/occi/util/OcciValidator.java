@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
+import org.eclipse.emf.ecore.util.EcoreValidator;
 import org.eclipse.emf.ecore.xml.type.util.XMLTypeUtil;
 
 /**
@@ -59,6 +60,14 @@ public class OcciValidator extends EObjectValidator {
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
 
 	/**
+	 * The cached base package validator.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EcoreValidator ecoreValidator;
+
+	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,6 +75,7 @@ public class OcciValidator extends EObjectValidator {
 	 */
 	public OcciValidator() {
 		super();
+		ecoreValidator = EcoreValidator.INSTANCE;
 	}
 
 	/**
@@ -418,7 +428,7 @@ public class OcciValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATE__STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE__EEXPRESSION = "owningFSM.attribute.type=literal.eEnum";
+	protected static final String STATE__STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE__EEXPRESSION = "owningFSM.attribute.type=self.sliteral.eEnum";
 
 	/**
 	 * Validates the StateLiteralAlreadyDefinedInFSMAttributeType constraint of '<em>State</em>'.
@@ -1455,7 +1465,19 @@ public class OcciValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateRecordType(RecordType recordType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(recordType, diagnostics, context);
+		if (!validate_NoCircularContainment(recordType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(recordType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(recordType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(recordType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(recordType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(recordType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(recordType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(recordType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(recordType, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(recordType, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateEClassifier_WellFormedInstanceTypeName(recordType, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateEClassifier_UniqueTypeParameterNames(recordType, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -1473,7 +1495,19 @@ public class OcciValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateArrayType(ArrayType arrayType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(arrayType, diagnostics, context);
+		if (!validate_NoCircularContainment(arrayType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(arrayType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(arrayType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(arrayType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(arrayType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(arrayType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(arrayType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(arrayType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(arrayType, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(arrayType, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateEClassifier_WellFormedInstanceTypeName(arrayType, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateEClassifier_UniqueTypeParameterNames(arrayType, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -1588,7 +1622,7 @@ public class OcciValidator extends EObjectValidator {
 	public static final  PatternMatcher [][] NAME__PATTERN__VALUES =
 		new PatternMatcher [][] {
 			new PatternMatcher [] {
-				XMLTypeUtil.createPatternMatcher("[a-zA-Z][a-zA-Z0-9-_]*")
+				XMLTypeUtil.createPatternMatcher("[a-zA-Z][a-zA-Z0-9_-]*")
 			}
 		};
 

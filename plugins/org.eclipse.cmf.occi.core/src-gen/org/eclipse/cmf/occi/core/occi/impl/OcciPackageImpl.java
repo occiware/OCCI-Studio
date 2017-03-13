@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -278,6 +279,9 @@ public class OcciPackageImpl extends EPackageImpl implements OcciPackage {
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
+
 		// Create package meta-data objects
 		theOcciPackage.createPackageContents();
 
@@ -460,7 +464,7 @@ public class OcciPackageImpl extends EPackageImpl implements OcciPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_Literal() {
+	public EReference getState_Sliteral() {
 		return (EReference)stateEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -470,24 +474,6 @@ public class OcciPackageImpl extends EPackageImpl implements OcciPackage {
 	 * @generated
 	 */
 	public EReference getState_OwningFSM() {
-		return (EReference)stateEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getState_OutgoingTransition() {
-		return (EReference)stateEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getState_IncomingTransition() {
 		return (EReference)stateEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -496,8 +482,26 @@ public class OcciPackageImpl extends EPackageImpl implements OcciPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getState_OutgoingTransition() {
+		return (EReference)stateEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getState_IncomingTransition() {
+		return (EReference)stateEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getState_IsInitial() {
-		return (EAttribute)stateEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)stateEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -506,7 +510,7 @@ public class OcciPackageImpl extends EPackageImpl implements OcciPackage {
 	 * @generated
 	 */
 	public EAttribute getState_IsFinal() {
-		return (EAttribute)stateEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)stateEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -739,8 +743,8 @@ public class OcciPackageImpl extends EPackageImpl implements OcciPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntity_Attributes() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(3);
+	public EAttribute getEntity_Location() {
+		return (EAttribute)entityEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -748,7 +752,7 @@ public class OcciPackageImpl extends EPackageImpl implements OcciPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntity_Mixins() {
+	public EReference getEntity_Attributes() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -757,8 +761,17 @@ public class OcciPackageImpl extends EPackageImpl implements OcciPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntity_Parts() {
+	public EReference getEntity_Mixins() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntity_Parts() {
+		return (EReference)entityEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1224,12 +1237,12 @@ public class OcciPackageImpl extends EPackageImpl implements OcciPackage {
 		createEReference(fsmEClass, FSM__ATTRIBUTE);
 
 		stateEClass = createEClass(STATE);
-		createEReference(stateEClass, STATE__LITERAL);
+		createEReference(stateEClass, STATE__SLITERAL);
+		createEAttribute(stateEClass, STATE__IS_INITIAL);
+		createEAttribute(stateEClass, STATE__IS_FINAL);
 		createEReference(stateEClass, STATE__OWNING_FSM);
 		createEReference(stateEClass, STATE__OUTGOING_TRANSITION);
 		createEReference(stateEClass, STATE__INCOMING_TRANSITION);
-		createEAttribute(stateEClass, STATE__IS_INITIAL);
-		createEAttribute(stateEClass, STATE__IS_FINAL);
 
 		transitionEClass = createEClass(TRANSITION);
 		createEReference(transitionEClass, TRANSITION__SOURCE);
@@ -1261,6 +1274,7 @@ public class OcciPackageImpl extends EPackageImpl implements OcciPackage {
 		createEAttribute(entityEClass, ENTITY__ID);
 		createEAttribute(entityEClass, ENTITY__TITLE);
 		createEReference(entityEClass, ENTITY__KIND);
+		createEAttribute(entityEClass, ENTITY__LOCATION);
 		createEReference(entityEClass, ENTITY__ATTRIBUTES);
 		createEReference(entityEClass, ENTITY__MIXINS);
 		createEReference(entityEClass, ENTITY__PARTS);
@@ -1346,6 +1360,9 @@ public class OcciPackageImpl extends EPackageImpl implements OcciPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -1357,8 +1374,8 @@ public class OcciPackageImpl extends EPackageImpl implements OcciPackage {
 		mixinEClass.getESuperTypes().add(this.getType());
 		resourceEClass.getESuperTypes().add(this.getEntity());
 		linkEClass.getESuperTypes().add(this.getEntity());
-		recordTypeEClass.getESuperTypes().add(ecorePackage.getEClassifier());
-		arrayTypeEClass.getESuperTypes().add(ecorePackage.getEClassifier());
+		recordTypeEClass.getESuperTypes().add(theEcorePackage.getEClassifier());
+		arrayTypeEClass.getESuperTypes().add(theEcorePackage.getEClassifier());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(categoryEClass, Category.class, "Category", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1382,12 +1399,12 @@ public class OcciPackageImpl extends EPackageImpl implements OcciPackage {
 		initEReference(getFSM_Attribute(), this.getAttribute(), null, "attribute", null, 1, 1, org.eclipse.cmf.occi.core.occi.FSM.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getState_Literal(), ecorePackage.getEEnumLiteral(), null, "literal", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_Sliteral(), theEcorePackage.getEEnumLiteral(), null, "sliteral", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getState_IsInitial(), this.getBoolean(), "isInitial", "false", 1, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getState_IsFinal(), this.getBoolean(), "isFinal", "false", 1, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_OwningFSM(), this.getFSM(), this.getFSM_OwnedState(), "owningFSM", null, 1, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_OutgoingTransition(), this.getTransition(), this.getTransition_Source(), "outgoingTransition", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_IncomingTransition(), this.getTransition(), this.getTransition_Target(), "incomingTransition", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getState_IsInitial(), this.getBoolean(), "isInitial", "false", 1, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getState_IsFinal(), this.getBoolean(), "isFinal", "false", 1, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTransition_Source(), this.getState(), this.getState_OutgoingTransition(), "source", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1400,7 +1417,7 @@ public class OcciPackageImpl extends EPackageImpl implements OcciPackage {
 		initEAttribute(getAttribute_Required(), this.getBoolean(), "required", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttribute_Default(), this.getString(), "default", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttribute_Description(), this.getString(), "description", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAttribute_Type(), ecorePackage.getEClassifier(), null, "type", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAttribute_Type(), theEcorePackage.getEClassifier(), null, "type", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttribute_Multiple_values(), this.getBoolean(), "multiple_values", "false", 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(kindEClass, Kind.class, "Kind", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1419,6 +1436,7 @@ public class OcciPackageImpl extends EPackageImpl implements OcciPackage {
 		initEAttribute(getEntity_Id(), this.getURI(), "id", null, 1, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntity_Title(), this.getString(), "title", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Kind(), this.getKind(), null, "kind", null, 1, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntity_Location(), this.getString(), "location", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Attributes(), this.getAttributeState(), null, "attributes", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Mixins(), this.getMixin(), null, "mixins", null, 0, -1, Entity.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getEntity_Parts(), this.getMixinBase(), this.getMixinBase_Entity(), "parts", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1457,7 +1475,7 @@ public class OcciPackageImpl extends EPackageImpl implements OcciPackage {
 		getExtension_Kinds().getEKeys().add(this.getCategory_Term());
 		initEReference(getExtension_Mixins(), this.getMixin(), null, "mixins", null, 0, -1, Extension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getExtension_Mixins().getEKeys().add(this.getCategory_Term());
-		initEReference(getExtension_Types(), ecorePackage.getEClassifier(), null, "types", null, 0, -1, Extension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExtension_Types(), theEcorePackage.getEClassifier(), null, "types", null, 0, -1, Extension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExtension_Specification(), this.getString(), "specification", null, 0, 1, Extension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(configurationEClass, Configuration.class, "Configuration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1471,11 +1489,11 @@ public class OcciPackageImpl extends EPackageImpl implements OcciPackage {
 		initEReference(getRecordType_RecordFiledDeclarations(), this.getRecordFieldDeclaration(), null, "recordFiledDeclarations", null, 1, -1, RecordType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(recordFieldDeclarationEClass, RecordFieldDeclaration.class, "RecordFieldDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRecordFieldDeclaration_Type(), ecorePackage.getEClassifier(), null, "type", null, 1, 1, RecordFieldDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRecordFieldDeclaration_Type(), theEcorePackage.getEClassifier(), null, "type", null, 1, 1, RecordFieldDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRecordFieldDeclaration_Name(), this.getString(), "name", null, 0, 1, RecordFieldDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(arrayTypeEClass, ArrayType.class, "ArrayType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getArrayType_Type(), ecorePackage.getEClassifier(), null, "type", null, 1, 1, ArrayType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArrayType_Type(), theEcorePackage.getEClassifier(), null, "type", null, 1, 1, ArrayType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(uriEDataType, String.class, "URI", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
@@ -1645,7 +1663,7 @@ public class OcciPackageImpl extends EPackageImpl implements OcciPackage {
 		  (stateEClass, 
 		   source, 
 		   new String[] {
-			 "StateLiteralAlreadyDefinedInFSMAttributeType", "owningFSM.attribute.type=literal.eEnum"
+			 "StateLiteralAlreadyDefinedInFSMAttributeType", "owningFSM.attribute.type=self.sliteral.eEnum"
 		   });	
 		addAnnotation
 		  (kindEClass, 
@@ -1757,7 +1775,7 @@ public class OcciPackageImpl extends EPackageImpl implements OcciPackage {
 		  (nameEDataType, 
 		   source, 
 		   new String[] {
-			 "pattern", "[a-zA-Z][a-zA-Z0-9-_]*"
+			 "pattern", "[a-zA-Z][a-zA-Z0-9_-]*"
 		   });	
 		addAnnotation
 		  (schemeEDataType, 

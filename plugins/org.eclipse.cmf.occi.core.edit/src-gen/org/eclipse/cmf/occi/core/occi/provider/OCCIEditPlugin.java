@@ -5,6 +5,7 @@ package org.eclipse.cmf.occi.core.occi.provider;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 
 /**
  * This is the central singleton for the OCCI edit plugin.
@@ -38,6 +39,7 @@ public final class OCCIEditPlugin extends EMFPlugin {
 	public OCCIEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     EcoreEditPlugin.INSTANCE,
 		   });
 	}
 

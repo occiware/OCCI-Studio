@@ -63,28 +63,28 @@ public class StateItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addLiteralPropertyDescriptor(object);
-			addIncomingTransitionPropertyDescriptor(object);
+			addSliteralPropertyDescriptor(object);
 			addIsInitialPropertyDescriptor(object);
 			addIsFinalPropertyDescriptor(object);
+			addIncomingTransitionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Literal feature.
+	 * This adds a property descriptor for the Sliteral feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLiteralPropertyDescriptor(Object object) {
+	protected void addSliteralPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_State_literal_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_State_literal_feature", "_UI_State_type"),
-				 OcciPackage.Literals.STATE__LITERAL,
+				 getString("_UI_State_sliteral_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_sliteral_feature", "_UI_State_type"),
+				 OcciPackage.Literals.STATE__SLITERAL,
 				 true,
 				 false,
 				 true,

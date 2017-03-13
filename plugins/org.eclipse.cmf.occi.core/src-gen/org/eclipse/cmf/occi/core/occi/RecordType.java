@@ -4,7 +4,6 @@ package org.eclipse.cmf.occi.core.occi;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface RecordType extends EObject, EClassifier {
+public interface RecordType extends EClassifier {
 	/**
 	 * Returns the value of the '<em><b>Record Filed Declarations</b></em>' reference list.
 	 * The list contents are of type {@link org.eclipse.cmf.occi.core.occi.RecordFieldDeclaration}.

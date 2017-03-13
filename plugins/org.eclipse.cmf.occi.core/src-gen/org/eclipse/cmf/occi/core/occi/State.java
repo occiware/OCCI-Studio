@@ -16,45 +16,45 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.core.occi.State#getLiteral <em>Literal</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.occi.State#getSliteral <em>Sliteral</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.occi.State#isIsInitial <em>Is Initial</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.occi.State#isIsFinal <em>Is Final</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.occi.State#getOwningFSM <em>Owning FSM</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.occi.State#getOutgoingTransition <em>Outgoing Transition</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.occi.State#getIncomingTransition <em>Incoming Transition</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.core.occi.State#isIsInitial <em>Is Initial</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.core.occi.State#isIsFinal <em>Is Final</em>}</li>
  * </ul>
  *
  * @see org.eclipse.cmf.occi.core.occi.OcciPackage#getState()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='StateLiteralAlreadyDefinedInFSMAttributeType'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot StateLiteralAlreadyDefinedInFSMAttributeType='owningFSM.attribute.type=literal.eEnum'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot StateLiteralAlreadyDefinedInFSMAttributeType='owningFSM.attribute.type=self.sliteral.eEnum'"
  * @generated
  */
 public interface State extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Literal</b></em>' reference.
+	 * Returns the value of the '<em><b>Sliteral</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Literal</em>' reference isn't clear,
+	 * If the meaning of the '<em>Sliteral</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Literal</em>' reference.
-	 * @see #setLiteral(EEnumLiteral)
-	 * @see org.eclipse.cmf.occi.core.occi.OcciPackage#getState_Literal()
+	 * @return the value of the '<em>Sliteral</em>' reference.
+	 * @see #setSliteral(EEnumLiteral)
+	 * @see org.eclipse.cmf.occi.core.occi.OcciPackage#getState_Sliteral()
 	 * @model
 	 * @generated
 	 */
-	EEnumLiteral getLiteral();
+	EEnumLiteral getSliteral();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.core.occi.State#getLiteral <em>Literal</em>}' reference.
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.core.occi.State#getSliteral <em>Sliteral</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Literal</em>' reference.
-	 * @see #getLiteral()
+	 * @param value the new value of the '<em>Sliteral</em>' reference.
+	 * @see #getSliteral()
 	 * @generated
 	 */
-	void setLiteral(EEnumLiteral value);
+	void setSliteral(EEnumLiteral value);
 
 	/**
 	 * Returns the value of the '<em><b>Owning FSM</b></em>' container reference.

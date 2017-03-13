@@ -40,6 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link org.eclipse.cmf.occi.core.occi.impl.EntityImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.occi.impl.EntityImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.occi.impl.EntityImpl#getKind <em>Kind</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.occi.impl.EntityImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.occi.impl.EntityImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.occi.impl.EntityImpl#getMixins <em>Mixins</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.occi.impl.EntityImpl#getParts <em>Parts</em>}</li>
@@ -97,6 +98,26 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected Kind kind;
+
+	/**
+	 * The default value of the '{@link #getLocation() <em>Location</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLocation()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LOCATION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLocation() <em>Location</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLocation()
+	 * @generated
+	 * @ordered
+	 */
+	protected String location = LOCATION_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
@@ -232,6 +253,27 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getLocation() {
+		return location;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLocation(String newLocation) {
+		String oldLocation = location;
+		location = newLocation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OcciPackage.ENTITY__LOCATION, oldLocation, location));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<AttributeState> getAttributes() {
 		if (attributes == null) {
 			attributes = new EObjectContainmentEList<AttributeState>(AttributeState.class, this, OcciPackage.ENTITY__ATTRIBUTES);
@@ -351,6 +393,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 			case OcciPackage.ENTITY__KIND:
 				if (resolve) return getKind();
 				return basicGetKind();
+			case OcciPackage.ENTITY__LOCATION:
+				return getLocation();
 			case OcciPackage.ENTITY__ATTRIBUTES:
 				return getAttributes();
 			case OcciPackage.ENTITY__MIXINS:
@@ -378,6 +422,9 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 				return;
 			case OcciPackage.ENTITY__KIND:
 				setKind((Kind)newValue);
+				return;
+			case OcciPackage.ENTITY__LOCATION:
+				setLocation((String)newValue);
 				return;
 			case OcciPackage.ENTITY__ATTRIBUTES:
 				getAttributes().clear();
@@ -408,6 +455,9 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 			case OcciPackage.ENTITY__KIND:
 				setKind((Kind)null);
 				return;
+			case OcciPackage.ENTITY__LOCATION:
+				setLocation(LOCATION_EDEFAULT);
+				return;
 			case OcciPackage.ENTITY__ATTRIBUTES:
 				getAttributes().clear();
 				return;
@@ -432,6 +482,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case OcciPackage.ENTITY__KIND:
 				return kind != null;
+			case OcciPackage.ENTITY__LOCATION:
+				return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
 			case OcciPackage.ENTITY__ATTRIBUTES:
 				return attributes != null && !attributes.isEmpty();
 			case OcciPackage.ENTITY__MIXINS:
@@ -480,6 +532,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 		result.append(id);
 		result.append(", title: ");
 		result.append(title);
+		result.append(", location: ");
+		result.append(location);
 		result.append(')');
 		return result.toString();
 	}

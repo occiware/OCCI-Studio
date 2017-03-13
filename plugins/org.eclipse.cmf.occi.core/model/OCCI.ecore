@@ -66,19 +66,19 @@
       <details key="constraints" value="StateLiteralAlreadyDefinedInFSMAttributeType"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="StateLiteralAlreadyDefinedInFSMAttributeType" value="owningFSM.attribute.type=literal.eEnum"/>
+      <details key="StateLiteralAlreadyDefinedInFSMAttributeType" value="owningFSM.attribute.type=self.sliteral.eEnum"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="literal" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EEnumLiteral"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sliteral" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EEnumLiteral"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInitial" lowerBound="1"
+        eType="#//Boolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFinal" lowerBound="1"
+        eType="#//Boolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="owningFSM" lowerBound="1"
         eType="#//FSM" eOpposite="#//FSM/ownedState"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingTransition" upperBound="-1"
         eType="#//Transition" containment="true" eOpposite="#//Transition/source"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="incomingTransition" upperBound="-1"
         eType="#//Transition" eOpposite="#//Transition/target"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInitial" lowerBound="1"
-        eType="#//Boolean" defaultValueLiteral="false"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFinal" lowerBound="1"
-        eType="#//Boolean" defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
@@ -95,7 +95,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="required" eType="#//Boolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClassifier"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiple_values" eType="#//Boolean"
         defaultValueLiteral="false"/>
   </eClassifiers>
@@ -164,6 +164,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="#//URI"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="kind" lowerBound="1" eType="#//Kind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="#//AttributeState" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mixins" ordered="false"
@@ -234,7 +235,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="mixins" upperBound="-1"
         eType="#//Mixin" containment="true" eKeys="#//Category/term"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClassifier" containment="true"/>
+        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="specification" eType="#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Configuration">
@@ -257,16 +259,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="mixins" upperBound="-1"
         eType="#//Mixin" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RecordType" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EClassifier">
+  <eClassifiers xsi:type="ecore:EClass" name="RecordType" eSuperTypes="../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier">
     <eStructuralFeatures xsi:type="ecore:EReference" name="recordFiledDeclarations"
         lowerBound="1" upperBound="-1" eType="#//RecordFieldDeclaration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RecordFieldDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClassifier"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArrayType" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EClassifier">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClassifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArrayType" eSuperTypes="../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="URI" instanceClassName="java.lang.String">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -283,7 +285,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Name" instanceClassName="java.lang.String">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="pattern" value="[a-zA-Z][a-zA-Z0-9-_]*"/>
+      <details key="pattern" value="[a-zA-Z][a-zA-Z0-9_-]*"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Scheme" instanceClassName="java.lang.String">

@@ -337,40 +337,13 @@ public interface OcciPackage extends EPackage {
 	int STATE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Literal</b></em>' reference.
+	 * The feature id for the '<em><b>Sliteral</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__LITERAL = 0;
-
-	/**
-	 * The feature id for the '<em><b>Owning FSM</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE__OWNING_FSM = 1;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Transition</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE__OUTGOING_TRANSITION = 2;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Transition</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE__INCOMING_TRANSITION = 3;
+	int STATE__SLITERAL = 0;
 
 	/**
 	 * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -379,7 +352,7 @@ public interface OcciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__IS_INITIAL = 4;
+	int STATE__IS_INITIAL = 1;
 
 	/**
 	 * The feature id for the '<em><b>Is Final</b></em>' attribute.
@@ -388,7 +361,34 @@ public interface OcciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__IS_FINAL = 5;
+	int STATE__IS_FINAL = 2;
+
+	/**
+	 * The feature id for the '<em><b>Owning FSM</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__OWNING_FSM = 3;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Transition</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__OUTGOING_TRANSITION = 4;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Transition</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__INCOMING_TRANSITION = 5;
 
 	/**
 	 * The number of structural features of the '<em>State</em>' class.
@@ -901,13 +901,22 @@ public interface OcciPackage extends EPackage {
 	int ENTITY__KIND = 2;
 
 	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__LOCATION = 3;
+
+	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__ATTRIBUTES = 3;
+	int ENTITY__ATTRIBUTES = 4;
 
 	/**
 	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
@@ -916,7 +925,7 @@ public interface OcciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__MIXINS = 4;
+	int ENTITY__MIXINS = 5;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -925,7 +934,7 @@ public interface OcciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__PARTS = 5;
+	int ENTITY__PARTS = 6;
 
 	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
@@ -934,7 +943,7 @@ public interface OcciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = 6;
+	int ENTITY_FEATURE_COUNT = 7;
 
 	/**
 	 * The operation id for the '<em>Occi Create</em>' operation.
@@ -1111,6 +1120,15 @@ public interface OcciPackage extends EPackage {
 	int RESOURCE__KIND = ENTITY__KIND;
 
 	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__LOCATION = ENTITY__LOCATION;
+
+	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1254,6 +1272,15 @@ public interface OcciPackage extends EPackage {
 	 * @ordered
 	 */
 	int LINK__KIND = ENTITY__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK__LOCATION = ENTITY__LOCATION;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -2098,15 +2125,15 @@ public interface OcciPackage extends EPackage {
 	EClass getState();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.cmf.occi.core.occi.State#getLiteral <em>Literal</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.cmf.occi.core.occi.State#getSliteral <em>Sliteral</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Literal</em>'.
-	 * @see org.eclipse.cmf.occi.core.occi.State#getLiteral()
+	 * @return the meta object for the reference '<em>Sliteral</em>'.
+	 * @see org.eclipse.cmf.occi.core.occi.State#getSliteral()
 	 * @see #getState()
 	 * @generated
 	 */
-	EReference getState_Literal();
+	EReference getState_Sliteral();
 
 	/**
 	 * Returns the meta object for the container reference '{@link org.eclipse.cmf.occi.core.occi.State#getOwningFSM <em>Owning FSM</em>}'.
@@ -2431,6 +2458,17 @@ public interface OcciPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEntity_Kind();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.occi.Entity#getLocation <em>Location</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Location</em>'.
+	 * @see org.eclipse.cmf.occi.core.occi.Entity#getLocation()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EAttribute getEntity_Location();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.cmf.occi.core.occi.Entity#getAttributes <em>Attributes</em>}'.
@@ -2944,7 +2982,7 @@ public interface OcciPackage extends EPackage {
 	 * @return the meta object for data type '<em>Name</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
-	 *        extendedMetaData="pattern='[a-zA-Z][a-zA-Z0-9-_]*'"
+	 *        extendedMetaData="pattern='[a-zA-Z][a-zA-Z0-9_-]*'"
 	 * @generated
 	 */
 	EDataType getName_();
@@ -3131,12 +3169,12 @@ public interface OcciPackage extends EPackage {
 		EClass STATE = eINSTANCE.getState();
 
 		/**
-		 * The meta object literal for the '<em><b>Literal</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Sliteral</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATE__LITERAL = eINSTANCE.getState_Literal();
+		EReference STATE__SLITERAL = eINSTANCE.getState_Sliteral();
 
 		/**
 		 * The meta object literal for the '<em><b>Owning FSM</b></em>' container reference feature.
@@ -3389,6 +3427,14 @@ public interface OcciPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENTITY__KIND = eINSTANCE.getEntity_Kind();
+
+		/**
+		 * The meta object literal for the '<em><b>Location</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY__LOCATION = eINSTANCE.getEntity_Location();
 
 		/**
 		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.

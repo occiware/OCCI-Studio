@@ -17,6 +17,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -297,6 +298,21 @@ public class ExtensionItemProvider
 			(createChildParameter
 				(OcciPackage.Literals.EXTENSION__TYPES,
 				 OcciFactory.eINSTANCE.createArrayType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OcciPackage.Literals.EXTENSION__TYPES,
+				 EcoreFactory.eINSTANCE.createEClass()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OcciPackage.Literals.EXTENSION__TYPES,
+				 EcoreFactory.eINSTANCE.createEDataType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OcciPackage.Literals.EXTENSION__TYPES,
+				 EcoreFactory.eINSTANCE.createEEnum()));
 	}
 
 	/**
