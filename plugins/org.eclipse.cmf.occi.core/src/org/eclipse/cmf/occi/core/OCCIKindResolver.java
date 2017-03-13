@@ -24,7 +24,7 @@ import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Link;
-import org.eclipse.cmf.occi.util.Occi2Ecore;
+import org.eclipse.cmf.occi.util.OCCI2Ecore;
 import org.eclipse.cmf.occi.util.OCCIHelper;
 
 public class OCCIKindResolver
@@ -50,7 +50,7 @@ public class OCCIKindResolver
 		 EClass entityEClass = entity.eClass();
 
 		 Extension extension = null;
-		 String kindTermToSearch = Occi2Ecore.convertEcoreClassName2OcciCategoryTerm(entityEClass.getName());
+		 String kindTermToSearch = OCCI2Ecore.convertEcoreClassName2OcciCategoryTerm(entityEClass.getName());
 
 		 // Search the kind associated to the entity's eClass.
 		 Kind entityKind = eclass2kind.get(entityEClass);
@@ -62,7 +62,7 @@ public class OCCIKindResolver
 			 // If extension not found then
 			 if (extension == null) {
 				 // Search URI of the extension into the OCCI extension registry.
-				 String scheme = Occi2Ecore.convertEcoreNamespace2OcciScheme(metamodelURI);
+				 String scheme = OCCI2Ecore.convertEcoreNamespace2OcciScheme(metamodelURI);
 				 String extensionURI = OCCIRegistry.getInstance().getExtensionURI(scheme);
 				 // If extension URI not found then
 				 if(extensionURI == null) {

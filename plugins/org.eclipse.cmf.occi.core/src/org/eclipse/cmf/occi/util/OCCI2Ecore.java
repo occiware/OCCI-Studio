@@ -15,7 +15,7 @@ package org.eclipse.cmf.occi.util;
  * 
  * @author Faiez Zalila - Inria
  */
-public class Occi2Ecore
+public class OCCI2Ecore
 {
 	/**
 	 * Suffix added to the name space of EPackage.
@@ -25,7 +25,7 @@ public class Occi2Ecore
 	/**
 	 * This class can not be instantiated.
 	 */
-	private Occi2Ecore()
+	private OCCI2Ecore()
 	{
 	}
 

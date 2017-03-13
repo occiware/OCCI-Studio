@@ -252,13 +252,13 @@ public final class OCCIHelper
 		Entity createdEntity = null;
 
 		// Get the name space of the Ecore package for this kind.
-		String epackageNS = Occi2Ecore.convertOcciScheme2EcoreNamespace(kind.getScheme());
+		String epackageNS = OCCI2Ecore.convertOcciScheme2EcoreNamespace(kind.getScheme());
 		// Get the Ecore package associated to the kind.
 		EPackage epackage = EPackage.Registry.INSTANCE.getEPackage(epackageNS);
 		if(epackage == null) {
 			System.err.println("WARNING: EPackage " + epackageNS + " not found!");
 		} else {
-			String classname = Occi2Ecore.convertOcciCategoryTerm2EcoreClassName(kind.getTerm());
+			String classname = OCCI2Ecore.convertOcciCategoryTerm2EcoreClassName(kind.getTerm());
 			// Get the Ecore class associated to the kind.
 			EClass eclass = (EClass) epackage.getEClassifier(classname);
 			if(eclass == null) {
@@ -298,7 +298,7 @@ public final class OCCIHelper
 		getAttribute(entity, attributeName);
 
 		// Search the Ecore structural feature associated to the OCCI attribute.
-		String eAttributeName = Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attributeName);
+		String eAttributeName = OCCI2Ecore.convertOcciAttributeName2EcoreAttributeName(attributeName);
 		final EStructuralFeature eStructuralFeature = entity.eClass().getEStructuralFeature(eAttributeName);
 
 		if (eStructuralFeature == null) {

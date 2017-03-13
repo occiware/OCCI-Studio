@@ -14,6 +14,7 @@
 -->
 
 <plugin>
+   <extension-point id="occie" name="org.eclipse.cmf.occi.occie" schema="schema/occie.exsd"/>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated OCCI -->
@@ -31,6 +32,20 @@
       <parser
             type="occic"
             class="org.eclipse.cmf.occi.util.OCCIResourceFactoryImpl"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="http://schemas.ogf.org/occi/core"
+            target="platform:/plugin/org.eclipse.cmf.occi.core/model/Core.occie">
+      </mapping>
+   </extension>
+   <extension
+         point="org.eclipse.cmf.occi.core.occie">
+      <occie
+            file="model/Core.occie"
+            scheme="http://schemas.ogf.org/occi/core#">
+      </occie>
    </extension>
 
 </plugin>

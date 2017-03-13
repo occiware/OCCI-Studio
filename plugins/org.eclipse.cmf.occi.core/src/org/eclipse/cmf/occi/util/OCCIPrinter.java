@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.EClassifier;
  *
  * @author Philippe Merle - Inria
  */
-public class OcciPrinter
+public class OCCIPrinter
 {
 	/**
 	 * Print a given OCCI extension.

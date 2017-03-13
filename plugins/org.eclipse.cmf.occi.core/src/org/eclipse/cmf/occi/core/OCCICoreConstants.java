@@ -19,7 +19,7 @@ public interface OCCICoreConstants
 	/**
 	 * OCCI core URI.
 	 */
-	public static final String OCCI_CORE_URI = "http://schemas.ogf.org/occi/core/ecore/2.0";
+	public static final String OCCI_CORE_URI = "http://schemas.ogf.org/occi/core/";
 
 	/**
 	 * OCCI core scheme.
