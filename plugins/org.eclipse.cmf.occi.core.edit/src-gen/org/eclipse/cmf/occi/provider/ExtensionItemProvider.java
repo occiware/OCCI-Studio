@@ -25,8 +25,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcoreFactory;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -301,27 +299,37 @@ public class ExtensionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.EXTENSION__TYPES,
+				 OCCIFactory.eINSTANCE.createStringType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.EXTENSION__TYPES,
+				 OCCIFactory.eINSTANCE.createBooleanType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.EXTENSION__TYPES,
+				 OCCIFactory.eINSTANCE.createIntegerType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.EXTENSION__TYPES,
+				 OCCIFactory.eINSTANCE.createFloatType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.EXTENSION__TYPES,
+				 OCCIFactory.eINSTANCE.createEnumerationType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.EXTENSION__TYPES,
 				 OCCIFactory.eINSTANCE.createRecordType()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.EXTENSION__TYPES,
 				 OCCIFactory.eINSTANCE.createArrayType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.EXTENSION__TYPES,
-				 EcoreFactory.eINSTANCE.createEClass()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.EXTENSION__TYPES,
-				 EcoreFactory.eINSTANCE.createEDataType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.EXTENSION__TYPES,
-				 EcoreFactory.eINSTANCE.createEEnum()));
 	}
 
 	/**

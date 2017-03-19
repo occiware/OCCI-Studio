@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see org.eclipse.cmf.occi.core.OCCIPackage#getFSM()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AttributeTypeMustBeEEnum'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot AttributeTypeMustBeEEnum='attribute.type.oclIsTypeOf(ecore::EEnum)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot AttributeTypeMustBeEEnum='attribute.type.oclIsTypeOf(EnumerationType)'"
  * @generated
  */
 public interface FSM extends EObject {

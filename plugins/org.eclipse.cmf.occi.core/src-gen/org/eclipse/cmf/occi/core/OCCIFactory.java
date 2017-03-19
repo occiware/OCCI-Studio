@@ -157,6 +157,60 @@ public interface OCCIFactory extends EFactory {
 	Configuration createConfiguration();
 
 	/**
+	 * Returns a new object of class '<em>String Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>String Type</em>'.
+	 * @generated
+	 */
+	StringType createStringType();
+
+	/**
+	 * Returns a new object of class '<em>Boolean Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Boolean Type</em>'.
+	 * @generated
+	 */
+	BooleanType createBooleanType();
+
+	/**
+	 * Returns a new object of class '<em>Integer Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Integer Type</em>'.
+	 * @generated
+	 */
+	IntegerType createIntegerType();
+
+	/**
+	 * Returns a new object of class '<em>Float Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Float Type</em>'.
+	 * @generated
+	 */
+	FloatType createFloatType();
+
+	/**
+	 * Returns a new object of class '<em>Enumeration Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Enumeration Type</em>'.
+	 * @generated
+	 */
+	EnumerationType createEnumerationType();
+
+	/**
+	 * Returns a new object of class '<em>Enumeration Literal</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Enumeration Literal</em>'.
+	 * @generated
+	 */
+	EnumerationLiteral createEnumerationLiteral();
+
+	/**
 	 * Returns a new object of class '<em>Record Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -182,6 +236,15 @@ public interface OCCIFactory extends EFactory {
 	 * @generated
 	 */
 	ArrayType createArrayType();
+
+	/**
+	 * Returns a new object of class '<em>Type Annotation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Type Annotation</em>'.
+	 * @generated
+	 */
+	TypeAnnotation createTypeAnnotation();
 
 	/**
 	 * Returns the package supported by this factory.

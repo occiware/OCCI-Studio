@@ -143,11 +143,14 @@ public class FSMItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_FSM_type");
+		if(((FSM)object).getAttribute() != null)
+			return getString("_UI_FSM_type") + " "+ ((FSM)object).getAttribute().getName()+" "+((FSM)object).getAttribute().getType().getName();
+		else
+			return getString("_UI_FSM_type");
 	}
 	
 

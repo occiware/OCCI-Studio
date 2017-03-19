@@ -45,8 +45,6 @@ public class OCCITests extends TestSuite {
 		suite.addTestSuite(MixinTest.class);
 		suite.addTestSuite(ResourceTest.class);
 		suite.addTestSuite(LinkTest.class);
-		suite.addTestSuite(RecordTypeTest.class);
-		suite.addTestSuite(ArrayTypeTest.class);
 		return suite;
 	}
 

@@ -16,7 +16,7 @@ import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.cmf.occi.core.OCCIPackage;
-
+import org.eclipse.cmf.occi.core.Transition;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -131,11 +131,20 @@ public class TransitionItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Transition_type");
+		Transition tr = ((Transition) object);
+		if(tr.getSource() != null & tr.getAction() != null & tr.getTarget() != null)
+		{	if(tr.getSource().getLiteral() != null & tr.getAction().getName() != null & tr.getTarget().getLiteral() != null)
+				return getString("_UI_Transition_type") + " "+((Transition) object).getSource().getLiteral().getName()+ " --[ "+((Transition) object).getAction().getName()+" ]--> "+ ((Transition) object).getTarget().getLiteral().getName();
+			else
+				return getString("_UI_Transition_type");
+		}
+		else
+			return getString("_UI_Transition_type");
+			
 	}
 	
 

@@ -13,6 +13,7 @@ package org.eclipse.cmf.occi.impl;
 
 import java.util.Collection;
 
+import org.eclipse.cmf.occi.core.DataType;
 import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Mixin;
@@ -24,7 +25,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -153,7 +153,7 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EClassifier> types;
+	protected EList<DataType> types;
 
 	/**
 	 * The default value of the '{@link #getSpecification() <em>Specification</em>}' attribute.
@@ -298,9 +298,9 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EClassifier> getTypes() {
+	public EList<DataType> getTypes() {
 		if (types == null) {
-			types = new EObjectContainmentEList<EClassifier>(EClassifier.class, this, OCCIPackage.EXTENSION__TYPES);
+			types = new EObjectContainmentEList<DataType>(DataType.class, this, OCCIPackage.EXTENSION__TYPES);
 		}
 		return types;
 	}
@@ -404,7 +404,7 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 				return;
 			case OCCIPackage.EXTENSION__TYPES:
 				getTypes().clear();
-				getTypes().addAll((Collection<? extends EClassifier>)newValue);
+				getTypes().addAll((Collection<? extends DataType>)newValue);
 				return;
 			case OCCIPackage.EXTENSION__SPECIFICATION:
 				setSpecification((String)newValue);

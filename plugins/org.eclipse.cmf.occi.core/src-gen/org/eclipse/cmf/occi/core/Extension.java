@@ -12,8 +12,6 @@
 package org.eclipse.cmf.occi.core;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -169,7 +167,7 @@ public interface Extension extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Types</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.emf.ecore.EClassifier}.
+	 * The list contents are of type {@link org.eclipse.cmf.occi.core.DataType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Types</em>' containment reference list isn't clear,
@@ -181,7 +179,7 @@ public interface Extension extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<EClassifier> getTypes();
+	EList<DataType> getTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Specification</b></em>' attribute.

@@ -12,10 +12,6 @@
 package org.eclipse.cmf.occi.util;
 
 import org.eclipse.cmf.occi.core.*;
-
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EModelElement;
-import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -188,12 +184,76 @@ public class OCCISwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case OCCIPackage.DATA_TYPE: {
+				DataType dataType = (DataType)theEObject;
+				T result = caseDataType(dataType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OCCIPackage.BASIC_TYPE: {
+				BasicType basicType = (BasicType)theEObject;
+				T result = caseBasicType(basicType);
+				if (result == null) result = caseDataType(basicType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OCCIPackage.STRING_TYPE: {
+				StringType stringType = (StringType)theEObject;
+				T result = caseStringType(stringType);
+				if (result == null) result = caseDataType(stringType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OCCIPackage.BOOLEAN_TYPE: {
+				BooleanType booleanType = (BooleanType)theEObject;
+				T result = caseBooleanType(booleanType);
+				if (result == null) result = caseBasicType(booleanType);
+				if (result == null) result = caseDataType(booleanType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OCCIPackage.NUMERIC_TYPE: {
+				NumericType numericType = (NumericType)theEObject;
+				T result = caseNumericType(numericType);
+				if (result == null) result = caseBasicType(numericType);
+				if (result == null) result = caseDataType(numericType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OCCIPackage.INTEGER_TYPE: {
+				IntegerType integerType = (IntegerType)theEObject;
+				T result = caseIntegerType(integerType);
+				if (result == null) result = caseNumericType(integerType);
+				if (result == null) result = caseBasicType(integerType);
+				if (result == null) result = caseDataType(integerType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OCCIPackage.FLOAT_TYPE: {
+				FloatType floatType = (FloatType)theEObject;
+				T result = caseFloatType(floatType);
+				if (result == null) result = caseBasicType(floatType);
+				if (result == null) result = caseDataType(floatType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OCCIPackage.ENUMERATION_TYPE: {
+				EnumerationType enumerationType = (EnumerationType)theEObject;
+				T result = caseEnumerationType(enumerationType);
+				if (result == null) result = caseDataType(enumerationType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OCCIPackage.ENUMERATION_LITERAL: {
+				EnumerationLiteral enumerationLiteral = (EnumerationLiteral)theEObject;
+				T result = caseEnumerationLiteral(enumerationLiteral);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case OCCIPackage.RECORD_TYPE: {
 				RecordType recordType = (RecordType)theEObject;
 				T result = caseRecordType(recordType);
-				if (result == null) result = caseEClassifier(recordType);
-				if (result == null) result = caseENamedElement(recordType);
-				if (result == null) result = caseEModelElement(recordType);
+				if (result == null) result = caseDataType(recordType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -206,9 +266,13 @@ public class OCCISwitch<T> extends Switch<T> {
 			case OCCIPackage.ARRAY_TYPE: {
 				ArrayType arrayType = (ArrayType)theEObject;
 				T result = caseArrayType(arrayType);
-				if (result == null) result = caseEClassifier(arrayType);
-				if (result == null) result = caseENamedElement(arrayType);
-				if (result == null) result = caseEModelElement(arrayType);
+				if (result == null) result = caseDataType(arrayType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OCCIPackage.TYPE_ANNOTATION: {
+				TypeAnnotation typeAnnotation = (TypeAnnotation)theEObject;
+				T result = caseTypeAnnotation(typeAnnotation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -472,6 +536,141 @@ public class OCCISwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataType(DataType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Basic Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Basic Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBasicType(BasicType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStringType(StringType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Boolean Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Boolean Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBooleanType(BooleanType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Numeric Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Numeric Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNumericType(NumericType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Integer Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Integer Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIntegerType(IntegerType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Float Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Float Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFloatType(FloatType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Enumeration Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Enumeration Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnumerationType(EnumerationType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Enumeration Literal</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Enumeration Literal</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnumerationLiteral(EnumerationLiteral object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Record Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -517,47 +716,17 @@ public class OCCISwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Type Annotation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Type Annotation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEModelElement(EModelElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>ENamed Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>ENamed Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseENamedElement(ENamedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EClassifier</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EClassifier</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEClassifier(EClassifier object) {
+	public T caseTypeAnnotation(TypeAnnotation object) {
 		return null;
 	}
 

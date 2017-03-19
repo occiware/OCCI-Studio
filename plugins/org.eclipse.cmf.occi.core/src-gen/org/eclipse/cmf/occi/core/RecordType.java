@@ -13,8 +13,6 @@ package org.eclipse.cmf.occi.core;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EClassifier;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Record Type</b></em>'.
@@ -31,7 +29,7 @@ import org.eclipse.emf.ecore.EClassifier;
  * @model
  * @generated
  */
-public interface RecordType extends EClassifier {
+public interface RecordType extends DataType {
 	/**
 	 * Returns the value of the '<em><b>Record Filed Declarations</b></em>' reference list.
 	 * The list contents are of type {@link org.eclipse.cmf.occi.core.RecordFieldDeclaration}.

@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EClassifier;
  * @model
  * @generated
  */
-public interface ArrayType extends EClassifier {
+public interface ArrayType extends DataType {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->

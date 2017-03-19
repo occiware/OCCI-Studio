@@ -22,8 +22,6 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
-import org.eclipse.emf.ecore.util.EcoreValidator;
-
 import org.eclipse.emf.ecore.xml.type.util.XMLTypeUtil;
 
 /**
@@ -69,14 +67,6 @@ public class OCCIValidator extends EObjectValidator {
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
 
 	/**
-	 * The cached base package validator.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EcoreValidator ecoreValidator;
-
-	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -84,7 +74,6 @@ public class OCCIValidator extends EObjectValidator {
 	 */
 	public OCCIValidator() {
 		super();
-		ecoreValidator = EcoreValidator.INSTANCE;
 	}
 
 	/**
@@ -141,12 +130,34 @@ public class OCCIValidator extends EObjectValidator {
 				return validateExtension((Extension)value, diagnostics, context);
 			case OCCIPackage.CONFIGURATION:
 				return validateConfiguration((Configuration)value, diagnostics, context);
+			case OCCIPackage.DATA_TYPE:
+				return validateDataType((DataType)value, diagnostics, context);
+			case OCCIPackage.BASIC_TYPE:
+				return validateBasicType((BasicType)value, diagnostics, context);
+			case OCCIPackage.STRING_TYPE:
+				return validateStringType((StringType)value, diagnostics, context);
+			case OCCIPackage.BOOLEAN_TYPE:
+				return validateBooleanType((BooleanType)value, diagnostics, context);
+			case OCCIPackage.NUMERIC_TYPE:
+				return validateNumericType((NumericType)value, diagnostics, context);
+			case OCCIPackage.INTEGER_TYPE:
+				return validateIntegerType((IntegerType)value, diagnostics, context);
+			case OCCIPackage.FLOAT_TYPE:
+				return validateFloatType((FloatType)value, diagnostics, context);
+			case OCCIPackage.ENUMERATION_TYPE:
+				return validateEnumerationType((EnumerationType)value, diagnostics, context);
+			case OCCIPackage.ENUMERATION_LITERAL:
+				return validateEnumerationLiteral((EnumerationLiteral)value, diagnostics, context);
 			case OCCIPackage.RECORD_TYPE:
 				return validateRecordType((RecordType)value, diagnostics, context);
 			case OCCIPackage.RECORD_FIELD_DECLARATION:
 				return validateRecordFieldDeclaration((RecordFieldDeclaration)value, diagnostics, context);
 			case OCCIPackage.ARRAY_TYPE:
 				return validateArrayType((ArrayType)value, diagnostics, context);
+			case OCCIPackage.TYPE_ANNOTATION:
+				return validateTypeAnnotation((TypeAnnotation)value, diagnostics, context);
+			case OCCIPackage.TYPE_ANNOTATION_KEY:
+				return validateTypeAnnotationKey((TypeAnnotationKey)value, diagnostics, context);
 			case OCCIPackage.URI:
 				return validateURI((String)value, diagnostics, context);
 			case OCCIPackage.OCL:
@@ -389,7 +400,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String FSM__ATTRIBUTE_TYPE_MUST_BE_EENUM__EEXPRESSION = "attribute.type.oclIsTypeOf(ecore::EEnum)";
+	protected static final String FSM__ATTRIBUTE_TYPE_MUST_BE_EENUM__EEXPRESSION = "attribute.type.oclIsTypeOf(EnumerationType)";
 
 	/**
 	 * Validates the AttributeTypeMustBeEEnum constraint of '<em>FSM</em>'.
@@ -437,7 +448,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATE__STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE__EEXPRESSION = "owningFSM.attribute.type=self.sliteral.eEnum";
+	protected static final String STATE__STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE__EEXPRESSION = "owningFSM.attribute.type=self.literal.enumerationType";
 
 	/**
 	 * Validates the StateLiteralAlreadyDefinedInFSMAttributeType constraint of '<em>State</em>'.
@@ -1473,20 +1484,89 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateDataType(DataType dataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(dataType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateBasicType(BasicType basicType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(basicType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStringType(StringType stringType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(stringType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateBooleanType(BooleanType booleanType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(booleanType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNumericType(NumericType numericType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(numericType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIntegerType(IntegerType integerType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(integerType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFloatType(FloatType floatType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(floatType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEnumerationType(EnumerationType enumerationType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(enumerationType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEnumerationLiteral(EnumerationLiteral enumerationLiteral, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(enumerationLiteral, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateRecordType(RecordType recordType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(recordType, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(recordType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(recordType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(recordType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(recordType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(recordType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(recordType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(recordType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(recordType, diagnostics, context);
-		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(recordType, diagnostics, context);
-		if (result || diagnostics != null) result &= ecoreValidator.validateEClassifier_WellFormedInstanceTypeName(recordType, diagnostics, context);
-		if (result || diagnostics != null) result &= ecoreValidator.validateEClassifier_UniqueTypeParameterNames(recordType, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(recordType, diagnostics, context);
 	}
 
 	/**
@@ -1504,19 +1584,25 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateArrayType(ArrayType arrayType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(arrayType, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(arrayType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(arrayType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(arrayType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(arrayType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(arrayType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(arrayType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(arrayType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(arrayType, diagnostics, context);
-		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(arrayType, diagnostics, context);
-		if (result || diagnostics != null) result &= ecoreValidator.validateEClassifier_WellFormedInstanceTypeName(arrayType, diagnostics, context);
-		if (result || diagnostics != null) result &= ecoreValidator.validateEClassifier_UniqueTypeParameterNames(arrayType, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(arrayType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTypeAnnotation(TypeAnnotation typeAnnotation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(typeAnnotation, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTypeAnnotationKey(TypeAnnotationKey typeAnnotationKey, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
 	}
 
 	/**
@@ -1538,7 +1624,7 @@ public class OCCIValidator extends EObjectValidator {
 	public static final  PatternMatcher [][] URI__PATTERN__VALUES =
 		new PatternMatcher [][] {
 			new PatternMatcher [] {
-				XMLTypeUtil.createPatternMatcher("[A-Za-z][A-Za-z0-9+-.]*:(//(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]|%[0-9A-Fa-f]{2})*@)?(\\[(((([0-9A-Fa-f]{1,4}:){6}|::([0-9A-Fa-f]{1,4}:){5}|([0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){4}|(([0-9A-Fa-f]{1,4}:){0,1}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){3}|(([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){2}|(([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:)|(([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})?::)([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]))|(([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}|(([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})?::)|[Vv][0-9A-Fa-f]+\\.[A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]+)\\]|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=]|%[0-9A-Fa-f]{2})*)(:[0-9]*)?(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|/(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*)?|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|.{0})(\\?([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@/?]|%[0-9A-Fa-f]{2})*)?(\\#([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@/?]|%[0-9A-Fa-f]{2})*)?")
+				XMLTypeUtil.createPatternMatcher("[A-Za-z][A-Za-z0-9+-\\.]*:(//(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]|%[0-9A-Fa-f]{2})*@)?(\\[(((([0-9A-Fa-f]{1,4}:){6}|::([0-9A-Fa-f]{1,4}:){5}|([0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){4}|(([0-9A-Fa-f]{1,4}:){0,1}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){3}|(([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){2}|(([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:)|(([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})?::)([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]))|(([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}|(([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})?::)|[Vv][0-9A-Fa-f]+\\.[A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]+)\\]|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=]|%[0-9A-Fa-f]{2})*)(:[0-9]*)?(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|/(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*)?|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|.{0})(\\?([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@/?]|%[0-9A-Fa-f]{2})*)?(\\#([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@/?]|%[0-9A-Fa-f]{2})*)?")
 			}
 		};
 
@@ -1598,7 +1684,7 @@ public class OCCIValidator extends EObjectValidator {
 	public static final  PatternMatcher [][] ATTRIBUTE_NAME__PATTERN__VALUES =
 		new PatternMatcher [][] {
 			new PatternMatcher [] {
-				XMLTypeUtil.createPatternMatcher("[a-zA-Z0-9]+(.[a-zA-Z0-9]+)*")
+				XMLTypeUtil.createPatternMatcher("[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)*")
 			}
 		};
 
@@ -1664,7 +1750,7 @@ public class OCCIValidator extends EObjectValidator {
 	public static final  PatternMatcher [][] SCHEME__PATTERN__VALUES =
 		new PatternMatcher [][] {
 			new PatternMatcher [] {
-				XMLTypeUtil.createPatternMatcher("[A-Za-z][A-Za-z0-9+-.]*:(//(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]|%[0-9A-Fa-f]{2})*@)?(\\[(((([0-9A-Fa-f]{1,4}:){6}|::([0-9A-Fa-f]{1,4}:){5}|([0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){4}|(([0-9A-Fa-f]{1,4}:){0,1}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){3}|(([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){2}|(([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:)|(([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})?::)([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]))|(([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}|(([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})?::)|[Vv][0-9A-Fa-f]+\\.[A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]+)\\]|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=]|%[0-9A-Fa-f]{2})*)(:[0-9]*)?(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|/(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*)?|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|.{0})(\\#)")
+				XMLTypeUtil.createPatternMatcher("[A-Za-z][A-Za-z0-9+-\\.]*:(//(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]|%[0-9A-Fa-f]{2})*@)?(\\[(((([0-9A-Fa-f]{1,4}:){6}|::([0-9A-Fa-f]{1,4}:){5}|([0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){4}|(([0-9A-Fa-f]{1,4}:){0,1}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){3}|(([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){2}|(([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:)|(([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})?::)([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]))|(([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}|(([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})?::)|[Vv][0-9A-Fa-f]+\\.[A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]+)\\]|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=]|%[0-9A-Fa-f]{2})*)(:[0-9]*)?(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|/(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*)?|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|.{0})(\\#)")
 			}
 		};
 

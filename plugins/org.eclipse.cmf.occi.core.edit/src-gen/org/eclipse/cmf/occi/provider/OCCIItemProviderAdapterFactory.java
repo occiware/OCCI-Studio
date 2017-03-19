@@ -403,6 +403,144 @@ public class OCCIItemProviderAdapterFactory extends OCCIAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.core.StringType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StringTypeItemProvider stringTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.core.StringType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStringTypeAdapter() {
+		if (stringTypeItemProvider == null) {
+			stringTypeItemProvider = new StringTypeItemProvider(this);
+		}
+
+		return stringTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.core.BooleanType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BooleanTypeItemProvider booleanTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.core.BooleanType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBooleanTypeAdapter() {
+		if (booleanTypeItemProvider == null) {
+			booleanTypeItemProvider = new BooleanTypeItemProvider(this);
+		}
+
+		return booleanTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.core.IntegerType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IntegerTypeItemProvider integerTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.core.IntegerType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIntegerTypeAdapter() {
+		if (integerTypeItemProvider == null) {
+			integerTypeItemProvider = new IntegerTypeItemProvider(this);
+		}
+
+		return integerTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.core.FloatType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FloatTypeItemProvider floatTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.core.FloatType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFloatTypeAdapter() {
+		if (floatTypeItemProvider == null) {
+			floatTypeItemProvider = new FloatTypeItemProvider(this);
+		}
+
+		return floatTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.core.EnumerationType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EnumerationTypeItemProvider enumerationTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.core.EnumerationType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEnumerationTypeAdapter() {
+		if (enumerationTypeItemProvider == null) {
+			enumerationTypeItemProvider = new EnumerationTypeItemProvider(this);
+		}
+
+		return enumerationTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.core.EnumerationLiteral} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EnumerationLiteralItemProvider enumerationLiteralItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.core.EnumerationLiteral}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEnumerationLiteralAdapter() {
+		if (enumerationLiteralItemProvider == null) {
+			enumerationLiteralItemProvider = new EnumerationLiteralItemProvider(this);
+		}
+
+		return enumerationLiteralItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.core.RecordType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -469,6 +607,29 @@ public class OCCIItemProviderAdapterFactory extends OCCIAdapterFactory implement
 		}
 
 		return arrayTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.core.TypeAnnotation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TypeAnnotationItemProvider typeAnnotationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.core.TypeAnnotation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTypeAnnotationAdapter() {
+		if (typeAnnotationItemProvider == null) {
+			typeAnnotationItemProvider = new TypeAnnotationItemProvider(this);
+		}
+
+		return typeAnnotationItemProvider;
 	}
 
 	/**
@@ -584,9 +745,16 @@ public class OCCIItemProviderAdapterFactory extends OCCIAdapterFactory implement
 		if (linkItemProvider != null) linkItemProvider.dispose();
 		if (extensionItemProvider != null) extensionItemProvider.dispose();
 		if (configurationItemProvider != null) configurationItemProvider.dispose();
+		if (stringTypeItemProvider != null) stringTypeItemProvider.dispose();
+		if (booleanTypeItemProvider != null) booleanTypeItemProvider.dispose();
+		if (integerTypeItemProvider != null) integerTypeItemProvider.dispose();
+		if (floatTypeItemProvider != null) floatTypeItemProvider.dispose();
+		if (enumerationTypeItemProvider != null) enumerationTypeItemProvider.dispose();
+		if (enumerationLiteralItemProvider != null) enumerationLiteralItemProvider.dispose();
 		if (recordTypeItemProvider != null) recordTypeItemProvider.dispose();
 		if (recordFieldDeclarationItemProvider != null) recordFieldDeclarationItemProvider.dispose();
 		if (arrayTypeItemProvider != null) arrayTypeItemProvider.dispose();
+		if (typeAnnotationItemProvider != null) typeAnnotationItemProvider.dispose();
 	}
 
 }

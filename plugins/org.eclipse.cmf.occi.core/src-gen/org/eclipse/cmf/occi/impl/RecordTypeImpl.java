@@ -20,9 +20,6 @@ import org.eclipse.cmf.occi.core.RecordType;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.EClassifierImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -38,7 +35,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public class RecordTypeImpl extends EClassifierImpl implements RecordType {
+public class RecordTypeImpl extends DataTypeImpl implements RecordType {
 	/**
 	 * The cached value of the '{@link #getRecordFiledDeclarations() <em>Record Filed Declarations</em>}' reference list.
 	 * <!-- begin-user-doc -->

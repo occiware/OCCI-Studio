@@ -17,6 +17,7 @@ import org.eclipse.cmf.occi.core.Action;
 import org.eclipse.cmf.occi.core.Attribute;
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Configuration;
+import org.eclipse.cmf.occi.core.DataType;
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.Kind;
@@ -118,7 +119,7 @@ public class OCCIPrinter
 			}
 		}
 		ps.println("  - types:");
-		for(EClassifier type : extension.getTypes()) {
+		for(DataType type : extension.getTypes()) {
 			ps.println("    * EDataType " + type.getName());
 		}
 	}

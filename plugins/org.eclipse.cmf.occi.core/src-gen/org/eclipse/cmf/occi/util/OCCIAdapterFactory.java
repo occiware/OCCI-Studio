@@ -17,10 +17,6 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EModelElement;
-import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -148,6 +144,42 @@ public class OCCIAdapterFactory extends AdapterFactoryImpl {
 				return createConfigurationAdapter();
 			}
 			@Override
+			public Adapter caseDataType(DataType object) {
+				return createDataTypeAdapter();
+			}
+			@Override
+			public Adapter caseBasicType(BasicType object) {
+				return createBasicTypeAdapter();
+			}
+			@Override
+			public Adapter caseStringType(StringType object) {
+				return createStringTypeAdapter();
+			}
+			@Override
+			public Adapter caseBooleanType(BooleanType object) {
+				return createBooleanTypeAdapter();
+			}
+			@Override
+			public Adapter caseNumericType(NumericType object) {
+				return createNumericTypeAdapter();
+			}
+			@Override
+			public Adapter caseIntegerType(IntegerType object) {
+				return createIntegerTypeAdapter();
+			}
+			@Override
+			public Adapter caseFloatType(FloatType object) {
+				return createFloatTypeAdapter();
+			}
+			@Override
+			public Adapter caseEnumerationType(EnumerationType object) {
+				return createEnumerationTypeAdapter();
+			}
+			@Override
+			public Adapter caseEnumerationLiteral(EnumerationLiteral object) {
+				return createEnumerationLiteralAdapter();
+			}
+			@Override
 			public Adapter caseRecordType(RecordType object) {
 				return createRecordTypeAdapter();
 			}
@@ -160,16 +192,8 @@ public class OCCIAdapterFactory extends AdapterFactoryImpl {
 				return createArrayTypeAdapter();
 			}
 			@Override
-			public Adapter caseEModelElement(EModelElement object) {
-				return createEModelElementAdapter();
-			}
-			@Override
-			public Adapter caseENamedElement(ENamedElement object) {
-				return createENamedElementAdapter();
-			}
-			@Override
-			public Adapter caseEClassifier(EClassifier object) {
-				return createEClassifierAdapter();
+			public Adapter caseTypeAnnotation(TypeAnnotation object) {
+				return createTypeAnnotationAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -430,6 +454,132 @@ public class OCCIAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.DataType <em>Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.DataType
+	 * @generated
+	 */
+	public Adapter createDataTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.BasicType <em>Basic Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.BasicType
+	 * @generated
+	 */
+	public Adapter createBasicTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.StringType <em>String Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.StringType
+	 * @generated
+	 */
+	public Adapter createStringTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.BooleanType <em>Boolean Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.BooleanType
+	 * @generated
+	 */
+	public Adapter createBooleanTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.NumericType <em>Numeric Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.NumericType
+	 * @generated
+	 */
+	public Adapter createNumericTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.IntegerType <em>Integer Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.IntegerType
+	 * @generated
+	 */
+	public Adapter createIntegerTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.FloatType <em>Float Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.FloatType
+	 * @generated
+	 */
+	public Adapter createFloatTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.EnumerationType <em>Enumeration Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.EnumerationType
+	 * @generated
+	 */
+	public Adapter createEnumerationTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.EnumerationLiteral <em>Enumeration Literal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.EnumerationLiteral
+	 * @generated
+	 */
+	public Adapter createEnumerationLiteralAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.RecordType <em>Record Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -472,44 +622,16 @@ public class OCCIAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.EModelElement <em>EModel Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.TypeAnnotation <em>Type Annotation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.emf.ecore.EModelElement
+	 * @see org.eclipse.cmf.occi.core.TypeAnnotation
 	 * @generated
 	 */
-	public Adapter createEModelElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.ENamedElement <em>ENamed Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.emf.ecore.ENamedElement
-	 * @generated
-	 */
-	public Adapter createENamedElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.EClassifier <em>EClassifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.emf.ecore.EClassifier
-	 * @generated
-	 */
-	public Adapter createEClassifierAdapter() {
+	public Adapter createTypeAnnotationAdapter() {
 		return null;
 	}
 

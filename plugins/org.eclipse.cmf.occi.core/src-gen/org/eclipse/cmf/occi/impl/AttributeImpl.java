@@ -12,12 +12,12 @@
 package org.eclipse.cmf.occi.impl;
 
 import org.eclipse.cmf.occi.core.Attribute;
+import org.eclipse.cmf.occi.core.DataType;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -37,7 +37,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link org.eclipse.cmf.occi.impl.AttributeImpl#getDefault <em>Default</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.impl.AttributeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.impl.AttributeImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.impl.AttributeImpl#isMultiple_values <em>Multiple values</em>}</li>
  * </ul>
  *
  * @generated
@@ -151,27 +150,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * @generated
 	 * @ordered
 	 */
-	protected EClassifier type;
-
-	/**
-	 * The default value of the '{@link #isMultiple_values() <em>Multiple values</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isMultiple_values()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean MULTIPLE_VALUES_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isMultiple_values() <em>Multiple values</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isMultiple_values()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean multiple_values = MULTIPLE_VALUES_EDEFAULT;
+	protected DataType type;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -302,10 +281,10 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClassifier getType() {
+	public DataType getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
-			type = (EClassifier)eResolveProxy(oldType);
+			type = (DataType)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OCCIPackage.ATTRIBUTE__TYPE, oldType, type));
@@ -319,7 +298,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClassifier basicGetType() {
+	public DataType basicGetType() {
 		return type;
 	}
 
@@ -328,32 +307,11 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(EClassifier newType) {
-		EClassifier oldType = type;
+	public void setType(DataType newType) {
+		DataType oldType = type;
 		type = newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.ATTRIBUTE__TYPE, oldType, type));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isMultiple_values() {
-		return multiple_values;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMultiple_values(boolean newMultiple_values) {
-		boolean oldMultiple_values = multiple_values;
-		multiple_values = newMultiple_values;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.ATTRIBUTE__MULTIPLE_VALUES, oldMultiple_values, multiple_values));
 	}
 
 	/**
@@ -377,8 +335,6 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 			case OCCIPackage.ATTRIBUTE__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
-			case OCCIPackage.ATTRIBUTE__MULTIPLE_VALUES:
-				return isMultiple_values();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -407,10 +363,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 				setDescription((String)newValue);
 				return;
 			case OCCIPackage.ATTRIBUTE__TYPE:
-				setType((EClassifier)newValue);
-				return;
-			case OCCIPackage.ATTRIBUTE__MULTIPLE_VALUES:
-				setMultiple_values((Boolean)newValue);
+				setType((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -440,10 +393,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case OCCIPackage.ATTRIBUTE__TYPE:
-				setType((EClassifier)null);
-				return;
-			case OCCIPackage.ATTRIBUTE__MULTIPLE_VALUES:
-				setMultiple_values(MULTIPLE_VALUES_EDEFAULT);
+				setType((DataType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -469,8 +419,6 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case OCCIPackage.ATTRIBUTE__TYPE:
 				return type != null;
-			case OCCIPackage.ATTRIBUTE__MULTIPLE_VALUES:
-				return multiple_values != MULTIPLE_VALUES_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -495,8 +443,6 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 		result.append(default_);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", multiple_values: ");
-		result.append(multiple_values);
 		result.append(')');
 		return result.toString();
 	}

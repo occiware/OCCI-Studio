@@ -72,28 +72,28 @@ public class StateItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSliteralPropertyDescriptor(object);
-			addIsInitialPropertyDescriptor(object);
-			addIsFinalPropertyDescriptor(object);
+			addLiteralPropertyDescriptor(object);
+			addInitialPropertyDescriptor(object);
+			addFinalPropertyDescriptor(object);
 			addIncomingTransitionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Sliteral feature.
+	 * This adds a property descriptor for the Literal feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSliteralPropertyDescriptor(Object object) {
+	protected void addLiteralPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_State_sliteral_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_State_sliteral_feature", "_UI_State_type"),
-				 OCCIPackage.Literals.STATE__SLITERAL,
+				 getString("_UI_State_literal_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_literal_feature", "_UI_State_type"),
+				 OCCIPackage.Literals.STATE__LITERAL,
 				 true,
 				 false,
 				 true,
@@ -103,19 +103,19 @@ public class StateItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Is Initial feature.
+	 * This adds a property descriptor for the Initial feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIsInitialPropertyDescriptor(Object object) {
+	protected void addInitialPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_State_isInitial_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_State_isInitial_feature", "_UI_State_type"),
-				 OCCIPackage.Literals.STATE__IS_INITIAL,
+				 getString("_UI_State_initial_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_initial_feature", "_UI_State_type"),
+				 OCCIPackage.Literals.STATE__INITIAL,
 				 true,
 				 false,
 				 false,
@@ -125,19 +125,19 @@ public class StateItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Is Final feature.
+	 * This adds a property descriptor for the Final feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIsFinalPropertyDescriptor(Object object) {
+	protected void addFinalPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_State_isFinal_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_State_isFinal_feature", "_UI_State_type"),
-				 OCCIPackage.Literals.STATE__IS_FINAL,
+				 getString("_UI_State_final_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_final_feature", "_UI_State_type"),
+				 OCCIPackage.Literals.STATE__FINAL,
 				 true,
 				 false,
 				 false,
@@ -213,12 +213,16 @@ public class StateItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		State state = (State)object;
-		return getString("_UI_State_type") + " " + state.isIsInitial();
+		if(state.getLiteral()!=null){
+		return getString("_UI_State_type") + " " + state.getLiteral().getEnumerationType().getName() + "::" + state.getLiteral().getName();
+		}
+		else
+			return getString("_UI_State_type");
 	}
 	
 
@@ -227,21 +231,21 @@ public class StateItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(State.class)) {
-			case OCCIPackage.STATE__IS_INITIAL:
-			case OCCIPackage.STATE__IS_FINAL:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case OCCIPackage.STATE__OUTGOING_TRANSITION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
-		}
+		fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, true));
+//		switch (notification.getFeatureID(State.class)) {
+//			case OCCIPackage.STATE__INITIAL:
+//			case OCCIPackage.STATE__FINAL:
+//				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+//				return;
+//			case OCCIPackage.STATE__OUTGOING_TRANSITION:
+//				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+//				return;
+//		}
 		super.notifyChanged(notification);
 	}
 

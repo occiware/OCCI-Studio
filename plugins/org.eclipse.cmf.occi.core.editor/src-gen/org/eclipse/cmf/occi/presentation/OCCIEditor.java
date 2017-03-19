@@ -164,9 +164,6 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import org.eclipse.cmf.occi.provider.OCCIItemProviderAdapterFactory;
-
-import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
-
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 
@@ -713,7 +710,6 @@ public class OCCIEditor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new OCCIItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

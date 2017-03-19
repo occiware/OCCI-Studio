@@ -13,6 +13,7 @@ package org.eclipse.cmf.occi.impl;
 
 import java.util.Collection;
 
+import org.eclipse.cmf.occi.core.EnumerationLiteral;
 import org.eclipse.cmf.occi.core.FSM;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.cmf.occi.core.State;
@@ -24,7 +25,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -43,9 +43,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.impl.StateImpl#getSliteral <em>Sliteral</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.impl.StateImpl#isIsInitial <em>Is Initial</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.impl.StateImpl#isIsFinal <em>Is Final</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.impl.StateImpl#getLiteral <em>Literal</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.impl.StateImpl#isInitial <em>Initial</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.impl.StateImpl#isFinal <em>Final</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.impl.StateImpl#getOwningFSM <em>Owning FSM</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.impl.StateImpl#getOutgoingTransition <em>Outgoing Transition</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.impl.StateImpl#getIncomingTransition <em>Incoming Transition</em>}</li>
@@ -55,54 +55,54 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	/**
-	 * The cached value of the '{@link #getSliteral() <em>Sliteral</em>}' reference.
+	 * The cached value of the '{@link #getLiteral() <em>Literal</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSliteral()
+	 * @see #getLiteral()
 	 * @generated
 	 * @ordered
 	 */
-	protected EEnumLiteral sliteral;
+	protected EnumerationLiteral literal;
 
 	/**
-	 * The default value of the '{@link #isIsInitial() <em>Is Initial</em>}' attribute.
+	 * The default value of the '{@link #isInitial() <em>Initial</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsInitial()
+	 * @see #isInitial()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_INITIAL_EDEFAULT = false;
+	protected static final boolean INITIAL_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isIsInitial() <em>Is Initial</em>}' attribute.
+	 * The cached value of the '{@link #isInitial() <em>Initial</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsInitial()
+	 * @see #isInitial()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean isInitial = IS_INITIAL_EDEFAULT;
+	protected boolean initial = INITIAL_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isIsFinal() <em>Is Final</em>}' attribute.
+	 * The default value of the '{@link #isFinal() <em>Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsFinal()
+	 * @see #isFinal()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_FINAL_EDEFAULT = false;
+	protected static final boolean FINAL_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isIsFinal() <em>Is Final</em>}' attribute.
+	 * The cached value of the '{@link #isFinal() <em>Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsFinal()
+	 * @see #isFinal()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean isFinal = IS_FINAL_EDEFAULT;
+	protected boolean final_ = FINAL_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getOutgoingTransition() <em>Outgoing Transition</em>}' containment reference list.
@@ -148,16 +148,16 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnumLiteral getSliteral() {
-		if (sliteral != null && sliteral.eIsProxy()) {
-			InternalEObject oldSliteral = (InternalEObject)sliteral;
-			sliteral = (EEnumLiteral)eResolveProxy(oldSliteral);
-			if (sliteral != oldSliteral) {
+	public EnumerationLiteral getLiteral() {
+		if (literal != null && literal.eIsProxy()) {
+			InternalEObject oldLiteral = (InternalEObject)literal;
+			literal = (EnumerationLiteral)eResolveProxy(oldLiteral);
+			if (literal != oldLiteral) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OCCIPackage.STATE__SLITERAL, oldSliteral, sliteral));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OCCIPackage.STATE__LITERAL, oldLiteral, literal));
 			}
 		}
-		return sliteral;
+		return literal;
 	}
 
 	/**
@@ -165,8 +165,8 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnumLiteral basicGetSliteral() {
-		return sliteral;
+	public EnumerationLiteral basicGetLiteral() {
+		return literal;
 	}
 
 	/**
@@ -174,11 +174,11 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSliteral(EEnumLiteral newSliteral) {
-		EEnumLiteral oldSliteral = sliteral;
-		sliteral = newSliteral;
+	public void setLiteral(EnumerationLiteral newLiteral) {
+		EnumerationLiteral oldLiteral = literal;
+		literal = newLiteral;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.STATE__SLITERAL, oldSliteral, sliteral));
+			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.STATE__LITERAL, oldLiteral, literal));
 	}
 
 	/**
@@ -186,8 +186,8 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isIsInitial() {
-		return isInitial;
+	public boolean isInitial() {
+		return initial;
 	}
 
 	/**
@@ -195,11 +195,11 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIsInitial(boolean newIsInitial) {
-		boolean oldIsInitial = isInitial;
-		isInitial = newIsInitial;
+	public void setInitial(boolean newInitial) {
+		boolean oldInitial = initial;
+		initial = newInitial;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.STATE__IS_INITIAL, oldIsInitial, isInitial));
+			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.STATE__INITIAL, oldInitial, initial));
 	}
 
 	/**
@@ -207,8 +207,8 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isIsFinal() {
-		return isFinal;
+	public boolean isFinal() {
+		return final_;
 	}
 
 	/**
@@ -216,11 +216,11 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIsFinal(boolean newIsFinal) {
-		boolean oldIsFinal = isFinal;
-		isFinal = newIsFinal;
+	public void setFinal(boolean newFinal) {
+		boolean oldFinal = final_;
+		final_ = newFinal;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.STATE__IS_FINAL, oldIsFinal, isFinal));
+			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.STATE__FINAL, oldFinal, final_));
 	}
 
 	/**
@@ -349,13 +349,13 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OCCIPackage.STATE__SLITERAL:
-				if (resolve) return getSliteral();
-				return basicGetSliteral();
-			case OCCIPackage.STATE__IS_INITIAL:
-				return isIsInitial();
-			case OCCIPackage.STATE__IS_FINAL:
-				return isIsFinal();
+			case OCCIPackage.STATE__LITERAL:
+				if (resolve) return getLiteral();
+				return basicGetLiteral();
+			case OCCIPackage.STATE__INITIAL:
+				return isInitial();
+			case OCCIPackage.STATE__FINAL:
+				return isFinal();
 			case OCCIPackage.STATE__OWNING_FSM:
 				return getOwningFSM();
 			case OCCIPackage.STATE__OUTGOING_TRANSITION:
@@ -375,14 +375,14 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OCCIPackage.STATE__SLITERAL:
-				setSliteral((EEnumLiteral)newValue);
+			case OCCIPackage.STATE__LITERAL:
+				setLiteral((EnumerationLiteral)newValue);
 				return;
-			case OCCIPackage.STATE__IS_INITIAL:
-				setIsInitial((Boolean)newValue);
+			case OCCIPackage.STATE__INITIAL:
+				setInitial((Boolean)newValue);
 				return;
-			case OCCIPackage.STATE__IS_FINAL:
-				setIsFinal((Boolean)newValue);
+			case OCCIPackage.STATE__FINAL:
+				setFinal((Boolean)newValue);
 				return;
 			case OCCIPackage.STATE__OWNING_FSM:
 				setOwningFSM((FSM)newValue);
@@ -407,14 +407,14 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OCCIPackage.STATE__SLITERAL:
-				setSliteral((EEnumLiteral)null);
+			case OCCIPackage.STATE__LITERAL:
+				setLiteral((EnumerationLiteral)null);
 				return;
-			case OCCIPackage.STATE__IS_INITIAL:
-				setIsInitial(IS_INITIAL_EDEFAULT);
+			case OCCIPackage.STATE__INITIAL:
+				setInitial(INITIAL_EDEFAULT);
 				return;
-			case OCCIPackage.STATE__IS_FINAL:
-				setIsFinal(IS_FINAL_EDEFAULT);
+			case OCCIPackage.STATE__FINAL:
+				setFinal(FINAL_EDEFAULT);
 				return;
 			case OCCIPackage.STATE__OWNING_FSM:
 				setOwningFSM((FSM)null);
@@ -437,12 +437,12 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OCCIPackage.STATE__SLITERAL:
-				return sliteral != null;
-			case OCCIPackage.STATE__IS_INITIAL:
-				return isInitial != IS_INITIAL_EDEFAULT;
-			case OCCIPackage.STATE__IS_FINAL:
-				return isFinal != IS_FINAL_EDEFAULT;
+			case OCCIPackage.STATE__LITERAL:
+				return literal != null;
+			case OCCIPackage.STATE__INITIAL:
+				return initial != INITIAL_EDEFAULT;
+			case OCCIPackage.STATE__FINAL:
+				return final_ != FINAL_EDEFAULT;
 			case OCCIPackage.STATE__OWNING_FSM:
 				return getOwningFSM() != null;
 			case OCCIPackage.STATE__OUTGOING_TRANSITION:
@@ -463,10 +463,10 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (isInitial: ");
-		result.append(isInitial);
-		result.append(", isFinal: ");
-		result.append(isFinal);
+		result.append(" (initial: ");
+		result.append(initial);
+		result.append(", final: ");
+		result.append(final_);
 		result.append(')');
 		return result.toString();
 	}

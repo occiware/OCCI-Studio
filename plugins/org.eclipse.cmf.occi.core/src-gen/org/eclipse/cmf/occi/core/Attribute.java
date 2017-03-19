@@ -11,7 +11,6 @@
  */
 package org.eclipse.cmf.occi.core;
 
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -29,7 +28,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.cmf.occi.core.Attribute#getDefault <em>Default</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.Attribute#getDescription <em>Description</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.Attribute#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.core.Attribute#isMultiple_values <em>Multiple values</em>}</li>
  * </ul>
  *
  * @see org.eclipse.cmf.occi.core.OCCIPackage#getAttribute()
@@ -177,12 +175,12 @@ public interface Attribute extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
-	 * @see #setType(EClassifier)
+	 * @see #setType(DataType)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getAttribute_Type()
 	 * @model
 	 * @generated
 	 */
-	EClassifier getType();
+	DataType getType();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.cmf.occi.core.Attribute#getType <em>Type</em>}' reference.
@@ -192,33 +190,6 @@ public interface Attribute extends EObject {
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(EClassifier value);
-
-	/**
-	 * Returns the value of the '<em><b>Multiple values</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Multiple values</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Multiple values</em>' attribute.
-	 * @see #setMultiple_values(boolean)
-	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getAttribute_Multiple_values()
-	 * @model default="false" dataType="org.eclipse.cmf.occi.core.Boolean"
-	 * @generated
-	 */
-	boolean isMultiple_values();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.core.Attribute#isMultiple_values <em>Multiple values</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Multiple values</em>' attribute.
-	 * @see #isMultiple_values()
-	 * @generated
-	 */
-	void setMultiple_values(boolean value);
+	void setType(DataType value);
 
 } // Attribute
