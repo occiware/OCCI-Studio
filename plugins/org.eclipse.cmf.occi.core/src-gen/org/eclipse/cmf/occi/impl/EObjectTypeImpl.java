@@ -11,78 +11,75 @@
  */
 package org.eclipse.cmf.occi.impl;
 
+import org.eclipse.cmf.occi.core.EObjectType;
 import org.eclipse.cmf.occi.core.OCCIPackage;
-import org.eclipse.cmf.occi.core.TypeAnnotation;
-import org.eclipse.cmf.occi.core.TypeAnnotationKey;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Type Annotation</b></em>'.
+ * An implementation of the model object '<em><b>EObject Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.impl.TypeAnnotationImpl#getKey <em>Key</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.impl.TypeAnnotationImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.impl.EObjectTypeImpl#getInstanceClassName <em>Instance Class Name</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.impl.EObjectTypeImpl#getPattern <em>Pattern</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TypeAnnotationImpl extends MinimalEObjectImpl.Container implements TypeAnnotation {
+public class EObjectTypeImpl extends BasicTypeImpl implements EObjectType {
 	/**
-	 * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
+	 * The default value of the '{@link #getInstanceClassName() <em>Instance Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getKey()
+	 * @see #getInstanceClassName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final TypeAnnotationKey KEY_EDEFAULT = TypeAnnotationKey.TOTAL_DIGITS;
+	protected static final String INSTANCE_CLASS_NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getKey() <em>Key</em>}' attribute.
+	 * The cached value of the '{@link #getInstanceClassName() <em>Instance Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getKey()
+	 * @see #getInstanceClassName()
 	 * @generated
 	 * @ordered
 	 */
-	protected TypeAnnotationKey key = KEY_EDEFAULT;
+	protected String instanceClassName = INSTANCE_CLASS_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * The default value of the '{@link #getPattern() <em>Pattern</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValue()
+	 * @see #getPattern()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int VALUE_EDEFAULT = 0;
+	protected static final String PATTERN_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * The cached value of the '{@link #getPattern() <em>Pattern</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValue()
+	 * @see #getPattern()
 	 * @generated
 	 * @ordered
 	 */
-	protected int value = VALUE_EDEFAULT;
+	protected String pattern = PATTERN_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TypeAnnotationImpl() {
+	protected EObjectTypeImpl() {
 		super();
 	}
 
@@ -93,7 +90,7 @@ public class TypeAnnotationImpl extends MinimalEObjectImpl.Container implements 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OCCIPackage.Literals.TYPE_ANNOTATION;
+		return OCCIPackage.Literals.EOBJECT_TYPE;
 	}
 
 	/**
@@ -101,8 +98,8 @@ public class TypeAnnotationImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TypeAnnotationKey getKey() {
-		return key;
+	public String getInstanceClassName() {
+		return instanceClassName;
 	}
 
 	/**
@@ -110,11 +107,11 @@ public class TypeAnnotationImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setKey(TypeAnnotationKey newKey) {
-		TypeAnnotationKey oldKey = key;
-		key = newKey == null ? KEY_EDEFAULT : newKey;
+	public void setInstanceClassName(String newInstanceClassName) {
+		String oldInstanceClassName = instanceClassName;
+		instanceClassName = newInstanceClassName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.TYPE_ANNOTATION__KEY, oldKey, key));
+			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.EOBJECT_TYPE__INSTANCE_CLASS_NAME, oldInstanceClassName, instanceClassName));
 	}
 
 	/**
@@ -122,8 +119,8 @@ public class TypeAnnotationImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getValue() {
-		return value;
+	public String getPattern() {
+		return pattern;
 	}
 
 	/**
@@ -131,11 +128,11 @@ public class TypeAnnotationImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(int newValue) {
-		int oldValue = value;
-		value = newValue;
+	public void setPattern(String newPattern) {
+		String oldPattern = pattern;
+		pattern = newPattern;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.TYPE_ANNOTATION__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.EOBJECT_TYPE__PATTERN, oldPattern, pattern));
 	}
 
 	/**
@@ -146,10 +143,10 @@ public class TypeAnnotationImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OCCIPackage.TYPE_ANNOTATION__KEY:
-				return getKey();
-			case OCCIPackage.TYPE_ANNOTATION__VALUE:
-				return getValue();
+			case OCCIPackage.EOBJECT_TYPE__INSTANCE_CLASS_NAME:
+				return getInstanceClassName();
+			case OCCIPackage.EOBJECT_TYPE__PATTERN:
+				return getPattern();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -162,11 +159,11 @@ public class TypeAnnotationImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OCCIPackage.TYPE_ANNOTATION__KEY:
-				setKey((TypeAnnotationKey)newValue);
+			case OCCIPackage.EOBJECT_TYPE__INSTANCE_CLASS_NAME:
+				setInstanceClassName((String)newValue);
 				return;
-			case OCCIPackage.TYPE_ANNOTATION__VALUE:
-				setValue((Integer)newValue);
+			case OCCIPackage.EOBJECT_TYPE__PATTERN:
+				setPattern((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -180,11 +177,11 @@ public class TypeAnnotationImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OCCIPackage.TYPE_ANNOTATION__KEY:
-				setKey(KEY_EDEFAULT);
+			case OCCIPackage.EOBJECT_TYPE__INSTANCE_CLASS_NAME:
+				setInstanceClassName(INSTANCE_CLASS_NAME_EDEFAULT);
 				return;
-			case OCCIPackage.TYPE_ANNOTATION__VALUE:
-				setValue(VALUE_EDEFAULT);
+			case OCCIPackage.EOBJECT_TYPE__PATTERN:
+				setPattern(PATTERN_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -198,10 +195,10 @@ public class TypeAnnotationImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OCCIPackage.TYPE_ANNOTATION__KEY:
-				return key != KEY_EDEFAULT;
-			case OCCIPackage.TYPE_ANNOTATION__VALUE:
-				return value != VALUE_EDEFAULT;
+			case OCCIPackage.EOBJECT_TYPE__INSTANCE_CLASS_NAME:
+				return INSTANCE_CLASS_NAME_EDEFAULT == null ? instanceClassName != null : !INSTANCE_CLASS_NAME_EDEFAULT.equals(instanceClassName);
+			case OCCIPackage.EOBJECT_TYPE__PATTERN:
+				return PATTERN_EDEFAULT == null ? pattern != null : !PATTERN_EDEFAULT.equals(pattern);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -216,12 +213,12 @@ public class TypeAnnotationImpl extends MinimalEObjectImpl.Container implements 
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (key: ");
-		result.append(key);
-		result.append(", value: ");
-		result.append(value);
+		result.append(" (instanceClassName: ");
+		result.append(instanceClassName);
+		result.append(", pattern: ");
+		result.append(pattern);
 		result.append(')');
 		return result.toString();
 	}
 
-} //TypeAnnotationImpl
+} //EObjectTypeImpl

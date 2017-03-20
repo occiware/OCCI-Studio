@@ -12,12 +12,12 @@
 package org.eclipse.cmf.occi.impl;
 
 import org.eclipse.cmf.occi.core.ArrayType;
+import org.eclipse.cmf.occi.core.DataType;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -43,7 +43,7 @@ public class ArrayTypeImpl extends DataTypeImpl implements ArrayType {
 	 * @generated
 	 * @ordered
 	 */
-	protected EClassifier type;
+	protected DataType type;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,10 +69,10 @@ public class ArrayTypeImpl extends DataTypeImpl implements ArrayType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClassifier getType() {
+	public DataType getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
-			type = (EClassifier)eResolveProxy(oldType);
+			type = (DataType)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OCCIPackage.ARRAY_TYPE__TYPE, oldType, type));
@@ -86,7 +86,7 @@ public class ArrayTypeImpl extends DataTypeImpl implements ArrayType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClassifier basicGetType() {
+	public DataType basicGetType() {
 		return type;
 	}
 
@@ -95,8 +95,8 @@ public class ArrayTypeImpl extends DataTypeImpl implements ArrayType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(EClassifier newType) {
-		EClassifier oldType = type;
+	public void setType(DataType newType) {
+		DataType oldType = type;
 		type = newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.ARRAY_TYPE__TYPE, oldType, type));
@@ -126,7 +126,7 @@ public class ArrayTypeImpl extends DataTypeImpl implements ArrayType {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case OCCIPackage.ARRAY_TYPE__TYPE:
-				setType((EClassifier)newValue);
+				setType((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -141,7 +141,7 @@ public class ArrayTypeImpl extends DataTypeImpl implements ArrayType {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case OCCIPackage.ARRAY_TYPE__TYPE:
-				setType((EClassifier)null);
+				setType((DataType)null);
 				return;
 		}
 		super.eUnset(featureID);

@@ -11,8 +11,6 @@
  */
 package org.eclipse.cmf.occi.core;
 
-import org.eclipse.emf.ecore.EClassifier;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Array Type</b></em>'.
@@ -39,12 +37,12 @@ public interface ArrayType extends DataType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
-	 * @see #setType(EClassifier)
+	 * @see #setType(DataType)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getArrayType_Type()
 	 * @model required="true"
 	 * @generated
 	 */
-	EClassifier getType();
+	DataType getType();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.cmf.occi.core.ArrayType#getType <em>Type</em>}' reference.
@@ -54,6 +52,6 @@ public interface ArrayType extends DataType {
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(EClassifier value);
+	void setType(DataType value);
 
 } // ArrayType

@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.core.DataType#getDocumentation <em>Documentation</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.DataType#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.DataType#getDocumentation <em>Documentation</em>}</li>
  * </ul>
  *
  * @see org.eclipse.cmf.occi.core.OCCIPackage#getDataType()

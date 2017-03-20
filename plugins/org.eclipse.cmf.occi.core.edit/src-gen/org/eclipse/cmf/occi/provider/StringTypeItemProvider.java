@@ -32,7 +32,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StringTypeItemProvider extends DataTypeItemProvider {
+public class StringTypeItemProvider extends BasicTypeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -55,6 +55,9 @@ public class StringTypeItemProvider extends DataTypeItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addPatternPropertyDescriptor(object);
+			addLengthPropertyDescriptor(object);
+			addMinLengthPropertyDescriptor(object);
+			addMaxLengthPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -77,6 +80,72 @@ public class StringTypeItemProvider extends DataTypeItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Length feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLengthPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_StringType_length_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_StringType_length_feature", "_UI_StringType_type"),
+				 OCCIPackage.Literals.STRING_TYPE__LENGTH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Min Length feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMinLengthPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_StringType_minLength_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_StringType_minLength_feature", "_UI_StringType_type"),
+				 OCCIPackage.Literals.STRING_TYPE__MIN_LENGTH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Max Length feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMaxLengthPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_StringType_maxLength_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_StringType_maxLength_feature", "_UI_StringType_type"),
+				 OCCIPackage.Literals.STRING_TYPE__MAX_LENGTH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -120,6 +189,9 @@ public class StringTypeItemProvider extends DataTypeItemProvider {
 
 		switch (notification.getFeatureID(StringType.class)) {
 			case OCCIPackage.STRING_TYPE__PATTERN:
+			case OCCIPackage.STRING_TYPE__LENGTH:
+			case OCCIPackage.STRING_TYPE__MIN_LENGTH:
+			case OCCIPackage.STRING_TYPE__MAX_LENGTH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

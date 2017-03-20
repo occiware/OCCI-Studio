@@ -51,12 +51,28 @@ public class OCCIValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.eclipse.cmf.occi.core";
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate' of 'FSM'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int FSM__VALIDATE = 1;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate' of 'Numeric Type'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int NUMERIC_TYPE__VALIDATE = 2;
+
+	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 0;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 2;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -136,14 +152,12 @@ public class OCCIValidator extends EObjectValidator {
 				return validateBasicType((BasicType)value, diagnostics, context);
 			case OCCIPackage.STRING_TYPE:
 				return validateStringType((StringType)value, diagnostics, context);
+			case OCCIPackage.EOBJECT_TYPE:
+				return validateEObjectType((EObjectType)value, diagnostics, context);
 			case OCCIPackage.BOOLEAN_TYPE:
 				return validateBooleanType((BooleanType)value, diagnostics, context);
 			case OCCIPackage.NUMERIC_TYPE:
 				return validateNumericType((NumericType)value, diagnostics, context);
-			case OCCIPackage.INTEGER_TYPE:
-				return validateIntegerType((IntegerType)value, diagnostics, context);
-			case OCCIPackage.FLOAT_TYPE:
-				return validateFloatType((FloatType)value, diagnostics, context);
 			case OCCIPackage.ENUMERATION_TYPE:
 				return validateEnumerationType((EnumerationType)value, diagnostics, context);
 			case OCCIPackage.ENUMERATION_LITERAL:
@@ -154,10 +168,8 @@ public class OCCIValidator extends EObjectValidator {
 				return validateRecordFieldDeclaration((RecordFieldDeclaration)value, diagnostics, context);
 			case OCCIPackage.ARRAY_TYPE:
 				return validateArrayType((ArrayType)value, diagnostics, context);
-			case OCCIPackage.TYPE_ANNOTATION:
-				return validateTypeAnnotation((TypeAnnotation)value, diagnostics, context);
-			case OCCIPackage.TYPE_ANNOTATION_KEY:
-				return validateTypeAnnotationKey((TypeAnnotationKey)value, diagnostics, context);
+			case OCCIPackage.NUMERIC_TYPE_ENUM:
+				return validateNumericTypeEnum((NumericTypeEnum)value, diagnostics, context);
 			case OCCIPackage.URI:
 				return validateURI((String)value, diagnostics, context);
 			case OCCIPackage.OCL:
@@ -391,6 +403,7 @@ public class OCCIValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(fsm, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(fsm, diagnostics, context);
 		if (result || diagnostics != null) result &= validateFSM_AttributeTypeMustBeEEnum(fsm, diagnostics, context);
+		if (result || diagnostics != null) result &= validateFSM_validate(fsm, diagnostics, context);
 		return result;
 	}
 
@@ -421,6 +434,16 @@ public class OCCIValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
+	}
+
+	/**
+	 * Validates the validate constraint of '<em>FSM</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFSM_validate(FSM fsm, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return fsm.validate(diagnostics, context);
 	}
 
 	/**
@@ -1511,6 +1534,15 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateEObjectType(EObjectType eObjectType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(eObjectType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateBooleanType(BooleanType booleanType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(booleanType, diagnostics, context);
 	}
@@ -1521,25 +1553,27 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateNumericType(NumericType numericType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(numericType, diagnostics, context);
+		if (!validate_NoCircularContainment(numericType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(numericType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(numericType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(numericType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(numericType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(numericType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(numericType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(numericType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(numericType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNumericType_validate(numericType, diagnostics, context);
+		return result;
 	}
 
 	/**
+	 * Validates the validate constraint of '<em>Numeric Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateIntegerType(IntegerType integerType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(integerType, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateFloatType(FloatType floatType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(floatType, diagnostics, context);
+	public boolean validateNumericType_validate(NumericType numericType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return numericType.validate(diagnostics, context);
 	}
 
 	/**
@@ -1592,16 +1626,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTypeAnnotation(TypeAnnotation typeAnnotation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(typeAnnotation, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateTypeAnnotationKey(TypeAnnotationKey typeAnnotationKey, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateNumericTypeEnum(NumericTypeEnum numericTypeEnum, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

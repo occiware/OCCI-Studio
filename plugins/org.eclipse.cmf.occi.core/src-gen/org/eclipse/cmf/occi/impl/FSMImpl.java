@@ -11,16 +11,27 @@
  */
 package org.eclipse.cmf.occi.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
+import java.util.Map;
+
+import org.eclipse.cmf.occi.core.Action;
 import org.eclipse.cmf.occi.core.Attribute;
 import org.eclipse.cmf.occi.core.FSM;
+import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.cmf.occi.core.State;
-
+import org.eclipse.cmf.occi.core.Transition;
+import org.eclipse.cmf.occi.core.Type;
+import org.eclipse.cmf.occi.util.OCCIValidator;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -28,9 +39,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+
+
 
 /**
  * <!-- begin-user-doc -->
@@ -139,6 +152,60 @@ public class FSMImpl extends MinimalEObjectImpl.Container implements FSM {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean validate(DiagnosticChain diagnostic, Map<Object, Object> context) {
+		EList<Action> declaredActions = ((Type)eContainer()).getActions();
+		EList<Action> usedActions = new BasicEList<Action>();
+		for (State state: getOwnedState()){
+			for(Transition tr: state.getOutgoingTransition()){
+				if(tr.getAction() != null){
+					if(! usedActions.contains(tr.getAction())){
+						usedActions.add(tr.getAction());
+					}
+				}
+			}
+		}
+		EList<Action> notUsedActions = new BasicEList<Action>();
+		for(Action action:declaredActions){
+			if(!usedActions.contains(action)){
+				notUsedActions.add(action);
+			}
+		}
+		
+		boolean valid = true;
+		if (diagnostic != null) {
+			if (notUsedActions.size() != 0) {
+				valid = false;
+				for(Action action:notUsedActions){
+				diagnostic.add(new BasicDiagnostic(Diagnostic.WARNING,
+						OCCIValidator.DIAGNOSTIC_SOURCE,
+						OCCIValidator.FSM__VALIDATE, "The declared action "+action.getName()+ " doesn't appear in the FSM of "+((Kind)action.eContainer()).getName()+" kind",
+						new Object[] { this }));
+				}
+			}
+		}
+		return valid;
+		// -> specify the condition that violates the invariant
+		// -> verify the details of the diagnostic, including severity and message
+		// Ensure that you remove @generated or mark it @generated NOT
+//		if (false) {
+//			if (diagnostic != null) {
+//				diagnostic.add
+//					(new BasicDiagnostic
+//						(Diagnostic.ERROR,
+//						 OCCIValidator.DIAGNOSTIC_SOURCE,
+//						 OCCIValidator.FSM__VALIDATE,
+//						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validate", EObjectValidator.getObjectLabel(this, context) }),
+//						 new Object [] { this }));
+//			}
+//			return false;
+//		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -234,6 +301,21 @@ public class FSMImpl extends MinimalEObjectImpl.Container implements FSM {
 				return attribute != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OCCIPackage.FSM___VALIDATE__DIAGNOSTICCHAIN_MAP:
+				return validate((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //FSMImpl

@@ -22,7 +22,7 @@ import org.eclipse.cmf.occi.core.StringType;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StringTypeTest extends DataTypeTest {
+public class StringTypeTest extends BasicTypeTest {
 
 	/**
 	 * <!-- begin-user-doc -->

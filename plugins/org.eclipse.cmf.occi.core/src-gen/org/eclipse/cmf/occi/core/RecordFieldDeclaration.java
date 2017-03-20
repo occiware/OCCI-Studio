@@ -11,7 +11,6 @@
  */
 package org.eclipse.cmf.occi.core;
 
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -41,12 +40,12 @@ public interface RecordFieldDeclaration extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
-	 * @see #setType(EClassifier)
+	 * @see #setType(DataType)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getRecordFieldDeclaration_Type()
 	 * @model required="true"
 	 * @generated
 	 */
-	EClassifier getType();
+	DataType getType();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.cmf.occi.core.RecordFieldDeclaration#getType <em>Type</em>}' reference.
@@ -56,7 +55,7 @@ public interface RecordFieldDeclaration extends EObject {
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(EClassifier value);
+	void setType(DataType value);
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

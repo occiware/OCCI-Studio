@@ -147,7 +147,7 @@ public class FSMItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		if(((FSM)object).getAttribute() != null)
+		if(((FSM)object).getAttribute() != null &((FSM)object).getAttribute().getType()!= null)
 			return getString("_UI_FSM_type") + " "+ ((FSM)object).getAttribute().getName()+" "+((FSM)object).getAttribute().getType().getName();
 		else
 			return getString("_UI_FSM_type");
@@ -159,17 +159,17 @@ public class FSMItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(FSM.class)) {
-			case OCCIPackage.FSM__OWNED_STATE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
-		}
+		fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+//		switch (notification.getFeatureID(FSM.class)) {
+//			case OCCIPackage.FSM__OWNED_STATE:
+//				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+//				return;
+//		}
 		super.notifyChanged(notification);
 	}
 

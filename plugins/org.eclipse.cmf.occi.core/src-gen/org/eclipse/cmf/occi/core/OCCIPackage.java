@@ -327,13 +327,22 @@ public interface OCCIPackage extends EPackage {
 	int FSM_FEATURE_COUNT = 2;
 
 	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FSM___VALIDATE__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
 	 * The number of operations of the '<em>FSM</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FSM_OPERATION_COUNT = 0;
+	int FSM_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.StateImpl <em>State</em>}' class.
@@ -1565,22 +1574,22 @@ public interface OCCIPackage extends EPackage {
 	int DATA_TYPE = 17;
 
 	/**
-	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE__DOCUMENTATION = 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE__NAME = 1;
+	int DATA_TYPE__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__DOCUMENTATION = 1;
 
 	/**
 	 * The number of structural features of the '<em>Data Type</em>' class.
@@ -1611,15 +1620,6 @@ public interface OCCIPackage extends EPackage {
 	int BASIC_TYPE = 18;
 
 	/**
-	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASIC_TYPE__DOCUMENTATION = DATA_TYPE__DOCUMENTATION;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1629,13 +1629,13 @@ public interface OCCIPackage extends EPackage {
 	int BASIC_TYPE__NAME = DATA_TYPE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BASIC_TYPE__ANNOTATIONS = DATA_TYPE_FEATURE_COUNT + 0;
+	int BASIC_TYPE__DOCUMENTATION = DATA_TYPE__DOCUMENTATION;
 
 	/**
 	 * The number of structural features of the '<em>Basic Type</em>' class.
@@ -1644,7 +1644,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BASIC_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+	int BASIC_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Basic Type</em>' class.
@@ -1666,22 +1666,22 @@ public interface OCCIPackage extends EPackage {
 	int STRING_TYPE = 19;
 
 	/**
-	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_TYPE__DOCUMENTATION = DATA_TYPE__DOCUMENTATION;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRING_TYPE__NAME = DATA_TYPE__NAME;
+	int STRING_TYPE__NAME = BASIC_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TYPE__DOCUMENTATION = BASIC_TYPE__DOCUMENTATION;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' attribute.
@@ -1690,7 +1690,34 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRING_TYPE__PATTERN = DATA_TYPE_FEATURE_COUNT + 0;
+	int STRING_TYPE__PATTERN = BASIC_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TYPE__LENGTH = BASIC_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Min Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TYPE__MIN_LENGTH = BASIC_TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Max Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TYPE__MAX_LENGTH = BASIC_TYPE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>String Type</em>' class.
@@ -1699,7 +1726,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRING_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+	int STRING_TYPE_FEATURE_COUNT = BASIC_TYPE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>String Type</em>' class.
@@ -1708,7 +1735,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRING_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+	int STRING_TYPE_OPERATION_COUNT = BASIC_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
@@ -1718,7 +1745,36 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getBooleanType()
 	 * @generated
 	 */
-	int BOOLEAN_TYPE = 20;
+	int BOOLEAN_TYPE = 21;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.NumericTypeImpl <em>Numeric Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.impl.NumericTypeImpl
+	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getNumericType()
+	 * @generated
+	 */
+	int NUMERIC_TYPE = 22;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.EObjectTypeImpl <em>EObject Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.impl.EObjectTypeImpl
+	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getEObjectType()
+	 * @generated
+	 */
+	int EOBJECT_TYPE = 20;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EOBJECT_TYPE__NAME = BASIC_TYPE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
@@ -1727,7 +1783,43 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOLEAN_TYPE__DOCUMENTATION = BASIC_TYPE__DOCUMENTATION;
+	int EOBJECT_TYPE__DOCUMENTATION = BASIC_TYPE__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Instance Class Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EOBJECT_TYPE__INSTANCE_CLASS_NAME = BASIC_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Pattern</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EOBJECT_TYPE__PATTERN = BASIC_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>EObject Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EOBJECT_TYPE_FEATURE_COUNT = BASIC_TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>EObject Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EOBJECT_TYPE_OPERATION_COUNT = BASIC_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1739,13 +1831,13 @@ public interface OCCIPackage extends EPackage {
 	int BOOLEAN_TYPE__NAME = BASIC_TYPE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOLEAN_TYPE__ANNOTATIONS = BASIC_TYPE__ANNOTATIONS;
+	int BOOLEAN_TYPE__DOCUMENTATION = BASIC_TYPE__DOCUMENTATION;
 
 	/**
 	 * The number of structural features of the '<em>Boolean Type</em>' class.
@@ -1766,14 +1858,13 @@ public interface OCCIPackage extends EPackage {
 	int BOOLEAN_TYPE_OPERATION_COUNT = BASIC_TYPE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.NumericTypeImpl <em>Numeric Type</em>}' class.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.NumericTypeImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getNumericType()
 	 * @generated
+	 * @ordered
 	 */
-	int NUMERIC_TYPE = 21;
+	int NUMERIC_TYPE__NAME = BASIC_TYPE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
@@ -1785,22 +1876,58 @@ public interface OCCIPackage extends EPackage {
 	int NUMERIC_TYPE__DOCUMENTATION = BASIC_TYPE__DOCUMENTATION;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NUMERIC_TYPE__NAME = BASIC_TYPE__NAME;
+	int NUMERIC_TYPE__TYPE = BASIC_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Total Digits</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NUMERIC_TYPE__ANNOTATIONS = BASIC_TYPE__ANNOTATIONS;
+	int NUMERIC_TYPE__TOTAL_DIGITS = BASIC_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Min Exclusive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMERIC_TYPE__MIN_EXCLUSIVE = BASIC_TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Max Exclusive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMERIC_TYPE__MAX_EXCLUSIVE = BASIC_TYPE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Min Inclusive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMERIC_TYPE__MIN_INCLUSIVE = BASIC_TYPE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Max Inclusive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMERIC_TYPE__MAX_INCLUSIVE = BASIC_TYPE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Numeric Type</em>' class.
@@ -1809,7 +1936,16 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NUMERIC_TYPE_FEATURE_COUNT = BASIC_TYPE_FEATURE_COUNT + 0;
+	int NUMERIC_TYPE_FEATURE_COUNT = BASIC_TYPE_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMERIC_TYPE___VALIDATE__DIAGNOSTICCHAIN_MAP = BASIC_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Numeric Type</em>' class.
@@ -1818,117 +1954,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NUMERIC_TYPE_OPERATION_COUNT = BASIC_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.IntegerTypeImpl <em>Integer Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.IntegerTypeImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getIntegerType()
-	 * @generated
-	 */
-	int INTEGER_TYPE = 22;
-
-	/**
-	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_TYPE__DOCUMENTATION = NUMERIC_TYPE__DOCUMENTATION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_TYPE__NAME = NUMERIC_TYPE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_TYPE__ANNOTATIONS = NUMERIC_TYPE__ANNOTATIONS;
-
-	/**
-	 * The number of structural features of the '<em>Integer Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_TYPE_FEATURE_COUNT = NUMERIC_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Integer Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_TYPE_OPERATION_COUNT = NUMERIC_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.FloatTypeImpl <em>Float Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.FloatTypeImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getFloatType()
-	 * @generated
-	 */
-	int FLOAT_TYPE = 23;
-
-	/**
-	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLOAT_TYPE__DOCUMENTATION = BASIC_TYPE__DOCUMENTATION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLOAT_TYPE__NAME = BASIC_TYPE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLOAT_TYPE__ANNOTATIONS = BASIC_TYPE__ANNOTATIONS;
-
-	/**
-	 * The number of structural features of the '<em>Float Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLOAT_TYPE_FEATURE_COUNT = BASIC_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Float Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLOAT_TYPE_OPERATION_COUNT = BASIC_TYPE_OPERATION_COUNT + 0;
+	int NUMERIC_TYPE_OPERATION_COUNT = BASIC_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.EnumerationTypeImpl <em>Enumeration Type</em>}' class.
@@ -1938,16 +1964,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getEnumerationType()
 	 * @generated
 	 */
-	int ENUMERATION_TYPE = 24;
-
-	/**
-	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENUMERATION_TYPE__DOCUMENTATION = DATA_TYPE__DOCUMENTATION;
+	int ENUMERATION_TYPE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1957,6 +1974,15 @@ public interface OCCIPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENUMERATION_TYPE__NAME = DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_TYPE__DOCUMENTATION = DATA_TYPE__DOCUMENTATION;
 
 	/**
 	 * The feature id for the '<em><b>Literals</b></em>' containment reference list.
@@ -1993,7 +2019,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getEnumerationLiteral()
 	 * @generated
 	 */
-	int ENUMERATION_LITERAL = 25;
+	int ENUMERATION_LITERAL = 24;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2039,16 +2065,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getRecordType()
 	 * @generated
 	 */
-	int RECORD_TYPE = 26;
-
-	/**
-	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECORD_TYPE__DOCUMENTATION = DATA_TYPE__DOCUMENTATION;
+	int RECORD_TYPE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2058,6 +2075,15 @@ public interface OCCIPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECORD_TYPE__NAME = DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_TYPE__DOCUMENTATION = DATA_TYPE__DOCUMENTATION;
 
 	/**
 	 * The feature id for the '<em><b>Record Filed Declarations</b></em>' reference list.
@@ -2094,7 +2120,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getRecordFieldDeclaration()
 	 * @generated
 	 */
-	int RECORD_FIELD_DECLARATION = 27;
+	int RECORD_FIELD_DECLARATION = 26;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -2140,16 +2166,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getArrayType()
 	 * @generated
 	 */
-	int ARRAY_TYPE = 28;
-
-	/**
-	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARRAY_TYPE__DOCUMENTATION = DATA_TYPE__DOCUMENTATION;
+	int ARRAY_TYPE = 27;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2159,6 +2176,15 @@ public interface OCCIPackage extends EPackage {
 	 * @ordered
 	 */
 	int ARRAY_TYPE__NAME = DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_TYPE__DOCUMENTATION = DATA_TYPE__DOCUMENTATION;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -2188,60 +2214,14 @@ public interface OCCIPackage extends EPackage {
 	int ARRAY_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.TypeAnnotationImpl <em>Type Annotation</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.NumericTypeEnum <em>Numeric Type Enum</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.TypeAnnotationImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getTypeAnnotation()
+	 * @see org.eclipse.cmf.occi.core.NumericTypeEnum
+	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getNumericTypeEnum()
 	 * @generated
 	 */
-	int TYPE_ANNOTATION = 29;
-
-	/**
-	 * The feature id for the '<em><b>Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_ANNOTATION__KEY = 0;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_ANNOTATION__VALUE = 1;
-
-	/**
-	 * The number of structural features of the '<em>Type Annotation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_ANNOTATION_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Type Annotation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_ANNOTATION_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.TypeAnnotationKey <em>Type Annotation Key</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.core.TypeAnnotationKey
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getTypeAnnotationKey()
-	 * @generated
-	 */
-	int TYPE_ANNOTATION_KEY = 30;
+	int NUMERIC_TYPE_ENUM = 28;
 
 	/**
 	 * The meta object id for the '<em>URI</em>' data type.
@@ -2251,7 +2231,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getURI()
 	 * @generated
 	 */
-	int URI = 31;
+	int URI = 29;
 
 	/**
 	 * The meta object id for the '<em>OCL</em>' data type.
@@ -2261,7 +2241,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getOCL()
 	 * @generated
 	 */
-	int OCL = 32;
+	int OCL = 30;
 
 	/**
 	 * The meta object id for the '<em>String</em>' data type.
@@ -2271,7 +2251,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getString()
 	 * @generated
 	 */
-	int STRING = 33;
+	int STRING = 31;
 
 	/**
 	 * The meta object id for the '<em>Boolean</em>' data type.
@@ -2280,7 +2260,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getBoolean()
 	 * @generated
 	 */
-	int BOOLEAN = 34;
+	int BOOLEAN = 32;
 
 	/**
 	 * The meta object id for the '<em>Attribute Name</em>' data type.
@@ -2290,7 +2270,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getAttributeName()
 	 * @generated
 	 */
-	int ATTRIBUTE_NAME = 35;
+	int ATTRIBUTE_NAME = 33;
 
 	/**
 	 * The meta object id for the '<em>Name</em>' data type.
@@ -2300,7 +2280,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getName_()
 	 * @generated
 	 */
-	int NAME = 36;
+	int NAME = 34;
 
 	/**
 	 * The meta object id for the '<em>Scheme</em>' data type.
@@ -2310,7 +2290,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getScheme()
 	 * @generated
 	 */
-	int SCHEME = 37;
+	int SCHEME = 35;
 
 
 	/**
@@ -2484,6 +2464,16 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getFSM_Attribute();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.FSM#validate(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Validate</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.FSM#validate(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getFSM__Validate__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.State <em>State</em>}'.
@@ -3248,17 +3238,6 @@ public interface OCCIPackage extends EPackage {
 	EClass getBasicType();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.cmf.occi.core.BasicType#getAnnotations <em>Annotations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Annotations</em>'.
-	 * @see org.eclipse.cmf.occi.core.BasicType#getAnnotations()
-	 * @see #getBasicType()
-	 * @generated
-	 */
-	EReference getBasicType_Annotations();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.StringType <em>String Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3278,6 +3257,71 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getStringType_Pattern();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.StringType#getLength <em>Length</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Length</em>'.
+	 * @see org.eclipse.cmf.occi.core.StringType#getLength()
+	 * @see #getStringType()
+	 * @generated
+	 */
+	EAttribute getStringType_Length();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.StringType#getMinLength <em>Min Length</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Min Length</em>'.
+	 * @see org.eclipse.cmf.occi.core.StringType#getMinLength()
+	 * @see #getStringType()
+	 * @generated
+	 */
+	EAttribute getStringType_MinLength();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.StringType#getMaxLength <em>Max Length</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Max Length</em>'.
+	 * @see org.eclipse.cmf.occi.core.StringType#getMaxLength()
+	 * @see #getStringType()
+	 * @generated
+	 */
+	EAttribute getStringType_MaxLength();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.EObjectType <em>EObject Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>EObject Type</em>'.
+	 * @see org.eclipse.cmf.occi.core.EObjectType
+	 * @generated
+	 */
+	EClass getEObjectType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.EObjectType#getInstanceClassName <em>Instance Class Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Instance Class Name</em>'.
+	 * @see org.eclipse.cmf.occi.core.EObjectType#getInstanceClassName()
+	 * @see #getEObjectType()
+	 * @generated
+	 */
+	EAttribute getEObjectType_InstanceClassName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.EObjectType#getPattern <em>Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Pattern</em>'.
+	 * @see org.eclipse.cmf.occi.core.EObjectType#getPattern()
+	 * @see #getEObjectType()
+	 * @generated
+	 */
+	EAttribute getEObjectType_Pattern();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.BooleanType <em>Boolean Type</em>}'.
@@ -3300,24 +3344,80 @@ public interface OCCIPackage extends EPackage {
 	EClass getNumericType();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.IntegerType <em>Integer Type</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.NumericType#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Integer Type</em>'.
-	 * @see org.eclipse.cmf.occi.core.IntegerType
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see org.eclipse.cmf.occi.core.NumericType#getType()
+	 * @see #getNumericType()
 	 * @generated
 	 */
-	EClass getIntegerType();
+	EAttribute getNumericType_Type();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.FloatType <em>Float Type</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.NumericType#getTotalDigits <em>Total Digits</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Float Type</em>'.
-	 * @see org.eclipse.cmf.occi.core.FloatType
+	 * @return the meta object for the attribute '<em>Total Digits</em>'.
+	 * @see org.eclipse.cmf.occi.core.NumericType#getTotalDigits()
+	 * @see #getNumericType()
 	 * @generated
 	 */
-	EClass getFloatType();
+	EAttribute getNumericType_TotalDigits();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.NumericType#getMinExclusive <em>Min Exclusive</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Min Exclusive</em>'.
+	 * @see org.eclipse.cmf.occi.core.NumericType#getMinExclusive()
+	 * @see #getNumericType()
+	 * @generated
+	 */
+	EAttribute getNumericType_MinExclusive();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.NumericType#getMaxExclusive <em>Max Exclusive</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Max Exclusive</em>'.
+	 * @see org.eclipse.cmf.occi.core.NumericType#getMaxExclusive()
+	 * @see #getNumericType()
+	 * @generated
+	 */
+	EAttribute getNumericType_MaxExclusive();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.NumericType#getMinInclusive <em>Min Inclusive</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Min Inclusive</em>'.
+	 * @see org.eclipse.cmf.occi.core.NumericType#getMinInclusive()
+	 * @see #getNumericType()
+	 * @generated
+	 */
+	EAttribute getNumericType_MinInclusive();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.NumericType#getMaxInclusive <em>Max Inclusive</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Max Inclusive</em>'.
+	 * @see org.eclipse.cmf.occi.core.NumericType#getMaxInclusive()
+	 * @see #getNumericType()
+	 * @generated
+	 */
+	EAttribute getNumericType_MaxInclusive();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.NumericType#validate(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Validate</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.NumericType#validate(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getNumericType__Validate__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.EnumerationType <em>Enumeration Type</em>}'.
@@ -3447,46 +3547,14 @@ public interface OCCIPackage extends EPackage {
 	EReference getArrayType_Type();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.TypeAnnotation <em>Type Annotation</em>}'.
+	 * Returns the meta object for enum '{@link org.eclipse.cmf.occi.core.NumericTypeEnum <em>Numeric Type Enum</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Type Annotation</em>'.
-	 * @see org.eclipse.cmf.occi.core.TypeAnnotation
+	 * @return the meta object for enum '<em>Numeric Type Enum</em>'.
+	 * @see org.eclipse.cmf.occi.core.NumericTypeEnum
 	 * @generated
 	 */
-	EClass getTypeAnnotation();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.TypeAnnotation#getKey <em>Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Key</em>'.
-	 * @see org.eclipse.cmf.occi.core.TypeAnnotation#getKey()
-	 * @see #getTypeAnnotation()
-	 * @generated
-	 */
-	EAttribute getTypeAnnotation_Key();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.TypeAnnotation#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see org.eclipse.cmf.occi.core.TypeAnnotation#getValue()
-	 * @see #getTypeAnnotation()
-	 * @generated
-	 */
-	EAttribute getTypeAnnotation_Value();
-
-	/**
-	 * Returns the meta object for enum '{@link org.eclipse.cmf.occi.core.TypeAnnotationKey <em>Type Annotation Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Type Annotation Key</em>'.
-	 * @see org.eclipse.cmf.occi.core.TypeAnnotationKey
-	 * @generated
-	 */
-	EEnum getTypeAnnotationKey();
+	EEnum getNumericTypeEnum();
 
 	/**
 	 * Returns the meta object for data type '{@link java.lang.String <em>URI</em>}'.
@@ -3726,6 +3794,14 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FSM__ATTRIBUTE = eINSTANCE.getFSM_Attribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Validate</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FSM___VALIDATE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getFSM__Validate__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.StateImpl <em>State</em>}' class.
@@ -4326,14 +4402,6 @@ public interface OCCIPackage extends EPackage {
 		EClass BASIC_TYPE = eINSTANCE.getBasicType();
 
 		/**
-		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BASIC_TYPE__ANNOTATIONS = eINSTANCE.getBasicType_Annotations();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.StringTypeImpl <em>String Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4350,6 +4418,56 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STRING_TYPE__PATTERN = eINSTANCE.getStringType_Pattern();
+
+		/**
+		 * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_TYPE__LENGTH = eINSTANCE.getStringType_Length();
+
+		/**
+		 * The meta object literal for the '<em><b>Min Length</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_TYPE__MIN_LENGTH = eINSTANCE.getStringType_MinLength();
+
+		/**
+		 * The meta object literal for the '<em><b>Max Length</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_TYPE__MAX_LENGTH = eINSTANCE.getStringType_MaxLength();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.EObjectTypeImpl <em>EObject Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.cmf.occi.impl.EObjectTypeImpl
+		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getEObjectType()
+		 * @generated
+		 */
+		EClass EOBJECT_TYPE = eINSTANCE.getEObjectType();
+
+		/**
+		 * The meta object literal for the '<em><b>Instance Class Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EOBJECT_TYPE__INSTANCE_CLASS_NAME = eINSTANCE.getEObjectType_InstanceClassName();
+
+		/**
+		 * The meta object literal for the '<em><b>Pattern</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EOBJECT_TYPE__PATTERN = eINSTANCE.getEObjectType_Pattern();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
@@ -4372,24 +4490,60 @@ public interface OCCIPackage extends EPackage {
 		EClass NUMERIC_TYPE = eINSTANCE.getNumericType();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.IntegerTypeImpl <em>Integer Type</em>}' class.
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.IntegerTypeImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getIntegerType()
 		 * @generated
 		 */
-		EClass INTEGER_TYPE = eINSTANCE.getIntegerType();
+		EAttribute NUMERIC_TYPE__TYPE = eINSTANCE.getNumericType_Type();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.FloatTypeImpl <em>Float Type</em>}' class.
+		 * The meta object literal for the '<em><b>Total Digits</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.FloatTypeImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getFloatType()
 		 * @generated
 		 */
-		EClass FLOAT_TYPE = eINSTANCE.getFloatType();
+		EAttribute NUMERIC_TYPE__TOTAL_DIGITS = eINSTANCE.getNumericType_TotalDigits();
+
+		/**
+		 * The meta object literal for the '<em><b>Min Exclusive</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NUMERIC_TYPE__MIN_EXCLUSIVE = eINSTANCE.getNumericType_MinExclusive();
+
+		/**
+		 * The meta object literal for the '<em><b>Max Exclusive</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NUMERIC_TYPE__MAX_EXCLUSIVE = eINSTANCE.getNumericType_MaxExclusive();
+
+		/**
+		 * The meta object literal for the '<em><b>Min Inclusive</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NUMERIC_TYPE__MIN_INCLUSIVE = eINSTANCE.getNumericType_MinInclusive();
+
+		/**
+		 * The meta object literal for the '<em><b>Max Inclusive</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NUMERIC_TYPE__MAX_INCLUSIVE = eINSTANCE.getNumericType_MaxInclusive();
+
+		/**
+		 * The meta object literal for the '<em><b>Validate</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NUMERIC_TYPE___VALIDATE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getNumericType__Validate__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.EnumerationTypeImpl <em>Enumeration Type</em>}' class.
@@ -4498,40 +4652,14 @@ public interface OCCIPackage extends EPackage {
 		EReference ARRAY_TYPE__TYPE = eINSTANCE.getArrayType_Type();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.TypeAnnotationImpl <em>Type Annotation</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.NumericTypeEnum <em>Numeric Type Enum</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.TypeAnnotationImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getTypeAnnotation()
+		 * @see org.eclipse.cmf.occi.core.NumericTypeEnum
+		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getNumericTypeEnum()
 		 * @generated
 		 */
-		EClass TYPE_ANNOTATION = eINSTANCE.getTypeAnnotation();
-
-		/**
-		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TYPE_ANNOTATION__KEY = eINSTANCE.getTypeAnnotation_Key();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TYPE_ANNOTATION__VALUE = eINSTANCE.getTypeAnnotation_Value();
-
-		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.TypeAnnotationKey <em>Type Annotation Key</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.core.TypeAnnotationKey
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getTypeAnnotationKey()
-		 * @generated
-		 */
-		EEnum TYPE_ANNOTATION_KEY = eINSTANCE.getTypeAnnotationKey();
+		EEnum NUMERIC_TYPE_ENUM = eINSTANCE.getNumericTypeEnum();
 
 		/**
 		 * The meta object literal for the '<em>URI</em>' data type.

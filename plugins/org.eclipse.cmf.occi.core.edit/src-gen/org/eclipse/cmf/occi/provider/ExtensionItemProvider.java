@@ -304,17 +304,17 @@ public class ExtensionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.EXTENSION__TYPES,
+				 OCCIFactory.eINSTANCE.createEObjectType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.EXTENSION__TYPES,
 				 OCCIFactory.eINSTANCE.createBooleanType()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.EXTENSION__TYPES,
-				 OCCIFactory.eINSTANCE.createIntegerType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.EXTENSION__TYPES,
-				 OCCIFactory.eINSTANCE.createFloatType()));
+				 OCCIFactory.eINSTANCE.createNumericType()));
 
 		newChildDescriptors.add
 			(createChildParameter

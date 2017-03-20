@@ -13,16 +13,16 @@ package org.eclipse.cmf.occi.tests;
 
 import junit.textui.TestRunner;
 
-import org.eclipse.cmf.occi.core.IntegerType;
+import org.eclipse.cmf.occi.core.EObjectType;
 import org.eclipse.cmf.occi.core.OCCIFactory;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Integer Type</b></em>'.
+ * A test case for the model object '<em><b>EObject Type</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class IntegerTypeTest extends NumericTypeTest {
+public class EObjectTypeTest extends BasicTypeTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -30,28 +30,28 @@ public class IntegerTypeTest extends NumericTypeTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(IntegerTypeTest.class);
+		TestRunner.run(EObjectTypeTest.class);
 	}
 
 	/**
-	 * Constructs a new Integer Type test case with the given name.
+	 * Constructs a new EObject Type test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IntegerTypeTest(String name) {
+	public EObjectTypeTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this Integer Type test case.
+	 * Returns the fixture for this EObject Type test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected IntegerType getFixture() {
-		return (IntegerType)fixture;
+	protected EObjectType getFixture() {
+		return (EObjectType)fixture;
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class IntegerTypeTest extends NumericTypeTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(OCCIFactory.eINSTANCE.createIntegerType());
+		setFixture(OCCIFactory.eINSTANCE.createEObjectType());
 	}
 
 	/**
@@ -76,4 +76,4 @@ public class IntegerTypeTest extends NumericTypeTest {
 		setFixture(null);
 	}
 
-} //IntegerTypeTest
+} //EObjectTypeTest

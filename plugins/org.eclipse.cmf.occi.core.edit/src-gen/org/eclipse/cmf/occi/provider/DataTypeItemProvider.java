@@ -69,8 +69,8 @@ public class DataTypeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDocumentationPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addDocumentationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -146,8 +146,8 @@ public class DataTypeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DataType.class)) {
-			case OCCIPackage.DATA_TYPE__DOCUMENTATION:
 			case OCCIPackage.DATA_TYPE__NAME:
+			case OCCIPackage.DATA_TYPE__DOCUMENTATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

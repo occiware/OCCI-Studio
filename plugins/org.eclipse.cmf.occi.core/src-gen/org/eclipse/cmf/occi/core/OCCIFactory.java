@@ -166,6 +166,15 @@ public interface OCCIFactory extends EFactory {
 	StringType createStringType();
 
 	/**
+	 * Returns a new object of class '<em>EObject Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>EObject Type</em>'.
+	 * @generated
+	 */
+	EObjectType createEObjectType();
+
+	/**
 	 * Returns a new object of class '<em>Boolean Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -175,22 +184,13 @@ public interface OCCIFactory extends EFactory {
 	BooleanType createBooleanType();
 
 	/**
-	 * Returns a new object of class '<em>Integer Type</em>'.
+	 * Returns a new object of class '<em>Numeric Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Integer Type</em>'.
+	 * @return a new object of class '<em>Numeric Type</em>'.
 	 * @generated
 	 */
-	IntegerType createIntegerType();
-
-	/**
-	 * Returns a new object of class '<em>Float Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Float Type</em>'.
-	 * @generated
-	 */
-	FloatType createFloatType();
+	NumericType createNumericType();
 
 	/**
 	 * Returns a new object of class '<em>Enumeration Type</em>'.
@@ -236,15 +236,6 @@ public interface OCCIFactory extends EFactory {
 	 * @generated
 	 */
 	ArrayType createArrayType();
-
-	/**
-	 * Returns a new object of class '<em>Type Annotation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Type Annotation</em>'.
-	 * @generated
-	 */
-	TypeAnnotation createTypeAnnotation();
 
 	/**
 	 * Returns the package supported by this factory.

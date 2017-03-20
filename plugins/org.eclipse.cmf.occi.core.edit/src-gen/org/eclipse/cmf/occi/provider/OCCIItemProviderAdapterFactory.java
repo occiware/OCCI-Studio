@@ -426,6 +426,29 @@ public class OCCIItemProviderAdapterFactory extends OCCIAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.core.EObjectType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EObjectTypeItemProvider eObjectTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.core.EObjectType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEObjectTypeAdapter() {
+		if (eObjectTypeItemProvider == null) {
+			eObjectTypeItemProvider = new EObjectTypeItemProvider(this);
+		}
+
+		return eObjectTypeItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.core.BooleanType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -449,49 +472,26 @@ public class OCCIItemProviderAdapterFactory extends OCCIAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.core.IntegerType} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.core.NumericType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IntegerTypeItemProvider integerTypeItemProvider;
+	protected NumericTypeItemProvider numericTypeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.cmf.occi.core.IntegerType}.
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.core.NumericType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createIntegerTypeAdapter() {
-		if (integerTypeItemProvider == null) {
-			integerTypeItemProvider = new IntegerTypeItemProvider(this);
+	public Adapter createNumericTypeAdapter() {
+		if (numericTypeItemProvider == null) {
+			numericTypeItemProvider = new NumericTypeItemProvider(this);
 		}
 
-		return integerTypeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.core.FloatType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FloatTypeItemProvider floatTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.cmf.occi.core.FloatType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFloatTypeAdapter() {
-		if (floatTypeItemProvider == null) {
-			floatTypeItemProvider = new FloatTypeItemProvider(this);
-		}
-
-		return floatTypeItemProvider;
+		return numericTypeItemProvider;
 	}
 
 	/**
@@ -610,29 +610,6 @@ public class OCCIItemProviderAdapterFactory extends OCCIAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.core.TypeAnnotation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TypeAnnotationItemProvider typeAnnotationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.cmf.occi.core.TypeAnnotation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createTypeAnnotationAdapter() {
-		if (typeAnnotationItemProvider == null) {
-			typeAnnotationItemProvider = new TypeAnnotationItemProvider(this);
-		}
-
-		return typeAnnotationItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -746,15 +723,14 @@ public class OCCIItemProviderAdapterFactory extends OCCIAdapterFactory implement
 		if (extensionItemProvider != null) extensionItemProvider.dispose();
 		if (configurationItemProvider != null) configurationItemProvider.dispose();
 		if (stringTypeItemProvider != null) stringTypeItemProvider.dispose();
+		if (eObjectTypeItemProvider != null) eObjectTypeItemProvider.dispose();
 		if (booleanTypeItemProvider != null) booleanTypeItemProvider.dispose();
-		if (integerTypeItemProvider != null) integerTypeItemProvider.dispose();
-		if (floatTypeItemProvider != null) floatTypeItemProvider.dispose();
+		if (numericTypeItemProvider != null) numericTypeItemProvider.dispose();
 		if (enumerationTypeItemProvider != null) enumerationTypeItemProvider.dispose();
 		if (enumerationLiteralItemProvider != null) enumerationLiteralItemProvider.dispose();
 		if (recordTypeItemProvider != null) recordTypeItemProvider.dispose();
 		if (recordFieldDeclarationItemProvider != null) recordFieldDeclarationItemProvider.dispose();
 		if (arrayTypeItemProvider != null) arrayTypeItemProvider.dispose();
-		if (typeAnnotationItemProvider != null) typeAnnotationItemProvider.dispose();
 	}
 
 }

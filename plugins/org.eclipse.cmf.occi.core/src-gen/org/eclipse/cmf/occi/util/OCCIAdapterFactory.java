@@ -156,20 +156,16 @@ public class OCCIAdapterFactory extends AdapterFactoryImpl {
 				return createStringTypeAdapter();
 			}
 			@Override
+			public Adapter caseEObjectType(EObjectType object) {
+				return createEObjectTypeAdapter();
+			}
+			@Override
 			public Adapter caseBooleanType(BooleanType object) {
 				return createBooleanTypeAdapter();
 			}
 			@Override
 			public Adapter caseNumericType(NumericType object) {
 				return createNumericTypeAdapter();
-			}
-			@Override
-			public Adapter caseIntegerType(IntegerType object) {
-				return createIntegerTypeAdapter();
-			}
-			@Override
-			public Adapter caseFloatType(FloatType object) {
-				return createFloatTypeAdapter();
 			}
 			@Override
 			public Adapter caseEnumerationType(EnumerationType object) {
@@ -190,10 +186,6 @@ public class OCCIAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseArrayType(ArrayType object) {
 				return createArrayTypeAdapter();
-			}
-			@Override
-			public Adapter caseTypeAnnotation(TypeAnnotation object) {
-				return createTypeAnnotationAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -496,6 +488,20 @@ public class OCCIAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.EObjectType <em>EObject Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.EObjectType
+	 * @generated
+	 */
+	public Adapter createEObjectTypeAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.BooleanType <em>Boolean Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -520,34 +526,6 @@ public class OCCIAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNumericTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.IntegerType <em>Integer Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.core.IntegerType
-	 * @generated
-	 */
-	public Adapter createIntegerTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.FloatType <em>Float Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.core.FloatType
-	 * @generated
-	 */
-	public Adapter createFloatTypeAdapter() {
 		return null;
 	}
 
@@ -618,20 +596,6 @@ public class OCCIAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createArrayTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.TypeAnnotation <em>Type Annotation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.core.TypeAnnotation
-	 * @generated
-	 */
-	public Adapter createTypeAnnotationAdapter() {
 		return null;
 	}
 

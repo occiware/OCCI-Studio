@@ -10,15 +10,13 @@
   <genPackages prefix="OCCI" basePackage="org.eclipse.cmf" resource="XMI" disposableProviderFactory="true"
       interfacePackageSuffix="core" metaDataPackageSuffix="core" fileExtensions="occie,occic"
       ecorePackage="OCCI.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="OCCI.ecore#//TypeAnnotationKey">
-      <genEnumLiterals ecoreEnumLiteral="OCCI.ecore#//TypeAnnotationKey/totalDigits"/>
-      <genEnumLiterals ecoreEnumLiteral="OCCI.ecore#//TypeAnnotationKey/minExclusive"/>
-      <genEnumLiterals ecoreEnumLiteral="OCCI.ecore#//TypeAnnotationKey/maxExclusive"/>
-      <genEnumLiterals ecoreEnumLiteral="OCCI.ecore#//TypeAnnotationKey/minInclusive"/>
-      <genEnumLiterals ecoreEnumLiteral="OCCI.ecore#//TypeAnnotationKey/maxInclusive"/>
-      <genEnumLiterals ecoreEnumLiteral="OCCI.ecore#//TypeAnnotationKey/length"/>
-      <genEnumLiterals ecoreEnumLiteral="OCCI.ecore#//TypeAnnotationKey/minLength"/>
-      <genEnumLiterals ecoreEnumLiteral="OCCI.ecore#//TypeAnnotationKey/maxLength"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="OCCI.ecore#//NumericTypeEnum">
+      <genEnumLiterals ecoreEnumLiteral="OCCI.ecore#//NumericTypeEnum/Byte"/>
+      <genEnumLiterals ecoreEnumLiteral="OCCI.ecore#//NumericTypeEnum/Double"/>
+      <genEnumLiterals ecoreEnumLiteral="OCCI.ecore#//NumericTypeEnum/Float"/>
+      <genEnumLiterals ecoreEnumLiteral="OCCI.ecore#//NumericTypeEnum/Integer"/>
+      <genEnumLiterals ecoreEnumLiteral="OCCI.ecore#//NumericTypeEnum/Long"/>
+      <genEnumLiterals ecoreEnumLiteral="OCCI.ecore#//NumericTypeEnum/Short"/>
     </genEnums>
     <genDataTypes ecoreDataType="OCCI.ecore#//URI"/>
     <genDataTypes ecoreDataType="OCCI.ecore#//OCL"/>
@@ -46,6 +44,10 @@
     <genClasses ecoreClass="OCCI.ecore#//FSM">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OCCI.ecore#//FSM/ownedState"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//FSM/attribute"/>
+      <genOperations ecoreOperation="OCCI.ecore#//FSM/validate">
+        <genParameters ecoreParameter="OCCI.ecore#//FSM/validate/diagnostic"/>
+        <genParameters ecoreParameter="OCCI.ecore#//FSM/validate/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//State">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//State/literal"/>
@@ -127,19 +129,33 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OCCI.ecore#//Configuration/mixins"/>
     </genClasses>
     <genClasses image="false" ecoreClass="OCCI.ecore#//DataType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//DataType/documentation"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//DataType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//DataType/documentation"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="OCCI.ecore#//BasicType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OCCI.ecore#//BasicType/annotations"/>
-    </genClasses>
+    <genClasses image="false" ecoreClass="OCCI.ecore#//BasicType"/>
     <genClasses ecoreClass="OCCI.ecore#//StringType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//StringType/pattern"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//StringType/length"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//StringType/minLength"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//StringType/maxLength"/>
+    </genClasses>
+    <genClasses ecoreClass="OCCI.ecore#//EObjectType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//EObjectType/instanceClassName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//EObjectType/pattern"/>
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//BooleanType"/>
-    <genClasses ecoreClass="OCCI.ecore#//NumericType"/>
-    <genClasses ecoreClass="OCCI.ecore#//IntegerType"/>
-    <genClasses ecoreClass="OCCI.ecore#//FloatType"/>
+    <genClasses ecoreClass="OCCI.ecore#//NumericType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//NumericType/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//NumericType/totalDigits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//NumericType/minExclusive"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//NumericType/maxExclusive"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//NumericType/minInclusive"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//NumericType/maxInclusive"/>
+      <genOperations ecoreOperation="OCCI.ecore#//NumericType/validate">
+        <genParameters ecoreParameter="OCCI.ecore#//NumericType/validate/diagnostic"/>
+        <genParameters ecoreParameter="OCCI.ecore#//NumericType/validate/context"/>
+      </genOperations>
+    </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//EnumerationType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OCCI.ecore#//EnumerationType/literals"/>
     </genClasses>
@@ -156,10 +172,6 @@
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//ArrayType">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//ArrayType/type"/>
-    </genClasses>
-    <genClasses ecoreClass="OCCI.ecore#//TypeAnnotation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//TypeAnnotation/key"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//TypeAnnotation/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

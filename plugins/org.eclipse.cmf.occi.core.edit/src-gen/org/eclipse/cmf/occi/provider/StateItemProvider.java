@@ -236,7 +236,7 @@ public class StateItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, true));
+		fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 //		switch (notification.getFeatureID(State.class)) {
 //			case OCCIPackage.STATE__INITIAL:
 //			case OCCIPackage.STATE__FINAL:

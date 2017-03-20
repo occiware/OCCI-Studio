@@ -29,33 +29,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.impl.DataTypeImpl#getDocumentation <em>Documentation</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.impl.DataTypeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.impl.DataTypeImpl#getDocumentation <em>Documentation</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class DataTypeImpl extends MinimalEObjectImpl.Container implements DataType {
-	/**
-	 * The default value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDocumentation()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DOCUMENTATION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDocumentation()
-	 * @generated
-	 * @ordered
-	 */
-	protected String documentation = DOCUMENTATION_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -75,6 +55,26 @@ public abstract class DataTypeImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDocumentation()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DOCUMENTATION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDocumentation()
+	 * @generated
+	 * @ordered
+	 */
+	protected String documentation = DOCUMENTATION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -145,10 +145,10 @@ public abstract class DataTypeImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OCCIPackage.DATA_TYPE__DOCUMENTATION:
-				return getDocumentation();
 			case OCCIPackage.DATA_TYPE__NAME:
 				return getName();
+			case OCCIPackage.DATA_TYPE__DOCUMENTATION:
+				return getDocumentation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -161,11 +161,11 @@ public abstract class DataTypeImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OCCIPackage.DATA_TYPE__DOCUMENTATION:
-				setDocumentation((String)newValue);
-				return;
 			case OCCIPackage.DATA_TYPE__NAME:
 				setName((String)newValue);
+				return;
+			case OCCIPackage.DATA_TYPE__DOCUMENTATION:
+				setDocumentation((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -179,11 +179,11 @@ public abstract class DataTypeImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OCCIPackage.DATA_TYPE__DOCUMENTATION:
-				setDocumentation(DOCUMENTATION_EDEFAULT);
-				return;
 			case OCCIPackage.DATA_TYPE__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case OCCIPackage.DATA_TYPE__DOCUMENTATION:
+				setDocumentation(DOCUMENTATION_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -197,10 +197,10 @@ public abstract class DataTypeImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OCCIPackage.DATA_TYPE__DOCUMENTATION:
-				return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT.equals(documentation);
 			case OCCIPackage.DATA_TYPE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case OCCIPackage.DATA_TYPE__DOCUMENTATION:
+				return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT.equals(documentation);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -215,10 +215,10 @@ public abstract class DataTypeImpl extends MinimalEObjectImpl.Container implemen
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (documentation: ");
-		result.append(documentation);
-		result.append(", name: ");
+		result.append(" (name: ");
 		result.append(name);
+		result.append(", documentation: ");
+		result.append(documentation);
 		result.append(')');
 		return result.toString();
 	}

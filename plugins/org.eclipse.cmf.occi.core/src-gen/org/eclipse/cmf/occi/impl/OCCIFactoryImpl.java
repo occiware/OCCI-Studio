@@ -81,15 +81,14 @@ public class OCCIFactoryImpl extends EFactoryImpl implements OCCIFactory {
 			case OCCIPackage.EXTENSION: return createExtension();
 			case OCCIPackage.CONFIGURATION: return createConfiguration();
 			case OCCIPackage.STRING_TYPE: return createStringType();
+			case OCCIPackage.EOBJECT_TYPE: return createEObjectType();
 			case OCCIPackage.BOOLEAN_TYPE: return createBooleanType();
-			case OCCIPackage.INTEGER_TYPE: return createIntegerType();
-			case OCCIPackage.FLOAT_TYPE: return createFloatType();
+			case OCCIPackage.NUMERIC_TYPE: return createNumericType();
 			case OCCIPackage.ENUMERATION_TYPE: return createEnumerationType();
 			case OCCIPackage.ENUMERATION_LITERAL: return createEnumerationLiteral();
 			case OCCIPackage.RECORD_TYPE: return createRecordType();
 			case OCCIPackage.RECORD_FIELD_DECLARATION: return createRecordFieldDeclaration();
 			case OCCIPackage.ARRAY_TYPE: return createArrayType();
-			case OCCIPackage.TYPE_ANNOTATION: return createTypeAnnotation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -103,8 +102,8 @@ public class OCCIFactoryImpl extends EFactoryImpl implements OCCIFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case OCCIPackage.TYPE_ANNOTATION_KEY:
-				return createTypeAnnotationKeyFromString(eDataType, initialValue);
+			case OCCIPackage.NUMERIC_TYPE_ENUM:
+				return createNumericTypeEnumFromString(eDataType, initialValue);
 			case OCCIPackage.URI:
 				return createURIFromString(eDataType, initialValue);
 			case OCCIPackage.OCL:
@@ -132,8 +131,8 @@ public class OCCIFactoryImpl extends EFactoryImpl implements OCCIFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case OCCIPackage.TYPE_ANNOTATION_KEY:
-				return convertTypeAnnotationKeyToString(eDataType, instanceValue);
+			case OCCIPackage.NUMERIC_TYPE_ENUM:
+				return convertNumericTypeEnumToString(eDataType, instanceValue);
 			case OCCIPackage.URI:
 				return convertURIToString(eDataType, instanceValue);
 			case OCCIPackage.OCL:
@@ -308,6 +307,16 @@ public class OCCIFactoryImpl extends EFactoryImpl implements OCCIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EObjectType createEObjectType() {
+		EObjectTypeImpl eObjectType = new EObjectTypeImpl();
+		return eObjectType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public BooleanType createBooleanType() {
 		BooleanTypeImpl booleanType = new BooleanTypeImpl();
 		return booleanType;
@@ -318,19 +327,9 @@ public class OCCIFactoryImpl extends EFactoryImpl implements OCCIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IntegerType createIntegerType() {
-		IntegerTypeImpl integerType = new IntegerTypeImpl();
-		return integerType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FloatType createFloatType() {
-		FloatTypeImpl floatType = new FloatTypeImpl();
-		return floatType;
+	public NumericType createNumericType() {
+		NumericTypeImpl numericType = new NumericTypeImpl();
+		return numericType;
 	}
 
 	/**
@@ -388,18 +387,8 @@ public class OCCIFactoryImpl extends EFactoryImpl implements OCCIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TypeAnnotation createTypeAnnotation() {
-		TypeAnnotationImpl typeAnnotation = new TypeAnnotationImpl();
-		return typeAnnotation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TypeAnnotationKey createTypeAnnotationKeyFromString(EDataType eDataType, String initialValue) {
-		TypeAnnotationKey result = TypeAnnotationKey.get(initialValue);
+	public NumericTypeEnum createNumericTypeEnumFromString(EDataType eDataType, String initialValue) {
+		NumericTypeEnum result = NumericTypeEnum.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -409,7 +398,7 @@ public class OCCIFactoryImpl extends EFactoryImpl implements OCCIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertTypeAnnotationKeyToString(EDataType eDataType, Object instanceValue) {
+	public String convertNumericTypeEnumToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

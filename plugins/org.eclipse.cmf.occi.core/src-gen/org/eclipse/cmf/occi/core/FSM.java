@@ -11,6 +11,8 @@
  */
 package org.eclipse.cmf.occi.core;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -77,5 +79,13 @@ public interface FSM extends EObject {
 	 * @generated
 	 */
 	void setAttribute(Attribute value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean validate(DiagnosticChain diagnostic, Map<Object, Object> context);
 
 } // FSM

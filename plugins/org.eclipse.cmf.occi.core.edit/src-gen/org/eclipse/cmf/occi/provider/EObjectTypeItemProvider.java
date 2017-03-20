@@ -15,47 +15,31 @@ package org.eclipse.cmf.occi.provider;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.cmf.occi.core.EObjectType;
 import org.eclipse.cmf.occi.core.OCCIPackage;
-import org.eclipse.cmf.occi.core.TypeAnnotation;
-import org.eclipse.cmf.occi.core.TypeAnnotationKey;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.cmf.occi.core.TypeAnnotation} object.
+ * This is the item provider adapter for a {@link org.eclipse.cmf.occi.core.EObjectType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TypeAnnotationItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class EObjectTypeItemProvider extends BasicTypeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TypeAnnotationItemProvider(AdapterFactory adapterFactory) {
+	public EObjectTypeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -70,26 +54,26 @@ public class TypeAnnotationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addKeyPropertyDescriptor(object);
-			addValuePropertyDescriptor(object);
+			addInstanceClassNamePropertyDescriptor(object);
+			addPatternPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Key feature.
+	 * This adds a property descriptor for the Instance Class Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addKeyPropertyDescriptor(Object object) {
+	protected void addInstanceClassNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TypeAnnotation_key_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TypeAnnotation_key_feature", "_UI_TypeAnnotation_type"),
-				 OCCIPackage.Literals.TYPE_ANNOTATION__KEY,
+				 getString("_UI_EObjectType_instanceClassName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EObjectType_instanceClassName_feature", "_UI_EObjectType_type"),
+				 OCCIPackage.Literals.EOBJECT_TYPE__INSTANCE_CLASS_NAME,
 				 true,
 				 false,
 				 false,
@@ -99,36 +83,36 @@ public class TypeAnnotationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Value feature.
+	 * This adds a property descriptor for the Pattern feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addValuePropertyDescriptor(Object object) {
+	protected void addPatternPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TypeAnnotation_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TypeAnnotation_value_feature", "_UI_TypeAnnotation_type"),
-				 OCCIPackage.Literals.TYPE_ANNOTATION__VALUE,
+				 getString("_UI_EObjectType_pattern_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EObjectType_pattern_feature", "_UI_EObjectType_type"),
+				 OCCIPackage.Literals.EOBJECT_TYPE__PATTERN,
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This returns TypeAnnotation.gif.
+	 * This returns EObjectType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/TypeAnnotation"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EObjectType"));
 	}
 
 	/**
@@ -139,11 +123,10 @@ public class TypeAnnotationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		TypeAnnotationKey labelValue = ((TypeAnnotation)object).getKey();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((EObjectType)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_TypeAnnotation_type") :
-			getString("_UI_TypeAnnotation_type") + " " + label;
+			getString("_UI_EObjectType_type") :
+			getString("_UI_EObjectType_type") + " " + label;
 	}
 	
 
@@ -158,9 +141,9 @@ public class TypeAnnotationItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(TypeAnnotation.class)) {
-			case OCCIPackage.TYPE_ANNOTATION__KEY:
-			case OCCIPackage.TYPE_ANNOTATION__VALUE:
+		switch (notification.getFeatureID(EObjectType.class)) {
+			case OCCIPackage.EOBJECT_TYPE__INSTANCE_CLASS_NAME:
+			case OCCIPackage.EOBJECT_TYPE__PATTERN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -177,17 +160,6 @@ public class TypeAnnotationItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return OCCIEditPlugin.INSTANCE;
 	}
 
 }

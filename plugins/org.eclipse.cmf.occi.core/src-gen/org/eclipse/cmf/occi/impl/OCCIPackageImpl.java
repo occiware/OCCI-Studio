@@ -21,17 +21,17 @@ import org.eclipse.cmf.occi.core.Category;
 import org.eclipse.cmf.occi.core.Configuration;
 import org.eclipse.cmf.occi.core.Constraint;
 import org.eclipse.cmf.occi.core.DataType;
+import org.eclipse.cmf.occi.core.EObjectType;
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.EnumerationLiteral;
 import org.eclipse.cmf.occi.core.EnumerationType;
 import org.eclipse.cmf.occi.core.Extension;
-import org.eclipse.cmf.occi.core.FloatType;
-import org.eclipse.cmf.occi.core.IntegerType;
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.Mixin;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.NumericType;
+import org.eclipse.cmf.occi.core.NumericTypeEnum;
 import org.eclipse.cmf.occi.core.OCCIFactory;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.cmf.occi.core.RecordFieldDeclaration;
@@ -41,15 +41,13 @@ import org.eclipse.cmf.occi.core.State;
 import org.eclipse.cmf.occi.core.StringType;
 import org.eclipse.cmf.occi.core.Transition;
 import org.eclipse.cmf.occi.core.Type;
-
-import org.eclipse.cmf.occi.core.TypeAnnotation;
-import org.eclipse.cmf.occi.core.TypeAnnotationKey;
 import org.eclipse.cmf.occi.util.OCCIValidator;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -208,6 +206,13 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass eObjectTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass booleanTypeEClass = null;
 
 	/**
@@ -216,20 +221,6 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * @generated
 	 */
 	private EClass numericTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass integerTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass floatTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -271,14 +262,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass typeAnnotationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum typeAnnotationKeyEEnum = null;
+	private EEnum numericTypeEnumEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -541,6 +525,15 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 */
 	public EReference getFSM_Attribute() {
 		return (EReference)fsmEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getFSM__Validate__DiagnosticChain_Map() {
+		return fsmEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1161,7 +1154,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * @generated
 	 */
 	public EAttribute getDataType_Documentation() {
-		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1170,7 +1163,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * @generated
 	 */
 	public EAttribute getDataType_Name() {
-		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1180,15 +1173,6 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 */
 	public EClass getBasicType() {
 		return basicTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBasicType_Annotations() {
-		return (EReference)basicTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1214,6 +1198,60 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getStringType_Length() {
+		return (EAttribute)stringTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStringType_MinLength() {
+		return (EAttribute)stringTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStringType_MaxLength() {
+		return (EAttribute)stringTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEObjectType() {
+		return eObjectTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEObjectType_InstanceClassName() {
+		return (EAttribute)eObjectTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEObjectType_Pattern() {
+		return (EAttribute)eObjectTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBooleanType() {
 		return booleanTypeEClass;
 	}
@@ -1232,8 +1270,8 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getIntegerType() {
-		return integerTypeEClass;
+	public EAttribute getNumericType_Type() {
+		return (EAttribute)numericTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1241,8 +1279,53 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFloatType() {
-		return floatTypeEClass;
+	public EAttribute getNumericType_TotalDigits() {
+		return (EAttribute)numericTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNumericType_MinExclusive() {
+		return (EAttribute)numericTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNumericType_MaxExclusive() {
+		return (EAttribute)numericTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNumericType_MinInclusive() {
+		return (EAttribute)numericTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNumericType_MaxInclusive() {
+		return (EAttribute)numericTypeEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getNumericType__Validate__DiagnosticChain_Map() {
+		return numericTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1358,35 +1441,8 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTypeAnnotation() {
-		return typeAnnotationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTypeAnnotation_Key() {
-		return (EAttribute)typeAnnotationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTypeAnnotation_Value() {
-		return (EAttribute)typeAnnotationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EEnum getTypeAnnotationKey() {
-		return typeAnnotationKeyEEnum;
+	public EEnum getNumericTypeEnum() {
+		return numericTypeEnumEEnum;
 	}
 
 	/**
@@ -1499,6 +1555,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		fsmEClass = createEClass(FSM);
 		createEReference(fsmEClass, FSM__OWNED_STATE);
 		createEReference(fsmEClass, FSM__ATTRIBUTE);
+		createEOperation(fsmEClass, FSM___VALIDATE__DIAGNOSTICCHAIN_MAP);
 
 		stateEClass = createEClass(STATE);
 		createEReference(stateEClass, STATE__LITERAL);
@@ -1581,22 +1638,31 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		createEReference(configurationEClass, CONFIGURATION__MIXINS);
 
 		dataTypeEClass = createEClass(DATA_TYPE);
-		createEAttribute(dataTypeEClass, DATA_TYPE__DOCUMENTATION);
 		createEAttribute(dataTypeEClass, DATA_TYPE__NAME);
+		createEAttribute(dataTypeEClass, DATA_TYPE__DOCUMENTATION);
 
 		basicTypeEClass = createEClass(BASIC_TYPE);
-		createEReference(basicTypeEClass, BASIC_TYPE__ANNOTATIONS);
 
 		stringTypeEClass = createEClass(STRING_TYPE);
 		createEAttribute(stringTypeEClass, STRING_TYPE__PATTERN);
+		createEAttribute(stringTypeEClass, STRING_TYPE__LENGTH);
+		createEAttribute(stringTypeEClass, STRING_TYPE__MIN_LENGTH);
+		createEAttribute(stringTypeEClass, STRING_TYPE__MAX_LENGTH);
+
+		eObjectTypeEClass = createEClass(EOBJECT_TYPE);
+		createEAttribute(eObjectTypeEClass, EOBJECT_TYPE__INSTANCE_CLASS_NAME);
+		createEAttribute(eObjectTypeEClass, EOBJECT_TYPE__PATTERN);
 
 		booleanTypeEClass = createEClass(BOOLEAN_TYPE);
 
 		numericTypeEClass = createEClass(NUMERIC_TYPE);
-
-		integerTypeEClass = createEClass(INTEGER_TYPE);
-
-		floatTypeEClass = createEClass(FLOAT_TYPE);
+		createEAttribute(numericTypeEClass, NUMERIC_TYPE__TYPE);
+		createEAttribute(numericTypeEClass, NUMERIC_TYPE__TOTAL_DIGITS);
+		createEAttribute(numericTypeEClass, NUMERIC_TYPE__MIN_EXCLUSIVE);
+		createEAttribute(numericTypeEClass, NUMERIC_TYPE__MAX_EXCLUSIVE);
+		createEAttribute(numericTypeEClass, NUMERIC_TYPE__MIN_INCLUSIVE);
+		createEAttribute(numericTypeEClass, NUMERIC_TYPE__MAX_INCLUSIVE);
+		createEOperation(numericTypeEClass, NUMERIC_TYPE___VALIDATE__DIAGNOSTICCHAIN_MAP);
 
 		enumerationTypeEClass = createEClass(ENUMERATION_TYPE);
 		createEReference(enumerationTypeEClass, ENUMERATION_TYPE__LITERALS);
@@ -1615,12 +1681,8 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		arrayTypeEClass = createEClass(ARRAY_TYPE);
 		createEReference(arrayTypeEClass, ARRAY_TYPE__TYPE);
 
-		typeAnnotationEClass = createEClass(TYPE_ANNOTATION);
-		createEAttribute(typeAnnotationEClass, TYPE_ANNOTATION__KEY);
-		createEAttribute(typeAnnotationEClass, TYPE_ANNOTATION__VALUE);
-
 		// Create enums
-		typeAnnotationKeyEEnum = createEEnum(TYPE_ANNOTATION_KEY);
+		numericTypeEnumEEnum = createEEnum(NUMERIC_TYPE_ENUM);
 
 		// Create data types
 		uriEDataType = createEDataType(URI);
@@ -1667,11 +1729,10 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		resourceEClass.getESuperTypes().add(this.getEntity());
 		linkEClass.getESuperTypes().add(this.getEntity());
 		basicTypeEClass.getESuperTypes().add(this.getDataType());
-		stringTypeEClass.getESuperTypes().add(this.getDataType());
+		stringTypeEClass.getESuperTypes().add(this.getBasicType());
+		eObjectTypeEClass.getESuperTypes().add(this.getBasicType());
 		booleanTypeEClass.getESuperTypes().add(this.getBasicType());
 		numericTypeEClass.getESuperTypes().add(this.getBasicType());
-		integerTypeEClass.getESuperTypes().add(this.getNumericType());
-		floatTypeEClass.getESuperTypes().add(this.getBasicType());
 		enumerationTypeEClass.getESuperTypes().add(this.getDataType());
 		recordTypeEClass.getESuperTypes().add(this.getDataType());
 		arrayTypeEClass.getESuperTypes().add(this.getDataType());
@@ -1696,6 +1757,15 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEClass(fsmEClass, org.eclipse.cmf.occi.core.FSM.class, "FSM", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFSM_OwnedState(), this.getState(), this.getState_OwningFSM(), "ownedState", null, 0, -1, org.eclipse.cmf.occi.core.FSM.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFSM_Attribute(), this.getAttribute(), null, "attribute", null, 1, 1, org.eclipse.cmf.occi.core.FSM.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		EOperation op = initEOperation(getFSM__Validate__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "validate", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostic", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getState_Literal(), this.getEnumerationLiteral(), null, "literal", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1784,22 +1854,39 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEReference(getConfiguration_Mixins(), this.getMixin(), null, "mixins", null, 0, -1, Configuration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataType_Documentation(), this.getString(), "documentation", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataType_Name(), this.getString(), "name", null, 1, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataType_Documentation(), this.getString(), "documentation", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(basicTypeEClass, BasicType.class, "BasicType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBasicType_Annotations(), this.getTypeAnnotation(), null, "annotations", null, 0, -1, BasicType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stringTypeEClass, StringType.class, "StringType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStringType_Pattern(), this.getString(), "pattern", null, 0, 1, StringType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStringType_Length(), ecorePackage.getEInt(), "length", null, 0, 1, StringType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStringType_MinLength(), ecorePackage.getEInt(), "minLength", null, 0, 1, StringType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStringType_MaxLength(), ecorePackage.getEInt(), "maxLength", null, 0, 1, StringType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(eObjectTypeEClass, EObjectType.class, "EObjectType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEObjectType_InstanceClassName(), ecorePackage.getEString(), "instanceClassName", null, 0, 1, EObjectType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEObjectType_Pattern(), this.getString(), "pattern", null, 0, 1, EObjectType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(booleanTypeEClass, BooleanType.class, "BooleanType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(numericTypeEClass, NumericType.class, "NumericType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(numericTypeEClass, NumericType.class, "NumericType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNumericType_Type(), this.getNumericTypeEnum(), "type", null, 1, 1, NumericType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNumericType_TotalDigits(), ecorePackage.getEInt(), "totalDigits", null, 0, 1, NumericType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNumericType_MinExclusive(), ecorePackage.getEString(), "minExclusive", null, 0, 1, NumericType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNumericType_MaxExclusive(), ecorePackage.getEString(), "maxExclusive", null, 0, 1, NumericType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNumericType_MinInclusive(), ecorePackage.getEString(), "minInclusive", null, 0, 1, NumericType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNumericType_MaxInclusive(), ecorePackage.getEString(), "maxInclusive", null, 0, 1, NumericType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(integerTypeEClass, IntegerType.class, "IntegerType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(floatTypeEClass, FloatType.class, "FloatType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		op = initEOperation(getNumericType__Validate__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "validate", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostic", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(enumerationTypeEClass, EnumerationType.class, "EnumerationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEnumerationType_Literals(), this.getEnumerationLiteral(), this.getEnumerationLiteral_EnumerationType(), "literals", null, 1, -1, EnumerationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1812,26 +1899,20 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEReference(getRecordType_RecordFiledDeclarations(), this.getRecordFieldDeclaration(), null, "recordFiledDeclarations", null, 1, -1, RecordType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(recordFieldDeclarationEClass, RecordFieldDeclaration.class, "RecordFieldDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRecordFieldDeclaration_Type(), ecorePackage.getEClassifier(), null, "type", null, 1, 1, RecordFieldDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRecordFieldDeclaration_Type(), this.getDataType(), null, "type", null, 1, 1, RecordFieldDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRecordFieldDeclaration_Name(), this.getString(), "name", null, 0, 1, RecordFieldDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(arrayTypeEClass, ArrayType.class, "ArrayType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getArrayType_Type(), ecorePackage.getEClassifier(), null, "type", null, 1, 1, ArrayType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(typeAnnotationEClass, TypeAnnotation.class, "TypeAnnotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTypeAnnotation_Key(), this.getTypeAnnotationKey(), "key", null, 1, 1, TypeAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTypeAnnotation_Value(), ecorePackage.getEInt(), "value", null, 1, 1, TypeAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArrayType_Type(), this.getDataType(), null, "type", null, 1, 1, ArrayType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(typeAnnotationKeyEEnum, TypeAnnotationKey.class, "TypeAnnotationKey");
-		addEEnumLiteral(typeAnnotationKeyEEnum, TypeAnnotationKey.TOTAL_DIGITS);
-		addEEnumLiteral(typeAnnotationKeyEEnum, TypeAnnotationKey.MIN_EXCLUSIVE);
-		addEEnumLiteral(typeAnnotationKeyEEnum, TypeAnnotationKey.MAX_EXCLUSIVE);
-		addEEnumLiteral(typeAnnotationKeyEEnum, TypeAnnotationKey.MIN_INCLUSIVE);
-		addEEnumLiteral(typeAnnotationKeyEEnum, TypeAnnotationKey.MAX_INCLUSIVE);
-		addEEnumLiteral(typeAnnotationKeyEEnum, TypeAnnotationKey.LENGTH);
-		addEEnumLiteral(typeAnnotationKeyEEnum, TypeAnnotationKey.MIN_LENGTH);
-		addEEnumLiteral(typeAnnotationKeyEEnum, TypeAnnotationKey.MAX_LENGTH);
+		initEEnum(numericTypeEnumEEnum, NumericTypeEnum.class, "NumericTypeEnum");
+		addEEnumLiteral(numericTypeEnumEEnum, NumericTypeEnum.BYTE);
+		addEEnumLiteral(numericTypeEnumEEnum, NumericTypeEnum.DOUBLE);
+		addEEnumLiteral(numericTypeEnumEEnum, NumericTypeEnum.FLOAT);
+		addEEnumLiteral(numericTypeEnumEEnum, NumericTypeEnum.INTEGER);
+		addEEnumLiteral(numericTypeEnumEEnum, NumericTypeEnum.LONG);
+		addEEnumLiteral(numericTypeEnumEEnum, NumericTypeEnum.SHORT);
 
 		// Initialize data types
 		initEDataType(uriEDataType, String.class, "URI", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
