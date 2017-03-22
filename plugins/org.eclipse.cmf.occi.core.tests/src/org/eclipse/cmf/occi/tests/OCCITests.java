@@ -41,11 +41,14 @@ public class OCCITests extends TestSuite {
 	public static Test suite() {
 		TestSuite suite = new OCCITests("occi Tests");
 		suite.addTestSuite(FSMTest.class);
+		suite.addTestSuite(StateTest.class);
 		suite.addTestSuite(KindTest.class);
 		suite.addTestSuite(ActionTest.class);
 		suite.addTestSuite(MixinTest.class);
 		suite.addTestSuite(ResourceTest.class);
 		suite.addTestSuite(LinkTest.class);
+		suite.addTestSuite(ExtensionTest.class);
+		suite.addTestSuite(ConfigurationTest.class);
 		suite.addTestSuite(NumericTypeTest.class);
 		return suite;
 	}

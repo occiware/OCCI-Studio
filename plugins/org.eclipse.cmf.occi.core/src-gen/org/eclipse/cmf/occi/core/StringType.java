@@ -44,6 +44,7 @@ public interface StringType extends BasicType {
 	 * @see #setPattern(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getStringType_Pattern()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!StringType!pattern'"
 	 * @generated
 	 */
 	String getPattern();
@@ -72,6 +73,7 @@ public interface StringType extends BasicType {
 	 * @see #setLength(int)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getStringType_Length()
 	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!StringType!length'"
 	 * @generated
 	 */
 	int getLength();
@@ -125,6 +127,7 @@ public interface StringType extends BasicType {
 	 * @see #setMinLength(int)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getStringType_MinLength()
 	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!StringType!minLength'"
 	 * @generated
 	 */
 	int getMinLength();
@@ -178,6 +181,7 @@ public interface StringType extends BasicType {
 	 * @see #setMaxLength(int)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getStringType_MaxLength()
 	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!StringType!maxLength'"
 	 * @generated
 	 */
 	int getMaxLength();

@@ -16,8 +16,10 @@ import java.util.Collection;
 
 import java.util.Map;
 
+import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.cmf.occi.core.Action;
 import org.eclipse.cmf.occi.core.Attribute;
+import org.eclipse.cmf.occi.core.DataType;
 import org.eclipse.cmf.occi.core.FSM;
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.OCCIPackage;
@@ -41,6 +43,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.ocl.pivot.evaluation.Executor;
+import org.eclipse.ocl.pivot.ids.IdResolver;
+import org.eclipse.ocl.pivot.ids.TypeId;
+import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
+import org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsTypeOfOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+import org.eclipse.ocl.pivot.values.IntegerValue;
 
 
 
@@ -208,6 +220,52 @@ public class FSMImpl extends MinimalEObjectImpl.Container implements FSM {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean AttributeTypeMustBeEEnum(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 * 
+		 * inv AttributeTypeMustBeEEnum:
+		 *   let severity : Integer[1] = 'FSM::AttributeTypeMustBeEEnum'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         status : OclAny[1] = attribute.type.oclIsTypeOf(EnumerationType)
+		 *       in
+		 *         'FSM::AttributeTypeMustBeEEnum'.logDiagnostic(self, null, diagnostics, context, null, severity, status, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, OCCITables.STR_FSM_c_c_AttributeTypeMustBeEEnum);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
+		/*@NonInvalid*/ boolean symbol_0;
+		if (le) {
+		    symbol_0 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+		    /*@Caught*/ /*@NonNull*/ Object CAUGHT_status;
+		    try {
+		        final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_EnumerationType = idResolver.getClass(OCCITables.CLSSid_EnumerationType, null);
+		        final /*@Thrown*/ Attribute attribute = this.getAttribute();
+		        final /*@Thrown*/ DataType type = attribute.getType();
+		        final /*@Thrown*/ boolean status = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, type, TYP_occi_c_c_EnumerationType).booleanValue();
+		        CAUGHT_status = status;
+		    }
+		    catch (Exception e) {
+		        CAUGHT_status = ValueUtil.createInvalidValue(e);
+		    }
+		    final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_FSM_c_c_AttributeTypeMustBeEEnum, this, null, diagnostics, context, null, severity_0, CAUGHT_status, OCCITables.INT_0).booleanValue();
+		    symbol_0 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_0;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -314,6 +372,8 @@ public class FSMImpl extends MinimalEObjectImpl.Container implements FSM {
 		switch (operationID) {
 			case OCCIPackage.FSM___VALIDATE__DIAGNOSTICCHAIN_MAP:
 				return validate((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case OCCIPackage.FSM___ATTRIBUTE_TYPE_MUST_BE_EENUM__DIAGNOSTICCHAIN_MAP:
+				return AttributeTypeMustBeEEnum((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

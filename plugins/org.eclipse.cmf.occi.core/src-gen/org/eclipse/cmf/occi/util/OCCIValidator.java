@@ -14,8 +14,6 @@ package org.eclipse.cmf.occi.util;
 import java.util.Map;
 
 import org.eclipse.cmf.occi.core.*;
-
-import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 
@@ -51,12 +49,276 @@ public class OCCIValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.eclipse.cmf.occi.core";
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Attributes Name Unique' of 'Category'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CATEGORY__ATTRIBUTES_NAME_UNIQUE = 1;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Identity Unique' of 'Category'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CATEGORY__IDENTITY_UNIQUE = 2;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Scheme Ends With Sharp' of 'Category'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CATEGORY__SCHEME_ENDS_WITH_SHARP = 3;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Action Term Unicity' of 'Type'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int TYPE__ACTION_TERM_UNICITY = 4;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Constraint Name Unique' of 'Type'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int TYPE__CONSTRAINT_NAME_UNIQUE = 5;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate' of 'FSM'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FSM__VALIDATE = 1;
+	public static final int FSM__VALIDATE = 6;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Attribute Type Must Be EEnum' of 'FSM'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int FSM__ATTRIBUTE_TYPE_MUST_BE_EENUM = 7;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'State Literal Already Defined In FSM Attribute Type' of 'State'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int STATE__STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE = 8;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'No Cyclic Inheritance' of 'Kind'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int KIND__NO_CYCLIC_INHERITANCE = 9;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Attributes Name Not Already Defined In Parent' of 'Kind'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int KIND__ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_PARENT = 10;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Correct Scheme' of 'Kind'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int KIND__CORRECT_SCHEME = 11;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Entity Kind Is Root Parent' of 'Kind'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int KIND__ENTITY_KIND_IS_ROOT_PARENT = 12;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Correct Scheme' of 'Action'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ACTION__CORRECT_SCHEME = 13;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Correct Scheme' of 'Mixin'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int MIXIN__CORRECT_SCHEME = 14;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'No Cyclic Inheritance' of 'Mixin'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int MIXIN__NO_CYCLIC_INHERITANCE = 15;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Attributes Name Not Already Defined In Depends' of 'Mixin'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int MIXIN__ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_DEPENDS = 16;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Attributes Name Unique' of 'Entity'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ENTITY__ATTRIBUTES_NAME_UNIQUE = 17;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Kind Compatible With One Applies Of Each Mixin' of 'Entity'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ENTITY__KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN = 18;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Id Unique' of 'Entity'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ENTITY__ID_UNIQUE = 19;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Resource Kind Is In Parent' of 'Resource'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int RESOURCE__RESOURCE_KIND_IS_IN_PARENT = 20;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Link Kind Is In Parent' of 'Link'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int LINK__LINK_KIND_IS_IN_PARENT = 21;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Kinds Scheme Valid' of 'Extension'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int EXTENSION__KINDS_SCHEME_VALID = 22;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Kind Parent Local Or Imported' of 'Extension'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int EXTENSION__KIND_PARENT_LOCAL_OR_IMPORTED = 23;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Mixins Scheme Valid' of 'Extension'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int EXTENSION__MIXINS_SCHEME_VALID = 24;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Term Unicity' of 'Extension'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int EXTENSION__TERM_UNICITY = 25;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Mixin Applies Local Or Imported' of 'Extension'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int EXTENSION__MIXIN_APPLIES_LOCAL_OR_IMPORTED = 26;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Scheme Unique' of 'Extension'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int EXTENSION__SCHEME_UNIQUE = 27;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Mixin Depends Local Or Imported' of 'Extension'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int EXTENSION__MIXIN_DEPENDS_LOCAL_OR_IMPORTED = 28;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Mixins Are Tags' of 'Configuration'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CONFIGURATION__ALL_MIXINS_ARE_TAGS = 29;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Resources Links Targets In Configuration' of 'Configuration'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_TARGETS_IN_CONFIGURATION = 30;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Resources Kinds In Use' of 'Configuration'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CONFIGURATION__ALL_RESOURCES_KINDS_IN_USE = 31;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Resources Links Mixins In Use' of 'Configuration'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_MIXINS_IN_USE = 32;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Resources Mixins In Use' of 'Configuration'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CONFIGURATION__ALL_RESOURCES_MIXINS_IN_USE = 33;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Resources Links Kinds In Use' of 'Configuration'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_KINDS_IN_USE = 34;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate' of 'Numeric Type'.
@@ -64,7 +326,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int NUMERIC_TYPE__VALIDATE = 2;
+	public static final int NUMERIC_TYPE__VALIDATE = 35;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -72,7 +334,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 2;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 35;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -211,41 +473,14 @@ public class OCCIValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the IdentityUnique constraint of '<em>Category</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String CATEGORY__IDENTITY_UNIQUE__EEXPRESSION = "Category.allInstances()->isUnique(scheme + term)";
-
-	/**
 	 * Validates the IdentityUnique constraint of '<em>Category</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateCategory_IdentityUnique(Category category, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.CATEGORY,
-				 category,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "IdentityUnique",
-				 CATEGORY__IDENTITY_UNIQUE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return category.IdentityUnique(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the SchemeEndsWithSharp constraint of '<em>Category</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String CATEGORY__SCHEME_ENDS_WITH_SHARP__EEXPRESSION = "scheme.substring(scheme.size(), scheme.size()) = '#'";
 
 	/**
 	 * Validates the SchemeEndsWithSharp constraint of '<em>Category</em>'.
@@ -254,27 +489,8 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCategory_SchemeEndsWithSharp(Category category, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.CATEGORY,
-				 category,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "SchemeEndsWithSharp",
-				 CATEGORY__SCHEME_ENDS_WITH_SHARP__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return category.SchemeEndsWithSharp(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the AttributesNameUnique constraint of '<em>Category</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String CATEGORY__ATTRIBUTES_NAME_UNIQUE__EEXPRESSION = "attributes->isUnique(name)";
 
 	/**
 	 * Validates the AttributesNameUnique constraint of '<em>Category</em>'.
@@ -283,18 +499,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCategory_AttributesNameUnique(Category category, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.CATEGORY,
-				 category,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "AttributesNameUnique",
-				 CATEGORY__ATTRIBUTES_NAME_UNIQUE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return category.AttributesNameUnique(diagnostics, context);
 	}
 
 	/**
@@ -330,41 +535,14 @@ public class OCCIValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the ActionTermUnicity constraint of '<em>Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String TYPE__ACTION_TERM_UNICITY__EEXPRESSION = "actions->isUnique(term)";
-
-	/**
 	 * Validates the ActionTermUnicity constraint of '<em>Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateType_ActionTermUnicity(Type type, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.TYPE,
-				 type,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "ActionTermUnicity",
-				 TYPE__ACTION_TERM_UNICITY__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return type.ActionTermUnicity(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the ConstraintNameUnique constraint of '<em>Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String TYPE__CONSTRAINT_NAME_UNIQUE__EEXPRESSION = "constraints->isUnique(name)";
 
 	/**
 	 * Validates the ConstraintNameUnique constraint of '<em>Type</em>'.
@@ -373,18 +551,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateType_ConstraintNameUnique(Type type, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.TYPE,
-				 type,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "ConstraintNameUnique",
-				 TYPE__CONSTRAINT_NAME_UNIQUE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return type.ConstraintNameUnique(diagnostics, context);
 	}
 
 	/**
@@ -408,32 +575,13 @@ public class OCCIValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the AttributeTypeMustBeEEnum constraint of '<em>FSM</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String FSM__ATTRIBUTE_TYPE_MUST_BE_EENUM__EEXPRESSION = "attribute.type.oclIsTypeOf(EnumerationType)";
-
-	/**
 	 * Validates the AttributeTypeMustBeEEnum constraint of '<em>FSM</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateFSM_AttributeTypeMustBeEEnum(FSM fsm, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.FSM,
-				 fsm,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "AttributeTypeMustBeEEnum",
-				 FSM__ATTRIBUTE_TYPE_MUST_BE_EENUM__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return fsm.AttributeTypeMustBeEEnum(diagnostics, context);
 	}
 
 	/**
@@ -466,32 +614,13 @@ public class OCCIValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the StateLiteralAlreadyDefinedInFSMAttributeType constraint of '<em>State</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String STATE__STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE__EEXPRESSION = "owningFSM.attribute.type=self.literal.enumerationType";
-
-	/**
 	 * Validates the StateLiteralAlreadyDefinedInFSMAttributeType constraint of '<em>State</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateState_StateLiteralAlreadyDefinedInFSMAttributeType(State state, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.STATE,
-				 state,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "StateLiteralAlreadyDefinedInFSMAttributeType",
-				 STATE__STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return state.StateLiteralAlreadyDefinedInFSMAttributeType(diagnostics, context);
 	}
 
 	/**
@@ -540,41 +669,14 @@ public class OCCIValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the CorrectScheme constraint of '<em>Kind</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String KIND__CORRECT_SCHEME__EEXPRESSION = "scheme = self.oclContainer().oclAsType(Extension).scheme";
-
-	/**
 	 * Validates the CorrectScheme constraint of '<em>Kind</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateKind_CorrectScheme(Kind kind, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.KIND,
-				 kind,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "CorrectScheme",
-				 KIND__CORRECT_SCHEME__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return kind.CorrectScheme(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the NoCyclicInheritance constraint of '<em>Kind</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String KIND__NO_CYCLIC_INHERITANCE__EEXPRESSION = "parent->closure(parent)->excludes(self)";
 
 	/**
 	 * Validates the NoCyclicInheritance constraint of '<em>Kind</em>'.
@@ -583,28 +685,8 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateKind_NoCyclicInheritance(Kind kind, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.KIND,
-				 kind,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "NoCyclicInheritance",
-				 KIND__NO_CYCLIC_INHERITANCE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return kind.NoCyclicInheritance(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the EntityKindIsRootParent constraint of '<em>Kind</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String KIND__ENTITY_KIND_IS_ROOT_PARENT__EEXPRESSION = "self->closure(parent)->exists(k |\n" +
-		"\t\t\t\t\tk.term = 'entity' and k.scheme = 'http://schemas.ogf.org/occi/core#' and k.parent = null)";
 
 	/**
 	 * Validates the EntityKindIsRootParent constraint of '<em>Kind</em>'.
@@ -613,27 +695,8 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateKind_EntityKindIsRootParent(Kind kind, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.KIND,
-				 kind,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "EntityKindIsRootParent",
-				 KIND__ENTITY_KIND_IS_ROOT_PARENT__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return kind.EntityKindIsRootParent(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the AttributesNameNotAlreadyDefinedInParent constraint of '<em>Kind</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String KIND__ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_PARENT__EEXPRESSION = "attributes.name->excludesAll(parent->closure(parent).attributes.name)";
 
 	/**
 	 * Validates the AttributesNameNotAlreadyDefinedInParent constraint of '<em>Kind</em>'.
@@ -642,18 +705,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateKind_AttributesNameNotAlreadyDefinedInParent(Kind kind, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.KIND,
-				 kind,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "AttributesNameNotAlreadyDefinedInParent",
-				 KIND__ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_PARENT__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return kind.AttributesNameNotAlreadyDefinedInParent(diagnostics, context);
 	}
 
 	/**
@@ -679,33 +731,13 @@ public class OCCIValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the CorrectScheme constraint of '<em>Action</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ACTION__CORRECT_SCHEME__EEXPRESSION = "let category = oclContainer().oclAsType(Category)\n" +
-		"\t\t\tin scheme = category.scheme.substring(1, category.scheme.size() - 1) + '/' + category.term + '/action#'";
-
-	/**
 	 * Validates the CorrectScheme constraint of '<em>Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateAction_CorrectScheme(Action action, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.ACTION,
-				 action,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "CorrectScheme",
-				 ACTION__CORRECT_SCHEME__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return action.CorrectScheme(diagnostics, context);
 	}
 
 	/**
@@ -735,49 +767,14 @@ public class OCCIValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the CorrectScheme constraint of '<em>Mixin</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String MIXIN__CORRECT_SCHEME__EEXPRESSION = "\n" +
-		"\n" +
-		"\t\t\t/* Previously let ownerScheme = owner.oclAsType(Extension).scheme in scheme.substring(1,ownerScheme.size()-1) = ownerScheme.substring(1,ownerScheme.size()-1) */\n" +
-		"\t\t\tlet owner = self.oclContainer()\n" +
-		"\t\t\tin if owner.oclIsTypeOf(Extension)\n" +
-		"\t\t\t\tthen\n" +
-		"\t\t\tlet ownerScheme = owner.oclAsType(Extension).scheme\n" +
-		"\t\tin scheme.substring(1, ownerScheme.size() - 1) = ownerScheme.substring(1, ownerScheme.size() - 1) else true\n" +
-		"\t\t\tendif";
-
-	/**
 	 * Validates the CorrectScheme constraint of '<em>Mixin</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateMixin_CorrectScheme(Mixin mixin, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.MIXIN,
-				 mixin,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "CorrectScheme",
-				 MIXIN__CORRECT_SCHEME__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return mixin.CorrectScheme(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the NoCyclicInheritance constraint of '<em>Mixin</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String MIXIN__NO_CYCLIC_INHERITANCE__EEXPRESSION = "depends->closure(depends)->excludes(self)";
 
 	/**
 	 * Validates the NoCyclicInheritance constraint of '<em>Mixin</em>'.
@@ -786,27 +783,8 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMixin_NoCyclicInheritance(Mixin mixin, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.MIXIN,
-				 mixin,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "NoCyclicInheritance",
-				 MIXIN__NO_CYCLIC_INHERITANCE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return mixin.NoCyclicInheritance(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the AttributesNameNotAlreadyDefinedInDepends constraint of '<em>Mixin</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String MIXIN__ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_DEPENDS__EEXPRESSION = "attributes.name->excludesAll(depends->closure(depends).attributes.name)";
 
 	/**
 	 * Validates the AttributesNameNotAlreadyDefinedInDepends constraint of '<em>Mixin</em>'.
@@ -815,18 +793,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMixin_AttributesNameNotAlreadyDefinedInDepends(Mixin mixin, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.MIXIN,
-				 mixin,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "AttributesNameNotAlreadyDefinedInDepends",
-				 MIXIN__ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_DEPENDS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return mixin.AttributesNameNotAlreadyDefinedInDepends(diagnostics, context);
 	}
 
 	/**
@@ -851,41 +818,14 @@ public class OCCIValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the IdUnique constraint of '<em>Entity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ENTITY__ID_UNIQUE__EEXPRESSION = "Entity.allInstances()->isUnique(id)";
-
-	/**
 	 * Validates the IdUnique constraint of '<em>Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateEntity_IdUnique(Entity entity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.ENTITY,
-				 entity,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "IdUnique",
-				 ENTITY__ID_UNIQUE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return entity.IdUnique(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the AttributesNameUnique constraint of '<em>Entity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ENTITY__ATTRIBUTES_NAME_UNIQUE__EEXPRESSION = "attributes->isUnique(name)";
 
 	/**
 	 * Validates the AttributesNameUnique constraint of '<em>Entity</em>'.
@@ -894,28 +834,8 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateEntity_AttributesNameUnique(Entity entity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.ENTITY,
-				 entity,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "AttributesNameUnique",
-				 ENTITY__ATTRIBUTES_NAME_UNIQUE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return entity.AttributesNameUnique(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the KindCompatibleWithOneAppliesOfEachMixin constraint of '<em>Entity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ENTITY__KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__EEXPRESSION = "parts.mixin->forAll(m |\n" +
-		"\t\t\t\tm.applies->notEmpty() implies m.applies->exists(k | kind->closure(parent)->includes(k)))";
 
 	/**
 	 * Validates the KindCompatibleWithOneAppliesOfEachMixin constraint of '<em>Entity</em>'.
@@ -924,18 +844,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateEntity_KindCompatibleWithOneAppliesOfEachMixin(Entity entity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.ENTITY,
-				 entity,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "KindCompatibleWithOneAppliesOfEachMixin",
-				 ENTITY__KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return entity.KindCompatibleWithOneAppliesOfEachMixin(diagnostics, context);
 	}
 
 	/**
@@ -979,33 +888,13 @@ public class OCCIValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the ResourceKindIsInParent constraint of '<em>Resource</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String RESOURCE__RESOURCE_KIND_IS_IN_PARENT__EEXPRESSION = "kind->closure(parent)->exists(k |\n" +
-		"\t\t\t\tk.term = 'resource' and k.scheme = 'http://schemas.ogf.org/occi/core#')";
-
-	/**
 	 * Validates the ResourceKindIsInParent constraint of '<em>Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateResource_ResourceKindIsInParent(Resource resource, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.RESOURCE,
-				 resource,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "ResourceKindIsInParent",
-				 RESOURCE__RESOURCE_KIND_IS_IN_PARENT__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return resource.ResourceKindIsInParent(diagnostics, context);
 	}
 
 	/**
@@ -1031,33 +920,13 @@ public class OCCIValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the LinkKindIsInParent constraint of '<em>Link</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String LINK__LINK_KIND_IS_IN_PARENT__EEXPRESSION = "kind->closure(parent)->exists(k |\n" +
-		"\t\t\t\tk.term = 'link' and k.scheme = 'http://schemas.ogf.org/occi/core#')";
-
-	/**
 	 * Validates the LinkKindIsInParent constraint of '<em>Link</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateLink_LinkKindIsInParent(Link link, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.LINK,
-				 link,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "LinkKindIsInParent",
-				 LINK__LINK_KIND_IS_IN_PARENT__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return link.LinkKindIsInParent(diagnostics, context);
 	}
 
 	/**
@@ -1086,41 +955,14 @@ public class OCCIValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the SchemeUnique constraint of '<em>Extension</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String EXTENSION__SCHEME_UNIQUE__EEXPRESSION = "Extension.allInstances()->isUnique(scheme)";
-
-	/**
 	 * Validates the SchemeUnique constraint of '<em>Extension</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateExtension_SchemeUnique(Extension extension, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.EXTENSION,
-				 extension,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "SchemeUnique",
-				 EXTENSION__SCHEME_UNIQUE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return extension.SchemeUnique(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the KindsSchemeValid constraint of '<em>Extension</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String EXTENSION__KINDS_SCHEME_VALID__EEXPRESSION = "kinds->forAll(k | k.scheme = self.scheme)";
 
 	/**
 	 * Validates the KindsSchemeValid constraint of '<em>Extension</em>'.
@@ -1129,28 +971,8 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateExtension_KindsSchemeValid(Extension extension, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.EXTENSION,
-				 extension,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "KindsSchemeValid",
-				 EXTENSION__KINDS_SCHEME_VALID__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return extension.KindsSchemeValid(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the MixinsSchemeValid constraint of '<em>Extension</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String EXTENSION__MIXINS_SCHEME_VALID__EEXPRESSION = "mixins->forAll(m | m.scheme.substring(1, scheme.size() - 1) = scheme.substring(1,\n" +
-		"\t\t\t\t\tscheme.size() - 1))";
 
 	/**
 	 * Validates the MixinsSchemeValid constraint of '<em>Extension</em>'.
@@ -1159,27 +981,8 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateExtension_MixinsSchemeValid(Extension extension, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.EXTENSION,
-				 extension,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "MixinsSchemeValid",
-				 EXTENSION__MIXINS_SCHEME_VALID__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return extension.MixinsSchemeValid(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the TermUnicity constraint of '<em>Extension</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String EXTENSION__TERM_UNICITY__EEXPRESSION = "kinds.term->intersection(mixins.term)->isEmpty()";
 
 	/**
 	 * Validates the TermUnicity constraint of '<em>Extension</em>'.
@@ -1188,28 +991,8 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateExtension_TermUnicity(Extension extension, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.EXTENSION,
-				 extension,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "TermUnicity",
-				 EXTENSION__TERM_UNICITY__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return extension.TermUnicity(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the KindParentLocalOrImported constraint of '<em>Extension</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String EXTENSION__KIND_PARENT_LOCAL_OR_IMPORTED__EEXPRESSION = "kinds->forAll(parent <> null implies let parentExtension = parent.oclContainer()\n" +
-		"\t\t\tin parentExtension = self or import->includes(parentExtension))";
 
 	/**
 	 * Validates the KindParentLocalOrImported constraint of '<em>Extension</em>'.
@@ -1218,28 +1001,8 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateExtension_KindParentLocalOrImported(Extension extension, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.EXTENSION,
-				 extension,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "KindParentLocalOrImported",
-				 EXTENSION__KIND_PARENT_LOCAL_OR_IMPORTED__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return extension.KindParentLocalOrImported(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the MixinDependsLocalOrImported constraint of '<em>Extension</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String EXTENSION__MIXIN_DEPENDS_LOCAL_OR_IMPORTED__EEXPRESSION = "mixins.depends->forAll(let extension = oclContainer()\n" +
-		"\t\t\tin extension = self or import->includes(extension))";
 
 	/**
 	 * Validates the MixinDependsLocalOrImported constraint of '<em>Extension</em>'.
@@ -1248,28 +1011,8 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateExtension_MixinDependsLocalOrImported(Extension extension, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.EXTENSION,
-				 extension,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "MixinDependsLocalOrImported",
-				 EXTENSION__MIXIN_DEPENDS_LOCAL_OR_IMPORTED__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return extension.MixinDependsLocalOrImported(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the MixinAppliesLocalOrImported constraint of '<em>Extension</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String EXTENSION__MIXIN_APPLIES_LOCAL_OR_IMPORTED__EEXPRESSION = "mixins.applies->forAll(let extension = oclContainer()\n" +
-		"\t\t\tin extension = self or import->includes(extension))";
 
 	/**
 	 * Validates the MixinAppliesLocalOrImported constraint of '<em>Extension</em>'.
@@ -1278,18 +1021,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateExtension_MixinAppliesLocalOrImported(Extension extension, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.EXTENSION,
-				 extension,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "MixinAppliesLocalOrImported",
-				 EXTENSION__MIXIN_APPLIES_LOCAL_OR_IMPORTED__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return extension.MixinAppliesLocalOrImported(diagnostics, context);
 	}
 
 	/**
@@ -1317,47 +1049,14 @@ public class OCCIValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the AllResourcesKindsInUse constraint of '<em>Configuration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String CONFIGURATION__ALL_RESOURCES_KINDS_IN_USE__EEXPRESSION = "use->includesAll(resources.kind.oclContainer())";
-
-	/**
 	 * Validates the AllResourcesKindsInUse constraint of '<em>Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateConfiguration_AllResourcesKindsInUse(Configuration configuration, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.CONFIGURATION,
-				 configuration,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "AllResourcesKindsInUse",
-				 CONFIGURATION__ALL_RESOURCES_KINDS_IN_USE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return configuration.AllResourcesKindsInUse(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the AllResourcesMixinsInUse constraint of '<em>Configuration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String CONFIGURATION__ALL_RESOURCES_MIXINS_IN_USE__EEXPRESSION = "\n" +
-		"\n" +
-		"\t\t/* Previously use->includesAll(resources.mixins.oclContainer()) */\n" +
-		"\t\t\tresources.parts.mixin->forAll(mo |\n" +
-		"\t\t\tlet mixinOwner = mo.oclContainer()\n" +
-		"\t\t\tin if mixinOwner.oclIsTypeOf(Extension)\n" +
-		"\t\t\t\tthen self.use->includes(mixinOwner.oclAsType(Extension)) else self.mixins->includes(mo) endif)";
 
 	/**
 	 * Validates the AllResourcesMixinsInUse constraint of '<em>Configuration</em>'.
@@ -1366,27 +1065,8 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateConfiguration_AllResourcesMixinsInUse(Configuration configuration, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.CONFIGURATION,
-				 configuration,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "AllResourcesMixinsInUse",
-				 CONFIGURATION__ALL_RESOURCES_MIXINS_IN_USE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return configuration.AllResourcesMixinsInUse(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the AllResourcesLinksKindsInUse constraint of '<em>Configuration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String CONFIGURATION__ALL_RESOURCES_LINKS_KINDS_IN_USE__EEXPRESSION = "use->includesAll(resources.links.kind.oclContainer())";
 
 	/**
 	 * Validates the AllResourcesLinksKindsInUse constraint of '<em>Configuration</em>'.
@@ -1395,33 +1075,8 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateConfiguration_AllResourcesLinksKindsInUse(Configuration configuration, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.CONFIGURATION,
-				 configuration,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "AllResourcesLinksKindsInUse",
-				 CONFIGURATION__ALL_RESOURCES_LINKS_KINDS_IN_USE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return configuration.AllResourcesLinksKindsInUse(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the AllResourcesLinksMixinsInUse constraint of '<em>Configuration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String CONFIGURATION__ALL_RESOURCES_LINKS_MIXINS_IN_USE__EEXPRESSION = "\n" +
-		"\n" +
-		"\t\t/* Previously use->includesAll(resources.links.mixins.oclContainer()) */\n" +
-		"\t\t\tresources.links.parts.mixin->forAll(mo |\n" +
-		"\t\t\tlet mixinOwner = mo.oclContainer()\n" +
-		"\t\t\tin if mixinOwner.oclIsTypeOf(Extension)\n" +
-		"\t\t\t\tthen self.use->includes(mixinOwner.oclAsType(Extension)) else self.mixins->includes(mo) endif)";
 
 	/**
 	 * Validates the AllResourcesLinksMixinsInUse constraint of '<em>Configuration</em>'.
@@ -1430,27 +1085,8 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateConfiguration_AllResourcesLinksMixinsInUse(Configuration configuration, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.CONFIGURATION,
-				 configuration,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "AllResourcesLinksMixinsInUse",
-				 CONFIGURATION__ALL_RESOURCES_LINKS_MIXINS_IN_USE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return configuration.AllResourcesLinksMixinsInUse(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the AllResourcesLinksTargetsInConfiguration constraint of '<em>Configuration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String CONFIGURATION__ALL_RESOURCES_LINKS_TARGETS_IN_CONFIGURATION__EEXPRESSION = "resources.links.target->forAll(r | r.oclContainer() = self)";
 
 	/**
 	 * Validates the AllResourcesLinksTargetsInConfiguration constraint of '<em>Configuration</em>'.
@@ -1459,27 +1095,8 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateConfiguration_AllResourcesLinksTargetsInConfiguration(Configuration configuration, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.CONFIGURATION,
-				 configuration,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "AllResourcesLinksTargetsInConfiguration",
-				 CONFIGURATION__ALL_RESOURCES_LINKS_TARGETS_IN_CONFIGURATION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return configuration.AllResourcesLinksTargetsInConfiguration(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the AllMixinsAreTags constraint of '<em>Configuration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String CONFIGURATION__ALL_MIXINS_ARE_TAGS__EEXPRESSION = "mixins->forAll(attributes->isEmpty() and actions->isEmpty() and depends->isEmpty())";
 
 	/**
 	 * Validates the AllMixinsAreTags constraint of '<em>Configuration</em>'.
@@ -1488,18 +1105,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateConfiguration_AllMixinsAreTags(Configuration configuration, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(OCCIPackage.Literals.CONFIGURATION,
-				 configuration,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "AllMixinsAreTags",
-				 CONFIGURATION__ALL_MIXINS_ARE_TAGS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return configuration.AllMixinsAreTags(diagnostics, context);
 	}
 
 	/**

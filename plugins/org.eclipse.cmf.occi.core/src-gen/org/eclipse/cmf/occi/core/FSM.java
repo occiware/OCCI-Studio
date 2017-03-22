@@ -32,7 +32,6 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see org.eclipse.cmf.occi.core.OCCIPackage#getFSM()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AttributeTypeMustBeEEnum'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot AttributeTypeMustBeEEnum='attribute.type.oclIsTypeOf(EnumerationType)'"
  * @generated
  */
 public interface FSM extends EObject {
@@ -50,6 +49,7 @@ public interface FSM extends EObject {
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getFSM_OwnedState()
 	 * @see org.eclipse.cmf.occi.core.State#getOwningFSM
 	 * @model opposite="owningFSM" containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!FSM!ownedState'"
 	 * @generated
 	 */
 	EList<State> getOwnedState();
@@ -66,6 +66,7 @@ public interface FSM extends EObject {
 	 * @see #setAttribute(Attribute)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getFSM_Attribute()
 	 * @model required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!FSM!attribute'"
 	 * @generated
 	 */
 	Attribute getAttribute();
@@ -83,9 +84,17 @@ public interface FSM extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!FSM!invariant~validate'"
 	 * @generated
 	 */
 	boolean validate(DiagnosticChain diagnostic, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n * \n * inv AttributeTypeMustBeEEnum:\n *   let severity : Integer[1] = \'FSM::AttributeTypeMustBeEEnum\'.getSeverity()\n *   in\n *     if severity <= 0\n *     then true\n *     else\n *       let\n *         status : OclAny[1] = attribute.type.oclIsTypeOf(EnumerationType)\n *       in\n *         \'FSM::AttributeTypeMustBeEEnum\'.logDiagnostic(self, null, diagnostics, context, null, severity, status, 0)\n *     endif\n \052/\nfinal /*@NonInvalid\052/ <%org.eclipse.ocl.pivot.evaluation.Executor%> executor = <%org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal%>.getExecutor(this);\nfinal /*@NonInvalid\052/ <%org.eclipse.ocl.pivot.ids.IdResolver%> idResolver = executor.getIdResolver();\nfinal /*@NonInvalid\052/ <%org.eclipse.ocl.pivot.values.IntegerValue%> severity_0 = <%org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation%>.INSTANCE.evaluate(executor, <%org.eclipse.cmf.occi.OCCITables%>.STR_FSM_c_c_AttributeTypeMustBeEEnum);\nfinal /*@NonInvalid\052/ boolean le = <%org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation%>.INSTANCE.evaluate(executor, severity_0, <%org.eclipse.cmf.occi.OCCITables%>.INT_0).booleanValue();\n/*@NonInvalid\052/ boolean symbol_0;\nif (le) {\n    symbol_0 = <%org.eclipse.ocl.pivot.utilities.ValueUtil%>.TRUE_VALUE;\n}\nelse {\n    /*@Caught\052/ /*@NonNull\052/ <%java.lang.Object%> CAUGHT_status;\n    try {\n        final /*@NonInvalid\052/ <%org.eclipse.ocl.pivot.Class%> TYP_occi_c_c_EnumerationType = idResolver.getClass(<%org.eclipse.cmf.occi.OCCITables%>.CLSSid_EnumerationType, null);\n        final /*@Thrown\052/ <%org.eclipse.cmf.occi.core.Attribute%> attribute = this.getAttribute();\n        final /*@Thrown\052/ <%org.eclipse.cmf.occi.core.DataType%> type = attribute.getType();\n        final /*@Thrown\052/ boolean status = <%org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsTypeOfOperation%>.INSTANCE.evaluate(executor, type, TYP_occi_c_c_EnumerationType).booleanValue();\n        CAUGHT_status = status;\n    }\n    catch (<%java.lang.Exception%> e) {\n        CAUGHT_status = <%org.eclipse.ocl.pivot.utilities.ValueUtil%>.createInvalidValue(e);\n    }\n    final /*@NonInvalid\052/ boolean logDiagnostic = <%org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation%>.INSTANCE.evaluate(executor, <%org.eclipse.ocl.pivot.ids.TypeId%>.BOOLEAN, <%org.eclipse.cmf.occi.OCCITables%>.STR_FSM_c_c_AttributeTypeMustBeEEnum, this, null, diagnostics, context, null, severity_0, CAUGHT_status, <%org.eclipse.cmf.occi.OCCITables%>.INT_0).booleanValue();\n    symbol_0 = logDiagnostic;\n}\nreturn Boolean.TRUE == symbol_0;'"
+	 * @generated
+	 */
+	boolean AttributeTypeMustBeEEnum(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // FSM

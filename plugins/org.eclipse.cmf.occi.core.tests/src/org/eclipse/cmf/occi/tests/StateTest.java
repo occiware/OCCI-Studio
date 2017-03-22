@@ -22,6 +22,12 @@ import org.eclipse.cmf.occi.core.State;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>State</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link org.eclipse.cmf.occi.core.State#StateLiteralAlreadyDefinedInFSMAttributeType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>State Literal Already Defined In FSM Attribute Type</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class StateTest extends TestCase {
@@ -93,6 +99,19 @@ public class StateTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.State#StateLiteralAlreadyDefinedInFSMAttributeType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>State Literal Already Defined In FSM Attribute Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.State#StateLiteralAlreadyDefinedInFSMAttributeType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testStateLiteralAlreadyDefinedInFSMAttributeType__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //StateTest

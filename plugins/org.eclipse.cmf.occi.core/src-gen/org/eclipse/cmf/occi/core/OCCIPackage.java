@@ -34,7 +34,6 @@ import org.eclipse.emf.ecore.EReference;
  * @see org.eclipse.cmf.occi.core.OCCIFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/OCL/Import ecore='http://www.eclipse.org/emf/2002/Ecore'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
  * @generated
  */
 public interface OCCIPackage extends EPackage {
@@ -135,13 +134,40 @@ public interface OCCIPackage extends EPackage {
 	int CATEGORY_FEATURE_COUNT = 5;
 
 	/**
+	 * The operation id for the '<em>Attributes Name Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATEGORY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
+	 * The operation id for the '<em>Identity Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATEGORY___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP = 1;
+
+	/**
+	 * The operation id for the '<em>Scheme Ends With Sharp</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATEGORY___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP = 2;
+
+	/**
 	 * The number of operations of the '<em>Category</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CATEGORY_OPERATION_COUNT = 0;
+	int CATEGORY_OPERATION_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.ConstraintImpl <em>Constraint</em>}' class.
@@ -281,13 +307,58 @@ public interface OCCIPackage extends EPackage {
 	int TYPE_FEATURE_COUNT = CATEGORY_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Attributes Name Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = CATEGORY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Identity Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP = CATEGORY___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Scheme Ends With Sharp</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP = CATEGORY___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Action Term Unicity</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP = CATEGORY_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Constraint Name Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = CATEGORY_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_OPERATION_COUNT = CATEGORY_OPERATION_COUNT + 0;
+	int TYPE_OPERATION_COUNT = CATEGORY_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.FSMImpl <em>FSM</em>}' class.
@@ -336,13 +407,22 @@ public interface OCCIPackage extends EPackage {
 	int FSM___VALIDATE__DIAGNOSTICCHAIN_MAP = 0;
 
 	/**
+	 * The operation id for the '<em>Attribute Type Must Be EEnum</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FSM___ATTRIBUTE_TYPE_MUST_BE_EENUM__DIAGNOSTICCHAIN_MAP = 1;
+
+	/**
 	 * The number of operations of the '<em>FSM</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FSM_OPERATION_COUNT = 1;
+	int FSM_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.StateImpl <em>State</em>}' class.
@@ -418,13 +498,22 @@ public interface OCCIPackage extends EPackage {
 	int STATE_FEATURE_COUNT = 6;
 
 	/**
+	 * The operation id for the '<em>State Literal Already Defined In FSM Attribute Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE___STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
 	 * The number of operations of the '<em>State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_OPERATION_COUNT = 0;
+	int STATE_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.TransitionImpl <em>Transition</em>}' class.
@@ -673,13 +762,94 @@ public interface OCCIPackage extends EPackage {
 	int KIND_FEATURE_COUNT = TYPE_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Attributes Name Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KIND___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = TYPE___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Identity Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KIND___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP = TYPE___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Scheme Ends With Sharp</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KIND___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP = TYPE___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Action Term Unicity</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KIND___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP = TYPE___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Constraint Name Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KIND___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>No Cyclic Inheritance</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KIND___NO_CYCLIC_INHERITANCE__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Attributes Name Not Already Defined In Parent</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KIND___ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_PARENT__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Correct Scheme</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KIND___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Entity Kind Is Root Parent</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KIND___ENTITY_KIND_IS_ROOT_PARENT__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 3;
+
+	/**
 	 * The number of operations of the '<em>Kind</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KIND_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
+	int KIND_OPERATION_COUNT = TYPE_OPERATION_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.ActionImpl <em>Action</em>}' class.
@@ -746,13 +916,49 @@ public interface OCCIPackage extends EPackage {
 	int ACTION_FEATURE_COUNT = CATEGORY_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Attributes Name Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = CATEGORY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Identity Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP = CATEGORY___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Scheme Ends With Sharp</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP = CATEGORY___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Correct Scheme</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP = CATEGORY_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_OPERATION_COUNT = CATEGORY_OPERATION_COUNT + 0;
+	int ACTION_OPERATION_COUNT = CATEGORY_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.MixinImpl <em>Mixin</em>}' class.
@@ -864,13 +1070,85 @@ public interface OCCIPackage extends EPackage {
 	int MIXIN_FEATURE_COUNT = TYPE_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Attributes Name Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXIN___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = TYPE___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Identity Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXIN___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP = TYPE___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Scheme Ends With Sharp</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXIN___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP = TYPE___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Action Term Unicity</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXIN___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP = TYPE___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Constraint Name Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXIN___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Correct Scheme</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXIN___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>No Cyclic Inheritance</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXIN___NO_CYCLIC_INHERITANCE__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Attributes Name Not Already Defined In Depends</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXIN___ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_DEPENDS__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 2;
+
+	/**
 	 * The number of operations of the '<em>Mixin</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MIXIN_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
+	int MIXIN_OPERATION_COUNT = TYPE_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.EntityImpl <em>Entity</em>}' class.
@@ -991,13 +1269,40 @@ public interface OCCIPackage extends EPackage {
 	int ENTITY___OCCI_DELETE = 3;
 
 	/**
+	 * The operation id for the '<em>Attributes Name Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = 4;
+
+	/**
+	 * The operation id for the '<em>Kind Compatible With One Applies Of Each Mixin</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP = 5;
+
+	/**
+	 * The operation id for the '<em>Id Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP = 6;
+
+	/**
 	 * The number of operations of the '<em>Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OPERATION_COUNT = 4;
+	int ENTITY_OPERATION_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.MixinBaseImpl <em>Mixin Base</em>}' class.
@@ -1246,13 +1551,49 @@ public interface OCCIPackage extends EPackage {
 	int RESOURCE___OCCI_DELETE = ENTITY___OCCI_DELETE;
 
 	/**
+	 * The operation id for the '<em>Attributes Name Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = ENTITY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Kind Compatible With One Applies Of Each Mixin</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP = ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Id Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE___ID_UNIQUE__DIAGNOSTICCHAIN_MAP = ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Resource Kind Is In Parent</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE___RESOURCE_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP = ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 0;
+	int RESOURCE_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.LinkImpl <em>Link</em>}' class.
@@ -1391,13 +1732,49 @@ public interface OCCIPackage extends EPackage {
 	int LINK___OCCI_DELETE = ENTITY___OCCI_DELETE;
 
 	/**
+	 * The operation id for the '<em>Attributes Name Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = ENTITY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Kind Compatible With One Applies Of Each Mixin</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP = ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Id Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK___ID_UNIQUE__DIAGNOSTICCHAIN_MAP = ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Link Kind Is In Parent</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK___LINK_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP = ENTITY_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Link</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 0;
+	int LINK_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.ExtensionImpl <em>Extension</em>}' class.
@@ -1491,13 +1868,76 @@ public interface OCCIPackage extends EPackage {
 	int EXTENSION_FEATURE_COUNT = 8;
 
 	/**
+	 * The operation id for the '<em>Kinds Scheme Valid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENSION___KINDS_SCHEME_VALID__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
+	 * The operation id for the '<em>Kind Parent Local Or Imported</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENSION___KIND_PARENT_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP = 1;
+
+	/**
+	 * The operation id for the '<em>Mixins Scheme Valid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENSION___MIXINS_SCHEME_VALID__DIAGNOSTICCHAIN_MAP = 2;
+
+	/**
+	 * The operation id for the '<em>Term Unicity</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENSION___TERM_UNICITY__DIAGNOSTICCHAIN_MAP = 3;
+
+	/**
+	 * The operation id for the '<em>Mixin Applies Local Or Imported</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENSION___MIXIN_APPLIES_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP = 4;
+
+	/**
+	 * The operation id for the '<em>Scheme Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENSION___SCHEME_UNIQUE__DIAGNOSTICCHAIN_MAP = 5;
+
+	/**
+	 * The operation id for the '<em>Mixin Depends Local Or Imported</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENSION___MIXIN_DEPENDS_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP = 6;
+
+	/**
 	 * The number of operations of the '<em>Extension</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION_OPERATION_COUNT = 0;
+	int EXTENSION_OPERATION_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.ConfigurationImpl <em>Configuration</em>}' class.
@@ -1564,13 +2004,67 @@ public interface OCCIPackage extends EPackage {
 	int CONFIGURATION_FEATURE_COUNT = 5;
 
 	/**
+	 * The operation id for the '<em>All Mixins Are Tags</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURATION___ALL_MIXINS_ARE_TAGS__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
+	 * The operation id for the '<em>All Resources Links Targets In Configuration</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURATION___ALL_RESOURCES_LINKS_TARGETS_IN_CONFIGURATION__DIAGNOSTICCHAIN_MAP = 1;
+
+	/**
+	 * The operation id for the '<em>All Resources Kinds In Use</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURATION___ALL_RESOURCES_KINDS_IN_USE__DIAGNOSTICCHAIN_MAP = 2;
+
+	/**
+	 * The operation id for the '<em>All Resources Links Mixins In Use</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURATION___ALL_RESOURCES_LINKS_MIXINS_IN_USE__DIAGNOSTICCHAIN_MAP = 3;
+
+	/**
+	 * The operation id for the '<em>All Resources Mixins In Use</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURATION___ALL_RESOURCES_MIXINS_IN_USE__DIAGNOSTICCHAIN_MAP = 4;
+
+	/**
+	 * The operation id for the '<em>All Resources Links Kinds In Use</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURATION___ALL_RESOURCES_LINKS_KINDS_IN_USE__DIAGNOSTICCHAIN_MAP = 5;
+
+	/**
 	 * The number of operations of the '<em>Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGURATION_OPERATION_COUNT = 0;
+	int CONFIGURATION_OPERATION_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.DataTypeImpl <em>Data Type</em>}' class.
@@ -2368,6 +2862,36 @@ public interface OCCIPackage extends EPackage {
 	EReference getCategory_Attributes();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Category#AttributesNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Attributes Name Unique</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Attributes Name Unique</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Category#AttributesNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getCategory__AttributesNameUnique__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Category#IdentityUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Identity Unique</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Identity Unique</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Category#IdentityUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getCategory__IdentityUnique__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Category#SchemeEndsWithSharp(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Scheme Ends With Sharp</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Scheme Ends With Sharp</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Category#SchemeEndsWithSharp(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getCategory__SchemeEndsWithSharp__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Constraint <em>Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2443,6 +2967,26 @@ public interface OCCIPackage extends EPackage {
 	EReference getType_Constraints();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Type#ActionTermUnicity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Action Term Unicity</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Action Term Unicity</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Type#ActionTermUnicity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getType__ActionTermUnicity__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Type#ConstraintNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Constraint Name Unique</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Constraint Name Unique</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Type#ConstraintNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getType__ConstraintNameUnique__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.FSM <em>FSM</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2483,6 +3027,16 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getFSM__Validate__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.FSM#AttributeTypeMustBeEEnum(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Attribute Type Must Be EEnum</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Attribute Type Must Be EEnum</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.FSM#AttributeTypeMustBeEEnum(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getFSM__AttributeTypeMustBeEEnum__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.State <em>State</em>}'.
@@ -2559,6 +3113,16 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getState_IncomingTransition();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.State#StateLiteralAlreadyDefinedInFSMAttributeType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>State Literal Already Defined In FSM Attribute Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>State Literal Already Defined In FSM Attribute Type</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.State#StateLiteralAlreadyDefinedInFSMAttributeType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getState__StateLiteralAlreadyDefinedInFSMAttributeType__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Transition <em>Transition</em>}'.
@@ -2723,6 +3287,46 @@ public interface OCCIPackage extends EPackage {
 	EReference getKind_Fsm();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Kind#NoCyclicInheritance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>No Cyclic Inheritance</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>No Cyclic Inheritance</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Kind#NoCyclicInheritance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getKind__NoCyclicInheritance__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Kind#AttributesNameNotAlreadyDefinedInParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Attributes Name Not Already Defined In Parent</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Attributes Name Not Already Defined In Parent</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Kind#AttributesNameNotAlreadyDefinedInParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getKind__AttributesNameNotAlreadyDefinedInParent__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Kind#CorrectScheme(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Correct Scheme</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Correct Scheme</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Kind#CorrectScheme(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getKind__CorrectScheme__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Kind#EntityKindIsRootParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Entity Kind Is Root Parent</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Entity Kind Is Root Parent</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Kind#EntityKindIsRootParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getKind__EntityKindIsRootParent__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Action <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2731,6 +3335,16 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAction();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Action#CorrectScheme(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Correct Scheme</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Correct Scheme</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Action#CorrectScheme(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getAction__CorrectScheme__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Mixin <em>Mixin</em>}'.
@@ -2774,6 +3388,36 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMixin_Entities();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Mixin#CorrectScheme(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Correct Scheme</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Correct Scheme</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Mixin#CorrectScheme(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getMixin__CorrectScheme__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Mixin#NoCyclicInheritance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>No Cyclic Inheritance</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>No Cyclic Inheritance</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Mixin#NoCyclicInheritance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getMixin__NoCyclicInheritance__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Mixin#AttributesNameNotAlreadyDefinedInDepends(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Attributes Name Not Already Defined In Depends</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Attributes Name Not Already Defined In Depends</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Mixin#AttributesNameNotAlreadyDefinedInDepends(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getMixin__AttributesNameNotAlreadyDefinedInDepends__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Entity <em>Entity</em>}'.
@@ -2903,6 +3547,36 @@ public interface OCCIPackage extends EPackage {
 	EOperation getEntity__OcciDelete();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Entity#AttributesNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Attributes Name Unique</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Attributes Name Unique</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Entity#AttributesNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getEntity__AttributesNameUnique__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Entity#KindCompatibleWithOneAppliesOfEachMixin(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Kind Compatible With One Applies Of Each Mixin</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Kind Compatible With One Applies Of Each Mixin</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Entity#KindCompatibleWithOneAppliesOfEachMixin(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getEntity__KindCompatibleWithOneAppliesOfEachMixin__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Entity#IdUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Id Unique</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Id Unique</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Entity#IdUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getEntity__IdUnique__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.MixinBase <em>Mixin Base</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3021,6 +3695,16 @@ public interface OCCIPackage extends EPackage {
 	EReference getResource_Rlinks();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Resource#ResourceKindIsInParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Resource Kind Is In Parent</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Resource Kind Is In Parent</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Resource#ResourceKindIsInParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getResource__ResourceKindIsInParent__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Link <em>Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3051,6 +3735,16 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getLink_Target();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Link#LinkKindIsInParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Link Kind Is In Parent</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Link Kind Is In Parent</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Link#LinkKindIsInParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getLink__LinkKindIsInParent__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Extension <em>Extension</em>}'.
@@ -3151,6 +3845,76 @@ public interface OCCIPackage extends EPackage {
 	EAttribute getExtension_Specification();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Extension#KindsSchemeValid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Kinds Scheme Valid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Kinds Scheme Valid</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Extension#KindsSchemeValid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getExtension__KindsSchemeValid__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Extension#KindParentLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Kind Parent Local Or Imported</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Kind Parent Local Or Imported</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Extension#KindParentLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getExtension__KindParentLocalOrImported__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Extension#MixinsSchemeValid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Mixins Scheme Valid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Mixins Scheme Valid</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Extension#MixinsSchemeValid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getExtension__MixinsSchemeValid__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Extension#TermUnicity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Term Unicity</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Term Unicity</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Extension#TermUnicity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getExtension__TermUnicity__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Extension#MixinAppliesLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Mixin Applies Local Or Imported</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Mixin Applies Local Or Imported</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Extension#MixinAppliesLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getExtension__MixinAppliesLocalOrImported__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Extension#SchemeUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Scheme Unique</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Scheme Unique</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Extension#SchemeUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getExtension__SchemeUnique__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Extension#MixinDependsLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Mixin Depends Local Or Imported</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Mixin Depends Local Or Imported</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Extension#MixinDependsLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getExtension__MixinDependsLocalOrImported__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Configuration <em>Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3214,6 +3978,66 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getConfiguration_Mixins();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Configuration#AllMixinsAreTags(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>All Mixins Are Tags</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>All Mixins Are Tags</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Configuration#AllMixinsAreTags(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getConfiguration__AllMixinsAreTags__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Configuration#AllResourcesLinksTargetsInConfiguration(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>All Resources Links Targets In Configuration</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>All Resources Links Targets In Configuration</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Configuration#AllResourcesLinksTargetsInConfiguration(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getConfiguration__AllResourcesLinksTargetsInConfiguration__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Configuration#AllResourcesKindsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>All Resources Kinds In Use</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>All Resources Kinds In Use</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Configuration#AllResourcesKindsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getConfiguration__AllResourcesKindsInUse__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Configuration#AllResourcesLinksMixinsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>All Resources Links Mixins In Use</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>All Resources Links Mixins In Use</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Configuration#AllResourcesLinksMixinsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getConfiguration__AllResourcesLinksMixinsInUse__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Configuration#AllResourcesMixinsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>All Resources Mixins In Use</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>All Resources Mixins In Use</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Configuration#AllResourcesMixinsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getConfiguration__AllResourcesMixinsInUse__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Configuration#AllResourcesLinksKindsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>All Resources Links Kinds In Use</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>All Resources Links Kinds In Use</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Configuration#AllResourcesLinksKindsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getConfiguration__AllResourcesLinksKindsInUse__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.DataType <em>Data Type</em>}'.
@@ -3730,6 +4554,30 @@ public interface OCCIPackage extends EPackage {
 		EReference CATEGORY__ATTRIBUTES = eINSTANCE.getCategory_Attributes();
 
 		/**
+		 * The meta object literal for the '<em><b>Attributes Name Unique</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CATEGORY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCategory__AttributesNameUnique__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Identity Unique</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CATEGORY___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCategory__IdentityUnique__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Scheme Ends With Sharp</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CATEGORY___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCategory__SchemeEndsWithSharp__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.ConstraintImpl <em>Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3790,6 +4638,22 @@ public interface OCCIPackage extends EPackage {
 		EReference TYPE__CONSTRAINTS = eINSTANCE.getType_Constraints();
 
 		/**
+		 * The meta object literal for the '<em><b>Action Term Unicity</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TYPE___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP = eINSTANCE.getType__ActionTermUnicity__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Constraint Name Unique</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getType__ConstraintNameUnique__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.FSMImpl <em>FSM</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3822,6 +4686,14 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation FSM___VALIDATE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getFSM__Validate__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Attribute Type Must Be EEnum</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FSM___ATTRIBUTE_TYPE_MUST_BE_EENUM__DIAGNOSTICCHAIN_MAP = eINSTANCE.getFSM__AttributeTypeMustBeEEnum__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.StateImpl <em>State</em>}' class.
@@ -3880,6 +4752,14 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STATE__INCOMING_TRANSITION = eINSTANCE.getState_IncomingTransition();
+
+		/**
+		 * The meta object literal for the '<em><b>State Literal Already Defined In FSM Attribute Type</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STATE___STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getState__StateLiteralAlreadyDefinedInFSMAttributeType__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.TransitionImpl <em>Transition</em>}' class.
@@ -4008,6 +4888,38 @@ public interface OCCIPackage extends EPackage {
 		EReference KIND__FSM = eINSTANCE.getKind_Fsm();
 
 		/**
+		 * The meta object literal for the '<em><b>No Cyclic Inheritance</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation KIND___NO_CYCLIC_INHERITANCE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getKind__NoCyclicInheritance__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Attributes Name Not Already Defined In Parent</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation KIND___ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_PARENT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getKind__AttributesNameNotAlreadyDefinedInParent__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Correct Scheme</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation KIND___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP = eINSTANCE.getKind__CorrectScheme__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity Kind Is Root Parent</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation KIND___ENTITY_KIND_IS_ROOT_PARENT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getKind__EntityKindIsRootParent__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.ActionImpl <em>Action</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4016,6 +4928,14 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ACTION = eINSTANCE.getAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Correct Scheme</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACTION___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP = eINSTANCE.getAction__CorrectScheme__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.MixinImpl <em>Mixin</em>}' class.
@@ -4050,6 +4970,30 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MIXIN__ENTITIES = eINSTANCE.getMixin_Entities();
+
+		/**
+		 * The meta object literal for the '<em><b>Correct Scheme</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MIXIN___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP = eINSTANCE.getMixin__CorrectScheme__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>No Cyclic Inheritance</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MIXIN___NO_CYCLIC_INHERITANCE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getMixin__NoCyclicInheritance__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Attributes Name Not Already Defined In Depends</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MIXIN___ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_DEPENDS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getMixin__AttributesNameNotAlreadyDefinedInDepends__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.EntityImpl <em>Entity</em>}' class.
@@ -4150,6 +5094,30 @@ public interface OCCIPackage extends EPackage {
 		EOperation ENTITY___OCCI_DELETE = eINSTANCE.getEntity__OcciDelete();
 
 		/**
+		 * The meta object literal for the '<em><b>Attributes Name Unique</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ENTITY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getEntity__AttributesNameUnique__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Kind Compatible With One Applies Of Each Mixin</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP = eINSTANCE.getEntity__KindCompatibleWithOneAppliesOfEachMixin__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Id Unique</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getEntity__IdUnique__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.MixinBaseImpl <em>Mixin Base</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4244,6 +5212,14 @@ public interface OCCIPackage extends EPackage {
 		EReference RESOURCE__RLINKS = eINSTANCE.getResource_Rlinks();
 
 		/**
+		 * The meta object literal for the '<em><b>Resource Kind Is In Parent</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation RESOURCE___RESOURCE_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getResource__ResourceKindIsInParent__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.LinkImpl <em>Link</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4268,6 +5244,14 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LINK__TARGET = eINSTANCE.getLink_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Link Kind Is In Parent</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LINK___LINK_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getLink__LinkKindIsInParent__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.ExtensionImpl <em>Extension</em>}' class.
@@ -4344,6 +5328,62 @@ public interface OCCIPackage extends EPackage {
 		EAttribute EXTENSION__SPECIFICATION = eINSTANCE.getExtension_Specification();
 
 		/**
+		 * The meta object literal for the '<em><b>Kinds Scheme Valid</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EXTENSION___KINDS_SCHEME_VALID__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtension__KindsSchemeValid__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Kind Parent Local Or Imported</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EXTENSION___KIND_PARENT_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtension__KindParentLocalOrImported__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Mixins Scheme Valid</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EXTENSION___MIXINS_SCHEME_VALID__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtension__MixinsSchemeValid__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Term Unicity</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EXTENSION___TERM_UNICITY__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtension__TermUnicity__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Mixin Applies Local Or Imported</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EXTENSION___MIXIN_APPLIES_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtension__MixinAppliesLocalOrImported__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Scheme Unique</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EXTENSION___SCHEME_UNIQUE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtension__SchemeUnique__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Mixin Depends Local Or Imported</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EXTENSION___MIXIN_DEPENDS_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtension__MixinDependsLocalOrImported__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.ConfigurationImpl <em>Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4392,6 +5432,54 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONFIGURATION__MIXINS = eINSTANCE.getConfiguration_Mixins();
+
+		/**
+		 * The meta object literal for the '<em><b>All Mixins Are Tags</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONFIGURATION___ALL_MIXINS_ARE_TAGS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getConfiguration__AllMixinsAreTags__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>All Resources Links Targets In Configuration</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONFIGURATION___ALL_RESOURCES_LINKS_TARGETS_IN_CONFIGURATION__DIAGNOSTICCHAIN_MAP = eINSTANCE.getConfiguration__AllResourcesLinksTargetsInConfiguration__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>All Resources Kinds In Use</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONFIGURATION___ALL_RESOURCES_KINDS_IN_USE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getConfiguration__AllResourcesKindsInUse__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>All Resources Links Mixins In Use</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONFIGURATION___ALL_RESOURCES_LINKS_MIXINS_IN_USE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getConfiguration__AllResourcesLinksMixinsInUse__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>All Resources Mixins In Use</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONFIGURATION___ALL_RESOURCES_MIXINS_IN_USE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getConfiguration__AllResourcesMixinsInUse__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>All Resources Links Kinds In Use</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONFIGURATION___ALL_RESOURCES_LINKS_KINDS_IN_USE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getConfiguration__AllResourcesLinksKindsInUse__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.DataTypeImpl <em>Data Type</em>}' class.

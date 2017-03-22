@@ -47,6 +47,7 @@ public interface Attribute extends EObject {
 	 * @see #setName(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getAttribute_Name()
 	 * @model dataType="org.eclipse.cmf.occi.core.AttributeName" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Attribute!name'"
 	 * @generated
 	 */
 	String getName();
@@ -74,6 +75,7 @@ public interface Attribute extends EObject {
 	 * @see #setMutable(boolean)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getAttribute_Mutable()
 	 * @model default="true" dataType="org.eclipse.cmf.occi.core.Boolean"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Attribute!mutable'"
 	 * @generated
 	 */
 	boolean isMutable();
@@ -100,6 +102,7 @@ public interface Attribute extends EObject {
 	 * @see #setRequired(boolean)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getAttribute_Required()
 	 * @model dataType="org.eclipse.cmf.occi.core.Boolean"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Attribute!required'"
 	 * @generated
 	 */
 	boolean isRequired();
@@ -126,6 +129,7 @@ public interface Attribute extends EObject {
 	 * @see #setDefault(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getAttribute_Default()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Attribute!default'"
 	 * @generated
 	 */
 	String getDefault();
@@ -152,6 +156,7 @@ public interface Attribute extends EObject {
 	 * @see #setDescription(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getAttribute_Description()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Attribute!description'"
 	 * @generated
 	 */
 	String getDescription();
@@ -177,7 +182,7 @@ public interface Attribute extends EObject {
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(DataType)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getAttribute_Type()
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Attribute!type'"
 	 * @generated
 	 */
 	DataType getType();

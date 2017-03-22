@@ -46,6 +46,7 @@ public interface Transition extends EObject {
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getTransition_Source()
 	 * @see org.eclipse.cmf.occi.core.State#getOutgoingTransition
 	 * @model opposite="outgoingTransition" required="true" transient="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Transition!source'"
 	 * @generated
 	 */
 	State getSource();
@@ -74,6 +75,7 @@ public interface Transition extends EObject {
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getTransition_Target()
 	 * @see org.eclipse.cmf.occi.core.State#getIncomingTransition
 	 * @model opposite="incomingTransition" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Transition!target'"
 	 * @generated
 	 */
 	State getTarget();
@@ -100,6 +102,7 @@ public interface Transition extends EObject {
 	 * @see #setAction(Action)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getTransition_Action()
 	 * @model required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Transition!action'"
 	 * @generated
 	 */
 	Action getAction();

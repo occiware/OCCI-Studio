@@ -11,8 +11,13 @@
  */
 package org.eclipse.cmf.occi.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.cmf.occi.core.Action;
 import org.eclipse.cmf.occi.core.Constraint;
 import org.eclipse.cmf.occi.core.OCCIPackage;
@@ -20,6 +25,7 @@ import org.eclipse.cmf.occi.core.Type;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -27,6 +33,17 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.ocl.pivot.evaluation.Executor;
+import org.eclipse.ocl.pivot.ids.IdResolver;
+import org.eclipse.ocl.pivot.ids.TypeId;
+import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+import org.eclipse.ocl.pivot.values.IntegerValue;
+import org.eclipse.ocl.pivot.values.OrderedSetValue;
+import org.eclipse.ocl.pivot.values.SetValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -104,6 +121,136 @@ public abstract class TypeImpl extends CategoryImpl implements Type {
 			constraints = new EObjectContainmentEList<Constraint>(Constraint.class, this, OCCIPackage.TYPE__CONSTRAINTS);
 		}
 		return constraints;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ActionTermUnicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 * 
+		 * inv ActionTermUnicity:
+		 *   let severity : Integer[1] = 'Type::ActionTermUnicity'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let status : OclAny[1] = actions->isUnique(term)
+		 *       in
+		 *         'Type::ActionTermUnicity'.logDiagnostic(self, null, diagnostics, context, null, severity, status, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, OCCITables.STR_Type_c_c_ActionTermUnicity);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
+		/*@NonInvalid*/ boolean symbol_0;
+		if (le) {
+		    symbol_0 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+		    /*@Caught*/ /*@NonNull*/ Object CAUGHT_status;
+		    try {
+		        final /*@Thrown*/ List<Action> actions = this.getActions();
+		        final /*@Thrown*/ OrderedSetValue BOXED_actions = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Action, actions);
+		        /*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(OCCITables.ORD_CLSSid_Action);
+		        /*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_actions.iterator();
+		        /*@Thrown*/ boolean status;
+		        while (true) {
+		            if (!ITERATOR__1.hasNext()) {
+		                status = ValueUtil.TRUE_VALUE;
+		                break;
+		            }
+		            /*@NonInvalid*/ Action _1 = (Action)ITERATOR__1.next();
+		            /**
+		             * term
+		             */
+		            final /*@Thrown*/ String term = _1.getTerm();
+		            //
+		            if (accumulator.includes(term) == ValueUtil.TRUE_VALUE) {
+		                status = ValueUtil.FALSE_VALUE;			// Abort after second find
+		                break;
+		            }
+		            else {
+		                accumulator.add(term);
+		            }
+		        }
+		        CAUGHT_status = status;
+		    }
+		    catch (Exception e) {
+		        CAUGHT_status = ValueUtil.createInvalidValue(e);
+		    }
+		    final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Type_c_c_ActionTermUnicity, this, null, diagnostics, context, null, severity_0, CAUGHT_status, OCCITables.INT_0).booleanValue();
+		    symbol_0 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_0;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean ConstraintNameUnique(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 * 
+		 * inv ConstraintNameUnique:
+		 *   let severity : Integer[1] = 'Type::ConstraintNameUnique'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let status : OclAny[1] = constraints->isUnique(name)
+		 *       in
+		 *         'Type::ConstraintNameUnique'.logDiagnostic(self, null, diagnostics, context, null, severity, status, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, OCCITables.STR_Type_c_c_ConstraintNameUnique);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
+		/*@NonInvalid*/ boolean symbol_0;
+		if (le) {
+		    symbol_0 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+		    /*@Caught*/ /*@NonNull*/ Object CAUGHT_status;
+		    try {
+		        final /*@Thrown*/ List<Constraint> constraints = this.getConstraints();
+		        final /*@Thrown*/ OrderedSetValue BOXED_constraints = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Constraint, constraints);
+		        /*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(OCCITables.ORD_CLSSid_Constraint);
+		        /*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_constraints.iterator();
+		        /*@Thrown*/ boolean status;
+		        while (true) {
+		            if (!ITERATOR__1.hasNext()) {
+		                status = ValueUtil.TRUE_VALUE;
+		                break;
+		            }
+		            /*@NonInvalid*/ Constraint _1 = (Constraint)ITERATOR__1.next();
+		            /**
+		             * name
+		             */
+		            final /*@Thrown*/ String name = _1.getName();
+		            //
+		            if (accumulator.includes(name) == ValueUtil.TRUE_VALUE) {
+		                status = ValueUtil.FALSE_VALUE;			// Abort after second find
+		                break;
+		            }
+		            else {
+		                accumulator.add(name);
+		            }
+		        }
+		        CAUGHT_status = status;
+		    }
+		    catch (Exception e) {
+		        CAUGHT_status = ValueUtil.createInvalidValue(e);
+		    }
+		    final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Type_c_c_ConstraintNameUnique, this, null, diagnostics, context, null, severity_0, CAUGHT_status, OCCITables.INT_0).booleanValue();
+		    symbol_0 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_0;
 	}
 
 	/**
@@ -191,6 +338,23 @@ public abstract class TypeImpl extends CategoryImpl implements Type {
 				return constraints != null && !constraints.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OCCIPackage.TYPE___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP:
+				return ActionTermUnicity((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case OCCIPackage.TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP:
+				return ConstraintNameUnique((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //TypeImpl

@@ -140,6 +140,7 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated NOT
 	 */
 	public void setValue(String newValue) {
+		System.out.println("newValue"+newValue);
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())

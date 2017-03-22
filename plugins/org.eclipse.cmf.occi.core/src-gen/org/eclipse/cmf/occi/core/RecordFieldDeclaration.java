@@ -43,6 +43,7 @@ public interface RecordFieldDeclaration extends EObject {
 	 * @see #setType(DataType)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getRecordFieldDeclaration_Type()
 	 * @model required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!RecordFieldDeclaration!type'"
 	 * @generated
 	 */
 	DataType getType();
@@ -69,6 +70,7 @@ public interface RecordFieldDeclaration extends EObject {
 	 * @see #setName(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getRecordFieldDeclaration_Name()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!RecordFieldDeclaration!name'"
 	 * @generated
 	 */
 	String getName();

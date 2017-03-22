@@ -22,6 +22,18 @@ import org.eclipse.cmf.occi.core.OCCIFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Extension</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link org.eclipse.cmf.occi.core.Extension#KindsSchemeValid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Kinds Scheme Valid</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.Extension#KindParentLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Kind Parent Local Or Imported</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.Extension#MixinsSchemeValid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Mixins Scheme Valid</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.Extension#TermUnicity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Term Unicity</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.Extension#MixinAppliesLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Mixin Applies Local Or Imported</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.Extension#SchemeUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Scheme Unique</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.Extension#MixinDependsLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Mixin Depends Local Or Imported</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class ExtensionTest extends TestCase {
@@ -93,6 +105,97 @@ public class ExtensionTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.Extension#KindsSchemeValid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Kinds Scheme Valid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.Extension#KindsSchemeValid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testKindsSchemeValid__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.Extension#KindParentLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Kind Parent Local Or Imported</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.Extension#KindParentLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testKindParentLocalOrImported__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.Extension#MixinsSchemeValid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Mixins Scheme Valid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.Extension#MixinsSchemeValid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testMixinsSchemeValid__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.Extension#TermUnicity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Term Unicity</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.Extension#TermUnicity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testTermUnicity__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.Extension#MixinAppliesLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Mixin Applies Local Or Imported</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.Extension#MixinAppliesLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testMixinAppliesLocalOrImported__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.Extension#SchemeUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Scheme Unique</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.Extension#SchemeUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testSchemeUnique__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.Extension#MixinDependsLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Mixin Depends Local Or Imported</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.Extension#MixinDependsLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testMixinDependsLocalOrImported__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //ExtensionTest

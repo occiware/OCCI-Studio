@@ -80,6 +80,7 @@ public final class OCCIRegistry
 				for (int j = 0; j < configElements.length; j++) {
 					String scheme = configElements[j].getAttribute("scheme"); //$NON-NLS-1$
 					String uri = "platform:/plugin/" + extensions[i].getContributor().getName() + "/" + configElements[j].getAttribute("file"); //$NON-NLS-1$
+					System.out.println("uri "+uri);
 					registerExtension(scheme, uri);
 				}
 			}

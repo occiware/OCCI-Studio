@@ -25,6 +25,14 @@ import org.eclipse.cmf.occi.core.Category;
  *   <li>{@link org.eclipse.cmf.occi.core.Category#getTerm() <em>Term</em>}</li>
  * </ul>
  * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link org.eclipse.cmf.occi.core.Category#AttributesNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Attributes Name Unique</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.Category#IdentityUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Identity Unique</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.Category#SchemeEndsWithSharp(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Scheme Ends With Sharp</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public abstract class CategoryTest extends TestCase {
@@ -89,6 +97,45 @@ public abstract class CategoryTest extends TestCase {
 	 */
 	public void testSetTerm() {
 		// TODO: implement this feature setter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.Category#AttributesNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Attributes Name Unique</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.Category#AttributesNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testAttributesNameUnique__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.Category#IdentityUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Identity Unique</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.Category#IdentityUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testIdentityUnique__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.Category#SchemeEndsWithSharp(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Scheme Ends With Sharp</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.Category#SchemeEndsWithSharp(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testSchemeEndsWithSharp__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

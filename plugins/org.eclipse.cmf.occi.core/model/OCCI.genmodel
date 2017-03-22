@@ -6,6 +6,9 @@
     modelName="OCCI" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
+  <genAnnotations source="http://www.eclipse.org/OCL/GenModel">
+    <details key="Use Delegates" value="false"/>
+  </genAnnotations>
   <foreignModel>OCCI.ecore</foreignModel>
   <genPackages prefix="OCCI" basePackage="org.eclipse.cmf" resource="XMI" disposableProviderFactory="true"
       interfacePackageSuffix="core" metaDataPackageSuffix="core" fileExtensions="occie,occic"

@@ -44,6 +44,7 @@ public interface EnumerationType extends DataType {
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getEnumerationType_Literals()
 	 * @see org.eclipse.cmf.occi.core.EnumerationLiteral#getEnumerationType
 	 * @model opposite="enumerationType" containment="true" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!EnumerationType!literals'"
 	 * @generated
 	 */
 	EList<EnumerationLiteral> getLiterals();
