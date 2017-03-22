@@ -41,7 +41,6 @@ import org.eclipse.ocl.pivot.ids.IdResolver;
 import org.eclipse.ocl.pivot.ids.TypeId;
 import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
 import org.eclipse.ocl.pivot.library.classifier.ClassifierAllInstancesOperation;
-import org.eclipse.ocl.pivot.library.oclany.OclAnyOclAsTypeOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
 import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
 import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
@@ -49,7 +48,6 @@ import org.eclipse.ocl.pivot.library.string.StringConcatOperation;
 import org.eclipse.ocl.pivot.library.string.StringSizeOperation;
 import org.eclipse.ocl.pivot.library.string.StringSubstringOperation;
 import org.eclipse.ocl.pivot.library.string.StringToLowerCaseOperation;
-import org.eclipse.ocl.pivot.utilities.ClassUtil;
 import org.eclipse.ocl.pivot.utilities.ValueUtil;
 import org.eclipse.ocl.pivot.values.IntegerValue;
 import org.eclipse.ocl.pivot.values.OrderedSetValue;
@@ -200,15 +198,11 @@ public abstract class CategoryImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	public String getTerm() {
 		/**
-		 * self.name.toLowerCase().oclAsType(ecore::EString)
+		 * self.name.toLowerCase()
 		 */
-		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
-		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_ecore_c_c_EString_0 = idResolver.getClass(OCCITables.DATAid_EString, null);
 		final /*@Thrown*/ String name = this.getName();
 		final /*@Thrown*/ String toLowerCase = StringToLowerCaseOperation.INSTANCE.evaluate(name);
-		final /*@Thrown*/ String oclAsType = ClassUtil.nonNullState((String)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, toLowerCase, TYP_ecore_c_c_EString_0));
-		return oclAsType;
+		return toLowerCase;
 	}
 
 	/**

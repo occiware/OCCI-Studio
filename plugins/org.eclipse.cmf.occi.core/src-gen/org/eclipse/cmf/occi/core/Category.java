@@ -78,7 +78,7 @@ public interface Category extends EObject {
 	 * @see #setTerm(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getCategory_Term()
 	 * @model dataType="org.eclipse.cmf.occi.core.String" required="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='/**\n * self.name.toLowerCase().oclAsType(ecore::EString)\n \052/\nfinal /*@NonInvalid\052/ <%org.eclipse.ocl.pivot.evaluation.Executor%> executor = <%org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal%>.getExecutor(this);\nfinal /*@NonInvalid\052/ <%org.eclipse.ocl.pivot.ids.IdResolver%> idResolver = executor.getIdResolver();\nfinal /*@NonInvalid\052/ <%org.eclipse.ocl.pivot.Class%> TYP_ecore_c_c_EString_0 = idResolver.getClass(<%org.eclipse.cmf.occi.OCCITables%>.DATAid_EString, null);\nfinal /*@Thrown\052/ <%java.lang.String%> name = this.getName();\nfinal /*@Thrown\052/ <%java.lang.String%> toLowerCase = <%org.eclipse.ocl.pivot.library.string.StringToLowerCaseOperation%>.INSTANCE.evaluate(name);\nfinal /*@Thrown\052/ <%java.lang.String%> oclAsType = <%org.eclipse.ocl.pivot.utilities.ClassUtil%>.nonNullState((<%java.lang.String%>)<%org.eclipse.ocl.pivot.library.oclany.OclAnyOclAsTypeOperation%>.INSTANCE.evaluate(executor, toLowerCase, TYP_ecore_c_c_EString_0));\nreturn oclAsType;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='/**\n * self.name.toLowerCase()\n \052/\nfinal /*@Thrown\052/ <%java.lang.String%> name = this.getName();\nfinal /*@Thrown\052/ <%java.lang.String%> toLowerCase = <%org.eclipse.ocl.pivot.library.string.StringToLowerCaseOperation%>.INSTANCE.evaluate(name);\nreturn toLowerCase;'"
 	 * @generated
 	 */
 	String getTerm();

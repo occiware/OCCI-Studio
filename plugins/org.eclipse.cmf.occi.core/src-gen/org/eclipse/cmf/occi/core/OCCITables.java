@@ -63,7 +63,7 @@ public class OCCITables
 	public static final /*@NonNull*/ ExecutorStandardLibrary LIBRARY = OCLstdlibTables.LIBRARY;
 
 	/**
-	 *	Constants used by auto-generated code. 
+	 *	Constants used by auto-generated code.
 	 */
     public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.RootPackageId PACKid_$metamodel$ = org.eclipse.ocl.pivot.ids.IdManager.getRootPackageId("$metamodel$");
     public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0 = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/core/ecore/2.0", null, org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
@@ -96,7 +96,6 @@ public class OCCITables
     public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Type = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Type", 0);
     public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_AttributeName = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getDataTypeId("AttributeName", 0);
     public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_EInt = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore.getDataTypeId("EInt", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_EString = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore.getDataTypeId("EString", 0);
     public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_Name = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getDataTypeId("Name", 0);
     public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_OCL = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getDataTypeId("OCL", 0);
     public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_Scheme = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getDataTypeId("Scheme", 0);

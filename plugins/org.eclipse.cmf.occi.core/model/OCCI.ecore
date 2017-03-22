@@ -22,7 +22,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="term" lowerBound="1" eType="#//String"
         volatile="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="derivation" value="self.name.toLowerCase().oclAsType(ecore::EString)"/>
+        <details key="derivation" value="self.name.toLowerCase()"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scheme" lowerBound="1"

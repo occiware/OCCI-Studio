@@ -17,7 +17,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-
 import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Entity;

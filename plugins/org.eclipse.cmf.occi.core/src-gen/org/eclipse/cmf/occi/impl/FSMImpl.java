@@ -15,7 +15,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import java.util.Map;
-
 import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.cmf.occi.core.Action;
 import org.eclipse.cmf.occi.core.Attribute;
