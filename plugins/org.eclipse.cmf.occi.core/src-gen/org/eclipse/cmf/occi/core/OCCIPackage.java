@@ -1028,13 +1028,22 @@ public interface OCCIPackage extends EPackage {
 	int MIXIN_BASE__ENTITY = 1;
 
 	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXIN_BASE__ATTRIBUTES = 2;
+
+	/**
 	 * The number of structural features of the '<em>Mixin Base</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MIXIN_BASE_FEATURE_COUNT = 2;
+	int MIXIN_BASE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Mixin Base</em>' class.
@@ -2926,6 +2935,17 @@ public interface OCCIPackage extends EPackage {
 	EReference getMixinBase_Entity();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.cmf.occi.core.MixinBase#getAttributes <em>Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Attributes</em>'.
+	 * @see org.eclipse.cmf.occi.core.MixinBase#getAttributes()
+	 * @see #getMixinBase()
+	 * @generated
+	 */
+	EReference getMixinBase_Attributes();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.AttributeState <em>Attribute State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4154,6 +4174,14 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MIXIN_BASE__ENTITY = eINSTANCE.getMixinBase_Entity();
+
+		/**
+		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MIXIN_BASE__ATTRIBUTES = eINSTANCE.getMixinBase_Attributes();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.AttributeStateImpl <em>Attribute State</em>}' class.

@@ -11,6 +11,8 @@
  */
 package org.eclipse.cmf.occi.impl;
 
+import java.util.Collection;
+import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Mixin;
 import org.eclipse.cmf.occi.core.MixinBase;
@@ -19,13 +21,16 @@ import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,6 +42,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <ul>
  *   <li>{@link org.eclipse.cmf.occi.impl.MixinBaseImpl#getMixin <em>Mixin</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.impl.MixinBaseImpl#getEntity <em>Entity</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.impl.MixinBaseImpl#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
  * @generated
@@ -51,6 +57,16 @@ public class MixinBaseImpl extends MinimalEObjectImpl.Container implements Mixin
 	 * @ordered
 	 */
 	protected Mixin mixin;
+
+	/**
+	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttributes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AttributeState> attributes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,6 +171,18 @@ public class MixinBaseImpl extends MinimalEObjectImpl.Container implements Mixin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<AttributeState> getAttributes() {
+		if (attributes == null) {
+			attributes = new EObjectContainmentEList<AttributeState>(AttributeState.class, this, OCCIPackage.MIXIN_BASE__ATTRIBUTES);
+		}
+		return attributes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -176,6 +204,8 @@ public class MixinBaseImpl extends MinimalEObjectImpl.Container implements Mixin
 		switch (featureID) {
 			case OCCIPackage.MIXIN_BASE__ENTITY:
 				return basicSetEntity(null, msgs);
+			case OCCIPackage.MIXIN_BASE__ATTRIBUTES:
+				return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -207,6 +237,8 @@ public class MixinBaseImpl extends MinimalEObjectImpl.Container implements Mixin
 				return basicGetMixin();
 			case OCCIPackage.MIXIN_BASE__ENTITY:
 				return getEntity();
+			case OCCIPackage.MIXIN_BASE__ATTRIBUTES:
+				return getAttributes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -216,6 +248,7 @@ public class MixinBaseImpl extends MinimalEObjectImpl.Container implements Mixin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -224,6 +257,10 @@ public class MixinBaseImpl extends MinimalEObjectImpl.Container implements Mixin
 				return;
 			case OCCIPackage.MIXIN_BASE__ENTITY:
 				setEntity((Entity)newValue);
+				return;
+			case OCCIPackage.MIXIN_BASE__ATTRIBUTES:
+				getAttributes().clear();
+				getAttributes().addAll((Collection<? extends AttributeState>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,6 +280,9 @@ public class MixinBaseImpl extends MinimalEObjectImpl.Container implements Mixin
 			case OCCIPackage.MIXIN_BASE__ENTITY:
 				setEntity((Entity)null);
 				return;
+			case OCCIPackage.MIXIN_BASE__ATTRIBUTES:
+				getAttributes().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -259,6 +299,8 @@ public class MixinBaseImpl extends MinimalEObjectImpl.Container implements Mixin
 				return mixin != null;
 			case OCCIPackage.MIXIN_BASE__ENTITY:
 				return getEntity() != null;
+			case OCCIPackage.MIXIN_BASE__ATTRIBUTES:
+				return attributes != null && !attributes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

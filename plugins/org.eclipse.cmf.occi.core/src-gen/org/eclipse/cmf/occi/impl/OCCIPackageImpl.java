@@ -919,6 +919,15 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getMixinBase_Attributes() {
+		return (EReference)mixinBaseEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAttributeState() {
 		return attributeStateEClass;
 	}
@@ -1606,6 +1615,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		mixinBaseEClass = createEClass(MIXIN_BASE);
 		createEReference(mixinBaseEClass, MIXIN_BASE__MIXIN);
 		createEReference(mixinBaseEClass, MIXIN_BASE__ENTITY);
+		createEReference(mixinBaseEClass, MIXIN_BASE__ATTRIBUTES);
 
 		attributeStateEClass = createEClass(ATTRIBUTE_STATE);
 		createEAttribute(attributeStateEClass, ATTRIBUTE_STATE__NAME);
@@ -1820,6 +1830,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEClass(mixinBaseEClass, MixinBase.class, "MixinBase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMixinBase_Mixin(), this.getMixin(), null, "mixin", null, 1, 1, MixinBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMixinBase_Entity(), this.getEntity(), this.getEntity_Parts(), "entity", null, 0, 1, MixinBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMixinBase_Attributes(), this.getAttributeState(), null, "attributes", null, 0, -1, MixinBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeStateEClass, AttributeState.class, "AttributeState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAttributeState_Name(), this.getAttributeName(), "name", null, 1, 1, AttributeState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

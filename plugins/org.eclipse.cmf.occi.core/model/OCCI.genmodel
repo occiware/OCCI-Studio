@@ -97,6 +97,7 @@
     <genClasses ecoreClass="OCCI.ecore#//MixinBase">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//MixinBase/mixin"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference OCCI.ecore#//MixinBase/entity"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//MixinBase/attributes"/>
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//AttributeState">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//AttributeState/name"/>

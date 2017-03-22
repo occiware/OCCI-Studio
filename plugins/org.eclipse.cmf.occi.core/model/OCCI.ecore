@@ -188,6 +188,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="mixin" lowerBound="1" eType="#//Mixin"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"
         eOpposite="#//Entity/parts"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//AttributeState" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeState">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="#//AttributeName"/>

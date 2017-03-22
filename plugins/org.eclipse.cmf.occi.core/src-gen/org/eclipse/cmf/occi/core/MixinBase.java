@@ -11,6 +11,7 @@
  */
 package org.eclipse.cmf.occi.core;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -24,6 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.eclipse.cmf.occi.core.MixinBase#getMixin <em>Mixin</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.MixinBase#getEntity <em>Entity</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.MixinBase#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
  * @see org.eclipse.cmf.occi.core.OCCIPackage#getMixinBase()
@@ -84,5 +86,21 @@ public interface MixinBase extends EObject {
 	 * @generated
 	 */
 	void setEntity(Entity value);
+
+	/**
+	 * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.cmf.occi.core.AttributeState}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Attributes</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Attributes</em>' containment reference list.
+	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getMixinBase_Attributes()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<AttributeState> getAttributes();
 
 } // MixinBase
