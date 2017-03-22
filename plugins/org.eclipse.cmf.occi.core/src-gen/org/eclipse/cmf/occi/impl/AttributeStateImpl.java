@@ -12,14 +12,17 @@
 package org.eclipse.cmf.occi.impl;
 
 import org.eclipse.cmf.occi.core.AttributeState;
+import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.OCCIPackage;
-
+import org.eclipse.cmf.occi.util.OCCIHelper;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,6 +39,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class AttributeStateImpl extends MinimalEObjectImpl.Container implements AttributeState {
+	
+	/**
+	 * Initialize the logger.
+	 */
+	private static Logger LOGGER = LoggerFactory.getLogger(EntityImpl.class);
+	
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -128,13 +137,23 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setValue(String newValue) {
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.ATTRIBUTE_STATE__VALUE, oldValue, value));
+
+		// Propagate to the associated Ecore attribute.
+		if(eContainer() != null) {
+			try {
+				OCCIHelper.setAttribute((Entity)eContainer(), name, value);
+			} catch (Exception e) {
+				// FIXME: Don't understand why an exception is thrown!!!
+				LOGGER.warn("Exception when set the value of the attribute state '" + name + "': " + e.getMessage() + "!!!");
+			}
+		}
 	}
 
 	/**

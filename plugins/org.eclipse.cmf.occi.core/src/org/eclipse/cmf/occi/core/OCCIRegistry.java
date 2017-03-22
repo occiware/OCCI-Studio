@@ -34,7 +34,7 @@ public final class OCCIRegistry
 	/**
 	 * The occie extension point.
 	 */
-	private static final String OCCIE_EXTENSION_POINT = "org.eclipse.cmf.occi.occie"; //$NON-NLS-1$
+	private static final String OCCIE_EXTENSION_POINT = "org.eclipse.cmf.occi.core.occie"; //$NON-NLS-1$
 
 	/**
 	 * Stores OCCI extensions URIs per scheme.
@@ -67,8 +67,11 @@ public final class OCCIRegistry
 	 */
 	public void initialize() {
 	  try {
+		  System.out.println(" initialize registery");
 		if (Platform.isRunning()) {
+			System.out.println(" registery "+registry);
 			registry.clear();
+			System.out.println(" Platform.getExtensionRegistry() "+Platform.getExtensionRegistry().getExtensionPoints());
 			final IExtension[] extensions = Platform.getExtensionRegistry()
 					.getExtensionPoint(OCCIE_EXTENSION_POINT).getExtensions();
 			for (int i = 0; i < extensions.length; i++) {

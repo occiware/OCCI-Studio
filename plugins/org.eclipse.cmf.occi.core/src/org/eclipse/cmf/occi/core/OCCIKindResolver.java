@@ -46,6 +46,8 @@ public class OCCIKindResolver
 	 */
 	 public static Kind resolveKind(final Entity entity)
 	 {
+		
+		 System.out.println("Kind resolveKind");
 		 // Get the Eclass of the given entity.
 		 EClass entityEClass = entity.eClass();
 
