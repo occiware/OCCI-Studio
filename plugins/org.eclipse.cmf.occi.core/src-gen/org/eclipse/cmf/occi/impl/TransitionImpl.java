@@ -14,11 +14,11 @@ package org.eclipse.cmf.occi.impl;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Map;
+import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.cmf.occi.core.Action;
 import org.eclipse.cmf.occi.core.FSM;
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.OCCIPackage;
-import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.cmf.occi.core.State;
 import org.eclipse.cmf.occi.core.Transition;
 import org.eclipse.emf.common.notify.Notification;
@@ -481,7 +481,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OCCIPackage.TRANSITION___CONTAINED_ACTION_MUST_BE_DECLARED_IN_THE_APPROPRIATE_KIND__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.TRANSITION___CONTAINED_ACTION_MUST_BE_DECLARED_IN_THE_APPROPRIATE_KIND__DIAGNOSTICCHAIN_MAP_3:
 				return containedActionMustBeDeclaredInTheAppropriateKind((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);

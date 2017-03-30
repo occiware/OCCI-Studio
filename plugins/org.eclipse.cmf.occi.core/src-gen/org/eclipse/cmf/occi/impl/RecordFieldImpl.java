@@ -13,7 +13,7 @@ package org.eclipse.cmf.occi.impl;
 
 import org.eclipse.cmf.occi.core.DataType;
 import org.eclipse.cmf.occi.core.OCCIPackage;
-import org.eclipse.cmf.occi.core.RecordFieldDeclaration;
+import org.eclipse.cmf.occi.core.RecordField;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -25,19 +25,19 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Record Field Declaration</b></em>'.
+ * An implementation of the model object '<em><b>Record Field</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.impl.RecordFieldDeclarationImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.impl.RecordFieldDeclarationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.impl.RecordFieldImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.impl.RecordFieldImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class RecordFieldDeclarationImpl extends MinimalEObjectImpl.Container implements RecordFieldDeclaration {
+public class RecordFieldImpl extends MinimalEObjectImpl.Container implements RecordField {
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -73,7 +73,7 @@ public class RecordFieldDeclarationImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RecordFieldDeclarationImpl() {
+	protected RecordFieldImpl() {
 		super();
 	}
 
@@ -84,7 +84,7 @@ public class RecordFieldDeclarationImpl extends MinimalEObjectImpl.Container imp
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OCCIPackage.Literals.RECORD_FIELD_DECLARATION;
+		return OCCIPackage.Literals.RECORD_FIELD;
 	}
 
 	/**
@@ -98,7 +98,7 @@ public class RecordFieldDeclarationImpl extends MinimalEObjectImpl.Container imp
 			type = (DataType)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OCCIPackage.RECORD_FIELD_DECLARATION__TYPE, oldType, type));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OCCIPackage.RECORD_FIELD__TYPE, oldType, type));
 			}
 		}
 		return type;
@@ -122,7 +122,7 @@ public class RecordFieldDeclarationImpl extends MinimalEObjectImpl.Container imp
 		DataType oldType = type;
 		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.RECORD_FIELD_DECLARATION__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.RECORD_FIELD__TYPE, oldType, type));
 	}
 
 	/**
@@ -143,7 +143,7 @@ public class RecordFieldDeclarationImpl extends MinimalEObjectImpl.Container imp
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.RECORD_FIELD_DECLARATION__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.RECORD_FIELD__NAME, oldName, name));
 	}
 
 	/**
@@ -154,10 +154,10 @@ public class RecordFieldDeclarationImpl extends MinimalEObjectImpl.Container imp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OCCIPackage.RECORD_FIELD_DECLARATION__TYPE:
+			case OCCIPackage.RECORD_FIELD__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
-			case OCCIPackage.RECORD_FIELD_DECLARATION__NAME:
+			case OCCIPackage.RECORD_FIELD__NAME:
 				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -171,10 +171,10 @@ public class RecordFieldDeclarationImpl extends MinimalEObjectImpl.Container imp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OCCIPackage.RECORD_FIELD_DECLARATION__TYPE:
+			case OCCIPackage.RECORD_FIELD__TYPE:
 				setType((DataType)newValue);
 				return;
-			case OCCIPackage.RECORD_FIELD_DECLARATION__NAME:
+			case OCCIPackage.RECORD_FIELD__NAME:
 				setName((String)newValue);
 				return;
 		}
@@ -189,10 +189,10 @@ public class RecordFieldDeclarationImpl extends MinimalEObjectImpl.Container imp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OCCIPackage.RECORD_FIELD_DECLARATION__TYPE:
+			case OCCIPackage.RECORD_FIELD__TYPE:
 				setType((DataType)null);
 				return;
-			case OCCIPackage.RECORD_FIELD_DECLARATION__NAME:
+			case OCCIPackage.RECORD_FIELD__NAME:
 				setName(NAME_EDEFAULT);
 				return;
 		}
@@ -207,9 +207,9 @@ public class RecordFieldDeclarationImpl extends MinimalEObjectImpl.Container imp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OCCIPackage.RECORD_FIELD_DECLARATION__TYPE:
+			case OCCIPackage.RECORD_FIELD__TYPE:
 				return type != null;
-			case OCCIPackage.RECORD_FIELD_DECLARATION__NAME:
+			case OCCIPackage.RECORD_FIELD__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
@@ -231,4 +231,4 @@ public class RecordFieldDeclarationImpl extends MinimalEObjectImpl.Container imp
 		return result.toString();
 	}
 
-} //RecordFieldDeclarationImpl
+} //RecordFieldImpl

@@ -16,7 +16,7 @@ import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.cmf.occi.core.OCCIPackage;
-import org.eclipse.cmf.occi.core.RecordFieldDeclaration;
+import org.eclipse.cmf.occi.core.RecordField;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -35,12 +35,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.cmf.occi.core.RecordFieldDeclaration} object.
+ * This is the item provider adapter for a {@link org.eclipse.cmf.occi.core.RecordField} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RecordFieldDeclarationItemProvider 
+public class RecordFieldItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -54,7 +54,7 @@ public class RecordFieldDeclarationItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RecordFieldDeclarationItemProvider(AdapterFactory adapterFactory) {
+	public RecordFieldItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -86,9 +86,9 @@ public class RecordFieldDeclarationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RecordFieldDeclaration_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RecordFieldDeclaration_type_feature", "_UI_RecordFieldDeclaration_type"),
-				 OCCIPackage.Literals.RECORD_FIELD_DECLARATION__TYPE,
+				 getString("_UI_RecordField_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RecordField_type_feature", "_UI_RecordField_type"),
+				 OCCIPackage.Literals.RECORD_FIELD__TYPE,
 				 true,
 				 false,
 				 true,
@@ -108,9 +108,9 @@ public class RecordFieldDeclarationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RecordFieldDeclaration_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RecordFieldDeclaration_name_feature", "_UI_RecordFieldDeclaration_type"),
-				 OCCIPackage.Literals.RECORD_FIELD_DECLARATION__NAME,
+				 getString("_UI_RecordField_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RecordField_name_feature", "_UI_RecordField_type"),
+				 OCCIPackage.Literals.RECORD_FIELD__NAME,
 				 true,
 				 false,
 				 false,
@@ -120,14 +120,14 @@ public class RecordFieldDeclarationItemProvider
 	}
 
 	/**
-	 * This returns RecordFieldDeclaration.gif.
+	 * This returns RecordField.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/RecordFieldDeclaration"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/RecordField"));
 	}
 
 	/**
@@ -138,10 +138,10 @@ public class RecordFieldDeclarationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RecordFieldDeclaration)object).getName();
+		String label = ((RecordField)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_RecordFieldDeclaration_type") :
-			getString("_UI_RecordFieldDeclaration_type") + " " + label;
+			getString("_UI_RecordField_type") :
+			getString("_UI_RecordField_type") + " " + label;
 	}
 	
 
@@ -156,8 +156,8 @@ public class RecordFieldDeclarationItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(RecordFieldDeclaration.class)) {
-			case OCCIPackage.RECORD_FIELD_DECLARATION__NAME:
+		switch (notification.getFeatureID(RecordField.class)) {
+			case OCCIPackage.RECORD_FIELD__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

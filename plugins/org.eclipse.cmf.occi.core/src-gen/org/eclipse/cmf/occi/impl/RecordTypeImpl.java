@@ -14,7 +14,7 @@ package org.eclipse.cmf.occi.impl;
 import java.util.Collection;
 
 import org.eclipse.cmf.occi.core.OCCIPackage;
-import org.eclipse.cmf.occi.core.RecordFieldDeclaration;
+import org.eclipse.cmf.occi.core.RecordField;
 import org.eclipse.cmf.occi.core.RecordType;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -33,22 +33,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.impl.RecordTypeImpl#getRecordFiledDeclarations <em>Record Filed Declarations</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.impl.RecordTypeImpl#getRecordFields <em>Record Fields</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class RecordTypeImpl extends DataTypeImpl implements RecordType {
 	/**
-	 * The cached value of the '{@link #getRecordFiledDeclarations() <em>Record Filed Declarations</em>}' containment reference list.
+	 * The cached value of the '{@link #getRecordFields() <em>Record Fields</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRecordFiledDeclarations()
+	 * @see #getRecordFields()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RecordFieldDeclaration> recordFiledDeclarations;
-
+	protected EList<RecordField> recordFields;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -73,11 +72,11 @@ public class RecordTypeImpl extends DataTypeImpl implements RecordType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RecordFieldDeclaration> getRecordFiledDeclarations() {
-		if (recordFiledDeclarations == null) {
-			recordFiledDeclarations = new EObjectContainmentEList<RecordFieldDeclaration>(RecordFieldDeclaration.class, this, OCCIPackage.RECORD_TYPE__RECORD_FILED_DECLARATIONS);
+	public EList<RecordField> getRecordFields() {
+		if (recordFields == null) {
+			recordFields = new EObjectContainmentEList<RecordField>(RecordField.class, this, OCCIPackage.RECORD_TYPE__RECORD_FIELDS);
 		}
-		return recordFiledDeclarations;
+		return recordFields;
 	}
 
 	/**
@@ -88,8 +87,8 @@ public class RecordTypeImpl extends DataTypeImpl implements RecordType {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OCCIPackage.RECORD_TYPE__RECORD_FILED_DECLARATIONS:
-				return ((InternalEList<?>)getRecordFiledDeclarations()).basicRemove(otherEnd, msgs);
+			case OCCIPackage.RECORD_TYPE__RECORD_FIELDS:
+				return ((InternalEList<?>)getRecordFields()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -102,8 +101,8 @@ public class RecordTypeImpl extends DataTypeImpl implements RecordType {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OCCIPackage.RECORD_TYPE__RECORD_FILED_DECLARATIONS:
-				return getRecordFiledDeclarations();
+			case OCCIPackage.RECORD_TYPE__RECORD_FIELDS:
+				return getRecordFields();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -117,9 +116,9 @@ public class RecordTypeImpl extends DataTypeImpl implements RecordType {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OCCIPackage.RECORD_TYPE__RECORD_FILED_DECLARATIONS:
-				getRecordFiledDeclarations().clear();
-				getRecordFiledDeclarations().addAll((Collection<? extends RecordFieldDeclaration>)newValue);
+			case OCCIPackage.RECORD_TYPE__RECORD_FIELDS:
+				getRecordFields().clear();
+				getRecordFields().addAll((Collection<? extends RecordField>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -133,8 +132,8 @@ public class RecordTypeImpl extends DataTypeImpl implements RecordType {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OCCIPackage.RECORD_TYPE__RECORD_FILED_DECLARATIONS:
-				getRecordFiledDeclarations().clear();
+			case OCCIPackage.RECORD_TYPE__RECORD_FIELDS:
+				getRecordFields().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -148,8 +147,8 @@ public class RecordTypeImpl extends DataTypeImpl implements RecordType {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OCCIPackage.RECORD_TYPE__RECORD_FILED_DECLARATIONS:
-				return recordFiledDeclarations != null && !recordFiledDeclarations.isEmpty();
+			case OCCIPackage.RECORD_TYPE__RECORD_FIELDS:
+				return recordFields != null && !recordFields.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

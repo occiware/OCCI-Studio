@@ -180,8 +180,8 @@ public class OCCIAdapterFactory extends AdapterFactoryImpl {
 				return createRecordTypeAdapter();
 			}
 			@Override
-			public Adapter caseRecordFieldDeclaration(RecordFieldDeclaration object) {
-				return createRecordFieldDeclarationAdapter();
+			public Adapter caseRecordField(RecordField object) {
+				return createRecordFieldAdapter();
 			}
 			@Override
 			public Adapter caseArrayType(ArrayType object) {
@@ -572,16 +572,16 @@ public class OCCIAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.RecordFieldDeclaration <em>Record Field Declaration</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.RecordField <em>Record Field</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.core.RecordFieldDeclaration
+	 * @see org.eclipse.cmf.occi.core.RecordField
 	 * @generated
 	 */
-	public Adapter createRecordFieldDeclarationAdapter() {
+	public Adapter createRecordFieldAdapter() {
 		return null;
 	}
 

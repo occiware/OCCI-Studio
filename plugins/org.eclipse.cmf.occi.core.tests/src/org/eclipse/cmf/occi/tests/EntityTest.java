@@ -151,7 +151,7 @@ public abstract class EntityTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Entity#AttributesNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testAttributesNameUnique__DiagnosticChain_Map() {
+	public void testAttributesNameUnique__DiagnosticChain_Map_3() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -164,7 +164,7 @@ public abstract class EntityTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Entity#KindCompatibleWithOneAppliesOfEachMixin(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testKindCompatibleWithOneAppliesOfEachMixin__DiagnosticChain_Map() {
+	public void testKindCompatibleWithOneAppliesOfEachMixin__DiagnosticChain_Map_3() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -177,7 +177,7 @@ public abstract class EntityTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Entity#IdUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testIdUnique__DiagnosticChain_Map() {
+	public void testIdUnique__DiagnosticChain_Map_3() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

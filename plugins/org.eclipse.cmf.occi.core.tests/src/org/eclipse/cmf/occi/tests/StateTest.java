@@ -108,7 +108,7 @@ public class StateTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.State#StateLiteralAlreadyDefinedInFSMAttributeType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testStateLiteralAlreadyDefinedInFSMAttributeType__DiagnosticChain_Map() {
+	public void testStateLiteralAlreadyDefinedInFSMAttributeType__DiagnosticChain_Map_3() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

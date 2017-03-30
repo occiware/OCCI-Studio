@@ -220,13 +220,13 @@ public interface OCCIFactory extends EFactory {
 	RecordType createRecordType();
 
 	/**
-	 * Returns a new object of class '<em>Record Field Declaration</em>'.
+	 * Returns a new object of class '<em>Record Field</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Record Field Declaration</em>'.
+	 * @return a new object of class '<em>Record Field</em>'.
 	 * @generated
 	 */
-	RecordFieldDeclaration createRecordFieldDeclaration();
+	RecordField createRecordField();
 
 	/**
 	 * Returns a new object of class '<em>Array Type</em>'.

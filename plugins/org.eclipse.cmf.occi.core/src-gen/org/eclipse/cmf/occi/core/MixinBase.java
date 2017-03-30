@@ -73,7 +73,7 @@ public interface MixinBase extends EObject {
 	 * @see #setEntity(Entity)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getMixinBase_Entity()
 	 * @see org.eclipse.cmf.occi.core.Entity#getParts
-	 * @model opposite="parts" transient="false"
+	 * @model opposite="parts" required="true" transient="false"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!MixinBase!entity'"
 	 * @generated
 	 */

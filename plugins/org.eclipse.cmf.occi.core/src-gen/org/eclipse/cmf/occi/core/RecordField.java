@@ -15,22 +15,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Record Field Declaration</b></em>'.
+ * A representation of the model object '<em><b>Record Field</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.core.RecordFieldDeclaration#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.core.RecordFieldDeclaration#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.RecordField#getType <em>Type</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.RecordField#getName <em>Name</em>}</li>
  * </ul>
  *
- * @see org.eclipse.cmf.occi.core.OCCIPackage#getRecordFieldDeclaration()
+ * @see org.eclipse.cmf.occi.core.OCCIPackage#getRecordField()
  * @model
  * @generated
  */
-public interface RecordFieldDeclaration extends EObject {
+public interface RecordField extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -41,15 +41,15 @@ public interface RecordFieldDeclaration extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(DataType)
-	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getRecordFieldDeclaration_Type()
+	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getRecordField_Type()
 	 * @model required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!RecordFieldDeclaration!type'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!RecordField!type'"
 	 * @generated
 	 */
 	DataType getType();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.core.RecordFieldDeclaration#getType <em>Type</em>}' reference.
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.core.RecordField#getType <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type</em>' reference.
@@ -68,15 +68,15 @@ public interface RecordFieldDeclaration extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getRecordFieldDeclaration_Name()
+	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getRecordField_Name()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!RecordFieldDeclaration!name'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!RecordField!name'"
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.core.RecordFieldDeclaration#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.core.RecordField#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -85,4 +85,4 @@ public interface RecordFieldDeclaration extends EObject {
 	 */
 	void setName(String value);
 
-} // RecordFieldDeclaration
+} // RecordField

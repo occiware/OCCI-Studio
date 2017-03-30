@@ -160,11 +160,11 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference OCCI.ecore#//EnumerationLiteral/enumerationType"/>
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//RecordType">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//RecordType/recordFiledDeclarations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OCCI.ecore#//RecordType/recordFields"/>
     </genClasses>
-    <genClasses ecoreClass="OCCI.ecore#//RecordFieldDeclaration">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//RecordFieldDeclaration/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//RecordFieldDeclaration/name"/>
+    <genClasses ecoreClass="OCCI.ecore#//RecordField">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//RecordField/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//RecordField/name"/>
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//ArrayType">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//ArrayType/type"/>

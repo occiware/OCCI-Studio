@@ -249,9 +249,9 @@ public class OCCISwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OCCIPackage.RECORD_FIELD_DECLARATION: {
-				RecordFieldDeclaration recordFieldDeclaration = (RecordFieldDeclaration)theEObject;
-				T result = caseRecordFieldDeclaration(recordFieldDeclaration);
+			case OCCIPackage.RECORD_FIELD: {
+				RecordField recordField = (RecordField)theEObject;
+				T result = caseRecordField(recordField);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -657,17 +657,17 @@ public class OCCISwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Record Field Declaration</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Record Field</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Record Field Declaration</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Record Field</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRecordFieldDeclaration(RecordFieldDeclaration object) {
+	public T caseRecordField(RecordField object) {
 		return null;
 	}
 

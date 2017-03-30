@@ -16,10 +16,10 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.cmf.occi.core.Action;
 import org.eclipse.cmf.occi.core.Constraint;
 import org.eclipse.cmf.occi.core.OCCIPackage;
-import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.cmf.occi.core.Type;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.DiagnosticChain;
@@ -346,9 +346,9 @@ public abstract class TypeImpl extends CategoryImpl implements Type {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OCCIPackage.TYPE___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.TYPE___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP_3:
 				return ActionTermUnicity((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case OCCIPackage.TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3:
 				return ConstraintNameUnique((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);

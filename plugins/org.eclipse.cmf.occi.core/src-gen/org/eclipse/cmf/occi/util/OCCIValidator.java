@@ -433,8 +433,8 @@ public class OCCIValidator extends EObjectValidator {
 				return validateEnumerationLiteral((EnumerationLiteral)value, diagnostics, context);
 			case OCCIPackage.RECORD_TYPE:
 				return validateRecordType((RecordType)value, diagnostics, context);
-			case OCCIPackage.RECORD_FIELD_DECLARATION:
-				return validateRecordFieldDeclaration((RecordFieldDeclaration)value, diagnostics, context);
+			case OCCIPackage.RECORD_FIELD:
+				return validateRecordField((RecordField)value, diagnostics, context);
 			case OCCIPackage.ARRAY_TYPE:
 				return validateArrayType((ArrayType)value, diagnostics, context);
 			case OCCIPackage.NUMERIC_TYPE_ENUM:
@@ -1232,8 +1232,8 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateRecordFieldDeclaration(RecordFieldDeclaration recordFieldDeclaration, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(recordFieldDeclaration, diagnostics, context);
+	public boolean validateRecordField(RecordField recordField, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(recordField, diagnostics, context);
 	}
 
 	/**

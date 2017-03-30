@@ -88,7 +88,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Mixin = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Mixin", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_MixinBase = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("MixinBase", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_OclElement = OCCITables.PACKid_$metamodel$.getClassId("OclElement", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_RecordFieldDeclaration = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("RecordFieldDeclaration", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_RecordField = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("RecordField", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_RecordType = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("RecordType", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Resource = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Resource", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_State = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("State", 0);
@@ -169,7 +169,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Kind = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_Kind);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Mixin = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_Mixin);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_MixinBase = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_MixinBase);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_RecordFieldDeclaration = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_RecordFieldDeclaration);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_RecordField = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_RecordField);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_State = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_State);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Transition = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_Transition);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_DATAid_AttributeName = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.DATAid_AttributeName);
@@ -184,7 +184,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Link = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_Link);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Mixin = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_Mixin);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_MixinBase = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_MixinBase);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_RecordFieldDeclaration = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_RecordFieldDeclaration);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_RecordField = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_RecordField);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Resource = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_Resource);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_State = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_State);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Transition = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_Transition);
@@ -260,7 +260,7 @@ public class OCCITables
 		public static final /*@NonNull*/ EcoreExecutorType _NumericType = new EcoreExecutorType(OCCIPackage.Literals.NUMERIC_TYPE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorEnumeration _NumericTypeEnum = new EcoreExecutorEnumeration(OCCIPackage.Literals.NUMERIC_TYPE_ENUM, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _OCL = new EcoreExecutorType("OCL", PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _RecordFieldDeclaration = new EcoreExecutorType(OCCIPackage.Literals.RECORD_FIELD_DECLARATION, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _RecordField = new EcoreExecutorType(OCCIPackage.Literals.RECORD_FIELD, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _RecordType = new EcoreExecutorType(OCCIPackage.Literals.RECORD_TYPE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Resource = new EcoreExecutorType(OCCIPackage.Literals.RESOURCE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Scheme = new EcoreExecutorType("Scheme", PACKAGE, 0);
@@ -298,7 +298,7 @@ public class OCCITables
 			_NumericType,
 			_NumericTypeEnum,
 			_OCL,
-			_RecordFieldDeclaration,
+			_RecordField,
 			_RecordType,
 			_Resource,
 			_Scheme,
@@ -450,9 +450,9 @@ public class OCCITables
 		private static final /*@NonNull*/ ExecutorFragment _OCL__OCL = new ExecutorFragment(Types._OCL, OCCITables.Types._OCL);
 		private static final /*@NonNull*/ ExecutorFragment _OCL__OclAny = new ExecutorFragment(Types._OCL, OCLstdlibTables.Types._OclAny);
 
-		private static final /*@NonNull*/ ExecutorFragment _RecordFieldDeclaration__OclAny = new ExecutorFragment(Types._RecordFieldDeclaration, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _RecordFieldDeclaration__OclElement = new ExecutorFragment(Types._RecordFieldDeclaration, OCLstdlibTables.Types._OclElement);
-		private static final /*@NonNull*/ ExecutorFragment _RecordFieldDeclaration__RecordFieldDeclaration = new ExecutorFragment(Types._RecordFieldDeclaration, OCCITables.Types._RecordFieldDeclaration);
+		private static final /*@NonNull*/ ExecutorFragment _RecordField__OclAny = new ExecutorFragment(Types._RecordField, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _RecordField__OclElement = new ExecutorFragment(Types._RecordField, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _RecordField__RecordField = new ExecutorFragment(Types._RecordField, OCCITables.Types._RecordField);
 
 		private static final /*@NonNull*/ ExecutorFragment _RecordType__DataType = new ExecutorFragment(Types._RecordType, OCCITables.Types._DataType);
 		private static final /*@NonNull*/ ExecutorFragment _RecordType__OclAny = new ExecutorFragment(Types._RecordType, OCLstdlibTables.Types._OclAny);
@@ -729,7 +729,7 @@ public class OCCITables
 		public static final /*@NonNull*/ ExecutorProperty _DataType__ArrayType__type = new ExecutorPropertyWithImplementation("ArrayType", Types._DataType, 2, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.ARRAY_TYPE__TYPE));
 		public static final /*@NonNull*/ ExecutorProperty _DataType__Attribute__type = new ExecutorPropertyWithImplementation("Attribute", Types._DataType, 3, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.ATTRIBUTE__TYPE));
 		public static final /*@NonNull*/ ExecutorProperty _DataType__Extension__types = new ExecutorPropertyWithImplementation("Extension", Types._DataType, 4, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.EXTENSION__TYPES));
-		public static final /*@NonNull*/ ExecutorProperty _DataType__RecordFieldDeclaration__type = new ExecutorPropertyWithImplementation("RecordFieldDeclaration", Types._DataType, 5, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.RECORD_FIELD_DECLARATION__TYPE));
+		public static final /*@NonNull*/ ExecutorProperty _DataType__RecordField__type = new ExecutorPropertyWithImplementation("RecordField", Types._DataType, 5, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.RECORD_FIELD__TYPE));
 
 		public static final /*@NonNull*/ ExecutorProperty _EObjectType__instanceClassName = new EcoreExecutorProperty(OCCIPackage.Literals.EOBJECT_TYPE__INSTANCE_CLASS_NAME, Types._EObjectType, 0);
 		public static final /*@NonNull*/ ExecutorProperty _EObjectType__pattern = new EcoreExecutorProperty(OCCIPackage.Literals.EOBJECT_TYPE__PATTERN, Types._EObjectType, 1);
@@ -796,11 +796,11 @@ public class OCCITables
 		public static final /*@NonNull*/ ExecutorProperty _NumericType__totalDigits = new EcoreExecutorProperty(OCCIPackage.Literals.NUMERIC_TYPE__TOTAL_DIGITS, Types._NumericType, 4);
 		public static final /*@NonNull*/ ExecutorProperty _NumericType__type = new EcoreExecutorProperty(OCCIPackage.Literals.NUMERIC_TYPE__TYPE, Types._NumericType, 5);
 
-		public static final /*@NonNull*/ ExecutorProperty _RecordFieldDeclaration__name = new EcoreExecutorProperty(OCCIPackage.Literals.RECORD_FIELD_DECLARATION__NAME, Types._RecordFieldDeclaration, 0);
-		public static final /*@NonNull*/ ExecutorProperty _RecordFieldDeclaration__type = new EcoreExecutorProperty(OCCIPackage.Literals.RECORD_FIELD_DECLARATION__TYPE, Types._RecordFieldDeclaration, 1);
-		public static final /*@NonNull*/ ExecutorProperty _RecordFieldDeclaration__RecordType__recordFiledDeclarations = new ExecutorPropertyWithImplementation("RecordType", Types._RecordFieldDeclaration, 2, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.RECORD_TYPE__RECORD_FILED_DECLARATIONS));
+		public static final /*@NonNull*/ ExecutorProperty _RecordField__name = new EcoreExecutorProperty(OCCIPackage.Literals.RECORD_FIELD__NAME, Types._RecordField, 0);
+		public static final /*@NonNull*/ ExecutorProperty _RecordField__type = new EcoreExecutorProperty(OCCIPackage.Literals.RECORD_FIELD__TYPE, Types._RecordField, 1);
+		public static final /*@NonNull*/ ExecutorProperty _RecordField__RecordType__recordFields = new ExecutorPropertyWithImplementation("RecordType", Types._RecordField, 2, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.RECORD_TYPE__RECORD_FIELDS));
 
-		public static final /*@NonNull*/ ExecutorProperty _RecordType__recordFiledDeclarations = new EcoreExecutorProperty(OCCIPackage.Literals.RECORD_TYPE__RECORD_FILED_DECLARATIONS, Types._RecordType, 0);
+		public static final /*@NonNull*/ ExecutorProperty _RecordType__recordFields = new EcoreExecutorProperty(OCCIPackage.Literals.RECORD_TYPE__RECORD_FIELDS, Types._RecordType, 0);
 
 		public static final /*@NonNull*/ ExecutorProperty _Resource__links = new EcoreExecutorProperty(OCCIPackage.Literals.RESOURCE__LINKS, Types._Resource, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Resource__rlinks = new EcoreExecutorProperty(OCCIPackage.Literals.RESOURCE__RLINKS, Types._Resource, 1);
@@ -1065,13 +1065,13 @@ public class OCCITables
 		};
 		private static final int /*@NonNull*/ [] __OCL = { 1,1 };
 
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _RecordFieldDeclaration =
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _RecordField =
 		{
-			Fragments._RecordFieldDeclaration__OclAny /* 0 */,
-			Fragments._RecordFieldDeclaration__OclElement /* 1 */,
-			Fragments._RecordFieldDeclaration__RecordFieldDeclaration /* 2 */
+			Fragments._RecordField__OclAny /* 0 */,
+			Fragments._RecordField__OclElement /* 1 */,
+			Fragments._RecordField__RecordField /* 2 */
 		};
-		private static final int /*@NonNull*/ [] __RecordFieldDeclaration = { 1,1,1 };
+		private static final int /*@NonNull*/ [] __RecordField = { 1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _RecordType =
 		{
@@ -1179,7 +1179,7 @@ public class OCCITables
 			Types._NumericType.initFragments(_NumericType, __NumericType);
 			Types._NumericTypeEnum.initFragments(_NumericTypeEnum, __NumericTypeEnum);
 			Types._OCL.initFragments(_OCL, __OCL);
-			Types._RecordFieldDeclaration.initFragments(_RecordFieldDeclaration, __RecordFieldDeclaration);
+			Types._RecordField.initFragments(_RecordField, __RecordField);
 			Types._RecordType.initFragments(_RecordType, __RecordType);
 			Types._Resource.initFragments(_Resource, __Resource);
 			Types._Scheme.initFragments(_Scheme, __Scheme);
@@ -1946,8 +1946,8 @@ public class OCCITables
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
 		};
 
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _RecordFieldDeclaration__RecordFieldDeclaration = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _RecordFieldDeclaration__OclAny = {
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _RecordField__RecordField = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _RecordField__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
@@ -1964,7 +1964,7 @@ public class OCCITables
 			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
 		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _RecordFieldDeclaration__OclElement = {
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _RecordField__OclElement = {
 			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
 			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
 			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
@@ -2380,9 +2380,9 @@ public class OCCITables
 			Fragments._OCL__OCL.initOperations(_OCL__OCL);
 			Fragments._OCL__OclAny.initOperations(_OCL__OclAny);
 
-			Fragments._RecordFieldDeclaration__OclAny.initOperations(_RecordFieldDeclaration__OclAny);
-			Fragments._RecordFieldDeclaration__OclElement.initOperations(_RecordFieldDeclaration__OclElement);
-			Fragments._RecordFieldDeclaration__RecordFieldDeclaration.initOperations(_RecordFieldDeclaration__RecordFieldDeclaration);
+			Fragments._RecordField__OclAny.initOperations(_RecordField__OclAny);
+			Fragments._RecordField__OclElement.initOperations(_RecordField__OclElement);
+			Fragments._RecordField__RecordField.initOperations(_RecordField__RecordField);
 
 			Fragments._RecordType__DataType.initOperations(_RecordType__DataType);
 			Fragments._RecordType__OclAny.initOperations(_RecordType__OclAny);
@@ -2616,15 +2616,15 @@ public class OCCITables
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _OCL = {};
 
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _RecordFieldDeclaration = {
-			OCCITables.Properties._RecordFieldDeclaration__name,
-			OCCITables.Properties._RecordFieldDeclaration__type
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _RecordField = {
+			OCCITables.Properties._RecordField__name,
+			OCCITables.Properties._RecordField__type
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _RecordType = {
 			OCCITables.Properties._DataType__documentation,
 			OCCITables.Properties._DataType__name,
-			OCCITables.Properties._RecordType__recordFiledDeclarations
+			OCCITables.Properties._RecordType__recordFields
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Resource = {
@@ -2710,7 +2710,7 @@ public class OCCITables
 			Fragments._NumericType__NumericType.initProperties(_NumericType);
 			Fragments._NumericTypeEnum__NumericTypeEnum.initProperties(_NumericTypeEnum);
 			Fragments._OCL__OCL.initProperties(_OCL);
-			Fragments._RecordFieldDeclaration__RecordFieldDeclaration.initProperties(_RecordFieldDeclaration);
+			Fragments._RecordField__RecordField.initProperties(_RecordField);
 			Fragments._RecordType__RecordType.initProperties(_RecordType);
 			Fragments._Resource__Resource.initProperties(_Resource);
 			Fragments._Scheme__Scheme.initProperties(_Scheme);

@@ -111,7 +111,7 @@ public class KindTest extends TypeTest {
 	 * @see org.eclipse.cmf.occi.core.Kind#NoCyclicInheritance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testNoCyclicInheritance__DiagnosticChain_Map() {
+	public void testNoCyclicInheritance__DiagnosticChain_Map_3() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -124,7 +124,7 @@ public class KindTest extends TypeTest {
 	 * @see org.eclipse.cmf.occi.core.Kind#AttributesNameNotAlreadyDefinedInParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testAttributesNameNotAlreadyDefinedInParent__DiagnosticChain_Map() {
+	public void testAttributesNameNotAlreadyDefinedInParent__DiagnosticChain_Map_3() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -137,7 +137,7 @@ public class KindTest extends TypeTest {
 	 * @see org.eclipse.cmf.occi.core.Kind#CorrectScheme(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testCorrectScheme__DiagnosticChain_Map() {
+	public void testCorrectScheme__DiagnosticChain_Map_3() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -150,7 +150,7 @@ public class KindTest extends TypeTest {
 	 * @see org.eclipse.cmf.occi.core.Kind#EntityKindIsRootParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testEntityKindIsRootParent__DiagnosticChain_Map() {
+	public void testEntityKindIsRootParent__DiagnosticChain_Map_3() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

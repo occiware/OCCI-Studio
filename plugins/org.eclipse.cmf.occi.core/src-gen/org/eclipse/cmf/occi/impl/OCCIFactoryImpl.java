@@ -87,7 +87,7 @@ public class OCCIFactoryImpl extends EFactoryImpl implements OCCIFactory {
 			case OCCIPackage.ENUMERATION_TYPE: return createEnumerationType();
 			case OCCIPackage.ENUMERATION_LITERAL: return createEnumerationLiteral();
 			case OCCIPackage.RECORD_TYPE: return createRecordType();
-			case OCCIPackage.RECORD_FIELD_DECLARATION: return createRecordFieldDeclaration();
+			case OCCIPackage.RECORD_FIELD: return createRecordField();
 			case OCCIPackage.ARRAY_TYPE: return createArrayType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -367,9 +367,9 @@ public class OCCIFactoryImpl extends EFactoryImpl implements OCCIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RecordFieldDeclaration createRecordFieldDeclaration() {
-		RecordFieldDeclarationImpl recordFieldDeclaration = new RecordFieldDeclarationImpl();
-		return recordFieldDeclaration;
+	public RecordField createRecordField() {
+		RecordFieldImpl recordField = new RecordFieldImpl();
+		return recordField;
 	}
 
 	/**

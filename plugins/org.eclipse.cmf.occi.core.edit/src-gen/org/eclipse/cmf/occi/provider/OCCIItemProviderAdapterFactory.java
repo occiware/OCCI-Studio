@@ -564,26 +564,26 @@ public class OCCIItemProviderAdapterFactory extends OCCIAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.core.RecordFieldDeclaration} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.core.RecordField} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RecordFieldDeclarationItemProvider recordFieldDeclarationItemProvider;
+	protected RecordFieldItemProvider recordFieldItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.cmf.occi.core.RecordFieldDeclaration}.
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.core.RecordField}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createRecordFieldDeclarationAdapter() {
-		if (recordFieldDeclarationItemProvider == null) {
-			recordFieldDeclarationItemProvider = new RecordFieldDeclarationItemProvider(this);
+	public Adapter createRecordFieldAdapter() {
+		if (recordFieldItemProvider == null) {
+			recordFieldItemProvider = new RecordFieldItemProvider(this);
 		}
 
-		return recordFieldDeclarationItemProvider;
+		return recordFieldItemProvider;
 	}
 
 	/**
@@ -729,7 +729,7 @@ public class OCCIItemProviderAdapterFactory extends OCCIAdapterFactory implement
 		if (enumerationTypeItemProvider != null) enumerationTypeItemProvider.dispose();
 		if (enumerationLiteralItemProvider != null) enumerationLiteralItemProvider.dispose();
 		if (recordTypeItemProvider != null) recordTypeItemProvider.dispose();
-		if (recordFieldDeclarationItemProvider != null) recordFieldDeclarationItemProvider.dispose();
+		if (recordFieldItemProvider != null) recordFieldItemProvider.dispose();
 		if (arrayTypeItemProvider != null) arrayTypeItemProvider.dispose();
 	}
 

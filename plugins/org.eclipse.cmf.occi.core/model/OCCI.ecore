@@ -212,8 +212,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MixinBase">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mixin" lowerBound="1" eType="#//Mixin"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"
-        eOpposite="#//Entity/parts"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" lowerBound="1"
+        eType="#//Entity" eOpposite="#//Entity/parts"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="#//AttributeState" containment="true"/>
   </eClassifiers>
@@ -335,10 +335,10 @@
         eType="#//EnumerationType" eOpposite="#//EnumerationType/literals"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RecordType" eSuperTypes="#//DataType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="recordFiledDeclarations"
-        lowerBound="1" upperBound="-1" eType="#//RecordFieldDeclaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recordFields" lowerBound="1"
+        upperBound="-1" eType="#//RecordField" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RecordFieldDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="RecordField">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//DataType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"/>
   </eClassifiers>
