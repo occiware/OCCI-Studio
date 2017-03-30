@@ -13,7 +13,6 @@ package org.eclipse.cmf.occi.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
-
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -23,10 +22,8 @@ import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Mixin;
 import org.eclipse.cmf.occi.core.OCCIPackage;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
@@ -48,7 +45,6 @@ import org.eclipse.ocl.pivot.library.classifier.ClassifierOclContainerOperation;
 import org.eclipse.ocl.pivot.library.collection.CollectionIncludesOperation;
 import org.eclipse.ocl.pivot.library.collection.CollectionIntersectionOperation;
 import org.eclipse.ocl.pivot.library.collection.CollectionIsEmptyOperation;
-import org.eclipse.ocl.pivot.library.logical.BooleanImpliesOperation;
 import org.eclipse.ocl.pivot.library.logical.BooleanOrOperation;
 import org.eclipse.ocl.pivot.library.numeric.NumericMinusOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
@@ -364,16 +360,16 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 	 */
 	public boolean KindsSchemeValid(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
-		 * 
+		 *
 		 * inv KindsSchemeValid:
 		 *   let severity : Integer[1] = 'Extension::KindsSchemeValid'.getSeverity()
 		 *   in
 		 *     if severity <= 0
 		 *     then true
 		 *     else
-		 *       let status : OclAny[?] = kinds->forAll(k | k.scheme = self.scheme)
+		 *       let result : Boolean[?] = kinds->forAll(k | k.scheme = self.scheme)
 		 *       in
-		 *         'Extension::KindsSchemeValid'.logDiagnostic(self, null, diagnostics, context, null, severity, status, 0)
+		 *         'Extension::KindsSchemeValid'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
 		 */
 		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
@@ -382,62 +378,52 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
 		/*@NonInvalid*/ boolean symbol_0;
 		if (le) {
-		    symbol_0 = ValueUtil.TRUE_VALUE;
+			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-		    /*@Caught*/ /*@NonNull*/ Object CAUGHT_status;
-		    try {
-		        final /*@Thrown*/ List<Kind> kinds = this.getKinds();
-		        final /*@Thrown*/ OrderedSetValue BOXED_kinds = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Kind, kinds);
-		        /*@Thrown*/ Object accumulator = ValueUtil.TRUE_VALUE;
-		        /*@NonNull*/ Iterator<Object> ITERATOR_k = BOXED_kinds.iterator();
-		        /*@Thrown*/ boolean status;
-		        while (true) {
-		            if (!ITERATOR_k.hasNext()) {
-		                if (accumulator == ValueUtil.TRUE_VALUE) {
-		                    status = ValueUtil.TRUE_VALUE;
-		                }
-		                else {
-		                    throw (InvalidValueException)accumulator;
-		                }
-		                break;
-		            }
-		            /*@NonInvalid*/ Kind k = (Kind)ITERATOR_k.next();
-		            /**
-		             * k.scheme = self.scheme
-		             */
-		            /*@Caught*/ /*@NonNull*/ Object CAUGHT_eq;
-		            try {
-		                final /*@Thrown*/ String scheme = k.getScheme();
-		                final /*@Thrown*/ String scheme_0 = this.getScheme();
-		                final /*@Thrown*/ boolean eq = scheme.equals(scheme_0);
-		                CAUGHT_eq = eq;
-		            }
-		            catch (Exception e) {
-		                CAUGHT_eq = ValueUtil.createInvalidValue(e);
-		            }
-		            //
-		            if (CAUGHT_eq == ValueUtil.FALSE_VALUE) {					// Normal unsuccessful body evaluation result
-		                status = ValueUtil.FALSE_VALUE;
-		                break;														// Stop immediately 
-		            }
-		            else if (CAUGHT_eq == ValueUtil.TRUE_VALUE) {				// Normal successful body evaluation result
-		                ;															// Carry on
-		            }
-		            else if (CAUGHT_eq instanceof InvalidValueException) {		// Abnormal exception evaluation result
-		                accumulator = CAUGHT_eq;									// Cache an exception failure
-		            }
-		            else {															// Impossible badly typed result
-		                accumulator = new InvalidValueException(PivotMessages.NonBooleanBody, "forAll");
-		            }
-		        }
-		        CAUGHT_status = status;
-		    }
-		    catch (Exception e) {
-		        CAUGHT_status = ValueUtil.createInvalidValue(e);
-		    }
-		    final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Extension_c_c_KindsSchemeValid, this, null, diagnostics, context, null, severity_0, CAUGHT_status, OCCITables.INT_0).booleanValue();
-		    symbol_0 = logDiagnostic;
+			/*@Caught*/ /*@Nullable*/ Object CAUGHT_result;
+			try {
+				final /*@NonInvalid*/ List<Kind> kinds = this.getKinds();
+				final /*@NonInvalid*/ OrderedSetValue BOXED_kinds = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Kind, kinds);
+				/*@Thrown*/ Object accumulator = ValueUtil.TRUE_VALUE;
+				/*@NonNull*/ Iterator<Object> ITERATOR_k = BOXED_kinds.iterator();
+				/*@Thrown*/ Boolean result;
+				while (true) {
+					if (!ITERATOR_k.hasNext()) {
+						if (accumulator == ValueUtil.TRUE_VALUE) {
+							result = ValueUtil.TRUE_VALUE;
+						}
+						else {
+							throw (InvalidValueException)accumulator;
+						}
+						break;
+					}
+					/*@NonInvalid*/ Kind k = (Kind)ITERATOR_k.next();
+					/**
+					 * k.scheme = self.scheme
+					 */
+					final /*@NonInvalid*/ String scheme = k.getScheme();
+					final /*@NonInvalid*/ String scheme_0 = this.getScheme();
+					final /*@NonInvalid*/ boolean eq = scheme.equals(scheme_0);
+					//
+					if (eq == ValueUtil.FALSE_VALUE) {					// Normal unsuccessful body evaluation result
+						result = ValueUtil.FALSE_VALUE;
+						break;														// Stop immediately
+					}
+					else if (eq == ValueUtil.TRUE_VALUE) {				// Normal successful body evaluation result
+						;															// Carry on
+					}
+					else {															// Impossible badly typed result
+						accumulator = new InvalidValueException(PivotMessages.NonBooleanBody, "forAll");
+					}
+				}
+				CAUGHT_result = result;
+			}
+			catch (Exception e) {
+				CAUGHT_result = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Extension_c_c_KindsSchemeValid, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, OCCITables.INT_0).booleanValue();
+			symbol_0 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_0;
 	}
@@ -449,7 +435,7 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 	 */
 	public boolean KindParentLocalOrImported(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
-		 * 
+		 *
 		 * inv KindParentLocalOrImported:
 		 *   let
 		 *     severity : Integer[1] = 'Extension::KindParentLocalOrImported'.getSeverity()
@@ -458,12 +444,12 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 		 *     then true
 		 *     else
 		 *       let
-		 *         status : OclAny[?] = kinds->forAll(parent <> null implies
+		 *         result : Boolean[?] = kinds->forAll(parent <> null implies
 		 *           let parentExtension : OclElement[?] = parent.oclContainer()
 		 *           in parentExtension = self or
 		 *             import->includes(parentExtension))
 		 *       in
-		 *         'Extension::KindParentLocalOrImported'.logDiagnostic(self, null, diagnostics, context, null, severity, status, 0)
+		 *         'Extension::KindParentLocalOrImported'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
 		 */
 		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
@@ -472,120 +458,111 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
 		/*@NonInvalid*/ boolean symbol_1;
 		if (le) {
-		    symbol_1 = ValueUtil.TRUE_VALUE;
+			symbol_1 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-		    /*@Caught*/ /*@Nullable*/ Object CAUGHT_status;
-		    try {
-		        final /*@Thrown*/ List<Kind> kinds = this.getKinds();
-		        final /*@Thrown*/ OrderedSetValue BOXED_kinds = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Kind, kinds);
-		        /*@Thrown*/ Object accumulator = ValueUtil.TRUE_VALUE;
-		        /*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_kinds.iterator();
-		        /*@Thrown*/ Boolean status;
-		        while (true) {
-		            if (!ITERATOR__1.hasNext()) {
-		                if (accumulator == null) {
-		                    status = null;
-		                }
-		                else if (accumulator == ValueUtil.TRUE_VALUE) {
-		                    status = ValueUtil.TRUE_VALUE;
-		                }
-		                else {
-		                    throw (InvalidValueException)accumulator;
-		                }
-		                break;
-		            }
-		            /*@NonInvalid*/ Kind _1 = (Kind)ITERATOR__1.next();
-		            /**
-		             * parent <> null implies
-		             * let parentExtension : OclElement[?] = parent.oclContainer()
-		             * in parentExtension = self or import->includes(parentExtension)
-		             */
-		            /*@Caught*/ /*@Nullable*/ Object CAUGHT_implies;
-		            try {
-		                /*@Caught*/ /*@NonNull*/ Object CAUGHT_ne;
-		                try {
-		                    final /*@Thrown*/ Kind parent = _1.getParent();
-		                    final /*@Thrown*/ boolean ne = parent != null;
-		                    CAUGHT_ne = ne;
-		                }
-		                catch (Exception e) {
-		                    CAUGHT_ne = ValueUtil.createInvalidValue(e);
-		                }
-		                /*@Caught*/ /*@Nullable*/ Object CAUGHT_or;
-		                try {
-		                    /*@Caught*/ /*@Nullable*/ Object CAUGHT_parentExtension;
-		                    try {
-		                        final /*@Thrown*/ Kind parent_0 = _1.getParent();
-		                        final /*@Thrown*/ Object parentExtension = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, parent_0);
-		                        CAUGHT_parentExtension = parentExtension;
-		                    }
-		                    catch (Exception e) {
-		                        CAUGHT_parentExtension = ValueUtil.createInvalidValue(e);
-		                    }
-		                    /*@Caught*/ /*@NonNull*/ Object CAUGHT_eq;
-		                    try {
-		                        if (CAUGHT_parentExtension instanceof InvalidValueException) {
-		                            throw (InvalidValueException)CAUGHT_parentExtension;
-		                        }
-		                        final /*@Thrown*/ boolean eq = this.equals(CAUGHT_parentExtension);
-		                        CAUGHT_eq = eq;
-		                    }
-		                    catch (Exception e) {
-		                        CAUGHT_eq = ValueUtil.createInvalidValue(e);
-		                    }
-		                    /*@Caught*/ /*@NonNull*/ Object CAUGHT_includes;
-		                    try {
-		                        final /*@Thrown*/ List<Extension> symbol_0 = this.getImport();
-		                        final /*@Thrown*/ OrderedSetValue BOXED_symbol_0 = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Extension, symbol_0);
-		                        if (CAUGHT_parentExtension instanceof InvalidValueException) {
-		                            throw (InvalidValueException)CAUGHT_parentExtension;
-		                        }
-		                        final /*@Thrown*/ boolean includes = CollectionIncludesOperation.INSTANCE.evaluate(BOXED_symbol_0, CAUGHT_parentExtension).booleanValue();
-		                        CAUGHT_includes = includes;
-		                    }
-		                    catch (Exception e) {
-		                        CAUGHT_includes = ValueUtil.createInvalidValue(e);
-		                    }
-		                    final /*@Thrown*/ Boolean or = BooleanOrOperation.INSTANCE.evaluate(CAUGHT_eq, CAUGHT_includes);
-		                    CAUGHT_or = or;
-		                }
-		                catch (Exception e) {
-		                    CAUGHT_or = ValueUtil.createInvalidValue(e);
-		                }
-		                final /*@Thrown*/ Boolean implies = BooleanImpliesOperation.INSTANCE.evaluate(CAUGHT_ne, CAUGHT_or);
-		                CAUGHT_implies = implies;
-		            }
-		            catch (Exception e) {
-		                CAUGHT_implies = ValueUtil.createInvalidValue(e);
-		            }
-		            //
-		            if (CAUGHT_implies == ValueUtil.FALSE_VALUE) {					// Normal unsuccessful body evaluation result
-		                status = ValueUtil.FALSE_VALUE;
-		                break;														// Stop immediately 
-		            }
-		            else if (CAUGHT_implies == ValueUtil.TRUE_VALUE) {				// Normal successful body evaluation result
-		                ;															// Carry on
-		            }
-		            else if (CAUGHT_implies == null) {								// Abnormal null body evaluation result
-		                if (accumulator == ValueUtil.TRUE_VALUE) {
-		                    accumulator = null;										// Cache a null failure
-		                }
-		            }
-		            else if (CAUGHT_implies instanceof InvalidValueException) {		// Abnormal exception evaluation result
-		                accumulator = CAUGHT_implies;									// Cache an exception failure
-		            }
-		            else {															// Impossible badly typed result
-		                accumulator = new InvalidValueException(PivotMessages.NonBooleanBody, "forAll");
-		            }
-		        }
-		        CAUGHT_status = status;
-		    }
-		    catch (Exception e) {
-		        CAUGHT_status = ValueUtil.createInvalidValue(e);
-		    }
-		    final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Extension_c_c_KindParentLocalOrImported, this, null, diagnostics, context, null, severity_0, CAUGHT_status, OCCITables.INT_0).booleanValue();
-		    symbol_1 = logDiagnostic;
+			/*@Caught*/ /*@Nullable*/ Object CAUGHT_result;
+			try {
+				final /*@NonInvalid*/ List<Kind> kinds = this.getKinds();
+				final /*@NonInvalid*/ OrderedSetValue BOXED_kinds = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Kind, kinds);
+				/*@Thrown*/ Object accumulator = ValueUtil.TRUE_VALUE;
+				/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_kinds.iterator();
+				/*@Thrown*/ Boolean result;
+				while (true) {
+					if (!ITERATOR__1.hasNext()) {
+						if (accumulator == null) {
+							result = null;
+						}
+						else if (accumulator == ValueUtil.TRUE_VALUE) {
+							result = ValueUtil.TRUE_VALUE;
+						}
+						else {
+							throw (InvalidValueException)accumulator;
+						}
+						break;
+					}
+					/*@NonInvalid*/ Kind _1 = (Kind)ITERATOR__1.next();
+					/**
+					 * parent <> null implies
+					 * let parentExtension : OclElement[?] = parent.oclContainer()
+					 * in parentExtension = self or import->includes(parentExtension)
+					 */
+					/*@Caught*/ /*@Nullable*/ Object CAUGHT_implies;
+					try {
+						final /*@NonInvalid*/ Kind parent = _1.getParent();
+						final /*@NonInvalid*/ boolean ne = parent != null;
+						/*@Thrown*/ Boolean implies;
+						if (ne) {
+							/*@Caught*/ /*@Nullable*/ Object CAUGHT_parentExtension;
+							try {
+								final /*@Thrown*/ Object parentExtension = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, parent);
+								CAUGHT_parentExtension = parentExtension;
+							}
+							catch (Exception e) {
+								CAUGHT_parentExtension = ValueUtil.createInvalidValue(e);
+							}
+							/*@Caught*/ /*@NonNull*/ Object CAUGHT_eq;
+							try {
+								if (CAUGHT_parentExtension instanceof InvalidValueException) {
+									throw (InvalidValueException)CAUGHT_parentExtension;
+								}
+								final /*@Thrown*/ boolean eq = this.equals(CAUGHT_parentExtension);
+								CAUGHT_eq = eq;
+							}
+							catch (Exception e) {
+								CAUGHT_eq = ValueUtil.createInvalidValue(e);
+							}
+							/*@Caught*/ /*@NonNull*/ Object CAUGHT_includes;
+							try {
+								final /*@NonInvalid*/ List<Extension> symbol_0 = this.getImport();
+								final /*@NonInvalid*/ OrderedSetValue BOXED_symbol_0 = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Extension, symbol_0);
+								if (CAUGHT_parentExtension instanceof InvalidValueException) {
+									throw (InvalidValueException)CAUGHT_parentExtension;
+								}
+								final /*@Thrown*/ boolean includes = CollectionIncludesOperation.INSTANCE.evaluate(BOXED_symbol_0, CAUGHT_parentExtension).booleanValue();
+								CAUGHT_includes = includes;
+							}
+							catch (Exception e) {
+								CAUGHT_includes = ValueUtil.createInvalidValue(e);
+							}
+							final /*@Thrown*/ Boolean or = BooleanOrOperation.INSTANCE.evaluate(CAUGHT_eq, CAUGHT_includes);
+							implies = or;
+						}
+						else {
+							implies = ValueUtil.TRUE_VALUE;
+						}
+						CAUGHT_implies = implies;
+					}
+					catch (Exception e) {
+						CAUGHT_implies = ValueUtil.createInvalidValue(e);
+					}
+					//
+					if (CAUGHT_implies == ValueUtil.FALSE_VALUE) {					// Normal unsuccessful body evaluation result
+						result = ValueUtil.FALSE_VALUE;
+						break;														// Stop immediately
+					}
+					else if (CAUGHT_implies == ValueUtil.TRUE_VALUE) {				// Normal successful body evaluation result
+						;															// Carry on
+					}
+					else if (CAUGHT_implies == null) {								// Abnormal null body evaluation result
+						if (accumulator == ValueUtil.TRUE_VALUE) {
+							accumulator = null;										// Cache a null failure
+						}
+					}
+					else if (CAUGHT_implies instanceof InvalidValueException) {		// Abnormal exception evaluation result
+						accumulator = CAUGHT_implies;									// Cache an exception failure
+					}
+					else {															// Impossible badly typed result
+						accumulator = new InvalidValueException(PivotMessages.NonBooleanBody, "forAll");
+					}
+				}
+				CAUGHT_result = result;
+			}
+			catch (Exception e) {
+				CAUGHT_result = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Extension_c_c_KindParentLocalOrImported, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, OCCITables.INT_0).booleanValue();
+			symbol_1 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_1;
 	}
@@ -597,7 +574,7 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 	 */
 	public boolean MixinsSchemeValid(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
-		 * 
+		 *
 		 * inv MixinsSchemeValid:
 		 *   let severity : Integer[1] = 'Extension::MixinsSchemeValid'.getSeverity()
 		 *   in
@@ -605,11 +582,11 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 		 *     then true
 		 *     else
 		 *       let
-		 *         status : OclAny[?] = mixins->forAll(m |
+		 *         result : Boolean[?] = mixins->forAll(m |
 		 *           m.scheme.substring(1, scheme.size() - 1) =
 		 *           scheme.substring(1, scheme.size() - 1))
 		 *       in
-		 *         'Extension::MixinsSchemeValid'.logDiagnostic(self, null, diagnostics, context, null, severity, status, 0)
+		 *         'Extension::MixinsSchemeValid'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
 		 */
 		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
@@ -618,68 +595,68 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
 		/*@NonInvalid*/ boolean symbol_0;
 		if (le) {
-		    symbol_0 = ValueUtil.TRUE_VALUE;
+			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-		    /*@Caught*/ /*@NonNull*/ Object CAUGHT_status;
-		    try {
-		        final /*@Thrown*/ List<Mixin> mixins = this.getMixins();
-		        final /*@Thrown*/ OrderedSetValue BOXED_mixins = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Mixin, mixins);
-		        /*@Thrown*/ Object accumulator = ValueUtil.TRUE_VALUE;
-		        /*@NonNull*/ Iterator<Object> ITERATOR_m = BOXED_mixins.iterator();
-		        /*@Thrown*/ boolean status;
-		        while (true) {
-		            if (!ITERATOR_m.hasNext()) {
-		                if (accumulator == ValueUtil.TRUE_VALUE) {
-		                    status = ValueUtil.TRUE_VALUE;
-		                }
-		                else {
-		                    throw (InvalidValueException)accumulator;
-		                }
-		                break;
-		            }
-		            /*@NonInvalid*/ Mixin m = (Mixin)ITERATOR_m.next();
-		            /**
-		             * 
-		             * m.scheme.substring(1, scheme.size() - 1) =
-		             * scheme.substring(1, scheme.size() - 1)
-		             */
-		            /*@Caught*/ /*@NonNull*/ Object CAUGHT_eq;
-		            try {
-		                final /*@Thrown*/ String scheme_1 = this.getScheme();
-		                final /*@Thrown*/ IntegerValue size_0 = StringSizeOperation.INSTANCE.evaluate(scheme_1);
-		                final /*@Thrown*/ IntegerValue diff_0 = (IntegerValue)NumericMinusOperation.INSTANCE.evaluate(size_0, OCCITables.INT_1);
-		                final /*@Thrown*/ String scheme = m.getScheme();
-		                final /*@Thrown*/ String substring = StringSubstringOperation.INSTANCE.evaluate(scheme, OCCITables.INT_1, diff_0);
-		                final /*@Thrown*/ String substring_0 = StringSubstringOperation.INSTANCE.evaluate(scheme_1, OCCITables.INT_1, diff_0);
-		                final /*@Thrown*/ boolean eq = substring.equals(substring_0);
-		                CAUGHT_eq = eq;
-		            }
-		            catch (Exception e) {
-		                CAUGHT_eq = ValueUtil.createInvalidValue(e);
-		            }
-		            //
-		            if (CAUGHT_eq == ValueUtil.FALSE_VALUE) {					// Normal unsuccessful body evaluation result
-		                status = ValueUtil.FALSE_VALUE;
-		                break;														// Stop immediately 
-		            }
-		            else if (CAUGHT_eq == ValueUtil.TRUE_VALUE) {				// Normal successful body evaluation result
-		                ;															// Carry on
-		            }
-		            else if (CAUGHT_eq instanceof InvalidValueException) {		// Abnormal exception evaluation result
-		                accumulator = CAUGHT_eq;									// Cache an exception failure
-		            }
-		            else {															// Impossible badly typed result
-		                accumulator = new InvalidValueException(PivotMessages.NonBooleanBody, "forAll");
-		            }
-		        }
-		        CAUGHT_status = status;
-		    }
-		    catch (Exception e) {
-		        CAUGHT_status = ValueUtil.createInvalidValue(e);
-		    }
-		    final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Extension_c_c_MixinsSchemeValid, this, null, diagnostics, context, null, severity_0, CAUGHT_status, OCCITables.INT_0).booleanValue();
-		    symbol_0 = logDiagnostic;
+			/*@Caught*/ /*@Nullable*/ Object CAUGHT_result;
+			try {
+				final /*@NonInvalid*/ List<Mixin> mixins = this.getMixins();
+				final /*@NonInvalid*/ OrderedSetValue BOXED_mixins = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Mixin, mixins);
+				/*@Thrown*/ Object accumulator = ValueUtil.TRUE_VALUE;
+				/*@NonNull*/ Iterator<Object> ITERATOR_m = BOXED_mixins.iterator();
+				/*@Thrown*/ Boolean result;
+				while (true) {
+					if (!ITERATOR_m.hasNext()) {
+						if (accumulator == ValueUtil.TRUE_VALUE) {
+							result = ValueUtil.TRUE_VALUE;
+						}
+						else {
+							throw (InvalidValueException)accumulator;
+						}
+						break;
+					}
+					/*@NonInvalid*/ Mixin m = (Mixin)ITERATOR_m.next();
+					/**
+					 *
+					 * m.scheme.substring(1, scheme.size() - 1) =
+					 * scheme.substring(1, scheme.size() - 1)
+					 */
+					/*@Caught*/ /*@NonNull*/ Object CAUGHT_eq;
+					try {
+						final /*@NonInvalid*/ String scheme_1 = this.getScheme();
+						final /*@NonInvalid*/ IntegerValue size_0 = StringSizeOperation.INSTANCE.evaluate(scheme_1);
+						final /*@NonInvalid*/ IntegerValue diff_0 = (IntegerValue)NumericMinusOperation.INSTANCE.evaluate(size_0, OCCITables.INT_1);
+						final /*@NonInvalid*/ String scheme = m.getScheme();
+						final /*@Thrown*/ String substring = StringSubstringOperation.INSTANCE.evaluate(scheme, OCCITables.INT_1, diff_0);
+						final /*@Thrown*/ String substring_0 = StringSubstringOperation.INSTANCE.evaluate(scheme_1, OCCITables.INT_1, diff_0);
+						final /*@Thrown*/ boolean eq = substring.equals(substring_0);
+						CAUGHT_eq = eq;
+					}
+					catch (Exception e) {
+						CAUGHT_eq = ValueUtil.createInvalidValue(e);
+					}
+					//
+					if (CAUGHT_eq == ValueUtil.FALSE_VALUE) {					// Normal unsuccessful body evaluation result
+						result = ValueUtil.FALSE_VALUE;
+						break;														// Stop immediately
+					}
+					else if (CAUGHT_eq == ValueUtil.TRUE_VALUE) {				// Normal successful body evaluation result
+						;															// Carry on
+					}
+					else if (CAUGHT_eq instanceof InvalidValueException) {		// Abnormal exception evaluation result
+						accumulator = CAUGHT_eq;									// Cache an exception failure
+					}
+					else {															// Impossible badly typed result
+						accumulator = new InvalidValueException(PivotMessages.NonBooleanBody, "forAll");
+					}
+				}
+				CAUGHT_result = result;
+			}
+			catch (Exception e) {
+				CAUGHT_result = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Extension_c_c_MixinsSchemeValid, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, OCCITables.INT_0).booleanValue();
+			symbol_0 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_0;
 	}
@@ -691,7 +668,7 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 	 */
 	public boolean TermUnicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
-		 * 
+		 *
 		 * inv TermUnicity:
 		 *   let severity : Integer[1] = 'Extension::TermUnicity'.getSeverity()
 		 *   in
@@ -699,10 +676,10 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 		 *     then true
 		 *     else
 		 *       let
-		 *         status : OclAny[1] = kinds.term->intersection(mixins.term)
+		 *         result : Boolean[1] = kinds.term->intersection(mixins.term)
 		 *         ->isEmpty()
 		 *       in
-		 *         'Extension::TermUnicity'.logDiagnostic(self, null, diagnostics, context, null, severity, status, 0)
+		 *         'Extension::TermUnicity'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
 		 */
 		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
@@ -711,56 +688,56 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
 		/*@NonInvalid*/ boolean symbol_0;
 		if (le) {
-		    symbol_0 = ValueUtil.TRUE_VALUE;
+			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-		    /*@Caught*/ /*@NonNull*/ Object CAUGHT_status;
-		    try {
-		        final /*@Thrown*/ List<Kind> kinds = this.getKinds();
-		        final /*@Thrown*/ OrderedSetValue BOXED_kinds = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Kind, kinds);
-		        /*@Thrown*/ SequenceValue.Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_PRIMid_String);
-		        /*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_kinds.iterator();
-		        /*@Thrown*/ SequenceValue collect;
-		        while (true) {
-		            if (!ITERATOR__1.hasNext()) {
-		                collect = accumulator;
-		                break;
-		            }
-		            /*@NonInvalid*/ Kind _1 = (Kind)ITERATOR__1.next();
-		            /**
-		             * term
-		             */
-		            final /*@Thrown*/ String term = _1.getTerm();
-		            //
-		            accumulator.add(term);
-		        }
-		        final /*@Thrown*/ List<Mixin> mixins = this.getMixins();
-		        final /*@Thrown*/ OrderedSetValue BOXED_mixins = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Mixin, mixins);
-		        /*@Thrown*/ SequenceValue.Accumulator accumulator_0 = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_PRIMid_String);
-		        /*@NonNull*/ Iterator<Object> ITERATOR__1_0 = BOXED_mixins.iterator();
-		        /*@Thrown*/ SequenceValue collect_0;
-		        while (true) {
-		            if (!ITERATOR__1_0.hasNext()) {
-		                collect_0 = accumulator_0;
-		                break;
-		            }
-		            /*@NonInvalid*/ Mixin _1_0 = (Mixin)ITERATOR__1_0.next();
-		            /**
-		             * term
-		             */
-		            final /*@Thrown*/ String term_0 = _1_0.getTerm();
-		            //
-		            accumulator_0.add(term_0);
-		        }
-		        final /*@Thrown*/ BagValue intersection = (BagValue)CollectionIntersectionOperation.INSTANCE.evaluate(collect, collect_0);
-		        final /*@Thrown*/ boolean status = CollectionIsEmptyOperation.INSTANCE.evaluate(intersection).booleanValue();
-		        CAUGHT_status = status;
-		    }
-		    catch (Exception e) {
-		        CAUGHT_status = ValueUtil.createInvalidValue(e);
-		    }
-		    final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Extension_c_c_TermUnicity, this, null, diagnostics, context, null, severity_0, CAUGHT_status, OCCITables.INT_0).booleanValue();
-		    symbol_0 = logDiagnostic;
+			/*@Caught*/ /*@NonNull*/ Object CAUGHT_result;
+			try {
+				final /*@NonInvalid*/ List<Kind> kinds = this.getKinds();
+				final /*@NonInvalid*/ OrderedSetValue BOXED_kinds = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Kind, kinds);
+				/*@Thrown*/ SequenceValue.Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_PRIMid_String);
+				/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_kinds.iterator();
+				/*@Thrown*/ SequenceValue collect;
+				while (true) {
+					if (!ITERATOR__1.hasNext()) {
+						collect = accumulator;
+						break;
+					}
+					/*@NonInvalid*/ Kind _1 = (Kind)ITERATOR__1.next();
+					/**
+					 * term
+					 */
+					final /*@NonInvalid*/ String term = _1.getTerm();
+					//
+					accumulator.add(term);
+				}
+				final /*@NonInvalid*/ List<Mixin> mixins = this.getMixins();
+				final /*@NonInvalid*/ OrderedSetValue BOXED_mixins = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Mixin, mixins);
+				/*@Thrown*/ SequenceValue.Accumulator accumulator_0 = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_PRIMid_String);
+				/*@NonNull*/ Iterator<Object> ITERATOR__1_0 = BOXED_mixins.iterator();
+				/*@Thrown*/ SequenceValue collect_0;
+				while (true) {
+					if (!ITERATOR__1_0.hasNext()) {
+						collect_0 = accumulator_0;
+						break;
+					}
+					/*@NonInvalid*/ Mixin _1_0 = (Mixin)ITERATOR__1_0.next();
+					/**
+					 * term
+					 */
+					final /*@NonInvalid*/ String term_0 = _1_0.getTerm();
+					//
+					accumulator_0.add(term_0);
+				}
+				final /*@Thrown*/ BagValue intersection = (BagValue)CollectionIntersectionOperation.INSTANCE.evaluate(collect, collect_0);
+				final /*@Thrown*/ boolean result = CollectionIsEmptyOperation.INSTANCE.evaluate(intersection).booleanValue();
+				CAUGHT_result = result;
+			}
+			catch (Exception e) {
+				CAUGHT_result = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Extension_c_c_TermUnicity, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, OCCITables.INT_0).booleanValue();
+			symbol_0 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_0;
 	}
@@ -772,7 +749,7 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 	 */
 	public boolean MixinAppliesLocalOrImported(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
-		 * 
+		 *
 		 * inv MixinAppliesLocalOrImported:
 		 *   let
 		 *     severity : Integer[1] = 'Extension::MixinAppliesLocalOrImported'.getSeverity()
@@ -781,11 +758,11 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 		 *     then true
 		 *     else
 		 *       let
-		 *         status : OclAny[?] = mixins.applies->forAll(
+		 *         result : Boolean[?] = mixins.applies->forAll(
 		 *           let extension : OclElement[?] = oclContainer()
 		 *           in extension = self or import->includes(extension))
 		 *       in
-		 *         'Extension::MixinAppliesLocalOrImported'.logDiagnostic(self, null, diagnostics, context, null, severity, status, 0)
+		 *         'Extension::MixinAppliesLocalOrImported'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
 		 */
 		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
@@ -794,101 +771,92 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
 		/*@NonInvalid*/ boolean symbol_1;
 		if (le) {
-		    symbol_1 = ValueUtil.TRUE_VALUE;
+			symbol_1 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-		    /*@Caught*/ /*@Nullable*/ Object CAUGHT_status;
-		    try {
-		        final /*@Thrown*/ List<Mixin> mixins = this.getMixins();
-		        final /*@Thrown*/ OrderedSetValue BOXED_mixins = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Mixin, mixins);
-		        /*@Thrown*/ SequenceValue.Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_CLSSid_Kind);
-		        /*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_mixins.iterator();
-		        /*@Thrown*/ SequenceValue collect;
-		        while (true) {
-		            if (!ITERATOR__1.hasNext()) {
-		                collect = accumulator;
-		                break;
-		            }
-		            /*@NonInvalid*/ Mixin _1 = (Mixin)ITERATOR__1.next();
-		            /**
-		             * applies
-		             */
-		            final /*@Thrown*/ List<Kind> applies = _1.getApplies();
-		            final /*@Thrown*/ OrderedSetValue BOXED_applies = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Kind, applies);
-		            //
-		            for (Object value : BOXED_applies.flatten().getElements()) {
-		                accumulator.add(value);
-		            }
-		        }
-		        /*@Thrown*/ Object accumulator_0 = ValueUtil.TRUE_VALUE;
-		        /*@NonNull*/ Iterator<Object> ITERATOR__1_0 = collect.iterator();
-		        /*@Thrown*/ Boolean status;
-		        while (true) {
-		            if (!ITERATOR__1_0.hasNext()) {
-		                if (accumulator_0 == null) {
-		                    status = null;
-		                }
-		                else if (accumulator_0 == ValueUtil.TRUE_VALUE) {
-		                    status = ValueUtil.TRUE_VALUE;
-		                }
-		                else {
-		                    throw (InvalidValueException)accumulator_0;
-		                }
-		                break;
-		            }
-		            /*@NonInvalid*/ Kind _1_0 = (Kind)ITERATOR__1_0.next();
-		            /**
-		             * 
-		             * let extension : OclElement[?] = oclContainer()
-		             * in extension = self or import->includes(extension)
-		             */
-		            /*@Caught*/ /*@Nullable*/ Object CAUGHT_or;
-		            try {
-		                final /*@NonInvalid*/ Object extension = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, _1_0);
-		                final /*@NonInvalid*/ boolean eq = this.equals(extension);
-		                /*@Caught*/ /*@NonNull*/ Object CAUGHT_includes;
-		                try {
-		                    final /*@Thrown*/ List<Extension> symbol_0 = this.getImport();
-		                    final /*@Thrown*/ OrderedSetValue BOXED_symbol_0 = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Extension, symbol_0);
-		                    final /*@Thrown*/ boolean includes = CollectionIncludesOperation.INSTANCE.evaluate(BOXED_symbol_0, extension).booleanValue();
-		                    CAUGHT_includes = includes;
-		                }
-		                catch (Exception e) {
-		                    CAUGHT_includes = ValueUtil.createInvalidValue(e);
-		                }
-		                final /*@Thrown*/ Boolean or = BooleanOrOperation.INSTANCE.evaluate(eq, CAUGHT_includes);
-		                CAUGHT_or = or;
-		            }
-		            catch (Exception e) {
-		                CAUGHT_or = ValueUtil.createInvalidValue(e);
-		            }
-		            //
-		            if (CAUGHT_or == ValueUtil.FALSE_VALUE) {					// Normal unsuccessful body evaluation result
-		                status = ValueUtil.FALSE_VALUE;
-		                break;														// Stop immediately 
-		            }
-		            else if (CAUGHT_or == ValueUtil.TRUE_VALUE) {				// Normal successful body evaluation result
-		                ;															// Carry on
-		            }
-		            else if (CAUGHT_or == null) {								// Abnormal null body evaluation result
-		                if (accumulator_0 == ValueUtil.TRUE_VALUE) {
-		                    accumulator_0 = null;										// Cache a null failure
-		                }
-		            }
-		            else if (CAUGHT_or instanceof InvalidValueException) {		// Abnormal exception evaluation result
-		                accumulator_0 = CAUGHT_or;									// Cache an exception failure
-		            }
-		            else {															// Impossible badly typed result
-		                accumulator_0 = new InvalidValueException(PivotMessages.NonBooleanBody, "forAll");
-		            }
-		        }
-		        CAUGHT_status = status;
-		    }
-		    catch (Exception e) {
-		        CAUGHT_status = ValueUtil.createInvalidValue(e);
-		    }
-		    final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Extension_c_c_MixinAppliesLocalOrImported, this, null, diagnostics, context, null, severity_0, CAUGHT_status, OCCITables.INT_0).booleanValue();
-		    symbol_1 = logDiagnostic;
+			/*@Caught*/ /*@Nullable*/ Object CAUGHT_result;
+			try {
+				final /*@NonInvalid*/ List<Mixin> mixins = this.getMixins();
+				final /*@NonInvalid*/ OrderedSetValue BOXED_mixins = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Mixin, mixins);
+				/*@Thrown*/ SequenceValue.Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_CLSSid_Kind);
+				/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_mixins.iterator();
+				/*@Thrown*/ SequenceValue collect;
+				while (true) {
+					if (!ITERATOR__1.hasNext()) {
+						collect = accumulator;
+						break;
+					}
+					/*@NonInvalid*/ Mixin _1 = (Mixin)ITERATOR__1.next();
+					/**
+					 * applies
+					 */
+					final /*@NonInvalid*/ List<Kind> applies = _1.getApplies();
+					final /*@NonInvalid*/ OrderedSetValue BOXED_applies = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Kind, applies);
+					//
+					for (Object value : BOXED_applies.flatten().getElements()) {
+						accumulator.add(value);
+					}
+				}
+				/*@Thrown*/ Object accumulator_0 = ValueUtil.TRUE_VALUE;
+				/*@NonNull*/ Iterator<Object> ITERATOR__1_0 = collect.iterator();
+				/*@Thrown*/ Boolean result;
+				while (true) {
+					if (!ITERATOR__1_0.hasNext()) {
+						if (accumulator_0 == ValueUtil.TRUE_VALUE) {
+							result = ValueUtil.TRUE_VALUE;
+						}
+						else {
+							throw (InvalidValueException)accumulator_0;
+						}
+						break;
+					}
+					/*@NonInvalid*/ Kind _1_0 = (Kind)ITERATOR__1_0.next();
+					/**
+					 *
+					 * let extension : OclElement[?] = oclContainer()
+					 * in extension = self or import->includes(extension)
+					 */
+					/*@Caught*/ /*@NonNull*/ Object CAUGHT_or;
+					try {
+						final /*@NonInvalid*/ Object extension = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, _1_0);
+						final /*@NonInvalid*/ boolean eq = this.equals(extension);
+						/*@Thrown*/ boolean or;
+						if (eq) {
+							or = ValueUtil.TRUE_VALUE;
+						}
+						else {
+							final /*@NonInvalid*/ List<Extension> symbol_0 = this.getImport();
+							final /*@NonInvalid*/ OrderedSetValue BOXED_symbol_0 = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Extension, symbol_0);
+							final /*@Thrown*/ boolean includes = CollectionIncludesOperation.INSTANCE.evaluate(BOXED_symbol_0, extension).booleanValue();
+							or = includes;
+						}
+						CAUGHT_or = or;
+					}
+					catch (Exception e) {
+						CAUGHT_or = ValueUtil.createInvalidValue(e);
+					}
+					//
+					if (CAUGHT_or == ValueUtil.FALSE_VALUE) {					// Normal unsuccessful body evaluation result
+						result = ValueUtil.FALSE_VALUE;
+						break;														// Stop immediately
+					}
+					else if (CAUGHT_or == ValueUtil.TRUE_VALUE) {				// Normal successful body evaluation result
+						;															// Carry on
+					}
+					else if (CAUGHT_or instanceof InvalidValueException) {		// Abnormal exception evaluation result
+						accumulator_0 = CAUGHT_or;									// Cache an exception failure
+					}
+					else {															// Impossible badly typed result
+						accumulator_0 = new InvalidValueException(PivotMessages.NonBooleanBody, "forAll");
+					}
+				}
+				CAUGHT_result = result;
+			}
+			catch (Exception e) {
+				CAUGHT_result = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Extension_c_c_MixinAppliesLocalOrImported, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, OCCITables.INT_0).booleanValue();
+			symbol_1 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_1;
 	}
@@ -900,16 +868,18 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 	 */
 	public boolean SchemeUnique(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
-		 * 
+		 *
 		 * inv SchemeUnique:
 		 *   let severity : Integer[1] = 'Extension::SchemeUnique'.getSeverity()
 		 *   in
 		 *     if severity <= 0
 		 *     then true
 		 *     else
-		 *       let status : OclAny[1] = Extension.allInstances()->isUnique(scheme)
+		 *       let
+		 *         result : Boolean[1] = Extension.allInstances()
+		 *         ->isUnique(scheme)
 		 *       in
-		 *         'Extension::SchemeUnique'.logDiagnostic(self, null, diagnostics, context, null, severity, status, 0)
+		 *         'Extension::SchemeUnique'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
 		 */
 		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
@@ -918,42 +888,42 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
 		/*@NonInvalid*/ boolean symbol_0;
 		if (le) {
-		    symbol_0 = ValueUtil.TRUE_VALUE;
+			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-		    /*@Caught*/ /*@NonNull*/ Object CAUGHT_status;
-		    try {
-		        final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Extension_0 = idResolver.getClass(OCCITables.CLSSid_Extension, null);
-		        final /*@NonInvalid*/ SetValue allInstances = ClassifierAllInstancesOperation.INSTANCE.evaluate(executor, OCCITables.SET_CLSSid_Extension, TYP_occi_c_c_Extension_0);
-		        /*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(OCCITables.SET_CLSSid_Extension);
-		        /*@NonNull*/ Iterator<Object> ITERATOR__1 = allInstances.iterator();
-		        /*@Thrown*/ boolean status;
-		        while (true) {
-		            if (!ITERATOR__1.hasNext()) {
-		                status = ValueUtil.TRUE_VALUE;
-		                break;
-		            }
-		            /*@NonInvalid*/ Extension _1 = (Extension)ITERATOR__1.next();
-		            /**
-		             * scheme
-		             */
-		            final /*@Thrown*/ String scheme = _1.getScheme();
-		            //
-		            if (accumulator.includes(scheme) == ValueUtil.TRUE_VALUE) {
-		                status = ValueUtil.FALSE_VALUE;			// Abort after second find
-		                break;
-		            }
-		            else {
-		                accumulator.add(scheme);
-		            }
-		        }
-		        CAUGHT_status = status;
-		    }
-		    catch (Exception e) {
-		        CAUGHT_status = ValueUtil.createInvalidValue(e);
-		    }
-		    final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Extension_c_c_SchemeUnique, this, null, diagnostics, context, null, severity_0, CAUGHT_status, OCCITables.INT_0).booleanValue();
-		    symbol_0 = logDiagnostic;
+			/*@Caught*/ /*@NonNull*/ Object CAUGHT_result;
+			try {
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Extension_0 = idResolver.getClass(OCCITables.CLSSid_Extension, null);
+				final /*@NonInvalid*/ SetValue allInstances = ClassifierAllInstancesOperation.INSTANCE.evaluate(executor, OCCITables.SET_CLSSid_Extension, TYP_occi_c_c_Extension_0);
+				/*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(OCCITables.SET_CLSSid_Extension);
+				/*@NonNull*/ Iterator<Object> ITERATOR__1 = allInstances.iterator();
+				/*@Thrown*/ boolean result;
+				while (true) {
+					if (!ITERATOR__1.hasNext()) {
+						result = ValueUtil.TRUE_VALUE;
+						break;
+					}
+					/*@NonInvalid*/ Extension _1 = (Extension)ITERATOR__1.next();
+					/**
+					 * scheme
+					 */
+					final /*@NonInvalid*/ String scheme = _1.getScheme();
+					//
+					if (accumulator.includes(scheme) == ValueUtil.TRUE_VALUE) {
+						result = ValueUtil.FALSE_VALUE;			// Abort after second find
+						break;
+					}
+					else {
+						accumulator.add(scheme);
+					}
+				}
+				CAUGHT_result = result;
+			}
+			catch (Exception e) {
+				CAUGHT_result = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Extension_c_c_SchemeUnique, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, OCCITables.INT_0).booleanValue();
+			symbol_0 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_0;
 	}
@@ -965,7 +935,7 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 	 */
 	public boolean MixinDependsLocalOrImported(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
-		 * 
+		 *
 		 * inv MixinDependsLocalOrImported:
 		 *   let
 		 *     severity : Integer[1] = 'Extension::MixinDependsLocalOrImported'.getSeverity()
@@ -974,11 +944,11 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 		 *     then true
 		 *     else
 		 *       let
-		 *         status : OclAny[?] = mixins.depends->forAll(
+		 *         result : Boolean[?] = mixins.depends->forAll(
 		 *           let extension : OclElement[?] = oclContainer()
 		 *           in extension = self or import->includes(extension))
 		 *       in
-		 *         'Extension::MixinDependsLocalOrImported'.logDiagnostic(self, null, diagnostics, context, null, severity, status, 0)
+		 *         'Extension::MixinDependsLocalOrImported'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
 		 */
 		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
@@ -987,101 +957,92 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
 		/*@NonInvalid*/ boolean symbol_1;
 		if (le) {
-		    symbol_1 = ValueUtil.TRUE_VALUE;
+			symbol_1 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-		    /*@Caught*/ /*@Nullable*/ Object CAUGHT_status;
-		    try {
-		        final /*@Thrown*/ List<Mixin> mixins = this.getMixins();
-		        final /*@Thrown*/ OrderedSetValue BOXED_mixins = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Mixin, mixins);
-		        /*@Thrown*/ SequenceValue.Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_CLSSid_Mixin);
-		        /*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_mixins.iterator();
-		        /*@Thrown*/ SequenceValue collect;
-		        while (true) {
-		            if (!ITERATOR__1.hasNext()) {
-		                collect = accumulator;
-		                break;
-		            }
-		            /*@NonInvalid*/ Mixin _1 = (Mixin)ITERATOR__1.next();
-		            /**
-		             * depends
-		             */
-		            final /*@Thrown*/ List<Mixin> depends = _1.getDepends();
-		            final /*@Thrown*/ OrderedSetValue BOXED_depends = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Mixin, depends);
-		            //
-		            for (Object value : BOXED_depends.flatten().getElements()) {
-		                accumulator.add(value);
-		            }
-		        }
-		        /*@Thrown*/ Object accumulator_0 = ValueUtil.TRUE_VALUE;
-		        /*@NonNull*/ Iterator<Object> ITERATOR__1_0 = collect.iterator();
-		        /*@Thrown*/ Boolean status;
-		        while (true) {
-		            if (!ITERATOR__1_0.hasNext()) {
-		                if (accumulator_0 == null) {
-		                    status = null;
-		                }
-		                else if (accumulator_0 == ValueUtil.TRUE_VALUE) {
-		                    status = ValueUtil.TRUE_VALUE;
-		                }
-		                else {
-		                    throw (InvalidValueException)accumulator_0;
-		                }
-		                break;
-		            }
-		            /*@NonInvalid*/ Mixin _1_0 = (Mixin)ITERATOR__1_0.next();
-		            /**
-		             * 
-		             * let extension : OclElement[?] = oclContainer()
-		             * in extension = self or import->includes(extension)
-		             */
-		            /*@Caught*/ /*@Nullable*/ Object CAUGHT_or;
-		            try {
-		                final /*@NonInvalid*/ Object extension = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, _1_0);
-		                final /*@NonInvalid*/ boolean eq = this.equals(extension);
-		                /*@Caught*/ /*@NonNull*/ Object CAUGHT_includes;
-		                try {
-		                    final /*@Thrown*/ List<Extension> symbol_0 = this.getImport();
-		                    final /*@Thrown*/ OrderedSetValue BOXED_symbol_0 = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Extension, symbol_0);
-		                    final /*@Thrown*/ boolean includes = CollectionIncludesOperation.INSTANCE.evaluate(BOXED_symbol_0, extension).booleanValue();
-		                    CAUGHT_includes = includes;
-		                }
-		                catch (Exception e) {
-		                    CAUGHT_includes = ValueUtil.createInvalidValue(e);
-		                }
-		                final /*@Thrown*/ Boolean or = BooleanOrOperation.INSTANCE.evaluate(eq, CAUGHT_includes);
-		                CAUGHT_or = or;
-		            }
-		            catch (Exception e) {
-		                CAUGHT_or = ValueUtil.createInvalidValue(e);
-		            }
-		            //
-		            if (CAUGHT_or == ValueUtil.FALSE_VALUE) {					// Normal unsuccessful body evaluation result
-		                status = ValueUtil.FALSE_VALUE;
-		                break;														// Stop immediately 
-		            }
-		            else if (CAUGHT_or == ValueUtil.TRUE_VALUE) {				// Normal successful body evaluation result
-		                ;															// Carry on
-		            }
-		            else if (CAUGHT_or == null) {								// Abnormal null body evaluation result
-		                if (accumulator_0 == ValueUtil.TRUE_VALUE) {
-		                    accumulator_0 = null;										// Cache a null failure
-		                }
-		            }
-		            else if (CAUGHT_or instanceof InvalidValueException) {		// Abnormal exception evaluation result
-		                accumulator_0 = CAUGHT_or;									// Cache an exception failure
-		            }
-		            else {															// Impossible badly typed result
-		                accumulator_0 = new InvalidValueException(PivotMessages.NonBooleanBody, "forAll");
-		            }
-		        }
-		        CAUGHT_status = status;
-		    }
-		    catch (Exception e) {
-		        CAUGHT_status = ValueUtil.createInvalidValue(e);
-		    }
-		    final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Extension_c_c_MixinDependsLocalOrImported, this, null, diagnostics, context, null, severity_0, CAUGHT_status, OCCITables.INT_0).booleanValue();
-		    symbol_1 = logDiagnostic;
+			/*@Caught*/ /*@Nullable*/ Object CAUGHT_result;
+			try {
+				final /*@NonInvalid*/ List<Mixin> mixins = this.getMixins();
+				final /*@NonInvalid*/ OrderedSetValue BOXED_mixins = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Mixin, mixins);
+				/*@Thrown*/ SequenceValue.Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_CLSSid_Mixin);
+				/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_mixins.iterator();
+				/*@Thrown*/ SequenceValue collect;
+				while (true) {
+					if (!ITERATOR__1.hasNext()) {
+						collect = accumulator;
+						break;
+					}
+					/*@NonInvalid*/ Mixin _1 = (Mixin)ITERATOR__1.next();
+					/**
+					 * depends
+					 */
+					final /*@NonInvalid*/ List<Mixin> depends = _1.getDepends();
+					final /*@NonInvalid*/ OrderedSetValue BOXED_depends = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Mixin, depends);
+					//
+					for (Object value : BOXED_depends.flatten().getElements()) {
+						accumulator.add(value);
+					}
+				}
+				/*@Thrown*/ Object accumulator_0 = ValueUtil.TRUE_VALUE;
+				/*@NonNull*/ Iterator<Object> ITERATOR__1_0 = collect.iterator();
+				/*@Thrown*/ Boolean result;
+				while (true) {
+					if (!ITERATOR__1_0.hasNext()) {
+						if (accumulator_0 == ValueUtil.TRUE_VALUE) {
+							result = ValueUtil.TRUE_VALUE;
+						}
+						else {
+							throw (InvalidValueException)accumulator_0;
+						}
+						break;
+					}
+					/*@NonInvalid*/ Mixin _1_0 = (Mixin)ITERATOR__1_0.next();
+					/**
+					 *
+					 * let extension : OclElement[?] = oclContainer()
+					 * in extension = self or import->includes(extension)
+					 */
+					/*@Caught*/ /*@NonNull*/ Object CAUGHT_or;
+					try {
+						final /*@NonInvalid*/ Object extension = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, _1_0);
+						final /*@NonInvalid*/ boolean eq = this.equals(extension);
+						/*@Thrown*/ boolean or;
+						if (eq) {
+							or = ValueUtil.TRUE_VALUE;
+						}
+						else {
+							final /*@NonInvalid*/ List<Extension> symbol_0 = this.getImport();
+							final /*@NonInvalid*/ OrderedSetValue BOXED_symbol_0 = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Extension, symbol_0);
+							final /*@Thrown*/ boolean includes = CollectionIncludesOperation.INSTANCE.evaluate(BOXED_symbol_0, extension).booleanValue();
+							or = includes;
+						}
+						CAUGHT_or = or;
+					}
+					catch (Exception e) {
+						CAUGHT_or = ValueUtil.createInvalidValue(e);
+					}
+					//
+					if (CAUGHT_or == ValueUtil.FALSE_VALUE) {					// Normal unsuccessful body evaluation result
+						result = ValueUtil.FALSE_VALUE;
+						break;														// Stop immediately
+					}
+					else if (CAUGHT_or == ValueUtil.TRUE_VALUE) {				// Normal successful body evaluation result
+						;															// Carry on
+					}
+					else if (CAUGHT_or instanceof InvalidValueException) {		// Abnormal exception evaluation result
+						accumulator_0 = CAUGHT_or;									// Cache an exception failure
+					}
+					else {															// Impossible badly typed result
+						accumulator_0 = new InvalidValueException(PivotMessages.NonBooleanBody, "forAll");
+					}
+				}
+				CAUGHT_result = result;
+			}
+			catch (Exception e) {
+				CAUGHT_result = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Extension_c_c_MixinDependsLocalOrImported, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, OCCITables.INT_0).booleanValue();
+			symbol_1 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_1;
 	}
@@ -1246,19 +1207,19 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OCCIPackage.EXTENSION___KINDS_SCHEME_VALID__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.EXTENSION___KINDS_SCHEME_VALID__DIAGNOSTICCHAIN_MAP_1:
 				return KindsSchemeValid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case OCCIPackage.EXTENSION___KIND_PARENT_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.EXTENSION___KIND_PARENT_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP_1:
 				return KindParentLocalOrImported((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case OCCIPackage.EXTENSION___MIXINS_SCHEME_VALID__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.EXTENSION___MIXINS_SCHEME_VALID__DIAGNOSTICCHAIN_MAP_1:
 				return MixinsSchemeValid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case OCCIPackage.EXTENSION___TERM_UNICITY__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.EXTENSION___TERM_UNICITY__DIAGNOSTICCHAIN_MAP_1:
 				return TermUnicity((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case OCCIPackage.EXTENSION___MIXIN_APPLIES_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.EXTENSION___MIXIN_APPLIES_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP_1:
 				return MixinAppliesLocalOrImported((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case OCCIPackage.EXTENSION___SCHEME_UNIQUE__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.EXTENSION___SCHEME_UNIQUE__DIAGNOSTICCHAIN_MAP_1:
 				return SchemeUnique((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case OCCIPackage.EXTENSION___MIXIN_DEPENDS_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.EXTENSION___MIXIN_DEPENDS_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP_1:
 				return MixinDependsLocalOrImported((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);

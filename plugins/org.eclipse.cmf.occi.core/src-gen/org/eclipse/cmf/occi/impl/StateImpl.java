@@ -24,10 +24,8 @@ import org.eclipse.cmf.occi.core.FSM;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.cmf.occi.core.State;
 import org.eclipse.cmf.occi.core.Transition;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
@@ -311,7 +309,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	 */
 	public boolean StateLiteralAlreadyDefinedInFSMAttributeType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
-		 * 
+		 *
 		 * inv StateLiteralAlreadyDefinedInFSMAttributeType:
 		 *   let
 		 *     severity : Integer[1] = 'State::StateLiteralAlreadyDefinedInFSMAttributeType'.getSeverity()
@@ -319,9 +317,9 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 		 *     if severity <= 0
 		 *     then true
 		 *     else
-		 *       let status : OclAny[1] = owningFSM.attribute.type = self.literal.enumerationType
+		 *       let result : Boolean[1] = owningFSM.attribute.type = self.literal.enumerationType
 		 *       in
-		 *         'State::StateLiteralAlreadyDefinedInFSMAttributeType'.logDiagnostic(self, null, diagnostics, context, null, severity, status, 0)
+		 *         'State::StateLiteralAlreadyDefinedInFSMAttributeType'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
 		 */
 		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
@@ -329,27 +327,27 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
 		/*@NonInvalid*/ boolean symbol_0;
 		if (le) {
-		    symbol_0 = ValueUtil.TRUE_VALUE;
+			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-		    /*@Caught*/ /*@NonNull*/ Object CAUGHT_status;
-		    try {
-		        final /*@Thrown*/ FSM owningFSM = this.getOwningFSM();
-		        final /*@Thrown*/ Attribute attribute = owningFSM.getAttribute();
-		        final /*@Thrown*/ DataType type = attribute.getType();
-		        final /*@Thrown*/ EnumerationLiteral literal = this.getLiteral();
-		        if (literal == null) {
-		            throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::EnumerationLiteral::enumerationType\'");
-		        }
-		        final /*@Thrown*/ EnumerationType enumerationType = literal.getEnumerationType();
-		        final /*@Thrown*/ boolean status = enumerationType.equals(type);
-		        CAUGHT_status = status;
-		    }
-		    catch (Exception e) {
-		        CAUGHT_status = ValueUtil.createInvalidValue(e);
-		    }
-		    final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_State_c_c_StateLiteralAlreadyDefinedInFSMAttributeType, this, null, diagnostics, context, null, severity_0, CAUGHT_status, OCCITables.INT_0).booleanValue();
-		    symbol_0 = logDiagnostic;
+			/*@Caught*/ /*@NonNull*/ Object CAUGHT_result;
+			try {
+				final /*@NonInvalid*/ FSM owningFSM = this.getOwningFSM();
+				final /*@NonInvalid*/ Attribute attribute = owningFSM.getAttribute();
+				final /*@NonInvalid*/ DataType type = attribute.getType();
+				final /*@NonInvalid*/ EnumerationLiteral literal = this.getLiteral();
+				if (literal == null) {
+					throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::EnumerationLiteral::enumerationType\'");
+				}
+				final /*@Thrown*/ EnumerationType enumerationType = literal.getEnumerationType();
+				final /*@Thrown*/ boolean result = enumerationType.equals(type);
+				CAUGHT_result = result;
+			}
+			catch (Exception e) {
+				CAUGHT_result = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_State_c_c_StateLiteralAlreadyDefinedInFSMAttributeType, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, OCCITables.INT_0).booleanValue();
+			symbol_0 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_0;
 	}
@@ -528,7 +526,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OCCIPackage.STATE___STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.STATE___STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE__DIAGNOSTICCHAIN_MAP_1:
 				return StateLiteralAlreadyDefinedInFSMAttributeType((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);

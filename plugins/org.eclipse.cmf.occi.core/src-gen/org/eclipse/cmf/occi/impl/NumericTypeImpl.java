@@ -1,34 +1,17 @@
-/**
- * Copyright (c) 2017 Inria
- *  
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- * - Faiez Zalila <faiez.zalila@inria.fr>
- */
 package org.eclipse.cmf.occi.impl;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.Map;
+
 import org.eclipse.cmf.occi.core.NumericType;
 import org.eclipse.cmf.occi.core.NumericTypeEnum;
 import org.eclipse.cmf.occi.core.OCCIPackage;
-
-import org.eclipse.cmf.occi.util.OCCIValidator;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.BasicDiagnostic;
-import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.DiagnosticChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Numeric
- * Type</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Numeric Type</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -46,143 +29,172 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final NumericTypeEnum TYPE_EDEFAULT = NumericTypeEnum.BYTE;
+
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
 	protected NumericTypeEnum type = TYPE_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getTotalDigits() <em>Total Digits</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getTotalDigits()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final int TOTAL_DIGITS_EDEFAULT = 0;
+
 	/**
 	 * The cached value of the '{@link #getTotalDigits() <em>Total Digits</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getTotalDigits()
 	 * @generated
 	 * @ordered
 	 */
 	protected int totalDigits = TOTAL_DIGITS_EDEFAULT;
+
 	/**
-	 * This is true if the Total Digits attribute has been set. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This is true if the Total Digits attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	protected boolean totalDigitsESet;
+
 	/**
 	 * The default value of the '{@link #getMinExclusive() <em>Min Exclusive</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getMinExclusive()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final String MIN_EXCLUSIVE_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getMinExclusive() <em>Min Exclusive</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getMinExclusive()
 	 * @generated
 	 * @ordered
 	 */
 	protected String minExclusive = MIN_EXCLUSIVE_EDEFAULT;
+
 	/**
-	 * This is true if the Min Exclusive attribute has been set. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This is true if the Min Exclusive attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	protected boolean minExclusiveESet;
+
 	/**
 	 * The default value of the '{@link #getMaxExclusive() <em>Max Exclusive</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getMaxExclusive()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final String MAX_EXCLUSIVE_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getMaxExclusive() <em>Max Exclusive</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getMaxExclusive()
 	 * @generated
 	 * @ordered
 	 */
 	protected String maxExclusive = MAX_EXCLUSIVE_EDEFAULT;
+
 	/**
-	 * This is true if the Max Exclusive attribute has been set. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This is true if the Max Exclusive attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	protected boolean maxExclusiveESet;
+
 	/**
 	 * The default value of the '{@link #getMinInclusive() <em>Min Inclusive</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getMinInclusive()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final String MIN_INCLUSIVE_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getMinInclusive() <em>Min Inclusive</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getMinInclusive()
 	 * @generated
 	 * @ordered
 	 */
 	protected String minInclusive = MIN_INCLUSIVE_EDEFAULT;
+
 	/**
-	 * This is true if the Min Inclusive attribute has been set. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This is true if the Min Inclusive attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	protected boolean minInclusiveESet;
+
 	/**
 	 * The default value of the '{@link #getMaxInclusive() <em>Max Inclusive</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getMaxInclusive()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final String MAX_INCLUSIVE_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getMaxInclusive() <em>Max Inclusive</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getMaxInclusive()
 	 * @generated
 	 * @ordered
 	 */
 	protected String maxInclusive = MAX_INCLUSIVE_EDEFAULT;
+
 	/**
-	 * This is true if the Max Inclusive attribute has been set. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This is true if the Max Inclusive attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	protected boolean maxInclusiveESet;
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected NumericTypeImpl() {
@@ -190,7 +202,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -199,7 +212,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NumericTypeEnum getType() {
@@ -207,7 +221,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setType(NumericTypeEnum newType) {
@@ -218,7 +233,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public int getTotalDigits() {
@@ -226,7 +242,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setTotalDigits(int newTotalDigits) {
@@ -239,7 +256,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void unsetTotalDigits() {
@@ -252,7 +270,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean isSetTotalDigits() {
@@ -260,7 +279,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String getMinExclusive() {
@@ -268,7 +288,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setMinExclusive(String newMinExclusive) {
@@ -281,7 +302,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void unsetMinExclusive() {
@@ -294,7 +316,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean isSetMinExclusive() {
@@ -302,7 +325,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String getMaxExclusive() {
@@ -310,7 +334,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setMaxExclusive(String newMaxExclusive) {
@@ -323,7 +348,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void unsetMaxExclusive() {
@@ -336,7 +362,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean isSetMaxExclusive() {
@@ -344,7 +371,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String getMinInclusive() {
@@ -352,7 +380,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setMinInclusive(String newMinInclusive) {
@@ -365,7 +394,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void unsetMinInclusive() {
@@ -378,7 +408,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean isSetMinInclusive() {
@@ -386,7 +417,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String getMaxInclusive() {
@@ -394,7 +426,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setMaxInclusive(String newMaxInclusive) {
@@ -407,7 +440,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void unsetMaxInclusive() {
@@ -420,7 +454,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean isSetMaxInclusive() {
@@ -428,252 +463,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public boolean validate(DiagnosticChain diagnostic, Map<Object, Object> context) {
-		boolean valid = true;
-		switch (type) {
-		case INTEGER: {
-			if (isSetMaxExclusive()) {
-				try {
-					Integer.parseInt(maxExclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The maxExclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			if (isSetMaxInclusive()) {
-				try {
-					Integer.parseInt(maxInclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The maxInclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			if (isSetMinExclusive()) {
-				try {
-					Integer.parseInt(minExclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The minExclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			if (isSetMinInclusive()) {
-				try {
-					Integer.parseInt(minInclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The minInclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			return valid;
-		}
-		case BYTE: {
-			if (isSetMaxExclusive()) {
-				try {
-					Byte.parseByte(maxExclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The maxExclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			if (isSetMaxInclusive()) {
-				try {
-					Byte.parseByte(maxInclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The maxInclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			if (isSetMinExclusive()) {
-				try {
-					Byte.parseByte(minExclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The minExclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			if (isSetMinInclusive()) {
-				try {
-					Byte.parseByte(minInclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The minInclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			return valid;
-		}
-		case DOUBLE: {
-			if (isSetMaxExclusive()) {
-				try {
-					Double.parseDouble(maxExclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The maxExclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			if (isSetMaxInclusive()) {
-				try {
-					Double.parseDouble(maxInclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The maxInclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			if (isSetMinExclusive()) {
-				try {
-					Double.parseDouble(minExclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The minExclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			if (isSetMinInclusive()) {
-				try {
-					Double.parseDouble(minInclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The minInclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			return valid;
-		}
-		case FLOAT: {
-			if (isSetMaxExclusive()) {
-				try {
-					Float.parseFloat(maxExclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The maxExclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			if (isSetMaxInclusive()) {
-				try {
-					Float.parseFloat(maxInclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The maxInclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			if (isSetMinExclusive()) {
-				try {
-					Float.parseFloat(minExclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The minExclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			if (isSetMinInclusive()) {
-				try {
-					Float.parseFloat(minInclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The minInclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			return valid;
-		}
-		case LONG: {
-			if (isSetMaxExclusive()) {
-				try {
-					Long.parseLong(maxExclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The maxExclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			if (isSetMaxInclusive()) {
-				try {
-					Long.parseLong(maxInclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The maxInclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			if (isSetMinExclusive()) {
-				try {
-					Long.parseLong(minExclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The minExclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			if (isSetMinInclusive()) {
-				try {
-					Long.parseLong(minInclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The minInclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-		}
-		case SHORT: {
-			if (isSetMaxExclusive()) {
-				try {
-					Short.parseShort(maxExclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The maxExclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			if (isSetMaxInclusive()) {
-				try {
-					Short.parseShort(maxInclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The maxInclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			if (isSetMinExclusive()) {
-				try {
-					Short.parseShort(minExclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The minExclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			if (isSetMinInclusive()) {
-				try {
-					Short.parseShort(minInclusive);
-				} catch (NumberFormatException nfe) {
-					valid = false;
-					diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, OCCIValidator.DIAGNOSTIC_SOURCE,
-							OCCIValidator.NUMERIC_TYPE__VALIDATE, "The minInclusive attribute value of "+type.getName()+" type is invalid", new Object[] { this }));
-				}
-			}
-			return valid;
-		}
-		}
-		return valid;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -696,7 +487,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -725,7 +517,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -754,7 +547,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -777,21 +571,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case OCCIPackage.NUMERIC_TYPE___VALIDATE__DIAGNOSTICCHAIN_MAP:
-				return validate((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-		}
-		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -815,4 +596,4 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 		return result.toString();
 	}
 
-} // NumericTypeImpl
+} //NumericTypeImpl

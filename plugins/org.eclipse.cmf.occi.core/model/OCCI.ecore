@@ -20,7 +20,7 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="#//Name"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="term" lowerBound="1" eType="#//String"
-        volatile="true" derived="true">
+        volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
         <details key="derivation" value="self.name.toLowerCase()"/>
       </eAnnotations>
@@ -50,23 +50,22 @@
         eType="#//Constraint" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FSM">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="State"/>
+    </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="AttributeTypeMustBeEEnum"/>
+      <details key="constraints" value="AttributeTypeMustBeEEnum containedAttribute"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="AttributeTypeMustBeEEnum" value="attribute.type.oclIsTypeOf(EnumerationType)"/>
+      <details key="containedAttribute" value="self.oclContainer().oclAsType(Kind).attributes->includes(self.attribute)"/>
     </eAnnotations>
-    <eOperations name="validate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="diagnostic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
-      <eParameters name="context">
-        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-        </eGenericType>
-      </eParameters>
-    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedState" upperBound="-1"
-        eType="#//State" containment="true" eOpposite="#//State/owningFSM"/>
+        eType="#//State" containment="true" eOpposite="#//State/owningFSM">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="State"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
         eType="#//Attribute"/>
   </eClassifiers>
@@ -77,7 +76,11 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="StateLiteralAlreadyDefinedInFSMAttributeType" value="owningFSM.attribute.type=self.literal.enumerationType"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="literal" eType="#//EnumerationLiteral"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="literal" eType="#//EnumerationLiteral">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="State"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initial" lowerBound="1"
         eType="#//Boolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="final" lowerBound="1" eType="#//Boolean"
@@ -85,23 +88,45 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="owningFSM" lowerBound="1"
         eType="#//FSM" eOpposite="#//FSM/ownedState"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingTransition" upperBound="-1"
-        eType="#//Transition" containment="true" eOpposite="#//Transition/source"/>
+        eType="#//Transition" containment="true" eOpposite="#//Transition/source">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="State"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="incomingTransition" upperBound="-1"
-        eType="#//Transition" eOpposite="#//Transition/target"/>
+        eType="#//Transition" eOpposite="#//Transition/target">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="State"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transition">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="State"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="containedActionMustBeDeclaredInTheAppropriateKind"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="containedActionMustBeDeclaredInTheAppropriateKind" value="Tuple {&#xA;&#x9;&#x9;&#x9;&#x9;status: Boolean= self.oclContainer().oclAsType(State).oclContainer().oclAsType(FSM).oclContainer().oclAsType(Kind).actions->includes(self.action),&#xA;&#x9;&#x9;&#x9;&#x9;message: String ='The action '+ self.action.name +' declared in '+self.action.oclContainer().oclAsType(Kind).name+&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; ' Kind cannot be used in the FSM of '+self.oclContainer().oclAsType(State).oclContainer().oclAsType(FSM).oclContainer().oclAsType(Kind).name+' Kind.',&#xA;&#x9;&#x9;&#x9;&#x9;severity :Integer = -1&#xA;&#x9;&#x9;&#x9;&#x9;}.status"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
         eType="#//State" eOpposite="#//State/outgoingTransition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="#//State" eOpposite="#//State/incomingTransition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
-        eType="#//Action"/>
+        eType="#//Action">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="State"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="#//AttributeName"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mutable" eType="#//Boolean"
-        defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="required" eType="#//Boolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mutable" lowerBound="1"
+        eType="#//Boolean" defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="required" lowerBound="1"
+        eType="#//Boolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DataType"/>
@@ -128,10 +153,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//Category">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="CorrectScheme"/>
+      <details key="constraints" value="CorrectScheme containedAction"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="CorrectScheme" value="let category = oclContainer().oclAsType(Category)&#xA;&#x9;&#x9;&#x9;in scheme = category.scheme.substring(1, category.scheme.size() - 1) + '/' + category.term + '/action#'"/>
+      <details key="containedAction" value="Tuple {&#xA;&#x9;&#x9;&#x9;&#x9;status: Boolean= self.oclContainer().oclAsType(Kind).fsm.ownedState.outgoingTransition.action->includes(self),&#xA;&#x9;&#x9;&#x9;&#x9;message: String ='The action '+name+' doesn\'t appear in the FSM of '+self.oclContainer().oclAsType(Kind).name +' Kind',&#xA;&#x9;&#x9;&#x9;&#x9;severity :Integer = 1,&#xA;&#x9;&#x9;&#x9;&#x9;quickfix:String = 'quickfix'&#xA;&#x9;&#x9;&#x9;&#x9;}.status"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Mixin" eSuperTypes="#//Type">
@@ -274,38 +300,29 @@
   <eClassifiers xsi:type="ecore:EClass" name="BasicType" abstract="true" eSuperTypes="#//DataType"/>
   <eClassifiers xsi:type="ecore:EClass" name="StringType" eSuperTypes="#//BasicType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" eType="#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minLength" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxLength" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EObjectType" eSuperTypes="#//BasicType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceClassName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceClassName" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" eType="#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanType" eSuperTypes="#//BasicType"/>
   <eClassifiers xsi:type="ecore:EClass" name="NumericType" eSuperTypes="#//BasicType">
-    <eOperations name="validate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eParameters name="diagnostic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
-      <eParameters name="context">
-        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-        </eGenericType>
-      </eParameters>
-    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//NumericTypeEnum"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalDigits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalDigits" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minExclusive" eType="#//String"
         unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minExclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxExclusive" eType="#//String"
         unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxExclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minInclusive" eType="#//String"
         unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minInclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxInclusive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxInclusive" eType="#//String"
         unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnumerationType" eSuperTypes="#//DataType">
@@ -352,7 +369,7 @@
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="NumericTypeEnum">
-    <eLiterals name="Byte" literal="Byte"/>
+    <eLiterals name="Byte"/>
     <eLiterals name="Double" value="1"/>
     <eLiterals name="Float" value="2"/>
     <eLiterals name="Integer" value="3"/>

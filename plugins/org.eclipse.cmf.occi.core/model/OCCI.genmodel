@@ -47,10 +47,6 @@
     <genClasses ecoreClass="OCCI.ecore#//FSM">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OCCI.ecore#//FSM/ownedState"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//FSM/attribute"/>
-      <genOperations ecoreOperation="OCCI.ecore#//FSM/validate">
-        <genParameters ecoreParameter="OCCI.ecore#//FSM/validate/diagnostic"/>
-        <genParameters ecoreParameter="OCCI.ecore#//FSM/validate/context"/>
-      </genOperations>
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//State">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//State/literal"/>
@@ -155,10 +151,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//NumericType/maxExclusive"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//NumericType/minInclusive"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//NumericType/maxInclusive"/>
-      <genOperations ecoreOperation="OCCI.ecore#//NumericType/validate">
-        <genParameters ecoreParameter="OCCI.ecore#//NumericType/validate/diagnostic"/>
-        <genParameters ecoreParameter="OCCI.ecore#//NumericType/validate/context"/>
-      </genOperations>
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//EnumerationType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OCCI.ecore#//EnumerationType/literals"/>

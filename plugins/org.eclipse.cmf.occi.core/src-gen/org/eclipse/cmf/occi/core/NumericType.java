@@ -11,10 +11,6 @@
  */
 package org.eclipse.cmf.occi.core;
 
-import java.util.Map;
-import org.eclipse.emf.common.util.DiagnosticChain;
-
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Numeric Type</b></em>'.
@@ -81,7 +77,7 @@ public interface NumericType extends BasicType {
 	 * @see #unsetTotalDigits()
 	 * @see #setTotalDigits(int)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getNumericType_TotalDigits()
-	 * @model unsettable="true"
+	 * @model unsettable="true" required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!NumericType!totalDigits'"
 	 * @generated
 	 */
@@ -135,7 +131,7 @@ public interface NumericType extends BasicType {
 	 * @see #unsetMinExclusive()
 	 * @see #setMinExclusive(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getNumericType_MinExclusive()
-	 * @model unsettable="true"
+	 * @model unsettable="true" dataType="org.eclipse.cmf.occi.core.String"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!NumericType!minExclusive'"
 	 * @generated
 	 */
@@ -189,7 +185,7 @@ public interface NumericType extends BasicType {
 	 * @see #unsetMaxExclusive()
 	 * @see #setMaxExclusive(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getNumericType_MaxExclusive()
-	 * @model unsettable="true"
+	 * @model unsettable="true" dataType="org.eclipse.cmf.occi.core.String"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!NumericType!maxExclusive'"
 	 * @generated
 	 */
@@ -243,7 +239,7 @@ public interface NumericType extends BasicType {
 	 * @see #unsetMinInclusive()
 	 * @see #setMinInclusive(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getNumericType_MinInclusive()
-	 * @model unsettable="true"
+	 * @model unsettable="true" dataType="org.eclipse.cmf.occi.core.String"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!NumericType!minInclusive'"
 	 * @generated
 	 */
@@ -297,7 +293,7 @@ public interface NumericType extends BasicType {
 	 * @see #unsetMaxInclusive()
 	 * @see #setMaxInclusive(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getNumericType_MaxInclusive()
-	 * @model unsettable="true"
+	 * @model unsettable="true" dataType="org.eclipse.cmf.occi.core.String"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!NumericType!maxInclusive'"
 	 * @generated
 	 */
@@ -337,12 +333,4 @@ public interface NumericType extends BasicType {
 	 * @generated
 	 */
 	boolean isSetMaxInclusive();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!NumericType!invariant~validate'"
-	 * @generated
-	 */
-	boolean validate(DiagnosticChain diagnostic, Map<Object, Object> context);
 } // NumericType

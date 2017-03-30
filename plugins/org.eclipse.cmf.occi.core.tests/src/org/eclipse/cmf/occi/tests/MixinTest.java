@@ -110,7 +110,7 @@ public class MixinTest extends TypeTest {
 	 * @see org.eclipse.cmf.occi.core.Mixin#CorrectScheme(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testCorrectScheme__DiagnosticChain_Map() {
+	public void testCorrectScheme__DiagnosticChain_Map_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -123,7 +123,7 @@ public class MixinTest extends TypeTest {
 	 * @see org.eclipse.cmf.occi.core.Mixin#NoCyclicInheritance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testNoCyclicInheritance__DiagnosticChain_Map() {
+	public void testNoCyclicInheritance__DiagnosticChain_Map_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -136,7 +136,7 @@ public class MixinTest extends TypeTest {
 	 * @see org.eclipse.cmf.occi.core.Mixin#AttributesNameNotAlreadyDefinedInDepends(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testAttributesNameNotAlreadyDefinedInDepends__DiagnosticChain_Map() {
+	public void testAttributesNameNotAlreadyDefinedInDepends__DiagnosticChain_Map_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

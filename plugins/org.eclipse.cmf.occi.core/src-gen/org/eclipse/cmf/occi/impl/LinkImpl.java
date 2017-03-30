@@ -19,10 +19,8 @@ import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.cmf.occi.core.Resource;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -204,7 +202,7 @@ public class LinkImpl extends EntityImpl implements Link {
 	 */
 	public boolean LinkKindIsInParent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
-		 * 
+		 *
 		 * inv LinkKindIsInParent:
 		 *   let severity : Integer[1] = 'Link::LinkKindIsInParent'.getSeverity()
 		 *   in
@@ -212,10 +210,10 @@ public class LinkImpl extends EntityImpl implements Link {
 		 *     then true
 		 *     else
 		 *       let
-		 *         status : OclAny[?] = kind->closure(parent)
+		 *         result : Boolean[?] = kind->closure(parent)
 		 *         ->exists(k | k.term = 'link' and k.scheme = 'http://schemas.ogf.org/occi/core#')
 		 *       in
-		 *         'Link::LinkKindIsInParent'.logDiagnostic(self, null, diagnostics, context, null, severity, status, 0)
+		 *         'Link::LinkKindIsInParent'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
 		 */
 		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
@@ -225,114 +223,114 @@ public class LinkImpl extends EntityImpl implements Link {
 		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
 		/*@NonInvalid*/ boolean symbol_1;
 		if (le) {
-		    symbol_1 = ValueUtil.TRUE_VALUE;
+			symbol_1 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-		    /*@Caught*/ /*@Nullable*/ Object CAUGHT_status;
-		    try {
-		        final /*@Thrown*/ Kind kind = this.getKind();
-		        final /*@Thrown*/ SetValue oclAsSet = OclAnyOclAsSetOperation.INSTANCE.evaluate(executor, OCCITables.SET_CLSSid_Kind, kind);
-		        final org.eclipse.ocl.pivot.Class TYPE_closure_0 = executor.getStaticTypeOf(oclAsSet);
-		        final LibraryIteration.LibraryIterationExtension IMPL_closure_0 = (LibraryIteration.LibraryIterationExtension)TYPE_closure_0.lookupImplementation(standardLibrary, OCLstdlibTables.Operations._Set__closure);
-		        final /*@NonNull*/ Object ACC_closure_0 = IMPL_closure_0.createAccumulatorValue(executor, OCCITables.SET_CLSSid_Kind, OCCITables.CLSSid_Kind);
-		        /**
-		         * Implementation of the iterator body.
-		         */
-		        final /*@NonNull*/ AbstractBinaryOperation BODY_closure_0 = new AbstractBinaryOperation() {
-		            /**
-		             * parent
-		             */
-		            @Override
-		            public /*@Nullable*/ Object evaluate(final /*@NonNull*/ Executor executor, final /*@NonNull*/ TypeId typeId, final /*@Nullable*/ Object oclAsSet, final /*@NonInvalid*/ Object _1) {
-		                final /*@NonInvalid*/ Kind symbol_0 = (Kind)_1;
-		                if (symbol_0 == null) {
-		                    throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Kind::parent\'");
-		                }
-		                final /*@Thrown*/ Kind parent = symbol_0.getParent();
-		                return parent;
-		            }
-		        };
-		        final /*@NonNull*/  ExecutorSingleIterationManager MGR_closure_0 = new ExecutorSingleIterationManager(executor, OCCITables.SET_CLSSid_Kind, BODY_closure_0, oclAsSet, ACC_closure_0);
-		        final /*@Thrown*/ SetValue closure = ClassUtil.nonNullState((SetValue)IMPL_closure_0.evaluateIteration(MGR_closure_0));
-		        /*@Thrown*/ Object accumulator = ValueUtil.FALSE_VALUE;
-		        /*@Nullable*/ Iterator<Object> ITERATOR_k = closure.iterator();
-		        /*@Thrown*/ Boolean status;
-		        while (true) {
-		            if (!ITERATOR_k.hasNext()) {
-		                if (accumulator == null) {
-		                    status = null;
-		                }
-		                else if (accumulator == ValueUtil.FALSE_VALUE) {
-		                    status = ValueUtil.FALSE_VALUE;
-		                }
-		                else {
-		                    throw (InvalidValueException)accumulator;
-		                }
-		                break;
-		            }
-		            /*@NonInvalid*/ Kind k = (Kind)ITERATOR_k.next();
-		            /**
-		             * k.term = 'link' and k.scheme = 'http://schemas.ogf.org/occi/core#'
-		             */
-		            /*@Caught*/ /*@Nullable*/ Object CAUGHT_and;
-		            try {
-		                /*@Caught*/ /*@NonNull*/ Object CAUGHT_eq;
-		                try {
-		                    if (k == null) {
-		                        throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Category::term\'");
-		                    }
-		                    final /*@Thrown*/ String term = k.getTerm();
-		                    final /*@Thrown*/ boolean eq = term.equals(OCCITables.STR_link);
-		                    CAUGHT_eq = eq;
-		                }
-		                catch (Exception e) {
-		                    CAUGHT_eq = ValueUtil.createInvalidValue(e);
-		                }
-		                /*@Caught*/ /*@NonNull*/ Object CAUGHT_eq_0;
-		                try {
-		                    if (k == null) {
-		                        throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Category::scheme\'");
-		                    }
-		                    final /*@Thrown*/ String scheme = k.getScheme();
-		                    final /*@Thrown*/ boolean eq_0 = scheme.equals(OCCITables.STR_http_c_s_s_schemas_ogf_org_s_occi_s_core_35);
-		                    CAUGHT_eq_0 = eq_0;
-		                }
-		                catch (Exception e) {
-		                    CAUGHT_eq_0 = ValueUtil.createInvalidValue(e);
-		                }
-		                final /*@Thrown*/ Boolean and = BooleanAndOperation.INSTANCE.evaluate(CAUGHT_eq, CAUGHT_eq_0);
-		                CAUGHT_and = and;
-		            }
-		            catch (Exception e) {
-		                CAUGHT_and = ValueUtil.createInvalidValue(e);
-		            }
-		            //
-		            if (CAUGHT_and == ValueUtil.TRUE_VALUE) {					// Normal successful body evaluation result
-		                status = ValueUtil.TRUE_VALUE;
-		                break;														// Stop immediately 
-		            }
-		            else if (CAUGHT_and == ValueUtil.FALSE_VALUE) {				// Normal unsuccessful body evaluation result
-		                ;															// Carry on
-		            }
-		            else if (CAUGHT_and == null) {								// Abnormal null body evaluation result
-		                if (accumulator == ValueUtil.FALSE_VALUE) {
-		                    accumulator = null;										// Cache a null failure
-		                }
-		            }
-		            else if (CAUGHT_and instanceof InvalidValueException) {		// Abnormal exception evaluation result
-		                accumulator = CAUGHT_and;									// Cache an exception failure
-		            }
-		            else {															// Impossible badly typed result
-		                accumulator = new InvalidValueException(PivotMessages.NonBooleanBody, "exists");
-		            }
-		        }
-		        CAUGHT_status = status;
-		    }
-		    catch (Exception e) {
-		        CAUGHT_status = ValueUtil.createInvalidValue(e);
-		    }
-		    final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Link_c_c_LinkKindIsInParent, this, null, diagnostics, context, null, severity_0, CAUGHT_status, OCCITables.INT_0).booleanValue();
-		    symbol_1 = logDiagnostic;
+			/*@Caught*/ /*@Nullable*/ Object CAUGHT_result;
+			try {
+				final /*@NonInvalid*/ Kind kind = this.getKind();
+				final /*@NonInvalid*/ SetValue oclAsSet = OclAnyOclAsSetOperation.INSTANCE.evaluate(executor, OCCITables.SET_CLSSid_Kind, kind);
+				final org.eclipse.ocl.pivot.Class TYPE_closure_0 = executor.getStaticTypeOf(oclAsSet);
+				final LibraryIteration.LibraryIterationExtension IMPL_closure_0 = (LibraryIteration.LibraryIterationExtension)TYPE_closure_0.lookupImplementation(standardLibrary, OCLstdlibTables.Operations._Set__closure);
+				final /*@NonNull*/ Object ACC_closure_0 = IMPL_closure_0.createAccumulatorValue(executor, OCCITables.SET_CLSSid_Kind, OCCITables.CLSSid_Kind);
+				/**
+				 * Implementation of the iterator body.
+				 */
+				final /*@NonNull*/ AbstractBinaryOperation BODY_closure_0 = new AbstractBinaryOperation() {
+					/**
+					 * parent
+					 */
+					@Override
+					public /*@Nullable*/ Object evaluate(final /*@NonNull*/ Executor executor, final /*@NonNull*/ TypeId typeId, final /*@Nullable*/ Object oclAsSet, final /*@NonInvalid*/ Object _1) {
+						final /*@NonInvalid*/ Kind symbol_0 = (Kind)_1;
+						if (symbol_0 == null) {
+							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Kind::parent\'");
+						}
+						final /*@Thrown*/ Kind parent = symbol_0.getParent();
+						return parent;
+					}
+				};
+				final /*@NonNull*/  ExecutorSingleIterationManager MGR_closure_0 = new ExecutorSingleIterationManager(executor, OCCITables.SET_CLSSid_Kind, BODY_closure_0, oclAsSet, ACC_closure_0);
+				final /*@Thrown*/ SetValue closure = ClassUtil.nonNullState((SetValue)IMPL_closure_0.evaluateIteration(MGR_closure_0));
+				/*@Thrown*/ Object accumulator = ValueUtil.FALSE_VALUE;
+				/*@Nullable*/ Iterator<Object> ITERATOR_k = closure.iterator();
+				/*@Thrown*/ Boolean result;
+				while (true) {
+					if (!ITERATOR_k.hasNext()) {
+						if (accumulator == null) {
+							result = null;
+						}
+						else if (accumulator == ValueUtil.FALSE_VALUE) {
+							result = ValueUtil.FALSE_VALUE;
+						}
+						else {
+							throw (InvalidValueException)accumulator;
+						}
+						break;
+					}
+					/*@NonInvalid*/ Kind k = (Kind)ITERATOR_k.next();
+					/**
+					 * k.term = 'link' and k.scheme = 'http://schemas.ogf.org/occi/core#'
+					 */
+					/*@Caught*/ /*@Nullable*/ Object CAUGHT_and;
+					try {
+						/*@Caught*/ /*@NonNull*/ Object CAUGHT_eq;
+						try {
+							if (k == null) {
+								throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Category::term\'");
+							}
+							final /*@Thrown*/ String term = k.getTerm();
+							final /*@Thrown*/ boolean eq = term.equals(OCCITables.STR_link);
+							CAUGHT_eq = eq;
+						}
+						catch (Exception e) {
+							CAUGHT_eq = ValueUtil.createInvalidValue(e);
+						}
+						/*@Caught*/ /*@NonNull*/ Object CAUGHT_eq_0;
+						try {
+							if (k == null) {
+								throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Category::scheme\'");
+							}
+							final /*@Thrown*/ String scheme = k.getScheme();
+							final /*@Thrown*/ boolean eq_0 = scheme.equals(OCCITables.STR_http_c_s_s_schemas_ogf_org_s_occi_s_core_35);
+							CAUGHT_eq_0 = eq_0;
+						}
+						catch (Exception e) {
+							CAUGHT_eq_0 = ValueUtil.createInvalidValue(e);
+						}
+						final /*@Thrown*/ Boolean and = BooleanAndOperation.INSTANCE.evaluate(CAUGHT_eq, CAUGHT_eq_0);
+						CAUGHT_and = and;
+					}
+					catch (Exception e) {
+						CAUGHT_and = ValueUtil.createInvalidValue(e);
+					}
+					//
+					if (CAUGHT_and == ValueUtil.TRUE_VALUE) {					// Normal successful body evaluation result
+						result = ValueUtil.TRUE_VALUE;
+						break;														// Stop immediately
+					}
+					else if (CAUGHT_and == ValueUtil.FALSE_VALUE) {				// Normal unsuccessful body evaluation result
+						;															// Carry on
+					}
+					else if (CAUGHT_and == null) {								// Abnormal null body evaluation result
+						if (accumulator == ValueUtil.FALSE_VALUE) {
+							accumulator = null;										// Cache a null failure
+						}
+					}
+					else if (CAUGHT_and instanceof InvalidValueException) {		// Abnormal exception evaluation result
+						accumulator = CAUGHT_and;									// Cache an exception failure
+					}
+					else {															// Impossible badly typed result
+						accumulator = new InvalidValueException(PivotMessages.NonBooleanBody, "exists");
+					}
+				}
+				CAUGHT_result = result;
+			}
+			catch (Exception e) {
+				CAUGHT_result = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Link_c_c_LinkKindIsInParent, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, OCCITables.INT_0).booleanValue();
+			symbol_1 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_1;
 	}
@@ -465,7 +463,7 @@ public class LinkImpl extends EntityImpl implements Link {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OCCIPackage.LINK___LINK_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.LINK___LINK_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP_1:
 				return LinkKindIsInParent((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);

@@ -42,6 +42,7 @@ public class OCCITests extends TestSuite {
 		TestSuite suite = new OCCITests("occi Tests");
 		suite.addTestSuite(FSMTest.class);
 		suite.addTestSuite(StateTest.class);
+		suite.addTestSuite(TransitionTest.class);
 		suite.addTestSuite(KindTest.class);
 		suite.addTestSuite(ActionTest.class);
 		suite.addTestSuite(MixinTest.class);
@@ -49,7 +50,6 @@ public class OCCITests extends TestSuite {
 		suite.addTestSuite(LinkTest.class);
 		suite.addTestSuite(ExtensionTest.class);
 		suite.addTestSuite(ConfigurationTest.class);
-		suite.addTestSuite(NumericTypeTest.class);
 		return suite;
 	}
 

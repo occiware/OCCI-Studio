@@ -25,8 +25,8 @@ import org.eclipse.cmf.occi.core.OCCIFactory;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.core.FSM#validate(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.FSM#AttributeTypeMustBeEEnum(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Attribute Type Must Be EEnum</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.FSM#containedAttribute(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Contained Attribute</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -103,26 +103,26 @@ public class FSMTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link org.eclipse.cmf.occi.core.FSM#validate(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.core.FSM#validate(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	public void testValidate__DiagnosticChain_Map() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link org.eclipse.cmf.occi.core.FSM#AttributeTypeMustBeEEnum(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Attribute Type Must Be EEnum</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.FSM#AttributeTypeMustBeEEnum(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testAttributeTypeMustBeEEnum__DiagnosticChain_Map() {
+	public void testAttributeTypeMustBeEEnum__DiagnosticChain_Map_1() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.FSM#containedAttribute(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Contained Attribute</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.FSM#containedAttribute(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testContainedAttribute__DiagnosticChain_Map_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

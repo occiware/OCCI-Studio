@@ -56,7 +56,7 @@ public abstract class TypeTest extends CategoryTest {
 	 * @see org.eclipse.cmf.occi.core.Type#ActionTermUnicity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testActionTermUnicity__DiagnosticChain_Map() {
+	public void testActionTermUnicity__DiagnosticChain_Map_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -69,7 +69,7 @@ public abstract class TypeTest extends CategoryTest {
 	 * @see org.eclipse.cmf.occi.core.Type#ConstraintNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testConstraintNameUnique__DiagnosticChain_Map() {
+	public void testConstraintNameUnique__DiagnosticChain_Map_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

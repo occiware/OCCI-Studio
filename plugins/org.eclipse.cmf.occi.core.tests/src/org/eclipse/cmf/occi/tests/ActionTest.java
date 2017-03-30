@@ -23,6 +23,7 @@ import org.eclipse.cmf.occi.core.OCCIFactory;
  * <p>
  * The following operations are tested:
  * <ul>
+ *   <li>{@link org.eclipse.cmf.occi.core.Action#containedAction(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Contained Action</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.Action#CorrectScheme(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Correct Scheme</em>}</li>
  * </ul>
  * </p>
@@ -83,13 +84,26 @@ public class ActionTest extends CategoryTest {
 	}
 
 	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.Action#containedAction(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Contained Action</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.Action#containedAction(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testContainedAction__DiagnosticChain_Map_1() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link org.eclipse.cmf.occi.core.Action#CorrectScheme(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Correct Scheme</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Action#CorrectScheme(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testCorrectScheme__DiagnosticChain_Map() {
+	public void testCorrectScheme__DiagnosticChain_Map_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

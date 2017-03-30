@@ -65,127 +65,147 @@ public class OCCITables
 	/**
 	 *	Constants used by auto-generated code.
 	 */
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.RootPackageId PACKid_$metamodel$ = org.eclipse.ocl.pivot.ids.IdManager.getRootPackageId("$metamodel$");
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0 = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/core/ecore/2.0", null, org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://www.eclipse.org/emf/2002/Ecore", null, org.eclipse.emf.ecore.EcorePackage.eINSTANCE);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_PRIMid_String = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.ocl.pivot.ids.TypeId.STRING);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Action = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Action", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_ArrayType = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("ArrayType", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Attribute = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Attribute", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_AttributeState = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("AttributeState", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Category = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Category", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Class = org.eclipse.cmf.occi.core.OCCITables.PACKid_$metamodel$.getClassId("Class", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Configuration = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Configuration", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Constraint = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Constraint", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_DataType = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("DataType", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Entity = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Entity", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_EnumerationLiteral = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("EnumerationLiteral", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_EnumerationType = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("EnumerationType", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Extension = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Extension", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_FSM = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("FSM", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Kind = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Kind", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Link = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Link", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Mixin = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Mixin", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_MixinBase = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("MixinBase", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_OclElement = org.eclipse.cmf.occi.core.OCCITables.PACKid_$metamodel$.getClassId("OclElement", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_RecordFieldDeclaration = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("RecordFieldDeclaration", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_RecordType = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("RecordType", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Resource = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Resource", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_State = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("State", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Transition = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Transition", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Type = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Type", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_AttributeName = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getDataTypeId("AttributeName", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_EInt = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore.getDataTypeId("EInt", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_Name = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getDataTypeId("Name", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_OCL = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getDataTypeId("OCL", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_Scheme = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getDataTypeId("Scheme", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_URI = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getDataTypeId("URI", 0);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_NumericTypeEnum = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getEnumerationId("NumericTypeEnum");
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_1 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("1");
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_PRIMid_String = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(org.eclipse.ocl.pivot.ids.TypeId.STRING);
-    public static final /*@NonInvalid*/ java.lang.String STR_Action_c_c_CorrectScheme = "Action::CorrectScheme";
-    public static final /*@NonInvalid*/ java.lang.String STR_Category_c_c_AttributesNameUnique = "Category::AttributesNameUnique";
-    public static final /*@NonInvalid*/ java.lang.String STR_Category_c_c_IdentityUnique = "Category::IdentityUnique";
-    public static final /*@NonInvalid*/ java.lang.String STR_Category_c_c_SchemeEndsWithSharp = "Category::SchemeEndsWithSharp";
-    public static final /*@NonInvalid*/ java.lang.String STR_Configuration_c_c_AllMixinsAreTags = "Configuration::AllMixinsAreTags";
-    public static final /*@NonInvalid*/ java.lang.String STR_Configuration_c_c_AllResourcesKindsInUse = "Configuration::AllResourcesKindsInUse";
-    public static final /*@NonInvalid*/ java.lang.String STR_Configuration_c_c_AllResourcesLinksKindsInUse = "Configuration::AllResourcesLinksKindsInUse";
-    public static final /*@NonInvalid*/ java.lang.String STR_Configuration_c_c_AllResourcesLinksMixinsInUse = "Configuration::AllResourcesLinksMixinsInUse";
-    public static final /*@NonInvalid*/ java.lang.String STR_Configuration_c_c_AllResourcesLinksTargetsInConfiguration = "Configuration::AllResourcesLinksTargetsInConfiguration";
-    public static final /*@NonInvalid*/ java.lang.String STR_Configuration_c_c_AllResourcesMixinsInUse = "Configuration::AllResourcesMixinsInUse";
-    public static final /*@NonInvalid*/ java.lang.String STR_Entity_c_c_AttributesNameUnique = "Entity::AttributesNameUnique";
-    public static final /*@NonInvalid*/ java.lang.String STR_Entity_c_c_IdUnique = "Entity::IdUnique";
-    public static final /*@NonInvalid*/ java.lang.String STR_Entity_c_c_KindCompatibleWithOneAppliesOfEachMixin = "Entity::KindCompatibleWithOneAppliesOfEachMixin";
-    public static final /*@NonInvalid*/ java.lang.String STR_Extension_c_c_KindParentLocalOrImported = "Extension::KindParentLocalOrImported";
-    public static final /*@NonInvalid*/ java.lang.String STR_Extension_c_c_KindsSchemeValid = "Extension::KindsSchemeValid";
-    public static final /*@NonInvalid*/ java.lang.String STR_Extension_c_c_MixinAppliesLocalOrImported = "Extension::MixinAppliesLocalOrImported";
-    public static final /*@NonInvalid*/ java.lang.String STR_Extension_c_c_MixinDependsLocalOrImported = "Extension::MixinDependsLocalOrImported";
-    public static final /*@NonInvalid*/ java.lang.String STR_Extension_c_c_MixinsSchemeValid = "Extension::MixinsSchemeValid";
-    public static final /*@NonInvalid*/ java.lang.String STR_Extension_c_c_SchemeUnique = "Extension::SchemeUnique";
-    public static final /*@NonInvalid*/ java.lang.String STR_Extension_c_c_TermUnicity = "Extension::TermUnicity";
-    public static final /*@NonInvalid*/ java.lang.String STR_FSM_c_c_AttributeTypeMustBeEEnum = "FSM::AttributeTypeMustBeEEnum";
-    public static final /*@NonInvalid*/ java.lang.String STR_Kind_c_c_AttributesNameNotAlreadyDefinedInParent = "Kind::AttributesNameNotAlreadyDefinedInParent";
-    public static final /*@NonInvalid*/ java.lang.String STR_Kind_c_c_CorrectScheme = "Kind::CorrectScheme";
-    public static final /*@NonInvalid*/ java.lang.String STR_Kind_c_c_EntityKindIsRootParent = "Kind::EntityKindIsRootParent";
-    public static final /*@NonInvalid*/ java.lang.String STR_Kind_c_c_NoCyclicInheritance = "Kind::NoCyclicInheritance";
-    public static final /*@NonInvalid*/ java.lang.String STR_Link_c_c_LinkKindIsInParent = "Link::LinkKindIsInParent";
-    public static final /*@NonInvalid*/ java.lang.String STR_Mixin_c_c_AttributesNameNotAlreadyDefinedInDepends = "Mixin::AttributesNameNotAlreadyDefinedInDepends";
-    public static final /*@NonInvalid*/ java.lang.String STR_Mixin_c_c_CorrectScheme = "Mixin::CorrectScheme";
-    public static final /*@NonInvalid*/ java.lang.String STR_Mixin_c_c_NoCyclicInheritance = "Mixin::NoCyclicInheritance";
-    public static final /*@NonInvalid*/ java.lang.String STR_Resource_c_c_ResourceKindIsInParent = "Resource::ResourceKindIsInParent";
-    public static final /*@NonInvalid*/ java.lang.String STR_State_c_c_StateLiteralAlreadyDefinedInFSMAttributeType = "State::StateLiteralAlreadyDefinedInFSMAttributeType";
-    public static final /*@NonInvalid*/ java.lang.String STR_Type_c_c_ActionTermUnicity = "Type::ActionTermUnicity";
-    public static final /*@NonInvalid*/ java.lang.String STR_Type_c_c_ConstraintNameUnique = "Type::ConstraintNameUnique";
-    public static final /*@NonInvalid*/ java.lang.String STR__35 = "#";
-    public static final /*@NonInvalid*/ java.lang.String STR__s_action_35 = "/action#";
-    public static final /*@NonInvalid*/ java.lang.String STR_entity = "entity";
-    public static final /*@NonInvalid*/ java.lang.String STR_http_c_s_s_schemas_ogf_org_s_occi_s_core_35 = "http://schemas.ogf.org/occi/core#";
-    public static final /*@NonInvalid*/ java.lang.String STR_link = "link";
-    public static final /*@NonInvalid*/ java.lang.String STR_quot = "/";
-    public static final /*@NonInvalid*/ java.lang.String STR_resource = "resource";
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_ArrayType = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_ArrayType);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Attribute = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Attribute);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Configuration = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Configuration);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Entity = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Entity);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Extension = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Extension);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_FSM = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_FSM);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Kind = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Kind);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Mixin = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Mixin);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_MixinBase = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_MixinBase);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_RecordFieldDeclaration = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_RecordFieldDeclaration);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_RecordType = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_RecordType);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_State = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_State);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Transition = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Transition);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_DATAid_AttributeName = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.DATAid_AttributeName);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Action = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Action);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Attribute = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Attribute);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_AttributeState = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_AttributeState);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Constraint = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Constraint);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_DataType = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_DataType);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_EnumerationLiteral = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_EnumerationLiteral);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Extension = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Extension);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Kind = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Kind);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Link = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Link);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Mixin = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Mixin);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_MixinBase = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_MixinBase);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_RecordFieldDeclaration = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_RecordFieldDeclaration);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Resource = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Resource);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_State = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_State);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Transition = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Transition);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_Attribute = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Attribute);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_Kind = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Kind);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_Link = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Link);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_Mixin = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Mixin);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_MixinBase = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_MixinBase);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_OclElement = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_OclElement);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_Resource = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Resource);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_DATAid_AttributeName = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.DATAid_AttributeName);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SET_CLSSid_Category = org.eclipse.ocl.pivot.ids.TypeId.SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Category);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SET_CLSSid_Entity = org.eclipse.ocl.pivot.ids.TypeId.SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Entity);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SET_CLSSid_Extension = org.eclipse.ocl.pivot.ids.TypeId.SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Extension);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SET_CLSSid_Kind = org.eclipse.ocl.pivot.ids.TypeId.SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Kind);
-    public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SET_CLSSid_Mixin = org.eclipse.ocl.pivot.ids.TypeId.SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Mixin);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.RootPackageId PACKid_$metamodel$ = org.eclipse.ocl.pivot.ids.IdManager.getRootPackageId("$metamodel$");
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0 = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/core/ecore/2.0", null, org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://www.eclipse.org/emf/2002/Ecore", null, org.eclipse.emf.ecore.EcorePackage.eINSTANCE);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_PRIMid_String = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.ocl.pivot.ids.TypeId.STRING);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Action = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Action", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_ArrayType = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("ArrayType", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Attribute = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Attribute", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_AttributeState = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("AttributeState", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Category = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Category", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Class = OCCITables.PACKid_$metamodel$.getClassId("Class", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Configuration = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Configuration", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Constraint = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Constraint", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_DataType = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("DataType", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Entity = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Entity", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_EnumerationLiteral = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("EnumerationLiteral", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_EnumerationType = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("EnumerationType", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Extension = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Extension", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_FSM = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("FSM", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Kind = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Kind", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Link = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Link", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Mixin = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Mixin", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_MixinBase = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("MixinBase", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_OclElement = OCCITables.PACKid_$metamodel$.getClassId("OclElement", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_RecordFieldDeclaration = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("RecordFieldDeclaration", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_RecordType = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("RecordType", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Resource = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Resource", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_State = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("State", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Transition = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Transition", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Type = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Type", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_AttributeName = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getDataTypeId("AttributeName", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_EInt = OCCITables.PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore.getDataTypeId("EInt", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_Name = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getDataTypeId("Name", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_OCL = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getDataTypeId("OCL", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_Scheme = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getDataTypeId("Scheme", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_URI = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getDataTypeId("URI", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_NumericTypeEnum = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getEnumerationId("NumericTypeEnum");
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_1 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("1");
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.TuplePartId PARTid_ = org.eclipse.ocl.pivot.ids.IdManager.getTuplePartId(2, "status", org.eclipse.ocl.pivot.ids.TypeId.BOOLEAN);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.TuplePartId PARTid__0 = org.eclipse.ocl.pivot.ids.IdManager.getTuplePartId(0, "message", org.eclipse.ocl.pivot.ids.TypeId.STRING);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.TuplePartId PARTid__1 = org.eclipse.ocl.pivot.ids.IdManager.getTuplePartId(1, "severity", org.eclipse.ocl.pivot.ids.TypeId.INTEGER);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.TuplePartId PARTid__2 = org.eclipse.ocl.pivot.ids.IdManager.getTuplePartId(3, "status", org.eclipse.ocl.pivot.ids.TypeId.BOOLEAN);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.TuplePartId PARTid__3 = org.eclipse.ocl.pivot.ids.IdManager.getTuplePartId(2, "severity", org.eclipse.ocl.pivot.ids.TypeId.INTEGER);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.TuplePartId PARTid__4 = org.eclipse.ocl.pivot.ids.IdManager.getTuplePartId(1, "quickfix", org.eclipse.ocl.pivot.ids.TypeId.STRING);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_PRIMid_String = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(org.eclipse.ocl.pivot.ids.TypeId.STRING);
+	public static final /*@NonInvalid*/ java.lang.String STR_Action_c_c_CorrectScheme = "Action::CorrectScheme";
+	public static final /*@NonInvalid*/ java.lang.String STR_Action_c_c_containedAction = "Action::containedAction";
+	public static final /*@NonInvalid*/ java.lang.String STR_Category_c_c_AttributesNameUnique = "Category::AttributesNameUnique";
+	public static final /*@NonInvalid*/ java.lang.String STR_Category_c_c_IdentityUnique = "Category::IdentityUnique";
+	public static final /*@NonInvalid*/ java.lang.String STR_Category_c_c_SchemeEndsWithSharp = "Category::SchemeEndsWithSharp";
+	public static final /*@NonInvalid*/ java.lang.String STR_Configuration_c_c_AllMixinsAreTags = "Configuration::AllMixinsAreTags";
+	public static final /*@NonInvalid*/ java.lang.String STR_Configuration_c_c_AllResourcesKindsInUse = "Configuration::AllResourcesKindsInUse";
+	public static final /*@NonInvalid*/ java.lang.String STR_Configuration_c_c_AllResourcesLinksKindsInUse = "Configuration::AllResourcesLinksKindsInUse";
+	public static final /*@NonInvalid*/ java.lang.String STR_Configuration_c_c_AllResourcesLinksMixinsInUse = "Configuration::AllResourcesLinksMixinsInUse";
+	public static final /*@NonInvalid*/ java.lang.String STR_Configuration_c_c_AllResourcesLinksTargetsInConfiguration = "Configuration::AllResourcesLinksTargetsInConfiguration";
+	public static final /*@NonInvalid*/ java.lang.String STR_Configuration_c_c_AllResourcesMixinsInUse = "Configuration::AllResourcesMixinsInUse";
+	public static final /*@NonInvalid*/ java.lang.String STR_Entity_c_c_AttributesNameUnique = "Entity::AttributesNameUnique";
+	public static final /*@NonInvalid*/ java.lang.String STR_Entity_c_c_IdUnique = "Entity::IdUnique";
+	public static final /*@NonInvalid*/ java.lang.String STR_Entity_c_c_KindCompatibleWithOneAppliesOfEachMixin = "Entity::KindCompatibleWithOneAppliesOfEachMixin";
+	public static final /*@NonInvalid*/ java.lang.String STR_Extension_c_c_KindParentLocalOrImported = "Extension::KindParentLocalOrImported";
+	public static final /*@NonInvalid*/ java.lang.String STR_Extension_c_c_KindsSchemeValid = "Extension::KindsSchemeValid";
+	public static final /*@NonInvalid*/ java.lang.String STR_Extension_c_c_MixinAppliesLocalOrImported = "Extension::MixinAppliesLocalOrImported";
+	public static final /*@NonInvalid*/ java.lang.String STR_Extension_c_c_MixinDependsLocalOrImported = "Extension::MixinDependsLocalOrImported";
+	public static final /*@NonInvalid*/ java.lang.String STR_Extension_c_c_MixinsSchemeValid = "Extension::MixinsSchemeValid";
+	public static final /*@NonInvalid*/ java.lang.String STR_Extension_c_c_SchemeUnique = "Extension::SchemeUnique";
+	public static final /*@NonInvalid*/ java.lang.String STR_Extension_c_c_TermUnicity = "Extension::TermUnicity";
+	public static final /*@NonInvalid*/ java.lang.String STR_FSM_c_c_AttributeTypeMustBeEEnum = "FSM::AttributeTypeMustBeEEnum";
+	public static final /*@NonInvalid*/ java.lang.String STR_FSM_c_c_containedAttribute = "FSM::containedAttribute";
+	public static final /*@NonInvalid*/ java.lang.String STR_Kind_c_c_AttributesNameNotAlreadyDefinedInParent = "Kind::AttributesNameNotAlreadyDefinedInParent";
+	public static final /*@NonInvalid*/ java.lang.String STR_Kind_c_c_CorrectScheme = "Kind::CorrectScheme";
+	public static final /*@NonInvalid*/ java.lang.String STR_Kind_c_c_EntityKindIsRootParent = "Kind::EntityKindIsRootParent";
+	public static final /*@NonInvalid*/ java.lang.String STR_Kind_c_c_NoCyclicInheritance = "Kind::NoCyclicInheritance";
+	public static final /*@NonInvalid*/ java.lang.String STR_Link_c_c_LinkKindIsInParent = "Link::LinkKindIsInParent";
+	public static final /*@NonInvalid*/ java.lang.String STR_Mixin_c_c_AttributesNameNotAlreadyDefinedInDepends = "Mixin::AttributesNameNotAlreadyDefinedInDepends";
+	public static final /*@NonInvalid*/ java.lang.String STR_Mixin_c_c_CorrectScheme = "Mixin::CorrectScheme";
+	public static final /*@NonInvalid*/ java.lang.String STR_Mixin_c_c_NoCyclicInheritance = "Mixin::NoCyclicInheritance";
+	public static final /*@NonInvalid*/ java.lang.String STR_Resource_c_c_ResourceKindIsInParent = "Resource::ResourceKindIsInParent";
+	public static final /*@NonInvalid*/ java.lang.String STR_State_c_c_StateLiteralAlreadyDefinedInFSMAttributeType = "State::StateLiteralAlreadyDefinedInFSMAttributeType";
+	public static final /*@NonInvalid*/ java.lang.String STR_The_32_action_32 = "The action ";
+	public static final /*@NonInvalid*/ java.lang.String STR_Transition_c_c_containedActionMustBeDeclaredInTheAppropriateKind = "Transition::containedActionMustBeDeclaredInTheAppropriateKind";
+	public static final /*@NonInvalid*/ java.lang.String STR_Type_c_c_ActionTermUnicity = "Type::ActionTermUnicity";
+	public static final /*@NonInvalid*/ java.lang.String STR_Type_c_c_ConstraintNameUnique = "Type::ConstraintNameUnique";
+	public static final /*@NonInvalid*/ java.lang.String STR__32_Kind = " Kind.";
+	public static final /*@NonInvalid*/ java.lang.String STR__32_Kind_0 = " Kind";
+	public static final /*@NonInvalid*/ java.lang.String STR__32_Kind_32_cannot_32_be_32_used_32_in_32_the_32_FSM_32_of_32 = " Kind cannot be used in the FSM of ";
+	public static final /*@NonInvalid*/ java.lang.String STR__32_declared_32_in_32 = " declared in ";
+	public static final /*@NonInvalid*/ java.lang.String STR__32_doesn_39_t_32_appear_32_in_32_the_32_FSM_32_of_32 = " doesn\'t appear in the FSM of ";
+	public static final /*@NonInvalid*/ java.lang.String STR__35 = "#";
+	public static final /*@NonInvalid*/ java.lang.String STR__s_action_35 = "/action#";
+	public static final /*@NonInvalid*/ java.lang.String STR_entity = "entity";
+	public static final /*@NonInvalid*/ java.lang.String STR_http_c_s_s_schemas_ogf_org_s_occi_s_core_35 = "http://schemas.ogf.org/occi/core#";
+	public static final /*@NonInvalid*/ java.lang.String STR_link = "link";
+	public static final /*@NonInvalid*/ java.lang.String STR_quickfix = "quickfix";
+	public static final /*@NonInvalid*/ java.lang.String STR_quot = "/";
+	public static final /*@NonInvalid*/ java.lang.String STR_resource = "resource";
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_ArrayType = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_ArrayType);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Attribute = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_Attribute);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Configuration = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_Configuration);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Entity = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_Entity);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Extension = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_Extension);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_FSM = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_FSM);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Kind = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_Kind);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Mixin = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_Mixin);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_MixinBase = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_MixinBase);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_RecordFieldDeclaration = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_RecordFieldDeclaration);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_RecordType = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_RecordType);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_State = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_State);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Transition = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_Transition);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_DATAid_AttributeName = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.DATAid_AttributeName);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Action = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_Action);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Attribute = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_Attribute);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_AttributeState = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_AttributeState);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Constraint = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_Constraint);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_DataType = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_DataType);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_EnumerationLiteral = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_EnumerationLiteral);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Extension = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_Extension);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Kind = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_Kind);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Link = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_Link);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Mixin = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_Mixin);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_MixinBase = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_MixinBase);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_RecordFieldDeclaration = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_RecordFieldDeclaration);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Resource = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_Resource);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_State = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_State);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Transition = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_Transition);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_Action = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(OCCITables.CLSSid_Action);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_Attribute = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(OCCITables.CLSSid_Attribute);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_Kind = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(OCCITables.CLSSid_Kind);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_Link = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(OCCITables.CLSSid_Link);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_Mixin = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(OCCITables.CLSSid_Mixin);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_MixinBase = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(OCCITables.CLSSid_MixinBase);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_OclElement = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(OCCITables.CLSSid_OclElement);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_Resource = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(OCCITables.CLSSid_Resource);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_Transition = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(OCCITables.CLSSid_Transition);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_DATAid_AttributeName = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(OCCITables.DATAid_AttributeName);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SET_CLSSid_Category = org.eclipse.ocl.pivot.ids.TypeId.SET.getSpecializedId(OCCITables.CLSSid_Category);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SET_CLSSid_Entity = org.eclipse.ocl.pivot.ids.TypeId.SET.getSpecializedId(OCCITables.CLSSid_Entity);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SET_CLSSid_Extension = org.eclipse.ocl.pivot.ids.TypeId.SET.getSpecializedId(OCCITables.CLSSid_Extension);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SET_CLSSid_Kind = org.eclipse.ocl.pivot.ids.TypeId.SET.getSpecializedId(OCCITables.CLSSid_Kind);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SET_CLSSid_Mixin = org.eclipse.ocl.pivot.ids.TypeId.SET.getSpecializedId(OCCITables.CLSSid_Mixin);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.TupleTypeId TUPLid_ = org.eclipse.ocl.pivot.ids.IdManager.getTupleTypeId("Tuple", OCCITables.PARTid__0, OCCITables.PARTid__1, OCCITables.PARTid_);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.TupleTypeId TUPLid__0 = org.eclipse.ocl.pivot.ids.IdManager.getTupleTypeId("Tuple", OCCITables.PARTid__0, OCCITables.PARTid__4, OCCITables.PARTid__3, OCCITables.PARTid__2);
 
 	/**
 	 *	The type parameters for templated types and operations.
@@ -454,7 +474,6 @@ public class OCCITables
 
 		private static final /*@NonNull*/ ExecutorFragment _String__OclAny = new ExecutorFragment(Types._String, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _String__OclComparable = new ExecutorFragment(Types._String, OCLstdlibTables.Types._OclComparable);
-		private static final /*@NonNull*/ ExecutorFragment _String__OclElement = new ExecutorFragment(Types._String, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _String__OclSummable = new ExecutorFragment(Types._String, OCLstdlibTables.Types._OclSummable);
 		private static final /*@NonNull*/ ExecutorFragment _String__String = new ExecutorFragment(Types._String, OCCITables.Types._String);
 
@@ -488,6 +507,10 @@ public class OCCITables
 
 	/**
 	 *	The parameter lists shared by operations.
+	 *
+	 * @noextend This class is not intended to be subclassed by clients.
+	 * @noinstantiate This class is not intended to be instantiated by clients.
+	 * @noreference This class is not intended to be referenced by clients.
 	 */
 	public static class Parameters {
 		static {
@@ -517,6 +540,10 @@ public class OCCITables
 
 	/**
 	 *	The operation descriptors for each operation of each type.
+	 *
+	 * @noextend This class is not intended to be subclassed by clients.
+	 * @noinstantiate This class is not intended to be instantiated by clients.
+	 * @noreference This class is not intended to be referenced by clients.
 	 */
 	public static class Operations {
 		static {
@@ -540,8 +567,18 @@ public class OCCITables
 			6, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.logical.BooleanXorOperation.INSTANCE);
 		public static final /*@NonNull*/ ExecutorOperation _Boolean__allInstances = new ExecutorOperation("allInstances", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Boolean,
 			7, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.logical.BooleanAllInstancesOperation.INSTANCE);
+		public static final /*@NonNull*/ ExecutorOperation _Boolean__and2 = new ExecutorOperation("and2", Parameters._Boolean, Types._Boolean,
+			8, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.logical.BooleanAndOperation2.INSTANCE);
+		public static final /*@NonNull*/ ExecutorOperation _Boolean__implies2 = new ExecutorOperation("implies2", Parameters._Boolean, Types._Boolean,
+			9, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.logical.BooleanImpliesOperation2.INSTANCE);
+		public static final /*@NonNull*/ ExecutorOperation _Boolean__not2 = new ExecutorOperation("not2", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Boolean,
+			10, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.logical.BooleanNotOperation2.INSTANCE);
+		public static final /*@NonNull*/ ExecutorOperation _Boolean__or2 = new ExecutorOperation("or2", Parameters._Boolean, Types._Boolean,
+			11, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.logical.BooleanOrOperation2.INSTANCE);
 		public static final /*@NonNull*/ ExecutorOperation _Boolean__toString = new ExecutorOperation("toString", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Boolean,
-			8, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation.INSTANCE);
+			12, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation.INSTANCE);
+		public static final /*@NonNull*/ ExecutorOperation _Boolean__xor2 = new ExecutorOperation("xor2", Parameters._Boolean, Types._Boolean,
+			13, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.logical.BooleanXorOperation2.INSTANCE);
 
 		public static final /*@NonNull*/ ExecutorOperation _Entity__occiCreate = new ExecutorOperation("occiCreate", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Entity,
 			0, TemplateParameters.EMPTY_LIST, null);
@@ -641,6 +678,10 @@ public class OCCITables
 
 	/**
 	 *	The property descriptors for each property of each type.
+	 *
+	 * @noextend This class is not intended to be subclassed by clients.
+	 * @noinstantiate This class is not intended to be instantiated by clients.
+	 * @noreference This class is not intended to be referenced by clients.
 	 */
 	public static class Properties {
 		static {
@@ -1070,11 +1111,10 @@ public class OCCITables
 		{
 			Fragments._String__OclAny /* 0 */,
 			Fragments._String__OclComparable /* 1 */,
-			Fragments._String__OclElement /* 1 */,
 			Fragments._String__OclSummable /* 1 */,
 			Fragments._String__String /* 2 */
 		};
-		private static final int /*@NonNull*/ [] __String = { 1,3,1 };
+		private static final int /*@NonNull*/ [] __String = { 1,2,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _StringType =
 		{
@@ -1340,7 +1380,12 @@ public class OCCITables
 			OCLstdlibTables.Operations._Boolean__or /* _'or'(Boolean[?]) */,
 			OCLstdlibTables.Operations._Boolean__xor /* _'xor'(Boolean[?]) */,
 			OCLstdlibTables.Operations._Boolean__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._Boolean__toString /* toString() */
+			OCLstdlibTables.Operations._Boolean__and2 /* and2(Boolean[?]) */,
+			OCLstdlibTables.Operations._Boolean__implies2 /* implies2(Boolean[?]) */,
+			OCLstdlibTables.Operations._Boolean__not2 /* not2() */,
+			OCLstdlibTables.Operations._Boolean__or2 /* or2(Boolean[?]) */,
+			OCLstdlibTables.Operations._Boolean__toString /* toString() */,
+			OCLstdlibTables.Operations._Boolean__xor2 /* xor2(Boolean[?]) */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Boolean__OclAny = {
 			OCLstdlibTables.Operations._Boolean___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -2104,15 +2149,6 @@ public class OCCITables
 			OCLstdlibTables.Operations._String___gt__eq_ /* _'>='(OclSelf[?]) */,
 			OCLstdlibTables.Operations._String__compareTo /* compareTo(OclSelf[?]) */
 		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _String__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _String__OclSummable = {
 			OCLstdlibTables.Operations._OclSummable__sum /* sum(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclSummable__zero /* zero() */
@@ -2368,7 +2404,6 @@ public class OCCITables
 
 			Fragments._String__OclAny.initOperations(_String__OclAny);
 			Fragments._String__OclComparable.initOperations(_String__OclComparable);
-			Fragments._String__OclElement.initOperations(_String__OclElement);
 			Fragments._String__OclSummable.initOperations(_String__OclSummable);
 			Fragments._String__String.initOperations(_String__String);
 
@@ -2413,19 +2448,13 @@ public class OCCITables
 			OCCITables.Properties._Category__name,
 			OCCITables.Properties._Category__scheme,
 			OCCITables.Properties._Category__term,
-			OCCITables.Properties._Category__title,
-			OCCITables.Properties._Action__Transition__action,
-			OCCITables.Properties._Action__Type__actions
+			OCCITables.Properties._Category__title
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _ArrayType = {
 			OCCITables.Properties._DataType__documentation,
 			OCCITables.Properties._DataType__name,
-			OCCITables.Properties._ArrayType__type,
-			OCCITables.Properties._DataType__ArrayType__type,
-			OCCITables.Properties._DataType__Attribute__type,
-			OCCITables.Properties._DataType__Extension__types,
-			OCCITables.Properties._DataType__RecordFieldDeclaration__type
+			OCCITables.Properties._ArrayType__type
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Attribute = {
@@ -2434,38 +2463,26 @@ public class OCCITables
 			OCCITables.Properties._Attribute__mutable,
 			OCCITables.Properties._Attribute__name,
 			OCCITables.Properties._Attribute__required,
-			OCCITables.Properties._Attribute__type,
-			OCCITables.Properties._Attribute__Category__attributes,
-			OCCITables.Properties._Attribute__FSM__attribute
+			OCCITables.Properties._Attribute__type
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _AttributeName = {};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _AttributeState = {
 			OCCITables.Properties._AttributeState__name,
-			OCCITables.Properties._AttributeState__value,
-			OCCITables.Properties._AttributeState__Entity__attributes,
-			OCCITables.Properties._AttributeState__MixinBase__attributes
+			OCCITables.Properties._AttributeState__value
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _BasicType = {
 			OCCITables.Properties._DataType__documentation,
-			OCCITables.Properties._DataType__name,
-			OCCITables.Properties._DataType__ArrayType__type,
-			OCCITables.Properties._DataType__Attribute__type,
-			OCCITables.Properties._DataType__Extension__types,
-			OCCITables.Properties._DataType__RecordFieldDeclaration__type
+			OCCITables.Properties._DataType__name
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Boolean = {};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _BooleanType = {
 			OCCITables.Properties._DataType__documentation,
-			OCCITables.Properties._DataType__name,
-			OCCITables.Properties._DataType__ArrayType__type,
-			OCCITables.Properties._DataType__Attribute__type,
-			OCCITables.Properties._DataType__Extension__types,
-			OCCITables.Properties._DataType__RecordFieldDeclaration__type
+			OCCITables.Properties._DataType__name
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Category = {
@@ -2487,28 +2504,19 @@ public class OCCITables
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Constraint = {
 			OCCITables.Properties._Constraint__body,
 			OCCITables.Properties._Constraint__description,
-			OCCITables.Properties._Constraint__name,
-			OCCITables.Properties._Constraint__Type__constraints
+			OCCITables.Properties._Constraint__name
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _DataType = {
 			OCCITables.Properties._DataType__documentation,
-			OCCITables.Properties._DataType__name,
-			OCCITables.Properties._DataType__ArrayType__type,
-			OCCITables.Properties._DataType__Attribute__type,
-			OCCITables.Properties._DataType__Extension__types,
-			OCCITables.Properties._DataType__RecordFieldDeclaration__type
+			OCCITables.Properties._DataType__name
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _EObjectType = {
 			OCCITables.Properties._DataType__documentation,
 			OCCITables.Properties._EObjectType__instanceClassName,
 			OCCITables.Properties._DataType__name,
-			OCCITables.Properties._EObjectType__pattern,
-			OCCITables.Properties._DataType__ArrayType__type,
-			OCCITables.Properties._DataType__Attribute__type,
-			OCCITables.Properties._DataType__Extension__types,
-			OCCITables.Properties._DataType__RecordFieldDeclaration__type
+			OCCITables.Properties._EObjectType__pattern
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Entity = {
@@ -2518,25 +2526,18 @@ public class OCCITables
 			OCCITables.Properties._Entity__location,
 			OCCITables.Properties._Entity__mixins,
 			OCCITables.Properties._Entity__parts,
-			OCCITables.Properties._Entity__title,
-			OCCITables.Properties._Entity__Kind__entities,
-			OCCITables.Properties._Entity__Mixin__entities
+			OCCITables.Properties._Entity__title
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _EnumerationLiteral = {
 			OCCITables.Properties._EnumerationLiteral__enumerationType,
-			OCCITables.Properties._EnumerationLiteral__name,
-			OCCITables.Properties._EnumerationLiteral__State__literal
+			OCCITables.Properties._EnumerationLiteral__name
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _EnumerationType = {
 			OCCITables.Properties._DataType__documentation,
 			OCCITables.Properties._EnumerationType__literals,
-			OCCITables.Properties._DataType__name,
-			OCCITables.Properties._DataType__ArrayType__type,
-			OCCITables.Properties._DataType__Attribute__type,
-			OCCITables.Properties._DataType__Extension__types,
-			OCCITables.Properties._DataType__RecordFieldDeclaration__type
+			OCCITables.Properties._DataType__name
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Extension = {
@@ -2547,15 +2548,12 @@ public class OCCITables
 			OCCITables.Properties._Extension__name,
 			OCCITables.Properties._Extension__scheme,
 			OCCITables.Properties._Extension__specification,
-			OCCITables.Properties._Extension__types,
-			OCCITables.Properties._Extension__Configuration__use,
-			OCCITables.Properties._Extension__Extension__import
+			OCCITables.Properties._Extension__types
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _FSM = {
 			OCCITables.Properties._FSM__attribute,
-			OCCITables.Properties._FSM__ownedState,
-			OCCITables.Properties._FSM__Kind__fsm
+			OCCITables.Properties._FSM__ownedState
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Kind = {
@@ -2568,11 +2566,7 @@ public class OCCITables
 			OCCITables.Properties._Kind__parent,
 			OCCITables.Properties._Category__scheme,
 			OCCITables.Properties._Category__term,
-			OCCITables.Properties._Category__title,
-			OCCITables.Properties._Kind__Entity__kind,
-			OCCITables.Properties._Kind__Extension__kinds,
-			OCCITables.Properties._Kind__Kind__parent,
-			OCCITables.Properties._Kind__Mixin__applies
+			OCCITables.Properties._Category__title
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Link = {
@@ -2584,9 +2578,7 @@ public class OCCITables
 			OCCITables.Properties._Entity__parts,
 			OCCITables.Properties._Link__source,
 			OCCITables.Properties._Link__target,
-			OCCITables.Properties._Entity__title,
-			OCCITables.Properties._Entity__Kind__entities,
-			OCCITables.Properties._Entity__Mixin__entities
+			OCCITables.Properties._Entity__title
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Mixin = {
@@ -2599,12 +2591,7 @@ public class OCCITables
 			OCCITables.Properties._Category__name,
 			OCCITables.Properties._Category__scheme,
 			OCCITables.Properties._Category__term,
-			OCCITables.Properties._Category__title,
-			OCCITables.Properties._Mixin__Configuration__mixins,
-			OCCITables.Properties._Mixin__Entity__mixins,
-			OCCITables.Properties._Mixin__Extension__mixins,
-			OCCITables.Properties._Mixin__Mixin__depends,
-			OCCITables.Properties._Mixin__MixinBase__mixin
+			OCCITables.Properties._Category__title
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _MixinBase = {
@@ -2623,11 +2610,7 @@ public class OCCITables
 			OCCITables.Properties._NumericType__minInclusive,
 			OCCITables.Properties._DataType__name,
 			OCCITables.Properties._NumericType__totalDigits,
-			OCCITables.Properties._NumericType__type,
-			OCCITables.Properties._DataType__ArrayType__type,
-			OCCITables.Properties._DataType__Attribute__type,
-			OCCITables.Properties._DataType__Extension__types,
-			OCCITables.Properties._DataType__RecordFieldDeclaration__type
+			OCCITables.Properties._NumericType__type
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _NumericTypeEnum = {};
@@ -2636,18 +2619,13 @@ public class OCCITables
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _RecordFieldDeclaration = {
 			OCCITables.Properties._RecordFieldDeclaration__name,
-			OCCITables.Properties._RecordFieldDeclaration__type,
-			OCCITables.Properties._RecordFieldDeclaration__RecordType__recordFiledDeclarations
+			OCCITables.Properties._RecordFieldDeclaration__type
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _RecordType = {
 			OCCITables.Properties._DataType__documentation,
 			OCCITables.Properties._DataType__name,
-			OCCITables.Properties._RecordType__recordFiledDeclarations,
-			OCCITables.Properties._DataType__ArrayType__type,
-			OCCITables.Properties._DataType__Attribute__type,
-			OCCITables.Properties._DataType__Extension__types,
-			OCCITables.Properties._DataType__RecordFieldDeclaration__type
+			OCCITables.Properties._RecordType__recordFiledDeclarations
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Resource = {
@@ -2660,10 +2638,7 @@ public class OCCITables
 			OCCITables.Properties._Entity__parts,
 			OCCITables.Properties._Resource__rlinks,
 			OCCITables.Properties._Resource__summary,
-			OCCITables.Properties._Entity__title,
-			OCCITables.Properties._Resource__Configuration__resources,
-			OCCITables.Properties._Entity__Kind__entities,
-			OCCITables.Properties._Entity__Mixin__entities
+			OCCITables.Properties._Entity__title
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Scheme = {};
@@ -2685,11 +2660,7 @@ public class OCCITables
 			OCCITables.Properties._StringType__maxLength,
 			OCCITables.Properties._StringType__minLength,
 			OCCITables.Properties._DataType__name,
-			OCCITables.Properties._StringType__pattern,
-			OCCITables.Properties._DataType__ArrayType__type,
-			OCCITables.Properties._DataType__Attribute__type,
-			OCCITables.Properties._DataType__Extension__types,
-			OCCITables.Properties._DataType__RecordFieldDeclaration__type
+			OCCITables.Properties._StringType__pattern
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Transition = {

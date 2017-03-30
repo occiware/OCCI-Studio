@@ -74,7 +74,7 @@ public interface Attribute extends EObject {
 	 * @return the value of the '<em>Mutable</em>' attribute.
 	 * @see #setMutable(boolean)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getAttribute_Mutable()
-	 * @model default="true" dataType="org.eclipse.cmf.occi.core.Boolean"
+	 * @model default="true" dataType="org.eclipse.cmf.occi.core.Boolean" required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Attribute!mutable'"
 	 * @generated
 	 */
@@ -101,7 +101,7 @@ public interface Attribute extends EObject {
 	 * @return the value of the '<em>Required</em>' attribute.
 	 * @see #setRequired(boolean)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getAttribute_Required()
-	 * @model dataType="org.eclipse.cmf.occi.core.Boolean"
+	 * @model dataType="org.eclipse.cmf.occi.core.Boolean" required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Attribute!required'"
 	 * @generated
 	 */

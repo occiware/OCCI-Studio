@@ -16,7 +16,6 @@ import java.util.Map;
 import org.eclipse.cmf.occi.core.*;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
@@ -89,20 +88,20 @@ public class OCCIValidator extends EObjectValidator {
 	public static final int TYPE__CONSTRAINT_NAME_UNIQUE = 5;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate' of 'FSM'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int FSM__VALIDATE = 6;
-
-	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Attribute Type Must Be EEnum' of 'FSM'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int FSM__ATTRIBUTE_TYPE_MUST_BE_EENUM = 7;
+	public static final int FSM__ATTRIBUTE_TYPE_MUST_BE_EENUM = 6;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Contained Attribute' of 'FSM'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int FSM__CONTAINED_ATTRIBUTE = 7;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'State Literal Already Defined In FSM Attribute Type' of 'State'.
@@ -113,12 +112,20 @@ public class OCCIValidator extends EObjectValidator {
 	public static final int STATE__STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE = 8;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Contained Action Must Be Declared In The Appropriate Kind' of 'Transition'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int TRANSITION__CONTAINED_ACTION_MUST_BE_DECLARED_IN_THE_APPROPRIATE_KIND = 9;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'No Cyclic Inheritance' of 'Kind'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int KIND__NO_CYCLIC_INHERITANCE = 9;
+	public static final int KIND__NO_CYCLIC_INHERITANCE = 10;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Attributes Name Not Already Defined In Parent' of 'Kind'.
@@ -126,7 +133,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int KIND__ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_PARENT = 10;
+	public static final int KIND__ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_PARENT = 11;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Correct Scheme' of 'Kind'.
@@ -134,7 +141,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int KIND__CORRECT_SCHEME = 11;
+	public static final int KIND__CORRECT_SCHEME = 12;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Entity Kind Is Root Parent' of 'Kind'.
@@ -142,7 +149,15 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int KIND__ENTITY_KIND_IS_ROOT_PARENT = 12;
+	public static final int KIND__ENTITY_KIND_IS_ROOT_PARENT = 13;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Contained Action' of 'Action'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ACTION__CONTAINED_ACTION = 14;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Correct Scheme' of 'Action'.
@@ -150,7 +165,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ACTION__CORRECT_SCHEME = 13;
+	public static final int ACTION__CORRECT_SCHEME = 15;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Correct Scheme' of 'Mixin'.
@@ -158,7 +173,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MIXIN__CORRECT_SCHEME = 14;
+	public static final int MIXIN__CORRECT_SCHEME = 16;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'No Cyclic Inheritance' of 'Mixin'.
@@ -166,7 +181,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MIXIN__NO_CYCLIC_INHERITANCE = 15;
+	public static final int MIXIN__NO_CYCLIC_INHERITANCE = 17;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Attributes Name Not Already Defined In Depends' of 'Mixin'.
@@ -174,7 +189,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MIXIN__ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_DEPENDS = 16;
+	public static final int MIXIN__ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_DEPENDS = 18;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Attributes Name Unique' of 'Entity'.
@@ -182,7 +197,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENTITY__ATTRIBUTES_NAME_UNIQUE = 17;
+	public static final int ENTITY__ATTRIBUTES_NAME_UNIQUE = 19;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Kind Compatible With One Applies Of Each Mixin' of 'Entity'.
@@ -190,7 +205,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENTITY__KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN = 18;
+	public static final int ENTITY__KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN = 20;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Id Unique' of 'Entity'.
@@ -198,7 +213,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENTITY__ID_UNIQUE = 19;
+	public static final int ENTITY__ID_UNIQUE = 21;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Resource Kind Is In Parent' of 'Resource'.
@@ -206,7 +221,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESOURCE__RESOURCE_KIND_IS_IN_PARENT = 20;
+	public static final int RESOURCE__RESOURCE_KIND_IS_IN_PARENT = 22;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Link Kind Is In Parent' of 'Link'.
@@ -214,7 +229,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int LINK__LINK_KIND_IS_IN_PARENT = 21;
+	public static final int LINK__LINK_KIND_IS_IN_PARENT = 23;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Kinds Scheme Valid' of 'Extension'.
@@ -222,7 +237,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__KINDS_SCHEME_VALID = 22;
+	public static final int EXTENSION__KINDS_SCHEME_VALID = 24;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Kind Parent Local Or Imported' of 'Extension'.
@@ -230,7 +245,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__KIND_PARENT_LOCAL_OR_IMPORTED = 23;
+	public static final int EXTENSION__KIND_PARENT_LOCAL_OR_IMPORTED = 25;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Mixins Scheme Valid' of 'Extension'.
@@ -238,7 +253,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__MIXINS_SCHEME_VALID = 24;
+	public static final int EXTENSION__MIXINS_SCHEME_VALID = 26;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Term Unicity' of 'Extension'.
@@ -246,7 +261,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__TERM_UNICITY = 25;
+	public static final int EXTENSION__TERM_UNICITY = 27;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Mixin Applies Local Or Imported' of 'Extension'.
@@ -254,7 +269,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__MIXIN_APPLIES_LOCAL_OR_IMPORTED = 26;
+	public static final int EXTENSION__MIXIN_APPLIES_LOCAL_OR_IMPORTED = 28;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Scheme Unique' of 'Extension'.
@@ -262,7 +277,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__SCHEME_UNIQUE = 27;
+	public static final int EXTENSION__SCHEME_UNIQUE = 29;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Mixin Depends Local Or Imported' of 'Extension'.
@@ -270,7 +285,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__MIXIN_DEPENDS_LOCAL_OR_IMPORTED = 28;
+	public static final int EXTENSION__MIXIN_DEPENDS_LOCAL_OR_IMPORTED = 30;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Mixins Are Tags' of 'Configuration'.
@@ -278,7 +293,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIGURATION__ALL_MIXINS_ARE_TAGS = 29;
+	public static final int CONFIGURATION__ALL_MIXINS_ARE_TAGS = 31;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Resources Links Targets In Configuration' of 'Configuration'.
@@ -286,7 +301,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_TARGETS_IN_CONFIGURATION = 30;
+	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_TARGETS_IN_CONFIGURATION = 32;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Resources Kinds In Use' of 'Configuration'.
@@ -294,7 +309,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIGURATION__ALL_RESOURCES_KINDS_IN_USE = 31;
+	public static final int CONFIGURATION__ALL_RESOURCES_KINDS_IN_USE = 33;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Resources Links Mixins In Use' of 'Configuration'.
@@ -302,7 +317,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_MIXINS_IN_USE = 32;
+	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_MIXINS_IN_USE = 34;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Resources Mixins In Use' of 'Configuration'.
@@ -310,7 +325,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIGURATION__ALL_RESOURCES_MIXINS_IN_USE = 33;
+	public static final int CONFIGURATION__ALL_RESOURCES_MIXINS_IN_USE = 35;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Resources Links Kinds In Use' of 'Configuration'.
@@ -318,15 +333,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_KINDS_IN_USE = 34;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate' of 'Numeric Type'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int NUMERIC_TYPE__VALIDATE = 35;
+	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_KINDS_IN_USE = 36;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -334,7 +341,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 35;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 36;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -466,9 +473,9 @@ public class OCCIValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(category, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(category, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(category, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCategory_IdentityUnique(category, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCategory_SchemeEndsWithSharp(category, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCategory_AttributesNameUnique(category, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCategory_IdentityUnique(category, diagnostics, context);
 		return result;
 	}
 
@@ -526,11 +533,11 @@ public class OCCIValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(type, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(type, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(type, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCategory_IdentityUnique(type, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCategory_SchemeEndsWithSharp(type, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCategory_AttributesNameUnique(type, diagnostics, context);
-		if (result || diagnostics != null) result &= validateType_ActionTermUnicity(type, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCategory_IdentityUnique(type, diagnostics, context);
 		if (result || diagnostics != null) result &= validateType_ConstraintNameUnique(type, diagnostics, context);
+		if (result || diagnostics != null) result &= validateType_ActionTermUnicity(type, diagnostics, context);
 		return result;
 	}
 
@@ -569,8 +576,8 @@ public class OCCIValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(fsm, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(fsm, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(fsm, diagnostics, context);
+		if (result || diagnostics != null) result &= validateFSM_containedAttribute(fsm, diagnostics, context);
 		if (result || diagnostics != null) result &= validateFSM_AttributeTypeMustBeEEnum(fsm, diagnostics, context);
-		if (result || diagnostics != null) result &= validateFSM_validate(fsm, diagnostics, context);
 		return result;
 	}
 
@@ -585,13 +592,13 @@ public class OCCIValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the validate constraint of '<em>FSM</em>'.
+	 * Validates the containedAttribute constraint of '<em>FSM</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFSM_validate(FSM fsm, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return fsm.validate(diagnostics, context);
+	public boolean validateFSM_containedAttribute(FSM fsm, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return fsm.containedAttribute(diagnostics, context);
 	}
 
 	/**
@@ -629,7 +636,27 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateTransition(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(transition, diagnostics, context);
+		if (!validate_NoCircularContainment(transition, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_containedActionMustBeDeclaredInTheAppropriateKind(transition, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the containedActionMustBeDeclaredInTheAppropriateKind constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTransition_containedActionMustBeDeclaredInTheAppropriateKind(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return transition.containedActionMustBeDeclaredInTheAppropriateKind(diagnostics, context);
 	}
 
 	/**
@@ -656,15 +683,15 @@ public class OCCIValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(kind, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(kind, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(kind, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCategory_IdentityUnique(kind, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCategory_SchemeEndsWithSharp(kind, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCategory_AttributesNameUnique(kind, diagnostics, context);
-		if (result || diagnostics != null) result &= validateType_ActionTermUnicity(kind, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCategory_IdentityUnique(kind, diagnostics, context);
 		if (result || diagnostics != null) result &= validateType_ConstraintNameUnique(kind, diagnostics, context);
-		if (result || diagnostics != null) result &= validateKind_CorrectScheme(kind, diagnostics, context);
-		if (result || diagnostics != null) result &= validateKind_NoCyclicInheritance(kind, diagnostics, context);
+		if (result || diagnostics != null) result &= validateType_ActionTermUnicity(kind, diagnostics, context);
 		if (result || diagnostics != null) result &= validateKind_EntityKindIsRootParent(kind, diagnostics, context);
+		if (result || diagnostics != null) result &= validateKind_NoCyclicInheritance(kind, diagnostics, context);
 		if (result || diagnostics != null) result &= validateKind_AttributesNameNotAlreadyDefinedInParent(kind, diagnostics, context);
+		if (result || diagnostics != null) result &= validateKind_CorrectScheme(kind, diagnostics, context);
 		return result;
 	}
 
@@ -723,10 +750,11 @@ public class OCCIValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(action, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(action, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(action, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCategory_IdentityUnique(action, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCategory_SchemeEndsWithSharp(action, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCategory_AttributesNameUnique(action, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCategory_IdentityUnique(action, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAction_CorrectScheme(action, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAction_containedAction(action, diagnostics, context);
 		return result;
 	}
 
@@ -738,6 +766,16 @@ public class OCCIValidator extends EObjectValidator {
 	 */
 	public boolean validateAction_CorrectScheme(Action action, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return action.CorrectScheme(diagnostics, context);
+	}
+
+	/**
+	 * Validates the containedAction constraint of '<em>Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAction_containedAction(Action action, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return action.containedAction(diagnostics, context);
 	}
 
 	/**
@@ -755,14 +793,14 @@ public class OCCIValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(mixin, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(mixin, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(mixin, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCategory_IdentityUnique(mixin, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCategory_SchemeEndsWithSharp(mixin, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCategory_AttributesNameUnique(mixin, diagnostics, context);
-		if (result || diagnostics != null) result &= validateType_ActionTermUnicity(mixin, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCategory_IdentityUnique(mixin, diagnostics, context);
 		if (result || diagnostics != null) result &= validateType_ConstraintNameUnique(mixin, diagnostics, context);
+		if (result || diagnostics != null) result &= validateType_ActionTermUnicity(mixin, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMixin_AttributesNameNotAlreadyDefinedInDepends(mixin, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMixin_CorrectScheme(mixin, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMixin_NoCyclicInheritance(mixin, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMixin_AttributesNameNotAlreadyDefinedInDepends(mixin, diagnostics, context);
 		return result;
 	}
 
@@ -944,13 +982,13 @@ public class OCCIValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(extension, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(extension, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(extension, diagnostics, context);
-		if (result || diagnostics != null) result &= validateExtension_SchemeUnique(extension, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExtension_MixinDependsLocalOrImported(extension, diagnostics, context);
 		if (result || diagnostics != null) result &= validateExtension_KindsSchemeValid(extension, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExtension_KindParentLocalOrImported(extension, diagnostics, context);
 		if (result || diagnostics != null) result &= validateExtension_MixinsSchemeValid(extension, diagnostics, context);
 		if (result || diagnostics != null) result &= validateExtension_TermUnicity(extension, diagnostics, context);
-		if (result || diagnostics != null) result &= validateExtension_KindParentLocalOrImported(extension, diagnostics, context);
-		if (result || diagnostics != null) result &= validateExtension_MixinDependsLocalOrImported(extension, diagnostics, context);
 		if (result || diagnostics != null) result &= validateExtension_MixinAppliesLocalOrImported(extension, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExtension_SchemeUnique(extension, diagnostics, context);
 		return result;
 	}
 
@@ -1039,12 +1077,12 @@ public class OCCIValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(configuration, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(configuration, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(configuration, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConfiguration_AllResourcesKindsInUse(configuration, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConfiguration_AllResourcesMixinsInUse(configuration, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConfiguration_AllResourcesLinksKindsInUse(configuration, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConfiguration_AllResourcesLinksMixinsInUse(configuration, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConfiguration_AllResourcesLinksTargetsInConfiguration(configuration, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConfiguration_AllMixinsAreTags(configuration, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConfiguration_AllResourcesLinksTargetsInConfiguration(configuration, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConfiguration_AllResourcesKindsInUse(configuration, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConfiguration_AllResourcesLinksMixinsInUse(configuration, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConfiguration_AllResourcesMixinsInUse(configuration, diagnostics, context);
 		return result;
 	}
 
@@ -1159,27 +1197,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateNumericType(NumericType numericType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(numericType, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(numericType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(numericType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(numericType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(numericType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(numericType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(numericType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(numericType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(numericType, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNumericType_validate(numericType, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * Validates the validate constraint of '<em>Numeric Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateNumericType_validate(NumericType numericType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return numericType.validate(diagnostics, context);
+		return validate_EveryDefaultConstraint(numericType, diagnostics, context);
 	}
 
 	/**

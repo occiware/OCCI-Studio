@@ -135,15 +135,23 @@ public class TransitionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
+		
 		Transition tr = ((Transition) object);
-		if(tr.getSource() != null & tr.getAction() != null & tr.getTarget() != null)
-		{	if(tr.getSource().getLiteral() != null & tr.getAction().getName() != null & tr.getTarget().getLiteral() != null)
-				return getString("_UI_Transition_type") + " "+((Transition) object).getSource().getLiteral().getName()+ " --[ "+((Transition) object).getAction().getName()+" ]--> "+ ((Transition) object).getTarget().getLiteral().getName();
-			else
-				return getString("_UI_Transition_type");
+		
+		String text = getString("_UI_Transition_type")+" ";
+		
+		text+=" --[ ";
+		
+		if(tr.getAction() != null)
+		{	if(tr.getAction().getName() != null)
+				text += ((Transition) object).getAction().getName();
 		}
-		else
-			return getString("_UI_Transition_type");
+		text+= " ]--> ";
+		if(tr.getTarget() != null)
+		{	if(tr.getTarget().getLiteral() != null)
+				text += ((Transition) object).getTarget().getLiteral().getName();
+		}
+		return text;
 			
 	}
 	
