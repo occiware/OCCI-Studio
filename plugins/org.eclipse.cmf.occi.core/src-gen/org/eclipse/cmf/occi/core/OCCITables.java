@@ -170,7 +170,6 @@ public class OCCITables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Mixin = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_Mixin);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_MixinBase = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_MixinBase);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_RecordFieldDeclaration = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_RecordFieldDeclaration);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_RecordType = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_RecordType);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_State = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_State);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Transition = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_Transition);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_DATAid_AttributeName = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.DATAid_AttributeName);

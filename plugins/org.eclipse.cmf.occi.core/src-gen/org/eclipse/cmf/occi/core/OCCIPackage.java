@@ -2597,7 +2597,7 @@ public interface OCCIPackage extends EPackage {
 	int RECORD_TYPE__DOCUMENTATION = DATA_TYPE__DOCUMENTATION;
 
 	/**
-	 * The feature id for the '<em><b>Record Filed Declarations</b></em>' reference list.
+	 * The feature id for the '<em><b>Record Filed Declarations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4345,10 +4345,10 @@ public interface OCCIPackage extends EPackage {
 	EClass getRecordType();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.cmf.occi.core.RecordType#getRecordFiledDeclarations <em>Record Filed Declarations</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.cmf.occi.core.RecordType#getRecordFiledDeclarations <em>Record Filed Declarations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Record Filed Declarations</em>'.
+	 * @return the meta object for the containment reference list '<em>Record Filed Declarations</em>'.
 	 * @see org.eclipse.cmf.occi.core.RecordType#getRecordFiledDeclarations()
 	 * @see #getRecordType()
 	 * @generated
@@ -5742,7 +5742,7 @@ public interface OCCIPackage extends EPackage {
 		EClass RECORD_TYPE = eINSTANCE.getRecordType();
 
 		/**
-		 * The meta object literal for the '<em><b>Record Filed Declarations</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Record Filed Declarations</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

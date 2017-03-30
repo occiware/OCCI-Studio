@@ -31,7 +31,7 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface RecordType extends DataType {
 	/**
-	 * Returns the value of the '<em><b>Record Filed Declarations</b></em>' reference list.
+	 * Returns the value of the '<em><b>Record Filed Declarations</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.cmf.occi.core.RecordFieldDeclaration}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -39,9 +39,9 @@ public interface RecordType extends DataType {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Record Filed Declarations</em>' reference list.
+	 * @return the value of the '<em>Record Filed Declarations</em>' containment reference list.
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getRecordType_RecordFiledDeclarations()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!RecordType!recordFiledDeclarations'"
 	 * @generated
 	 */

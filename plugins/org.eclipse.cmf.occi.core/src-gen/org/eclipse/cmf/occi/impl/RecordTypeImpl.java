@@ -17,10 +17,13 @@ import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.cmf.occi.core.RecordFieldDeclaration;
 import org.eclipse.cmf.occi.core.RecordType;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,7 +40,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class RecordTypeImpl extends DataTypeImpl implements RecordType {
 	/**
-	 * The cached value of the '{@link #getRecordFiledDeclarations() <em>Record Filed Declarations</em>}' reference list.
+	 * The cached value of the '{@link #getRecordFiledDeclarations() <em>Record Filed Declarations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRecordFiledDeclarations()
@@ -72,9 +75,23 @@ public class RecordTypeImpl extends DataTypeImpl implements RecordType {
 	 */
 	public EList<RecordFieldDeclaration> getRecordFiledDeclarations() {
 		if (recordFiledDeclarations == null) {
-			recordFiledDeclarations = new EObjectResolvingEList<RecordFieldDeclaration>(RecordFieldDeclaration.class, this, OCCIPackage.RECORD_TYPE__RECORD_FILED_DECLARATIONS);
+			recordFiledDeclarations = new EObjectContainmentEList<RecordFieldDeclaration>(RecordFieldDeclaration.class, this, OCCIPackage.RECORD_TYPE__RECORD_FILED_DECLARATIONS);
 		}
 		return recordFiledDeclarations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case OCCIPackage.RECORD_TYPE__RECORD_FILED_DECLARATIONS:
+				return ((InternalEList<?>)getRecordFiledDeclarations()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

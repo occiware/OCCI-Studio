@@ -336,7 +336,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RecordType" eSuperTypes="#//DataType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="recordFiledDeclarations"
-        lowerBound="1" upperBound="-1" eType="#//RecordFieldDeclaration"/>
+        lowerBound="1" upperBound="-1" eType="#//RecordFieldDeclaration" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RecordFieldDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//DataType"/>
