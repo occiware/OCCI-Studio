@@ -89,7 +89,7 @@ public class LinkTest extends EntityTest {
 	 * @see org.eclipse.cmf.occi.core.Link#LinkKindIsInParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testLinkKindIsInParent__DiagnosticChain_Map_1() {
+	public void testLinkKindIsInParent__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

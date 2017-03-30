@@ -77,7 +77,7 @@ public interface NumericType extends BasicType {
 	 * @see #unsetTotalDigits()
 	 * @see #setTotalDigits(int)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getNumericType_TotalDigits()
-	 * @model unsettable="true" required="true"
+	 * @model unsettable="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!NumericType!totalDigits'"
 	 * @generated
 	 */
