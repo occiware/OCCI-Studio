@@ -12,19 +12,24 @@
 package org.eclipse.cmf.occi.core.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import org.eclipse.cmf.occi.core.OCCITables;
-
+import org.eclipse.cmf.occi.core.util.OCCI2Ecore;
+import org.eclipse.cmf.occi.core.util.OCCIHelper;
+import org.eclipse.cmf.occi.core.Attribute;
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Mixin;
 import org.eclipse.cmf.occi.core.MixinBase;
+import org.eclipse.cmf.occi.core.OCCIKindResolver;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -32,8 +37,9 @@ import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
-
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -81,6 +87,8 @@ import org.eclipse.ocl.pivot.values.InvalidValueException;
 import org.eclipse.ocl.pivot.values.OrderedSetValue;
 import org.eclipse.ocl.pivot.values.SequenceValue;
 import org.eclipse.ocl.pivot.values.SetValue;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -102,6 +110,12 @@ import org.eclipse.ocl.pivot.values.SetValue;
  * @generated
  */
 public abstract class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
+	
+	/**
+	 * Initialize the logger.
+	 */
+	private static Logger LOGGER = LoggerFactory.getLogger(EntityImpl.class);
+	
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -195,10 +209,21 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected EntityImpl() {
 		super();
+		// Generate a new ID for this entity.
+		setId(UUID.randomUUID().toString());
+		// If kind is not set then
+		if (kind == null) {
+			try {
+				// Try to resolve it automatically.
+				kind = OCCIKindResolver.resolveKind(this);
+			} catch (Exception exc) {
+				LOGGER.warn("SHOULD NEVER HAPPEN!", exc);
+			}
+		}
 	}
 
 	/**
@@ -315,11 +340,92 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<AttributeState> getAttributes() {
 		if (attributes == null) {
 			attributes = new EObjectContainmentEList<AttributeState>(AttributeState.class, this, OCCIPackage.ENTITY__ATTRIBUTES);
+		}
+		//
+		// Synchronize OCCI attributes from EMF attributes.
+		//
+
+		// Array to store doublons of OCCI attribute states.
+		final ArrayList<AttributeState> toRemove = new ArrayList<AttributeState>();
+
+		// Compute a map of all current OCCI attribute state instances.
+		final HashMap<String, AttributeState> map = new HashMap<String, AttributeState>();
+		for(AttributeState attributeState : attributes) {
+			String attributeStateName = attributeState.getName();
+			AttributeState oldAttributeState = map.get(attributeStateName);
+			if(oldAttributeState != null) {
+				toRemove.add(oldAttributeState);
+			}
+			map.put(attributeStateName, attributeState);
+		}
+
+		// Remove doublons of OCCI attribute state instances.
+		for(AttributeState attributeState : toRemove) {
+			attributes.remove(attributeState);
+		}
+		
+//
+// Since attribute occi.core.id was added to entity kind, following code is not necessary.
+//
+
+		// Add a default attribute occi.core.id (mandatory ref. GFD.185 section 3.1 p6).
+		// only if occi.core.id does not exist.
+//		boolean occiCoreIdExist = false;
+//		for (AttributeState attributeState : attributes) {
+//			if (attributeState.getName().equals("occi.core.id")) {
+//				occiCoreIdExist = true;
+//				break;
+//			}
+//		}
+//		if (!occiCoreIdExist) {
+//			AttributeState attrState = OCCIFactory.eINSTANCE.createAttributeState();
+//			attrState.setName("occi.core.id");
+//			attrState.setValue(getId());
+//			attributes.add(attrState);
+//		}
+
+		// Iterate over all OCCI attributes of this entity.
+		for(Attribute attribute : OCCIHelper.getAllAttributes(this)) {
+			final String attributeName = attribute.getName();
+			// Search the Ecore structural feature associated to this OCCI attribute.
+			final EStructuralFeature eStructuralFeature = eClass().getEStructuralFeature(OCCI2Ecore.convertOcciAttributeName2EcoreAttributeName(attributeName));
+			// If this is an Ecore attribute then
+			if(eStructuralFeature != null && eStructuralFeature instanceof EAttribute) {
+				final int featureId = eStructuralFeature.getFeatureID();
+				// If this Ecore attribute is set then
+				if(eIsSet(featureId)) {
+					// Search the associated attribute state from the map.
+					AttributeState attributeState = map.get(attributeName);
+					// If not found then create it.
+					if(attributeState == null) {
+						attributeState = new AttributeStateImpl();
+						attributeState.setName(attributeName);
+						try {
+							attributes.add(attributeState);
+						} catch (Exception e) {
+							// FIXME: Don't understand why an exception is thrown!!!
+							LOGGER.warn("Exception when add attribute state '" + attributeName + "': " + e.getMessage() + "!!!");
+						}
+					}
+					// Get the Ecore attribute value.
+					final String valueAsString = eGet(featureId, true, true).toString();
+					// If this value has changed then
+					if(!valueAsString.equals(attributeState.getValue())) {
+						// Set the attribute set value.
+						try {
+							attributeState.setValue(valueAsString);
+						} catch (Exception e) {
+							// FIXME: Don't understand why an exception is thrown!!!
+							LOGGER.warn("Exception when set attribute state '" + attributeName + "': " + e.getMessage() + "!!!");
+						}
+					}
+				}
+			}
 		}
 		return attributes;
 	}
@@ -373,10 +479,11 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void occiCreate() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Entity!occiCreate()
+		LOGGER.debug("occiCreate() called on " + this);
+		//throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Entity!occiCreate()
 	}
 
 	/**
@@ -385,7 +492,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public void occiRetrieve() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Entity!occiRetrieve()
+		LOGGER.debug("occiRetrieve() called on " + this);
+		//throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Entity!occiRetrieve()
 	}
 
 	/**
@@ -394,7 +502,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public void occiUpdate() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Entity!occiUpdate()
+		LOGGER.debug("occiUpdate() called on " + this);
+		//throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Entity!occiUpdate()
 	}
 
 	/**
@@ -403,7 +512,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public void occiDelete() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Entity!occiDelete()
+		LOGGER.debug("occiDelete() called on " + this);
+		//throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Entity!occiDelete()
 	}
 
 	/**
