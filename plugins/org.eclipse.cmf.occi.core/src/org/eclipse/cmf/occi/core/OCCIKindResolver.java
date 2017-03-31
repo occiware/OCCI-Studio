@@ -24,8 +24,8 @@ import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Link;
-import org.eclipse.cmf.occi.util.OCCI2Ecore;
-import org.eclipse.cmf.occi.util.OCCIHelper;
+import org.eclipse.cmf.occi.core.util.OCCI2Ecore;
+import org.eclipse.cmf.occi.core.util.OCCIHelper;
 
 public class OCCIKindResolver
 {

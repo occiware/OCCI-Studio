@@ -28,11 +28,12 @@
       <!-- @generated OCCI -->
       <parser
             type="occie"
-            class="org.eclipse.cmf.occi.util.OCCIResourceFactoryImpl"/>
+            class="org.eclipse.cmf.occi.core.util.OCCIResourceFactoryImpl"/>
       <parser
             type="occic"
-            class="org.eclipse.cmf.occi.util.OCCIResourceFactoryImpl"/>
+            class="org.eclipse.cmf.occi.core.util.OCCIResourceFactoryImpl"/>
    </extension>
+
    <extension
          point="org.eclipse.emf.ecore.uri_mapping">
       <mapping

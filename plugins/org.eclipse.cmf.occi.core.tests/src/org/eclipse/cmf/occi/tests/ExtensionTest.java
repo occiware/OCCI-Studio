@@ -114,7 +114,7 @@ public class ExtensionTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Extension#KindsSchemeValid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testKindsSchemeValid__DiagnosticChain_Map_3() {
+	public void testKindsSchemeValid__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -127,7 +127,7 @@ public class ExtensionTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Extension#KindParentLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testKindParentLocalOrImported__DiagnosticChain_Map_3() {
+	public void testKindParentLocalOrImported__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -140,7 +140,7 @@ public class ExtensionTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Extension#MixinsSchemeValid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testMixinsSchemeValid__DiagnosticChain_Map_3() {
+	public void testMixinsSchemeValid__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -153,7 +153,7 @@ public class ExtensionTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Extension#TermUnicity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testTermUnicity__DiagnosticChain_Map_3() {
+	public void testTermUnicity__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -166,7 +166,7 @@ public class ExtensionTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Extension#MixinAppliesLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testMixinAppliesLocalOrImported__DiagnosticChain_Map_3() {
+	public void testMixinAppliesLocalOrImported__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -179,7 +179,7 @@ public class ExtensionTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Extension#SchemeUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testSchemeUnique__DiagnosticChain_Map_3() {
+	public void testSchemeUnique__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -192,7 +192,7 @@ public class ExtensionTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Extension#MixinDependsLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testMixinDependsLocalOrImported__DiagnosticChain_Map_3() {
+	public void testMixinDependsLocalOrImported__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

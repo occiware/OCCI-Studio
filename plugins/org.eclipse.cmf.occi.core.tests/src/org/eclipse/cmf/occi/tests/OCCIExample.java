@@ -17,9 +17,6 @@ import java.io.IOException;
 import org.eclipse.cmf.occi.core.Constraint;
 import org.eclipse.cmf.occi.core.OCCIFactory;
 import org.eclipse.cmf.occi.core.OCCIPackage;
-
-import org.eclipse.cmf.occi.util.OCCIResourceFactoryImpl;
-
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
 
@@ -55,7 +52,7 @@ public class OCCIExample {
 		//
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put
 			(Resource.Factory.Registry.DEFAULT_EXTENSION, 
-			 new OCCIResourceFactoryImpl());
+			 new org.eclipse.cmf.occi.core.util.OCCIResourceFactoryImpl());
 
 		// Register the package to ensure it is available during loading.
 		//

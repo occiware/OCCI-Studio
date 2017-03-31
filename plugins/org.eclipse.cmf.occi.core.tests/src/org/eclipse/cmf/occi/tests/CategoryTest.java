@@ -89,26 +89,13 @@ public abstract class CategoryTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link org.eclipse.cmf.occi.core.Category#setTerm(java.lang.String) <em>Term</em>}' feature setter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.core.Category#setTerm(java.lang.String)
-	 * @generated
-	 */
-	public void testSetTerm() {
-		// TODO: implement this feature setter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link org.eclipse.cmf.occi.core.Category#AttributesNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Attributes Name Unique</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Category#AttributesNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testAttributesNameUnique__DiagnosticChain_Map_3() {
+	public void testAttributesNameUnique__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -121,7 +108,7 @@ public abstract class CategoryTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Category#IdentityUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testIdentityUnique__DiagnosticChain_Map_3() {
+	public void testIdentityUnique__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -134,7 +121,7 @@ public abstract class CategoryTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Category#SchemeEndsWithSharp(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testSchemeEndsWithSharp__DiagnosticChain_Map_3() {
+	public void testSchemeEndsWithSharp__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

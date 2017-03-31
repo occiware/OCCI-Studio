@@ -75,23 +75,12 @@ public interface Category extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Term</em>' attribute.
-	 * @see #setTerm(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getCategory_Term()
-	 * @model dataType="org.eclipse.cmf.occi.core.String" required="true" transient="true" volatile="true" derived="true"
+	 * @model dataType="org.eclipse.cmf.occi.core.String" required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='/**\n * self.name.toLowerCase()\n \052/\nfinal /*@NonInvalid\052/ <%java.lang.String%> name = this.getName();\nfinal /*@NonInvalid\052/ <%java.lang.String%> toLowerCase = <%org.eclipse.ocl.pivot.library.string.StringToLowerCaseOperation%>.INSTANCE.evaluate(name);\nreturn toLowerCase;'"
 	 * @generated
 	 */
 	String getTerm();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.core.Category#getTerm <em>Term</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Term</em>' attribute.
-	 * @see #getTerm()
-	 * @generated
-	 */
-	void setTerm(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Scheme</b></em>' attribute.

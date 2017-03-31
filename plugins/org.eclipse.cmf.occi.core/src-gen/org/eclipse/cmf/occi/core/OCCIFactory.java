@@ -28,7 +28,7 @@ public interface OCCIFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	OCCIFactory eINSTANCE = org.eclipse.cmf.occi.impl.OCCIFactoryImpl.init();
+	OCCIFactory eINSTANCE = org.eclipse.cmf.occi.core.impl.OCCIFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Constraint</em>'.

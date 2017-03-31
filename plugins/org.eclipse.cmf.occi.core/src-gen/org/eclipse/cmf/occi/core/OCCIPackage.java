@@ -66,14 +66,14 @@ public interface OCCIPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	OCCIPackage eINSTANCE = org.eclipse.cmf.occi.impl.OCCIPackageImpl.init();
+	OCCIPackage eINSTANCE = org.eclipse.cmf.occi.core.impl.OCCIPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.CategoryImpl <em>Category</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.CategoryImpl <em>Category</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.CategoryImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getCategory()
+	 * @see org.eclipse.cmf.occi.core.impl.CategoryImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getCategory()
 	 * @generated
 	 */
 	int CATEGORY = 0;
@@ -139,7 +139,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATEGORY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = 0;
+	int CATEGORY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = 0;
 
 	/**
 	 * The operation id for the '<em>Identity Unique</em>' operation.
@@ -148,7 +148,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATEGORY___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = 1;
+	int CATEGORY___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP = 1;
 
 	/**
 	 * The operation id for the '<em>Scheme Ends With Sharp</em>' operation.
@@ -157,7 +157,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATEGORY___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP_3 = 2;
+	int CATEGORY___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP = 2;
 
 	/**
 	 * The number of operations of the '<em>Category</em>' class.
@@ -169,11 +169,11 @@ public interface OCCIPackage extends EPackage {
 	int CATEGORY_OPERATION_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.ConstraintImpl <em>Constraint</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.ConstraintImpl <em>Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.ConstraintImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getConstraint()
+	 * @see org.eclipse.cmf.occi.core.impl.ConstraintImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getConstraint()
 	 * @generated
 	 */
 	int CONSTRAINT = 1;
@@ -224,11 +224,11 @@ public interface OCCIPackage extends EPackage {
 	int CONSTRAINT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.TypeImpl <em>Type</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.TypeImpl <em>Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.TypeImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getType()
+	 * @see org.eclipse.cmf.occi.core.impl.TypeImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getType()
 	 * @generated
 	 */
 	int TYPE = 2;
@@ -312,7 +312,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = CATEGORY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3;
+	int TYPE___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = CATEGORY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Identity Unique</em>' operation.
@@ -321,7 +321,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = CATEGORY___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP_3;
+	int TYPE___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP = CATEGORY___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Scheme Ends With Sharp</em>' operation.
@@ -330,7 +330,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP_3 = CATEGORY___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP_3;
+	int TYPE___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP = CATEGORY___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Action Term Unicity</em>' operation.
@@ -339,7 +339,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP_3 = CATEGORY_OPERATION_COUNT + 0;
+	int TYPE___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP = CATEGORY_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Constraint Name Unique</em>' operation.
@@ -348,7 +348,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = CATEGORY_OPERATION_COUNT + 1;
+	int TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = CATEGORY_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Type</em>' class.
@@ -360,11 +360,11 @@ public interface OCCIPackage extends EPackage {
 	int TYPE_OPERATION_COUNT = CATEGORY_OPERATION_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.FSMImpl <em>FSM</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.FSMImpl <em>FSM</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.FSMImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getFSM()
+	 * @see org.eclipse.cmf.occi.core.impl.FSMImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getFSM()
 	 * @generated
 	 */
 	int FSM = 3;
@@ -403,7 +403,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FSM___ATTRIBUTE_TYPE_MUST_BE_EENUM__DIAGNOSTICCHAIN_MAP_3 = 0;
+	int FSM___ATTRIBUTE_TYPE_MUST_BE_EENUM__DIAGNOSTICCHAIN_MAP = 0;
 
 	/**
 	 * The operation id for the '<em>Contained Attribute</em>' operation.
@@ -412,7 +412,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FSM___CONTAINED_ATTRIBUTE__DIAGNOSTICCHAIN_MAP_3 = 1;
+	int FSM___CONTAINED_ATTRIBUTE__DIAGNOSTICCHAIN_MAP = 1;
 
 	/**
 	 * The number of operations of the '<em>FSM</em>' class.
@@ -424,11 +424,11 @@ public interface OCCIPackage extends EPackage {
 	int FSM_OPERATION_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.StateImpl <em>State</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.StateImpl <em>State</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.StateImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getState()
+	 * @see org.eclipse.cmf.occi.core.impl.StateImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getState()
 	 * @generated
 	 */
 	int STATE = 4;
@@ -503,7 +503,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE___STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE__DIAGNOSTICCHAIN_MAP_3 = 0;
+	int STATE___STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE__DIAGNOSTICCHAIN_MAP = 0;
 
 	/**
 	 * The number of operations of the '<em>State</em>' class.
@@ -515,11 +515,11 @@ public interface OCCIPackage extends EPackage {
 	int STATE_OPERATION_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.TransitionImpl <em>Transition</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.TransitionImpl <em>Transition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.TransitionImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getTransition()
+	 * @see org.eclipse.cmf.occi.core.impl.TransitionImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getTransition()
 	 * @generated
 	 */
 	int TRANSITION = 5;
@@ -567,7 +567,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___CONTAINED_ACTION_MUST_BE_DECLARED_IN_THE_APPROPRIATE_KIND__DIAGNOSTICCHAIN_MAP_3 = 0;
+	int TRANSITION___CONTAINED_ACTION_MUST_BE_DECLARED_IN_THE_APPROPRIATE_KIND__DIAGNOSTICCHAIN_MAP = 0;
 
 	/**
 	 * The number of operations of the '<em>Transition</em>' class.
@@ -579,11 +579,11 @@ public interface OCCIPackage extends EPackage {
 	int TRANSITION_OPERATION_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.AttributeImpl <em>Attribute</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.AttributeImpl <em>Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.AttributeImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getAttribute()
+	 * @see org.eclipse.cmf.occi.core.impl.AttributeImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getAttribute()
 	 * @generated
 	 */
 	int ATTRIBUTE = 6;
@@ -661,11 +661,11 @@ public interface OCCIPackage extends EPackage {
 	int ATTRIBUTE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.KindImpl <em>Kind</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.KindImpl <em>Kind</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.KindImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getKind()
+	 * @see org.eclipse.cmf.occi.core.impl.KindImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getKind()
 	 * @generated
 	 */
 	int KIND = 7;
@@ -776,7 +776,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KIND___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = TYPE___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3;
+	int KIND___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = TYPE___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Identity Unique</em>' operation.
@@ -785,7 +785,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KIND___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = TYPE___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP_3;
+	int KIND___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP = TYPE___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Scheme Ends With Sharp</em>' operation.
@@ -794,7 +794,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KIND___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP_3 = TYPE___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP_3;
+	int KIND___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP = TYPE___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Action Term Unicity</em>' operation.
@@ -803,7 +803,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KIND___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP_3 = TYPE___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP_3;
+	int KIND___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP = TYPE___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Constraint Name Unique</em>' operation.
@@ -812,7 +812,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KIND___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3;
+	int KIND___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>No Cyclic Inheritance</em>' operation.
@@ -821,7 +821,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KIND___NO_CYCLIC_INHERITANCE__DIAGNOSTICCHAIN_MAP_3 = TYPE_OPERATION_COUNT + 0;
+	int KIND___NO_CYCLIC_INHERITANCE__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Attributes Name Not Already Defined In Parent</em>' operation.
@@ -830,7 +830,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KIND___ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_PARENT__DIAGNOSTICCHAIN_MAP_3 = TYPE_OPERATION_COUNT + 1;
+	int KIND___ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_PARENT__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Correct Scheme</em>' operation.
@@ -839,7 +839,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KIND___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP_3 = TYPE_OPERATION_COUNT + 2;
+	int KIND___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Entity Kind Is Root Parent</em>' operation.
@@ -848,7 +848,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KIND___ENTITY_KIND_IS_ROOT_PARENT__DIAGNOSTICCHAIN_MAP_3 = TYPE_OPERATION_COUNT + 3;
+	int KIND___ENTITY_KIND_IS_ROOT_PARENT__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Kind</em>' class.
@@ -860,11 +860,11 @@ public interface OCCIPackage extends EPackage {
 	int KIND_OPERATION_COUNT = TYPE_OPERATION_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.ActionImpl <em>Action</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.ActionImpl <em>Action</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.ActionImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getAction()
+	 * @see org.eclipse.cmf.occi.core.impl.ActionImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getAction()
 	 * @generated
 	 */
 	int ACTION = 8;
@@ -930,7 +930,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = CATEGORY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3;
+	int ACTION___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = CATEGORY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Identity Unique</em>' operation.
@@ -939,7 +939,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = CATEGORY___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP_3;
+	int ACTION___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP = CATEGORY___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Scheme Ends With Sharp</em>' operation.
@@ -948,7 +948,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP_3 = CATEGORY___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP_3;
+	int ACTION___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP = CATEGORY___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Contained Action</em>' operation.
@@ -957,7 +957,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION___CONTAINED_ACTION__DIAGNOSTICCHAIN_MAP_3 = CATEGORY_OPERATION_COUNT + 0;
+	int ACTION___CONTAINED_ACTION__DIAGNOSTICCHAIN_MAP = CATEGORY_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Correct Scheme</em>' operation.
@@ -966,7 +966,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP_3 = CATEGORY_OPERATION_COUNT + 1;
+	int ACTION___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP = CATEGORY_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Action</em>' class.
@@ -978,11 +978,11 @@ public interface OCCIPackage extends EPackage {
 	int ACTION_OPERATION_COUNT = CATEGORY_OPERATION_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.MixinImpl <em>Mixin</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.MixinImpl <em>Mixin</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.MixinImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getMixin()
+	 * @see org.eclipse.cmf.occi.core.impl.MixinImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getMixin()
 	 * @generated
 	 */
 	int MIXIN = 9;
@@ -1093,7 +1093,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MIXIN___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = TYPE___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3;
+	int MIXIN___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = TYPE___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Identity Unique</em>' operation.
@@ -1102,7 +1102,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MIXIN___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = TYPE___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP_3;
+	int MIXIN___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP = TYPE___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Scheme Ends With Sharp</em>' operation.
@@ -1111,7 +1111,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MIXIN___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP_3 = TYPE___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP_3;
+	int MIXIN___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP = TYPE___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Action Term Unicity</em>' operation.
@@ -1120,7 +1120,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MIXIN___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP_3 = TYPE___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP_3;
+	int MIXIN___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP = TYPE___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Constraint Name Unique</em>' operation.
@@ -1129,7 +1129,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MIXIN___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3;
+	int MIXIN___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Correct Scheme</em>' operation.
@@ -1138,7 +1138,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MIXIN___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP_3 = TYPE_OPERATION_COUNT + 0;
+	int MIXIN___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>No Cyclic Inheritance</em>' operation.
@@ -1147,7 +1147,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MIXIN___NO_CYCLIC_INHERITANCE__DIAGNOSTICCHAIN_MAP_3 = TYPE_OPERATION_COUNT + 1;
+	int MIXIN___NO_CYCLIC_INHERITANCE__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Attributes Name Not Already Defined In Depends</em>' operation.
@@ -1156,7 +1156,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MIXIN___ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_DEPENDS__DIAGNOSTICCHAIN_MAP_3 = TYPE_OPERATION_COUNT + 2;
+	int MIXIN___ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_DEPENDS__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Mixin</em>' class.
@@ -1168,11 +1168,11 @@ public interface OCCIPackage extends EPackage {
 	int MIXIN_OPERATION_COUNT = TYPE_OPERATION_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.EntityImpl <em>Entity</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.EntityImpl <em>Entity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.EntityImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getEntity()
+	 * @see org.eclipse.cmf.occi.core.impl.EntityImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getEntity()
 	 * @generated
 	 */
 	int ENTITY = 10;
@@ -1292,7 +1292,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = 4;
+	int ENTITY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = 4;
 
 	/**
 	 * The operation id for the '<em>Kind Compatible With One Applies Of Each Mixin</em>' operation.
@@ -1301,7 +1301,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP_3 = 5;
+	int ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP = 5;
 
 	/**
 	 * The operation id for the '<em>Id Unique</em>' operation.
@@ -1310,7 +1310,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = 6;
+	int ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP = 6;
 
 	/**
 	 * The number of operations of the '<em>Entity</em>' class.
@@ -1322,11 +1322,11 @@ public interface OCCIPackage extends EPackage {
 	int ENTITY_OPERATION_COUNT = 7;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.MixinBaseImpl <em>Mixin Base</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.MixinBaseImpl <em>Mixin Base</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.MixinBaseImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getMixinBase()
+	 * @see org.eclipse.cmf.occi.core.impl.MixinBaseImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getMixinBase()
 	 * @generated
 	 */
 	int MIXIN_BASE = 11;
@@ -1377,11 +1377,11 @@ public interface OCCIPackage extends EPackage {
 	int MIXIN_BASE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.AttributeStateImpl <em>Attribute State</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.AttributeStateImpl <em>Attribute State</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.AttributeStateImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getAttributeState()
+	 * @see org.eclipse.cmf.occi.core.impl.AttributeStateImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getAttributeState()
 	 * @generated
 	 */
 	int ATTRIBUTE_STATE = 12;
@@ -1423,11 +1423,11 @@ public interface OCCIPackage extends EPackage {
 	int ATTRIBUTE_STATE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.ResourceImpl <em>Resource</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.ResourceImpl <em>Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.ResourceImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getResource()
+	 * @see org.eclipse.cmf.occi.core.impl.ResourceImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getResource()
 	 * @generated
 	 */
 	int RESOURCE = 13;
@@ -1574,7 +1574,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = ENTITY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3;
+	int RESOURCE___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = ENTITY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Kind Compatible With One Applies Of Each Mixin</em>' operation.
@@ -1583,7 +1583,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP_3 = ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP_3;
+	int RESOURCE___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP = ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Id Unique</em>' operation.
@@ -1592,7 +1592,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE___ID_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP_3;
+	int RESOURCE___ID_UNIQUE__DIAGNOSTICCHAIN_MAP = ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Resource Kind Is In Parent</em>' operation.
@@ -1601,7 +1601,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE___RESOURCE_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP_3 = ENTITY_OPERATION_COUNT + 0;
+	int RESOURCE___RESOURCE_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP = ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Resource</em>' class.
@@ -1613,11 +1613,11 @@ public interface OCCIPackage extends EPackage {
 	int RESOURCE_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.LinkImpl <em>Link</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.LinkImpl <em>Link</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.LinkImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getLink()
+	 * @see org.eclipse.cmf.occi.core.impl.LinkImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getLink()
 	 * @generated
 	 */
 	int LINK = 14;
@@ -1755,7 +1755,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = ENTITY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3;
+	int LINK___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = ENTITY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Kind Compatible With One Applies Of Each Mixin</em>' operation.
@@ -1764,7 +1764,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP_3 = ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP_3;
+	int LINK___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP = ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Id Unique</em>' operation.
@@ -1773,7 +1773,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK___ID_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP_3;
+	int LINK___ID_UNIQUE__DIAGNOSTICCHAIN_MAP = ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Link Kind Is In Parent</em>' operation.
@@ -1782,7 +1782,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK___LINK_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP_3 = ENTITY_OPERATION_COUNT + 0;
+	int LINK___LINK_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP = ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Link</em>' class.
@@ -1794,11 +1794,11 @@ public interface OCCIPackage extends EPackage {
 	int LINK_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.ExtensionImpl <em>Extension</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.ExtensionImpl <em>Extension</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.ExtensionImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getExtension()
+	 * @see org.eclipse.cmf.occi.core.impl.ExtensionImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getExtension()
 	 * @generated
 	 */
 	int EXTENSION = 15;
@@ -1891,7 +1891,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION___KINDS_SCHEME_VALID__DIAGNOSTICCHAIN_MAP_3 = 0;
+	int EXTENSION___KINDS_SCHEME_VALID__DIAGNOSTICCHAIN_MAP = 0;
 
 	/**
 	 * The operation id for the '<em>Kind Parent Local Or Imported</em>' operation.
@@ -1900,7 +1900,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION___KIND_PARENT_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP_3 = 1;
+	int EXTENSION___KIND_PARENT_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP = 1;
 
 	/**
 	 * The operation id for the '<em>Mixins Scheme Valid</em>' operation.
@@ -1909,7 +1909,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION___MIXINS_SCHEME_VALID__DIAGNOSTICCHAIN_MAP_3 = 2;
+	int EXTENSION___MIXINS_SCHEME_VALID__DIAGNOSTICCHAIN_MAP = 2;
 
 	/**
 	 * The operation id for the '<em>Term Unicity</em>' operation.
@@ -1918,7 +1918,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION___TERM_UNICITY__DIAGNOSTICCHAIN_MAP_3 = 3;
+	int EXTENSION___TERM_UNICITY__DIAGNOSTICCHAIN_MAP = 3;
 
 	/**
 	 * The operation id for the '<em>Mixin Applies Local Or Imported</em>' operation.
@@ -1927,7 +1927,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION___MIXIN_APPLIES_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP_3 = 4;
+	int EXTENSION___MIXIN_APPLIES_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP = 4;
 
 	/**
 	 * The operation id for the '<em>Scheme Unique</em>' operation.
@@ -1936,7 +1936,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION___SCHEME_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = 5;
+	int EXTENSION___SCHEME_UNIQUE__DIAGNOSTICCHAIN_MAP = 5;
 
 	/**
 	 * The operation id for the '<em>Mixin Depends Local Or Imported</em>' operation.
@@ -1945,7 +1945,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENSION___MIXIN_DEPENDS_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP_3 = 6;
+	int EXTENSION___MIXIN_DEPENDS_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP = 6;
 
 	/**
 	 * The number of operations of the '<em>Extension</em>' class.
@@ -1957,11 +1957,11 @@ public interface OCCIPackage extends EPackage {
 	int EXTENSION_OPERATION_COUNT = 7;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.ConfigurationImpl <em>Configuration</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.ConfigurationImpl <em>Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.ConfigurationImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getConfiguration()
+	 * @see org.eclipse.cmf.occi.core.impl.ConfigurationImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getConfiguration()
 	 * @generated
 	 */
 	int CONFIGURATION = 16;
@@ -2027,7 +2027,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGURATION___ALL_MIXINS_ARE_TAGS__DIAGNOSTICCHAIN_MAP_3 = 0;
+	int CONFIGURATION___ALL_MIXINS_ARE_TAGS__DIAGNOSTICCHAIN_MAP = 0;
 
 	/**
 	 * The operation id for the '<em>All Resources Links Targets In Configuration</em>' operation.
@@ -2036,7 +2036,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGURATION___ALL_RESOURCES_LINKS_TARGETS_IN_CONFIGURATION__DIAGNOSTICCHAIN_MAP_3 = 1;
+	int CONFIGURATION___ALL_RESOURCES_LINKS_TARGETS_IN_CONFIGURATION__DIAGNOSTICCHAIN_MAP = 1;
 
 	/**
 	 * The operation id for the '<em>All Resources Kinds In Use</em>' operation.
@@ -2045,7 +2045,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGURATION___ALL_RESOURCES_KINDS_IN_USE__DIAGNOSTICCHAIN_MAP_3 = 2;
+	int CONFIGURATION___ALL_RESOURCES_KINDS_IN_USE__DIAGNOSTICCHAIN_MAP = 2;
 
 	/**
 	 * The operation id for the '<em>All Resources Links Mixins In Use</em>' operation.
@@ -2054,7 +2054,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGURATION___ALL_RESOURCES_LINKS_MIXINS_IN_USE__DIAGNOSTICCHAIN_MAP_3 = 3;
+	int CONFIGURATION___ALL_RESOURCES_LINKS_MIXINS_IN_USE__DIAGNOSTICCHAIN_MAP = 3;
 
 	/**
 	 * The operation id for the '<em>All Resources Mixins In Use</em>' operation.
@@ -2063,7 +2063,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGURATION___ALL_RESOURCES_MIXINS_IN_USE__DIAGNOSTICCHAIN_MAP_3 = 4;
+	int CONFIGURATION___ALL_RESOURCES_MIXINS_IN_USE__DIAGNOSTICCHAIN_MAP = 4;
 
 	/**
 	 * The operation id for the '<em>All Resources Links Kinds In Use</em>' operation.
@@ -2072,7 +2072,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGURATION___ALL_RESOURCES_LINKS_KINDS_IN_USE__DIAGNOSTICCHAIN_MAP_3 = 5;
+	int CONFIGURATION___ALL_RESOURCES_LINKS_KINDS_IN_USE__DIAGNOSTICCHAIN_MAP = 5;
 
 	/**
 	 * The number of operations of the '<em>Configuration</em>' class.
@@ -2084,11 +2084,11 @@ public interface OCCIPackage extends EPackage {
 	int CONFIGURATION_OPERATION_COUNT = 6;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.DataTypeImpl <em>Data Type</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.DataTypeImpl <em>Data Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.DataTypeImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getDataType()
+	 * @see org.eclipse.cmf.occi.core.impl.DataTypeImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getDataType()
 	 * @generated
 	 */
 	int DATA_TYPE = 17;
@@ -2130,11 +2130,11 @@ public interface OCCIPackage extends EPackage {
 	int DATA_TYPE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.BasicTypeImpl <em>Basic Type</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.BasicTypeImpl <em>Basic Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.BasicTypeImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getBasicType()
+	 * @see org.eclipse.cmf.occi.core.impl.BasicTypeImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getBasicType()
 	 * @generated
 	 */
 	int BASIC_TYPE = 18;
@@ -2176,11 +2176,11 @@ public interface OCCIPackage extends EPackage {
 	int BASIC_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.StringTypeImpl <em>String Type</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.StringTypeImpl <em>String Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.StringTypeImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getStringType()
+	 * @see org.eclipse.cmf.occi.core.impl.StringTypeImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getStringType()
 	 * @generated
 	 */
 	int STRING_TYPE = 19;
@@ -2258,31 +2258,31 @@ public interface OCCIPackage extends EPackage {
 	int STRING_TYPE_OPERATION_COUNT = BASIC_TYPE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.BooleanTypeImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getBooleanType()
+	 * @see org.eclipse.cmf.occi.core.impl.BooleanTypeImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getBooleanType()
 	 * @generated
 	 */
 	int BOOLEAN_TYPE = 21;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.NumericTypeImpl <em>Numeric Type</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.NumericTypeImpl <em>Numeric Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.NumericTypeImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getNumericType()
+	 * @see org.eclipse.cmf.occi.core.impl.NumericTypeImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getNumericType()
 	 * @generated
 	 */
 	int NUMERIC_TYPE = 22;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.EObjectTypeImpl <em>EObject Type</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.EObjectTypeImpl <em>EObject Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.EObjectTypeImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getEObjectType()
+	 * @see org.eclipse.cmf.occi.core.impl.EObjectTypeImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getEObjectType()
 	 * @generated
 	 */
 	int EOBJECT_TYPE = 20;
@@ -2468,11 +2468,11 @@ public interface OCCIPackage extends EPackage {
 	int NUMERIC_TYPE_OPERATION_COUNT = BASIC_TYPE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.EnumerationTypeImpl <em>Enumeration Type</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.EnumerationTypeImpl <em>Enumeration Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.EnumerationTypeImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getEnumerationType()
+	 * @see org.eclipse.cmf.occi.core.impl.EnumerationTypeImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getEnumerationType()
 	 * @generated
 	 */
 	int ENUMERATION_TYPE = 23;
@@ -2523,11 +2523,11 @@ public interface OCCIPackage extends EPackage {
 	int ENUMERATION_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.EnumerationLiteralImpl <em>Enumeration Literal</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.EnumerationLiteralImpl <em>Enumeration Literal</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.EnumerationLiteralImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getEnumerationLiteral()
+	 * @see org.eclipse.cmf.occi.core.impl.EnumerationLiteralImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getEnumerationLiteral()
 	 * @generated
 	 */
 	int ENUMERATION_LITERAL = 24;
@@ -2569,11 +2569,11 @@ public interface OCCIPackage extends EPackage {
 	int ENUMERATION_LITERAL_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.RecordTypeImpl <em>Record Type</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.RecordTypeImpl <em>Record Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.RecordTypeImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getRecordType()
+	 * @see org.eclipse.cmf.occi.core.impl.RecordTypeImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getRecordType()
 	 * @generated
 	 */
 	int RECORD_TYPE = 25;
@@ -2624,11 +2624,11 @@ public interface OCCIPackage extends EPackage {
 	int RECORD_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.RecordFieldImpl <em>Record Field</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.RecordFieldImpl <em>Record Field</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.RecordFieldImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getRecordField()
+	 * @see org.eclipse.cmf.occi.core.impl.RecordFieldImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getRecordField()
 	 * @generated
 	 */
 	int RECORD_FIELD = 26;
@@ -2670,11 +2670,11 @@ public interface OCCIPackage extends EPackage {
 	int RECORD_FIELD_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.impl.ArrayTypeImpl <em>Array Type</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.ArrayTypeImpl <em>Array Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.ArrayTypeImpl
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getArrayType()
+	 * @see org.eclipse.cmf.occi.core.impl.ArrayTypeImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getArrayType()
 	 * @generated
 	 */
 	int ARRAY_TYPE = 27;
@@ -2729,7 +2729,7 @@ public interface OCCIPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.NumericTypeEnum
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getNumericTypeEnum()
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getNumericTypeEnum()
 	 * @generated
 	 */
 	int NUMERIC_TYPE_ENUM = 28;
@@ -2739,7 +2739,7 @@ public interface OCCIPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see java.lang.String
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getURI()
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getURI()
 	 * @generated
 	 */
 	int URI = 29;
@@ -2749,7 +2749,7 @@ public interface OCCIPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see java.lang.String
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getOCL()
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getOCL()
 	 * @generated
 	 */
 	int OCL = 30;
@@ -2759,7 +2759,7 @@ public interface OCCIPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see java.lang.String
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getString()
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getString()
 	 * @generated
 	 */
 	int STRING = 31;
@@ -2768,7 +2768,7 @@ public interface OCCIPackage extends EPackage {
 	 * The meta object id for the '<em>Boolean</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getBoolean()
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getBoolean()
 	 * @generated
 	 */
 	int BOOLEAN = 32;
@@ -2778,7 +2778,7 @@ public interface OCCIPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see java.lang.String
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getAttributeName()
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getAttributeName()
 	 * @generated
 	 */
 	int ATTRIBUTE_NAME = 33;
@@ -2788,7 +2788,7 @@ public interface OCCIPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see java.lang.String
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getName_()
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getName_()
 	 * @generated
 	 */
 	int NAME = 34;
@@ -2798,7 +2798,7 @@ public interface OCCIPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see java.lang.String
-	 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getScheme()
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getScheme()
 	 * @generated
 	 */
 	int SCHEME = 35;
@@ -2877,7 +2877,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Category#AttributesNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getCategory__AttributesNameUnique__DiagnosticChain_Map_3();
+	EOperation getCategory__AttributesNameUnique__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Category#IdentityUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Identity Unique</em>}' operation.
@@ -2887,7 +2887,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Category#IdentityUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getCategory__IdentityUnique__DiagnosticChain_Map_3();
+	EOperation getCategory__IdentityUnique__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Category#SchemeEndsWithSharp(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Scheme Ends With Sharp</em>}' operation.
@@ -2897,7 +2897,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Category#SchemeEndsWithSharp(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getCategory__SchemeEndsWithSharp__DiagnosticChain_Map_3();
+	EOperation getCategory__SchemeEndsWithSharp__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Constraint <em>Constraint</em>}'.
@@ -2982,7 +2982,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Type#ActionTermUnicity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getType__ActionTermUnicity__DiagnosticChain_Map_3();
+	EOperation getType__ActionTermUnicity__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Type#ConstraintNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Constraint Name Unique</em>}' operation.
@@ -2992,7 +2992,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Type#ConstraintNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getType__ConstraintNameUnique__DiagnosticChain_Map_3();
+	EOperation getType__ConstraintNameUnique__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.FSM <em>FSM</em>}'.
@@ -3034,7 +3034,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.FSM#AttributeTypeMustBeEEnum(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getFSM__AttributeTypeMustBeEEnum__DiagnosticChain_Map_3();
+	EOperation getFSM__AttributeTypeMustBeEEnum__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.FSM#containedAttribute(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Contained Attribute</em>}' operation.
@@ -3044,7 +3044,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.FSM#containedAttribute(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getFSM__ContainedAttribute__DiagnosticChain_Map_3();
+	EOperation getFSM__ContainedAttribute__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.State <em>State</em>}'.
@@ -3130,7 +3130,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.State#StateLiteralAlreadyDefinedInFSMAttributeType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getState__StateLiteralAlreadyDefinedInFSMAttributeType__DiagnosticChain_Map_3();
+	EOperation getState__StateLiteralAlreadyDefinedInFSMAttributeType__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Transition <em>Transition</em>}'.
@@ -3183,7 +3183,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Transition#containedActionMustBeDeclaredInTheAppropriateKind(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getTransition__ContainedActionMustBeDeclaredInTheAppropriateKind__DiagnosticChain_Map_3();
+	EOperation getTransition__ContainedActionMustBeDeclaredInTheAppropriateKind__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Attribute <em>Attribute</em>}'.
@@ -3312,7 +3312,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Kind#NoCyclicInheritance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getKind__NoCyclicInheritance__DiagnosticChain_Map_3();
+	EOperation getKind__NoCyclicInheritance__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Kind#AttributesNameNotAlreadyDefinedInParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Attributes Name Not Already Defined In Parent</em>}' operation.
@@ -3322,7 +3322,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Kind#AttributesNameNotAlreadyDefinedInParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getKind__AttributesNameNotAlreadyDefinedInParent__DiagnosticChain_Map_3();
+	EOperation getKind__AttributesNameNotAlreadyDefinedInParent__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Kind#CorrectScheme(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Correct Scheme</em>}' operation.
@@ -3332,7 +3332,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Kind#CorrectScheme(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getKind__CorrectScheme__DiagnosticChain_Map_3();
+	EOperation getKind__CorrectScheme__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Kind#EntityKindIsRootParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Entity Kind Is Root Parent</em>}' operation.
@@ -3342,7 +3342,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Kind#EntityKindIsRootParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getKind__EntityKindIsRootParent__DiagnosticChain_Map_3();
+	EOperation getKind__EntityKindIsRootParent__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Action <em>Action</em>}'.
@@ -3362,7 +3362,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Action#containedAction(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getAction__ContainedAction__DiagnosticChain_Map_3();
+	EOperation getAction__ContainedAction__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Action#CorrectScheme(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Correct Scheme</em>}' operation.
@@ -3372,7 +3372,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Action#CorrectScheme(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getAction__CorrectScheme__DiagnosticChain_Map_3();
+	EOperation getAction__CorrectScheme__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Mixin <em>Mixin</em>}'.
@@ -3425,7 +3425,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Mixin#CorrectScheme(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getMixin__CorrectScheme__DiagnosticChain_Map_3();
+	EOperation getMixin__CorrectScheme__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Mixin#NoCyclicInheritance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>No Cyclic Inheritance</em>}' operation.
@@ -3435,7 +3435,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Mixin#NoCyclicInheritance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getMixin__NoCyclicInheritance__DiagnosticChain_Map_3();
+	EOperation getMixin__NoCyclicInheritance__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Mixin#AttributesNameNotAlreadyDefinedInDepends(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Attributes Name Not Already Defined In Depends</em>}' operation.
@@ -3445,7 +3445,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Mixin#AttributesNameNotAlreadyDefinedInDepends(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getMixin__AttributesNameNotAlreadyDefinedInDepends__DiagnosticChain_Map_3();
+	EOperation getMixin__AttributesNameNotAlreadyDefinedInDepends__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Entity <em>Entity</em>}'.
@@ -3582,7 +3582,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Entity#AttributesNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getEntity__AttributesNameUnique__DiagnosticChain_Map_3();
+	EOperation getEntity__AttributesNameUnique__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Entity#KindCompatibleWithOneAppliesOfEachMixin(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Kind Compatible With One Applies Of Each Mixin</em>}' operation.
@@ -3592,7 +3592,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Entity#KindCompatibleWithOneAppliesOfEachMixin(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getEntity__KindCompatibleWithOneAppliesOfEachMixin__DiagnosticChain_Map_3();
+	EOperation getEntity__KindCompatibleWithOneAppliesOfEachMixin__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Entity#IdUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Id Unique</em>}' operation.
@@ -3602,7 +3602,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Entity#IdUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getEntity__IdUnique__DiagnosticChain_Map_3();
+	EOperation getEntity__IdUnique__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.MixinBase <em>Mixin Base</em>}'.
@@ -3730,7 +3730,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Resource#ResourceKindIsInParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getResource__ResourceKindIsInParent__DiagnosticChain_Map_3();
+	EOperation getResource__ResourceKindIsInParent__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Link <em>Link</em>}'.
@@ -3772,7 +3772,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Link#LinkKindIsInParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getLink__LinkKindIsInParent__DiagnosticChain_Map_3();
+	EOperation getLink__LinkKindIsInParent__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Extension <em>Extension</em>}'.
@@ -3880,7 +3880,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Extension#KindsSchemeValid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getExtension__KindsSchemeValid__DiagnosticChain_Map_3();
+	EOperation getExtension__KindsSchemeValid__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Extension#KindParentLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Kind Parent Local Or Imported</em>}' operation.
@@ -3890,7 +3890,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Extension#KindParentLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getExtension__KindParentLocalOrImported__DiagnosticChain_Map_3();
+	EOperation getExtension__KindParentLocalOrImported__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Extension#MixinsSchemeValid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Mixins Scheme Valid</em>}' operation.
@@ -3900,7 +3900,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Extension#MixinsSchemeValid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getExtension__MixinsSchemeValid__DiagnosticChain_Map_3();
+	EOperation getExtension__MixinsSchemeValid__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Extension#TermUnicity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Term Unicity</em>}' operation.
@@ -3910,7 +3910,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Extension#TermUnicity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getExtension__TermUnicity__DiagnosticChain_Map_3();
+	EOperation getExtension__TermUnicity__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Extension#MixinAppliesLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Mixin Applies Local Or Imported</em>}' operation.
@@ -3920,7 +3920,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Extension#MixinAppliesLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getExtension__MixinAppliesLocalOrImported__DiagnosticChain_Map_3();
+	EOperation getExtension__MixinAppliesLocalOrImported__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Extension#SchemeUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Scheme Unique</em>}' operation.
@@ -3930,7 +3930,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Extension#SchemeUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getExtension__SchemeUnique__DiagnosticChain_Map_3();
+	EOperation getExtension__SchemeUnique__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Extension#MixinDependsLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Mixin Depends Local Or Imported</em>}' operation.
@@ -3940,7 +3940,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Extension#MixinDependsLocalOrImported(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getExtension__MixinDependsLocalOrImported__DiagnosticChain_Map_3();
+	EOperation getExtension__MixinDependsLocalOrImported__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Configuration <em>Configuration</em>}'.
@@ -4015,7 +4015,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Configuration#AllMixinsAreTags(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getConfiguration__AllMixinsAreTags__DiagnosticChain_Map_3();
+	EOperation getConfiguration__AllMixinsAreTags__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Configuration#AllResourcesLinksTargetsInConfiguration(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>All Resources Links Targets In Configuration</em>}' operation.
@@ -4025,7 +4025,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Configuration#AllResourcesLinksTargetsInConfiguration(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getConfiguration__AllResourcesLinksTargetsInConfiguration__DiagnosticChain_Map_3();
+	EOperation getConfiguration__AllResourcesLinksTargetsInConfiguration__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Configuration#AllResourcesKindsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>All Resources Kinds In Use</em>}' operation.
@@ -4035,7 +4035,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Configuration#AllResourcesKindsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getConfiguration__AllResourcesKindsInUse__DiagnosticChain_Map_3();
+	EOperation getConfiguration__AllResourcesKindsInUse__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Configuration#AllResourcesLinksMixinsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>All Resources Links Mixins In Use</em>}' operation.
@@ -4045,7 +4045,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Configuration#AllResourcesLinksMixinsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getConfiguration__AllResourcesLinksMixinsInUse__DiagnosticChain_Map_3();
+	EOperation getConfiguration__AllResourcesLinksMixinsInUse__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Configuration#AllResourcesMixinsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>All Resources Mixins In Use</em>}' operation.
@@ -4055,7 +4055,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Configuration#AllResourcesMixinsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getConfiguration__AllResourcesMixinsInUse__DiagnosticChain_Map_3();
+	EOperation getConfiguration__AllResourcesMixinsInUse__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Configuration#AllResourcesLinksKindsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>All Resources Links Kinds In Use</em>}' operation.
@@ -4065,7 +4065,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.Configuration#AllResourcesLinksKindsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getConfiguration__AllResourcesLinksKindsInUse__DiagnosticChain_Map_3();
+	EOperation getConfiguration__AllResourcesLinksKindsInUse__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.DataType <em>Data Type</em>}'.
@@ -4522,11 +4522,11 @@ public interface OCCIPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.CategoryImpl <em>Category</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.CategoryImpl <em>Category</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.CategoryImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getCategory()
+		 * @see org.eclipse.cmf.occi.core.impl.CategoryImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getCategory()
 		 * @generated
 		 */
 		EClass CATEGORY = eINSTANCE.getCategory();
@@ -4577,7 +4577,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CATEGORY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getCategory__AttributesNameUnique__DiagnosticChain_Map_3();
+		EOperation CATEGORY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCategory__AttributesNameUnique__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Identity Unique</b></em>' operation.
@@ -4585,7 +4585,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CATEGORY___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getCategory__IdentityUnique__DiagnosticChain_Map_3();
+		EOperation CATEGORY___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCategory__IdentityUnique__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Scheme Ends With Sharp</b></em>' operation.
@@ -4593,14 +4593,14 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CATEGORY___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getCategory__SchemeEndsWithSharp__DiagnosticChain_Map_3();
+		EOperation CATEGORY___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCategory__SchemeEndsWithSharp__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.ConstraintImpl <em>Constraint</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.ConstraintImpl <em>Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.ConstraintImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getConstraint()
+		 * @see org.eclipse.cmf.occi.core.impl.ConstraintImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getConstraint()
 		 * @generated
 		 */
 		EClass CONSTRAINT = eINSTANCE.getConstraint();
@@ -4630,11 +4630,11 @@ public interface OCCIPackage extends EPackage {
 		EAttribute CONSTRAINT__BODY = eINSTANCE.getConstraint_Body();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.TypeImpl <em>Type</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.TypeImpl <em>Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.TypeImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getType()
+		 * @see org.eclipse.cmf.occi.core.impl.TypeImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getType()
 		 * @generated
 		 */
 		EClass TYPE = eINSTANCE.getType();
@@ -4661,7 +4661,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation TYPE___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getType__ActionTermUnicity__DiagnosticChain_Map_3();
+		EOperation TYPE___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP = eINSTANCE.getType__ActionTermUnicity__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Constraint Name Unique</b></em>' operation.
@@ -4669,14 +4669,14 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getType__ConstraintNameUnique__DiagnosticChain_Map_3();
+		EOperation TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getType__ConstraintNameUnique__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.FSMImpl <em>FSM</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.FSMImpl <em>FSM</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.FSMImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getFSM()
+		 * @see org.eclipse.cmf.occi.core.impl.FSMImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getFSM()
 		 * @generated
 		 */
 		EClass FSM = eINSTANCE.getFSM();
@@ -4703,7 +4703,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation FSM___ATTRIBUTE_TYPE_MUST_BE_EENUM__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getFSM__AttributeTypeMustBeEEnum__DiagnosticChain_Map_3();
+		EOperation FSM___ATTRIBUTE_TYPE_MUST_BE_EENUM__DIAGNOSTICCHAIN_MAP = eINSTANCE.getFSM__AttributeTypeMustBeEEnum__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Contained Attribute</b></em>' operation.
@@ -4711,14 +4711,14 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation FSM___CONTAINED_ATTRIBUTE__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getFSM__ContainedAttribute__DiagnosticChain_Map_3();
+		EOperation FSM___CONTAINED_ATTRIBUTE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getFSM__ContainedAttribute__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.StateImpl <em>State</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.StateImpl <em>State</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.StateImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getState()
+		 * @see org.eclipse.cmf.occi.core.impl.StateImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getState()
 		 * @generated
 		 */
 		EClass STATE = eINSTANCE.getState();
@@ -4777,14 +4777,14 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation STATE___STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getState__StateLiteralAlreadyDefinedInFSMAttributeType__DiagnosticChain_Map_3();
+		EOperation STATE___STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getState__StateLiteralAlreadyDefinedInFSMAttributeType__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.TransitionImpl <em>Transition</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.TransitionImpl <em>Transition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.TransitionImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getTransition()
+		 * @see org.eclipse.cmf.occi.core.impl.TransitionImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getTransition()
 		 * @generated
 		 */
 		EClass TRANSITION = eINSTANCE.getTransition();
@@ -4819,14 +4819,14 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation TRANSITION___CONTAINED_ACTION_MUST_BE_DECLARED_IN_THE_APPROPRIATE_KIND__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getTransition__ContainedActionMustBeDeclaredInTheAppropriateKind__DiagnosticChain_Map_3();
+		EOperation TRANSITION___CONTAINED_ACTION_MUST_BE_DECLARED_IN_THE_APPROPRIATE_KIND__DIAGNOSTICCHAIN_MAP = eINSTANCE.getTransition__ContainedActionMustBeDeclaredInTheAppropriateKind__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.AttributeImpl <em>Attribute</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.AttributeImpl <em>Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.AttributeImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getAttribute()
+		 * @see org.eclipse.cmf.occi.core.impl.AttributeImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getAttribute()
 		 * @generated
 		 */
 		EClass ATTRIBUTE = eINSTANCE.getAttribute();
@@ -4880,11 +4880,11 @@ public interface OCCIPackage extends EPackage {
 		EReference ATTRIBUTE__TYPE = eINSTANCE.getAttribute_Type();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.KindImpl <em>Kind</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.KindImpl <em>Kind</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.KindImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getKind()
+		 * @see org.eclipse.cmf.occi.core.impl.KindImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getKind()
 		 * @generated
 		 */
 		EClass KIND = eINSTANCE.getKind();
@@ -4919,7 +4919,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation KIND___NO_CYCLIC_INHERITANCE__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getKind__NoCyclicInheritance__DiagnosticChain_Map_3();
+		EOperation KIND___NO_CYCLIC_INHERITANCE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getKind__NoCyclicInheritance__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Attributes Name Not Already Defined In Parent</b></em>' operation.
@@ -4927,7 +4927,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation KIND___ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_PARENT__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getKind__AttributesNameNotAlreadyDefinedInParent__DiagnosticChain_Map_3();
+		EOperation KIND___ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_PARENT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getKind__AttributesNameNotAlreadyDefinedInParent__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Correct Scheme</b></em>' operation.
@@ -4935,7 +4935,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation KIND___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getKind__CorrectScheme__DiagnosticChain_Map_3();
+		EOperation KIND___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP = eINSTANCE.getKind__CorrectScheme__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Entity Kind Is Root Parent</b></em>' operation.
@@ -4943,14 +4943,14 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation KIND___ENTITY_KIND_IS_ROOT_PARENT__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getKind__EntityKindIsRootParent__DiagnosticChain_Map_3();
+		EOperation KIND___ENTITY_KIND_IS_ROOT_PARENT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getKind__EntityKindIsRootParent__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.ActionImpl <em>Action</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.ActionImpl <em>Action</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.ActionImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getAction()
+		 * @see org.eclipse.cmf.occi.core.impl.ActionImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getAction()
 		 * @generated
 		 */
 		EClass ACTION = eINSTANCE.getAction();
@@ -4961,7 +4961,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ACTION___CONTAINED_ACTION__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getAction__ContainedAction__DiagnosticChain_Map_3();
+		EOperation ACTION___CONTAINED_ACTION__DIAGNOSTICCHAIN_MAP = eINSTANCE.getAction__ContainedAction__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Correct Scheme</b></em>' operation.
@@ -4969,14 +4969,14 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ACTION___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getAction__CorrectScheme__DiagnosticChain_Map_3();
+		EOperation ACTION___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP = eINSTANCE.getAction__CorrectScheme__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.MixinImpl <em>Mixin</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.MixinImpl <em>Mixin</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.MixinImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getMixin()
+		 * @see org.eclipse.cmf.occi.core.impl.MixinImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getMixin()
 		 * @generated
 		 */
 		EClass MIXIN = eINSTANCE.getMixin();
@@ -5011,7 +5011,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MIXIN___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getMixin__CorrectScheme__DiagnosticChain_Map_3();
+		EOperation MIXIN___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP = eINSTANCE.getMixin__CorrectScheme__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>No Cyclic Inheritance</b></em>' operation.
@@ -5019,7 +5019,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MIXIN___NO_CYCLIC_INHERITANCE__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getMixin__NoCyclicInheritance__DiagnosticChain_Map_3();
+		EOperation MIXIN___NO_CYCLIC_INHERITANCE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getMixin__NoCyclicInheritance__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Attributes Name Not Already Defined In Depends</b></em>' operation.
@@ -5027,14 +5027,14 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MIXIN___ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_DEPENDS__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getMixin__AttributesNameNotAlreadyDefinedInDepends__DiagnosticChain_Map_3();
+		EOperation MIXIN___ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_DEPENDS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getMixin__AttributesNameNotAlreadyDefinedInDepends__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.EntityImpl <em>Entity</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.EntityImpl <em>Entity</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.EntityImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getEntity()
+		 * @see org.eclipse.cmf.occi.core.impl.EntityImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getEntity()
 		 * @generated
 		 */
 		EClass ENTITY = eINSTANCE.getEntity();
@@ -5133,7 +5133,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ENTITY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getEntity__AttributesNameUnique__DiagnosticChain_Map_3();
+		EOperation ENTITY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getEntity__AttributesNameUnique__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Kind Compatible With One Applies Of Each Mixin</b></em>' operation.
@@ -5141,7 +5141,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getEntity__KindCompatibleWithOneAppliesOfEachMixin__DiagnosticChain_Map_3();
+		EOperation ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP = eINSTANCE.getEntity__KindCompatibleWithOneAppliesOfEachMixin__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Id Unique</b></em>' operation.
@@ -5149,14 +5149,14 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getEntity__IdUnique__DiagnosticChain_Map_3();
+		EOperation ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getEntity__IdUnique__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.MixinBaseImpl <em>Mixin Base</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.MixinBaseImpl <em>Mixin Base</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.MixinBaseImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getMixinBase()
+		 * @see org.eclipse.cmf.occi.core.impl.MixinBaseImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getMixinBase()
 		 * @generated
 		 */
 		EClass MIXIN_BASE = eINSTANCE.getMixinBase();
@@ -5186,11 +5186,11 @@ public interface OCCIPackage extends EPackage {
 		EReference MIXIN_BASE__ATTRIBUTES = eINSTANCE.getMixinBase_Attributes();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.AttributeStateImpl <em>Attribute State</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.AttributeStateImpl <em>Attribute State</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.AttributeStateImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getAttributeState()
+		 * @see org.eclipse.cmf.occi.core.impl.AttributeStateImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getAttributeState()
 		 * @generated
 		 */
 		EClass ATTRIBUTE_STATE = eINSTANCE.getAttributeState();
@@ -5212,11 +5212,11 @@ public interface OCCIPackage extends EPackage {
 		EAttribute ATTRIBUTE_STATE__VALUE = eINSTANCE.getAttributeState_Value();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.ResourceImpl <em>Resource</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.ResourceImpl <em>Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.ResourceImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getResource()
+		 * @see org.eclipse.cmf.occi.core.impl.ResourceImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getResource()
 		 * @generated
 		 */
 		EClass RESOURCE = eINSTANCE.getResource();
@@ -5251,14 +5251,14 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation RESOURCE___RESOURCE_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getResource__ResourceKindIsInParent__DiagnosticChain_Map_3();
+		EOperation RESOURCE___RESOURCE_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getResource__ResourceKindIsInParent__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.LinkImpl <em>Link</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.LinkImpl <em>Link</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.LinkImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getLink()
+		 * @see org.eclipse.cmf.occi.core.impl.LinkImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getLink()
 		 * @generated
 		 */
 		EClass LINK = eINSTANCE.getLink();
@@ -5285,14 +5285,14 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation LINK___LINK_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getLink__LinkKindIsInParent__DiagnosticChain_Map_3();
+		EOperation LINK___LINK_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getLink__LinkKindIsInParent__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.ExtensionImpl <em>Extension</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.ExtensionImpl <em>Extension</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.ExtensionImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getExtension()
+		 * @see org.eclipse.cmf.occi.core.impl.ExtensionImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getExtension()
 		 * @generated
 		 */
 		EClass EXTENSION = eINSTANCE.getExtension();
@@ -5367,7 +5367,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTENSION___KINDS_SCHEME_VALID__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getExtension__KindsSchemeValid__DiagnosticChain_Map_3();
+		EOperation EXTENSION___KINDS_SCHEME_VALID__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtension__KindsSchemeValid__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Kind Parent Local Or Imported</b></em>' operation.
@@ -5375,7 +5375,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTENSION___KIND_PARENT_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getExtension__KindParentLocalOrImported__DiagnosticChain_Map_3();
+		EOperation EXTENSION___KIND_PARENT_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtension__KindParentLocalOrImported__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Mixins Scheme Valid</b></em>' operation.
@@ -5383,7 +5383,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTENSION___MIXINS_SCHEME_VALID__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getExtension__MixinsSchemeValid__DiagnosticChain_Map_3();
+		EOperation EXTENSION___MIXINS_SCHEME_VALID__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtension__MixinsSchemeValid__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Term Unicity</b></em>' operation.
@@ -5391,7 +5391,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTENSION___TERM_UNICITY__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getExtension__TermUnicity__DiagnosticChain_Map_3();
+		EOperation EXTENSION___TERM_UNICITY__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtension__TermUnicity__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Mixin Applies Local Or Imported</b></em>' operation.
@@ -5399,7 +5399,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTENSION___MIXIN_APPLIES_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getExtension__MixinAppliesLocalOrImported__DiagnosticChain_Map_3();
+		EOperation EXTENSION___MIXIN_APPLIES_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtension__MixinAppliesLocalOrImported__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Scheme Unique</b></em>' operation.
@@ -5407,7 +5407,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTENSION___SCHEME_UNIQUE__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getExtension__SchemeUnique__DiagnosticChain_Map_3();
+		EOperation EXTENSION___SCHEME_UNIQUE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtension__SchemeUnique__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Mixin Depends Local Or Imported</b></em>' operation.
@@ -5415,14 +5415,14 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXTENSION___MIXIN_DEPENDS_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getExtension__MixinDependsLocalOrImported__DiagnosticChain_Map_3();
+		EOperation EXTENSION___MIXIN_DEPENDS_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP = eINSTANCE.getExtension__MixinDependsLocalOrImported__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.ConfigurationImpl <em>Configuration</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.ConfigurationImpl <em>Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.ConfigurationImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getConfiguration()
+		 * @see org.eclipse.cmf.occi.core.impl.ConfigurationImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getConfiguration()
 		 * @generated
 		 */
 		EClass CONFIGURATION = eINSTANCE.getConfiguration();
@@ -5473,7 +5473,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONFIGURATION___ALL_MIXINS_ARE_TAGS__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getConfiguration__AllMixinsAreTags__DiagnosticChain_Map_3();
+		EOperation CONFIGURATION___ALL_MIXINS_ARE_TAGS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getConfiguration__AllMixinsAreTags__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>All Resources Links Targets In Configuration</b></em>' operation.
@@ -5481,7 +5481,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONFIGURATION___ALL_RESOURCES_LINKS_TARGETS_IN_CONFIGURATION__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getConfiguration__AllResourcesLinksTargetsInConfiguration__DiagnosticChain_Map_3();
+		EOperation CONFIGURATION___ALL_RESOURCES_LINKS_TARGETS_IN_CONFIGURATION__DIAGNOSTICCHAIN_MAP = eINSTANCE.getConfiguration__AllResourcesLinksTargetsInConfiguration__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>All Resources Kinds In Use</b></em>' operation.
@@ -5489,7 +5489,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONFIGURATION___ALL_RESOURCES_KINDS_IN_USE__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getConfiguration__AllResourcesKindsInUse__DiagnosticChain_Map_3();
+		EOperation CONFIGURATION___ALL_RESOURCES_KINDS_IN_USE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getConfiguration__AllResourcesKindsInUse__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>All Resources Links Mixins In Use</b></em>' operation.
@@ -5497,7 +5497,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONFIGURATION___ALL_RESOURCES_LINKS_MIXINS_IN_USE__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getConfiguration__AllResourcesLinksMixinsInUse__DiagnosticChain_Map_3();
+		EOperation CONFIGURATION___ALL_RESOURCES_LINKS_MIXINS_IN_USE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getConfiguration__AllResourcesLinksMixinsInUse__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>All Resources Mixins In Use</b></em>' operation.
@@ -5505,7 +5505,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONFIGURATION___ALL_RESOURCES_MIXINS_IN_USE__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getConfiguration__AllResourcesMixinsInUse__DiagnosticChain_Map_3();
+		EOperation CONFIGURATION___ALL_RESOURCES_MIXINS_IN_USE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getConfiguration__AllResourcesMixinsInUse__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>All Resources Links Kinds In Use</b></em>' operation.
@@ -5513,14 +5513,14 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONFIGURATION___ALL_RESOURCES_LINKS_KINDS_IN_USE__DIAGNOSTICCHAIN_MAP_3 = eINSTANCE.getConfiguration__AllResourcesLinksKindsInUse__DiagnosticChain_Map_3();
+		EOperation CONFIGURATION___ALL_RESOURCES_LINKS_KINDS_IN_USE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getConfiguration__AllResourcesLinksKindsInUse__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.DataTypeImpl <em>Data Type</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.DataTypeImpl <em>Data Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.DataTypeImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getDataType()
+		 * @see org.eclipse.cmf.occi.core.impl.DataTypeImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getDataType()
 		 * @generated
 		 */
 		EClass DATA_TYPE = eINSTANCE.getDataType();
@@ -5542,21 +5542,21 @@ public interface OCCIPackage extends EPackage {
 		EAttribute DATA_TYPE__NAME = eINSTANCE.getDataType_Name();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.BasicTypeImpl <em>Basic Type</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.BasicTypeImpl <em>Basic Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.BasicTypeImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getBasicType()
+		 * @see org.eclipse.cmf.occi.core.impl.BasicTypeImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getBasicType()
 		 * @generated
 		 */
 		EClass BASIC_TYPE = eINSTANCE.getBasicType();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.StringTypeImpl <em>String Type</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.StringTypeImpl <em>String Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.StringTypeImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getStringType()
+		 * @see org.eclipse.cmf.occi.core.impl.StringTypeImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getStringType()
 		 * @generated
 		 */
 		EClass STRING_TYPE = eINSTANCE.getStringType();
@@ -5594,11 +5594,11 @@ public interface OCCIPackage extends EPackage {
 		EAttribute STRING_TYPE__MAX_LENGTH = eINSTANCE.getStringType_MaxLength();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.EObjectTypeImpl <em>EObject Type</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.EObjectTypeImpl <em>EObject Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.EObjectTypeImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getEObjectType()
+		 * @see org.eclipse.cmf.occi.core.impl.EObjectTypeImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getEObjectType()
 		 * @generated
 		 */
 		EClass EOBJECT_TYPE = eINSTANCE.getEObjectType();
@@ -5620,21 +5620,21 @@ public interface OCCIPackage extends EPackage {
 		EAttribute EOBJECT_TYPE__PATTERN = eINSTANCE.getEObjectType_Pattern();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.BooleanTypeImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getBooleanType()
+		 * @see org.eclipse.cmf.occi.core.impl.BooleanTypeImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getBooleanType()
 		 * @generated
 		 */
 		EClass BOOLEAN_TYPE = eINSTANCE.getBooleanType();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.NumericTypeImpl <em>Numeric Type</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.NumericTypeImpl <em>Numeric Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.NumericTypeImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getNumericType()
+		 * @see org.eclipse.cmf.occi.core.impl.NumericTypeImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getNumericType()
 		 * @generated
 		 */
 		EClass NUMERIC_TYPE = eINSTANCE.getNumericType();
@@ -5688,11 +5688,11 @@ public interface OCCIPackage extends EPackage {
 		EAttribute NUMERIC_TYPE__MAX_INCLUSIVE = eINSTANCE.getNumericType_MaxInclusive();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.EnumerationTypeImpl <em>Enumeration Type</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.EnumerationTypeImpl <em>Enumeration Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.EnumerationTypeImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getEnumerationType()
+		 * @see org.eclipse.cmf.occi.core.impl.EnumerationTypeImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getEnumerationType()
 		 * @generated
 		 */
 		EClass ENUMERATION_TYPE = eINSTANCE.getEnumerationType();
@@ -5706,11 +5706,11 @@ public interface OCCIPackage extends EPackage {
 		EReference ENUMERATION_TYPE__LITERALS = eINSTANCE.getEnumerationType_Literals();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.EnumerationLiteralImpl <em>Enumeration Literal</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.EnumerationLiteralImpl <em>Enumeration Literal</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.EnumerationLiteralImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getEnumerationLiteral()
+		 * @see org.eclipse.cmf.occi.core.impl.EnumerationLiteralImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getEnumerationLiteral()
 		 * @generated
 		 */
 		EClass ENUMERATION_LITERAL = eINSTANCE.getEnumerationLiteral();
@@ -5732,11 +5732,11 @@ public interface OCCIPackage extends EPackage {
 		EReference ENUMERATION_LITERAL__ENUMERATION_TYPE = eINSTANCE.getEnumerationLiteral_EnumerationType();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.RecordTypeImpl <em>Record Type</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.RecordTypeImpl <em>Record Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.RecordTypeImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getRecordType()
+		 * @see org.eclipse.cmf.occi.core.impl.RecordTypeImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getRecordType()
 		 * @generated
 		 */
 		EClass RECORD_TYPE = eINSTANCE.getRecordType();
@@ -5750,11 +5750,11 @@ public interface OCCIPackage extends EPackage {
 		EReference RECORD_TYPE__RECORD_FIELDS = eINSTANCE.getRecordType_RecordFields();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.RecordFieldImpl <em>Record Field</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.RecordFieldImpl <em>Record Field</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.RecordFieldImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getRecordField()
+		 * @see org.eclipse.cmf.occi.core.impl.RecordFieldImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getRecordField()
 		 * @generated
 		 */
 		EClass RECORD_FIELD = eINSTANCE.getRecordField();
@@ -5776,11 +5776,11 @@ public interface OCCIPackage extends EPackage {
 		EAttribute RECORD_FIELD__NAME = eINSTANCE.getRecordField_Name();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.impl.ArrayTypeImpl <em>Array Type</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.ArrayTypeImpl <em>Array Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.ArrayTypeImpl
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getArrayType()
+		 * @see org.eclipse.cmf.occi.core.impl.ArrayTypeImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getArrayType()
 		 * @generated
 		 */
 		EClass ARRAY_TYPE = eINSTANCE.getArrayType();
@@ -5798,7 +5798,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.eclipse.cmf.occi.core.NumericTypeEnum
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getNumericTypeEnum()
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getNumericTypeEnum()
 		 * @generated
 		 */
 		EEnum NUMERIC_TYPE_ENUM = eINSTANCE.getNumericTypeEnum();
@@ -5808,7 +5808,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see java.lang.String
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getURI()
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getURI()
 		 * @generated
 		 */
 		EDataType URI = eINSTANCE.getURI();
@@ -5818,7 +5818,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see java.lang.String
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getOCL()
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getOCL()
 		 * @generated
 		 */
 		EDataType OCL = eINSTANCE.getOCL();
@@ -5828,7 +5828,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see java.lang.String
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getString()
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getString()
 		 * @generated
 		 */
 		EDataType STRING = eINSTANCE.getString();
@@ -5837,7 +5837,7 @@ public interface OCCIPackage extends EPackage {
 		 * The meta object literal for the '<em>Boolean</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getBoolean()
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getBoolean()
 		 * @generated
 		 */
 		EDataType BOOLEAN = eINSTANCE.getBoolean();
@@ -5847,7 +5847,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see java.lang.String
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getAttributeName()
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getAttributeName()
 		 * @generated
 		 */
 		EDataType ATTRIBUTE_NAME = eINSTANCE.getAttributeName();
@@ -5857,7 +5857,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see java.lang.String
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getName_()
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getName_()
 		 * @generated
 		 */
 		EDataType NAME = eINSTANCE.getName_();
@@ -5867,7 +5867,7 @@ public interface OCCIPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see java.lang.String
-		 * @see org.eclipse.cmf.occi.impl.OCCIPackageImpl#getScheme()
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getScheme()
 		 * @generated
 		 */
 		EDataType SCHEME = eINSTANCE.getScheme();
