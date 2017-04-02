@@ -19,17 +19,20 @@ import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.cmf.occi.core.Transition;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChangeNotifier;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.cmf.occi.core.Transition} object.
@@ -45,14 +48,22 @@ public class TransitionItemProvider
 		ITreeItemContentProvider,
 		IItemLabelProvider,
 		IItemPropertySource {
+	
+	private ChangeListener changeListener;
+	
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public TransitionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
+		if(adapterFactory instanceof IChangeNotifier) {
+			IChangeNotifier cn = (IChangeNotifier) adapterFactory;
+			changeListener = new ChangeListener();
+			cn.addListener(changeListener);
+		}
 	}
 
 	/**
@@ -161,11 +172,21 @@ public class TransitionItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+		switch (notification.getFeatureID(Transition.class)) {
+		case OCCIPackage.TRANSITION__ACTION:
+			fireNotifyChanged(new ViewerNotification(notification, notification
+					.getNotifier(), false, true));
+			return;
+		case OCCIPackage.TRANSITION__TARGET:
+			fireNotifyChanged(new ViewerNotification(notification, notification
+					.getNotifier(), false, true));
+			return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -191,5 +212,46 @@ public class TransitionItemProvider
 	public ResourceLocator getResourceLocator() {
 		return OCCIEditPlugin.INSTANCE;
 	}
-
+	
+	/* (non-Javadoc)
+	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#dispose()
+	 */
+	public void dispose() {
+		super.dispose();
+		if(changeListener != null) {
+			((IChangeNotifier)getAdapterFactory()).removeListener(changeListener);
+		}
+	}
+	
+	
+	class ChangeListener implements INotifyChangedListener {
+		public void notifyChanged(Notification notification) {
+			// Action changed
+			if(notification.getNotifier() != null &&  getTarget() != null && notification.getNotifier() == ((Transition) getTarget()).getAction()) {
+				((IChangeNotifier) getAdapterFactory()).removeListener(this);
+				fireNotifyChanged(new ViewerNotification(notification, getTarget(), false, true));
+				((IChangeNotifier) getAdapterFactory()).addListener(this);
+			}
+			for (Notifier target : targets){
+				if(notification.getNotifier() != null &&  target != null && notification.getNotifier() == ((Transition) target).getAction()) {
+					((IChangeNotifier) getAdapterFactory()).removeListener(this);
+					fireNotifyChanged(new ViewerNotification(notification, target, false, true));
+					((IChangeNotifier) getAdapterFactory()).addListener(this);
+				}
+			}
+			//Target changed
+			if(notification.getNotifier() != null &&  getTarget() != null && notification.getNotifier() == ((Transition) getTarget()).getTarget().getLiteral()) {
+				((IChangeNotifier) getAdapterFactory()).removeListener(this);
+				fireNotifyChanged(new ViewerNotification(notification, getTarget(), false, true));
+				((IChangeNotifier) getAdapterFactory()).addListener(this);
+			}
+			for (Notifier target : targets){
+				if(notification.getNotifier() != null &&  target != null && notification.getNotifier() == ((Transition) getTarget()).getTarget().getLiteral()) {
+					((IChangeNotifier) getAdapterFactory()).removeListener(this);
+					fireNotifyChanged(new ViewerNotification(notification, target, false, true));
+					((IChangeNotifier) getAdapterFactory()).addListener(this);
+				}
+			}
+		}
+	}
 }
