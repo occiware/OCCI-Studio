@@ -19,8 +19,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-
-import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.cmf.occi.core.util.OCCI2Ecore;
 import org.eclipse.cmf.occi.core.util.OCCIHelper;
 import org.eclipse.cmf.occi.core.Attribute;
@@ -31,7 +29,7 @@ import org.eclipse.cmf.occi.core.Mixin;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.OCCIKindResolver;
 import org.eclipse.cmf.occi.core.OCCIPackage;
-
+import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -492,8 +490,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public void occiRetrieve() {
-		LOGGER.debug("occiRetrieve() called on " + this);
-		//throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Entity!occiRetrieve()
+		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Entity!occiRetrieve()
 	}
 
 	/**
@@ -502,8 +499,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public void occiUpdate() {
-		LOGGER.debug("occiUpdate() called on " + this);
-		//throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Entity!occiUpdate()
+		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Entity!occiUpdate()
 	}
 
 	/**
@@ -512,8 +508,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public void occiDelete() {
-		LOGGER.debug("occiDelete() called on " + this);
-		//throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Entity!occiDelete()
+		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Entity!occiDelete()
 	}
 
 	/**
@@ -993,11 +988,11 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 			case OCCIPackage.ENTITY___OCCI_DELETE:
 				occiDelete();
 				return null;
-			case OCCIPackage.ENTITY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.ENTITY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_1:
 				return AttributesNameUnique((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case OCCIPackage.ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP_1:
 				return KindCompatibleWithOneAppliesOfEachMixin((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case OCCIPackage.ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP_1:
 				return IdUnique((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);

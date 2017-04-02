@@ -16,14 +16,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
-import org.eclipse.cmf.occi.core.OCCITables;
-
 import org.eclipse.cmf.occi.core.Action;
 import org.eclipse.cmf.occi.core.Category;
 import org.eclipse.cmf.occi.core.FSM;
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.OCCIPackage;
+import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.cmf.occi.core.State;
 import org.eclipse.cmf.occi.core.Transition;
 
@@ -271,9 +269,9 @@ public class ActionImpl extends CategoryImpl implements Action {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OCCIPackage.ACTION___CONTAINED_ACTION__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.ACTION___CONTAINED_ACTION__DIAGNOSTICCHAIN_MAP_1:
 				return containedAction((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case OCCIPackage.ACTION___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.ACTION___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP_1:
 				return CorrectScheme((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);

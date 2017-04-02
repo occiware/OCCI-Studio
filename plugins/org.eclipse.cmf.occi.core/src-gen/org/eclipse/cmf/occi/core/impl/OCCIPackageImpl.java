@@ -444,7 +444,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCategory__AttributesNameUnique__DiagnosticChain_Map() {
+	public EOperation getCategory__AttributesNameUnique__DiagnosticChain_Map_1() {
 		return categoryEClass.getEOperations().get(0);
 	}
 
@@ -453,7 +453,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCategory__IdentityUnique__DiagnosticChain_Map() {
+	public EOperation getCategory__IdentityUnique__DiagnosticChain_Map_1() {
 		return categoryEClass.getEOperations().get(1);
 	}
 
@@ -462,7 +462,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCategory__SchemeEndsWithSharp__DiagnosticChain_Map() {
+	public EOperation getCategory__SchemeEndsWithSharp__DiagnosticChain_Map_1() {
 		return categoryEClass.getEOperations().get(2);
 	}
 
@@ -534,7 +534,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getType__ActionTermUnicity__DiagnosticChain_Map() {
+	public EOperation getType__ActionTermUnicity__DiagnosticChain_Map_1() {
 		return typeEClass.getEOperations().get(0);
 	}
 
@@ -543,7 +543,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getType__ConstraintNameUnique__DiagnosticChain_Map() {
+	public EOperation getType__ConstraintNameUnique__DiagnosticChain_Map_1() {
 		return typeEClass.getEOperations().get(1);
 	}
 
@@ -579,7 +579,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getFSM__AttributeTypeMustBeEEnum__DiagnosticChain_Map() {
+	public EOperation getFSM__AttributeTypeMustBeEEnum__DiagnosticChain_Map_1() {
 		return fsmEClass.getEOperations().get(0);
 	}
 
@@ -588,7 +588,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getFSM__ContainedAttribute__DiagnosticChain_Map() {
+	public EOperation getFSM__ContainedAttribute__DiagnosticChain_Map_1() {
 		return fsmEClass.getEOperations().get(1);
 	}
 
@@ -660,7 +660,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getState__StateLiteralAlreadyDefinedInFSMAttributeType__DiagnosticChain_Map() {
+	public EOperation getState__StateLiteralAlreadyDefinedInFSMAttributeType__DiagnosticChain_Map_1() {
 		return stateEClass.getEOperations().get(0);
 	}
 
@@ -705,7 +705,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getTransition__ContainedActionMustBeDeclaredInTheAppropriateKind__DiagnosticChain_Map() {
+	public EOperation getTransition__ContainedActionMustBeDeclaredInTheAppropriateKind__DiagnosticChain_Map_1() {
 		return transitionEClass.getEOperations().get(0);
 	}
 
@@ -813,7 +813,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getKind__NoCyclicInheritance__DiagnosticChain_Map() {
+	public EOperation getKind__NoCyclicInheritance__DiagnosticChain_Map_1() {
 		return kindEClass.getEOperations().get(0);
 	}
 
@@ -822,7 +822,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getKind__AttributesNameNotAlreadyDefinedInParent__DiagnosticChain_Map() {
+	public EOperation getKind__AttributesNameNotAlreadyDefinedInParent__DiagnosticChain_Map_1() {
 		return kindEClass.getEOperations().get(1);
 	}
 
@@ -831,7 +831,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getKind__CorrectScheme__DiagnosticChain_Map() {
+	public EOperation getKind__CorrectScheme__DiagnosticChain_Map_1() {
 		return kindEClass.getEOperations().get(2);
 	}
 
@@ -840,7 +840,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getKind__EntityKindIsRootParent__DiagnosticChain_Map() {
+	public EOperation getKind__EntityKindIsRootParent__DiagnosticChain_Map_1() {
 		return kindEClass.getEOperations().get(3);
 	}
 
@@ -858,7 +858,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAction__ContainedAction__DiagnosticChain_Map() {
+	public EOperation getAction__ContainedAction__DiagnosticChain_Map_1() {
 		return actionEClass.getEOperations().get(0);
 	}
 
@@ -867,7 +867,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAction__CorrectScheme__DiagnosticChain_Map() {
+	public EOperation getAction__CorrectScheme__DiagnosticChain_Map_1() {
 		return actionEClass.getEOperations().get(1);
 	}
 
@@ -912,7 +912,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getMixin__CorrectScheme__DiagnosticChain_Map() {
+	public EOperation getMixin__CorrectScheme__DiagnosticChain_Map_1() {
 		return mixinEClass.getEOperations().get(0);
 	}
 
@@ -921,7 +921,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getMixin__NoCyclicInheritance__DiagnosticChain_Map() {
+	public EOperation getMixin__NoCyclicInheritance__DiagnosticChain_Map_1() {
 		return mixinEClass.getEOperations().get(1);
 	}
 
@@ -930,7 +930,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getMixin__AttributesNameNotAlreadyDefinedInDepends__DiagnosticChain_Map() {
+	public EOperation getMixin__AttributesNameNotAlreadyDefinedInDepends__DiagnosticChain_Map_1() {
 		return mixinEClass.getEOperations().get(2);
 	}
 
@@ -1047,7 +1047,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getEntity__AttributesNameUnique__DiagnosticChain_Map() {
+	public EOperation getEntity__AttributesNameUnique__DiagnosticChain_Map_1() {
 		return entityEClass.getEOperations().get(4);
 	}
 
@@ -1056,7 +1056,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getEntity__KindCompatibleWithOneAppliesOfEachMixin__DiagnosticChain_Map() {
+	public EOperation getEntity__KindCompatibleWithOneAppliesOfEachMixin__DiagnosticChain_Map_1() {
 		return entityEClass.getEOperations().get(5);
 	}
 
@@ -1065,7 +1065,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getEntity__IdUnique__DiagnosticChain_Map() {
+	public EOperation getEntity__IdUnique__DiagnosticChain_Map_1() {
 		return entityEClass.getEOperations().get(6);
 	}
 
@@ -1173,7 +1173,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getResource__ResourceKindIsInParent__DiagnosticChain_Map() {
+	public EOperation getResource__ResourceKindIsInParent__DiagnosticChain_Map_1() {
 		return resourceEClass.getEOperations().get(0);
 	}
 
@@ -1209,7 +1209,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getLink__LinkKindIsInParent__DiagnosticChain_Map() {
+	public EOperation getLink__LinkKindIsInParent__DiagnosticChain_Map_1() {
 		return linkEClass.getEOperations().get(0);
 	}
 
@@ -1299,7 +1299,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getExtension__KindsSchemeValid__DiagnosticChain_Map() {
+	public EOperation getExtension__KindsSchemeValid__DiagnosticChain_Map_1() {
 		return extensionEClass.getEOperations().get(0);
 	}
 
@@ -1308,7 +1308,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getExtension__KindParentLocalOrImported__DiagnosticChain_Map() {
+	public EOperation getExtension__KindParentLocalOrImported__DiagnosticChain_Map_1() {
 		return extensionEClass.getEOperations().get(1);
 	}
 
@@ -1317,7 +1317,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getExtension__MixinsSchemeValid__DiagnosticChain_Map() {
+	public EOperation getExtension__MixinsSchemeValid__DiagnosticChain_Map_1() {
 		return extensionEClass.getEOperations().get(2);
 	}
 
@@ -1326,7 +1326,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getExtension__TermUnicity__DiagnosticChain_Map() {
+	public EOperation getExtension__TermUnicity__DiagnosticChain_Map_1() {
 		return extensionEClass.getEOperations().get(3);
 	}
 
@@ -1335,7 +1335,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getExtension__MixinAppliesLocalOrImported__DiagnosticChain_Map() {
+	public EOperation getExtension__MixinAppliesLocalOrImported__DiagnosticChain_Map_1() {
 		return extensionEClass.getEOperations().get(4);
 	}
 
@@ -1344,7 +1344,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getExtension__SchemeUnique__DiagnosticChain_Map() {
+	public EOperation getExtension__SchemeUnique__DiagnosticChain_Map_1() {
 		return extensionEClass.getEOperations().get(5);
 	}
 
@@ -1353,7 +1353,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getExtension__MixinDependsLocalOrImported__DiagnosticChain_Map() {
+	public EOperation getExtension__MixinDependsLocalOrImported__DiagnosticChain_Map_1() {
 		return extensionEClass.getEOperations().get(6);
 	}
 
@@ -1416,7 +1416,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getConfiguration__AllMixinsAreTags__DiagnosticChain_Map() {
+	public EOperation getConfiguration__AllMixinsAreTags__DiagnosticChain_Map_1() {
 		return configurationEClass.getEOperations().get(0);
 	}
 
@@ -1425,7 +1425,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getConfiguration__AllResourcesLinksTargetsInConfiguration__DiagnosticChain_Map() {
+	public EOperation getConfiguration__AllResourcesLinksTargetsInConfiguration__DiagnosticChain_Map_1() {
 		return configurationEClass.getEOperations().get(1);
 	}
 
@@ -1434,7 +1434,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getConfiguration__AllResourcesKindsInUse__DiagnosticChain_Map() {
+	public EOperation getConfiguration__AllResourcesKindsInUse__DiagnosticChain_Map_1() {
 		return configurationEClass.getEOperations().get(2);
 	}
 
@@ -1443,7 +1443,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getConfiguration__AllResourcesLinksMixinsInUse__DiagnosticChain_Map() {
+	public EOperation getConfiguration__AllResourcesLinksMixinsInUse__DiagnosticChain_Map_1() {
 		return configurationEClass.getEOperations().get(3);
 	}
 
@@ -1452,7 +1452,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getConfiguration__AllResourcesMixinsInUse__DiagnosticChain_Map() {
+	public EOperation getConfiguration__AllResourcesMixinsInUse__DiagnosticChain_Map_1() {
 		return configurationEClass.getEOperations().get(4);
 	}
 
@@ -1461,7 +1461,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getConfiguration__AllResourcesLinksKindsInUse__DiagnosticChain_Map() {
+	public EOperation getConfiguration__AllResourcesLinksKindsInUse__DiagnosticChain_Map_1() {
 		return configurationEClass.getEOperations().get(5);
 	}
 
@@ -1859,9 +1859,9 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		createEAttribute(categoryEClass, CATEGORY__SCHEME);
 		createEAttribute(categoryEClass, CATEGORY__TITLE);
 		createEReference(categoryEClass, CATEGORY__ATTRIBUTES);
-		createEOperation(categoryEClass, CATEGORY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP);
-		createEOperation(categoryEClass, CATEGORY___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP);
-		createEOperation(categoryEClass, CATEGORY___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP);
+		createEOperation(categoryEClass, CATEGORY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(categoryEClass, CATEGORY___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(categoryEClass, CATEGORY___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP_1);
 
 		constraintEClass = createEClass(CONSTRAINT);
 		createEAttribute(constraintEClass, CONSTRAINT__NAME);
@@ -1871,14 +1871,14 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		typeEClass = createEClass(TYPE);
 		createEReference(typeEClass, TYPE__ACTIONS);
 		createEReference(typeEClass, TYPE__CONSTRAINTS);
-		createEOperation(typeEClass, TYPE___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP);
-		createEOperation(typeEClass, TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP);
+		createEOperation(typeEClass, TYPE___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(typeEClass, TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_1);
 
 		fsmEClass = createEClass(FSM);
 		createEReference(fsmEClass, FSM__OWNED_STATE);
 		createEReference(fsmEClass, FSM__ATTRIBUTE);
-		createEOperation(fsmEClass, FSM___ATTRIBUTE_TYPE_MUST_BE_EENUM__DIAGNOSTICCHAIN_MAP);
-		createEOperation(fsmEClass, FSM___CONTAINED_ATTRIBUTE__DIAGNOSTICCHAIN_MAP);
+		createEOperation(fsmEClass, FSM___ATTRIBUTE_TYPE_MUST_BE_EENUM__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(fsmEClass, FSM___CONTAINED_ATTRIBUTE__DIAGNOSTICCHAIN_MAP_1);
 
 		stateEClass = createEClass(STATE);
 		createEReference(stateEClass, STATE__LITERAL);
@@ -1887,13 +1887,13 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		createEReference(stateEClass, STATE__OWNING_FSM);
 		createEReference(stateEClass, STATE__OUTGOING_TRANSITION);
 		createEReference(stateEClass, STATE__INCOMING_TRANSITION);
-		createEOperation(stateEClass, STATE___STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE__DIAGNOSTICCHAIN_MAP);
+		createEOperation(stateEClass, STATE___STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE__DIAGNOSTICCHAIN_MAP_1);
 
 		transitionEClass = createEClass(TRANSITION);
 		createEReference(transitionEClass, TRANSITION__SOURCE);
 		createEReference(transitionEClass, TRANSITION__TARGET);
 		createEReference(transitionEClass, TRANSITION__ACTION);
-		createEOperation(transitionEClass, TRANSITION___CONTAINED_ACTION_MUST_BE_DECLARED_IN_THE_APPROPRIATE_KIND__DIAGNOSTICCHAIN_MAP);
+		createEOperation(transitionEClass, TRANSITION___CONTAINED_ACTION_MUST_BE_DECLARED_IN_THE_APPROPRIATE_KIND__DIAGNOSTICCHAIN_MAP_1);
 
 		attributeEClass = createEClass(ATTRIBUTE);
 		createEAttribute(attributeEClass, ATTRIBUTE__NAME);
@@ -1907,22 +1907,22 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		createEReference(kindEClass, KIND__PARENT);
 		createEReference(kindEClass, KIND__ENTITIES);
 		createEReference(kindEClass, KIND__FSM);
-		createEOperation(kindEClass, KIND___NO_CYCLIC_INHERITANCE__DIAGNOSTICCHAIN_MAP);
-		createEOperation(kindEClass, KIND___ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_PARENT__DIAGNOSTICCHAIN_MAP);
-		createEOperation(kindEClass, KIND___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP);
-		createEOperation(kindEClass, KIND___ENTITY_KIND_IS_ROOT_PARENT__DIAGNOSTICCHAIN_MAP);
+		createEOperation(kindEClass, KIND___NO_CYCLIC_INHERITANCE__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(kindEClass, KIND___ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_PARENT__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(kindEClass, KIND___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(kindEClass, KIND___ENTITY_KIND_IS_ROOT_PARENT__DIAGNOSTICCHAIN_MAP_1);
 
 		actionEClass = createEClass(ACTION);
-		createEOperation(actionEClass, ACTION___CONTAINED_ACTION__DIAGNOSTICCHAIN_MAP);
-		createEOperation(actionEClass, ACTION___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP);
+		createEOperation(actionEClass, ACTION___CONTAINED_ACTION__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(actionEClass, ACTION___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP_1);
 
 		mixinEClass = createEClass(MIXIN);
 		createEReference(mixinEClass, MIXIN__DEPENDS);
 		createEReference(mixinEClass, MIXIN__APPLIES);
 		createEReference(mixinEClass, MIXIN__ENTITIES);
-		createEOperation(mixinEClass, MIXIN___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP);
-		createEOperation(mixinEClass, MIXIN___NO_CYCLIC_INHERITANCE__DIAGNOSTICCHAIN_MAP);
-		createEOperation(mixinEClass, MIXIN___ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_DEPENDS__DIAGNOSTICCHAIN_MAP);
+		createEOperation(mixinEClass, MIXIN___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(mixinEClass, MIXIN___NO_CYCLIC_INHERITANCE__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(mixinEClass, MIXIN___ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_DEPENDS__DIAGNOSTICCHAIN_MAP_1);
 
 		entityEClass = createEClass(ENTITY);
 		createEAttribute(entityEClass, ENTITY__ID);
@@ -1936,9 +1936,9 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		createEOperation(entityEClass, ENTITY___OCCI_RETRIEVE);
 		createEOperation(entityEClass, ENTITY___OCCI_UPDATE);
 		createEOperation(entityEClass, ENTITY___OCCI_DELETE);
-		createEOperation(entityEClass, ENTITY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP);
-		createEOperation(entityEClass, ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP);
-		createEOperation(entityEClass, ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP);
+		createEOperation(entityEClass, ENTITY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(entityEClass, ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(entityEClass, ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP_1);
 
 		mixinBaseEClass = createEClass(MIXIN_BASE);
 		createEReference(mixinBaseEClass, MIXIN_BASE__MIXIN);
@@ -1953,12 +1953,12 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		createEAttribute(resourceEClass, RESOURCE__SUMMARY);
 		createEReference(resourceEClass, RESOURCE__LINKS);
 		createEReference(resourceEClass, RESOURCE__RLINKS);
-		createEOperation(resourceEClass, RESOURCE___RESOURCE_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP);
+		createEOperation(resourceEClass, RESOURCE___RESOURCE_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP_1);
 
 		linkEClass = createEClass(LINK);
 		createEReference(linkEClass, LINK__SOURCE);
 		createEReference(linkEClass, LINK__TARGET);
-		createEOperation(linkEClass, LINK___LINK_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP);
+		createEOperation(linkEClass, LINK___LINK_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP_1);
 
 		extensionEClass = createEClass(EXTENSION);
 		createEAttribute(extensionEClass, EXTENSION__NAME);
@@ -1969,13 +1969,13 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		createEReference(extensionEClass, EXTENSION__MIXINS);
 		createEReference(extensionEClass, EXTENSION__TYPES);
 		createEAttribute(extensionEClass, EXTENSION__SPECIFICATION);
-		createEOperation(extensionEClass, EXTENSION___KINDS_SCHEME_VALID__DIAGNOSTICCHAIN_MAP);
-		createEOperation(extensionEClass, EXTENSION___KIND_PARENT_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP);
-		createEOperation(extensionEClass, EXTENSION___MIXINS_SCHEME_VALID__DIAGNOSTICCHAIN_MAP);
-		createEOperation(extensionEClass, EXTENSION___TERM_UNICITY__DIAGNOSTICCHAIN_MAP);
-		createEOperation(extensionEClass, EXTENSION___MIXIN_APPLIES_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP);
-		createEOperation(extensionEClass, EXTENSION___SCHEME_UNIQUE__DIAGNOSTICCHAIN_MAP);
-		createEOperation(extensionEClass, EXTENSION___MIXIN_DEPENDS_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP);
+		createEOperation(extensionEClass, EXTENSION___KINDS_SCHEME_VALID__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(extensionEClass, EXTENSION___KIND_PARENT_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(extensionEClass, EXTENSION___MIXINS_SCHEME_VALID__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(extensionEClass, EXTENSION___TERM_UNICITY__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(extensionEClass, EXTENSION___MIXIN_APPLIES_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(extensionEClass, EXTENSION___SCHEME_UNIQUE__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(extensionEClass, EXTENSION___MIXIN_DEPENDS_LOCAL_OR_IMPORTED__DIAGNOSTICCHAIN_MAP_1);
 
 		configurationEClass = createEClass(CONFIGURATION);
 		createEAttribute(configurationEClass, CONFIGURATION__DESCRIPTION);
@@ -1983,12 +1983,12 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		createEReference(configurationEClass, CONFIGURATION__USE);
 		createEReference(configurationEClass, CONFIGURATION__RESOURCES);
 		createEReference(configurationEClass, CONFIGURATION__MIXINS);
-		createEOperation(configurationEClass, CONFIGURATION___ALL_MIXINS_ARE_TAGS__DIAGNOSTICCHAIN_MAP);
-		createEOperation(configurationEClass, CONFIGURATION___ALL_RESOURCES_LINKS_TARGETS_IN_CONFIGURATION__DIAGNOSTICCHAIN_MAP);
-		createEOperation(configurationEClass, CONFIGURATION___ALL_RESOURCES_KINDS_IN_USE__DIAGNOSTICCHAIN_MAP);
-		createEOperation(configurationEClass, CONFIGURATION___ALL_RESOURCES_LINKS_MIXINS_IN_USE__DIAGNOSTICCHAIN_MAP);
-		createEOperation(configurationEClass, CONFIGURATION___ALL_RESOURCES_MIXINS_IN_USE__DIAGNOSTICCHAIN_MAP);
-		createEOperation(configurationEClass, CONFIGURATION___ALL_RESOURCES_LINKS_KINDS_IN_USE__DIAGNOSTICCHAIN_MAP);
+		createEOperation(configurationEClass, CONFIGURATION___ALL_MIXINS_ARE_TAGS__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(configurationEClass, CONFIGURATION___ALL_RESOURCES_LINKS_TARGETS_IN_CONFIGURATION__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(configurationEClass, CONFIGURATION___ALL_RESOURCES_KINDS_IN_USE__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(configurationEClass, CONFIGURATION___ALL_RESOURCES_LINKS_MIXINS_IN_USE__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(configurationEClass, CONFIGURATION___ALL_RESOURCES_MIXINS_IN_USE__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(configurationEClass, CONFIGURATION___ALL_RESOURCES_LINKS_KINDS_IN_USE__DIAGNOSTICCHAIN_MAP_1);
 
 		dataTypeEClass = createEClass(DATA_TYPE);
 		createEAttribute(dataTypeEClass, DATA_TYPE__NAME);
@@ -2097,7 +2097,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEAttribute(getCategory_Title(), this.getString(), "title", null, 0, 1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCategory_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getCategory__AttributesNameUnique__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "AttributesNameUnique", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getCategory__AttributesNameUnique__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "AttributesNameUnique", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2106,7 +2106,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getCategory__IdentityUnique__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "IdentityUnique", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getCategory__IdentityUnique__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "IdentityUnique", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2115,7 +2115,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getCategory__SchemeEndsWithSharp__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "SchemeEndsWithSharp", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getCategory__SchemeEndsWithSharp__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "SchemeEndsWithSharp", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2133,7 +2133,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEReference(getType_Actions(), this.getAction(), null, "actions", null, 0, -1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getType_Constraints(), this.getConstraint(), null, "constraints", null, 0, -1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getType__ActionTermUnicity__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "ActionTermUnicity", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getType__ActionTermUnicity__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "ActionTermUnicity", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2142,7 +2142,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getType__ConstraintNameUnique__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "ConstraintNameUnique", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getType__ConstraintNameUnique__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "ConstraintNameUnique", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2155,7 +2155,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEReference(getFSM_OwnedState(), this.getState(), this.getState_OwningFSM(), "ownedState", null, 0, -1, org.eclipse.cmf.occi.core.FSM.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFSM_Attribute(), this.getAttribute(), null, "attribute", null, 1, 1, org.eclipse.cmf.occi.core.FSM.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getFSM__AttributeTypeMustBeEEnum__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "AttributeTypeMustBeEEnum", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getFSM__AttributeTypeMustBeEEnum__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "AttributeTypeMustBeEEnum", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2164,7 +2164,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getFSM__ContainedAttribute__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "containedAttribute", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getFSM__ContainedAttribute__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "containedAttribute", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2181,7 +2181,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEReference(getState_OutgoingTransition(), this.getTransition(), this.getTransition_Source(), "outgoingTransition", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_IncomingTransition(), this.getTransition(), this.getTransition_Target(), "incomingTransition", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getState__StateLiteralAlreadyDefinedInFSMAttributeType__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "StateLiteralAlreadyDefinedInFSMAttributeType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getState__StateLiteralAlreadyDefinedInFSMAttributeType__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "StateLiteralAlreadyDefinedInFSMAttributeType", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2193,9 +2193,9 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTransition_Source(), this.getState(), this.getState_OutgoingTransition(), "source", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_Target(), this.getState(), this.getState_IncomingTransition(), "target", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTransition_Action(), this.getAction(), null, "action", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransition_Action(), this.getAction(), null, "action", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getTransition__ContainedActionMustBeDeclaredInTheAppropriateKind__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "containedActionMustBeDeclaredInTheAppropriateKind", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getTransition__ContainedActionMustBeDeclaredInTheAppropriateKind__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "containedActionMustBeDeclaredInTheAppropriateKind", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2217,7 +2217,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEReference(getKind_Entities(), this.getEntity(), null, "entities", null, 0, -1, Kind.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getKind_Fsm(), this.getFSM(), null, "fsm", null, 0, 1, Kind.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getKind__NoCyclicInheritance__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "NoCyclicInheritance", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getKind__NoCyclicInheritance__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "NoCyclicInheritance", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2226,7 +2226,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getKind__AttributesNameNotAlreadyDefinedInParent__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "AttributesNameNotAlreadyDefinedInParent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getKind__AttributesNameNotAlreadyDefinedInParent__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "AttributesNameNotAlreadyDefinedInParent", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2235,7 +2235,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getKind__CorrectScheme__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "CorrectScheme", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getKind__CorrectScheme__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "CorrectScheme", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2244,7 +2244,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getKind__EntityKindIsRootParent__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "EntityKindIsRootParent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getKind__EntityKindIsRootParent__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "EntityKindIsRootParent", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2255,7 +2255,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getAction__ContainedAction__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "containedAction", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getAction__ContainedAction__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "containedAction", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2264,7 +2264,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getAction__CorrectScheme__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "CorrectScheme", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getAction__CorrectScheme__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "CorrectScheme", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2278,7 +2278,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEReference(getMixin_Applies(), this.getKind(), null, "applies", null, 0, -1, Mixin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMixin_Entities(), this.getEntity(), null, "entities", null, 0, -1, Mixin.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
-		op = initEOperation(getMixin__CorrectScheme__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "CorrectScheme", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getMixin__CorrectScheme__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "CorrectScheme", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2287,7 +2287,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getMixin__NoCyclicInheritance__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "NoCyclicInheritance", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getMixin__NoCyclicInheritance__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "NoCyclicInheritance", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2296,7 +2296,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getMixin__AttributesNameNotAlreadyDefinedInDepends__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "AttributesNameNotAlreadyDefinedInDepends", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getMixin__AttributesNameNotAlreadyDefinedInDepends__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "AttributesNameNotAlreadyDefinedInDepends", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2322,7 +2322,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 
 		initEOperation(getEntity__OcciDelete(), null, "occiDelete", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getEntity__AttributesNameUnique__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "AttributesNameUnique", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getEntity__AttributesNameUnique__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "AttributesNameUnique", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2331,7 +2331,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getEntity__KindCompatibleWithOneAppliesOfEachMixin__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "KindCompatibleWithOneAppliesOfEachMixin", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getEntity__KindCompatibleWithOneAppliesOfEachMixin__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "KindCompatibleWithOneAppliesOfEachMixin", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2340,7 +2340,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getEntity__IdUnique__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "IdUnique", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getEntity__IdUnique__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "IdUnique", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2363,7 +2363,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEReference(getResource_Links(), this.getLink(), this.getLink_Source(), "links", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_Rlinks(), this.getLink(), this.getLink_Target(), "rlinks", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getResource__ResourceKindIsInParent__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "ResourceKindIsInParent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getResource__ResourceKindIsInParent__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "ResourceKindIsInParent", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2376,7 +2376,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEReference(getLink_Source(), this.getResource(), this.getResource_Links(), "source", null, 1, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLink_Target(), this.getResource(), this.getResource_Rlinks(), "target", null, 1, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getLink__LinkKindIsInParent__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "LinkKindIsInParent", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getLink__LinkKindIsInParent__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "LinkKindIsInParent", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2397,7 +2397,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEReference(getExtension_Types(), this.getDataType(), null, "types", null, 0, -1, Extension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExtension_Specification(), this.getString(), "specification", null, 0, 1, Extension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getExtension__KindsSchemeValid__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "KindsSchemeValid", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getExtension__KindsSchemeValid__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "KindsSchemeValid", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2406,7 +2406,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getExtension__KindParentLocalOrImported__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "KindParentLocalOrImported", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getExtension__KindParentLocalOrImported__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "KindParentLocalOrImported", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2415,7 +2415,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getExtension__MixinsSchemeValid__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "MixinsSchemeValid", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getExtension__MixinsSchemeValid__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "MixinsSchemeValid", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2424,7 +2424,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getExtension__TermUnicity__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "TermUnicity", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getExtension__TermUnicity__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "TermUnicity", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2433,7 +2433,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getExtension__MixinAppliesLocalOrImported__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "MixinAppliesLocalOrImported", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getExtension__MixinAppliesLocalOrImported__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "MixinAppliesLocalOrImported", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2442,7 +2442,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getExtension__SchemeUnique__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "SchemeUnique", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getExtension__SchemeUnique__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "SchemeUnique", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2451,7 +2451,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getExtension__MixinDependsLocalOrImported__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "MixinDependsLocalOrImported", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getExtension__MixinDependsLocalOrImported__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "MixinDependsLocalOrImported", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2467,7 +2467,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEReference(getConfiguration_Resources(), this.getResource(), null, "resources", null, 0, -1, Configuration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConfiguration_Mixins(), this.getMixin(), null, "mixins", null, 0, -1, Configuration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getConfiguration__AllMixinsAreTags__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "AllMixinsAreTags", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getConfiguration__AllMixinsAreTags__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "AllMixinsAreTags", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2476,7 +2476,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getConfiguration__AllResourcesLinksTargetsInConfiguration__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "AllResourcesLinksTargetsInConfiguration", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getConfiguration__AllResourcesLinksTargetsInConfiguration__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "AllResourcesLinksTargetsInConfiguration", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2485,7 +2485,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getConfiguration__AllResourcesKindsInUse__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "AllResourcesKindsInUse", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getConfiguration__AllResourcesKindsInUse__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "AllResourcesKindsInUse", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2494,7 +2494,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getConfiguration__AllResourcesLinksMixinsInUse__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "AllResourcesLinksMixinsInUse", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getConfiguration__AllResourcesLinksMixinsInUse__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "AllResourcesLinksMixinsInUse", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2503,7 +2503,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getConfiguration__AllResourcesMixinsInUse__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "AllResourcesMixinsInUse", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getConfiguration__AllResourcesMixinsInUse__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "AllResourcesMixinsInUse", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2512,7 +2512,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getConfiguration__AllResourcesLinksKindsInUse__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "AllResourcesLinksKindsInUse", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getConfiguration__AllResourcesLinksKindsInUse__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "AllResourcesLinksKindsInUse", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());

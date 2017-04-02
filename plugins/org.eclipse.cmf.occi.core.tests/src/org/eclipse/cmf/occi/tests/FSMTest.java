@@ -109,7 +109,7 @@ public class FSMTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.FSM#AttributeTypeMustBeEEnum(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testAttributeTypeMustBeEEnum__DiagnosticChain_Map() {
+	public void testAttributeTypeMustBeEEnum__DiagnosticChain_Map_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -122,7 +122,7 @@ public class FSMTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.FSM#containedAttribute(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testContainedAttribute__DiagnosticChain_Map() {
+	public void testContainedAttribute__DiagnosticChain_Map_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -16,14 +16,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-
-import org.eclipse.cmf.occi.core.OCCITables;
-
 import org.eclipse.cmf.occi.core.Attribute;
 import org.eclipse.cmf.occi.core.DataType;
 import org.eclipse.cmf.occi.core.FSM;
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.OCCIPackage;
+import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.cmf.occi.core.State;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -375,9 +373,9 @@ public class FSMImpl extends MinimalEObjectImpl.Container implements FSM {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OCCIPackage.FSM___ATTRIBUTE_TYPE_MUST_BE_EENUM__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.FSM___ATTRIBUTE_TYPE_MUST_BE_EENUM__DIAGNOSTICCHAIN_MAP_1:
 				return AttributeTypeMustBeEEnum((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case OCCIPackage.FSM___CONTAINED_ATTRIBUTE__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.FSM___CONTAINED_ATTRIBUTE__DIAGNOSTICCHAIN_MAP_1:
 				return containedAttribute((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);

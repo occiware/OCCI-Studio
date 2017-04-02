@@ -16,12 +16,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
-
-import org.eclipse.cmf.occi.core.OCCITables;
-
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.OCCIPackage;
+import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.cmf.occi.core.Resource;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -455,7 +453,7 @@ public class ResourceImpl extends EntityImpl implements Resource {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OCCIPackage.RESOURCE___RESOURCE_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.RESOURCE___RESOURCE_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP_1:
 				return ResourceKindIsInParent((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);

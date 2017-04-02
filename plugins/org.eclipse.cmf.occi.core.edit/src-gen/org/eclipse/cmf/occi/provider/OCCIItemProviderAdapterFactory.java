@@ -13,6 +13,7 @@ package org.eclipse.cmf.occi.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import org.eclipse.cmf.occi.core.util.OCCIAdapterFactory;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
@@ -38,7 +39,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class OCCIItemProviderAdapterFactory extends org.eclipse.cmf.occi.core.util.OCCIAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class OCCIItemProviderAdapterFactory extends OCCIAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->

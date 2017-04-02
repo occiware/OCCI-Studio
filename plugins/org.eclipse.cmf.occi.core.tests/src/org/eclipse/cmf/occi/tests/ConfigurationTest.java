@@ -113,7 +113,7 @@ public class ConfigurationTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Configuration#AllMixinsAreTags(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testAllMixinsAreTags__DiagnosticChain_Map() {
+	public void testAllMixinsAreTags__DiagnosticChain_Map_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -126,7 +126,7 @@ public class ConfigurationTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Configuration#AllResourcesLinksTargetsInConfiguration(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testAllResourcesLinksTargetsInConfiguration__DiagnosticChain_Map() {
+	public void testAllResourcesLinksTargetsInConfiguration__DiagnosticChain_Map_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -139,7 +139,7 @@ public class ConfigurationTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Configuration#AllResourcesKindsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testAllResourcesKindsInUse__DiagnosticChain_Map() {
+	public void testAllResourcesKindsInUse__DiagnosticChain_Map_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -152,7 +152,7 @@ public class ConfigurationTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Configuration#AllResourcesLinksMixinsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testAllResourcesLinksMixinsInUse__DiagnosticChain_Map() {
+	public void testAllResourcesLinksMixinsInUse__DiagnosticChain_Map_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -165,7 +165,7 @@ public class ConfigurationTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Configuration#AllResourcesMixinsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testAllResourcesMixinsInUse__DiagnosticChain_Map() {
+	public void testAllResourcesMixinsInUse__DiagnosticChain_Map_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -178,7 +178,7 @@ public class ConfigurationTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Configuration#AllResourcesLinksKindsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testAllResourcesLinksKindsInUse__DiagnosticChain_Map() {
+	public void testAllResourcesLinksKindsInUse__DiagnosticChain_Map_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

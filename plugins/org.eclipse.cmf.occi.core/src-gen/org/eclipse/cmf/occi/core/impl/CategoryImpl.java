@@ -17,13 +17,10 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
-import org.eclipse.cmf.occi.core.OCCITables;
-
 import org.eclipse.cmf.occi.core.Attribute;
 import org.eclipse.cmf.occi.core.Category;
 import org.eclipse.cmf.occi.core.OCCIPackage;
-
+import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -567,11 +564,11 @@ public abstract class CategoryImpl extends MinimalEObjectImpl.Container implemen
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OCCIPackage.CATEGORY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.CATEGORY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_1:
 				return AttributesNameUnique((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case OCCIPackage.CATEGORY___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.CATEGORY___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP_1:
 				return IdentityUnique((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case OCCIPackage.CATEGORY___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP:
+			case OCCIPackage.CATEGORY___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP_1:
 				return SchemeEndsWithSharp((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
