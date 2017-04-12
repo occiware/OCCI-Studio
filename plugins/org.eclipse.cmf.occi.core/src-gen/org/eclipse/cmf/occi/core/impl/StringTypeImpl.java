@@ -65,7 +65,7 @@ public class StringTypeImpl extends BasicTypeImpl implements StringType {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int LENGTH_EDEFAULT = 0;
+	protected static final Integer LENGTH_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getLength() <em>Length</em>}' attribute.
@@ -75,7 +75,7 @@ public class StringTypeImpl extends BasicTypeImpl implements StringType {
 	 * @generated
 	 * @ordered
 	 */
-	protected int length = LENGTH_EDEFAULT;
+	protected Integer length = LENGTH_EDEFAULT;
 
 	/**
 	 * This is true if the Length attribute has been set.
@@ -94,7 +94,7 @@ public class StringTypeImpl extends BasicTypeImpl implements StringType {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int MIN_LENGTH_EDEFAULT = 0;
+	protected static final Integer MIN_LENGTH_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getMinLength() <em>Min Length</em>}' attribute.
@@ -104,7 +104,7 @@ public class StringTypeImpl extends BasicTypeImpl implements StringType {
 	 * @generated
 	 * @ordered
 	 */
-	protected int minLength = MIN_LENGTH_EDEFAULT;
+	protected Integer minLength = MIN_LENGTH_EDEFAULT;
 
 	/**
 	 * This is true if the Min Length attribute has been set.
@@ -123,7 +123,7 @@ public class StringTypeImpl extends BasicTypeImpl implements StringType {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int MAX_LENGTH_EDEFAULT = 0;
+	protected static final Integer MAX_LENGTH_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getMaxLength() <em>Max Length</em>}' attribute.
@@ -133,7 +133,7 @@ public class StringTypeImpl extends BasicTypeImpl implements StringType {
 	 * @generated
 	 * @ordered
 	 */
-	protected int maxLength = MAX_LENGTH_EDEFAULT;
+	protected Integer maxLength = MAX_LENGTH_EDEFAULT;
 
 	/**
 	 * This is true if the Max Length attribute has been set.
@@ -189,7 +189,7 @@ public class StringTypeImpl extends BasicTypeImpl implements StringType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getLength() {
+	public Integer getLength() {
 		return length;
 	}
 
@@ -198,8 +198,8 @@ public class StringTypeImpl extends BasicTypeImpl implements StringType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLength(int newLength) {
-		int oldLength = length;
+	public void setLength(Integer newLength) {
+		Integer oldLength = length;
 		length = newLength;
 		boolean oldLengthESet = lengthESet;
 		lengthESet = true;
@@ -213,7 +213,7 @@ public class StringTypeImpl extends BasicTypeImpl implements StringType {
 	 * @generated
 	 */
 	public void unsetLength() {
-		int oldLength = length;
+		Integer oldLength = length;
 		boolean oldLengthESet = lengthESet;
 		length = LENGTH_EDEFAULT;
 		lengthESet = false;
@@ -235,7 +235,7 @@ public class StringTypeImpl extends BasicTypeImpl implements StringType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getMinLength() {
+	public Integer getMinLength() {
 		return minLength;
 	}
 
@@ -244,8 +244,8 @@ public class StringTypeImpl extends BasicTypeImpl implements StringType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMinLength(int newMinLength) {
-		int oldMinLength = minLength;
+	public void setMinLength(Integer newMinLength) {
+		Integer oldMinLength = minLength;
 		minLength = newMinLength;
 		boolean oldMinLengthESet = minLengthESet;
 		minLengthESet = true;
@@ -259,7 +259,7 @@ public class StringTypeImpl extends BasicTypeImpl implements StringType {
 	 * @generated
 	 */
 	public void unsetMinLength() {
-		int oldMinLength = minLength;
+		Integer oldMinLength = minLength;
 		boolean oldMinLengthESet = minLengthESet;
 		minLength = MIN_LENGTH_EDEFAULT;
 		minLengthESet = false;
@@ -281,7 +281,7 @@ public class StringTypeImpl extends BasicTypeImpl implements StringType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getMaxLength() {
+	public Integer getMaxLength() {
 		return maxLength;
 	}
 
@@ -290,8 +290,8 @@ public class StringTypeImpl extends BasicTypeImpl implements StringType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMaxLength(int newMaxLength) {
-		int oldMaxLength = maxLength;
+	public void setMaxLength(Integer newMaxLength) {
+		Integer oldMaxLength = maxLength;
 		maxLength = newMaxLength;
 		boolean oldMaxLengthESet = maxLengthESet;
 		maxLengthESet = true;
@@ -305,7 +305,7 @@ public class StringTypeImpl extends BasicTypeImpl implements StringType {
 	 * @generated
 	 */
 	public void unsetMaxLength() {
-		int oldMaxLength = maxLength;
+		Integer oldMaxLength = maxLength;
 		boolean oldMaxLengthESet = maxLengthESet;
 		maxLength = MAX_LENGTH_EDEFAULT;
 		maxLengthESet = false;

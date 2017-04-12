@@ -299,11 +299,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="BasicType" abstract="true" eSuperTypes="#//DataType"/>
   <eClassifiers xsi:type="ecore:EClass" name="StringType" eSuperTypes="#//BasicType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" eType="#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EObjectType" eSuperTypes="#//BasicType">
@@ -312,7 +312,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="BooleanType" eSuperTypes="#//BasicType"/>
   <eClassifiers xsi:type="ecore:EClass" name="NumericType" eSuperTypes="#//BasicType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//NumericTypeEnum"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalDigits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalDigits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="minExclusive" eType="#//String"
         unsettable="true"/>

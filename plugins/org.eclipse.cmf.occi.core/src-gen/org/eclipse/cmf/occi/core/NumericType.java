@@ -75,13 +75,13 @@ public interface NumericType extends BasicType {
 	 * @return the value of the '<em>Total Digits</em>' attribute.
 	 * @see #isSetTotalDigits()
 	 * @see #unsetTotalDigits()
-	 * @see #setTotalDigits(int)
+	 * @see #setTotalDigits(Integer)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getNumericType_TotalDigits()
 	 * @model unsettable="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!NumericType!totalDigits'"
 	 * @generated
 	 */
-	int getTotalDigits();
+	Integer getTotalDigits();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.cmf.occi.core.NumericType#getTotalDigits <em>Total Digits</em>}' attribute.
@@ -93,7 +93,7 @@ public interface NumericType extends BasicType {
 	 * @see #getTotalDigits()
 	 * @generated
 	 */
-	void setTotalDigits(int value);
+	void setTotalDigits(Integer value);
 
 	/**
 	 * Unsets the value of the '{@link org.eclipse.cmf.occi.core.NumericType#getTotalDigits <em>Total Digits</em>}' attribute.
@@ -101,7 +101,7 @@ public interface NumericType extends BasicType {
 	 * <!-- end-user-doc -->
 	 * @see #isSetTotalDigits()
 	 * @see #getTotalDigits()
-	 * @see #setTotalDigits(int)
+	 * @see #setTotalDigits(Integer)
 	 * @generated
 	 */
 	void unsetTotalDigits();
@@ -113,7 +113,7 @@ public interface NumericType extends BasicType {
 	 * @return whether the value of the '<em>Total Digits</em>' attribute is set.
 	 * @see #unsetTotalDigits()
 	 * @see #getTotalDigits()
-	 * @see #setTotalDigits(int)
+	 * @see #setTotalDigits(Integer)
 	 * @generated
 	 */
 	boolean isSetTotalDigits();

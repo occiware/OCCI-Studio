@@ -95,7 +95,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Transition = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Transition", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Type = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getClassId("Type", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_AttributeName = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getDataTypeId("AttributeName", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_EInt = OCCITables.PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore.getDataTypeId("EInt", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_EIntegerObject = OCCITables.PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore.getDataTypeId("EIntegerObject", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_Name = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getDataTypeId("Name", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_OCL = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getDataTypeId("OCL", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_Scheme = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore_s_2_0.getDataTypeId("Scheme", 0);

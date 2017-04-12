@@ -70,13 +70,13 @@ public interface StringType extends BasicType {
 	 * @return the value of the '<em>Length</em>' attribute.
 	 * @see #isSetLength()
 	 * @see #unsetLength()
-	 * @see #setLength(int)
+	 * @see #setLength(Integer)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getStringType_Length()
 	 * @model unsettable="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!StringType!length'"
 	 * @generated
 	 */
-	int getLength();
+	Integer getLength();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.cmf.occi.core.StringType#getLength <em>Length</em>}' attribute.
@@ -88,7 +88,7 @@ public interface StringType extends BasicType {
 	 * @see #getLength()
 	 * @generated
 	 */
-	void setLength(int value);
+	void setLength(Integer value);
 
 	/**
 	 * Unsets the value of the '{@link org.eclipse.cmf.occi.core.StringType#getLength <em>Length</em>}' attribute.
@@ -96,7 +96,7 @@ public interface StringType extends BasicType {
 	 * <!-- end-user-doc -->
 	 * @see #isSetLength()
 	 * @see #getLength()
-	 * @see #setLength(int)
+	 * @see #setLength(Integer)
 	 * @generated
 	 */
 	void unsetLength();
@@ -108,7 +108,7 @@ public interface StringType extends BasicType {
 	 * @return whether the value of the '<em>Length</em>' attribute is set.
 	 * @see #unsetLength()
 	 * @see #getLength()
-	 * @see #setLength(int)
+	 * @see #setLength(Integer)
 	 * @generated
 	 */
 	boolean isSetLength();
@@ -124,13 +124,13 @@ public interface StringType extends BasicType {
 	 * @return the value of the '<em>Min Length</em>' attribute.
 	 * @see #isSetMinLength()
 	 * @see #unsetMinLength()
-	 * @see #setMinLength(int)
+	 * @see #setMinLength(Integer)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getStringType_MinLength()
 	 * @model unsettable="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!StringType!minLength'"
 	 * @generated
 	 */
-	int getMinLength();
+	Integer getMinLength();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.cmf.occi.core.StringType#getMinLength <em>Min Length</em>}' attribute.
@@ -142,7 +142,7 @@ public interface StringType extends BasicType {
 	 * @see #getMinLength()
 	 * @generated
 	 */
-	void setMinLength(int value);
+	void setMinLength(Integer value);
 
 	/**
 	 * Unsets the value of the '{@link org.eclipse.cmf.occi.core.StringType#getMinLength <em>Min Length</em>}' attribute.
@@ -150,7 +150,7 @@ public interface StringType extends BasicType {
 	 * <!-- end-user-doc -->
 	 * @see #isSetMinLength()
 	 * @see #getMinLength()
-	 * @see #setMinLength(int)
+	 * @see #setMinLength(Integer)
 	 * @generated
 	 */
 	void unsetMinLength();
@@ -162,7 +162,7 @@ public interface StringType extends BasicType {
 	 * @return whether the value of the '<em>Min Length</em>' attribute is set.
 	 * @see #unsetMinLength()
 	 * @see #getMinLength()
-	 * @see #setMinLength(int)
+	 * @see #setMinLength(Integer)
 	 * @generated
 	 */
 	boolean isSetMinLength();
@@ -178,13 +178,13 @@ public interface StringType extends BasicType {
 	 * @return the value of the '<em>Max Length</em>' attribute.
 	 * @see #isSetMaxLength()
 	 * @see #unsetMaxLength()
-	 * @see #setMaxLength(int)
+	 * @see #setMaxLength(Integer)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getStringType_MaxLength()
 	 * @model unsettable="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!StringType!maxLength'"
 	 * @generated
 	 */
-	int getMaxLength();
+	Integer getMaxLength();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.cmf.occi.core.StringType#getMaxLength <em>Max Length</em>}' attribute.
@@ -196,7 +196,7 @@ public interface StringType extends BasicType {
 	 * @see #getMaxLength()
 	 * @generated
 	 */
-	void setMaxLength(int value);
+	void setMaxLength(Integer value);
 
 	/**
 	 * Unsets the value of the '{@link org.eclipse.cmf.occi.core.StringType#getMaxLength <em>Max Length</em>}' attribute.
@@ -204,7 +204,7 @@ public interface StringType extends BasicType {
 	 * <!-- end-user-doc -->
 	 * @see #isSetMaxLength()
 	 * @see #getMaxLength()
-	 * @see #setMaxLength(int)
+	 * @see #setMaxLength(Integer)
 	 * @generated
 	 */
 	void unsetMaxLength();
@@ -216,7 +216,7 @@ public interface StringType extends BasicType {
 	 * @return whether the value of the '<em>Max Length</em>' attribute is set.
 	 * @see #unsetMaxLength()
 	 * @see #getMaxLength()
-	 * @see #setMaxLength(int)
+	 * @see #setMaxLength(Integer)
 	 * @generated
 	 */
 	boolean isSetMaxLength();

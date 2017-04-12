@@ -68,7 +68,7 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int TOTAL_DIGITS_EDEFAULT = 0;
+	protected static final Integer TOTAL_DIGITS_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getTotalDigits() <em>Total Digits</em>}' attribute.
@@ -78,7 +78,7 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	 * @generated
 	 * @ordered
 	 */
-	protected int totalDigits = TOTAL_DIGITS_EDEFAULT;
+	protected Integer totalDigits = TOTAL_DIGITS_EDEFAULT;
 
 	/**
 	 * This is true if the Total Digits attribute has been set.
@@ -250,7 +250,7 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getTotalDigits() {
+	public Integer getTotalDigits() {
 		return totalDigits;
 	}
 
@@ -259,8 +259,8 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTotalDigits(int newTotalDigits) {
-		int oldTotalDigits = totalDigits;
+	public void setTotalDigits(Integer newTotalDigits) {
+		Integer oldTotalDigits = totalDigits;
 		totalDigits = newTotalDigits;
 		boolean oldTotalDigitsESet = totalDigitsESet;
 		totalDigitsESet = true;
@@ -274,7 +274,7 @@ public class NumericTypeImpl extends BasicTypeImpl implements NumericType {
 	 * @generated
 	 */
 	public void unsetTotalDigits() {
-		int oldTotalDigits = totalDigits;
+		Integer oldTotalDigits = totalDigits;
 		boolean oldTotalDigitsESet = totalDigitsESet;
 		totalDigits = TOTAL_DIGITS_EDEFAULT;
 		totalDigitsESet = false;
