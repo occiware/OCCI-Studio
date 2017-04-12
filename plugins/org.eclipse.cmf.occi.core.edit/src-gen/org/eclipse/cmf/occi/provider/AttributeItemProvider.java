@@ -242,7 +242,7 @@ public class AttributeItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
@@ -254,6 +254,7 @@ public class AttributeItemProvider
 			case OCCIPackage.ATTRIBUTE__REQUIRED:
 			case OCCIPackage.ATTRIBUTE__DEFAULT:
 			case OCCIPackage.ATTRIBUTE__DESCRIPTION:
+			case OCCIPackage.ATTRIBUTE__TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

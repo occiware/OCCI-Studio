@@ -11,26 +11,25 @@
  */
 package org.eclipse.cmf.occi.provider;
 
-
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.cmf.occi.core.FSM;
 import org.eclipse.cmf.occi.core.OCCIFactory;
 import org.eclipse.cmf.occi.core.OCCIPackage;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChangeNotifier;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
@@ -38,32 +37,33 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.cmf.occi.core.FSM} object.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
-public class FSMItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class FSMItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+
+	private ChangeListener changeListener;
+
 	/**
-	 * This constructs an instance from a factory and a notifier.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * This constructs an instance from a factory and a notifier. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	public FSMItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
+		if (adapterFactory instanceof IChangeNotifier) {
+			IChangeNotifier cn = (IChangeNotifier) adapterFactory;
+			changeListener = new ChangeListener();
+			cn.addListener(changeListener);
+		}
 	}
 
 	/**
-	 * This returns the property descriptors for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This returns the property descriptors for the adapted class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -77,9 +77,9 @@ public class FSMItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Attribute feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This adds a property descriptor for the Attribute feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addAttributePropertyDescriptor(Object object) {
@@ -102,8 +102,7 @@ public class FSMItemProvider
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -116,8 +115,7 @@ public class FSMItemProvider
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -130,8 +128,7 @@ public class FSMItemProvider
 
 	/**
 	 * This returns FSM.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -140,44 +137,47 @@ public class FSMItemProvider
 	}
 
 	/**
-	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		if(((FSM)object).getAttribute() != null &((FSM)object).getAttribute().getType()!= null)
-			return getString("_UI_FSM_type") + " "+ ((FSM)object).getAttribute().getName()+" "+((FSM)object).getAttribute().getType().getName();
+		if (((FSM) object).getAttribute() != null & ((FSM) object).getAttribute().getType() != null)
+			return getString("_UI_FSM_type") + " " + ((FSM) object).getAttribute().getName() + " "
+					+ ((FSM) object).getAttribute().getType().getName();
 		else
 			return getString("_UI_FSM_type");
 	}
-	
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to update any cached
-	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This handles model notifications by calling {@link #updateChildren} to
+	 * update any cached children and by creating a viewer notification, which
+	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-//		switch (notification.getFeatureID(FSM.class)) {
-//			case OCCIPackage.FSM__OWNED_STATE:
-//				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-//				return;
-//		}
+		switch (notification.getFeatureID(FSM.class)) {
+		case OCCIPackage.FSM__OWNED_STATE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
+		case OCCIPackage.FSM__ATTRIBUTE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
+		}
 		super.notifyChanged(notification);
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
-	 * that can be created under this object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
+	 * describing the children that can be created under this object. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -191,9 +191,9 @@ public class FSMItemProvider
 	}
 
 	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Return the resource locator for this item provider's resources. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -201,4 +201,83 @@ public class FSMItemProvider
 		return OCCIEditPlugin.INSTANCE;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#dispose()
+	 */
+	public void dispose() {
+		super.dispose();
+		if (changeListener != null) {
+			((IChangeNotifier) getAdapterFactory()).removeListener(changeListener);
+		}
+	}
+
+	class ChangeListener implements INotifyChangedListener {
+		public void notifyChanged(Notification notification) {
+			// The first notifies when the attribute of FSM changes
+			// The FSM says: Hey! my attribute is changed
+			// The type changes automatically when the attribute changes
+
+			if (notification.getNotifier() != null && getTarget() != null
+					&& notification.getNotifier() == ((FSM) getTarget())) {
+				((IChangeNotifier) getAdapterFactory()).removeListener(this);
+				fireNotifyChanged(new ViewerNotification(notification, getTarget(), false, true));
+				((IChangeNotifier) getAdapterFactory()).addListener(this);
+			}
+			// other targets
+			if (targets != null) {
+				for (Notifier target : targets) {
+					if (notification.getNotifier() != null && target != null
+							&& notification.getNotifier() == ((FSM) getTarget())) {
+						((IChangeNotifier) getAdapterFactory()).removeListener(this);
+						fireNotifyChanged(new ViewerNotification(notification, target, false, true));
+						((IChangeNotifier) getAdapterFactory()).addListener(this);
+					}
+				}
+			}
+			// This part notifies when the attribute name changes or its type
+			// changes. So the notifier is the Attribute
+			// The Attribute say: Hey! my name is changed, or, Hey! my type is
+			// changed
+			// last target
+			if (notification.getNotifier() != null && getTarget() != null
+					&& notification.getNotifier() == ((FSM) getTarget()).getAttribute()) {
+				((IChangeNotifier) getAdapterFactory()).removeListener(this);
+				fireNotifyChanged(new ViewerNotification(notification, getTarget(), false, true));
+				((IChangeNotifier) getAdapterFactory()).addListener(this);
+			}
+			// other targets
+			if (targets != null) {
+				for (Notifier target : targets) {
+					if (notification.getNotifier() != null && target != null
+							&& notification.getNotifier() == ((FSM) getTarget()).getAttribute()) {
+						((IChangeNotifier) getAdapterFactory()).removeListener(this);
+						fireNotifyChanged(new ViewerNotification(notification, target, false, true));
+						((IChangeNotifier) getAdapterFactory()).addListener(this);
+					}
+				}
+			}
+			// However in this part, the type notifies when its name changes.
+			// The type say: Hey, my name is changed
+			// last target
+			if (notification.getNotifier() != null && getTarget() != null
+					&& notification.getNotifier() == ((FSM) getTarget()).getAttribute().getType()) {
+				((IChangeNotifier) getAdapterFactory()).removeListener(this);
+				fireNotifyChanged(new ViewerNotification(notification, getTarget(), false, true));
+				((IChangeNotifier) getAdapterFactory()).addListener(this);
+			}
+			// other targets
+			if (targets != null) {
+				for (Notifier target : targets) {
+					if (notification.getNotifier() != null && target != null
+							&& notification.getNotifier() == ((FSM) getTarget()).getAttribute().getType()) {
+						((IChangeNotifier) getAdapterFactory()).removeListener(this);
+						fireNotifyChanged(new ViewerNotification(notification, target, false, true));
+						((IChangeNotifier) getAdapterFactory()).addListener(this);
+					}
+				}
+			}
+		}
+	}
 }

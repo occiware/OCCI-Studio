@@ -20,14 +20,16 @@ import org.eclipse.cmf.occi.core.OCCIPackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChangeNotifier;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -48,14 +50,22 @@ public class EnumerationLiteralItemProvider
 		ITreeItemContentProvider,
 		IItemLabelProvider,
 		IItemPropertySource {
+	
+	private ChangeListener changeListener;
+	
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EnumerationLiteralItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
+		if(adapterFactory instanceof IChangeNotifier) {
+			IChangeNotifier cn = (IChangeNotifier) adapterFactory;
+			changeListener = new ChangeListener();
+			cn.addListener(changeListener);
+		}
 	}
 
 	/**
@@ -127,7 +137,7 @@ public class EnumerationLiteralItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
@@ -137,6 +147,10 @@ public class EnumerationLiteralItemProvider
 			case OCCIPackage.ENUMERATION_LITERAL__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case OCCIPackage.ENUMERATION_LITERAL__ENUMERATION_TYPE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			
 		}
 		super.notifyChanged(notification);
 	}
@@ -163,5 +177,34 @@ public class EnumerationLiteralItemProvider
 	public ResourceLocator getResourceLocator() {
 		return OCCIEditPlugin.INSTANCE;
 	}
-
+	
+	/* (non-Javadoc)
+	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#dispose()
+	 */
+	public void dispose() {
+		super.dispose();
+		if(changeListener != null) {
+			((IChangeNotifier)getAdapterFactory()).removeListener(changeListener);
+		}
+	}
+	
+	class ChangeListener implements INotifyChangedListener {
+		public void notifyChanged(Notification notification) {
+			// last target
+			if(notification.getNotifier() != null &&  getTarget() != null && notification.getNotifier() == ((EnumerationLiteral) getTarget()).getEnumerationType()) {
+				((IChangeNotifier) getAdapterFactory()).removeListener(this);
+				fireNotifyChanged(new ViewerNotification(notification, getTarget(), false, true));
+				((IChangeNotifier) getAdapterFactory()).addListener(this);
+			}
+            // other targets
+			if(targets != null){
+			for (Notifier target : targets){
+				if(notification.getNotifier() != null &&  target != null && notification.getNotifier() == ((EnumerationLiteral) getTarget()).getEnumerationType()) {
+					((IChangeNotifier) getAdapterFactory()).removeListener(this);
+					fireNotifyChanged(new ViewerNotification(notification, target, false, true));
+					((IChangeNotifier) getAdapterFactory()).addListener(this);
+				}
+			}}
+		}
+	}
 }
