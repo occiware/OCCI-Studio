@@ -29,7 +29,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.cmf.occi.core.impl.EObjectTypeImpl#getInstanceClassName <em>Instance Class Name</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.core.impl.EObjectTypeImpl#getPattern <em>Pattern</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,26 +53,6 @@ public class EObjectTypeImpl extends BasicTypeImpl implements EObjectType {
 	 * @ordered
 	 */
 	protected String instanceClassName = INSTANCE_CLASS_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPattern() <em>Pattern</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPattern()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PATTERN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPattern() <em>Pattern</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPattern()
-	 * @generated
-	 * @ordered
-	 */
-	protected String pattern = PATTERN_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -120,34 +99,11 @@ public class EObjectTypeImpl extends BasicTypeImpl implements EObjectType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getPattern() {
-		return pattern;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPattern(String newPattern) {
-		String oldPattern = pattern;
-		pattern = newPattern;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.EOBJECT_TYPE__PATTERN, oldPattern, pattern));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case OCCIPackage.EOBJECT_TYPE__INSTANCE_CLASS_NAME:
 				return getInstanceClassName();
-			case OCCIPackage.EOBJECT_TYPE__PATTERN:
-				return getPattern();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -162,9 +118,6 @@ public class EObjectTypeImpl extends BasicTypeImpl implements EObjectType {
 		switch (featureID) {
 			case OCCIPackage.EOBJECT_TYPE__INSTANCE_CLASS_NAME:
 				setInstanceClassName((String)newValue);
-				return;
-			case OCCIPackage.EOBJECT_TYPE__PATTERN:
-				setPattern((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -181,9 +134,6 @@ public class EObjectTypeImpl extends BasicTypeImpl implements EObjectType {
 			case OCCIPackage.EOBJECT_TYPE__INSTANCE_CLASS_NAME:
 				setInstanceClassName(INSTANCE_CLASS_NAME_EDEFAULT);
 				return;
-			case OCCIPackage.EOBJECT_TYPE__PATTERN:
-				setPattern(PATTERN_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -198,8 +148,6 @@ public class EObjectTypeImpl extends BasicTypeImpl implements EObjectType {
 		switch (featureID) {
 			case OCCIPackage.EOBJECT_TYPE__INSTANCE_CLASS_NAME:
 				return INSTANCE_CLASS_NAME_EDEFAULT == null ? instanceClassName != null : !INSTANCE_CLASS_NAME_EDEFAULT.equals(instanceClassName);
-			case OCCIPackage.EOBJECT_TYPE__PATTERN:
-				return PATTERN_EDEFAULT == null ? pattern != null : !PATTERN_EDEFAULT.equals(pattern);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -216,8 +164,6 @@ public class EObjectTypeImpl extends BasicTypeImpl implements EObjectType {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (instanceClassName: ");
 		result.append(instanceClassName);
-		result.append(", pattern: ");
-		result.append(pattern);
 		result.append(')');
 		return result.toString();
 	}

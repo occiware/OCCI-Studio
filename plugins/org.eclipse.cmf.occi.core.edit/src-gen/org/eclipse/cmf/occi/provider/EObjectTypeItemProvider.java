@@ -55,7 +55,6 @@ public class EObjectTypeItemProvider extends BasicTypeItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addInstanceClassNamePropertyDescriptor(object);
-			addPatternPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -74,28 +73,6 @@ public class EObjectTypeItemProvider extends BasicTypeItemProvider {
 				 getString("_UI_EObjectType_instanceClassName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EObjectType_instanceClassName_feature", "_UI_EObjectType_type"),
 				 OCCIPackage.Literals.EOBJECT_TYPE__INSTANCE_CLASS_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Pattern feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPatternPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EObjectType_pattern_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EObjectType_pattern_feature", "_UI_EObjectType_type"),
-				 OCCIPackage.Literals.EOBJECT_TYPE__PATTERN,
 				 true,
 				 false,
 				 false,
@@ -143,7 +120,6 @@ public class EObjectTypeItemProvider extends BasicTypeItemProvider {
 
 		switch (notification.getFeatureID(EObjectType.class)) {
 			case OCCIPackage.EOBJECT_TYPE__INSTANCE_CLASS_NAME:
-			case OCCIPackage.EOBJECT_TYPE__PATTERN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

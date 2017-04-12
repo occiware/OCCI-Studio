@@ -308,7 +308,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EObjectType" eSuperTypes="#//BasicType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceClassName" eType="#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" eType="#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanType" eSuperTypes="#//BasicType"/>
   <eClassifiers xsi:type="ecore:EClass" name="NumericType" eSuperTypes="#//BasicType">

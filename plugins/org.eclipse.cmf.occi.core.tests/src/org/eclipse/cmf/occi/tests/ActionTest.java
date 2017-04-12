@@ -90,7 +90,7 @@ public class ActionTest extends CategoryTest {
 	 * @see org.eclipse.cmf.occi.core.Action#containedAction(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testContainedAction__DiagnosticChain_Map_1() {
+	public void testContainedAction__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -103,7 +103,7 @@ public class ActionTest extends CategoryTest {
 	 * @see org.eclipse.cmf.occi.core.Action#CorrectScheme(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testCorrectScheme__DiagnosticChain_Map_1() {
+	public void testCorrectScheme__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

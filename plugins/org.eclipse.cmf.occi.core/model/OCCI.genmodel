@@ -38,7 +38,7 @@
     <genClasses ecoreClass="OCCI.ecore#//Constraint">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Constraint/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Constraint/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Constraint/body"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute OCCI.ecore#//Constraint/body"/>
     </genClasses>
     <genClasses image="false" ecoreClass="OCCI.ecore#//Type">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OCCI.ecore#//Type/actions"/>
@@ -141,7 +141,6 @@
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//EObjectType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//EObjectType/instanceClassName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//EObjectType/pattern"/>
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//BooleanType"/>
     <genClasses ecoreClass="OCCI.ecore#//NumericType">

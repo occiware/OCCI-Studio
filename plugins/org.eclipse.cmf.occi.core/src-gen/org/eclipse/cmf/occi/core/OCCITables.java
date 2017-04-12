@@ -733,7 +733,6 @@ public class OCCITables
 		public static final /*@NonNull*/ ExecutorProperty _DataType__RecordField__type = new ExecutorPropertyWithImplementation("RecordField", Types._DataType, 5, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.RECORD_FIELD__TYPE));
 
 		public static final /*@NonNull*/ ExecutorProperty _EObjectType__instanceClassName = new EcoreExecutorProperty(OCCIPackage.Literals.EOBJECT_TYPE__INSTANCE_CLASS_NAME, Types._EObjectType, 0);
-		public static final /*@NonNull*/ ExecutorProperty _EObjectType__pattern = new EcoreExecutorProperty(OCCIPackage.Literals.EOBJECT_TYPE__PATTERN, Types._EObjectType, 1);
 
 		public static final /*@NonNull*/ ExecutorProperty _Entity__attributes = new EcoreExecutorProperty(OCCIPackage.Literals.ENTITY__ATTRIBUTES, Types._Entity, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Entity__id = new EcoreExecutorProperty(OCCIPackage.Literals.ENTITY__ID, Types._Entity, 1);
@@ -2515,8 +2514,7 @@ public class OCCITables
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _EObjectType = {
 			OCCITables.Properties._DataType__documentation,
 			OCCITables.Properties._EObjectType__instanceClassName,
-			OCCITables.Properties._DataType__name,
-			OCCITables.Properties._EObjectType__pattern
+			OCCITables.Properties._DataType__name
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Entity = {

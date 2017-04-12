@@ -269,9 +269,9 @@ public class ActionImpl extends CategoryImpl implements Action {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OCCIPackage.ACTION___CONTAINED_ACTION__DIAGNOSTICCHAIN_MAP_1:
+			case OCCIPackage.ACTION___CONTAINED_ACTION__DIAGNOSTICCHAIN_MAP:
 				return containedAction((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case OCCIPackage.ACTION___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP_1:
+			case OCCIPackage.ACTION___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP:
 				return CorrectScheme((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);

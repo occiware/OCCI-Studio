@@ -95,7 +95,7 @@ public abstract class CategoryTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Category#AttributesNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testAttributesNameUnique__DiagnosticChain_Map_1() {
+	public void testAttributesNameUnique__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -108,7 +108,7 @@ public abstract class CategoryTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Category#IdentityUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testIdentityUnique__DiagnosticChain_Map_1() {
+	public void testIdentityUnique__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -121,7 +121,7 @@ public abstract class CategoryTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Category#SchemeEndsWithSharp(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testSchemeEndsWithSharp__DiagnosticChain_Map_1() {
+	public void testSchemeEndsWithSharp__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -89,7 +89,7 @@ public class ResourceTest extends EntityTest {
 	 * @see org.eclipse.cmf.occi.core.Resource#ResourceKindIsInParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testResourceKindIsInParent__DiagnosticChain_Map_1() {
+	public void testResourceKindIsInParent__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -356,9 +356,9 @@ public abstract class TypeImpl extends CategoryImpl implements Type {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OCCIPackage.TYPE___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP_1:
+			case OCCIPackage.TYPE___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP:
 				return ActionTermUnicity((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case OCCIPackage.TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP_1:
+			case OCCIPackage.TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP:
 				return ConstraintNameUnique((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);

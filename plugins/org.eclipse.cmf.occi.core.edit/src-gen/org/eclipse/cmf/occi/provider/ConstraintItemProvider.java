@@ -135,7 +135,7 @@ public class ConstraintItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_Constraint_body_feature", "_UI_Constraint_type"),
 				 OCCIPackage.Literals.CONSTRAINT__BODY,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,

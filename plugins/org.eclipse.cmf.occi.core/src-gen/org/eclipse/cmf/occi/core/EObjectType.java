@@ -22,7 +22,6 @@ package org.eclipse.cmf.occi.core;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.cmf.occi.core.EObjectType#getInstanceClassName <em>Instance Class Name</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.core.EObjectType#getPattern <em>Pattern</em>}</li>
  * </ul>
  *
  * @see org.eclipse.cmf.occi.core.OCCIPackage#getEObjectType()
@@ -57,31 +56,4 @@ public interface EObjectType extends BasicType {
 	 * @generated
 	 */
 	void setInstanceClassName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Pattern</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Pattern</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pattern</em>' attribute.
-	 * @see #setPattern(String)
-	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getEObjectType_Pattern()
-	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!EObjectType!pattern'"
-	 * @generated
-	 */
-	String getPattern();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.core.EObjectType#getPattern <em>Pattern</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pattern</em>' attribute.
-	 * @see #getPattern()
-	 * @generated
-	 */
-	void setPattern(String value);
 } // EObjectType

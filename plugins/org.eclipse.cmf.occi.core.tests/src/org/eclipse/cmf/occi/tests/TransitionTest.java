@@ -108,7 +108,7 @@ public class TransitionTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.core.Transition#containedActionMustBeDeclaredInTheAppropriateKind(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testContainedActionMustBeDeclaredInTheAppropriateKind__DiagnosticChain_Map_1() {
+	public void testContainedActionMustBeDeclaredInTheAppropriateKind__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
