@@ -144,6 +144,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR_Resource_c_c_ResourceKindIsInParent = "Resource::ResourceKindIsInParent";
 	public static final /*@NonInvalid*/ java.lang.String STR_State_c_c_StateLiteralAlreadyDefinedInFSMAttributeType = "State::StateLiteralAlreadyDefinedInFSMAttributeType";
 	public static final /*@NonInvalid*/ java.lang.String STR_The_32_action_32 = "The action ";
+	public static final /*@NonInvalid*/ java.lang.String STR_The_32_action_32_of_32_Transition_32_instance_32_coming_32_from_32 = "The action of Transition instance coming from ";
 	public static final /*@NonInvalid*/ java.lang.String STR_Transition_c_c_containedActionMustBeDeclaredInTheAppropriateKind = "Transition::containedActionMustBeDeclaredInTheAppropriateKind";
 	public static final /*@NonInvalid*/ java.lang.String STR_Type_c_c_ActionTermUnicity = "Type::ActionTermUnicity";
 	public static final /*@NonInvalid*/ java.lang.String STR_Type_c_c_ConstraintNameUnique = "Type::ConstraintNameUnique";
@@ -152,9 +153,11 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR__32_Kind_32_cannot_32_be_32_used_32_in_32_the_32_FSM_32_of_32 = " Kind cannot be used in the FSM of ";
 	public static final /*@NonInvalid*/ java.lang.String STR__32_declared_32_in_32 = " declared in ";
 	public static final /*@NonInvalid*/ java.lang.String STR__32_doesn_39_t_32_appear_32_in_32_the_32_FSM_32_of_32 = " doesn\'t appear in the FSM of ";
+	public static final /*@NonInvalid*/ java.lang.String STR__32_kind_32_instance_32_must_32_be_32_a_32_set = " kind instance must be a set";
+	public static final /*@NonInvalid*/ java.lang.String STR__32_state_32_in_32_the_32_FSM_32_of_32 = " state in the FSM of ";
+	public static final /*@NonInvalid*/ java.lang.String STR__32_state_32_to_32_the_32 = " state to the ";
 	public static final /*@NonInvalid*/ java.lang.String STR__35 = "#";
 	public static final /*@NonInvalid*/ java.lang.String STR__s_action_35 = "/action#";
-	public static final /*@NonInvalid*/ java.lang.String STR_action_32_of_32_Transition_32_instance_32_must_32_be_32_a_32_set = "action of Transition instance must be a set";
 	public static final /*@NonInvalid*/ java.lang.String STR_entity = "entity";
 	public static final /*@NonInvalid*/ java.lang.String STR_http_c_s_s_schemas_ogf_org_s_occi_s_core_35 = "http://schemas.ogf.org/occi/core#";
 	public static final /*@NonInvalid*/ java.lang.String STR_link = "link";

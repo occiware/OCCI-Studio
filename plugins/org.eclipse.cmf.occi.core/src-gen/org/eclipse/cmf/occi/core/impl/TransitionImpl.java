@@ -16,6 +16,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Map;
 import org.eclipse.cmf.occi.core.Action;
+import org.eclipse.cmf.occi.core.EnumerationLiteral;
 import org.eclipse.cmf.occi.core.FSM;
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.OCCIPackage;
@@ -302,7 +303,9 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 		 *                 .oclAsType(FSM)
 		 *                 .oclContainer()
 		 *                 .oclAsType(Kind).name + ' Kind.'
-		 *               else 'action of Transition instance must be a set'
+		 *               else 'The action of Transition instance coming from ' + source.literal.name + ' state to the ' + target.literal.name + ' state in the FSM of ' +
+		 *                 source.owningFSM.oclContainer()
+		 *                 .oclAsType(Kind).name + ' kind instance must be a set'
 		 *               endif, severity = -1
 		 *             }
 		 *           endif
@@ -347,10 +350,10 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 					symbol_2 = ValueUtil.TRUE_VALUE;
 				}
 				else {
+					final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Kind_3 = idResolver.getClass(OCCITables.CLSSid_Kind, null);
 					/*@Thrown*/ String symbol_0;
 					if (ne) {
 						final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_FSM_0 = idResolver.getClass(OCCITables.CLSSid_FSM, null);
-						final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Kind_2 = idResolver.getClass(OCCITables.CLSSid_Kind, null);
 						final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_State_0 = idResolver.getClass(OCCITables.CLSSid_State, null);
 						if (action_0 == null) {
 							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Category::name\'");
@@ -359,7 +362,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 						final /*@Thrown*/ String sum = StringConcatOperation.INSTANCE.evaluate(OCCITables.STR_The_32_action_32, name);
 						final /*@Thrown*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, OCCITables.STR__32_declared_32_in_32);
 						final /*@Thrown*/ Object oclContainer_2 = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, action_0);
-						final /*@Thrown*/ Kind oclAsType_2 = ClassUtil.nonNullState((Kind)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_2, TYP_occi_c_c_Kind_2));
+						final /*@Thrown*/ Kind oclAsType_2 = ClassUtil.nonNullState((Kind)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_2, TYP_occi_c_c_Kind_3));
 						final /*@Thrown*/ String name_0 = oclAsType_2.getName();
 						final /*@Thrown*/ String sum_1 = StringConcatOperation.INSTANCE.evaluate(sum_0, name_0);
 						final /*@Thrown*/ String sum_2 = StringConcatOperation.INSTANCE.evaluate(sum_1, OCCITables.STR__32_Kind_32_cannot_32_be_32_used_32_in_32_the_32_FSM_32_of_32);
@@ -368,14 +371,36 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 						final /*@Thrown*/ Object oclContainer_4 = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, oclAsType_3);
 						final /*@Thrown*/ FSM oclAsType_4 = ClassUtil.nonNullState((FSM)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_4, TYP_occi_c_c_FSM_0));
 						final /*@Thrown*/ Object oclContainer_5 = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, oclAsType_4);
-						final /*@Thrown*/ Kind oclAsType_5 = ClassUtil.nonNullState((Kind)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_5, TYP_occi_c_c_Kind_2));
+						final /*@Thrown*/ Kind oclAsType_5 = ClassUtil.nonNullState((Kind)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_5, TYP_occi_c_c_Kind_3));
 						final /*@Thrown*/ String name_1 = oclAsType_5.getName();
 						final /*@Thrown*/ String sum_3 = StringConcatOperation.INSTANCE.evaluate(sum_2, name_1);
 						final /*@Thrown*/ String sum_4 = StringConcatOperation.INSTANCE.evaluate(sum_3, OCCITables.STR__32_Kind);
 						symbol_0 = sum_4;
 					}
 					else {
-						symbol_0 = OCCITables.STR_action_32_of_32_Transition_32_instance_32_must_32_be_32_a_32_set;
+						final /*@NonInvalid*/ State source_0 = this.getSource();
+						final /*@NonInvalid*/ EnumerationLiteral literal = source_0.getLiteral();
+						if (literal == null) {
+							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::EnumerationLiteral::name\'");
+						}
+						final /*@Thrown*/ String name_2 = literal.getName();
+						final /*@Thrown*/ String sum_5 = StringConcatOperation.INSTANCE.evaluate(OCCITables.STR_The_32_action_32_of_32_Transition_32_instance_32_coming_32_from_32, name_2);
+						final /*@Thrown*/ String sum_6 = StringConcatOperation.INSTANCE.evaluate(sum_5, OCCITables.STR__32_state_32_to_32_the_32);
+						final /*@NonInvalid*/ State target = this.getTarget();
+						final /*@NonInvalid*/ EnumerationLiteral literal_0 = target.getLiteral();
+						if (literal_0 == null) {
+							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::EnumerationLiteral::name\'");
+						}
+						final /*@Thrown*/ String name_3 = literal_0.getName();
+						final /*@Thrown*/ String sum_7 = StringConcatOperation.INSTANCE.evaluate(sum_6, name_3);
+						final /*@Thrown*/ String sum_8 = StringConcatOperation.INSTANCE.evaluate(sum_7, OCCITables.STR__32_state_32_in_32_the_32_FSM_32_of_32);
+						final /*@NonInvalid*/ FSM owningFSM = source_0.getOwningFSM();
+						final /*@NonInvalid*/ Object oclContainer_6 = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, owningFSM);
+						final /*@Thrown*/ Kind oclAsType_6 = ClassUtil.nonNullState((Kind)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_6, TYP_occi_c_c_Kind_3));
+						final /*@Thrown*/ String name_4 = oclAsType_6.getName();
+						final /*@Thrown*/ String sum_9 = StringConcatOperation.INSTANCE.evaluate(sum_8, name_4);
+						final /*@Thrown*/ String sum_10 = StringConcatOperation.INSTANCE.evaluate(sum_9, OCCITables.STR__32_kind_32_instance_32_must_32_be_32_a_32_set);
+						symbol_0 = sum_10;
 					}
 					final /*@NonInvalid*/ IntegerValue diff = (IntegerValue)NumericNegateOperation.INSTANCE.evaluate(OCCITables.INT_1);
 					final /*@Thrown*/ TupleValue symbol_1 = ValueUtil.createTupleOfEach(OCCITables.TUPLid_, symbol_0, diff, status);
