@@ -19,7 +19,7 @@
       <!-- @generated OCCI -->
       <factory
             uri="http://schemas.ogf.org/occi/core/ecore/2.0"
-            class="org.eclipse.cmf.occi.provider.OCCIItemProviderAdapterFactory"
+            class="org.eclipse.cmf.occi.core.provider.OCCIItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

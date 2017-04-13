@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.eclipse.cmf.occi.tests
+Export-Package: org.eclipse.cmf.occi.core.tests
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.cmf.occi.core;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,

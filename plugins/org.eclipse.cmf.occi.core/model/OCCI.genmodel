@@ -12,7 +12,8 @@
   <foreignModel>OCCI.ecore</foreignModel>
   <genPackages prefix="OCCI" basePackage="org.eclipse.cmf" resource="XMI" disposableProviderFactory="true"
       interfacePackageSuffix="core" metaDataPackageSuffix="core" classPackageSuffix="core.impl"
-      utilityPackageSuffix="core.util" fileExtensions="occie,occic" ecorePackage="OCCI.ecore#/">
+      utilityPackageSuffix="core.util" providerPackageSuffix="core.provider" presentationPackageSuffix="core.presentation"
+      testsPackageSuffix="core.tests" fileExtensions="occie,occic" ecorePackage="OCCI.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="OCCI.ecore#//NumericTypeEnum">
       <genEnumLiterals ecoreEnumLiteral="OCCI.ecore#//NumericTypeEnum/Byte"/>
       <genEnumLiterals ecoreEnumLiteral="OCCI.ecore#//NumericTypeEnum/Double"/>

@@ -21,9 +21,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.eclipse.cmf.occi.presentation.OCCIModelWizardID"
+            id="org.eclipse.cmf.occi.core.presentation.OCCIModelWizardID"
             name="%_UI_OCCIModelWizard_label"
-            class="org.eclipse.cmf.occi.presentation.OCCIModelWizard"
+            class="org.eclipse.cmf.occi.core.presentation.OCCIModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/OCCIModelFile.gif">
          <description>%_UI_OCCIModelWizard_description</description>
@@ -34,13 +34,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated OCCI -->
       <editor
-            id="org.eclipse.cmf.occi.presentation.OCCIEditorID"
+            id="org.eclipse.cmf.occi.core.presentation.OCCIEditorID"
             name="%_UI_OCCIEditor_label"
             icon="icons/full/obj16/OCCIModelFile.gif"
             extensions="occie,occic"
-            class="org.eclipse.cmf.occi.presentation.OCCIEditor"
-            contributorClass="org.eclipse.cmf.occi.presentation.OCCIActionBarContributor">
+            class="org.eclipse.cmf.occi.core.presentation.OCCIEditor"
+            contributorClass="org.eclipse.cmf.occi.core.presentation.OCCIActionBarContributor">
       </editor>
    </extension>
-
 </plugin>
