@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2015-2017 Obeo, Inria
+  
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+ - William Piers <william.piers@obeo.fr>
+ - Philippe Merle <philippe.merle@inria.fr>
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.occiware</groupId>
+  <artifactId>org.eclipse.cmf.occi.parent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <!-- OCCI Core -->
+    <module>plugins/org.eclipse.cmf.occi.core</module>
+    <module>plugins/org.eclipse.cmf.occi.core.edit</module>
+    <module>plugins/org.eclipse.cmf.occi.core.editor</module>
+    <module>plugins/org.eclipse.cmf.occi.core.tests</module>
+
+    <!-- Releng -->
+    <module>features/org.eclipse.cmf.occi</module>
+  </modules>
+
+  <profiles>
+    <profile>
+      <!-- Type mvn -Pbuild.products to activate this profile. -->
+      <id>build.products</id>
+      <modules>
+        <module>repositories/org.eclipse.cmf.occi.repository</module>
+        <module>repositories/org.eclipse.cmf.occi.product</module>
+      </modules>
+    </profile>
+  </profiles>
+
+  <properties>
+    <tycho-version>1.0.0</tycho-version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <repositories>
+    <!-- configure p2 repository to resolve against -->
+    <repository>
+      <id>neon</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/releases/neon</url>
+    </repository>
+
+    <!-- TODO: remove when OCL 6.3.0 integrated into an official Eclipse distribution (i.e., Neon or Oxygen). -->
+    <repository>
+      <id>OCL-6.3</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/6.3.0</url>
+    </repository>
+
+    <repository>
+      <id>mvnrepository</id>
+      <url>http://repo1.maven.org/maven2</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+  </repositories>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>oss.sonatype.org-snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <!-- enable tycho build extension -->
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <environments>
+            <environment>
+              <os>win32</os>
+              <ws>win32</ws>
+              <arch>x86_64</arch>
+            </environment>
+            <environment>
+              <os>linux</os>
+              <ws>gtk</ws>
+              <arch>x86_64</arch>
+            </environment>
+            <environment>
+              <os>macosx</os>
+              <ws>cocoa</ws>
+              <arch>x86_64</arch>
+            </environment>
+          </environments>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
