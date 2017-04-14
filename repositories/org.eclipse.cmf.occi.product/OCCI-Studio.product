@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2015-2017 Obeo, Inria
+  
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+ - William Piers <william.piers@obeo.fr>
+ - Philippe Merle <philippe.merle@inria.fr>
+-->
+<?pde version="3.5"?>
+<product name="OCCI Studio" uid="org.eclipse.cmf.occi.product" id="org.eclipse.platform.ide" application="org.eclipse.ui.ide.workbench" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+
+  <aboutInfo>
+    <image path="eclipse_lg.png"/>
+    <text>
+      %productBlurb
+    </text>
+  </aboutInfo>
+
+  <configIni use="default">
+  </configIni>
+
+  <launcherArgs>
+    <vmArgs>-Dosgi.requiredJavaVersion=1.8 -Xms256m -Xmx1024m</vmArgs>
+    <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+  </launcherArgs>
+
+  <windowImages i16="eclipse16.png" i32="eclipse32.png" i48="eclipse48.png"/>
+
+  <splash
+      startupProgressRect="2,290,448,10"
+      startupMessageRect="7,265,320,20"
+      startupForegroundColor="9c9696" />
+  <launcher name="OCCI">
+    <solaris/>
+    <win useIco="false">
+      <bmp/>
+    </win>
+  </launcher>
+
+  <vm>
+    <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</windows>
+  </vm>
+
+  <plugins>
+  </plugins>
+
+  <features>
+    <feature id="org.eclipse.cmf.occi" version="1.0.0.qualifier"/>
+    <feature id="org.eclipse.platform" version="4.6.3.v20170301-0400"/>
+  </features>
+
+  <configurations>
+    <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
+    <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+    <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+    <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+    <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="0" />
+    <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+    <property name="org.eclipse.core.resources/encoding" value="UTF-8" />
+    <property name="org.eclipse.ui/org.eclipse.ui.edit.text.encoding" value="UTF-8" />
+    <property name="osgi.instance.area.default" value="./workspace" />
+  </configurations>
+
+  <repositories>
+    <repository location="http://download.eclipse.org/releases/neon" enabled="true" />
+    <repository location="http://www.obeo.fr/download/occiware/repository" enabled="true" />
+  </repositories>
+
+  <preferencesInfo>
+    <targetfile overwrite="false"/>
+  </preferencesInfo>
+
+  <cssInfo>
+  </cssInfo>
+
+</product>
