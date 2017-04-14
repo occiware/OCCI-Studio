@@ -1,0 +1,49 @@
+sudo: false
+
+language: java
+
+matrix:
+  fast_finish: true
+  include:
+  - os: linux
+    jdk: oraclejdk8
+    env: DISPLAY=:99.0
+
+# install: true
+# before_install:
+# - echo "MAVEN_OPTS='-Xmx2048m -XX:MaxPermSize=512m'" > ~/.mavenrc
+
+cache:
+  directories:
+  - $HOME/.m2
+
+script:
+- sh travis/build.sh
+
+# Actions to perform after the build.
+after_success:
+- sh travis/tag_current_release.sh
+
+deploy:
+  provider: releases
+  api_key:
+    secure: "qMw7+EjWieAEsT7mqxp6VFG7ODLgJiNIxqhYiqcqAp8MYujAmaRoDwV0ueG7m93Dj5EROs+EIpizpq9Xb6d1QhRuC60lFPZSad2ARsXZHbeel3GiZZnEPm4Aso9er3LbfkvOWjJhVviYkR3Z+gQITfzYVF/4uUsgvBc7/uBnhqhQ1JX0APEk0c+JanHEpzE+0VN/jjOMBm9bOBK3S6/z7XYyLaDKTF6tMv8F4iwSqd0KpPpquSpJ11Z+h+Kme2PiXO6Cj7IYAto4XI7VWxi6vW79V1QtKIlQa4LW/O7JNv4cI7WfC5fUkNTCU5ORwKmC1RtXCnSc1HRxunlvO6h1AGIFLkdPp7gQKlUJvDYNEA52sVl1FD/D8/naupardbku/9KruhEUlstHdBgoaiFelyIDtk3hVScabFNBDbXcQNuOohwDkRkZwl9XiIBD4+QrJzxPXQpt0ep76/1eVc0ohv41rzhUs7AwnLTJOkmChLJcLydbA8jLuCqRKf/9igvMvauOqPVzBaCbDCX54j7Li35FaJ79RD0b3nZCPG/gLs9gHGLXIun/RlvOLRjcG+4jBmddFFYMB88qBe9+CdJr81nz1RFtf9De8QNBQR3Edv1BwE8duoPtcSh7DElAcwPc3Xtj1mI5Qiq7oNCtgiwrvgGx6JmEiJSudsCcdAjIeX0="
+  file:
+    - "repositories/org.eclipse.cmf.occi.product/target/products/org.eclipse.cmf.occi.product-linux.gtk.x86_64.zip"
+    - "repositories/org.eclipse.cmf.occi.product/target/products/org.eclipse.cmf.occi.product-macosx.cocoa.x86_64.zip"
+    - "repositories/org.eclipse.cmf.occi.product/target/products/org.eclipse.cmf.occi.product-win32.win32.x86_64.zip"
+  skip_cleanup: true
+  overwrite: true
+  on:
+    branch : master
+    repo: occiware/OCCI-Studio
+
+after_deploy:
+- sh travis/deploy-maven-artifacts.sh
+
+env:
+  global:
+  - secure: "p+ZlufJ5+qadKFyeGneKU5+uDcNPE2HpmItlKBpVjNQQPAHnpi7AVBvRIKBgjFN277ImR6KmiGnFMN2NgpplXy31PA6dAF7yyYBb0EEHCAQguvPaFw8mjfggPgtFaA4EglXhG4mIEsQIt49WGqutkeLQRr4GWn4QoHdTvjWmrCJ3aMb5KD0YD2VgyQvBX8oTUbQHniBhtGXi+O/Bzn4m0gMvenq9dOhIBrNW4WkxmLfYIoq0VvGfqjncFGEzM48hrPHJBi8b5cx93gNOkkFKc5GLFpVwoSEKNoH7klxsGw1BSTlZlGztMZ/vW0/oXzYoXyNJuuX8EijUoaf1boV23+9OtJ5pWIsznhVUfuI2kzs7xMokbZKarudvLz/Rp9V4YGqidPV5Aa2Ojy8027vQ1FKGQ6Dc+FUyt+2X7Ymo1weKY6mTc/OYrG/vSUwV7JBmrZ4ldnyX3NdJynWUIOFjsO91j5thL8OTvPuJVFaanbamS7tb3l+v2vzRuMaAYga34MJ2H6jqosYDfafG7rrlzyFeDztVOX39+jmTq/ODe9SEDPE5M+M4ZtK9dFDtI/DjAFbp9UJxJEIiPZuVcAK/auMofr088ar0ZQED1APnD6AtRNw8xiUGnmZcXw7+e1QAbXTiXsQw+ncJFfLBtiO8sF/zU5wRrMh6OCsScxwuvIQ="
+  - secure: "V2y0S5RzMzNEINrZcYXYC2b1zJb9ONufhx3jd2uGFZDFie617HOW1x22ggXkg+VuVmniwes9/5A0HvXZz6ePHEFQfkUOwdOYlyIaIiLZdSDAPjznWuO0aKYAJsr7481y5BC8I5yanqREm1+3F1Hp0TI6RzNzrEwIdfdbByy0Leb+OG6ZJj5JlBYrolmIMn/hTgJ5pAeIVVwfW1Av8rm1PuIFdDFA7dL4oBSB5vQYfvHC/NQN+NmLAw1Z+DXFnKuB8R1nenr5HJ6gls/Gsqg9mV4A+USlqpPlSSxFb/8lbZUX00XUe9vTYUkpkmii939m4cBs4iFiLmnV3XN+qfcRc1chkUNcqwxNuBRQwfcOypD3ShaWXDv6NDFrlstlEHD1mZ9iZ64x33zpYuVWGzdry/qKqdWPG4Xk24c3vJ3hEXDAqwKoRNRrjtlNHXXDF1XVzWee/kbqpcs03Y/4yUOk9tr4XjlfPtuM/OxK4saEIkhMH4RL0BWUSehkLL+B6dfMXI+vOArS0NRLoPLU5fCE32N8eIuaY1yeZDmHvN5md1Z5uTAw2l8thNP/YRd+/twM3/RRHPtz5tX1hLHrNuGmYql4Bs2xCwoFUetCYZX70HHLfSdh1fTvmhnwZCxG0I7nDnVvx+rjdsLXo4dAeaR6TOj/G6uPbIolJQdW8GB/Fq0="
+  - secure: "Ih21rdC59sBcW7QhcBVsXDndJBS0DReI+LNRY1ghirSR+AFx4SeF5xo9gUJhyFo21+rk+liGpxSHL5kLtoCXD8Vhrp0ZJesHzjIKFuPklCr/yH1zjVUKs0UeqbPf4wqCBR1acS67cKCy38mO0j1dlZ65hBv6VjtAkp/ENsifcZYCh5QlO+g38HcL4qHxCERFDAN40WSsM0qz8qA2kgELxjh5pFRu16/ltTPbcI2qq6ZRY2Begk8snk6ZLuGukhZ+SEnH1sd3At3cPi/ZrYfS+x7Tk0jpQKQSicntLUAr6dVErT1SS0IZMij4aUnsCoYhlTsD46HG8VNAVKgoVb3+52dysC3ewL4qvhdQIBHdWb0ULaKurSflvvUzKSip/zvo6BJq+nJ2N/+ihgMRWTHIE9u0thwzh9U07xvTTzyynz4C7PMJY/4pGsrYegiJkY6Ia11jJIPBAgz3nUI3jQAYJFISPvkjZvdAepkYAHIBPw9CP9NvY12CTelU2OdlFNaLYQjJoU8IKaAm362uuFhf8pkt977xIyDjL8XHq9uc6fKFnjiXvgFCl3eq93NMckTyXLFFvnKJ+IO+LOoWfUrGvHwJ5Xuqtq/DisL1k72/rHACwAEShGeU72JfYEurKC1gl9SxOHOn7AVVkFoof0mIBZodvvTMHpFaZVLB9aTbmQI="
+
