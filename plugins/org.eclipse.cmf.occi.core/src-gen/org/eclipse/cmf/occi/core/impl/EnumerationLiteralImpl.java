@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.cmf.occi.core.impl.EnumerationLiteralImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.impl.EnumerationLiteralImpl#getDocumentation <em>Documentation</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.impl.EnumerationLiteralImpl#getEnumerationType <em>Enumeration Type</em>}</li>
  * </ul>
  *
@@ -60,6 +61,26 @@ public class EnumerationLiteralImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDocumentation()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DOCUMENTATION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDocumentation()
+	 * @generated
+	 * @ordered
+	 */
+	protected String documentation = DOCUMENTATION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,6 +120,27 @@ public class EnumerationLiteralImpl extends MinimalEObjectImpl.Container impleme
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.ENUMERATION_LITERAL__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getDocumentation() {
+		return documentation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDocumentation(String newDocumentation) {
+		String oldDocumentation = documentation;
+		documentation = newDocumentation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.ENUMERATION_LITERAL__DOCUMENTATION, oldDocumentation, documentation));
 	}
 
 	/**
@@ -196,6 +238,8 @@ public class EnumerationLiteralImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 			case OCCIPackage.ENUMERATION_LITERAL__NAME:
 				return getName();
+			case OCCIPackage.ENUMERATION_LITERAL__DOCUMENTATION:
+				return getDocumentation();
 			case OCCIPackage.ENUMERATION_LITERAL__ENUMERATION_TYPE:
 				return getEnumerationType();
 		}
@@ -212,6 +256,9 @@ public class EnumerationLiteralImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 			case OCCIPackage.ENUMERATION_LITERAL__NAME:
 				setName((String)newValue);
+				return;
+			case OCCIPackage.ENUMERATION_LITERAL__DOCUMENTATION:
+				setDocumentation((String)newValue);
 				return;
 			case OCCIPackage.ENUMERATION_LITERAL__ENUMERATION_TYPE:
 				setEnumerationType((EnumerationType)newValue);
@@ -231,6 +278,9 @@ public class EnumerationLiteralImpl extends MinimalEObjectImpl.Container impleme
 			case OCCIPackage.ENUMERATION_LITERAL__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case OCCIPackage.ENUMERATION_LITERAL__DOCUMENTATION:
+				setDocumentation(DOCUMENTATION_EDEFAULT);
+				return;
 			case OCCIPackage.ENUMERATION_LITERAL__ENUMERATION_TYPE:
 				setEnumerationType((EnumerationType)null);
 				return;
@@ -248,6 +298,8 @@ public class EnumerationLiteralImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 			case OCCIPackage.ENUMERATION_LITERAL__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case OCCIPackage.ENUMERATION_LITERAL__DOCUMENTATION:
+				return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT.equals(documentation);
 			case OCCIPackage.ENUMERATION_LITERAL__ENUMERATION_TYPE:
 				return getEnumerationType() != null;
 		}
@@ -266,6 +318,8 @@ public class EnumerationLiteralImpl extends MinimalEObjectImpl.Container impleme
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", documentation: ");
+		result.append(documentation);
 		result.append(')');
 		return result.toString();
 	}

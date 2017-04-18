@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.cmf.occi.core.EnumerationLiteral#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.EnumerationLiteral#getDocumentation <em>Documentation</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.EnumerationLiteral#getEnumerationType <em>Enumeration Type</em>}</li>
  * </ul>
  *
@@ -57,6 +58,33 @@ public interface EnumerationLiteral extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Documentation</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Documentation</em>' attribute.
+	 * @see #setDocumentation(String)
+	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getEnumerationLiteral_Documentation()
+	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!EnumerationLiteral!documentation'"
+	 * @generated
+	 */
+	String getDocumentation();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.core.EnumerationLiteral#getDocumentation <em>Documentation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Documentation</em>' attribute.
+	 * @see #getDocumentation()
+	 * @generated
+	 */
+	void setDocumentation(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Enumeration Type</b></em>' container reference.

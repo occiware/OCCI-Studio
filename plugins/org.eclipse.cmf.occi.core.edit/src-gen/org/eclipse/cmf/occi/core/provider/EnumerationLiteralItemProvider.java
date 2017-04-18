@@ -79,6 +79,7 @@ public class EnumerationLiteralItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addDocumentationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -97,6 +98,28 @@ public class EnumerationLiteralItemProvider
 				 getString("_UI_EnumerationLiteral_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EnumerationLiteral_name_feature", "_UI_EnumerationLiteral_type"),
 				 OCCIPackage.Literals.ENUMERATION_LITERAL__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Documentation feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDocumentationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EnumerationLiteral_documentation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EnumerationLiteral_documentation_feature", "_UI_EnumerationLiteral_type"),
+				 OCCIPackage.Literals.ENUMERATION_LITERAL__DOCUMENTATION,
 				 true,
 				 false,
 				 false,

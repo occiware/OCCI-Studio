@@ -157,6 +157,7 @@
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//EnumerationLiteral">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//EnumerationLiteral/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//EnumerationLiteral/documentation"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference OCCI.ecore#//EnumerationLiteral/enumerationType"/>
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//RecordType">

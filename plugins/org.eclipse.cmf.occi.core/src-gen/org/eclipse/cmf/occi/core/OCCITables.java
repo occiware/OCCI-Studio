@@ -144,7 +144,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR_Resource_c_c_ResourceKindIsInParent = "Resource::ResourceKindIsInParent";
 	public static final /*@NonInvalid*/ java.lang.String STR_State_c_c_StateLiteralAlreadyDefinedInFSMAttributeType = "State::StateLiteralAlreadyDefinedInFSMAttributeType";
 	public static final /*@NonInvalid*/ java.lang.String STR_The_32_action_32 = "The action ";
-	public static final /*@NonInvalid*/ java.lang.String STR_The_32_action_32_of_32_Transition_32_instance_32_coming_32_from_32 = "The action of Transition instance coming from ";
+	public static final /*@NonInvalid*/ java.lang.String STR_The_32_action_32_of_32_Transition_32_instance_32_coming_32_from_32_the_32_34 = "The action of Transition instance coming from the \"";
 	public static final /*@NonInvalid*/ java.lang.String STR_Transition_c_c_containedActionMustBeDeclaredInTheAppropriateKind = "Transition::containedActionMustBeDeclaredInTheAppropriateKind";
 	public static final /*@NonInvalid*/ java.lang.String STR_Type_c_c_ActionTermUnicity = "Type::ActionTermUnicity";
 	public static final /*@NonInvalid*/ java.lang.String STR_Type_c_c_ConstraintNameUnique = "Type::ConstraintNameUnique";
@@ -153,9 +153,9 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR__32_Kind_32_cannot_32_be_32_used_32_in_32_the_32_FSM_32_of_32 = " Kind cannot be used in the FSM of ";
 	public static final /*@NonInvalid*/ java.lang.String STR__32_declared_32_in_32 = " declared in ";
 	public static final /*@NonInvalid*/ java.lang.String STR__32_doesn_39_t_32_appear_32_in_32_the_32_FSM_32_of_32 = " doesn\'t appear in the FSM of ";
-	public static final /*@NonInvalid*/ java.lang.String STR__32_kind_32_instance_32_must_32_be_32_a_32_set = " kind instance must be a set";
-	public static final /*@NonInvalid*/ java.lang.String STR__32_state_32_in_32_the_32_FSM_32_of_32 = " state in the FSM of ";
-	public static final /*@NonInvalid*/ java.lang.String STR__32_state_32_to_32_the_32 = " state to the ";
+	public static final /*@NonInvalid*/ java.lang.String STR__34_32_kind_32_instance_32_must_32_be_32_a_32_set = "\" kind instance must be a set";
+	public static final /*@NonInvalid*/ java.lang.String STR__34_32_state_32_in_32_the_32_FSM_32_of_32_34 = "\" state in the FSM of \"";
+	public static final /*@NonInvalid*/ java.lang.String STR__34_32_state_32_to_32_the_32_34 = "\" state to the \"";
 	public static final /*@NonInvalid*/ java.lang.String STR__35 = "#";
 	public static final /*@NonInvalid*/ java.lang.String STR__s_action_35 = "/action#";
 	public static final /*@NonInvalid*/ java.lang.String STR_entity = "entity";
@@ -747,9 +747,10 @@ public class OCCITables
 		public static final /*@NonNull*/ ExecutorProperty _Entity__Kind__entities = new ExecutorPropertyWithImplementation("Kind", Types._Entity, 7, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.KIND__ENTITIES));
 		public static final /*@NonNull*/ ExecutorProperty _Entity__Mixin__entities = new ExecutorPropertyWithImplementation("Mixin", Types._Entity, 8, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.MIXIN__ENTITIES));
 
-		public static final /*@NonNull*/ ExecutorProperty _EnumerationLiteral__enumerationType = new EcoreExecutorProperty(OCCIPackage.Literals.ENUMERATION_LITERAL__ENUMERATION_TYPE, Types._EnumerationLiteral, 0);
-		public static final /*@NonNull*/ ExecutorProperty _EnumerationLiteral__name = new EcoreExecutorProperty(OCCIPackage.Literals.ENUMERATION_LITERAL__NAME, Types._EnumerationLiteral, 1);
-		public static final /*@NonNull*/ ExecutorProperty _EnumerationLiteral__State__literal = new ExecutorPropertyWithImplementation("State", Types._EnumerationLiteral, 2, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.STATE__LITERAL));
+		public static final /*@NonNull*/ ExecutorProperty _EnumerationLiteral__documentation = new EcoreExecutorProperty(OCCIPackage.Literals.ENUMERATION_LITERAL__DOCUMENTATION, Types._EnumerationLiteral, 0);
+		public static final /*@NonNull*/ ExecutorProperty _EnumerationLiteral__enumerationType = new EcoreExecutorProperty(OCCIPackage.Literals.ENUMERATION_LITERAL__ENUMERATION_TYPE, Types._EnumerationLiteral, 1);
+		public static final /*@NonNull*/ ExecutorProperty _EnumerationLiteral__name = new EcoreExecutorProperty(OCCIPackage.Literals.ENUMERATION_LITERAL__NAME, Types._EnumerationLiteral, 2);
+		public static final /*@NonNull*/ ExecutorProperty _EnumerationLiteral__State__literal = new ExecutorPropertyWithImplementation("State", Types._EnumerationLiteral, 3, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.STATE__LITERAL));
 
 		public static final /*@NonNull*/ ExecutorProperty _EnumerationType__literals = new EcoreExecutorProperty(OCCIPackage.Literals.ENUMERATION_TYPE__LITERALS, Types._EnumerationType, 0);
 
@@ -2531,6 +2532,7 @@ public class OCCITables
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _EnumerationLiteral = {
+			OCCITables.Properties._EnumerationLiteral__documentation,
 			OCCITables.Properties._EnumerationLiteral__enumerationType,
 			OCCITables.Properties._EnumerationLiteral__name
 		};

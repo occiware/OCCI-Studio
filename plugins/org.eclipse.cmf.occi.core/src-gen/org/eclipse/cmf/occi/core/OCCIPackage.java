@@ -2533,13 +2533,22 @@ public interface OCCIPackage extends EPackage {
 	int ENUMERATION_LITERAL__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_LITERAL__DOCUMENTATION = 1;
+
+	/**
 	 * The feature id for the '<em><b>Enumeration Type</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_LITERAL__ENUMERATION_TYPE = 1;
+	int ENUMERATION_LITERAL__ENUMERATION_TYPE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Enumeration Literal</em>' class.
@@ -2548,7 +2557,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_LITERAL_FEATURE_COUNT = 2;
+	int ENUMERATION_LITERAL_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Enumeration Literal</em>' class.
@@ -4304,6 +4313,17 @@ public interface OCCIPackage extends EPackage {
 	EAttribute getEnumerationLiteral_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.EnumerationLiteral#getDocumentation <em>Documentation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Documentation</em>'.
+	 * @see org.eclipse.cmf.occi.core.EnumerationLiteral#getDocumentation()
+	 * @see #getEnumerationLiteral()
+	 * @generated
+	 */
+	EAttribute getEnumerationLiteral_Documentation();
+
+	/**
 	 * Returns the meta object for the container reference '{@link org.eclipse.cmf.occi.core.EnumerationLiteral#getEnumerationType <em>Enumeration Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5694,6 +5714,14 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENUMERATION_LITERAL__NAME = eINSTANCE.getEnumerationLiteral_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Documentation</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENUMERATION_LITERAL__DOCUMENTATION = eINSTANCE.getEnumerationLiteral_Documentation();
 
 		/**
 		 * The meta object literal for the '<em><b>Enumeration Type</b></em>' container reference feature.

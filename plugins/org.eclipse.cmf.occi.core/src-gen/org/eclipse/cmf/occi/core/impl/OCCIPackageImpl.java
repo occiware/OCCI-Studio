@@ -1677,8 +1677,17 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEnumerationLiteral_Documentation() {
+		return (EAttribute)enumerationLiteralEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getEnumerationLiteral_EnumerationType() {
-		return (EReference)enumerationLiteralEClass.getEStructuralFeatures().get(1);
+		return (EReference)enumerationLiteralEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2011,6 +2020,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 
 		enumerationLiteralEClass = createEClass(ENUMERATION_LITERAL);
 		createEAttribute(enumerationLiteralEClass, ENUMERATION_LITERAL__NAME);
+		createEAttribute(enumerationLiteralEClass, ENUMERATION_LITERAL__DOCUMENTATION);
 		createEReference(enumerationLiteralEClass, ENUMERATION_LITERAL__ENUMERATION_TYPE);
 
 		recordTypeEClass = createEClass(RECORD_TYPE);
@@ -2541,6 +2551,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 
 		initEClass(enumerationLiteralEClass, EnumerationLiteral.class, "EnumerationLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEnumerationLiteral_Name(), this.getString(), "name", null, 1, 1, EnumerationLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnumerationLiteral_Documentation(), this.getString(), "documentation", null, 0, 1, EnumerationLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnumerationLiteral_EnumerationType(), this.getEnumerationType(), this.getEnumerationType_Literals(), "enumerationType", null, 1, 1, EnumerationLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(recordTypeEClass, RecordType.class, "RecordType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
