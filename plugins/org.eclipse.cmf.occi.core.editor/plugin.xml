@@ -16,15 +16,15 @@
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated OCCI -->
+      <!-- @generated NOT OCCI -->
       <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
+            id="org.eclipse.cmf.occi.core.category.ID"
+            name="OCCI Studio"/>
       <wizard
             id="org.eclipse.cmf.occi.core.presentation.OCCIModelWizardID"
             name="%_UI_OCCIModelWizard_label"
             class="org.eclipse.cmf.occi.core.presentation.OCCIModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            category="org.eclipse.cmf.occi.core.category.ID"
             icon="icons/full/obj16/OCCIModelFile.gif">
          <description>%_UI_OCCIModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
@@ -32,7 +32,7 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
-      <!-- @generated OCCI -->
+      <!-- @generated NOT OCCI -->
       <editor
             id="org.eclipse.cmf.occi.core.presentation.OCCIEditorID"
             name="%_UI_OCCIEditor_label"
