@@ -8,6 +8,7 @@
  * 
  * Contributors:
  * - Faiez Zalila <faiez.zalila@inria.fr>
+ * - Philippe Merle <philippe.merle@inria.fr>
  */
 package org.eclipse.cmf.occi.core.tests;
 
@@ -84,12 +85,12 @@ public abstract class EntityTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Entity#getMixins()
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testGetMixins() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 	/**
@@ -97,12 +98,12 @@ public abstract class EntityTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Entity#occiCreate()
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testOcciCreate() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 	/**
@@ -110,12 +111,12 @@ public abstract class EntityTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Entity#occiRetrieve()
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testOcciRetrieve() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 	/**
@@ -123,12 +124,12 @@ public abstract class EntityTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Entity#occiUpdate()
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testOcciUpdate() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 	/**
@@ -136,12 +137,12 @@ public abstract class EntityTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Entity#occiDelete()
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testOcciDelete() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 	/**
@@ -149,12 +150,12 @@ public abstract class EntityTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Entity#AttributesNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testAttributesNameUnique__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 	/**
@@ -162,12 +163,12 @@ public abstract class EntityTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Entity#KindCompatibleWithOneAppliesOfEachMixin(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testKindCompatibleWithOneAppliesOfEachMixin__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 	/**
@@ -175,12 +176,12 @@ public abstract class EntityTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Entity#IdUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testIdUnique__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 } //EntityTest

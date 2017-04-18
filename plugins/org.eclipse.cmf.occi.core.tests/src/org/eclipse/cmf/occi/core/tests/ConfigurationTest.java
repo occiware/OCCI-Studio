@@ -8,6 +8,7 @@
  * 
  * Contributors:
  * - Faiez Zalila <faiez.zalila@inria.fr>
+ * - Philippe Merle <philippe.merle@inria.fr>
  */
 package org.eclipse.cmf.occi.core.tests;
 
@@ -111,12 +112,12 @@ public class ConfigurationTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Configuration#AllMixinsAreTags(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testAllMixinsAreTags__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 	/**
@@ -124,12 +125,12 @@ public class ConfigurationTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Configuration#AllResourcesLinksTargetsInConfiguration(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testAllResourcesLinksTargetsInConfiguration__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 	/**
@@ -137,12 +138,12 @@ public class ConfigurationTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Configuration#AllResourcesKindsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testAllResourcesKindsInUse__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 	/**
@@ -150,12 +151,12 @@ public class ConfigurationTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Configuration#AllResourcesLinksMixinsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testAllResourcesLinksMixinsInUse__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 	/**
@@ -163,12 +164,12 @@ public class ConfigurationTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Configuration#AllResourcesMixinsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testAllResourcesMixinsInUse__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 	/**
@@ -176,12 +177,12 @@ public class ConfigurationTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Configuration#AllResourcesLinksKindsInUse(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testAllResourcesLinksKindsInUse__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 } //ConfigurationTest

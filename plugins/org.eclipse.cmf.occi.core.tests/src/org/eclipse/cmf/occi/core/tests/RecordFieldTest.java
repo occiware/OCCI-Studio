@@ -8,6 +8,7 @@
  * 
  * Contributors:
  * - Faiez Zalila <faiez.zalila@inria.fr>
+ * - Philippe Merle <philippe.merle@inria.fr>
  */
 package org.eclipse.cmf.occi.core.tests;
 
@@ -93,6 +94,12 @@ public class RecordFieldTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Empty test to avoid "No tests found" JUnit failure.
+	 */
+	public void testEmpty() {
 	}
 
 } //RecordFieldTest

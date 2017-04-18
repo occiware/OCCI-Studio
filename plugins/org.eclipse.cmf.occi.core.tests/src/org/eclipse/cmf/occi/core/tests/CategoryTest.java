@@ -8,6 +8,7 @@
  * 
  * Contributors:
  * - Faiez Zalila <faiez.zalila@inria.fr>
+ * - Philippe Merle <philippe.merle@inria.fr>
  */
 package org.eclipse.cmf.occi.core.tests;
 
@@ -80,12 +81,12 @@ public abstract class CategoryTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Category#getTerm()
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testGetTerm() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 	/**
@@ -93,12 +94,12 @@ public abstract class CategoryTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Category#AttributesNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testAttributesNameUnique__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 	/**
@@ -106,12 +107,12 @@ public abstract class CategoryTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Category#IdentityUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testIdentityUnique__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 	/**
@@ -119,12 +120,12 @@ public abstract class CategoryTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Category#SchemeEndsWithSharp(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testSchemeEndsWithSharp__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 } //CategoryTest

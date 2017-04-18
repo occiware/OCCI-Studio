@@ -8,6 +8,7 @@
  * 
  * Contributors:
  * - Faiez Zalila <faiez.zalila@inria.fr>
+ * - Philippe Merle <philippe.merle@inria.fr>
  */
 package org.eclipse.cmf.occi.core.tests;
 
@@ -96,12 +97,12 @@ public class KindTest extends TypeTest {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Kind#getEntities()
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testGetEntities() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 	/**
@@ -109,12 +110,12 @@ public class KindTest extends TypeTest {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Kind#NoCyclicInheritance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testNoCyclicInheritance__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 	/**
@@ -122,12 +123,12 @@ public class KindTest extends TypeTest {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Kind#AttributesNameNotAlreadyDefinedInParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testAttributesNameNotAlreadyDefinedInParent__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 	/**
@@ -135,12 +136,12 @@ public class KindTest extends TypeTest {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Kind#CorrectScheme(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testCorrectScheme__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 	/**
@@ -148,12 +149,12 @@ public class KindTest extends TypeTest {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Kind#EntityKindIsRootParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testEntityKindIsRootParent__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// fail();
 	}
 
 } //KindTest

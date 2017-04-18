@@ -8,6 +8,7 @@
  * 
  * Contributors:
  * - Faiez Zalila <faiez.zalila@inria.fr>
+ * - Philippe Merle <philippe.merle@inria.fr>
  */
 package org.eclipse.cmf.occi.core.tests;
 
@@ -59,6 +60,12 @@ public abstract class DataTypeTest extends TestCase {
 	 */
 	protected DataType getFixture() {
 		return fixture;
+	}
+
+	/**
+	 * Empty test to avoid "No tests found" JUnit failure.
+	 */
+	public void testEmpty() {
 	}
 
 } //DataTypeTest

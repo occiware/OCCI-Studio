@@ -95,4 +95,10 @@ public class ConstraintTest extends TestCase {
 		setFixture(null);
 	}
 
+	/**
+	 * Empty test to avoid "No tests found" JUnit failure.
+	 */
+	public void testEmpty() {
+	}
+
 } //ConstraintTest

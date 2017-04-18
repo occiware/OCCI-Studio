@@ -22,6 +22,5 @@
   <groupId>org.occiware</groupId>
   <artifactId>org.eclipse.cmf.occi.core.tests</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-  <!-- TODO: Should be eclipse-test-plugin? -->
-  <packaging>eclipse-plugin</packaging>
+  <packaging>eclipse-test-plugin</packaging>
 </project>
