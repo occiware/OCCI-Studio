@@ -73,7 +73,17 @@ public class OCCI2Ecore
 	 */
 	public static String convertOcciAttributeName2EcoreAttributeName(final String attributeName)
 	{
-		int index = attributeName.lastIndexOf('.');
-		return (index != -1) ? attributeName.substring(index+1) : attributeName;
+		String[] attributeNameArray = attributeName.split("\\.");
+		String newattribute= "";
+		for(int i = 0; i < attributeNameArray.length; i++){
+			
+			if(i == 0){
+				newattribute += attributeNameArray[0];
+			}
+			else{
+				newattribute += attributeNameArray[i].substring(0, 1).toUpperCase() + attributeNameArray[i].substring(1);;
+			}
+		}
+		return newattribute;
 	}
 }
