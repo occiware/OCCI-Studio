@@ -10,6 +10,7 @@
  Contributors:
  - William Piers <william.piers@obeo.fr>
  - Philippe Merle <philippe.merle@inria.fr>
+ - Faiez Zalila <faiez.zalila@inria.fr>
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -24,6 +25,9 @@
     <module>plugins/org.eclipse.cmf.occi.core.edit</module>
     <module>plugins/org.eclipse.cmf.occi.core.editor</module>
     <module>plugins/org.eclipse.cmf.occi.core.tests</module>
+    <!-- OCCI EMF Generator -->
+    <module>plugins/org.eclipse.cmf.occi.core.gen.emf</module>
+    <module>plugins/org.eclipse.cmf.occi.core.gen.emf.ui</module>
 
     <!-- Releng -->
     <module>features/org.eclipse.cmf.occi</module>
