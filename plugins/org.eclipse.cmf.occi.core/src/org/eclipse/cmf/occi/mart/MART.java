@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-17 Inria
+ * Copyright (c) 2015-17 Inria
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -32,7 +32,6 @@ import org.eclipse.cmf.occi.core.util.OCCIResourceFactoryImpl;
 import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource.Factory.Registry;
-
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
