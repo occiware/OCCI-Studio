@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.0"?>
 <!--
  Copyright (c) 2015-17 Obeo, Inria
   
@@ -13,7 +12,7 @@
  - Philippe Merle <philippe.merle@inria.fr>
  - Faiez Zalila <faiez.zalila@inria.fr>
 -->
-
+<?eclipse version="3.0"?>
 <plugin>
 
    <!-- Register factories for the EMF Edit framework. -->
