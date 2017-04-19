@@ -25,6 +25,7 @@
     <genDataTypes ecoreDataType="OCCI.ecore#//URI"/>
     <genDataTypes ecoreDataType="OCCI.ecore#//OCL"/>
     <genDataTypes ecoreDataType="OCCI.ecore#//String"/>
+    <genDataTypes ecoreDataType="OCCI.ecore#//Integer"/>
     <genDataTypes ecoreDataType="OCCI.ecore#//Boolean"/>
     <genDataTypes ecoreDataType="OCCI.ecore#//AttributeName"/>
     <genDataTypes ecoreDataType="OCCI.ecore#//Name"/>

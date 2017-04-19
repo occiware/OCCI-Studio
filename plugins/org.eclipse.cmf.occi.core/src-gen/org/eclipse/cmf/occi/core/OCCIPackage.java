@@ -2765,13 +2765,23 @@ public interface OCCIPackage extends EPackage {
 	int STRING = 31;
 
 	/**
+	 * The meta object id for the '<em>Integer</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.Integer
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getInteger()
+	 * @generated
+	 */
+	int INTEGER = 32;
+
+	/**
 	 * The meta object id for the '<em>Boolean</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getBoolean()
 	 * @generated
 	 */
-	int BOOLEAN = 32;
+	int BOOLEAN = 33;
 
 	/**
 	 * The meta object id for the '<em>Attribute Name</em>' data type.
@@ -2781,7 +2791,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getAttributeName()
 	 * @generated
 	 */
-	int ATTRIBUTE_NAME = 33;
+	int ATTRIBUTE_NAME = 34;
 
 	/**
 	 * The meta object id for the '<em>Name</em>' data type.
@@ -2791,7 +2801,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getName_()
 	 * @generated
 	 */
-	int NAME = 34;
+	int NAME = 35;
 
 	/**
 	 * The meta object id for the '<em>Scheme</em>' data type.
@@ -2801,7 +2811,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getScheme()
 	 * @generated
 	 */
-	int SCHEME = 35;
+	int SCHEME = 36;
 
 
 	/**
@@ -4453,6 +4463,17 @@ public interface OCCIPackage extends EPackage {
 	EDataType getString();
 
 	/**
+	 * Returns the meta object for data type '{@link java.lang.Integer <em>Integer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Integer</em>'.
+	 * @see java.lang.Integer
+	 * @model instanceClass="java.lang.Integer"
+	 * @generated
+	 */
+	EDataType getInteger();
+
+	/**
 	 * Returns the meta object for data type '<em>Boolean</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5832,6 +5853,16 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType STRING = eINSTANCE.getString();
+
+		/**
+		 * The meta object literal for the '<em>Integer</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.Integer
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getInteger()
+		 * @generated
+		 */
+		EDataType INTEGER = eINSTANCE.getInteger();
 
 		/**
 		 * The meta object literal for the '<em>Boolean</em>' data type.

@@ -292,6 +292,13 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EDataType integerEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EDataType booleanEDataType = null;
 
 	/**
@@ -1794,6 +1801,15 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getInteger() {
+		return integerEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getBoolean() {
 		return booleanEDataType;
 	}
@@ -2040,6 +2056,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		uriEDataType = createEDataType(URI);
 		oclEDataType = createEDataType(OCL);
 		stringEDataType = createEDataType(STRING);
+		integerEDataType = createEDataType(INTEGER);
 		booleanEDataType = createEDataType(BOOLEAN);
 		attributeNameEDataType = createEDataType(ATTRIBUTE_NAME);
 		nameEDataType = createEDataType(NAME);
@@ -2577,6 +2594,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEDataType(uriEDataType, String.class, "URI", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(oclEDataType, String.class, "OCL", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(stringEDataType, String.class, "String", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(integerEDataType, Integer.class, "Integer", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(booleanEDataType, boolean.class, "Boolean", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(attributeNameEDataType, String.class, "AttributeName", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(nameEDataType, String.class, "Name", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

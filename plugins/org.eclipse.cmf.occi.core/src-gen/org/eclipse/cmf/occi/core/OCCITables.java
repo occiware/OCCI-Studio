@@ -256,6 +256,7 @@ public class OCCITables
 		public static final /*@NonNull*/ EcoreExecutorType _EnumerationType = new EcoreExecutorType(OCCIPackage.Literals.ENUMERATION_TYPE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Extension = new EcoreExecutorType(OCCIPackage.Literals.EXTENSION, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _FSM = new EcoreExecutorType(OCCIPackage.Literals.FSM, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _Integer = new EcoreExecutorType(TypeId.INTEGER, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Kind = new EcoreExecutorType(OCCIPackage.Literals.KIND, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Link = new EcoreExecutorType(OCCIPackage.Literals.LINK, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Mixin = new EcoreExecutorType(OCCIPackage.Literals.MIXIN, PACKAGE, 0);
@@ -294,6 +295,7 @@ public class OCCITables
 			_EnumerationType,
 			_Extension,
 			_FSM,
+			_Integer,
 			_Kind,
 			_Link,
 			_Mixin,
@@ -414,6 +416,12 @@ public class OCCITables
 		private static final /*@NonNull*/ ExecutorFragment _FSM__FSM = new ExecutorFragment(Types._FSM, OCCITables.Types._FSM);
 		private static final /*@NonNull*/ ExecutorFragment _FSM__OclAny = new ExecutorFragment(Types._FSM, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _FSM__OclElement = new ExecutorFragment(Types._FSM, OCLstdlibTables.Types._OclElement);
+
+		private static final /*@NonNull*/ ExecutorFragment _Integer__Integer = new ExecutorFragment(Types._Integer, OCCITables.Types._Integer);
+		private static final /*@NonNull*/ ExecutorFragment _Integer__OclAny = new ExecutorFragment(Types._Integer, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Integer__OclComparable = new ExecutorFragment(Types._Integer, OCLstdlibTables.Types._OclComparable);
+		private static final /*@NonNull*/ ExecutorFragment _Integer__OclSummable = new ExecutorFragment(Types._Integer, OCLstdlibTables.Types._OclSummable);
+		private static final /*@NonNull*/ ExecutorFragment _Integer__Real = new ExecutorFragment(Types._Integer, OCLstdlibTables.Types._Real);
 
 		private static final /*@NonNull*/ ExecutorFragment _Kind__Category = new ExecutorFragment(Types._Kind, OCCITables.Types._Category);
 		private static final /*@NonNull*/ ExecutorFragment _Kind__Kind = new ExecutorFragment(Types._Kind, OCCITables.Types._Kind);
@@ -591,6 +599,31 @@ public class OCCITables
 			2, TemplateParameters.EMPTY_LIST, null);
 		public static final /*@NonNull*/ ExecutorOperation _Entity__occiUpdate = new ExecutorOperation("occiUpdate", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Entity,
 			3, TemplateParameters.EMPTY_LIST, null);
+
+		public static final /*@NonNull*/ ExecutorOperation _Integer___mul_ = new ExecutorOperation("*", Parameters._OclSelf, Types._Integer,
+			0, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.numeric.NumericTimesOperation.INSTANCE);
+		public static final /*@NonNull*/ ExecutorOperation _Integer___add_ = new ExecutorOperation("+", Parameters._OclSelf, Types._Integer,
+			1, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.numeric.NumericPlusOperation.INSTANCE);
+		public static final /*@NonNull*/ ExecutorOperation _Integer___neg_ = new ExecutorOperation("-", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Integer,
+			2, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.numeric.NumericNegateOperation.INSTANCE);
+		public static final /*@NonNull*/ ExecutorOperation _Integer___sub_ = new ExecutorOperation("-", Parameters._OclSelf, Types._Integer,
+			3, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.numeric.NumericMinusOperation.INSTANCE);
+		public static final /*@NonNull*/ ExecutorOperation _Integer___div_ = new ExecutorOperation("/", Parameters._OclSelf, Types._Integer,
+			4, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.numeric.NumericDivideOperation.INSTANCE);
+		public static final /*@NonNull*/ ExecutorOperation _Integer__abs = new ExecutorOperation("abs", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Integer,
+			5, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.numeric.NumericAbsOperation.INSTANCE);
+		public static final /*@NonNull*/ ExecutorOperation _Integer__div = new ExecutorOperation("div", Parameters._Integer, Types._Integer,
+			6, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.numeric.NumericDivOperation.INSTANCE);
+		public static final /*@NonNull*/ ExecutorOperation _Integer__max = new ExecutorOperation("max", Parameters._OclSelf, Types._Integer,
+			7, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.numeric.NumericMaxOperation.INSTANCE);
+		public static final /*@NonNull*/ ExecutorOperation _Integer__min = new ExecutorOperation("min", Parameters._OclSelf, Types._Integer,
+			8, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.numeric.NumericMinOperation.INSTANCE);
+		public static final /*@NonNull*/ ExecutorOperation _Integer__mod = new ExecutorOperation("mod", Parameters._Integer, Types._Integer,
+			9, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.numeric.NumericModOperation.INSTANCE);
+		public static final /*@NonNull*/ ExecutorOperation _Integer__toString = new ExecutorOperation("toString", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Integer,
+			10, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation.INSTANCE);
+		public static final /*@NonNull*/ ExecutorOperation _Integer__toUnlimitedNatural = new ExecutorOperation("toUnlimitedNatural", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Integer,
+			11, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.numeric.IntegerToUnlimitedNaturalOperation.INSTANCE);
 
 		public static final /*@NonNull*/ ExecutorOperation _String___add_ = new ExecutorOperation("+", Parameters._String, Types._String,
 			0, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.string.StringConcatOperation.INSTANCE);
@@ -998,6 +1031,16 @@ public class OCCITables
 		};
 		private static final int /*@NonNull*/ [] __FSM = { 1,1,1 };
 
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Integer =
+		{
+			Fragments._Integer__OclAny /* 0 */,
+			Fragments._Integer__OclComparable /* 1 */,
+			Fragments._Integer__OclSummable /* 1 */,
+			Fragments._Integer__Real /* 2 */,
+			Fragments._Integer__Integer /* 3 */
+		};
+		private static final int /*@NonNull*/ [] __Integer = { 1,2,1,1 };
+
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Kind =
 		{
 			Fragments._Kind__OclAny /* 0 */,
@@ -1175,6 +1218,7 @@ public class OCCITables
 			Types._EnumerationType.initFragments(_EnumerationType, __EnumerationType);
 			Types._Extension.initFragments(_Extension, __Extension);
 			Types._FSM.initFragments(_FSM, __FSM);
+			Types._Integer.initFragments(_Integer, __Integer);
 			Types._Kind.initFragments(_Kind, __Kind);
 			Types._Link.initFragments(_Link, __Link);
 			Types._Mixin.initFragments(_Mixin, __Mixin);
@@ -1724,6 +1768,64 @@ public class OCCITables
 			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
 			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Integer__Integer = {
+			OCLstdlibTables.Operations._Integer___mul_ /* _'*'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._Integer___add_ /* _'+'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._Integer___neg_ /* _'-'() */,
+			OCLstdlibTables.Operations._Integer___sub_ /* _'-'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._Integer___div_ /* _'/'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._Integer__abs /* abs() */,
+			OCLstdlibTables.Operations._Integer__div /* div(Integer[?]) */,
+			OCLstdlibTables.Operations._Integer__max /* max(OclSelf[?]) */,
+			OCLstdlibTables.Operations._Integer__min /* min(OclSelf[?]) */,
+			OCLstdlibTables.Operations._Integer__mod /* mod(Integer[?]) */,
+			OCLstdlibTables.Operations._Integer__toString /* toString() */,
+			OCLstdlibTables.Operations._Integer__toUnlimitedNatural /* toUnlimitedNatural() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Integer__OclAny = {
+			OCLstdlibTables.Operations._Real___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._Real___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._Integer__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Integer__OclComparable = {
+			OCLstdlibTables.Operations._OclComparable___lt_ /* _'<'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclComparable___lt__eq_ /* _'<='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclComparable___gt_ /* _'>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclComparable___gt__eq_ /* _'>='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclComparable__compareTo /* compareTo(OclSelf[?]) */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Integer__OclSummable = {
+			OCLstdlibTables.Operations._OclSummable__sum /* sum(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclSummable__zero /* zero() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Integer__Real = {
+			OCLstdlibTables.Operations._Integer___mul_ /* _'*'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._Integer___add_ /* _'+'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._Integer___neg_ /* _'-'() */,
+			OCLstdlibTables.Operations._Integer___sub_ /* _'-'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._Integer___div_ /* _'/'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._Real___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._Real___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._Integer__abs /* abs() */,
+			OCLstdlibTables.Operations._Real__floor /* floor() */,
+			OCLstdlibTables.Operations._Integer__max /* max(OclSelf[?]) */,
+			OCLstdlibTables.Operations._Integer__min /* min(OclSelf[?]) */,
+			OCLstdlibTables.Operations._Real__round /* round() */,
+			OCLstdlibTables.Operations._Integer__toString /* toString() */
 		};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Kind__Kind = {};
@@ -2345,6 +2447,12 @@ public class OCCITables
 			Fragments._FSM__OclAny.initOperations(_FSM__OclAny);
 			Fragments._FSM__OclElement.initOperations(_FSM__OclElement);
 
+			Fragments._Integer__Integer.initOperations(_Integer__Integer);
+			Fragments._Integer__OclAny.initOperations(_Integer__OclAny);
+			Fragments._Integer__OclComparable.initOperations(_Integer__OclComparable);
+			Fragments._Integer__OclSummable.initOperations(_Integer__OclSummable);
+			Fragments._Integer__Real.initOperations(_Integer__Real);
+
 			Fragments._Kind__Category.initOperations(_Kind__Category);
 			Fragments._Kind__Kind.initOperations(_Kind__Kind);
 			Fragments._Kind__OclAny.initOperations(_Kind__OclAny);
@@ -2559,6 +2667,8 @@ public class OCCITables
 			OCCITables.Properties._FSM__ownedState
 		};
 
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Integer = {};
+
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Kind = {
 			OCCITables.Properties._Type__actions,
 			OCCITables.Properties._Category__attributes,
@@ -2706,6 +2816,7 @@ public class OCCITables
 			Fragments._EnumerationType__EnumerationType.initProperties(_EnumerationType);
 			Fragments._Extension__Extension.initProperties(_Extension);
 			Fragments._FSM__FSM.initProperties(_FSM);
+			Fragments._Integer__Integer.initProperties(_Integer);
 			Fragments._Kind__Kind.initProperties(_Kind);
 			Fragments._Link__Link.initProperties(_Link);
 			Fragments._Mixin__Mixin.initProperties(_Mixin);

@@ -110,6 +110,8 @@ public class OCCIFactoryImpl extends EFactoryImpl implements OCCIFactory {
 				return createOCLFromString(eDataType, initialValue);
 			case OCCIPackage.STRING:
 				return createStringFromString(eDataType, initialValue);
+			case OCCIPackage.INTEGER:
+				return createIntegerFromString(eDataType, initialValue);
 			case OCCIPackage.BOOLEAN:
 				return createBooleanFromString(eDataType, initialValue);
 			case OCCIPackage.ATTRIBUTE_NAME:
@@ -139,6 +141,8 @@ public class OCCIFactoryImpl extends EFactoryImpl implements OCCIFactory {
 				return convertOCLToString(eDataType, instanceValue);
 			case OCCIPackage.STRING:
 				return convertStringToString(eDataType, instanceValue);
+			case OCCIPackage.INTEGER:
+				return convertIntegerToString(eDataType, instanceValue);
 			case OCCIPackage.BOOLEAN:
 				return convertBooleanToString(eDataType, instanceValue);
 			case OCCIPackage.ATTRIBUTE_NAME:
@@ -453,6 +457,24 @@ public class OCCIFactoryImpl extends EFactoryImpl implements OCCIFactory {
 	 * @generated
 	 */
 	public String convertStringToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Integer createIntegerFromString(EDataType eDataType, String initialValue) {
+		return (Integer)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertIntegerToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

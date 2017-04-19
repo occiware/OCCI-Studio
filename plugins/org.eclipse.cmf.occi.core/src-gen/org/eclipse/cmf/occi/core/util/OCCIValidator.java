@@ -448,6 +448,8 @@ public class OCCIValidator extends EObjectValidator {
 				return validateOCL((String)value, diagnostics, context);
 			case OCCIPackage.STRING:
 				return validateString((String)value, diagnostics, context);
+			case OCCIPackage.INTEGER:
+				return validateInteger((Integer)value, diagnostics, context);
 			case OCCIPackage.BOOLEAN:
 				return validateBoolean((Boolean)value, diagnostics, context);
 			case OCCIPackage.ATTRIBUTE_NAME:
@@ -1305,6 +1307,15 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateString(String string, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateInteger(Integer integer, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
