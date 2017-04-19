@@ -54,7 +54,7 @@ public class Occi2Ecore
 	 * @return the Ecore class name.
 	 */
 	public static String convertOcciCategoryTerm2EcoreClassName(String term) {
-		return term.substring(0,1).toUpperCase() + term.substring(1);
+		return toUpperCaseFirst(term);
 	}
 
 	/**
@@ -82,9 +82,17 @@ public class Occi2Ecore
 				newattribute += attributeNameArray[0];
 			}
 			else{
-				newattribute += attributeNameArray[i].substring(0, 1).toUpperCase() + attributeNameArray[i].substring(1);;
+				newattribute += toUpperCaseFirst(attributeNameArray[i]);
 			}
 		}
 		return newattribute;
+	}
+
+	/**
+	 * Upper case the first character.
+	 */
+	private static String toUpperCaseFirst(String string)
+	{
+		return string.substring(0, 1).toUpperCase() +string.substring(1);
 	}
 }

@@ -43,7 +43,8 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class provides some utility methods for the OCCI metamodel.
@@ -52,6 +53,11 @@ import org.eclipse.emf.ecore.util.Diagnostician;
  */
 public final class OcciHelper
 {
+	/**
+	 * Initialize the logger.
+	 */
+	private static Logger LOGGER = LoggerFactory.getLogger(OcciRegistry.class);
+
 	/**
 	 * This class can not be instantiated.
 	 */
@@ -74,9 +80,7 @@ public final class OcciHelper
 		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(occiObject);
 		if (diagnostic.getSeverity() != Diagnostic.OK) {
 			StringBuffer stringBuffer = printDiagnostic(diagnostic, "", new StringBuffer());
-			System.out.flush();
-	        System.err.println(stringBuffer.toString());
-			System.err.flush();
+	        LOGGER.warn(stringBuffer.toString());
 	        return false;
 		}
 		return true;
@@ -257,18 +261,18 @@ public final class OcciHelper
 		// Get the Ecore package associated to the kind.
 		EPackage epackage = EPackage.Registry.INSTANCE.getEPackage(epackageNS);
 		if(epackage == null) {
-			System.err.println("WARNING: EPackage " + epackageNS + " not found!");
+			LOGGER.warn("EPackage " + epackageNS + " not found!");
 		} else {
 			String classname = Occi2Ecore.convertOcciCategoryTerm2EcoreClassName(kind.getTerm());
 			// Get the Ecore class associated to the kind.
 			EClass eclass = (EClass) epackage.getEClassifier(classname);
 			if(eclass == null) {
-				System.err.println("WARNING: EClass " + classname + " not found!");
+				LOGGER.warn("EClass " + classname + " not found!");
 			} else {
 				// Get the Ecore factory associated to the kind.
 				EFactory efactory = EPackage.Registry.INSTANCE.getEFactory(epackageNS);
 				if(efactory == null) {
-					System.err.println("WARNING: EFactory " + epackageNS + " not found!");
+					LOGGER.warn("EFactory " + epackageNS + " not found!");
 				} else {
 					// Create the EObject for this kind.
 					createdEntity = (Entity)efactory.create(eclass);
@@ -276,12 +280,12 @@ public final class OcciHelper
 			}
 		}
 		if(createdEntity == null) {
-			System.err.println("WARNING: Create OCCI Core Resource!");
+			LOGGER.warn("Create OCCI Core Resource!");
 			createdEntity = OCCIFactory.eINSTANCE.createResource();
 			createdEntity.setKind(kind);
 		}
 
-		System.err.println("DEBUG: created entity=" + createdEntity);
+		LOGGER.debug("created entity=" + createdEntity);
 		// Return the new entity.
 		return createdEntity;
 	}
@@ -428,7 +432,7 @@ public final class OcciHelper
 	 * 
 	 * @param key
 	 *            ex: occi.core.title.
-	 * @return an AttributeState object, if attribute doesnt exist, null value
+	 * @return an AttributeState object, if attribute does not exist, null value
 	 *         is returned.
 	 */
 	private static AttributeState getAttributeStateObject(Entity entity, final String key) {
