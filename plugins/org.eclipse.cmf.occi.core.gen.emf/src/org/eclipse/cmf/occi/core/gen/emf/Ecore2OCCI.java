@@ -27,9 +27,9 @@ import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.OCCIFactory;
-import org.eclipse.cmf.occi.core.OCCIRegistry;
 import org.eclipse.cmf.occi.core.Resource;
-import org.eclipse.cmf.occi.core.util.OCCI2Ecore;
+import org.eclipse.cmf.occi.core.util.OcciRegistry;
+import org.eclipse.cmf.occi.core.util.Occi2Ecore;
 
 public class Ecore2OCCI {
 
@@ -68,7 +68,7 @@ public class Ecore2OCCI {
 
 		Set<EAttribute> setAttributes = new HashSet<EAttribute>();
 		for (Attribute attribute : ConverterUtils.getAllAttributes(kind)) {
-			String convertedAttributeName = OCCI2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName());
+			String convertedAttributeName = Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName());
 			EAttribute eAttribute = (EAttribute) sourceResource.eClass().getEStructuralFeature(convertedAttributeName);
 			// an attr cannot be set twice
 			if (eAttribute != null && !setAttributes.contains(eAttribute)) {
@@ -96,7 +96,7 @@ public class Ecore2OCCI {
 		targetLink.setTarget(mappedResources.get(sourceLink.getTarget()));
 		Set<EAttribute> setAttributes = new HashSet<EAttribute>();
 		for (Attribute attribute : ConverterUtils.getAllAttributes(kind)) {
-			String convertedAttributeName = OCCI2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName());
+			String convertedAttributeName = Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName());
 			EAttribute eAttribute = (EAttribute) sourceLink.eClass().getEStructuralFeature(convertedAttributeName);
 			// an attr cannot be set twice
 			if (eAttribute != null && !setAttributes.contains(eAttribute)) {
@@ -115,8 +115,8 @@ public class Ecore2OCCI {
 
 	private Kind getKind(EObject element) {
 		String term = element.eClass().getName();
-		String scheme = OCCI2Ecore.convertEcoreNamespace2OcciScheme(element.eClass().getEPackage().getNsURI());
-		String extensionURI = OCCIRegistry.getInstance().getExtensionURI(scheme);
+		String scheme = Occi2Ecore.convertEcoreNamespace2OcciScheme(element.eClass().getEPackage().getNsURI());
+		String extensionURI = OcciRegistry.getInstance().getExtensionURI(scheme);
 		final org.eclipse.emf.ecore.resource.Resource extensionResource = element.eResource().getResourceSet()
 				.getResource(URI.createURI(extensionURI, true), true);
 		final Extension extension = (Extension) extensionResource.getContents().get(0);
