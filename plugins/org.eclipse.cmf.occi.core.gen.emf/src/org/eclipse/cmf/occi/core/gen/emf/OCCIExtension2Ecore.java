@@ -403,27 +403,16 @@ public class OCCIExtension2Ecore {
 	}
 	private void completeArrayTypeFeatures(ArrayType arrayType, EClass type, EPackage ePackage){
 		if(! (arrayType.getType() instanceof RecordType || arrayType.getType() instanceof ArrayType)){
-			// Added EClass to represent a value
-			EClass aValueType = EcoreFactory.eINSTANCE.createEClass();
-			aValueType.setName(arrayType.getName()+"Value");
-			EAttribute attribute = EcoreFactory.eINSTANCE.createEAttribute();
-			aValueType.getEStructuralFeatures().add(attribute);
-			attribute.setName("value");
-			attribute.setLowerBound(1);
-			attribute.setEType(getMappedType(arrayType.getType()));
-			
-			//ArraType refers to aValueType
-			EReference values = EcoreFactory.eINSTANCE.createEReference();
+			// if the type of ArrayType is a primitive type then we create an attribute
+			EAttribute values = EcoreFactory.eINSTANCE.createEAttribute();
 			type.getEStructuralFeatures().add(values);
-			values.setName(arrayType.getName().toLowerCase()+"Values");
+			values.setName("values");
 			values.setUpperBound(-1);
-			values.setEType(aValueType);
-			values.setContainment(true);
+			values.setEType(getMappedType(arrayType.getType()));
 			
-			ePackage.getEClassifiers().add(aValueType);
 		}
 		else{
-			//ArraType refers to aValueType
+			// otherwise, we create a reference to the generated EClass
 			EReference values = EcoreFactory.eINSTANCE.createEReference();
 			type.getEStructuralFeatures().add(values);
 			values.setName(arrayType.getName().toLowerCase()+"Values");
