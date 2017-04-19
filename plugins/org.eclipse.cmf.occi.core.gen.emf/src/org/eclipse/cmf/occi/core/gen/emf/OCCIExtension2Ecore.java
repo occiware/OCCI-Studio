@@ -13,19 +13,13 @@
 package org.eclipse.cmf.occi.core.gen.emf;
 
 import java.io.IOException;
-import java.util.AbstractMap;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.common.util.BasicEMap.Entry;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -44,9 +38,6 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreEMap;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.FeatureMapUtil.EntryImpl;
 
 import com.google.common.collect.Lists;
 
@@ -62,15 +53,12 @@ import org.eclipse.cmf.occi.core.EnumerationType;
 import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Mixin;
-import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.NumericType;
-import org.eclipse.cmf.occi.core.OCCIFactory;
-import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.cmf.occi.core.RecordField;
 import org.eclipse.cmf.occi.core.RecordType;
 import org.eclipse.cmf.occi.core.StringType;
 import org.eclipse.cmf.occi.core.Type;
-import org.eclipse.cmf.occi.core.util.OCCI2Ecore;
+import org.eclipse.cmf.occi.core.util.Occi2Ecore;
 
 /**
  * Convert an OCCI Extension to Ecore.
@@ -151,7 +139,7 @@ public class OCCIExtension2Ecore {
 		// Set the name space prefix of the Ecore package.
 		ePackage.setNsPrefix(formattedName);
 		// Set the URI of the Ecore package.
-		ePackage.setNsURI(OCCI2Ecore.convertOcciScheme2EcoreNamespace(extension.getScheme()));
+		ePackage.setNsURI(Occi2Ecore.convertOcciScheme2EcoreNamespace(extension.getScheme()));
 
 		// TODO fetch occi package
 		// but won't solve issue if user wants to use types from installed
@@ -552,7 +540,7 @@ public class OCCIExtension2Ecore {
 		List<EObject> attributesList = Lists.newArrayList(extension.eAllContents()).stream().filter(eobject-> eobject instanceof Attribute).collect(Collectors.toList());
 		HashMap<String, String> attributes = new HashMap<String, String>();
 		for (EObject attribute : attributesList){
-			attributes.put(((Attribute)attribute).getName(), OCCI2Ecore.convertOcciAttributeName2EcoreAttributeName(((Attribute)attribute).getName()));
+			attributes.put(((Attribute)attribute).getName(), Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(((Attribute)attribute).getName()));
 		}
 		 for (Map.Entry<String, String> entry : attributes.entrySet()) {
 		        body = body.replace(entry.getKey(), entry.getValue());
@@ -599,7 +587,7 @@ public class OCCIExtension2Ecore {
 		// Create an Ecore parameter.
 		EParameter eParam = EcoreFactory.eINSTANCE.createEParameter();
 		// Set the name of the Ecore parameter.
-		eParam.setName(OCCI2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName()));
+		eParam.setName(Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName()));
 
 		// Set the type of the Ecore parameter.
 		eParam.setEType(getMappedType(attribute.getType()));
@@ -626,7 +614,7 @@ public class OCCIExtension2Ecore {
 		// Create an Ecore attribute.
 		EAttribute eAttr = EcoreFactory.eINSTANCE.createEAttribute();
 		// Set the name of the Ecore attribute.
-		eAttr.setName(OCCI2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName()));
+		eAttr.setName(Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName()));
 		// Set the type of the Ecore attribute.
 
 		eAttr.setEType(getMappedType(attribute.getType()));
