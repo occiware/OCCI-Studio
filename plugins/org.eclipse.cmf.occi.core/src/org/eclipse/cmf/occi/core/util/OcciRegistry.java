@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017 Inria
+ * Copyright (c) 2015-2017 Obeo, Inria
  *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -7,14 +7,17 @@
  * http://www.eclipse.org/legal/epl-v10.html
  * 
  * Contributors:
+ * - William Piers <william.piers@obeo.fr>
+ * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  */
-package org.eclipse.cmf.occi.core;
+package org.eclipse.cmf.occi.core.util;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
@@ -24,12 +27,12 @@ import org.eclipse.emf.ecore.resource.URIConverter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public final class OCCIRegistry
+public final class OcciRegistry
 {
 	/**
 	 * Initialize the logger.
 	 */
-	private static Logger LOGGER = LoggerFactory.getLogger(OCCIRegistry.class);
+	private static Logger LOGGER = LoggerFactory.getLogger(OcciRegistry.class);
 
 	/**
 	 * The occie extension point.
@@ -46,15 +49,15 @@ public final class OCCIRegistry
 	 * 
 	 * @throws CoreException
 	 */
-	private OCCIRegistry() {
+	private OcciRegistry() {
 		initialize();
 	}
 
-	private static OCCIRegistry instance;
+	private static OcciRegistry instance;
 
-	public static OCCIRegistry getInstance() {
+	public static OcciRegistry getInstance() {
 		if (instance == null) {
-			instance = new OCCIRegistry();
+			instance = new OcciRegistry();
 		}
 		return instance;
 	}
@@ -67,11 +70,8 @@ public final class OCCIRegistry
 	 */
 	public void initialize() {
 	  try {
-		  System.out.println(" initialize registery");
 		if (Platform.isRunning()) {
-			System.out.println(" registery "+registry);
 			registry.clear();
-			System.out.println(" Platform.getExtensionRegistry() "+Platform.getExtensionRegistry().getExtensionPoints());
 			final IExtension[] extensions = Platform.getExtensionRegistry()
 					.getExtensionPoint(OCCIE_EXTENSION_POINT).getExtensions();
 			for (int i = 0; i < extensions.length; i++) {
@@ -80,7 +80,6 @@ public final class OCCIRegistry
 				for (int j = 0; j < configElements.length; j++) {
 					String scheme = configElements[j].getAttribute("scheme"); //$NON-NLS-1$
 					String uri = "platform:/plugin/" + extensions[i].getContributor().getName() + "/" + configElements[j].getAttribute("file"); //$NON-NLS-1$
-					System.out.println("uri "+uri);
 					registerExtension(scheme, uri);
 				}
 			}
