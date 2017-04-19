@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017 Inria
+ * Copyright (c) 2015-17 Inria
  *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -7,6 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  * 
  * Contributors:
+ * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  */
 package org.eclipse.cmf.occi.core.util;
@@ -24,8 +25,6 @@ import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.Mixin;
 import org.eclipse.cmf.occi.core.Resource;
-import org.eclipse.emf.ecore.EClassifier;
-
 
 /**
  * This class provides utility methods for printing OCCI extensions and configurations.
@@ -120,7 +119,7 @@ public class OcciPrinter
 		}
 		ps.println("  - types:");
 		for(DataType type : extension.getTypes()) {
-			ps.println("    * EDataType " + type.getName());
+			ps.println("    * DataType " + type.getName());
 		}
 	}
 
