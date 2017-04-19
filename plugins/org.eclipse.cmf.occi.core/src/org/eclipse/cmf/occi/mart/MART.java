@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017 Inria
+ * Copyright (c) 2016-17 Inria
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -27,7 +27,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-import org.eclipse.cmf.occi.core.OCCIRegistry;
+import org.eclipse.cmf.occi.core.util.OcciRegistry;
 import org.eclipse.cmf.occi.core.util.OCCIResourceFactoryImpl;
 import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EPackage;
@@ -38,7 +38,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * This class provides OCCIware Models@Run.time (MART).
+ * This class provides the OCCIware Models@Run.time (MART).
  *
  * @author Philippe Merle - Inria
  */
@@ -61,7 +61,7 @@ public class MART
 		// Get the current classloader.
 		final ClassLoader classLoader = MART.class.getClassLoader();
 		// Get the OCCI extension registry.
-		final OCCIRegistry occiRegistry = OCCIRegistry.getInstance();
+		final OcciRegistry occiRegistry = OcciRegistry.getInstance();
 		// Get the EMF file extension to factory map.
 		final Map<String,Object> ecoreExtensionToFactoryMap = Registry.INSTANCE.getExtensionToFactoryMap();
 		// Add OCCI resource factory for any extension.
