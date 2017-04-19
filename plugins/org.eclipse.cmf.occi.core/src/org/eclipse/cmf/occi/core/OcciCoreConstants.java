@@ -1,25 +1,27 @@
 /*******************************************************************************
- * Copyright (c) 2017 Inria
+ * Copyright (c) 2016-17 Inria
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  - Faiez Zalila <faiez.zalila@inria.fr>
+ * - Philippe Merle <philippe.merle@inria.fr>
+ * - Faiez Zalila <faiez.zalila@inria.fr>
  *******************************************************************************/
 package org.eclipse.cmf.occi.core;
+
 /**
  * Constants related to OCCI.
  * 
- * @author Faiez Zalila - Inria
+ * @author Philippe Merle - Inria
  */
-public interface OCCICoreConstants
+public interface OcciCoreConstants
 {
 	/**
 	 * OCCI core URI.
 	 */
-	public static final String OCCI_CORE_URI = "http://schemas.ogf.org/occi/core/";
+	public static final String OCCI_CORE_URI = "http://schemas.ogf.org/occi/core";
 
 	/**
 	 * OCCI core scheme.
