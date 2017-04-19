@@ -11,12 +11,12 @@ import java.util.Map;
 import org.eclipse.cmf.occi.core.Action;
 import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.FSM;
-import org.eclipse.cmf.occi.core.OCCIRegistry;
 import org.eclipse.cmf.occi.core.State;
 import org.eclipse.cmf.occi.core.Transition;
 import org.eclipse.cmf.occi.core.gen.emf.ConverterUtils;
 import org.eclipse.cmf.occi.core.gen.emf.OCCIExtension2Ecore;
 import org.eclipse.cmf.occi.core.gen.emf.ui.Activator;
+import org.eclipse.cmf.occi.core.util.OcciRegistry;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
@@ -184,7 +184,7 @@ public class OCCI2EMFGeneratorAction implements IObjectActionDelegate {
 		Collection<GenPackage> usedPackages = new ArrayList<GenPackage>();
 		for (Extension extension : ext.getImport()) {
 			if (!extension.getName().equals("core")) {
-				String extensionFileUri = OCCIRegistry.getInstance().getFileURI(extension.getScheme());
+				String extensionFileUri = OcciRegistry.getInstance().getFileURI(extension.getScheme());
 				System.out.println(extensionFileUri);
 				GenModel genModel = (GenModel) resourceSet
 						.getResource(URI.createURI(extensionFileUri.replaceAll(".occie", ".genmodel")), true)
