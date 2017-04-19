@@ -39,8 +39,7 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.cmf.occi.core.Attribute; 
 import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.Kind;
-import org.eclipse.cmf.occi.core.OCCIRegistry;
-import org.eclipse.cmf.occi.core.util.OCCI2Ecore;
+import org.eclipse.cmf.occi.core.util.OcciRegistry;
 
 public final class ConverterUtils {
 
@@ -95,7 +94,7 @@ public final class ConverterUtils {
 	public static EPackage getEPackage(EObject occiObject) {
 		Extension extension = ((Extension)occiObject.eContainer());
 		
-		String uri = OCCIRegistry.getInstance().getFileURI(extension.getScheme());
+		String uri = OcciRegistry.getInstance().getFileURI(extension.getScheme());
 		System.out.println("uri before "+uri);
 		// we must use platform:/plugin URI to enable genmodels
 		uri = uri.replaceAll(".occie", ".ecore");
