@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="org.eclipse.cmf.occi.core.gen.emf.ui.contribution1"
+            nameFilter="*.occie"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               label="OCCI Studio"
+               path="additionsOCCIStudio"
+               id="org.eclipse.cmf.occi.core.gen.emf.ui.menu">
+            <separator
+                  name="group">
+            </separator>
+         </menu>
+         <action
+               label="Generate EMF Tooling"
+               class="org.eclipse.cmf.occi.core.gen.emf.ui.popup.actions.OCCI2EMFGeneratorAction"
+               menubarPath="org.eclipse.cmf.occi.core.gen.emf.ui.menu/group"
+               enablesFor="1"
+               id="org.eclipse.cmf.occi.core.gen.emf.ui.newAction">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>
