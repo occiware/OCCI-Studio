@@ -19,15 +19,16 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import org.eclipse.cmf.occi.core.util.OCCI2Ecore;
-import org.eclipse.cmf.occi.core.util.OCCIHelper;
+
+import org.eclipse.cmf.occi.core.util.OcciKindResolver;
+import org.eclipse.cmf.occi.core.util.Occi2Ecore;
+import org.eclipse.cmf.occi.core.util.OcciHelper;
 import org.eclipse.cmf.occi.core.Attribute;
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Mixin;
 import org.eclipse.cmf.occi.core.MixinBase;
-import org.eclipse.cmf.occi.core.OCCIKindResolver;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.emf.common.notify.Notification;
@@ -217,7 +218,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 		if (kind == null) {
 			try {
 				// Try to resolve it automatically.
-				kind = OCCIKindResolver.resolveKind(this);
+				kind = OcciKindResolver.resolveKind(this);
 			} catch (Exception exc) {
 				LOGGER.warn("SHOULD NEVER HAPPEN!", exc);
 			}
@@ -388,10 +389,10 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 //		}
 
 		// Iterate over all OCCI attributes of this entity.
-		for(Attribute attribute : OCCIHelper.getAllAttributes(this)) {
+		for(Attribute attribute : OcciHelper.getAllAttributes(this)) {
 			final String attributeName = attribute.getName();
 			// Search the Ecore structural feature associated to this OCCI attribute.
-			final EStructuralFeature eStructuralFeature = eClass().getEStructuralFeature(OCCI2Ecore.convertOcciAttributeName2EcoreAttributeName(attributeName));
+			final EStructuralFeature eStructuralFeature = eClass().getEStructuralFeature(Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attributeName));
 			// If this is an Ecore attribute then
 			if(eStructuralFeature != null && eStructuralFeature instanceof EAttribute) {
 				final int featureId = eStructuralFeature.getFeatureID();

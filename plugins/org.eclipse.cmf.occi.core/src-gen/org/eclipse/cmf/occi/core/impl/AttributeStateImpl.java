@@ -14,7 +14,7 @@ package org.eclipse.cmf.occi.core.impl;
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.OCCIPackage;
-import org.eclipse.cmf.occi.core.util.OCCIHelper;
+import org.eclipse.cmf.occi.core.util.OcciHelper;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -148,7 +148,7 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 		// Propagate to the associated Ecore attribute.
 				if(eContainer() != null) {
 					try {
-						OCCIHelper.setAttribute((Entity)eContainer(), name, value);
+						OcciHelper.setAttribute((Entity)eContainer(), name, value);
 					} catch (Exception e) {
 						// FIXME: Don't understand why an exception is thrown!!!
 						LOGGER.warn("Exception when set the value of the attribute state '" + name + "': " + e.getMessage() + "!!!");
