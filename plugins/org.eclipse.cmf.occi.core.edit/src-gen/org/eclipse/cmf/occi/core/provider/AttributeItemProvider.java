@@ -12,17 +12,20 @@
 package org.eclipse.cmf.occi.core.provider;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.cmf.occi.core.Attribute;
+import org.eclipse.cmf.occi.core.DataType;
+import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -193,23 +196,80 @@ public class AttributeItemProvider
 	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
+
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Attribute_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_type_feature", "_UI_Attribute_type"),
-				 OCCIPackage.Literals.ATTRIBUTE__TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		final IItemLabelProvider lp = new IItemLabelProvider() {
+			public String getText(Object object) {
+				if (object instanceof DataType) {
+//					if (((DataType) object).eContainer() instanceof EPackage) {
+//						return ((EPackage) ((DataType) object).eContainer()).getNsURI() + '#'
+//								+ ((DataType) object).getName();
+//					} 
+//					else 
+						if (((DataType) object).eContainer() instanceof Extension) {
+						String scheme = ((Extension) ((DataType) object).eContainer()).getScheme();
+						if (!scheme.endsWith("#")) {
+							scheme += "#";
+						}
+						return scheme + ((DataType) object).getName();
+					}
+					//return ((DataType) object).getName() + '[' + ((DataType) object).getInstanceTypeName() + ']';
+				}
+				return "";
+			}
+
+			public Object getImage(Object object) {
+				return null;
+			}
+		};
+		itemPropertyDescriptors
+				.add(new ItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Attribute_type_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Attribute_type_feature",
+								"_UI_Attribute_type"),
+						OCCIPackage.Literals.ATTRIBUTE__TYPE, true, false, true, null, null, null) {
+
+					@Override
+					public Collection<?> getChoiceOfValues(Object object) {
+						List<DataType> list = new ArrayList<DataType>();
+						for (Object choice : super.getChoiceOfValues(object)) {
+							if (choice instanceof DataType && ((DataType) choice).eContainer() != null
+									&& ((((DataType) choice).eContainer() instanceof Extension)
+											|| (((EPackage) ((DataType) choice).eContainer()).getNsURI()
+													.equals(OCCIPackage.eINSTANCE.getNsURI())))) {
+								list.add((DataType) choice);
+							}
+						}
+						return list;
+					}
+
+					@Override
+					public IItemLabelProvider getLabelProvider(Object object) {
+						if (object instanceof Attribute) {
+							return lp;
+						}
+						return super.getLabelProvider(object);
+					}
+
+				});
 	}
+//	protected void addTypePropertyDescriptor(Object object) {
+//	itemPropertyDescriptors.add
+//		(createItemPropertyDescriptor
+//			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//			 getResourceLocator(),
+//			 getString("_UI_Attribute_type_feature"),
+//			 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_type_feature", "_UI_Attribute_type"),
+//			 OCCIPackage.Literals.ATTRIBUTE__TYPE,
+//			 true,
+//			 false,
+//			 true,
+//			 null,
+//			 null,
+//			 null));
+//}
 
 	/**
 	 * This returns Attribute.gif.

@@ -13,12 +13,18 @@ package org.eclipse.cmf.occi.core.provider;
 
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+import org.eclipse.cmf.occi.core.Configuration;
 import org.eclipse.cmf.occi.core.Entity;
+import org.eclipse.cmf.occi.core.Extension;
+import org.eclipse.cmf.occi.core.Kind;
+import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.OCCIFactory;
 import org.eclipse.cmf.occi.core.OCCIPackage;
-
+import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -37,6 +43,10 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import com.google.common.base.Predicate;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
+
 /**
  * This is the item provider adapter for a {@link org.eclipse.cmf.occi.core.Entity} object.
  * <!-- begin-user-doc -->
@@ -51,6 +61,8 @@ public class EntityItemProvider
 		ITreeItemContentProvider,
 		IItemLabelProvider,
 		IItemPropertySource {
+	private static final String CORE_EXT_LINK_KIND_ID = "http://schemas.ogf.org/occi/core#link";
+	private static final String CORE_EXT_RESOURCE_KIND_ID = "http://schemas.ogf.org/occi/core#resource";
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -129,23 +141,90 @@ public class EntityItemProvider
 	 * This adds a property descriptor for the Kind feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addKindPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Entity_kind_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_kind_feature", "_UI_Entity_type"),
-				 OCCIPackage.Literals.ENTITY__KIND,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		final IItemLabelProvider lp = new IItemLabelProvider() {
+			public String getText(Object object) {
+				if (object != null) {
+					return ((Kind) object).getScheme() + ((Kind) object).getTerm();
+				}
+				return "";
+			}
+
+			public Object getImage(Object object) {
+				return null;
+			}
+		};
+		itemPropertyDescriptors
+				.add(new ItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Entity_kind_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Entity_kind_feature", "_UI_Entity_type"),
+						OCCIPackage.Literals.ENTITY__KIND, true, false, true, null, null, null) {
+					@Override
+					public IItemLabelProvider getLabelProvider(Object object) {
+						if (object instanceof Entity) {
+							return lp;
+						}
+						return super.getLabelProvider(object);
+					}
+
+					@SuppressWarnings("unchecked")
+					@Override
+					public Collection<?> getChoiceOfValues(final Object object) {
+						Set<Kind> choices = new HashSet<Kind>();
+						if (object instanceof Resource) {
+							for (Extension ext : ((Configuration) ((Resource) object).eContainer()).getUse()) {
+								choices.addAll(getAllKinds(ext));
+							}
+						} else if (object instanceof Link) {
+							for (Extension ext : ((Configuration) ((Link) object).eContainer().eContainer()).getUse()) {
+								choices.addAll(getAllKinds(ext));
+							}
+						}
+						return Lists.newArrayList(Iterables.filter(choices, new Predicate() {
+							public boolean apply(Object input) {
+								if (object instanceof Resource) {
+									return isOfGivenKind((Kind) input, CORE_EXT_RESOURCE_KIND_ID);
+								} else if (object instanceof Link) {
+									return isOfGivenKind((Kind) input, CORE_EXT_LINK_KIND_ID);
+								}
+								return false;
+							}
+						}));
+					}
+
+				});
+
 	}
+	private static boolean isOfGivenKind(Kind kind, String id) {
+		return ((kind.getScheme() + kind.getTerm()).equals(id))
+				|| (kind.getParent() != null && isOfGivenKind(kind.getParent(), id));
+	}
+
+	private static Collection<? extends Kind> getAllKinds(Extension ext) {
+		Set<Kind> kinds = new HashSet<Kind>();
+		for (Extension imp : ext.getImport()) {
+			kinds.addAll(getAllKinds(imp));
+		}
+		kinds.addAll(ext.getKinds());
+		return kinds;
+	}
+//	protected void addKindPropertyDescriptor(Object object) {
+//		itemPropertyDescriptors.add
+//			(createItemPropertyDescriptor
+//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//				 getResourceLocator(),
+//				 getString("_UI_Entity_kind_feature"),
+//				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_kind_feature", "_UI_Entity_type"),
+//				 OCCIPackage.Literals.ENTITY__KIND,
+//				 true,
+//				 false,
+//				 true,
+//				 null,
+//				 null,
+//				 null));
+//	}
 
 	/**
 	 * This adds a property descriptor for the Location feature.

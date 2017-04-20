@@ -25,7 +25,9 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -66,23 +68,50 @@ public class KindItemProvider extends TypeItemProvider {
 	 * This adds a property descriptor for the Parent feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addParentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Kind_parent_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Kind_parent_feature", "_UI_Kind_type"),
-				 OCCIPackage.Literals.KIND__PARENT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		final IItemLabelProvider lp = new IItemLabelProvider() {
+			public String getText(Object object) {
+				if (object != null) {
+					return ((Kind) object).getScheme() + ((Kind) object).getTerm();
+				}
+				return "";
+			}
+
+			public Object getImage(Object object) {
+				return null;
+			}
+		};
+		itemPropertyDescriptors
+				.add(new ItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Kind_parent_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Kind_parent_feature", "_UI_Kind_type"),
+						OCCIPackage.Literals.KIND__PARENT, true, false, true, null, null, null) {
+					@Override
+					public IItemLabelProvider getLabelProvider(Object object) {
+						if (object instanceof Kind) {
+							return lp;
+						}
+						return super.getLabelProvider(object);
+					}
+				});
 	}
+//	protected void addParentPropertyDescriptor(Object object) {
+//		itemPropertyDescriptors.add
+//			(createItemPropertyDescriptor
+//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//				 getResourceLocator(),
+//				 getString("_UI_Kind_parent_feature"),
+//				 getString("_UI_PropertyDescriptor_description", "_UI_Kind_parent_feature", "_UI_Kind_type"),
+//				 OCCIPackage.Literals.KIND__PARENT,
+//				 true,
+//				 false,
+//				 true,
+//				 null,
+//				 null,
+//				 null));
+//	}
 
 	/**
 	 * This adds a property descriptor for the Entities feature.
