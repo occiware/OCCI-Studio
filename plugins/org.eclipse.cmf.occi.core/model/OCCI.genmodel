@@ -39,7 +39,7 @@
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//Constraint">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Constraint/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Constraint/description"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute OCCI.ecore#//Constraint/description"/>
       <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute OCCI.ecore#//Constraint/body"/>
     </genClasses>
     <genClasses image="false" ecoreClass="OCCI.ecore#//Type">
@@ -68,7 +68,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Attribute/mutable"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Attribute/required"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Attribute/default"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Attribute/description"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute OCCI.ecore#//Attribute/description"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//Attribute/type"/>
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//Kind">
@@ -116,15 +116,15 @@
     <genClasses ecoreClass="OCCI.ecore#//Extension">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Extension/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Extension/scheme"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Extension/description"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute OCCI.ecore#//Extension/description"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//Extension/import"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OCCI.ecore#//Extension/kinds"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OCCI.ecore#//Extension/mixins"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OCCI.ecore#//Extension/types"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Extension/specification"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute OCCI.ecore#//Extension/specification"/>
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//Configuration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Configuration/description"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute OCCI.ecore#//Configuration/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Configuration/location"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//Configuration/use"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OCCI.ecore#//Configuration/resources"/>
@@ -132,7 +132,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="OCCI.ecore#//DataType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//DataType/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//DataType/documentation"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute OCCI.ecore#//DataType/documentation"/>
     </genClasses>
     <genClasses image="false" ecoreClass="OCCI.ecore#//BasicType"/>
     <genClasses ecoreClass="OCCI.ecore#//StringType">
@@ -158,7 +158,7 @@
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//EnumerationLiteral">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//EnumerationLiteral/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//EnumerationLiteral/documentation"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute OCCI.ecore#//EnumerationLiteral/documentation"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference OCCI.ecore#//EnumerationLiteral/enumerationType"/>
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//RecordType">

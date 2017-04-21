@@ -185,7 +185,7 @@ public class AttributeItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_description_feature", "_UI_Attribute_type"),
 				 OCCIPackage.Literals.ATTRIBUTE__DESCRIPTION,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,

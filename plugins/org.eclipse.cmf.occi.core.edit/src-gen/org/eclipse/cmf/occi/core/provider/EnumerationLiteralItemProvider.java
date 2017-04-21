@@ -121,7 +121,7 @@ public class EnumerationLiteralItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_EnumerationLiteral_documentation_feature", "_UI_EnumerationLiteral_type"),
 				 OCCIPackage.Literals.ENUMERATION_LITERAL__DOCUMENTATION,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,

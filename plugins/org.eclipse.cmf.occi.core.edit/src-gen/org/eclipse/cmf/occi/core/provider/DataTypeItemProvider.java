@@ -112,7 +112,7 @@ public class DataTypeItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataType_documentation_feature", "_UI_DataType_type"),
 				 OCCIPackage.Literals.DATA_TYPE__DOCUMENTATION,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
