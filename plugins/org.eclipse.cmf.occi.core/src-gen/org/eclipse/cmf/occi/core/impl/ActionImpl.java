@@ -104,9 +104,15 @@ public class ActionImpl extends CategoryImpl implements Action {
 		 *     else
 		 *       let
 		 *         result : OclAny[1] = let
-		 *           status : Boolean[1] = self.oclContainer()
-		 *           .oclAsType(Kind)
-		 *           .fsm.ownedState.outgoingTransition.action->includes(self)
+		 *           status : Boolean[1] = if
+		 *             self.oclContainer()
+		 *             .oclAsType(Kind).fsm <> null
+		 *           then
+		 *             self.oclContainer()
+		 *             .oclAsType(Kind)
+		 *             .fsm.ownedState.outgoingTransition.action->includes(self)
+		 *           else true
+		 *           endif
 		 *         in
 		 *           if status = true
 		 *           then true
@@ -131,51 +137,59 @@ public class ActionImpl extends CategoryImpl implements Action {
 		else {
 			/*@Caught*/ /*@NonNull*/ Object CAUGHT_symbol_1;
 			try {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Kind_1 = idResolver.getClass(OCCITables.CLSSid_Kind, null);
-				final /*@NonInvalid*/ Object oclContainer_0 = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, this);
-				final /*@Thrown*/ Kind oclAsType_0 = ClassUtil.nonNullState((Kind)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_0, TYP_occi_c_c_Kind_1));
-				final /*@Thrown*/ FSM fsm = oclAsType_0.getFsm();
-				if (fsm == null) {
-					throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::FSM::ownedState\'");
-				}
-				final /*@Thrown*/ List<State> ownedState = fsm.getOwnedState();
-				final /*@Thrown*/ OrderedSetValue BOXED_ownedState = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_State, ownedState);
-				/*@Thrown*/ SequenceValue.Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_CLSSid_Transition);
-				/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_ownedState.iterator();
-				/*@Thrown*/ SequenceValue collect_0;
-				while (true) {
-					if (!ITERATOR__1.hasNext()) {
-						collect_0 = accumulator;
-						break;
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Kind_0 = idResolver.getClass(OCCITables.CLSSid_Kind, null);
+				final /*@NonInvalid*/ Object oclContainer = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, this);
+				final /*@Thrown*/ Kind oclAsType = ClassUtil.nonNullState((Kind)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer, TYP_occi_c_c_Kind_0));
+				final /*@Thrown*/ FSM fsm = oclAsType.getFsm();
+				final /*@Thrown*/ boolean ne = fsm != null;
+				/*@Thrown*/ boolean status;
+				if (ne) {
+					if (fsm == null) {
+						throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::FSM::ownedState\'");
 					}
-					/*@NonInvalid*/ State _1 = (State)ITERATOR__1.next();
-					/**
-					 * outgoingTransition
-					 */
-					final /*@NonInvalid*/ List<Transition> outgoingTransition = _1.getOutgoingTransition();
-					final /*@NonInvalid*/ OrderedSetValue BOXED_outgoingTransition = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Transition, outgoingTransition);
-					//
-					for (Object value : BOXED_outgoingTransition.flatten().getElements()) {
-						accumulator.add(value);
+					final /*@Thrown*/ List<State> ownedState = fsm.getOwnedState();
+					final /*@Thrown*/ OrderedSetValue BOXED_ownedState = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_State, ownedState);
+					/*@Thrown*/ SequenceValue.Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_CLSSid_Transition);
+					/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_ownedState.iterator();
+					/*@Thrown*/ SequenceValue collect_0;
+					while (true) {
+						if (!ITERATOR__1.hasNext()) {
+							collect_0 = accumulator;
+							break;
+						}
+						/*@NonInvalid*/ State _1 = (State)ITERATOR__1.next();
+						/**
+						 * outgoingTransition
+						 */
+						final /*@NonInvalid*/ List<Transition> outgoingTransition = _1.getOutgoingTransition();
+						final /*@NonInvalid*/ OrderedSetValue BOXED_outgoingTransition = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Transition, outgoingTransition);
+						//
+						for (Object value : BOXED_outgoingTransition.flatten().getElements()) {
+							accumulator.add(value);
+						}
 					}
-				}
-				/*@Thrown*/ SequenceValue.Accumulator accumulator_0 = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_CLSSid_Action);
-				/*@NonNull*/ Iterator<Object> ITERATOR__1_0 = collect_0.iterator();
-				/*@Thrown*/ SequenceValue collect;
-				while (true) {
-					if (!ITERATOR__1_0.hasNext()) {
-						collect = accumulator_0;
-						break;
+					/*@Thrown*/ SequenceValue.Accumulator accumulator_0 = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_CLSSid_Action);
+					/*@NonNull*/ Iterator<Object> ITERATOR__1_0 = collect_0.iterator();
+					/*@Thrown*/ SequenceValue collect;
+					while (true) {
+						if (!ITERATOR__1_0.hasNext()) {
+							collect = accumulator_0;
+							break;
+						}
+						/*@NonInvalid*/ Transition _1_0 = (Transition)ITERATOR__1_0.next();
+						/**
+						 * action
+						 */
+						final /*@NonInvalid*/ Action action = _1_0.getAction();
+						//
+						accumulator_0.add(action);
 					}
-					/*@NonInvalid*/ Transition _1_0 = (Transition)ITERATOR__1_0.next();
-					/**
-					 * action
-					 */
-					final /*@NonInvalid*/ Action action = _1_0.getAction();
-					//
-					accumulator_0.add(action);
+					final /*@Thrown*/ boolean includes = CollectionIncludesOperation.INSTANCE.evaluate(collect, this).booleanValue();
+					status = includes;
 				}
-				final /*@Thrown*/ boolean status = CollectionIncludesOperation.INSTANCE.evaluate(collect, this).booleanValue();
+				else {
+					status = ValueUtil.TRUE_VALUE;
+				}
 				/*@Thrown*/ Object symbol_1;
 				if (status) {
 					symbol_1 = ValueUtil.TRUE_VALUE;
@@ -184,7 +198,7 @@ public class ActionImpl extends CategoryImpl implements Action {
 					final /*@NonInvalid*/ String name = this.getName();
 					final /*@NonInvalid*/ String sum = StringConcatOperation.INSTANCE.evaluate(OCCITables.STR_The_32_action_32, name);
 					final /*@NonInvalid*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, OCCITables.STR__32_doesn_39_t_32_appear_32_in_32_the_32_FSM_32_of_32);
-					final /*@Thrown*/ String name_0 = oclAsType_0.getName();
+					final /*@Thrown*/ String name_0 = oclAsType.getName();
 					final /*@Thrown*/ String sum_1 = StringConcatOperation.INSTANCE.evaluate(sum_0, name_0);
 					final /*@Thrown*/ String sum_2 = StringConcatOperation.INSTANCE.evaluate(sum_1, OCCITables.STR__32_Kind_0);
 					final /*@Thrown*/ TupleValue symbol_0 = ValueUtil.createTupleOfEach(OCCITables.TUPLid__0, sum_2, OCCITables.STR_quickfix, OCCITables.INT_1, status);
