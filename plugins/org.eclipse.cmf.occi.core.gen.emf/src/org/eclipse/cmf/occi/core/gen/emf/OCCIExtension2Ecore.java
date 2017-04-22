@@ -12,13 +12,37 @@
  *******************************************************************************/
 package org.eclipse.cmf.occi.core.gen.emf;
 
+import static java.util.Comparator.comparingInt;
+import static java.util.stream.Collectors.toMap;
+
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.eclipse.cmf.occi.core.Action;
+import org.eclipse.cmf.occi.core.ArrayType;
+import org.eclipse.cmf.occi.core.Attribute;
+import org.eclipse.cmf.occi.core.BooleanType;
+import org.eclipse.cmf.occi.core.Category;
+import org.eclipse.cmf.occi.core.Constraint;
+import org.eclipse.cmf.occi.core.DataType;
+import org.eclipse.cmf.occi.core.EObjectType;
+import org.eclipse.cmf.occi.core.EnumerationLiteral;
+import org.eclipse.cmf.occi.core.EnumerationType;
+import org.eclipse.cmf.occi.core.Extension;
+import org.eclipse.cmf.occi.core.Kind;
+import org.eclipse.cmf.occi.core.Mixin;
+import org.eclipse.cmf.occi.core.NumericType;
+import org.eclipse.cmf.occi.core.RecordField;
+import org.eclipse.cmf.occi.core.RecordType;
+import org.eclipse.cmf.occi.core.StringType;
+import org.eclipse.cmf.occi.core.Type;
+import org.eclipse.cmf.occi.core.util.Occi2Ecore;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
@@ -40,26 +64,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 import com.google.common.collect.Lists;
-
-import org.eclipse.cmf.occi.core.Action;
-import org.eclipse.cmf.occi.core.ArrayType;
-import org.eclipse.cmf.occi.core.Attribute;
-import org.eclipse.cmf.occi.core.BooleanType;
-import org.eclipse.cmf.occi.core.Constraint;
-import org.eclipse.cmf.occi.core.DataType;
-import org.eclipse.cmf.occi.core.EObjectType;
-import org.eclipse.cmf.occi.core.EnumerationLiteral;
-import org.eclipse.cmf.occi.core.EnumerationType;
-import org.eclipse.cmf.occi.core.Extension;
-import org.eclipse.cmf.occi.core.Kind;
-import org.eclipse.cmf.occi.core.Mixin;
-import org.eclipse.cmf.occi.core.NumericType;
-import org.eclipse.cmf.occi.core.OCCIPackage;
-import org.eclipse.cmf.occi.core.RecordField;
-import org.eclipse.cmf.occi.core.RecordType;
-import org.eclipse.cmf.occi.core.StringType;
-import org.eclipse.cmf.occi.core.Type;
-import org.eclipse.cmf.occi.core.util.Occi2Ecore;
 
 /**
  * Convert an OCCI Extension to Ecore.
@@ -85,7 +89,7 @@ public class OCCIExtension2Ecore {
 			if (res == null) {
 				// retrieve from installed extensions.
 				EPackage p = ConverterUtils.getEPackage(type);
-				res = (EClass) p.getEClassifier(type.getName());
+				res = (EClass) p.getEClassifier(ConverterUtils.toU1Case(ConverterUtils.formatName(type.getTerm())));
 				// Cache it for optimizing next searches.
 				occiKind2emfEclass.put(type, res);
 			}
@@ -181,6 +185,8 @@ public class OCCIExtension2Ecore {
 			// Add the data type to the Ecore package.
 			ePackage.getEClassifiers().add(createdEMFType);
 		}
+		// Resolve types of arrays attributes and record attributes
+		// Why here: pattern matching
 		for (DataType type : extension.getTypes()) {
 			if (type instanceof ArrayType) {
 				completeArrayTypeFeatures((ArrayType) type, (EClass) occiType2emfType.get(type), ePackage);
@@ -209,16 +215,21 @@ public class OCCIExtension2Ecore {
 
 		// Resolve inheritance between OCCI kinds.
 		for (Kind kind : extension.getKinds()) {
+			System.out.println("kind "+kind);
 			// Get the Ecore class of this OCCI kind.
 			EClass mappedEClass = getMappedEClass(kind);
+			System.out.println("getMappedEClass(kind) "+getMappedEClass(kind));
 			// If kind has a parent kind then
 			if (kind.getParent() != null) {
 				// Get the Ecore class of the OCCI kind's parent.
 				EClass mappedParentEClass = getMappedEClass(kind.getParent());
+				System.out.println("kind.getParent() "+kind.getParent());
+				System.out.println("getMappedEClass(kind.getParent()) "+getMappedEClass(kind.getParent()));
+				System.out.println("--------------------");
 				if (mappedParentEClass != null) {
 					// The Ecore class of the kind's parent is a super type of
 					// the Ecore class of the OCCI kind.
-					System.out.println("mappedParentEClass " + mappedParentEClass + mappedEClass.getEPackage());
+					//System.out.println("mappedParentEClass " + mappedParentEClass + mappedEClass.getEPackage());
 					mappedEClass.getESuperTypes().add(mappedParentEClass);
 				} else {
 					// Should never happen!
@@ -226,8 +237,51 @@ public class OCCIExtension2Ecore {
 				}
 			}
 		}
+		
+		// Resolve inheritance between OCCI mixins.
+				for (Mixin mixin : extension.getMixins()) {
+					System.out.println("mixin "+mixin);
+					// Get the Ecore class of this OCCI kind.
+					//System.out.println("mappedParentEClass " + mixin);
+					EClass mappedEClass = getMappedEClass(mixin);
+					System.out.println("getMappedEClass(mixin) "+getMappedEClass(mixin));
+					//System.out.println("mappedParentEClass " + mappedEClass);
+					
+					// If kind has a parent kind then
+					if (mixin.getDepends() != null) {
+						// Get the Ecore class of the OCCI kind's parent.
+						for(Mixin superMixin : mixin.getDepends()){
+						EClass mappedParentEClass = getMappedEClass(superMixin);
+						System.out.println("superMixin "+superMixin);
+						System.out.println("mappedParentEClass "+mappedParentEClass);
+						if (mappedParentEClass != null) {
+							// The Ecore class of the kind's parent is a super type of
+							// the Ecore class of the OCCI kind.
+						//	System.out.println("mappedParentEClass " + mappedParentEClass + mappedEClass.getEPackage());
+							mappedEClass.getESuperTypes().add(mappedParentEClass);
+						} else {
+							// Should never happen!
+							throw new IllegalArgumentException("Not found: " + superMixin);
+						}
+						}
+					}
+				}
+//				System.out.println(occiKind2emfEclass);
 		return ePackage;
 	}
+	
+	// add inheritance to depends
+//			for (Mixin superMixin : mixin.getDepends()) {
+//				EClass mappedParentEClass = getMappedEClass(superMixin);
+//				if (mappedParentEClass != null) {
+//					// The Ecore class of the depend is a super type of
+//					// the Ecore class of the OCCI mixin.
+//					eClass.getESuperTypes().add(mappedParentEClass);
+//				} else {
+//					// Should never happen!
+//					throw new IllegalArgumentException("Not found: " + superMixin);
+//				}
+//			}
 
 	private String formatExtensionName(Extension extension) {
 		return ConverterUtils
@@ -236,23 +290,12 @@ public class OCCIExtension2Ecore {
 
 	protected EClass convertMixin(Mixin mixin) {
 		EClass eClass = EcoreFactory.eINSTANCE.createEClass();
-		eClass.setName(mixin.getName());
+		eClass.setName(ConverterUtils.toU1Case(ConverterUtils.formatName(mixin.getTerm())));
 		occiKind2emfEclass.put(mixin, eClass);
 
-		// add inheritance to depends
-		for (Mixin superMixin : mixin.getDepends()) {
-			EClass mappedParentEClass = getMappedEClass(superMixin);
-			if (mappedParentEClass != null) {
-				// The Ecore class of the depend is a super type of
-				// the Ecore class of the OCCI mixin.
-				eClass.getESuperTypes().add(mappedParentEClass);
-			} else {
-				// Should never happen!
-				throw new IllegalArgumentException("Not found: " + superMixin);
-			}
-		}
+		
 		addSuperTypeFromOCCI(eClass, "MixinBase");
-		// TODO Add OCL constraints
+		
 
 		for (Attribute attribute : mixin.getAttributes()) {
 			EAttribute convertAttribute = convertAttribute(attribute);
@@ -266,6 +309,7 @@ public class OCCIExtension2Ecore {
 				eClass.getEOperations().add(convertAction);
 			}
 		}
+		// Add OCL constraints
 		convertConstraints(eClass, mixin);
 		if (mixin.getApplies().size() > 0) {
 			if (mixin.getConstraints().size() > 0) {
@@ -303,7 +347,7 @@ public class OCCIExtension2Ecore {
 			else
 				appliesBody += formatExtensionName((Extension) kind.eContainer());
 			appliesBody += "::";
-			appliesBody += ConverterUtils.toU1Case(kind.getTerm());
+			appliesBody += ConverterUtils.toU1Case(ConverterUtils.formatName(kind.getTerm()));
 			appliesBody += ")";
 		}
 		return appliesBody;
@@ -574,17 +618,63 @@ public class OCCIExtension2Ecore {
 	}
 
 	public String convertbody(String body, Extension extension) {
+		System.out.println(body);
 		List<EObject> attributesList = Lists.newArrayList(extension.eAllContents()).stream()
 				.filter(eobject -> eobject instanceof Attribute).collect(Collectors.toList());
-		HashMap<String, String> attributes = new HashMap<String, String>();
+		
+		HashMap<String, String> attributesMap = new HashMap<String, String>();
+		
 		for (EObject attribute : attributesList) {
-			attributes.put(((Attribute) attribute).getName(),
+			attributesMap.put(((Attribute) attribute).getName(),
 					Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(((Attribute) attribute).getName()));
 		}
-		for (Map.Entry<String, String> entry : attributes.entrySet()) {
-			body = body.replace(entry.getKey(), entry.getValue());
+		Map<String, String> attributesSorted = attributesMap.entrySet().stream()
+		        .sorted(comparingInt(e->e.getKey().length()))
+		        .collect(toMap(
+		                Map.Entry::getKey,
+		                Map.Entry::getValue,
+		                (a,b) -> {throw new AssertionError();},
+		                LinkedHashMap::new
+		        ));
+		ArrayList<String> attributesKeys = new ArrayList<String>(attributesSorted.keySet());
+        for(int i=attributesKeys.size()-1; i>=0;i--){
+            System.out.println("bottom "+attributesSorted.get(attributesKeys.get(i)));
+            body = body.replace(attributesKeys.get(i), attributesSorted.get(attributesKeys.get(i)));
+        }
+		System.out.println(body);
+		
+		
+		/*
+		 *  This part convert the Category OCCI ids of Ecore ids
+		 *  for example from IpNetworkInterface to Ipnetworkinterface
+		 */
+		List<EObject> categoriesList = Lists.newArrayList(extension.eAllContents()).stream()
+				.filter(eobject -> eobject instanceof Category).collect(Collectors.toList());
+		
+		HashMap<String, String> categoriesMap = new HashMap<String, String>();
+		
+		for (EObject category : categoriesList) {
+			categoriesMap.put(((Category) category).getName(),
+					ConverterUtils.toU1Case(ConverterUtils.formatName(((Category) category).getTerm())));
+			System.out.println(((Category) category).getName());
+			System.out.println(ConverterUtils.toU1Case(ConverterUtils.formatName(((Category) category).getTerm())));
 		}
-		// System.out.println("bodyyy " + body);
+		Map<String, String> categoriesSorted = categoriesMap.entrySet().stream()
+		        .sorted(comparingInt(e->e.getKey().length()))
+		        .collect(toMap(
+		                Map.Entry::getKey,
+		                Map.Entry::getValue,
+		                (a,b) -> {throw new AssertionError();},
+		                LinkedHashMap::new
+		        )); 
+		System.out.println("sorted "+categoriesSorted);
+		ArrayList<String> keys = new ArrayList<String>(categoriesSorted.keySet());
+        for(int i=keys.size()-1; i>=0;i--){
+            System.out.println("bottom "+categoriesSorted.get(keys.get(i)));
+            body = body.replace(keys.get(i), categoriesSorted.get(keys.get(i)));
+        }
+		System.out.println(body);
+		
 		return body;
 	}
 
