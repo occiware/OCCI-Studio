@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  <!-- Popup menu for register an OCCI extension. -->
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.occie"
+            id="org.eclipse.cmf.occi.core.ui.contribution1">
+         <menu
+               label="OCCI Studio"
+               path="additionsOCCIStudio"
+               id="org.eclipse.cmf.occi.core.gen.emf.ui.menu">
+            <separator
+                  name="group">
+            </separator>
+         </menu>
+         <action
+               label="Register OCCI Extension"
+               class="org.eclipse.cmf.occi.core.ui.popup.actions.RegisterOCCIExtensionAction"
+               menubarPath="org.eclipse.cmf.occi.core.gen.emf.ui.menu/group"
+               enablesFor="1"
+               id="org.eclipse.cmf.occi.core.ui.RegisterOCCIExtension">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

@@ -29,6 +29,9 @@
     <module>plugins/org.eclipse.cmf.occi.core.gen.emf</module>
     <module>plugins/org.eclipse.cmf.occi.core.gen.emf.ui</module>
 
+    <!-- OCCI Utilities -->
+    <module>plugins/org.eclipse.cmf.occi.core.ui</module>
+    
     <!-- Releng -->
     <module>features/org.eclipse.cmf.occi</module>
   </modules>
