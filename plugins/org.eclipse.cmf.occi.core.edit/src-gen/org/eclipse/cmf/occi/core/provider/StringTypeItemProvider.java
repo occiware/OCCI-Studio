@@ -77,7 +77,7 @@ public class StringTypeItemProvider extends BasicTypeItemProvider {
 				 getString("_UI_PropertyDescriptor_description", "_UI_StringType_pattern_feature", "_UI_StringType_type"),
 				 OCCIPackage.Literals.STRING_TYPE__PATTERN,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,

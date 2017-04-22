@@ -136,7 +136,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="OCCI.ecore#//BasicType"/>
     <genClasses ecoreClass="OCCI.ecore#//StringType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//StringType/pattern"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute OCCI.ecore#//StringType/pattern"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//StringType/length"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//StringType/minLength"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//StringType/maxLength"/>
