@@ -26,7 +26,7 @@
       </objectContribution>
    </extension>
   <!-- Popup menu for register an OCCI extension. -->
-   <extension point="org.eclipse.ui.popupMenus">
+ <!--  <extension point="org.eclipse.ui.popupMenus">
       <objectContribution
             id="org.eclipse.cmf.occi.core.gen.emf.ui.contribution2"
             nameFilter="*.occie"
@@ -46,5 +46,5 @@
                menubarPath="org.eclipse.cmf.occi.core.gen.emf.ui.menu/group">
          </action>
       </objectContribution>
-   </extension>
+   </extension> -->
 </plugin>
