@@ -128,7 +128,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int KIND__NO_CYCLIC_INHERITANCE = 10;
+	public static final int KIND__NO_CYCLIC_INHERITANCE = 12;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Attributes Name Not Already Defined In Parent' of 'Kind'.
@@ -136,7 +136,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int KIND__ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_PARENT = 11;
+	public static final int KIND__ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_PARENT = 15;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Correct Scheme' of 'Kind'.
@@ -144,7 +144,15 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int KIND__CORRECT_SCHEME = 12;
+	public static final int KIND__CORRECT_SCHEME = 10;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Target Of Target Must Be Resource' of 'Kind'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int KIND__TARGET_OF_TARGET_MUST_BE_RESOURCE = 11;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Entity Kind Is Root Parent' of 'Kind'.
@@ -155,12 +163,20 @@ public class OCCIValidator extends EObjectValidator {
 	public static final int KIND__ENTITY_KIND_IS_ROOT_PARENT = 13;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Source Of Target Must Be Link' of 'Kind'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int KIND__SOURCE_OF_TARGET_MUST_BE_LINK = 14;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Contained Action' of 'Action'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ACTION__CONTAINED_ACTION = 14;
+	public static final int ACTION__CONTAINED_ACTION = 16;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Correct Scheme' of 'Action'.
@@ -168,7 +184,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ACTION__CORRECT_SCHEME = 15;
+	public static final int ACTION__CORRECT_SCHEME = 17;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Correct Scheme' of 'Mixin'.
@@ -176,7 +192,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MIXIN__CORRECT_SCHEME = 16;
+	public static final int MIXIN__CORRECT_SCHEME = 18;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'No Cyclic Inheritance' of 'Mixin'.
@@ -184,7 +200,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MIXIN__NO_CYCLIC_INHERITANCE = 17;
+	public static final int MIXIN__NO_CYCLIC_INHERITANCE = 19;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Attributes Name Not Already Defined In Depends' of 'Mixin'.
@@ -192,7 +208,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MIXIN__ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_DEPENDS = 18;
+	public static final int MIXIN__ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_DEPENDS = 20;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Attributes Name Unique' of 'Entity'.
@@ -200,7 +216,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENTITY__ATTRIBUTES_NAME_UNIQUE = 19;
+	public static final int ENTITY__ATTRIBUTES_NAME_UNIQUE = 21;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Kind Compatible With One Applies Of Each Mixin' of 'Entity'.
@@ -208,7 +224,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENTITY__KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN = 20;
+	public static final int ENTITY__KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN = 22;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Id Unique' of 'Entity'.
@@ -216,7 +232,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENTITY__ID_UNIQUE = 21;
+	public static final int ENTITY__ID_UNIQUE = 23;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Resource Kind Is In Parent' of 'Resource'.
@@ -224,7 +240,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESOURCE__RESOURCE_KIND_IS_IN_PARENT = 22;
+	public static final int RESOURCE__RESOURCE_KIND_IS_IN_PARENT = 24;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Link Kind Is In Parent' of 'Link'.
@@ -232,7 +248,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int LINK__LINK_KIND_IS_IN_PARENT = 23;
+	public static final int LINK__LINK_KIND_IS_IN_PARENT = 25;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Kinds Scheme Valid' of 'Extension'.
@@ -240,7 +256,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__KINDS_SCHEME_VALID = 24;
+	public static final int EXTENSION__KINDS_SCHEME_VALID = 26;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Kind Parent Local Or Imported' of 'Extension'.
@@ -248,7 +264,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__KIND_PARENT_LOCAL_OR_IMPORTED = 25;
+	public static final int EXTENSION__KIND_PARENT_LOCAL_OR_IMPORTED = 27;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Mixins Scheme Valid' of 'Extension'.
@@ -256,7 +272,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__MIXINS_SCHEME_VALID = 26;
+	public static final int EXTENSION__MIXINS_SCHEME_VALID = 28;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Term Unicity' of 'Extension'.
@@ -264,7 +280,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__TERM_UNICITY = 27;
+	public static final int EXTENSION__TERM_UNICITY = 29;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Mixin Applies Local Or Imported' of 'Extension'.
@@ -272,7 +288,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__MIXIN_APPLIES_LOCAL_OR_IMPORTED = 28;
+	public static final int EXTENSION__MIXIN_APPLIES_LOCAL_OR_IMPORTED = 30;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Scheme Unique' of 'Extension'.
@@ -280,7 +296,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__SCHEME_UNIQUE = 29;
+	public static final int EXTENSION__SCHEME_UNIQUE = 31;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Mixin Depends Local Or Imported' of 'Extension'.
@@ -288,7 +304,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__MIXIN_DEPENDS_LOCAL_OR_IMPORTED = 30;
+	public static final int EXTENSION__MIXIN_DEPENDS_LOCAL_OR_IMPORTED = 32;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Mixins Are Tags' of 'Configuration'.
@@ -296,7 +312,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIGURATION__ALL_MIXINS_ARE_TAGS = 31;
+	public static final int CONFIGURATION__ALL_MIXINS_ARE_TAGS = 33;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Resources Links Targets In Configuration' of 'Configuration'.
@@ -304,7 +320,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_TARGETS_IN_CONFIGURATION = 32;
+	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_TARGETS_IN_CONFIGURATION = 34;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Resources Kinds In Use' of 'Configuration'.
@@ -312,7 +328,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIGURATION__ALL_RESOURCES_KINDS_IN_USE = 33;
+	public static final int CONFIGURATION__ALL_RESOURCES_KINDS_IN_USE = 35;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Resources Links Mixins In Use' of 'Configuration'.
@@ -320,7 +336,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_MIXINS_IN_USE = 34;
+	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_MIXINS_IN_USE = 36;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Resources Mixins In Use' of 'Configuration'.
@@ -328,7 +344,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIGURATION__ALL_RESOURCES_MIXINS_IN_USE = 35;
+	public static final int CONFIGURATION__ALL_RESOURCES_MIXINS_IN_USE = 37;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Resources Links Kinds In Use' of 'Configuration'.
@@ -336,7 +352,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_KINDS_IN_USE = 36;
+	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_KINDS_IN_USE = 38;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -344,7 +360,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 36;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 38;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -693,10 +709,12 @@ public class OCCIValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateCategory_IdentityUnique(kind, diagnostics, context);
 		if (result || diagnostics != null) result &= validateType_ConstraintNameUnique(kind, diagnostics, context);
 		if (result || diagnostics != null) result &= validateType_ActionTermUnicity(kind, diagnostics, context);
-		if (result || diagnostics != null) result &= validateKind_EntityKindIsRootParent(kind, diagnostics, context);
-		if (result || diagnostics != null) result &= validateKind_NoCyclicInheritance(kind, diagnostics, context);
 		if (result || diagnostics != null) result &= validateKind_AttributesNameNotAlreadyDefinedInParent(kind, diagnostics, context);
 		if (result || diagnostics != null) result &= validateKind_CorrectScheme(kind, diagnostics, context);
+		if (result || diagnostics != null) result &= validateKind_TargetOfTargetMustBeResource(kind, diagnostics, context);
+		if (result || diagnostics != null) result &= validateKind_NoCyclicInheritance(kind, diagnostics, context);
+		if (result || diagnostics != null) result &= validateKind_EntityKindIsRootParent(kind, diagnostics, context);
+		if (result || diagnostics != null) result &= validateKind_SourceOfTargetMustBeLink(kind, diagnostics, context);
 		return result;
 	}
 
@@ -708,6 +726,16 @@ public class OCCIValidator extends EObjectValidator {
 	 */
 	public boolean validateKind_EntityKindIsRootParent(Kind kind, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return kind.EntityKindIsRootParent(diagnostics, context);
+	}
+
+	/**
+	 * Validates the SourceOfTargetMustBeLink constraint of '<em>Kind</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateKind_SourceOfTargetMustBeLink(Kind kind, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return kind.SourceOfTargetMustBeLink(diagnostics, context);
 	}
 
 	/**
@@ -738,6 +766,16 @@ public class OCCIValidator extends EObjectValidator {
 	 */
 	public boolean validateKind_CorrectScheme(Kind kind, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return kind.CorrectScheme(diagnostics, context);
+	}
+
+	/**
+	 * Validates the TargetOfTargetMustBeResource constraint of '<em>Kind</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateKind_TargetOfTargetMustBeResource(Kind kind, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return kind.TargetOfTargetMustBeResource(diagnostics, context);
 	}
 
 	/**

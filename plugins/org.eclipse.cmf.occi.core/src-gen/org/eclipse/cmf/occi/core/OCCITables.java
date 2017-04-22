@@ -140,12 +140,15 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR_Kind_c_c_CorrectScheme = "Kind::CorrectScheme";
 	public static final /*@NonInvalid*/ java.lang.String STR_Kind_c_c_EntityKindIsRootParent = "Kind::EntityKindIsRootParent";
 	public static final /*@NonInvalid*/ java.lang.String STR_Kind_c_c_NoCyclicInheritance = "Kind::NoCyclicInheritance";
+	public static final /*@NonInvalid*/ java.lang.String STR_Kind_c_c_SourceOfTargetMustBeLink = "Kind::SourceOfTargetMustBeLink";
+	public static final /*@NonInvalid*/ java.lang.String STR_Kind_c_c_TargetOfTargetMustBeResource = "Kind::TargetOfTargetMustBeResource";
 	public static final /*@NonInvalid*/ java.lang.String STR_Link_c_c_LinkKindIsInParent = "Link::LinkKindIsInParent";
 	public static final /*@NonInvalid*/ java.lang.String STR_Mixin_c_c_AttributesNameNotAlreadyDefinedInDepends = "Mixin::AttributesNameNotAlreadyDefinedInDepends";
 	public static final /*@NonInvalid*/ java.lang.String STR_Mixin_c_c_CorrectScheme = "Mixin::CorrectScheme";
 	public static final /*@NonInvalid*/ java.lang.String STR_Mixin_c_c_NoCyclicInheritance = "Mixin::NoCyclicInheritance";
 	public static final /*@NonInvalid*/ java.lang.String STR_Resource_c_c_ResourceKindIsInParent = "Resource::ResourceKindIsInParent";
 	public static final /*@NonInvalid*/ java.lang.String STR_State_c_c_StateLiteralAlreadyDefinedInFSMAttributeType = "State::StateLiteralAlreadyDefinedInFSMAttributeType";
+	public static final /*@NonInvalid*/ java.lang.String STR_The_32 = "The ";
 	public static final /*@NonInvalid*/ java.lang.String STR_The_32_action_32 = "The action ";
 	public static final /*@NonInvalid*/ java.lang.String STR_The_32_action_32_of_32_Transition_32_instance_32_coming_32_from_32_the_32_34 = "The action of Transition instance coming from the \"";
 	public static final /*@NonInvalid*/ java.lang.String STR_Transition_c_c_containedActionMustBeDeclaredInTheAppropriateKind = "Transition::containedActionMustBeDeclaredInTheAppropriateKind";
@@ -156,6 +159,9 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR__32_Kind_32_cannot_32_be_32_used_32_in_32_the_32_FSM_32_of_32 = " Kind cannot be used in the FSM of ";
 	public static final /*@NonInvalid*/ java.lang.String STR__32_declared_32_in_32 = " declared in ";
 	public static final /*@NonInvalid*/ java.lang.String STR__32_doesn_39_t_32_appear_32_in_32_the_32_FSM_32_of_32 = " doesn\'t appear in the FSM of ";
+	public static final /*@NonInvalid*/ java.lang.String STR__32_kind = " kind";
+	public static final /*@NonInvalid*/ java.lang.String STR__32_kind_32_must_32_be_32_a_32_child_32_of_32_link_32_Kind_32_because_32_it_32_is_32_the_32_source_32_of_32_t = " kind must be a child of link Kind because it is the source of the \"target\" reference";
+	public static final /*@NonInvalid*/ java.lang.String STR__32_kind_32_must_32_be_32_a_32_child_32_of_32_resource_32_Kind_32_because_32_it_32_is_32_the_32_target_32 = " kind must be a child of resource Kind because it is the target of the \"target\" reference in the ";
 	public static final /*@NonInvalid*/ java.lang.String STR__34_32_kind_32_instance_32_must_32_be_32_a_32_set = "\" kind instance must be a set";
 	public static final /*@NonInvalid*/ java.lang.String STR__34_32_state_32_in_32_the_32_FSM_32_of_32_34 = "\" state in the FSM of \"";
 	public static final /*@NonInvalid*/ java.lang.String STR__34_32_state_32_to_32_the_32_34 = "\" state to the \"";
@@ -808,10 +814,12 @@ public class OCCITables
 		public static final /*@NonNull*/ ExecutorProperty _Kind__entities = new EcoreExecutorProperty(OCCIPackage.Literals.KIND__ENTITIES, Types._Kind, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Kind__fsm = new EcoreExecutorProperty(OCCIPackage.Literals.KIND__FSM, Types._Kind, 1);
 		public static final /*@NonNull*/ ExecutorProperty _Kind__parent = new EcoreExecutorProperty(OCCIPackage.Literals.KIND__PARENT, Types._Kind, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Kind__Entity__kind = new ExecutorPropertyWithImplementation("Entity", Types._Kind, 3, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.ENTITY__KIND));
-		public static final /*@NonNull*/ ExecutorProperty _Kind__Extension__kinds = new ExecutorPropertyWithImplementation("Extension", Types._Kind, 4, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.EXTENSION__KINDS));
-		public static final /*@NonNull*/ ExecutorProperty _Kind__Kind__parent = new ExecutorPropertyWithImplementation("Kind", Types._Kind, 5, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.KIND__PARENT));
-		public static final /*@NonNull*/ ExecutorProperty _Kind__Mixin__applies = new ExecutorPropertyWithImplementation("Mixin", Types._Kind, 6, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.MIXIN__APPLIES));
+		public static final /*@NonNull*/ ExecutorProperty _Kind__target = new EcoreExecutorProperty(OCCIPackage.Literals.KIND__TARGET, Types._Kind, 3);
+		public static final /*@NonNull*/ ExecutorProperty _Kind__Entity__kind = new ExecutorPropertyWithImplementation("Entity", Types._Kind, 4, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.ENTITY__KIND));
+		public static final /*@NonNull*/ ExecutorProperty _Kind__Extension__kinds = new ExecutorPropertyWithImplementation("Extension", Types._Kind, 5, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.EXTENSION__KINDS));
+		public static final /*@NonNull*/ ExecutorProperty _Kind__Kind__parent = new ExecutorPropertyWithImplementation("Kind", Types._Kind, 6, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.KIND__PARENT));
+		public static final /*@NonNull*/ ExecutorProperty _Kind__Kind__target = new ExecutorPropertyWithImplementation("Kind", Types._Kind, 7, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.KIND__TARGET));
+		public static final /*@NonNull*/ ExecutorProperty _Kind__Mixin__applies = new ExecutorPropertyWithImplementation("Mixin", Types._Kind, 8, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.MIXIN__APPLIES));
 
 		public static final /*@NonNull*/ ExecutorProperty _Link__source = new EcoreExecutorProperty(OCCIPackage.Literals.LINK__SOURCE, Types._Link, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Link__target = new EcoreExecutorProperty(OCCIPackage.Literals.LINK__TARGET, Types._Link, 1);
@@ -2681,6 +2689,7 @@ public class OCCITables
 			OCCITables.Properties._Category__name,
 			OCCITables.Properties._Kind__parent,
 			OCCITables.Properties._Category__scheme,
+			OCCITables.Properties._Kind__target,
 			OCCITables.Properties._Category__term,
 			OCCITables.Properties._Category__title
 		};

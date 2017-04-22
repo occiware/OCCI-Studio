@@ -132,13 +132,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Kind" eSuperTypes="#//Type">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="CorrectScheme NoCyclicInheritance EntityKindIsRootParent AttributesNameNotAlreadyDefinedInParent"/>
+      <details key="constraints" value="CorrectScheme NoCyclicInheritance EntityKindIsRootParent AttributesNameNotAlreadyDefinedInParent SourceOfTargetMustBeLink TargetOfTargetMustBeResource"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="CorrectScheme" value="scheme = self.oclContainer().oclAsType(Extension).scheme"/>
       <details key="NoCyclicInheritance" value="parent->closure(parent)->excludes(self)"/>
       <details key="EntityKindIsRootParent" value="self->closure(parent)->exists(k |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;k.term = 'entity' and k.scheme = 'http://schemas.ogf.org/occi/core#' and k.parent = null)"/>
       <details key="AttributesNameNotAlreadyDefinedInParent" value="attributes.name->excludesAll(parent->closure(parent).attributes.name)"/>
+      <details key="SourceOfTargetMustBeLink" value="Tuple {&#xA;&#x9;&#x9;&#x9;&#x9;status: Boolean= &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if(self.target &lt;> null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self->closure(parent)->exists(k |k.term = 'link' and k.scheme = 'http://schemas.ogf.org/occi/core#')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9;true &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; endif,&#xA;&#x9;&#x9;&#x9;&#x9;message: String ='The '+self.name +' kind must be a child of link Kind because it is the source of the &quot;target&quot; reference' ,&#xA;&#x9;&#x9;&#x9;&#x9;severity :Integer = -1,&#xA;&#x9;&#x9;&#x9;&#x9;quickfix:String = 'quickfix'&#xA;&#x9;&#x9;&#x9;&#x9;}.status"/>
+      <details key="TargetOfTargetMustBeResource" value="Tuple {&#xA;&#x9;&#x9;&#x9;&#x9;status: Boolean= &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if(self.target &lt;> null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.target->closure(parent)->exists(k |k.term = 'resource' and k.scheme = 'http://schemas.ogf.org/occi/core#')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9;true &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; endif,&#xA;&#x9;&#x9;&#x9;&#x9;message: String ='The '+self.target.name +' kind must be a child of resource Kind because it is the target of the &quot;target&quot; reference in the ' +self.name +' kind',&#xA;&#x9;&#x9;&#x9;&#x9;severity :Integer = -1,&#xA;&#x9;&#x9;&#x9;&#x9;quickfix:String = 'quickfix'&#xA;&#x9;&#x9;&#x9;&#x9;}.status"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//Kind"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entities" ordered="false"
@@ -149,6 +151,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fsm" eType="#//FSM" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Kind"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//Category">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">

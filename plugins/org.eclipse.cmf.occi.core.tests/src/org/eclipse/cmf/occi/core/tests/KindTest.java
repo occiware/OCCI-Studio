@@ -30,10 +30,12 @@ import org.eclipse.cmf.occi.core.OCCIFactory;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.core.Kind#NoCyclicInheritance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>No Cyclic Inheritance</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.core.Kind#AttributesNameNotAlreadyDefinedInParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Attributes Name Not Already Defined In Parent</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.Kind#CorrectScheme(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Correct Scheme</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.Kind#TargetOfTargetMustBeResource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Target Of Target Must Be Resource</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.Kind#NoCyclicInheritance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>No Cyclic Inheritance</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.Kind#EntityKindIsRootParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Entity Kind Is Root Parent</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.Kind#SourceOfTargetMustBeLink(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Source Of Target Must Be Link</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.Kind#AttributesNameNotAlreadyDefinedInParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Attributes Name Not Already Defined In Parent</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -145,6 +147,19 @@ public class KindTest extends TypeTest {
 	}
 
 	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.Kind#TargetOfTargetMustBeResource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Target Of Target Must Be Resource</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.Kind#TargetOfTargetMustBeResource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testTargetOfTargetMustBeResource__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
 	 * Tests the '{@link org.eclipse.cmf.occi.core.Kind#EntityKindIsRootParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Entity Kind Is Root Parent</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -155,6 +170,19 @@ public class KindTest extends TypeTest {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		// fail();
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.Kind#SourceOfTargetMustBeLink(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Source Of Target Must Be Link</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.Kind#SourceOfTargetMustBeLink(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testSourceOfTargetMustBeLink__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //KindTest
