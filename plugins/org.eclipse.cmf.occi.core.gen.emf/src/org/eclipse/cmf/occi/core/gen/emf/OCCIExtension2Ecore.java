@@ -586,8 +586,39 @@ public class OCCIExtension2Ecore {
 
 		// Convert all constraints of the OCCI kind.
 		convertConstraints(eClass, kind);
-
+		if(kind.getTarget()!= null){
+			addTargetConstraint(kind, eClass);
+		}
 		return eClass;
+	}
+
+	private void addTargetConstraint(Kind kind, EClass eClass) {
+
+		if (kind.getConstraints().size() > 0) {
+			// So, it exists emf and ocl annotations
+			EAnnotation annotation_emf = eClass.getEAnnotation("http://www.eclipse.org/emf/2002/Ecore");
+			annotation_emf.getDetails().put("constraints", annotation_emf.getDetails().get("constraints")+ " targetConstraint");
+			
+			EAnnotation annotation_ocl = eClass.getEAnnotation("http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot");
+			annotation_ocl.getDetails().put("targetConstraint", createTargetContraintBody(kind));
+		} else {
+			// EMF Annotation
+			EAnnotation annotation_emf = EcoreFactory.eINSTANCE.createEAnnotation();
+			annotation_emf.setSource("http://www.eclipse.org/emf/2002/Ecore");
+			// OCL Annotation
+			EAnnotation annotation_ocl = EcoreFactory.eINSTANCE.createEAnnotation();
+			annotation_ocl.setSource("http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot");
+
+			annotation_ocl.getDetails().put("targetConstraint", createTargetContraintBody(kind));
+			annotation_emf.getDetails().put("constraints", "targetConstraint");
+			eClass.getEAnnotations().add(annotation_emf);
+			eClass.getEAnnotations().add(annotation_ocl);
+		}
+	
+	}
+
+	private String createTargetContraintBody(Kind kind) {
+		return "self.target.oclIsKindOf("+getMappedEClass(kind.getTarget()).getName()+")";
 	}
 
 	protected void convertConstraints(EClass eClass, Type type) {
