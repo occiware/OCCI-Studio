@@ -3,7 +3,7 @@ package org.eclipse.cmf.occi.core.ui.popup.actions;
 import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
-	private static final String BUNDLE_NAME = "org.eclipse.cmf.occi.core.design.messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "org.eclipse.cmf.occi.core.ui.messages"; //$NON-NLS-1$
 	public static String LoadExtensionDialog_ExtensionRegistry;
 	public static String LoadExtensionDialog_SelectExtension;
 	public static String LoadExtensionDialog_SelectRegisteredExtension;
