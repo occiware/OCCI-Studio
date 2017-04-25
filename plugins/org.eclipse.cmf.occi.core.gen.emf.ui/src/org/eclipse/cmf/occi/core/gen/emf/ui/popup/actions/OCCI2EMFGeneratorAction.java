@@ -196,8 +196,6 @@ public class OCCI2EMFGeneratorAction implements IObjectActionDelegate {
 		/*
 		 * Create genmodel
 		 */
-		System.out.println("tt" + ConverterUtils.getRootElement(resourceSet, CORE_GEN_PACKAGE_URI));
-		System.out.println("tt" + ConverterUtils.getRootElement(resourceSet, CORE_GEN_PACKAGE_URI).eContents());
 		GenPackage coreGenPackage = (GenPackage) ConverterUtils.getRootElement(resourceSet, CORE_GEN_PACKAGE_URI)
 				.eContents().get(1);
 		usedPackages.add(coreGenPackage);

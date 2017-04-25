@@ -157,7 +157,33 @@ public class KindItemProvider extends TypeItemProvider {
 				 null,
 				 null));
 	}
-
+/*
+ * {
+					@Override
+					public Collection<?> getChoiceOfValues(Object object) {
+						System.out.println(getSourceParent((Kind) object).getName());
+						List<Kind> result = new ArrayList<Kind>();
+						if (((Kind) object).getParent().getName().equals("Link")) {
+							Extension ext = (Extension) ((Kind) object).eContainer();
+							for (Kind kind : ext.getKinds()) {
+								if ((kind.getParent()).getName().equals("Resource")) {
+									System.out.println(getSourceParent((Kind) object).getName());
+									result.add(kind);
+								}
+							}
+						}
+						return result;
+					}
+				});
+	}
+	private Kind getSourceParent(Kind kind) {
+		if (kind.getParent() != null) {
+			return getSourceParent(kind.getParent());
+		} else {
+			return kind.getParent();
+		}
+	}
+ */
 	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or

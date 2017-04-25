@@ -188,9 +188,9 @@ public class MART
 									}
 								}
 
-						    } else if("org.occiware.clouddesigner.occi.occie".equals(point)) {
+						    } else if("org.eclipse.cmf.occi.core.occie".equals(point)) {
 						    	//
-								// Manage <extension point="org.occiware.clouddesigner.occi.occie"> element.
+								// Manage <extension point="org.eclipse.cmf.occi.core.occie"> element.
 						    	//
 								for (int j=0; j<childNodes.getLength(); j++) {
 									Node childNode = childNodes.item(j);

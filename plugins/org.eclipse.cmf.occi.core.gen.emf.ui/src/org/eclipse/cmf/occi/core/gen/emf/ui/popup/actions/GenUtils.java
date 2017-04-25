@@ -60,8 +60,8 @@ public class GenUtils {
 		while ((inputLine = in.readLine()) != null) {
 			buffer.append(inputLine + "\n");
 			if (inputLine.startsWith("Require-Bundle:")) {
-				buffer.append(" org.occiware.clouddesigner.occi,\n");
-				buffer.append(" org.occiware.clouddesigner.occi.design,\n");
+				buffer.append(" org.eclipse.cmf.occi.core,\n");
+				buffer.append(" org.eclipse.cmf.occi.core.design,\n");
 			}
 		}
 		in.close();
@@ -78,12 +78,12 @@ public class GenUtils {
 				buffer.append("   <!-- Popup menu for creating a ").append(modelName).append(" configuration file. -->\n");
 				buffer.append("   <extension point=\"org.eclipse.ui.newWizards\">\n");
 				buffer.append("      <category\n");
-				buffer.append("            id=\"org.occiware.clouddesigner.category.ID\"\n");
+				buffer.append("            id=\"org.eclipse.cmf.occi.core.category.ID\"\n");
 				buffer.append("            name=\"Cloud Designer\"/>\n");
 				buffer.append("      <wizard\n");
-				buffer.append("            category=\"org.occiware.clouddesigner.category.ID\"\n");
+				buffer.append("            category=\"org.eclipse.cmf.occi.core.category.ID\"\n");
 				buffer.append("            class=\"").append(projectName).append(".wizard.NewConfigurationWizard\"\n");
-				buffer.append("            icon=\"platform:/plugin/org.occiware.clouddesigner.occi.edit/icons/full/obj16/Configuration.gif\"\n");				
+				buffer.append("            icon=\"platform:/plugin/org.eclipse.cmf.occi.core.edit/icons/full/obj16/Configuration.gif\"\n");				
 				buffer.append("            id=\"").append(projectName).append(".wizard.NewConfigurationWizard\"\n");
 				buffer.append("            name=\"").append(modelName).append(" Configuration File\"/>\n");
 				buffer.append("   </extension>\n");
@@ -109,7 +109,7 @@ public class GenUtils {
 		buffer.append("\n");
 		buffer.append("package ").append(projectName).append(".wizard;\n");
 		buffer.append("\n");
-		buffer.append("import org.occiware.clouddesigner.occi.design.utils.NewDiagramWizard;\n");
+		buffer.append("import org.eclipse.cmf.occi.core.design.utils.NewDiagramWizard;\n");
 		buffer.append("\n");
 		buffer.append("/**\n");
 		buffer.append(" * This is a simple wizard for creating a new ").append(modelName).append(" model file.\n");
