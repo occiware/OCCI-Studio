@@ -60,6 +60,7 @@ public class KindItemProvider extends TypeItemProvider {
 
 			addParentPropertyDescriptor(object);
 			addEntitiesPropertyDescriptor(object);
+			addSourcePropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -131,6 +132,28 @@ public class KindItemProvider extends TypeItemProvider {
 				 false,
 				 false,
 				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Source feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSourcePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Kind_source_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Kind_source_feature", "_UI_Kind_type"),
+				 OCCIPackage.Literals.KIND__SOURCE,
+				 true,
+				 false,
+				 true,
 				 null,
 				 null,
 				 null));

@@ -75,7 +75,11 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//Kind/parent"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference OCCI.ecore#//Kind/entities"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OCCI.ecore#//Kind/fsm"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//Kind/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//Kind/target"/>
+      <genOperations ecoreOperation="OCCI.ecore#//Kind/occiIsKindOf">
+        <genParameters ecoreParameter="OCCI.ecore#//Kind/occiIsKindOf/kind"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//Action"/>
     <genClasses ecoreClass="OCCI.ecore#//Mixin">

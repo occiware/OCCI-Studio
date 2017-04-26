@@ -675,8 +675,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 								final /*@NonInvalid*/ StandardLibrary standardLibrary = idResolver.getStandardLibrary();
 								/*@Caught*/ /*@NonNull*/ Object CAUGHT_includes;
 								try {
-									final /*@NonInvalid*/ Kind kind = this.getKind();
-									final /*@NonInvalid*/ SetValue oclAsSet = OclAnyOclAsSetOperation.INSTANCE.evaluate(executor, OCCITables.SET_CLSSid_Kind, kind);
+									final /*@NonInvalid*/ Kind kind_0 = this.getKind();
+									final /*@NonInvalid*/ SetValue oclAsSet = OclAnyOclAsSetOperation.INSTANCE.evaluate(executor, OCCITables.SET_CLSSid_Kind, kind_0);
 									final org.eclipse.ocl.pivot.Class TYPE_closure_0 = executor.getStaticTypeOf(oclAsSet);
 									final LibraryIteration.LibraryIterationExtension IMPL_closure_0 = (LibraryIteration.LibraryIterationExtension)TYPE_closure_0.lookupImplementation(standardLibrary, OCLstdlibTables.Operations._Set__closure);
 									final /*@NonNull*/ Object ACC_closure_0 = IMPL_closure_0.createAccumulatorValue(executor, OCCITables.SET_CLSSid_Kind, OCCITables.CLSSid_Kind);

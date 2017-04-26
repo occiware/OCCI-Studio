@@ -761,13 +761,22 @@ public interface OCCIPackage extends EPackage {
 	int KIND__FSM = TYPE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KIND__SOURCE = TYPE_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KIND__TARGET = TYPE_FEATURE_COUNT + 3;
+	int KIND__TARGET = TYPE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Kind</em>' class.
@@ -776,7 +785,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KIND_FEATURE_COUNT = TYPE_FEATURE_COUNT + 4;
+	int KIND_FEATURE_COUNT = TYPE_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Attributes Name Unique</em>' operation.
@@ -824,22 +833,31 @@ public interface OCCIPackage extends EPackage {
 	int KIND___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP;
 
 	/**
+	 * The operation id for the '<em>Occi Is Kind Of</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KIND___OCCI_IS_KIND_OF__KIND = TYPE_OPERATION_COUNT + 0;
+
+	/**
 	 * The operation id for the '<em>Correct Scheme</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KIND___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 0;
+	int KIND___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Target Of Target Must Be Resource</em>' operation.
+	 * The operation id for the '<em>Target Reference Invariant</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KIND___TARGET_OF_TARGET_MUST_BE_RESOURCE__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 1;
+	int KIND___TARGET_REFERENCE_INVARIANT__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>No Cyclic Inheritance</em>' operation.
@@ -848,7 +866,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KIND___NO_CYCLIC_INHERITANCE__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 2;
+	int KIND___NO_CYCLIC_INHERITANCE__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Entity Kind Is Root Parent</em>' operation.
@@ -857,16 +875,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KIND___ENTITY_KIND_IS_ROOT_PARENT__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Source Of Target Must Be Link</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KIND___SOURCE_OF_TARGET_MUST_BE_LINK__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 4;
+	int KIND___ENTITY_KIND_IS_ROOT_PARENT__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Attributes Name Not Already Defined In Parent</em>' operation.
@@ -878,13 +887,22 @@ public interface OCCIPackage extends EPackage {
 	int KIND___ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_PARENT__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Source Reference Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KIND___SOURCE_REFERENCE_INVARIANT__DIAGNOSTICCHAIN_MAP = TYPE_OPERATION_COUNT + 6;
+
+	/**
 	 * The number of operations of the '<em>Kind</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KIND_OPERATION_COUNT = TYPE_OPERATION_COUNT + 6;
+	int KIND_OPERATION_COUNT = TYPE_OPERATION_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.ActionImpl <em>Action</em>}' class.
@@ -1803,13 +1821,31 @@ public interface OCCIPackage extends EPackage {
 	int LINK___ID_UNIQUE__DIAGNOSTICCHAIN_MAP = ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP;
 
 	/**
+	 * The operation id for the '<em>Source Reference Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK___SOURCE_REFERENCE_INVARIANT__DIAGNOSTICCHAIN_MAP = ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Target Reference Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK___TARGET_REFERENCE_INVARIANT__DIAGNOSTICCHAIN_MAP = ENTITY_OPERATION_COUNT + 1;
+
+	/**
 	 * The operation id for the '<em>Link Kind Is In Parent</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK___LINK_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP = ENTITY_OPERATION_COUNT + 0;
+	int LINK___LINK_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP = ENTITY_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Link</em>' class.
@@ -1818,7 +1854,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 1;
+	int LINK_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.ExtensionImpl <em>Extension</em>}' class.
@@ -3342,6 +3378,17 @@ public interface OCCIPackage extends EPackage {
 	EReference getKind_Fsm();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.cmf.occi.core.Kind#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.eclipse.cmf.occi.core.Kind#getSource()
+	 * @see #getKind()
+	 * @generated
+	 */
+	EReference getKind_Source();
+
+	/**
 	 * Returns the meta object for the reference '{@link org.eclipse.cmf.occi.core.Kind#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3351,6 +3398,16 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getKind_Target();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Kind#occiIsKindOf(org.eclipse.cmf.occi.core.Kind) <em>Occi Is Kind Of</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Occi Is Kind Of</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Kind#occiIsKindOf(org.eclipse.cmf.occi.core.Kind)
+	 * @generated
+	 */
+	EOperation getKind__OcciIsKindOf__Kind();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Kind#NoCyclicInheritance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>No Cyclic Inheritance</em>}' operation.
@@ -3373,6 +3430,16 @@ public interface OCCIPackage extends EPackage {
 	EOperation getKind__AttributesNameNotAlreadyDefinedInParent__DiagnosticChain_Map();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Kind#sourceReferenceInvariant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Source Reference Invariant</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Source Reference Invariant</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Kind#sourceReferenceInvariant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getKind__SourceReferenceInvariant__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Kind#CorrectScheme(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Correct Scheme</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3383,14 +3450,14 @@ public interface OCCIPackage extends EPackage {
 	EOperation getKind__CorrectScheme__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Kind#TargetOfTargetMustBeResource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Target Of Target Must Be Resource</em>}' operation.
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Kind#targetReferenceInvariant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Target Reference Invariant</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Target Of Target Must Be Resource</em>' operation.
-	 * @see org.eclipse.cmf.occi.core.Kind#TargetOfTargetMustBeResource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @return the meta object for the '<em>Target Reference Invariant</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Kind#targetReferenceInvariant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getKind__TargetOfTargetMustBeResource__DiagnosticChain_Map();
+	EOperation getKind__TargetReferenceInvariant__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Kind#EntityKindIsRootParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Entity Kind Is Root Parent</em>}' operation.
@@ -3401,16 +3468,6 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getKind__EntityKindIsRootParent__DiagnosticChain_Map();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Kind#SourceOfTargetMustBeLink(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Source Of Target Must Be Link</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Source Of Target Must Be Link</em>' operation.
-	 * @see org.eclipse.cmf.occi.core.Kind#SourceOfTargetMustBeLink(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getKind__SourceOfTargetMustBeLink__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Action <em>Action</em>}'.
@@ -3831,6 +3888,26 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getLink_Target();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Link#sourceReferenceInvariant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Source Reference Invariant</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Source Reference Invariant</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Link#sourceReferenceInvariant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getLink__SourceReferenceInvariant__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Link#targetReferenceInvariant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Target Reference Invariant</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Target Reference Invariant</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Link#targetReferenceInvariant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getLink__TargetReferenceInvariant__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Link#LinkKindIsInParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Link Kind Is In Parent</em>}' operation.
@@ -4993,12 +5070,28 @@ public interface OCCIPackage extends EPackage {
 		EReference KIND__FSM = eINSTANCE.getKind_Fsm();
 
 		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference KIND__SOURCE = eINSTANCE.getKind_Source();
+
+		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference KIND__TARGET = eINSTANCE.getKind_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Occi Is Kind Of</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation KIND___OCCI_IS_KIND_OF__KIND = eINSTANCE.getKind__OcciIsKindOf__Kind();
 
 		/**
 		 * The meta object literal for the '<em><b>No Cyclic Inheritance</b></em>' operation.
@@ -5017,6 +5110,14 @@ public interface OCCIPackage extends EPackage {
 		EOperation KIND___ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_PARENT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getKind__AttributesNameNotAlreadyDefinedInParent__DiagnosticChain_Map();
 
 		/**
+		 * The meta object literal for the '<em><b>Source Reference Invariant</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation KIND___SOURCE_REFERENCE_INVARIANT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getKind__SourceReferenceInvariant__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '<em><b>Correct Scheme</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5025,12 +5126,12 @@ public interface OCCIPackage extends EPackage {
 		EOperation KIND___CORRECT_SCHEME__DIAGNOSTICCHAIN_MAP = eINSTANCE.getKind__CorrectScheme__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '<em><b>Target Of Target Must Be Resource</b></em>' operation.
+		 * The meta object literal for the '<em><b>Target Reference Invariant</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation KIND___TARGET_OF_TARGET_MUST_BE_RESOURCE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getKind__TargetOfTargetMustBeResource__DiagnosticChain_Map();
+		EOperation KIND___TARGET_REFERENCE_INVARIANT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getKind__TargetReferenceInvariant__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Entity Kind Is Root Parent</b></em>' operation.
@@ -5039,14 +5140,6 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation KIND___ENTITY_KIND_IS_ROOT_PARENT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getKind__EntityKindIsRootParent__DiagnosticChain_Map();
-
-		/**
-		 * The meta object literal for the '<em><b>Source Of Target Must Be Link</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation KIND___SOURCE_OF_TARGET_MUST_BE_LINK__DIAGNOSTICCHAIN_MAP = eINSTANCE.getKind__SourceOfTargetMustBeLink__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.ActionImpl <em>Action</em>}' class.
@@ -5381,6 +5474,22 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LINK__TARGET = eINSTANCE.getLink_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Reference Invariant</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LINK___SOURCE_REFERENCE_INVARIANT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getLink__SourceReferenceInvariant__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Reference Invariant</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LINK___TARGET_REFERENCE_INVARIANT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getLink__TargetReferenceInvariant__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Link Kind Is In Parent</b></em>' operation.

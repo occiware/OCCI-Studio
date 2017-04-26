@@ -140,17 +140,22 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR_Kind_c_c_CorrectScheme = "Kind::CorrectScheme";
 	public static final /*@NonInvalid*/ java.lang.String STR_Kind_c_c_EntityKindIsRootParent = "Kind::EntityKindIsRootParent";
 	public static final /*@NonInvalid*/ java.lang.String STR_Kind_c_c_NoCyclicInheritance = "Kind::NoCyclicInheritance";
-	public static final /*@NonInvalid*/ java.lang.String STR_Kind_c_c_SourceOfTargetMustBeLink = "Kind::SourceOfTargetMustBeLink";
-	public static final /*@NonInvalid*/ java.lang.String STR_Kind_c_c_TargetOfTargetMustBeResource = "Kind::TargetOfTargetMustBeResource";
+	public static final /*@NonInvalid*/ java.lang.String STR_Kind_c_c_sourceReferenceInvariant = "Kind::sourceReferenceInvariant";
+	public static final /*@NonInvalid*/ java.lang.String STR_Kind_c_c_targetReferenceInvariant = "Kind::targetReferenceInvariant";
 	public static final /*@NonInvalid*/ java.lang.String STR_Link_c_c_LinkKindIsInParent = "Link::LinkKindIsInParent";
+	public static final /*@NonInvalid*/ java.lang.String STR_Link_c_c_sourceReferenceInvariant = "Link::sourceReferenceInvariant";
+	public static final /*@NonInvalid*/ java.lang.String STR_Link_c_c_targetReferenceInvariant = "Link::targetReferenceInvariant";
 	public static final /*@NonInvalid*/ java.lang.String STR_Mixin_c_c_AttributesNameNotAlreadyDefinedInDepends = "Mixin::AttributesNameNotAlreadyDefinedInDepends";
 	public static final /*@NonInvalid*/ java.lang.String STR_Mixin_c_c_CorrectScheme = "Mixin::CorrectScheme";
 	public static final /*@NonInvalid*/ java.lang.String STR_Mixin_c_c_NoCyclicInheritance = "Mixin::NoCyclicInheritance";
 	public static final /*@NonInvalid*/ java.lang.String STR_Resource_c_c_ResourceKindIsInParent = "Resource::ResourceKindIsInParent";
 	public static final /*@NonInvalid*/ java.lang.String STR_State_c_c_StateLiteralAlreadyDefinedInFSMAttributeType = "State::StateLiteralAlreadyDefinedInFSMAttributeType";
-	public static final /*@NonInvalid*/ java.lang.String STR_The_32 = "The ";
 	public static final /*@NonInvalid*/ java.lang.String STR_The_32_action_32 = "The action ";
 	public static final /*@NonInvalid*/ java.lang.String STR_The_32_action_32_of_32_Transition_32_instance_32_coming_32_from_32_the_32_34 = "The action of Transition instance coming from the \"";
+	public static final /*@NonInvalid*/ java.lang.String STR_The_32_kind_32_of_32_the_32_source_32_reference_32_in_32_the_32_link_32_instance_32 = "The kind of the source reference in the link instance ";
+	public static final /*@NonInvalid*/ java.lang.String STR_The_32_kind_32_of_32_the_32_target_32_reference_32_in_32_the_32_link_32_instance_32 = "The kind of the target reference in the link instance ";
+	public static final /*@NonInvalid*/ java.lang.String STR_The_32_source_32_reference_32_of_32 = "The source reference of ";
+	public static final /*@NonInvalid*/ java.lang.String STR_The_32_target_32_reference_32_of_32 = "The target reference of ";
 	public static final /*@NonInvalid*/ java.lang.String STR_Transition_c_c_containedActionMustBeDeclaredInTheAppropriateKind = "Transition::containedActionMustBeDeclaredInTheAppropriateKind";
 	public static final /*@NonInvalid*/ java.lang.String STR_Type_c_c_ActionTermUnicity = "Type::ActionTermUnicity";
 	public static final /*@NonInvalid*/ java.lang.String STR_Type_c_c_ConstraintNameUnique = "Type::ConstraintNameUnique";
@@ -159,9 +164,9 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR__32_Kind_32_cannot_32_be_32_used_32_in_32_the_32_FSM_32_of_32 = " Kind cannot be used in the FSM of ";
 	public static final /*@NonInvalid*/ java.lang.String STR__32_declared_32_in_32 = " declared in ";
 	public static final /*@NonInvalid*/ java.lang.String STR__32_doesn_39_t_32_appear_32_in_32_the_32_FSM_32_of_32 = " doesn\'t appear in the FSM of ";
-	public static final /*@NonInvalid*/ java.lang.String STR__32_kind = " kind";
-	public static final /*@NonInvalid*/ java.lang.String STR__32_kind_32_must_32_be_32_a_32_child_32_of_32_link_32_Kind_32_because_32_it_32_is_32_the_32_source_32_of_32_t = " kind must be a child of link Kind because it is the source of the \"target\" reference";
-	public static final /*@NonInvalid*/ java.lang.String STR__32_kind_32_must_32_be_32_a_32_child_32_of_32_resource_32_Kind_32_because_32_it_32_is_32_the_32_target_32 = " kind must be a child of resource Kind because it is the target of the \"target\" reference in the ";
+	public static final /*@NonInvalid*/ java.lang.String STR__32_kind_32_must_32_connect_32_a_32_child_32_of_32_34_link_34_32_Kind_32_to_32_a_32_child_32_of_32_34_resourc = " kind must connect a child of \"link\" Kind to a child of \"resource\" Kind";
+	public static final /*@NonInvalid*/ java.lang.String STR__32_must_32_be_32_a_32_kind_32_of_32_the_32_source_32_of_32_the_32_kind_32_of_32_this_32_link = " must be a kind of the source of the kind of this link";
+	public static final /*@NonInvalid*/ java.lang.String STR__32_must_32_be_32_a_32_kind_32_of_32_the_32_target_32_of_32_the_32_kind_32_of_32_this_32_link = " must be a kind of the target of the kind of this link";
 	public static final /*@NonInvalid*/ java.lang.String STR__34_32_kind_32_instance_32_must_32_be_32_a_32_set = "\" kind instance must be a set";
 	public static final /*@NonInvalid*/ java.lang.String STR__34_32_state_32_in_32_the_32_FSM_32_of_32_34 = "\" state in the FSM of \"";
 	public static final /*@NonInvalid*/ java.lang.String STR__34_32_state_32_to_32_the_32_34 = "\" state to the \"";
@@ -541,6 +546,7 @@ public class OCCITables
 		public static final /*@NonNull*/ ParameterTypes _Boolean = TypeUtil.createParameterTypes(OCLstdlibTables.Types._Boolean);
 		public static final /*@NonNull*/ ParameterTypes _Integer = TypeUtil.createParameterTypes(OCLstdlibTables.Types._Integer);
 		public static final /*@NonNull*/ ParameterTypes _Integer___Integer = TypeUtil.createParameterTypes(OCLstdlibTables.Types._Integer, OCLstdlibTables.Types._Integer);
+		public static final /*@NonNull*/ ParameterTypes _Kind = TypeUtil.createParameterTypes(OCCITables.Types._Kind);
 		public static final /*@NonNull*/ ParameterTypes _OclAny___OclAny___OclAny___Integer___Boolean___Integer = TypeUtil.createParameterTypes(OCLstdlibTables.Types._OclAny, OCLstdlibTables.Types._OclAny, OCLstdlibTables.Types._OclAny, OCLstdlibTables.Types._Integer, OCLstdlibTables.Types._Boolean, OCLstdlibTables.Types._Integer);
 		public static final /*@NonNull*/ ParameterTypes _OclAny___OclAny___OclAny___OclAny___String___Integer___OclAny___Integer = TypeUtil.createParameterTypes(OCLstdlibTables.Types._OclAny, OCLstdlibTables.Types._OclAny, OCLstdlibTables.Types._OclAny, OCLstdlibTables.Types._OclAny, OCLstdlibTables.Types._String, OCLstdlibTables.Types._Integer, OCLstdlibTables.Types._OclAny, OCLstdlibTables.Types._Integer);
 		public static final /*@NonNull*/ ParameterTypes _OclSelf = TypeUtil.createParameterTypes(OCLstdlibTables.Types._OclSelf);
@@ -633,6 +639,9 @@ public class OCCITables
 			10, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation.INSTANCE);
 		public static final /*@NonNull*/ ExecutorOperation _Integer__toUnlimitedNatural = new ExecutorOperation("toUnlimitedNatural", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Integer,
 			11, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.numeric.IntegerToUnlimitedNaturalOperation.INSTANCE);
+
+		public static final /*@NonNull*/ ExecutorOperation _Kind__occiIsKindOf = new ExecutorOperation("occiIsKindOf", Parameters._Kind, Types._Kind,
+			0, TemplateParameters.EMPTY_LIST, null);
 
 		public static final /*@NonNull*/ ExecutorOperation _String___add_ = new ExecutorOperation("+", Parameters._String, Types._String,
 			0, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.string.StringConcatOperation.INSTANCE);
@@ -814,12 +823,14 @@ public class OCCITables
 		public static final /*@NonNull*/ ExecutorProperty _Kind__entities = new EcoreExecutorProperty(OCCIPackage.Literals.KIND__ENTITIES, Types._Kind, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Kind__fsm = new EcoreExecutorProperty(OCCIPackage.Literals.KIND__FSM, Types._Kind, 1);
 		public static final /*@NonNull*/ ExecutorProperty _Kind__parent = new EcoreExecutorProperty(OCCIPackage.Literals.KIND__PARENT, Types._Kind, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Kind__target = new EcoreExecutorProperty(OCCIPackage.Literals.KIND__TARGET, Types._Kind, 3);
-		public static final /*@NonNull*/ ExecutorProperty _Kind__Entity__kind = new ExecutorPropertyWithImplementation("Entity", Types._Kind, 4, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.ENTITY__KIND));
-		public static final /*@NonNull*/ ExecutorProperty _Kind__Extension__kinds = new ExecutorPropertyWithImplementation("Extension", Types._Kind, 5, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.EXTENSION__KINDS));
-		public static final /*@NonNull*/ ExecutorProperty _Kind__Kind__parent = new ExecutorPropertyWithImplementation("Kind", Types._Kind, 6, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.KIND__PARENT));
-		public static final /*@NonNull*/ ExecutorProperty _Kind__Kind__target = new ExecutorPropertyWithImplementation("Kind", Types._Kind, 7, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.KIND__TARGET));
-		public static final /*@NonNull*/ ExecutorProperty _Kind__Mixin__applies = new ExecutorPropertyWithImplementation("Mixin", Types._Kind, 8, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.MIXIN__APPLIES));
+		public static final /*@NonNull*/ ExecutorProperty _Kind__source = new EcoreExecutorProperty(OCCIPackage.Literals.KIND__SOURCE, Types._Kind, 3);
+		public static final /*@NonNull*/ ExecutorProperty _Kind__target = new EcoreExecutorProperty(OCCIPackage.Literals.KIND__TARGET, Types._Kind, 4);
+		public static final /*@NonNull*/ ExecutorProperty _Kind__Entity__kind = new ExecutorPropertyWithImplementation("Entity", Types._Kind, 5, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.ENTITY__KIND));
+		public static final /*@NonNull*/ ExecutorProperty _Kind__Extension__kinds = new ExecutorPropertyWithImplementation("Extension", Types._Kind, 6, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.EXTENSION__KINDS));
+		public static final /*@NonNull*/ ExecutorProperty _Kind__Kind__parent = new ExecutorPropertyWithImplementation("Kind", Types._Kind, 7, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.KIND__PARENT));
+		public static final /*@NonNull*/ ExecutorProperty _Kind__Kind__source = new ExecutorPropertyWithImplementation("Kind", Types._Kind, 8, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.KIND__SOURCE));
+		public static final /*@NonNull*/ ExecutorProperty _Kind__Kind__target = new ExecutorPropertyWithImplementation("Kind", Types._Kind, 9, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.KIND__TARGET));
+		public static final /*@NonNull*/ ExecutorProperty _Kind__Mixin__applies = new ExecutorPropertyWithImplementation("Mixin", Types._Kind, 10, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.MIXIN__APPLIES));
 
 		public static final /*@NonNull*/ ExecutorProperty _Link__source = new EcoreExecutorProperty(OCCIPackage.Literals.LINK__SOURCE, Types._Link, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Link__target = new EcoreExecutorProperty(OCCIPackage.Literals.LINK__TARGET, Types._Link, 1);
@@ -1839,7 +1850,9 @@ public class OCCITables
 			OCLstdlibTables.Operations._Integer__toString /* toString() */
 		};
 
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Kind__Kind = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Kind__Kind = {
+			OCCITables.Operations._Kind__occiIsKindOf /* occiIsKindOf(Kind[?]) */
+		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Kind__Category = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Kind__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -2689,6 +2702,7 @@ public class OCCITables
 			OCCITables.Properties._Category__name,
 			OCCITables.Properties._Kind__parent,
 			OCCITables.Properties._Category__scheme,
+			OCCITables.Properties._Kind__source,
 			OCCITables.Properties._Kind__target,
 			OCCITables.Properties._Category__term,
 			OCCITables.Properties._Category__title

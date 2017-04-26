@@ -13,9 +13,7 @@ package org.eclipse.cmf.occi.core.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
 
 import org.eclipse.cmf.occi.core.Extension;
@@ -43,10 +41,9 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a
- * {@link org.eclipse.cmf.occi.core.Extension} object. <!-- begin-user-doc -->
+ * This is the item provider adapter for a {@link org.eclipse.cmf.occi.core.Extension} object.
+ * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class ExtensionItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
@@ -82,19 +79,25 @@ public class ExtensionItemProvider extends ItemProviderAdapter implements IEditi
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature. <!-- begin-user-doc
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Extension_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Extension_name_feature",
-								"_UI_Extension_type"),
-						OCCIPackage.Literals.EXTENSION__NAME, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Extension_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Extension_name_feature", "_UI_Extension_type"),
+				 OCCIPackage.Literals.EXTENSION__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -104,13 +107,19 @@ public class ExtensionItemProvider extends ItemProviderAdapter implements IEditi
 	 * @generated
 	 */
 	protected void addSchemePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Extension_scheme_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Extension_scheme_feature",
-								"_UI_Extension_type"),
-						OCCIPackage.Literals.EXTENSION__SCHEME, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Extension_scheme_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Extension_scheme_feature", "_UI_Extension_type"),
+				 OCCIPackage.Literals.EXTENSION__SCHEME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -120,13 +129,19 @@ public class ExtensionItemProvider extends ItemProviderAdapter implements IEditi
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Extension_description_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Extension_description_feature",
-								"_UI_Extension_type"),
-						OCCIPackage.Literals.EXTENSION__DESCRIPTION, true, true, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Extension_description_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Extension_description_feature", "_UI_Extension_type"),
+				 OCCIPackage.Literals.EXTENSION__DESCRIPTION,
+				 true,
+				 true,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -182,23 +197,26 @@ public class ExtensionItemProvider extends ItemProviderAdapter implements IEditi
 	 * @generated
 	 */
 	protected void addSpecificationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Extension_specification_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Extension_specification_feature",
-								"_UI_Extension_type"),
-						OCCIPackage.Literals.EXTENSION__SPECIFICATION, true, true, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Extension_specification_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Extension_specification_feature", "_UI_Extension_type"),
+				 OCCIPackage.Literals.EXTENSION__SPECIFICATION,
+				 true,
+				 true,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to
-	 * deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand},
-	 * {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in
-	 * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -214,21 +232,19 @@ public class ExtensionItemProvider extends ItemProviderAdapter implements IEditi
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper
-		// feature to use for
+		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
 		return super.getChildFeature(object, child);
 	}
 
 	/**
-	 * This returns Extension.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns Extension.gif.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -237,24 +253,24 @@ public class ExtensionItemProvider extends ItemProviderAdapter implements IEditi
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Extension) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Extension_type")
-				: getString("_UI_Extension_type") + " " + label;
+		String label = ((Extension)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Extension_type") :
+			getString("_UI_Extension_type") + " " + label;
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -262,17 +278,17 @@ public class ExtensionItemProvider extends ItemProviderAdapter implements IEditi
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Extension.class)) {
-		case OCCIPackage.EXTENSION__NAME:
-		case OCCIPackage.EXTENSION__SCHEME:
-		case OCCIPackage.EXTENSION__DESCRIPTION:
-		case OCCIPackage.EXTENSION__SPECIFICATION:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case OCCIPackage.EXTENSION__KINDS:
-		case OCCIPackage.EXTENSION__MIXINS:
-		case OCCIPackage.EXTENSION__TYPES:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
+			case OCCIPackage.EXTENSION__NAME:
+			case OCCIPackage.EXTENSION__SCHEME:
+			case OCCIPackage.EXTENSION__DESCRIPTION:
+			case OCCIPackage.EXTENSION__SPECIFICATION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case OCCIPackage.EXTENSION__KINDS:
+			case OCCIPackage.EXTENSION__MIXINS:
+			case OCCIPackage.EXTENSION__TYPES:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -288,32 +304,50 @@ public class ExtensionItemProvider extends ItemProviderAdapter implements IEditi
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors
-				.add(createChildParameter(OCCIPackage.Literals.EXTENSION__KINDS, OCCIFactory.eINSTANCE.createKind()));
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.EXTENSION__KINDS,
+				 OCCIFactory.eINSTANCE.createKind()));
 
-		newChildDescriptors
-				.add(createChildParameter(OCCIPackage.Literals.EXTENSION__MIXINS, OCCIFactory.eINSTANCE.createMixin()));
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.EXTENSION__MIXINS,
+				 OCCIFactory.eINSTANCE.createMixin()));
 
-		newChildDescriptors.add(
-				createChildParameter(OCCIPackage.Literals.EXTENSION__TYPES, OCCIFactory.eINSTANCE.createStringType()));
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.EXTENSION__TYPES,
+				 OCCIFactory.eINSTANCE.createStringType()));
 
-		newChildDescriptors.add(
-				createChildParameter(OCCIPackage.Literals.EXTENSION__TYPES, OCCIFactory.eINSTANCE.createEObjectType()));
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.EXTENSION__TYPES,
+				 OCCIFactory.eINSTANCE.createEObjectType()));
 
-		newChildDescriptors.add(
-				createChildParameter(OCCIPackage.Literals.EXTENSION__TYPES, OCCIFactory.eINSTANCE.createBooleanType()));
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.EXTENSION__TYPES,
+				 OCCIFactory.eINSTANCE.createBooleanType()));
 
-		newChildDescriptors.add(
-				createChildParameter(OCCIPackage.Literals.EXTENSION__TYPES, OCCIFactory.eINSTANCE.createNumericType()));
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.EXTENSION__TYPES,
+				 OCCIFactory.eINSTANCE.createNumericType()));
 
-		newChildDescriptors.add(createChildParameter(OCCIPackage.Literals.EXTENSION__TYPES,
-				OCCIFactory.eINSTANCE.createEnumerationType()));
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.EXTENSION__TYPES,
+				 OCCIFactory.eINSTANCE.createEnumerationType()));
 
-		newChildDescriptors.add(
-				createChildParameter(OCCIPackage.Literals.EXTENSION__TYPES, OCCIFactory.eINSTANCE.createRecordType()));
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.EXTENSION__TYPES,
+				 OCCIFactory.eINSTANCE.createRecordType()));
 
-		newChildDescriptors.add(
-				createChildParameter(OCCIPackage.Literals.EXTENSION__TYPES, OCCIFactory.eINSTANCE.createArrayType()));
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.EXTENSION__TYPES,
+				 OCCIFactory.eINSTANCE.createArrayType()));
 	}
 
 	/**

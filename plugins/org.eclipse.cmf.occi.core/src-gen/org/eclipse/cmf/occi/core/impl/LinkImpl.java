@@ -15,6 +15,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.util.Iterator;
 import java.util.Map;
+import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.OCCIPackage;
@@ -50,12 +51,15 @@ import org.eclipse.ocl.pivot.library.LibraryIteration;
 
 import org.eclipse.ocl.pivot.library.logical.BooleanAndOperation;
 
+import org.eclipse.ocl.pivot.library.numeric.NumericNegateOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclAnyOclAsSetOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclAnyOclAsTypeOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
 
 import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
 import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
 
+import org.eclipse.ocl.pivot.library.string.StringConcatOperation;
 import org.eclipse.ocl.pivot.messages.PivotMessages;
 
 import org.eclipse.ocl.pivot.oclstdlib.OCLstdlibTables;
@@ -66,6 +70,7 @@ import org.eclipse.ocl.pivot.utilities.ValueUtil;
 import org.eclipse.ocl.pivot.values.IntegerValue;
 import org.eclipse.ocl.pivot.values.InvalidValueException;
 import org.eclipse.ocl.pivot.values.SetValue;
+import org.eclipse.ocl.pivot.values.TupleValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -217,6 +222,148 @@ public class LinkImpl extends EntityImpl implements Link {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean sourceReferenceInvariant(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv sourceReferenceInvariant:
+		 *   let severity : Integer[1] = 'Link::sourceReferenceInvariant'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : OclAny[1] = let
+		 *           status : Boolean[1] = self.source.kind.occiIsKindOf(
+		 *             self.oclAsType(Entity).kind.source)
+		 *         in
+		 *           if status = true
+		 *           then true
+		 *           else
+		 *             Tuple{status = status, message = 'The kind of the source reference in the link instance ' +
+		 *               self.oclAsType(Entity).title + ' must be a kind of the source of the kind of this link', severity = -1, quickfix = 'quickfix'
+		 *             }
+		 *           endif
+		 *       in
+		 *         'Link::sourceReferenceInvariant'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, OCCITables.STR_Link_c_c_sourceReferenceInvariant);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
+		/*@NonInvalid*/ Object symbol_2;
+		if (le) {
+			symbol_2 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			/*@Caught*/ /*@NonNull*/ Object CAUGHT_symbol_1;
+			try {
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Entity_0 = idResolver.getClass(OCCITables.CLSSid_Entity, null);
+				final /*@Thrown*/ Entity oclAsType = ClassUtil.nonNullState((Entity)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, this, TYP_occi_c_c_Entity_0));
+				final /*@NonInvalid*/ Resource source = this.getSource();
+				final /*@NonInvalid*/ Kind kind_0 = source.getKind();
+				final /*@Thrown*/ Kind kind_1 = oclAsType.getKind();
+				final /*@Thrown*/ Kind source_0 = kind_1.getSource();
+				final /*@Thrown*/ boolean status = kind_0.occiIsKindOf(source_0);
+				/*@Thrown*/ Object symbol_1;
+				if (status) {
+					symbol_1 = ValueUtil.TRUE_VALUE;
+				}
+				else {
+					final /*@Thrown*/ String title = oclAsType.getTitle();
+					final /*@Thrown*/ String sum = StringConcatOperation.INSTANCE.evaluate(OCCITables.STR_The_32_kind_32_of_32_the_32_source_32_reference_32_in_32_the_32_link_32_instance_32, title);
+					final /*@Thrown*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, OCCITables.STR__32_must_32_be_32_a_32_kind_32_of_32_the_32_source_32_of_32_the_32_kind_32_of_32_this_32_link);
+					final /*@NonInvalid*/ IntegerValue diff = (IntegerValue)NumericNegateOperation.INSTANCE.evaluate(OCCITables.INT_1);
+					final /*@Thrown*/ TupleValue symbol_0 = ValueUtil.createTupleOfEach(OCCITables.TUPLid__0, sum_0, OCCITables.STR_quickfix, diff, status);
+					symbol_1 = symbol_0;
+				}
+				CAUGHT_symbol_1 = symbol_1;
+			}
+			catch (Exception e) {
+				CAUGHT_symbol_1 = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Link_c_c_sourceReferenceInvariant, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_1, OCCITables.INT_0).booleanValue();
+			symbol_2 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_2;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean targetReferenceInvariant(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv targetReferenceInvariant:
+		 *   let severity : Integer[1] = 'Link::targetReferenceInvariant'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : OclAny[1] = let
+		 *           status : Boolean[1] = self.target.kind.occiIsKindOf(
+		 *             self.oclAsType(Entity).kind.target)
+		 *         in
+		 *           if status = true
+		 *           then true
+		 *           else
+		 *             Tuple{status = status, message = 'The kind of the target reference in the link instance ' +
+		 *               self.oclAsType(Entity).title + ' must be a kind of the target of the kind of this link', severity = -1, quickfix = 'quickfix'
+		 *             }
+		 *           endif
+		 *       in
+		 *         'Link::targetReferenceInvariant'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, OCCITables.STR_Link_c_c_targetReferenceInvariant);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
+		/*@NonInvalid*/ Object symbol_2;
+		if (le) {
+			symbol_2 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			/*@Caught*/ /*@NonNull*/ Object CAUGHT_symbol_1;
+			try {
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Entity_0 = idResolver.getClass(OCCITables.CLSSid_Entity, null);
+				final /*@Thrown*/ Entity oclAsType = ClassUtil.nonNullState((Entity)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, this, TYP_occi_c_c_Entity_0));
+				final /*@NonInvalid*/ Resource target = this.getTarget();
+				final /*@NonInvalid*/ Kind kind_0 = target.getKind();
+				final /*@Thrown*/ Kind kind_1 = oclAsType.getKind();
+				final /*@Thrown*/ Kind target_0 = kind_1.getTarget();
+				final /*@Thrown*/ boolean status = kind_0.occiIsKindOf(target_0);
+				/*@Thrown*/ Object symbol_1;
+				if (status) {
+					symbol_1 = ValueUtil.TRUE_VALUE;
+				}
+				else {
+					final /*@Thrown*/ String title = oclAsType.getTitle();
+					final /*@Thrown*/ String sum = StringConcatOperation.INSTANCE.evaluate(OCCITables.STR_The_32_kind_32_of_32_the_32_target_32_reference_32_in_32_the_32_link_32_instance_32, title);
+					final /*@Thrown*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, OCCITables.STR__32_must_32_be_32_a_32_kind_32_of_32_the_32_target_32_of_32_the_32_kind_32_of_32_this_32_link);
+					final /*@NonInvalid*/ IntegerValue diff = (IntegerValue)NumericNegateOperation.INSTANCE.evaluate(OCCITables.INT_1);
+					final /*@Thrown*/ TupleValue symbol_0 = ValueUtil.createTupleOfEach(OCCITables.TUPLid__0, sum_0, OCCITables.STR_quickfix, diff, status);
+					symbol_1 = symbol_0;
+				}
+				CAUGHT_symbol_1 = symbol_1;
+			}
+			catch (Exception e) {
+				CAUGHT_symbol_1 = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Link_c_c_targetReferenceInvariant, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_1, OCCITables.INT_0).booleanValue();
+			symbol_2 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_2;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean LinkKindIsInParent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
 		 *
@@ -245,8 +392,8 @@ public class LinkImpl extends EntityImpl implements Link {
 		else {
 			/*@Caught*/ /*@Nullable*/ Object CAUGHT_result;
 			try {
-				final /*@NonInvalid*/ Kind kind = this.getKind();
-				final /*@NonInvalid*/ SetValue oclAsSet = OclAnyOclAsSetOperation.INSTANCE.evaluate(executor, OCCITables.SET_CLSSid_Kind, kind);
+				final /*@NonInvalid*/ Kind kind_0 = this.getKind();
+				final /*@NonInvalid*/ SetValue oclAsSet = OclAnyOclAsSetOperation.INSTANCE.evaluate(executor, OCCITables.SET_CLSSid_Kind, kind_0);
 				final org.eclipse.ocl.pivot.Class TYPE_closure_0 = executor.getStaticTypeOf(oclAsSet);
 				final LibraryIteration.LibraryIterationExtension IMPL_closure_0 = (LibraryIteration.LibraryIterationExtension)TYPE_closure_0.lookupImplementation(standardLibrary, OCLstdlibTables.Operations._Set__closure);
 				final /*@NonNull*/ Object ACC_closure_0 = IMPL_closure_0.createAccumulatorValue(executor, OCCITables.SET_CLSSid_Kind, OCCITables.CLSSid_Kind);
@@ -480,6 +627,10 @@ public class LinkImpl extends EntityImpl implements Link {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+			case OCCIPackage.LINK___SOURCE_REFERENCE_INVARIANT__DIAGNOSTICCHAIN_MAP:
+				return sourceReferenceInvariant((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case OCCIPackage.LINK___TARGET_REFERENCE_INVARIANT__DIAGNOSTICCHAIN_MAP:
+				return targetReferenceInvariant((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 			case OCCIPackage.LINK___LINK_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP:
 				return LinkKindIsInParent((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}

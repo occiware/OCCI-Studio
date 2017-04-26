@@ -520,9 +520,9 @@ public class ConfigurationImpl extends MinimalEObjectImpl.Container implements C
 					/**
 					 * kind
 					 */
-					final /*@NonInvalid*/ Kind kind = _1.getKind();
+					final /*@NonInvalid*/ Kind kind_0 = _1.getKind();
 					//
-					accumulator.add(kind);
+					accumulator.add(kind_0);
 				}
 				/*@Thrown*/ SequenceValue.Accumulator accumulator_0 = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_CLSSid_OclElement);
 				/*@NonNull*/ Iterator<Object> ITERATOR__1_0 = collect_0.iterator();
@@ -946,9 +946,9 @@ public class ConfigurationImpl extends MinimalEObjectImpl.Container implements C
 					/**
 					 * kind
 					 */
-					final /*@NonInvalid*/ Kind kind = _1_0.getKind();
+					final /*@NonInvalid*/ Kind kind_0 = _1_0.getKind();
 					//
-					accumulator_0.add(kind);
+					accumulator_0.add(kind_0);
 				}
 				/*@Thrown*/ SequenceValue.Accumulator accumulator_1 = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_CLSSid_OclElement);
 				/*@NonNull*/ Iterator<Object> ITERATOR__1_1 = collect_0.iterator();
