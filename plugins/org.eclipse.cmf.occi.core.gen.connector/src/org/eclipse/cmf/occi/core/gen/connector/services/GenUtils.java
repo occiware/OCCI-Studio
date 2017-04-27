@@ -88,7 +88,7 @@ public class GenUtils
 		// Return the instance class name of this data type.
 		return eDataType.getName();
 	}
-	protected String getJavaAttributeName(Attribute attribute) {
+	public String getJavaAttributeName(Attribute attribute) {
 		System.out.println("attribute "+attribute);
 		System.out.println("Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName()) "+Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName()));
 		return Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName());
