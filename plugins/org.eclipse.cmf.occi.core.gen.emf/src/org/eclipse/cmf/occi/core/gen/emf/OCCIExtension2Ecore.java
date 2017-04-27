@@ -283,7 +283,7 @@ public class OCCIExtension2Ecore {
 //				}
 //			}
 
-	private String formatExtensionName(Extension extension) {
+	public static String formatExtensionName(Extension extension) {
 		return ConverterUtils
 				.formatName(extension.getName().replaceFirst("OCCI ", "").replaceFirst("OCCIware ", "").toLowerCase());
 	}

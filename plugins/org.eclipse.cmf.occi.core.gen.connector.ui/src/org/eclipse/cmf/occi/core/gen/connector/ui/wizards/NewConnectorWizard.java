@@ -18,9 +18,11 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.OcciCoreConstants;
 import org.eclipse.cmf.occi.core.gen.connector.ui.Activator;
 import org.eclipse.cmf.occi.core.gen.connector.ui.common.GenerateAll;
+import org.eclipse.cmf.occi.core.gen.emf.OCCIExtension2Ecore;
 import org.eclipse.cmf.occi.core.util.Occi2Ecore;
 import org.eclipse.cmf.occi.core.util.OcciRegistry;
 import org.eclipse.core.resources.IContainer;
@@ -35,6 +37,9 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
@@ -286,15 +291,24 @@ public class NewConnectorWizard extends BasicNewProjectResourceWizard {
 		// Generate Java code for the connector.
 		try {
 			URI modelURI = URI.createURI(extensionFile, true);
-
+			
+			//Added to get the extension and thus convert the extension name to epackage name
+			ResourceSet resSet = new ResourceSetImpl();
+			Resource resource = resSet.getResource(modelURI, true);
+			Extension extension = (Extension) resource.getContents().get(0);
+			
 			// Generate Java code for the connector.
 			IContainer target = connectorProject.getFolder("src");
+			
 			// Compute the arguments of the generator.
 			ArrayList<String> arguments = new ArrayList<String>();
+			
 			// The full name of the package to generate.
 			arguments.add(connectorProjectName);
-			// The full name of the package to extend.
-			arguments.add(requireBundle);
+			
+			// The full name of the package to extend. Changed instead of requireBundle
+			arguments.add(OCCIExtension2Ecore.formatExtensionName(extension));
+			
 			// Call the generator.
 			GenerateAll generator = new GenerateAll(modelURI, target, arguments);
 			generator.doGenerate(monitor);

@@ -32,7 +32,7 @@ package [targetPackageName/];
  * - name: [extension.name/]
  * - scheme: [extension.scheme/]
  */
-public class ConnectorFactory extends [extendedPackageName/].impl.[toU1Case(extension.name)/]FactoryImpl
+public class ConnectorFactory extends [extendedPackageName/].impl.[toU1Case(extension.name.toLowerCase())/]FactoryImpl
 {
 [for (kind : Kind | extension.kinds)]
 [generateCreateKindMethod(kind, extension, extendedPackageName)/]
@@ -186,7 +186,7 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 [else]
 [let stateAttribute : Attribute = getStateAttribute(kind)]
 		// [kind.term.toUpperFirst()/] State Machine.
-		switch(get[getJavaAttributeName(stateAttribute)/]().getValue()) {
+		switch(get[getJavaAttributeName(stateAttribute).toString().toU1Case()/]().getValue()) {
 
 
 
