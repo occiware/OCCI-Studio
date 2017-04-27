@@ -440,7 +440,7 @@ public class KindImpl extends TypeImpl implements Kind {
 					public /*@Nullable*/ Object evaluate(final /*@NonNull*/ Executor executor, final /*@NonNull*/ TypeId typeId, final /*@Nullable*/ Object oclAsSet, final /*@NonInvalid*/ Object _1) {
 						final /*@NonInvalid*/ Kind symbol_0 = (Kind)_1;
 						if (symbol_0 == null) {
-							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Kind::parent\'");
+							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Kind::parent\'");
 						}
 						final /*@Thrown*/ Kind parent_0 = symbol_0.getParent();
 						return parent_0;
@@ -528,7 +528,7 @@ public class KindImpl extends TypeImpl implements Kind {
 					public /*@Nullable*/ Object evaluate(final /*@NonNull*/ Executor executor, final /*@NonNull*/ TypeId typeId, final /*@Nullable*/ Object oclAsSet, final /*@NonInvalid*/ Object _1_0) {
 						final /*@NonInvalid*/ Kind symbol_0 = (Kind)_1_0;
 						if (symbol_0 == null) {
-							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Kind::parent\'");
+							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Kind::parent\'");
 						}
 						final /*@Thrown*/ Kind parent_0 = symbol_0.getParent();
 						return parent_0;
@@ -549,7 +549,7 @@ public class KindImpl extends TypeImpl implements Kind {
 					 * attributes
 					 */
 					if (_1_1 == null) {
-						throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Category::attributes\'");
+						throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Category::attributes\'");
 					}
 					final /*@Thrown*/ List<Attribute> attributes_0 = _1_1.getAttributes();
 					final /*@Thrown*/ OrderedSetValue BOXED_attributes_0 = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Attribute, attributes_0);
@@ -654,7 +654,7 @@ public class KindImpl extends TypeImpl implements Kind {
 							public /*@Nullable*/ Object evaluate(final /*@NonNull*/ Executor executor, final /*@NonNull*/ TypeId typeId, final /*@Nullable*/ Object oclAsSet, final /*@NonInvalid*/ Object _1) {
 								final /*@NonInvalid*/ Kind symbol_0 = (Kind)_1;
 								if (symbol_0 == null) {
-									throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Kind::parent\'");
+									throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Kind::parent\'");
 								}
 								final /*@Thrown*/ Kind parent = symbol_0.getParent();
 								return parent;
@@ -687,7 +687,7 @@ public class KindImpl extends TypeImpl implements Kind {
 								/*@Caught*/ /*@NonNull*/ Object CAUGHT_eq;
 								try {
 									if (k == null) {
-										throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Category::term\'");
+										throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Category::term\'");
 									}
 									final /*@Thrown*/ String term = k.getTerm();
 									final /*@Thrown*/ boolean eq = term.equals(OCCITables.STR_link);
@@ -699,7 +699,7 @@ public class KindImpl extends TypeImpl implements Kind {
 								/*@Caught*/ /*@NonNull*/ Object CAUGHT_eq_0;
 								try {
 									if (k == null) {
-										throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Category::scheme\'");
+										throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Category::scheme\'");
 									}
 									final /*@Thrown*/ String scheme = k.getScheme();
 									final /*@Thrown*/ boolean eq_0 = scheme.equals(OCCITables.STR_http_c_s_s_schemas_ogf_org_s_occi_s_core_35);
@@ -756,7 +756,7 @@ public class KindImpl extends TypeImpl implements Kind {
 							public /*@Nullable*/ Object evaluate(final /*@NonNull*/ Executor executor, final /*@NonNull*/ TypeId typeId, final /*@Nullable*/ Object oclAsSet_0, final /*@NonInvalid*/ Object _1_0) {
 								final /*@NonInvalid*/ Kind symbol_1 = (Kind)_1_0;
 								if (symbol_1 == null) {
-									throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Kind::parent\'");
+									throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Kind::parent\'");
 								}
 								final /*@Thrown*/ Kind parent_0 = symbol_1.getParent();
 								return parent_0;
@@ -789,7 +789,7 @@ public class KindImpl extends TypeImpl implements Kind {
 								/*@Caught*/ /*@NonNull*/ Object CAUGHT_eq_1;
 								try {
 									if (k_0 == null) {
-										throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Category::term\'");
+										throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Category::term\'");
 									}
 									final /*@Thrown*/ String term_0 = k_0.getTerm();
 									final /*@Thrown*/ boolean eq_1 = term_0.equals(OCCITables.STR_resource);
@@ -801,7 +801,7 @@ public class KindImpl extends TypeImpl implements Kind {
 								/*@Caught*/ /*@NonNull*/ Object CAUGHT_eq_2;
 								try {
 									if (k_0 == null) {
-										throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Category::scheme\'");
+										throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Category::scheme\'");
 									}
 									final /*@Thrown*/ String scheme_0 = k_0.getScheme();
 									final /*@Thrown*/ boolean eq_2 = scheme_0.equals(OCCITables.STR_http_c_s_s_schemas_ogf_org_s_occi_s_core_35);
@@ -988,7 +988,7 @@ public class KindImpl extends TypeImpl implements Kind {
 							public /*@Nullable*/ Object evaluate(final /*@NonNull*/ Executor executor, final /*@NonNull*/ TypeId typeId, final /*@Nullable*/ Object oclAsSet, final /*@NonInvalid*/ Object _1) {
 								final /*@NonInvalid*/ Kind symbol_0 = (Kind)_1;
 								if (symbol_0 == null) {
-									throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Kind::parent\'");
+									throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Kind::parent\'");
 								}
 								final /*@Thrown*/ Kind parent = symbol_0.getParent();
 								return parent;
@@ -1021,7 +1021,7 @@ public class KindImpl extends TypeImpl implements Kind {
 								/*@Caught*/ /*@NonNull*/ Object CAUGHT_eq;
 								try {
 									if (k == null) {
-										throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Category::term\'");
+										throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Category::term\'");
 									}
 									final /*@Thrown*/ String term = k.getTerm();
 									final /*@Thrown*/ boolean eq = term.equals(OCCITables.STR_link);
@@ -1033,7 +1033,7 @@ public class KindImpl extends TypeImpl implements Kind {
 								/*@Caught*/ /*@NonNull*/ Object CAUGHT_eq_0;
 								try {
 									if (k == null) {
-										throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Category::scheme\'");
+										throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Category::scheme\'");
 									}
 									final /*@Thrown*/ String scheme = k.getScheme();
 									final /*@Thrown*/ boolean eq_0 = scheme.equals(OCCITables.STR_http_c_s_s_schemas_ogf_org_s_occi_s_core_35);
@@ -1090,7 +1090,7 @@ public class KindImpl extends TypeImpl implements Kind {
 							public /*@Nullable*/ Object evaluate(final /*@NonNull*/ Executor executor, final /*@NonNull*/ TypeId typeId, final /*@Nullable*/ Object oclAsSet_0, final /*@NonInvalid*/ Object _1_0) {
 								final /*@NonInvalid*/ Kind symbol_1 = (Kind)_1_0;
 								if (symbol_1 == null) {
-									throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Kind::parent\'");
+									throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Kind::parent\'");
 								}
 								final /*@Thrown*/ Kind parent_0 = symbol_1.getParent();
 								return parent_0;
@@ -1123,7 +1123,7 @@ public class KindImpl extends TypeImpl implements Kind {
 								/*@Caught*/ /*@NonNull*/ Object CAUGHT_eq_1;
 								try {
 									if (k_0 == null) {
-										throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Category::term\'");
+										throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Category::term\'");
 									}
 									final /*@Thrown*/ String term_0 = k_0.getTerm();
 									final /*@Thrown*/ boolean eq_1 = term_0.equals(OCCITables.STR_resource);
@@ -1135,7 +1135,7 @@ public class KindImpl extends TypeImpl implements Kind {
 								/*@Caught*/ /*@NonNull*/ Object CAUGHT_eq_2;
 								try {
 									if (k_0 == null) {
-										throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Category::scheme\'");
+										throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Category::scheme\'");
 									}
 									final /*@Thrown*/ String scheme_0 = k_0.getScheme();
 									final /*@Thrown*/ boolean eq_2 = scheme_0.equals(OCCITables.STR_http_c_s_s_schemas_ogf_org_s_occi_s_core_35);
@@ -1253,7 +1253,7 @@ public class KindImpl extends TypeImpl implements Kind {
 					public /*@Nullable*/ Object evaluate(final /*@NonNull*/ Executor executor, final /*@NonNull*/ TypeId typeId, final /*@Nullable*/ Object oclAsSet, final /*@NonInvalid*/ Object _1) {
 						final /*@NonInvalid*/ Kind symbol_0 = (Kind)_1;
 						if (symbol_0 == null) {
-							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Kind::parent\'");
+							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Kind::parent\'");
 						}
 						final /*@Thrown*/ Kind parent = symbol_0.getParent();
 						return parent;
@@ -1288,7 +1288,7 @@ public class KindImpl extends TypeImpl implements Kind {
 							/*@Caught*/ /*@NonNull*/ Object CAUGHT_eq;
 							try {
 								if (k == null) {
-									throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Category::term\'");
+									throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Category::term\'");
 								}
 								final /*@Thrown*/ String term = k.getTerm();
 								final /*@Thrown*/ boolean eq = term.equals(OCCITables.STR_entity);
@@ -1300,7 +1300,7 @@ public class KindImpl extends TypeImpl implements Kind {
 							/*@Caught*/ /*@NonNull*/ Object CAUGHT_eq_0;
 							try {
 								if (k == null) {
-									throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Category::scheme\'");
+									throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Category::scheme\'");
 								}
 								final /*@Thrown*/ String scheme = k.getScheme();
 								final /*@Thrown*/ boolean eq_0 = scheme.equals(OCCITables.STR_http_c_s_s_schemas_ogf_org_s_occi_s_core_35);
@@ -1318,7 +1318,7 @@ public class KindImpl extends TypeImpl implements Kind {
 						/*@Caught*/ /*@NonNull*/ Object CAUGHT_eq_1;
 						try {
 							if (k == null) {
-								throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Kind::parent\'");
+								throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Kind::parent\'");
 							}
 							final /*@Thrown*/ Kind parent_0 = k.getParent();
 							final /*@Thrown*/ boolean eq_1 = parent_0 == null;

@@ -408,7 +408,7 @@ public class LinkImpl extends EntityImpl implements Link {
 					public /*@Nullable*/ Object evaluate(final /*@NonNull*/ Executor executor, final /*@NonNull*/ TypeId typeId, final /*@Nullable*/ Object oclAsSet, final /*@NonInvalid*/ Object _1) {
 						final /*@NonInvalid*/ Kind symbol_0 = (Kind)_1;
 						if (symbol_0 == null) {
-							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Kind::parent\'");
+							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Kind::parent\'");
 						}
 						final /*@Thrown*/ Kind parent = symbol_0.getParent();
 						return parent;
@@ -441,7 +441,7 @@ public class LinkImpl extends EntityImpl implements Link {
 						/*@Caught*/ /*@NonNull*/ Object CAUGHT_eq;
 						try {
 							if (k == null) {
-								throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Category::term\'");
+								throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Category::term\'");
 							}
 							final /*@Thrown*/ String term = k.getTerm();
 							final /*@Thrown*/ boolean eq = term.equals(OCCITables.STR_link);
@@ -453,7 +453,7 @@ public class LinkImpl extends EntityImpl implements Link {
 						/*@Caught*/ /*@NonNull*/ Object CAUGHT_eq_0;
 						try {
 							if (k == null) {
-								throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Category::scheme\'");
+								throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Category::scheme\'");
 							}
 							final /*@Thrown*/ String scheme = k.getScheme();
 							final /*@Thrown*/ boolean eq_0 = scheme.equals(OCCITables.STR_http_c_s_s_schemas_ogf_org_s_occi_s_core_35);

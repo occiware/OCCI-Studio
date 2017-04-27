@@ -346,7 +346,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 				final /*@NonInvalid*/ DataType type = attribute.getType();
 				final /*@NonInvalid*/ EnumerationLiteral literal = this.getLiteral();
 				if (literal == null) {
-					throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::EnumerationLiteral::enumerationType\'");
+					throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::EnumerationLiteral::enumerationType\'");
 				}
 				final /*@Thrown*/ EnumerationType enumerationType = literal.getEnumerationType();
 				final /*@Thrown*/ boolean result = enumerationType.equals(type);

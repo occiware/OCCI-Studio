@@ -152,7 +152,7 @@ public class ActionImpl extends CategoryImpl implements Action {
 					/*@Thrown*/ boolean symbol_0;
 					if (ne) {
 						if (fsm == null) {
-							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::FSM::ownedState\'");
+							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::FSM::ownedState\'");
 						}
 						final /*@Thrown*/ List<State> ownedState = fsm.getOwnedState();
 						final /*@Thrown*/ OrderedSetValue BOXED_ownedState = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_State, ownedState);

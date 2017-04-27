@@ -42,7 +42,7 @@ public interface RecordType extends DataType {
 	 * @return the value of the '<em>Record Fields</em>' containment reference list.
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getRecordType_RecordFields()
 	 * @model containment="true" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!RecordType!recordFields'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!RecordType!recordFields'"
 	 * @generated
 	 */
 	EList<RecordField> getRecordFields();

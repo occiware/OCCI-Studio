@@ -46,7 +46,7 @@ public interface Type extends Category {
 	 * @return the value of the '<em>Actions</em>' containment reference list.
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getType_Actions()
 	 * @model containment="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Type!actions'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Type!actions'"
 	 * @generated
 	 */
 	EList<Action> getActions();
@@ -63,7 +63,7 @@ public interface Type extends Category {
 	 * @return the value of the '<em>Constraints</em>' containment reference list.
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getType_Constraints()
 	 * @model containment="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Type!constraints'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Type!constraints'"
 	 * @generated
 	 */
 	EList<Constraint> getConstraints();

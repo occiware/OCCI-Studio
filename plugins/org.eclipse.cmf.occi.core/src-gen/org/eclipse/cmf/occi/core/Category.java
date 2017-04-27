@@ -51,7 +51,7 @@ public interface Category extends EObject {
 	 * @see #setName(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getCategory_Name()
 	 * @model dataType="org.eclipse.cmf.occi.core.Name" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Category!name'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Category!name'"
 	 * @generated
 	 */
 	String getName();
@@ -94,7 +94,7 @@ public interface Category extends EObject {
 	 * @see #setScheme(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getCategory_Scheme()
 	 * @model dataType="org.eclipse.cmf.occi.core.Scheme" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Category!scheme'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Category!scheme'"
 	 * @generated
 	 */
 	String getScheme();
@@ -121,7 +121,7 @@ public interface Category extends EObject {
 	 * @see #setTitle(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getCategory_Title()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Category!title'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Category!title'"
 	 * @generated
 	 */
 	String getTitle();
@@ -148,7 +148,7 @@ public interface Category extends EObject {
 	 * @return the value of the '<em>Attributes</em>' containment reference list.
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getCategory_Attributes()
 	 * @model containment="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Category!attributes'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Category!attributes'"
 	 * @generated
 	 */
 	EList<Attribute> getAttributes();

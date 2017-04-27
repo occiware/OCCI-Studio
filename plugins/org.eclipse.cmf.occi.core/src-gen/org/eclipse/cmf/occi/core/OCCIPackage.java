@@ -50,7 +50,7 @@ public interface OCCIPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://schemas.ogf.org/occi/core/ecore/2.0";
+	String eNS_URI = "http://schemas.ogf.org/occi/core/ecore";
 
 	/**
 	 * The package namespace name.

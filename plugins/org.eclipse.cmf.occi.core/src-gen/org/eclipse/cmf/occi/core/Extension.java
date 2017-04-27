@@ -52,7 +52,7 @@ public interface Extension extends EObject {
 	 * @see #setName(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getExtension_Name()
 	 * @model dataType="org.eclipse.cmf.occi.core.Name" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Extension!name'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Extension!name'"
 	 * @generated
 	 */
 	String getName();
@@ -79,7 +79,7 @@ public interface Extension extends EObject {
 	 * @see #setScheme(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getExtension_Scheme()
 	 * @model dataType="org.eclipse.cmf.occi.core.Scheme" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Extension!scheme'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Extension!scheme'"
 	 * @generated
 	 */
 	String getScheme();
@@ -106,7 +106,7 @@ public interface Extension extends EObject {
 	 * @see #setDescription(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getExtension_Description()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Extension!description'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Extension!description'"
 	 * @generated
 	 */
 	String getDescription();
@@ -132,7 +132,7 @@ public interface Extension extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Import</em>' reference list.
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getExtension_Import()
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Extension!import'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Extension!import'"
 	 * @generated
 	 */
 	EList<Extension> getImport();
@@ -149,7 +149,7 @@ public interface Extension extends EObject {
 	 * @return the value of the '<em>Kinds</em>' containment reference list.
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getExtension_Kinds()
 	 * @model containment="true" keys="term"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Extension!kinds'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Extension!kinds'"
 	 * @generated
 	 */
 	EList<Kind> getKinds();
@@ -166,7 +166,7 @@ public interface Extension extends EObject {
 	 * @return the value of the '<em>Mixins</em>' containment reference list.
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getExtension_Mixins()
 	 * @model containment="true" keys="term"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Extension!mixins'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Extension!mixins'"
 	 * @generated
 	 */
 	EList<Mixin> getMixins();
@@ -183,7 +183,7 @@ public interface Extension extends EObject {
 	 * @return the value of the '<em>Types</em>' containment reference list.
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getExtension_Types()
 	 * @model containment="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Extension!types'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Extension!types'"
 	 * @generated
 	 */
 	EList<DataType> getTypes();
@@ -200,7 +200,7 @@ public interface Extension extends EObject {
 	 * @see #setSpecification(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getExtension_Specification()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Extension!specification'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Extension!specification'"
 	 * @generated
 	 */
 	String getSpecification();

@@ -328,7 +328,7 @@ public class MixinImpl extends TypeImpl implements Mixin {
 					public /*@Nullable*/ Object evaluate(final /*@NonNull*/ Executor executor, final /*@NonNull*/ TypeId typeId, final /*@Nullable*/ Object BOXED_depends, final /*@NonInvalid*/ Object _1) {
 						final /*@NonInvalid*/ Mixin symbol_0 = (Mixin)_1;
 						if (symbol_0 == null) {
-							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Mixin::depends\'");
+							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Mixin::depends\'");
 						}
 						final /*@Thrown*/ List<Mixin> depends_0 = symbol_0.getDepends();
 						final /*@Thrown*/ OrderedSetValue BOXED_depends_0 = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Mixin, depends_0);
@@ -417,7 +417,7 @@ public class MixinImpl extends TypeImpl implements Mixin {
 					public /*@Nullable*/ Object evaluate(final /*@NonNull*/ Executor executor, final /*@NonNull*/ TypeId typeId, final /*@Nullable*/ Object BOXED_depends, final /*@NonInvalid*/ Object _1_0) {
 						final /*@NonInvalid*/ Mixin symbol_0 = (Mixin)_1_0;
 						if (symbol_0 == null) {
-							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Mixin::depends\'");
+							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Mixin::depends\'");
 						}
 						final /*@Thrown*/ List<Mixin> depends_0 = symbol_0.getDepends();
 						final /*@Thrown*/ OrderedSetValue BOXED_depends_0 = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Mixin, depends_0);
@@ -439,7 +439,7 @@ public class MixinImpl extends TypeImpl implements Mixin {
 					 * attributes
 					 */
 					if (_1_1 == null) {
-						throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Category::attributes\'");
+						throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Category::attributes\'");
 					}
 					final /*@Thrown*/ List<Attribute> attributes_0 = _1_1.getAttributes();
 					final /*@Thrown*/ OrderedSetValue BOXED_attributes_0 = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Attribute, attributes_0);

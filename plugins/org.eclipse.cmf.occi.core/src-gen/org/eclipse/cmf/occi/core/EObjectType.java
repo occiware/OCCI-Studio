@@ -42,7 +42,7 @@ public interface EObjectType extends BasicType {
 	 * @see #setInstanceClassName(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getEObjectType_InstanceClassName()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!EObjectType!instanceClassName'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!EObjectType!instanceClassName'"
 	 * @generated
 	 */
 	String getInstanceClassName();

@@ -21,7 +21,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated OCCI -->
       <package
-            uri="http://schemas.ogf.org/occi/core/ecore/2.0"
+            uri="http://schemas.ogf.org/occi/core/ecore"
             class="org.eclipse.cmf.occi.core.OCCIPackage"
             genModel="model/OCCI.genmodel"/>
    </extension>

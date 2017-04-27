@@ -45,7 +45,7 @@ public interface MixinBase extends EObject {
 	 * @see #setMixin(Mixin)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getMixinBase_Mixin()
 	 * @model required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!MixinBase!mixin'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!MixinBase!mixin'"
 	 * @generated
 	 */
 	Mixin getMixin();
@@ -74,7 +74,7 @@ public interface MixinBase extends EObject {
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getMixinBase_Entity()
 	 * @see org.eclipse.cmf.occi.core.Entity#getParts
 	 * @model opposite="parts" required="true" transient="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!MixinBase!entity'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!MixinBase!entity'"
 	 * @generated
 	 */
 	Entity getEntity();
@@ -101,7 +101,7 @@ public interface MixinBase extends EObject {
 	 * @return the value of the '<em>Attributes</em>' containment reference list.
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getMixinBase_Attributes()
 	 * @model containment="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!MixinBase!attributes'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!MixinBase!attributes'"
 	 * @generated
 	 */
 	EList<AttributeState> getAttributes();

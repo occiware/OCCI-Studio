@@ -43,7 +43,7 @@ public interface AttributeState extends EObject {
 	 * @see #setName(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getAttributeState_Name()
 	 * @model dataType="org.eclipse.cmf.occi.core.AttributeName" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!AttributeState!name'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!AttributeState!name'"
 	 * @generated
 	 */
 	String getName();
@@ -70,7 +70,7 @@ public interface AttributeState extends EObject {
 	 * @see #setValue(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getAttributeState_Value()
 	 * @model dataType="org.eclipse.cmf.occi.core.String" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!AttributeState!value'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!AttributeState!value'"
 	 * @generated
 	 */
 	String getValue();

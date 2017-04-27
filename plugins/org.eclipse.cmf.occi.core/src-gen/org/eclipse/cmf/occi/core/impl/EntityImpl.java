@@ -482,7 +482,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 */
 	public void occiCreate() {
 		LOGGER.debug("occiCreate() called on " + this);
-		//throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Entity!occiCreate()
+		//throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Entity!occiCreate()
 	}
 
 	/**
@@ -491,7 +491,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public void occiRetrieve() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Entity!occiRetrieve()
+		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Entity!occiRetrieve()
 	}
 
 	/**
@@ -500,7 +500,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public void occiUpdate() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Entity!occiUpdate()
+		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Entity!occiUpdate()
 	}
 
 	/**
@@ -509,7 +509,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public void occiDelete() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Entity!occiDelete()
+		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Entity!occiDelete()
 	}
 
 	/**
@@ -691,7 +691,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 										public /*@Nullable*/ Object evaluate(final /*@NonNull*/ Executor executor, final /*@NonNull*/ TypeId typeId, final /*@Nullable*/ Object oclAsSet, final /*@NonInvalid*/ Object _1_0) {
 											final /*@NonInvalid*/ Kind symbol_0 = (Kind)_1_0;
 											if (symbol_0 == null) {
-												throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Kind::parent\'");
+												throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Kind::parent\'");
 											}
 											final /*@Thrown*/ Kind parent = symbol_0.getParent();
 											return parent;

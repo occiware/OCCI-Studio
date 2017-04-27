@@ -44,7 +44,7 @@ public interface StringType extends BasicType {
 	 * @see #setPattern(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getStringType_Pattern()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!StringType!pattern'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!StringType!pattern'"
 	 * @generated
 	 */
 	String getPattern();
@@ -73,7 +73,7 @@ public interface StringType extends BasicType {
 	 * @see #setLength(Integer)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getStringType_Length()
 	 * @model unsettable="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!StringType!length'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!StringType!length'"
 	 * @generated
 	 */
 	Integer getLength();
@@ -127,7 +127,7 @@ public interface StringType extends BasicType {
 	 * @see #setMinLength(Integer)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getStringType_MinLength()
 	 * @model unsettable="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!StringType!minLength'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!StringType!minLength'"
 	 * @generated
 	 */
 	Integer getMinLength();
@@ -181,7 +181,7 @@ public interface StringType extends BasicType {
 	 * @see #setMaxLength(Integer)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getStringType_MaxLength()
 	 * @model unsettable="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!StringType!maxLength'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!StringType!maxLength'"
 	 * @generated
 	 */
 	Integer getMaxLength();

@@ -356,7 +356,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 						final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_FSM_0 = idResolver.getClass(OCCITables.CLSSid_FSM, null);
 						final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_State_0 = idResolver.getClass(OCCITables.CLSSid_State, null);
 						if (action == null) {
-							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::Category::name\'");
+							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Category::name\'");
 						}
 						final /*@Thrown*/ String name = action.getName();
 						final /*@Thrown*/ String sum = StringConcatOperation.INSTANCE.evaluate(OCCITables.STR_The_32_action_32, name);
@@ -381,7 +381,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 						final /*@NonInvalid*/ State source_0 = this.getSource();
 						final /*@NonInvalid*/ EnumerationLiteral literal = source_0.getLiteral();
 						if (literal == null) {
-							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::EnumerationLiteral::name\'");
+							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::EnumerationLiteral::name\'");
 						}
 						final /*@Thrown*/ String name_2 = literal.getName();
 						final /*@Thrown*/ String sum_5 = StringConcatOperation.INSTANCE.evaluate(OCCITables.STR_The_32_action_32_of_32_Transition_32_instance_32_coming_32_from_32_the_32_34, name_2);
@@ -389,7 +389,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 						final /*@NonInvalid*/ State target = this.getTarget();
 						final /*@NonInvalid*/ EnumerationLiteral literal_0 = target.getLiteral();
 						if (literal_0 == null) {
-							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore/2.0\'::EnumerationLiteral::name\'");
+							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::EnumerationLiteral::name\'");
 						}
 						final /*@Thrown*/ String name_3 = literal_0.getName();
 						final /*@Thrown*/ String sum_7 = StringConcatOperation.INSTANCE.evaluate(sum_6, name_3);

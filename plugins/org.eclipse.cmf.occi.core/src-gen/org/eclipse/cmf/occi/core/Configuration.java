@@ -50,7 +50,7 @@ public interface Configuration extends EObject {
 	 * @see #setDescription(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getConfiguration_Description()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Configuration!description'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Configuration!description'"
 	 * @generated
 	 */
 	String getDescription();
@@ -77,7 +77,7 @@ public interface Configuration extends EObject {
 	 * @see #setLocation(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getConfiguration_Location()
 	 * @model dataType="org.eclipse.cmf.occi.core.URI"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Configuration!location'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Configuration!location'"
 	 * @generated
 	 */
 	String getLocation();
@@ -103,7 +103,7 @@ public interface Configuration extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Use</em>' reference list.
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getConfiguration_Use()
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Configuration!use'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Configuration!use'"
 	 * @generated
 	 */
 	EList<Extension> getUse();
@@ -120,7 +120,7 @@ public interface Configuration extends EObject {
 	 * @return the value of the '<em>Resources</em>' containment reference list.
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getConfiguration_Resources()
 	 * @model containment="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Configuration!resources'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Configuration!resources'"
 	 * @generated
 	 */
 	EList<Resource> getResources();
@@ -137,7 +137,7 @@ public interface Configuration extends EObject {
 	 * @return the value of the '<em>Mixins</em>' containment reference list.
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getConfiguration_Mixins()
 	 * @model containment="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!Configuration!mixins'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!Configuration!mixins'"
 	 * @generated
 	 */
 	EList<Mixin> getMixins();

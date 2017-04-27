@@ -44,7 +44,7 @@ public interface EnumerationLiteral extends EObject {
 	 * @see #setName(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getEnumerationLiteral_Name()
 	 * @model dataType="org.eclipse.cmf.occi.core.String" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!EnumerationLiteral!name'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!EnumerationLiteral!name'"
 	 * @generated
 	 */
 	String getName();
@@ -71,7 +71,7 @@ public interface EnumerationLiteral extends EObject {
 	 * @see #setDocumentation(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getEnumerationLiteral_Documentation()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!EnumerationLiteral!documentation'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!EnumerationLiteral!documentation'"
 	 * @generated
 	 */
 	String getDocumentation();
@@ -100,7 +100,7 @@ public interface EnumerationLiteral extends EObject {
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getEnumerationLiteral_EnumerationType()
 	 * @see org.eclipse.cmf.occi.core.EnumerationType#getLiterals
 	 * @model opposite="literals" required="true" transient="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!EnumerationLiteral!enumerationType'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!EnumerationLiteral!enumerationType'"
 	 * @generated
 	 */
 	EnumerationType getEnumerationType();

@@ -51,7 +51,7 @@ public interface FSM extends EObject {
 	 * @see org.eclipse.cmf.occi.core.State#getOwningFSM
 	 * @model opposite="owningFSM" containment="true"
 	 *        extendedMetaData="name='State'"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!FSM!ownedState'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!FSM!ownedState'"
 	 * @generated
 	 */
 	EList<State> getOwnedState();
@@ -68,7 +68,7 @@ public interface FSM extends EObject {
 	 * @see #setAttribute(Attribute)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getFSM_Attribute()
 	 * @model required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore/2.0!FSM!attribute'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!FSM!attribute'"
 	 * @generated
 	 */
 	Attribute getAttribute();
