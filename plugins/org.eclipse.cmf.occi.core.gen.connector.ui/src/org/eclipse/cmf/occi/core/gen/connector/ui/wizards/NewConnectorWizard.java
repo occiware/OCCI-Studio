@@ -241,7 +241,7 @@ public class NewConnectorWizard extends BasicNewProjectResourceWizard {
 			"Bundle-ClassPath: .\n" +
 			"Bundle-Vendor: OCCIware\n" +
 //			"Bundle-Localization: plugin\n" + // FIXME generate plugin.properties
-			"Bundle-RequiredExecutionEnvironment: JavaSE-1.7\n" +
+			"Bundle-RequiredExecutionEnvironment: JavaSE-1.8\n" +
 			"Bundle-ActivationPolicy: lazy\n" +
 			"Require-Bundle: org.slf4j.api,\n" +
 			" org.eclipse.cmf.occi.core,\n" +
@@ -252,7 +252,7 @@ public class NewConnectorWizard extends BasicNewProjectResourceWizard {
 		// Generate build.properties
 		IFile build = PDEProject.getBuildProperties(connectorProject);
 		String buildContent =
-				"# Copyright (c) 2016 Inria\n" +
+				"# Copyright (c) 2016-2017 Inria\n" +
 				"#\n" +
 				"# All rights reserved. This program and the accompanying materials\n" +
 				"# are made available under the terms of the Eclipse Public License v1.0\n" +
@@ -261,6 +261,7 @@ public class NewConnectorWizard extends BasicNewProjectResourceWizard {
 				"#\n" +
 				"# Contributors:\n" +
 				"# - Philippe Merle <philippe.merle@inria.fr>\n" +
+				"# - Faiez Zalila <faiez.zalila@inria.fr>\n" +
 				"#\n" +
 				"\n" +
 				"source.. = src/\n" +
@@ -274,7 +275,7 @@ public class NewConnectorWizard extends BasicNewProjectResourceWizard {
 			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
 			"<?eclipse version=\"3.0\"?>\n" +
 			"<!--\n" +
-			"  Copyright (c) 2016 Inria\n" +
+			"  Copyright (c) 2016-2017 Inria\n" +
 			"\n" +
 			"  All rights reserved. This program and the accompanying materials\n" +
 			"  are made available under the terms of the Eclipse Public License v1.0\n" +
@@ -283,6 +284,7 @@ public class NewConnectorWizard extends BasicNewProjectResourceWizard {
 			"\n" +
 			"  Contributors:\n" +
 			"  - Philippe Merle <philippe.merle@inria.fr>\n" +
+			"  - Faiez Zalila <faiez.zalila@inria.fr>\n" +
 			"-->\n" +
 			"<plugin>\n" +
 			"\n" +

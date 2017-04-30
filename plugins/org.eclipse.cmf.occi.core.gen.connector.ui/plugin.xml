@@ -34,22 +34,22 @@
       <objectContribution
             adaptable="true"
             objectClass="org.eclipse.core.resources.IProject"
-            id="org.eclipse.cmf.occi.core.gen.connector.ui.t.popupMenus.contribution.IFile">
+            id="org.eclipse.cmf.occi.core.gen.connector.ui.popupMenus.contribution.IProject">
           <menu
                label="OCCI Studio"
                path="additionsOCCIStudio"
-               id="org.eclipse.cmf.occi.core.gen.emf.ui.menu">
+               id="org.eclipse.cmf.occi.core.gen.connector.ui.menu">
             <separator
                   name="group">
             </separator>
          </menu>
          <action
-               class="org.eclipse.cmf.occi.core.gen.connector.ui.popupMenus.AcceleoGenerateConnectorAction"
+               class="org.eclipse.cmf.occi.core.gen.connector.ui.popupMenus.RegenerateConnectorAction"
                enablesFor="+"
                id="org.eclipse.cmf.occi.core.gen.connector.ui.popupMenus.acceleoGenerateConnectorAction"
                icon="icons/ConnectorProject.gif"
                label="Regenerate OCCI Connector"
-               menubarPath="org.eclipse.cmf.occi.core.gen.emf.ui.menu/group"/>
+               menubarPath="org.eclipse.cmf.occi.core.gen.connector.ui.menu/group"/>
       </objectContribution>
    </extension>
  </plugin> 

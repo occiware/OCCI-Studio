@@ -67,13 +67,13 @@ import org.w3c.dom.NodeList;
 /**
  * Connector code generation.
  */
-public class AcceleoGenerateConnectorAction implements IObjectActionDelegate {
+public class RegenerateConnectorAction implements IObjectActionDelegate {
 
 	// added selection attribute
 	private Shell shell;
 	private ISelection selection;
 
-	public AcceleoGenerateConnectorAction() {
+	public RegenerateConnectorAction() {
 		super();
 	}
 
@@ -144,9 +144,9 @@ public class AcceleoGenerateConnectorAction implements IObjectActionDelegate {
 		// Get the file containing the OCCI extension.
 		String extensionScheme = getExtensionScheme(pluginXML);
 		String extensionFile = OcciRegistry.getInstance().getFileURI(extensionScheme);
-		String[] args = extensionFile.split("\\/");
 		if (extensionFile==null)
 			throw new InterruptedException("The OCCI extension is not registered");
+		String[] args = extensionFile.split("\\/");
 		// This connector project will require the bundle containing the OCCI
 		// extension.
 		// Warning extensionFile must be a platform URI (plugin or resource).
@@ -225,7 +225,9 @@ public class AcceleoGenerateConnectorAction implements IObjectActionDelegate {
 				+ "# are made available under the terms of the Eclipse Public License v1.0\n"
 				+ "# which accompanies this distribution, and is available at\n"
 				+ "# http://www.eclipse.org/legal/epl-v10.html\n" + "#\n" + "# Contributors:\n"
-				+ "# - Philippe Merle <philippe.merle@inria.fr>\n" + "#\n" + "\n" + "source.. = src/\n"
+				+ "# - Philippe Merle <philippe.merle@inria.fr>\n" + "#\n" + "\n" 
+				+ "# - Faiez Zalila <faiez.zalila@inria.fr>\n" + "#\n" + "\n" 
+				+ "source.. = src/\n"
 				+ "output.. = bin/\n" + "bin.includes = META-INF/, plugin.xml, .\n";
 		build.setContents(new ByteArrayInputStream(buildContent.getBytes()), true, false, monitor);
 
