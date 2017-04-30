@@ -16,7 +16,7 @@
    <!-- New wizard for create a Java-based Connector project. -->
    <extension point="org.eclipse.ui.newWizards">
       <category
-            id = "org.eclipse.cmf.occi.core.gen.connector.ui.category.ID"
+            id = "org.eclipse.cmf.occi.core.gen.connector.ui.wizard.category.ID"
 	        name="OCCI Studio">
       </category>
       <wizard
