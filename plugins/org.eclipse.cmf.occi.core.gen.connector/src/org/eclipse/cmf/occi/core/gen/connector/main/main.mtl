@@ -107,6 +107,9 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 	[kindClassName/]Connector()
 	{
 		LOGGER.debug("Constructor called on " + this);
+		// [protected (kindClassName.concat('connector constructor'))]
+		// TODO: Implement this constructor.
+		// [/protected]
 	}
 
 	//
@@ -120,8 +123,9 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 	public void occiCreate()
 	{
 		LOGGER.debug("occiCreate() called on " + this);
-
+		// [protected (kindClassName.concat('occiCreate'))]
 		// TODO: Implement this callback or remove this method.
+		// [/protected]
 	}
 
 	/**
@@ -131,8 +135,9 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 	public void occiRetrieve()
 	{
 		LOGGER.debug("occiRetrieve() called on " + this);
-
+		// [protected (kindClassName.concat('occiRetrieve'))]
 		// TODO: Implement this callback or remove this method.
+		// [/protected]
 	}
 
 	/**
@@ -142,8 +147,9 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 	public void occiUpdate()
 	{
 		LOGGER.debug("occiUpdate() called on " + this);
-
+		// [protected (kindClassName.concat('occiUpdate'))]
 		// TODO: Implement this callback or remove this method.
+		// [/protected]
 	}
 
 	/**
@@ -153,8 +159,9 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 	public void occiDelete()
 	{
 		LOGGER.debug("occiDelete() called on " + this);
-
+		// [protected (kindClassName.concat('occiDelete'))]
 		// TODO: Implement this callback or remove this method.
+		// [/protected]
 	}
 
 	//
@@ -187,21 +194,30 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 [let stateAttribute : Attribute = getStateAttribute(kind)]
 		// [kind.term.toUpperFirst()/] State Machine.
 		switch(get[getJavaAttributeName(stateAttribute).toString().toU1Case()/]().getValue()) {
-
-
-
-[for (eEnumLiteral : EnumerationLiteral | stateAttribute.type.oclAsType(EnumerationType).literals)]
+[for (eEnumLiteral : EnumerationLiteral | getSourceStatesFromAnAction(action)->collect(state|state.oclAsType(State).literal))]
 
 		case [stateAttribute.type.name/].[eEnumLiteral.name.toUpperCase()/]_VALUE:
 			LOGGER.debug("Fire transition(state=[eEnumLiteral.name/], action=\"[action.term/]\")...");
-
 			// TODO Implement transition(state=[eEnumLiteral.name/], action="[action.term/]")
-
+[let targetLiterals : OrderedSet(EnumerationLiteral) = getTargetStatesFromAnAction(action)->collect(state|state.oclAsType(State).literal)->asOrderedSet()]
+[if targetLiterals->size()=1]
+			set[getJavaAttributeName(stateAttribute).toString().toU1Case()/]([stateAttribute.type.name/].[targetLiterals->first().oclAsType(EnumerationLiteral).name.toUpperCase()/]);
+[else]
+[for (eEnumLiteral2 : EnumerationLiteral | targetLiterals)]
+		[if targetLiterals->indexOf(eEnumLiteral2)=1]
+			if(true)
+			set[getJavaAttributeName(stateAttribute).toString().toU1Case()/]([stateAttribute.type.name/].[eEnumLiteral2.name.toUpperCase()/]);
+		[else]
+			else
+			if(true)
+			set[getJavaAttributeName(stateAttribute).toString().toU1Case()/]([stateAttribute.type.name/].[eEnumLiteral2.name.toUpperCase()/]);
+		[/if]
+[/for]		
+[/if]
+[/let]
 			break;
+
 [/for]
-
-
-
 		default:
 			break;
 		}
@@ -210,6 +226,13 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 	}
 
 [/template]
+
+[comment the following query returns a set of states which are target of transitions containing the action "action"/]
+[query public getTargetStatesFromAnAction(action : Action) : Set(State) = getSourceStatesFromAnAction(action)->collect(sourceState|sourceState.oclAsType(State).outgoingTransition)->flatten()->select(tr|tr.oclAsType(Transition).action=action)->flatten()->collect(tr|tr.oclAsType(Transition).target)->asSet() /]
+[comment the following query returns a set of states which are source of transitions containing the action "action"/]
+[query public getSourceStatesFromAnAction(action : Action) : Set(State) = if (not action.eContainer().oclAsType(Kind).fsm.oclIsUndefined()) then 
+																				action.eContainer().oclAsType(Kind).fsm.ownedState->collect(ow|ow.oclAsType(State).outgoingTransition)->flatten()
+																				->select(tr| tr.action=action)->collect(tr|tr.oclAsType(Transition).source)->flatten()->asSet() else Set{} endif /]
 
 [query public getStateAttribute(kind : Kind) : Attribute = kind.attributes->any(attribute : Attribute | attribute.name.endsWith('state') and attribute.type.oclIsTypeOf(EnumerationType)) /]
 

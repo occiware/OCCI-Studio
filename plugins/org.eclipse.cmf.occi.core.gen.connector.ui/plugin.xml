@@ -30,5 +30,26 @@
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
-
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            objectClass="org.eclipse.core.resources.IProject"
+            id="org.eclipse.cmf.occi.core.gen.connector.ui.t.popupMenus.contribution.IFile">
+          <menu
+               label="OCCI Studio"
+               path="additionsOCCIStudio"
+               id="org.eclipse.cmf.occi.core.gen.emf.ui.menu">
+            <separator
+                  name="group">
+            </separator>
+         </menu>
+         <action
+               class="org.eclipse.cmf.occi.core.gen.connector.ui.popupMenus.AcceleoGenerateConnectorAction"
+               enablesFor="+"
+               id="org.eclipse.cmf.occi.core.gen.connector.ui.popupMenus.acceleoGenerateConnectorAction"
+               icon="icons/ConnectorProject.gif"
+               label="Regenerate OCCI Connector"
+               menubarPath="org.eclipse.cmf.occi.core.gen.emf.ui.menu/group"/>
+      </objectContribution>
+   </extension>
  </plugin> 
