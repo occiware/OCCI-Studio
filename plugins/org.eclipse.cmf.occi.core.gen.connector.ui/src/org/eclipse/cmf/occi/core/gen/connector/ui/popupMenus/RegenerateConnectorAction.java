@@ -1,13 +1,15 @@
-/*******************************************************************************
- * Copyright (c) 2008, 2012 Obeo.
+/**
+ * Copyright (c) 2016-2017 Inria
+ *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  * 
  * Contributors:
- *     Obeo - initial API and implementation
- *******************************************************************************/
+ * - Philippe Merle <philippe.merle@inria.fr>
+ * - Faiez Zalila <faiez.zalila@inria.fr>
+ */
 package org.eclipse.cmf.occi.core.gen.connector.ui.popupMenus;
 
 import java.io.ByteArrayInputStream;
@@ -23,6 +25,7 @@ import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.gen.connector.ui.Activator;
 import org.eclipse.cmf.occi.core.gen.connector.ui.common.GenerateAll;
 import org.eclipse.cmf.occi.core.gen.emf.OCCIExtension2Ecore;
+import org.eclipse.cmf.occi.core.util.Occi2Ecore;
 import org.eclipse.cmf.occi.core.util.OcciRegistry;
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -142,7 +145,7 @@ public class RegenerateConnectorAction implements IObjectActionDelegate {
 			throw new InterruptedException("The selected project is not a Connector Project");
 
 		// Get the file containing the OCCI extension.
-		String extensionScheme = getExtensionScheme(pluginXML);
+		String extensionScheme = getExtensionScheme(pluginXML);	
 		String extensionFile = OcciRegistry.getInstance().getFileURI(extensionScheme);
 		if (extensionFile==null)
 			throw new InterruptedException("The OCCI extension is not registered");
@@ -183,7 +186,7 @@ public class RegenerateConnectorAction implements IObjectActionDelegate {
 		entries[0] = JavaRuntime.getDefaultJREContainerEntry();
 
 		// (3) We have not yet the source folder created:
-		IFolder sourceFolder = connectorProject.getFolder("src");
+		IFolder sourceFolder = connectorProject.getFolder("src-gen");
 
 		// (4) Now the created source folder should be added to the class
 		// entries of the project, otherwise compilation will fail:
@@ -213,24 +216,51 @@ public class RegenerateConnectorAction implements IObjectActionDelegate {
 				+ "Bundle-Version: 0.1.0.qualifier\n" + "Bundle-ClassPath: .\n" + "Bundle-Vendor: OCCIware\n" +
 				// "Bundle-Localization: plugin\n" + // FIXME generate
 				// plugin.properties
-				"Bundle-RequiredExecutionEnvironment: JavaSE-1.7\n" + "Bundle-ActivationPolicy: lazy\n"
+				"Bundle-RequiredExecutionEnvironment: JavaSE-1.8\n" + "Bundle-ActivationPolicy: lazy\n"
 				+ "Require-Bundle: org.slf4j.api,\n" + " org.eclipse.cmf.occi.core,\n" + " " + requireBundle + "\n"
 				+ "Export-Package: " + connectorProjectName + "\n";
 		manifest.setContents(new ByteArrayInputStream(manifestContent.getBytes()), true, false, monitor);
 
 		// Generate build.properties
 		IFile build = PDEProject.getBuildProperties(connectorProject);
-		String buildContent = "# Copyright (c) 2016 Inria\n" + "#\n"
+		String buildContent = "# Copyright (c) 2016-2017 Inria\n" + "#\n"
 				+ "# All rights reserved. This program and the accompanying materials\n"
 				+ "# are made available under the terms of the Eclipse Public License v1.0\n"
 				+ "# which accompanies this distribution, and is available at\n"
 				+ "# http://www.eclipse.org/legal/epl-v10.html\n" + "#\n" + "# Contributors:\n"
-				+ "# - Philippe Merle <philippe.merle@inria.fr>\n" + "#\n" + "\n" 
+				+ "# - Philippe Merle <philippe.merle@inria.fr>\n"
 				+ "# - Faiez Zalila <faiez.zalila@inria.fr>\n" + "#\n" + "\n" 
-				+ "source.. = src/\n"
+				+ "source.. = src-gen/\n"
 				+ "output.. = bin/\n" + "bin.includes = META-INF/, plugin.xml, .\n";
 		build.setContents(new ByteArrayInputStream(buildContent.getBytes()), true, false, monitor);
 
+		String pluginContent =
+				"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+				"<?eclipse version=\"3.0\"?>\n" +
+				"<!--\n" +
+				"  Copyright (c) 2016-2017 Inria\n" +
+				"\n" +
+				"  All rights reserved. This program and the accompanying materials\n" +
+				"  are made available under the terms of the Eclipse Public License v1.0\n" +
+				"  which accompanies this distribution, and is available at\n" +
+				"  http://www.eclipse.org/legal/epl-v10.html\n" +
+				"\n" +
+				"  Contributors:\n" +
+				"  - Philippe Merle <philippe.merle@inria.fr>\n" +
+				"  - Faiez Zalila <faiez.zalila@inria.fr>\n" +
+				"-->\n" +
+				"<plugin>\n" +
+				"\n" +
+				"   <!-- Register the factory of this connector. -->\n" +
+				"   <extension point=\"org.eclipse.emf.ecore.factory_override\">\n" +
+				"      <factory\n" +
+				"            uri=\"" + Occi2Ecore.convertOcciScheme2EcoreNamespace(extensionScheme) + "\"\n" +
+				"            class=\"" + connectorProjectName + ".ConnectorFactory\"/>\n" +
+				"   </extension>\n" +
+				"\n" +
+				"</plugin>\n";
+		pluginXML.setContents(new ByteArrayInputStream(pluginContent.getBytes()), true, false, monitor);
+			
 		// Generate Java code for the connector.
 		try {
 			URI modelURI = URI.createURI(extensionFile, true);
@@ -242,7 +272,7 @@ public class RegenerateConnectorAction implements IObjectActionDelegate {
 			Extension extension = (Extension) resource.getContents().get(0);
 
 			// Generate Java code for the connector.
-			IContainer target = connectorProject.getFolder("src");
+			IContainer target = connectorProject.getFolder("src-gen");
 
 			// Compute the arguments of the generator.
 			ArrayList<String> arguments = new ArrayList<String>();

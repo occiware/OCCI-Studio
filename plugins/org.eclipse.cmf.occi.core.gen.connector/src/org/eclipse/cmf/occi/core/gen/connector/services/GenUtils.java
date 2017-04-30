@@ -76,21 +76,21 @@ public class GenUtils
 	{
 		// Get the data type of this attribute.
 		DataType attributeType = (DataType) attribute.getType();
-		System.out.println("attributeType "+attributeType);
+		//System.out.println("attributeType "+attributeType);
 		// Get the extension containing this attribute type.
 		Extension extension = (Extension)(attributeType.eContainer());
-		System.out.println("extension "+extension);
+		//System.out.println("extension "+extension);
 		// Get the Epackage for this extension.
 		EPackage ePackage = getEPackage(extension);
-		System.out.println("ePackage "+ePackage);
+		//System.out.println("ePackage "+ePackage);
 		// Get the data type.
 		EDataType eDataType = (EDataType)ePackage.getEClassifier(attributeType.getName());
 		// Return the instance class name of this data type.
 		return eDataType.getName();
 	}
 	public String getJavaAttributeName(Attribute attribute) {
-		System.out.println("attribute "+attribute);
-		System.out.println("Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName()) "+Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName()));
+		//System.out.println("attribute "+attribute);
+		//System.out.println("Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName()) "+Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName()));
 		return Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName());
 	}
 }
