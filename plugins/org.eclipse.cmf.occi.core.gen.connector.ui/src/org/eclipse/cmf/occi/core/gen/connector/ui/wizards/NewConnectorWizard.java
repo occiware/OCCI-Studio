@@ -37,6 +37,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -45,6 +46,7 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.launching.JavaRuntime;
+import org.eclipse.jface.dialogs.MessageDialog;
 // FIXME import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.layout.TableColumnLayout;
 import org.eclipse.jface.operation.IRunnableWithProgress;
@@ -152,15 +154,21 @@ public class NewConnectorWizard extends BasicNewProjectResourceWizard {
 				}
 			});
 		} catch (InvocationTargetException | InterruptedException e) {
-			Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e));
+			//Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e));
+			MessageDialog.openError(null, "OCCI Studio problem", e.getMessage());
 		}
 		return true;
 	}
 
-	private void createConnectorJavaProject(String connectorProjectName, String extensionScheme, IProgressMonitor monitor) throws CoreException
+	private void createConnectorJavaProject(String connectorProjectName, String extensionScheme, IProgressMonitor monitor) throws CoreException, InterruptedException
 	{
-		// Get the file containing the OCCI extension.
 		String extensionFile = OcciRegistry.getInstance().getFileURI(extensionScheme);
+		String[] args = extensionFile.split("\\/");
+		
+		//Added to get the extension and thus convert the extension name to epackage name
+		if(EPackage.Registry.INSTANCE.getEPackage(Occi2Ecore.convertOcciScheme2EcoreNamespace(extensionScheme))==null)
+			throw new InterruptedException("The metamodel of the OCCI " +getExtension(extensionFile).getName() +" extension is not registered");
+		// Get the file containing the OCCI extension.
 
 		// This connector project will require the bundle containing the OCCI extension.
 		// Warning extensionFile must be a platform URI (plugin or resource).
@@ -292,11 +300,6 @@ public class NewConnectorWizard extends BasicNewProjectResourceWizard {
 		try {
 			URI modelURI = URI.createURI(extensionFile, true);
 			
-			//Added to get the extension and thus convert the extension name to epackage name
-			ResourceSet resSet = new ResourceSetImpl();
-			Resource resource = resSet.getResource(modelURI, true);
-			Extension extension = (Extension) resource.getContents().get(0);
-			
 			// Generate Java code for the connector.
 			IContainer target = connectorProject.getFolder("src");
 			
@@ -307,7 +310,8 @@ public class NewConnectorWizard extends BasicNewProjectResourceWizard {
 			arguments.add(connectorProjectName);
 			
 			// The full name of the package to extend. Changed instead of requireBundle
-			arguments.add(OCCIExtension2Ecore.formatExtensionName(extension));
+			//arguments.add(OCCIExtension2Ecore.formatExtensionName(extension));
+			arguments.add(args[args.length-3]);
 			
 			// Call the generator.
 			GenerateAll generator = new GenerateAll(modelURI, target, arguments);
@@ -318,6 +322,16 @@ public class NewConnectorWizard extends BasicNewProjectResourceWizard {
 		} finally {
 			connectorProject.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 		}
+	}
+
+	private Extension getExtension(String extensionFile) {
+		URI model = URI.createURI(extensionFile, true);
+		
+		//Added to get the extension and thus convert the extension name to epackage name
+		ResourceSet resSet = new ResourceSetImpl();
+		Resource resource = resSet.getResource(model, true);
+		return (Extension) resource.getContents().get(0); 
+		
 	}
 
 	@Override
