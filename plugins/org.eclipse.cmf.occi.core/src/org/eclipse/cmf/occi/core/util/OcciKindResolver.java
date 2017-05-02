@@ -33,7 +33,7 @@ public class OcciKindResolver
 	/**
 	 * Store mapping from EMF namespace to OCCI Extension.
 	 */
-	private static Map<String, Extension> namespace2extension = new HashMap<String, Extension>();
+	protected static Map<String, Extension> namespace2extension = new HashMap<String, Extension>();
 
 	/**
 	 * Store mapping from EClass to OCCI Kind.

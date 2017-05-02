@@ -43,6 +43,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -191,6 +192,7 @@ public final class OcciHelper
 			}
 		}
 		// Kind not found.
+		 MessageDialog.openError(null, "OCCI Studio problem", "Register the OCCI extension owning the "+kindTerm +" kind");
 		throw new IllegalArgumentException("term '" + kindTerm + "' is not found into extension '" + extension.getScheme() + "'!");
 	}
 

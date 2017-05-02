@@ -23,6 +23,9 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.resource.URIConverter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -103,6 +106,14 @@ public final class OcciRegistry
 		// Add a mapping from the extension scheme to its file URI.
 		String tmp = scheme.substring(0, scheme.length()-1);
 		URIConverter.URI_MAP.put(URI.createURI(tmp), URI.createURI(uri));
+		URI modelURI = URI.createURI(uri, true);
+		// Added to get the extension and thus convert the extension name to epackage name
+		ResourceSet resSet = new ResourceSetImpl();
+		Resource resource = resSet.getResource(modelURI, true);
+		Extension extension = (Extension) resource.getContents().get(0);
+		if( OcciKindResolver.namespace2extension != null){
+			OcciKindResolver.namespace2extension.put(tmp+"/ecore", extension);
+		}
 	}
 
 	/**
