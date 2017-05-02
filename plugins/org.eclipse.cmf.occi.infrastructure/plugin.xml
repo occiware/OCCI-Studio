@@ -22,5 +22,10 @@
             uri="http://schemas.ogf.org/occi/infrastructure/ecore"
             class="org.eclipse.cmf.occi.infrastructure.InfrastructurePackage"/>
    </extension>
-
+   <!-- Define URI mapping. -->
+   <extension point="org.eclipse.emf.ecore.uri_mapping" >
+      <mapping
+            source="http://schemas.ogf.org/occi/infrastructure"
+            target="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.occie"/>
+   </extension>
 </plugin>
