@@ -10,6 +10,7 @@
  Contributors:
  - William Piers <william.piers@obeo.fr>
  - Philippe Merle <philippe.merle@inria.fr>
+ - Faiez Zalila <faiez.zalila@inria.fr>
 -->
 <feature
       id="org.eclipse.cmf.occi"
@@ -281,7 +282,30 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
+   <plugin
+         id="org.eclipse.cmf.occi.infrastructure.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
+         id="org.eclipse.cmf.occi.infrastructure.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
+         id="org.eclipse.cmf.occi.infrastructure.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
+         id="org.eclipse.cmf.occi.infrastructure.connector.dummy"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 <!-- TODO: add following plugins.
    <plugin
          id="org.eclipse.cmf.occi.gen.alloy"
@@ -348,28 +372,6 @@ litigation.
 
    <plugin
          id="org.eclipse.cmf.occi.gen.xml.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-
-   <plugin
-         id="org.eclipse.cmf.occi.infrastructure.connector.dummy"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.infrastructure.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.infrastructure.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"

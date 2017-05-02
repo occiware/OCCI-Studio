@@ -39,6 +39,10 @@
     
     <!-- OCCI Infrastructure extension -->
     <module>plugins/org.eclipse.cmf.occi.infrastructure</module>
+    <module>plugins/org.eclipse.cmf.occi.infrastructure.edit</module>
+    <module>plugins/org.eclipse.cmf.occi.infrastructure.editor</module>
+    <module>plugins/org.eclipse.cmf.occi.infrastructure.tests</module>
+    <module>plugins/org.eclipse.cmf.occi.infrastructure.connector.dummy</module>
     
     <!-- Releng -->
     <module>features/org.eclipse.cmf.occi</module>
