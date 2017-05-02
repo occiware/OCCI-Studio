@@ -11,7 +11,7 @@
          <menu
                label="OCCI Studio"
                path="additionsOCCIStudio"
-               id="org.eclipse.cmf.occi.core.gen.emf.ui.menu">
+               id="org.eclipse.cmf.occi.core.occi-studio.ui.menu">
             <separator
                   name="group">
             </separator>
@@ -19,11 +19,34 @@
          <action
                label="Register OCCI Extension"
                class="org.eclipse.cmf.occi.core.ui.popup.actions.RegisterOCCIExtensionAction"
-               menubarPath="org.eclipse.cmf.occi.core.gen.emf.ui.menu/group"
+               menubarPath="org.eclipse.cmf.occi.core.occi-studio.ui.menu/group"
                enablesFor="1"
                id="org.eclipse.cmf.occi.core.ui.RegisterOCCIExtension">
          </action>
       </objectContribution>
    </extension>
-
+ <!-- Popup menu for generate an OCCI configuration from Extension configuration. -->
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.*"
+            id="org.eclipse.cmf.occi.core.ui.contribution1">
+         <menu
+               label="OCCI Studio"
+               path="additionsOCCIStudio"
+               id="org.eclipse.cmf.occi.core.occi-studio.ui.menu">
+            <separator
+                  name="group">
+            </separator>
+         </menu>
+         <action
+               label="Generate OCCI Configuration"
+               class="org.eclipse.cmf.occi.core.ui.popup.actions.ExtensionConfiguration2OCCICAction"
+               menubarPath="org.eclipse.cmf.occi.core.occi-studio.ui.menu/group"
+               enablesFor="1"
+               id="org.eclipse.cmf.occi.core.ui.RegisterOCCIExtension">
+         </action>
+      </objectContribution>
+   </extension>
 </plugin>

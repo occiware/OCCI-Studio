@@ -10,7 +10,7 @@
  *     Philippe Merle <philippe.merle@inria.fr>
  *     Faiez Zalila <faiez.zalila@inria.fr>
  *******************************************************************************/
-package org.eclipse.cmf.occi.core.gen.emf;
+package org.eclipse.cmf.occi.core.ui.popup.actions;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -28,6 +28,7 @@ import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.OCCIFactory;
 import org.eclipse.cmf.occi.core.Resource;
+import org.eclipse.cmf.occi.core.gen.emf.ConverterUtils;
 import org.eclipse.cmf.occi.core.util.OcciRegistry;
 import org.eclipse.cmf.occi.core.util.Occi2Ecore;
 

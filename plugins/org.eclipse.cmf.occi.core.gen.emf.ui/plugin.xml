@@ -11,7 +11,7 @@
          <menu
                label="OCCI Studio"
                path="additionsOCCIStudio"
-               id="org.eclipse.cmf.occi.core.gen.emf.ui.menu">
+               id="org.eclipse.cmf.occi.core.occi-studio.ui.menu">
             <separator
                   name="group">
             </separator>
@@ -19,32 +19,10 @@
          <action
                label="Generate EMF Tooling"
                class="org.eclipse.cmf.occi.core.gen.emf.ui.popup.actions.OCCI2EMFGeneratorAction"
-               menubarPath="org.eclipse.cmf.occi.core.gen.emf.ui.menu/group"
+               menubarPath="org.eclipse.cmf.occi.core.occi-studio.ui.menu/group"
                enablesFor="1"
                id="org.eclipse.cmf.occi.core.gen.emf.ui.newAction">
          </action>
       </objectContribution>
    </extension>
-  <!-- Popup menu for register an OCCI extension. -->
- <!--  <extension point="org.eclipse.ui.popupMenus">
-      <objectContribution
-            id="org.eclipse.cmf.occi.core.gen.emf.ui.contribution2"
-            nameFilter="*.occie"
-            objectClass="org.eclipse.core.resources.IFile">
-         <menu
-               id="org.eclipse.cmf.occi.core.gen.emf.ui.menu"
-               label="OCCI Studio"
-               path="additionsOCCIStudio">
-            <separator
-                  name="group"/>
-         </menu>
-         <action
-               class="org.eclipse.cmf.occi.core.gen.emf.ui.popup.actions.RegisterExtensionAction"
-               enablesFor="1"
-               id="org.eclipse.cmf.occi.core.gen.emf.ui.registerExtensionAction"
-               label="Register OCCI Extension"
-               menubarPath="org.eclipse.cmf.occi.core.gen.emf.ui.menu/group">
-         </action>
-      </objectContribution>
-   </extension> -->
 </plugin>
