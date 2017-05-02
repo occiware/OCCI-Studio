@@ -60,7 +60,7 @@ import org.eclipse.ocl.pivot.values.SetValue;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.infrastructure.impl.NetworkImpl#isOcciNetworkVlan <em>Occi Network Vlan</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.infrastructure.impl.NetworkImpl#getOcciNetworkVlan <em>Occi Network Vlan</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.infrastructure.impl.NetworkImpl#getOcciNetworkLabel <em>Occi Network Label</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.infrastructure.impl.NetworkImpl#getOcciNetworkState <em>Occi Network State</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.infrastructure.impl.NetworkImpl#getOcciNetworkStateMessage <em>Occi Network State Message</em>}</li>
@@ -70,24 +70,24 @@ import org.eclipse.ocl.pivot.values.SetValue;
  */
 public class NetworkImpl extends ResourceImpl implements Network {
 	/**
-	 * The default value of the '{@link #isOcciNetworkVlan() <em>Occi Network Vlan</em>}' attribute.
+	 * The default value of the '{@link #getOcciNetworkVlan() <em>Occi Network Vlan</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isOcciNetworkVlan()
+	 * @see #getOcciNetworkVlan()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean OCCI_NETWORK_VLAN_EDEFAULT = false;
+	protected static final Integer OCCI_NETWORK_VLAN_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #isOcciNetworkVlan() <em>Occi Network Vlan</em>}' attribute.
+	 * The cached value of the '{@link #getOcciNetworkVlan() <em>Occi Network Vlan</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isOcciNetworkVlan()
+	 * @see #getOcciNetworkVlan()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean occiNetworkVlan = OCCI_NETWORK_VLAN_EDEFAULT;
+	protected Integer occiNetworkVlan = OCCI_NETWORK_VLAN_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOcciNetworkLabel() <em>Occi Network Label</em>}' attribute.
@@ -173,7 +173,7 @@ public class NetworkImpl extends ResourceImpl implements Network {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isOcciNetworkVlan() {
+	public Integer getOcciNetworkVlan() {
 		return occiNetworkVlan;
 	}
 
@@ -182,8 +182,8 @@ public class NetworkImpl extends ResourceImpl implements Network {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOcciNetworkVlan(boolean newOcciNetworkVlan) {
-		boolean oldOcciNetworkVlan = occiNetworkVlan;
+	public void setOcciNetworkVlan(Integer newOcciNetworkVlan) {
+		Integer oldOcciNetworkVlan = occiNetworkVlan;
 		occiNetworkVlan = newOcciNetworkVlan;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InfrastructurePackage.NETWORK__OCCI_NETWORK_VLAN, oldOcciNetworkVlan, occiNetworkVlan));
@@ -316,14 +316,15 @@ public class NetworkImpl extends ResourceImpl implements Network {
 					/**
 					 * occiNetworkVlan
 					 */
-					final /*@NonInvalid*/ boolean occiNetworkVlan = _1.isOcciNetworkVlan();
+					final /*@NonInvalid*/ Integer occiNetworkVlan = _1.getOcciNetworkVlan();
+					final /*@NonInvalid*/ IntegerValue BOXED_occiNetworkVlan = occiNetworkVlan == null ? null : ValueUtil.integerValueOf(occiNetworkVlan);
 					//
-					if (accumulator.includes(occiNetworkVlan) == ValueUtil.TRUE_VALUE) {
+					if (accumulator.includes(BOXED_occiNetworkVlan) == ValueUtil.TRUE_VALUE) {
 						result = ValueUtil.FALSE_VALUE;			// Abort after second find
 						break;
 					}
 					else {
-						accumulator.add(occiNetworkVlan);
+						accumulator.add(BOXED_occiNetworkVlan);
 					}
 				}
 				CAUGHT_result = result;
@@ -346,7 +347,7 @@ public class NetworkImpl extends ResourceImpl implements Network {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case InfrastructurePackage.NETWORK__OCCI_NETWORK_VLAN:
-				return isOcciNetworkVlan();
+				return getOcciNetworkVlan();
 			case InfrastructurePackage.NETWORK__OCCI_NETWORK_LABEL:
 				return getOcciNetworkLabel();
 			case InfrastructurePackage.NETWORK__OCCI_NETWORK_STATE:
@@ -366,7 +367,7 @@ public class NetworkImpl extends ResourceImpl implements Network {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case InfrastructurePackage.NETWORK__OCCI_NETWORK_VLAN:
-				setOcciNetworkVlan((Boolean)newValue);
+				setOcciNetworkVlan((Integer)newValue);
 				return;
 			case InfrastructurePackage.NETWORK__OCCI_NETWORK_LABEL:
 				setOcciNetworkLabel((String)newValue);
@@ -414,7 +415,7 @@ public class NetworkImpl extends ResourceImpl implements Network {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case InfrastructurePackage.NETWORK__OCCI_NETWORK_VLAN:
-				return occiNetworkVlan != OCCI_NETWORK_VLAN_EDEFAULT;
+				return OCCI_NETWORK_VLAN_EDEFAULT == null ? occiNetworkVlan != null : !OCCI_NETWORK_VLAN_EDEFAULT.equals(occiNetworkVlan);
 			case InfrastructurePackage.NETWORK__OCCI_NETWORK_LABEL:
 				return OCCI_NETWORK_LABEL_EDEFAULT == null ? occiNetworkLabel != null : !OCCI_NETWORK_LABEL_EDEFAULT.equals(occiNetworkLabel);
 			case InfrastructurePackage.NETWORK__OCCI_NETWORK_STATE:

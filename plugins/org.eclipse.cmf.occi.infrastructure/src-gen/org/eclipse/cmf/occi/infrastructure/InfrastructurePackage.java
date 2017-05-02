@@ -1814,11 +1814,11 @@ public interface InfrastructurePackage extends EPackage {
 	EClass getNetwork();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.infrastructure.Network#isOcciNetworkVlan <em>Occi Network Vlan</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.infrastructure.Network#getOcciNetworkVlan <em>Occi Network Vlan</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Occi Network Vlan</em>'.
-	 * @see org.eclipse.cmf.occi.infrastructure.Network#isOcciNetworkVlan()
+	 * @see org.eclipse.cmf.occi.infrastructure.Network#getOcciNetworkVlan()
 	 * @see #getNetwork()
 	 * @generated
 	 */

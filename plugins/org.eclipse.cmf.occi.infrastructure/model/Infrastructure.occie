@@ -2,9 +2,7 @@
 <occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" name="infrastructure" scheme="http://schemas.ogf.org/occi/infrastructure#" description="OCCI Infrastructure Model" specification="https://www.ogf.org/documents/GFD.224.pdf">
   <import href="http://schemas.ogf.org/occi/core#/"/>
   <kinds name="Network" scheme="http://schemas.ogf.org/occi/infrastructure#" title="Network Resource">
-    <attributes name="occi.network.vlan" description="802.1q VLAN Identifier (e.g., 343)">
-      <type xsi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
-    </attributes>
+    <attributes name="occi.network.vlan" description="802.1q VLAN Identifier (e.g., 343)" type="//@types.1"/>
     <attributes name="occi.network.label" description="Tag based VLANs (e.g., external-dmz)" type="//@types.2"/>
     <attributes name="occi.network.state" mutable="false" required="true" default="inactive" description="Current state of the instance" type="//@types.3"/>
     <attributes name="occi.network.state.message" mutable="false" description="Human-readable explanation of the current instance state">

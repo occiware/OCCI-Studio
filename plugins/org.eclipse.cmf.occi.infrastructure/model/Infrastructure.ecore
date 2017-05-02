@@ -117,7 +117,7 @@
         <details key="documentation" value=""/>
       </eAnnotations>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiNetworkVlan" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Boolean">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiNetworkVlan" eType="#//Vlan">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="802.1q VLAN Identifier (e.g., 343)"/>
       </eAnnotations>
