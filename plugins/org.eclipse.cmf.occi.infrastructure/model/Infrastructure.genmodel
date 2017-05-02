@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2015-2017 Obeo, Inria&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#x9;&#xA;Contributors:&#xA;- William Piers &lt;william.piers@obeo.fr>&#xA;- Philippe Merle &lt;philippe.merle@inria.fr>&#xA;- Faiez Zalila &lt;faiez.zalila@inria.fr>" modelDirectory="/org.eclipse.cmf.occi.infrastructure/src-gen" editDirectory="/org.eclipse.cmf.occi.infrastructure.edit/src-gen" editorDirectory="/org.eclipse.cmf.occi.infrastructure.editor/src-gen" modelPluginID="org.eclipse.cmf.occi.infrastructure" modelName="Infrastructure" testsDirectory="/org.eclipse.cmf.occi.infrastructure.tests/src" complianceLevel="8.0" copyrightFields="false" editPluginID="org.eclipse.cmf.occi.infrastructure.edit" editorPluginID="org.eclipse.cmf.occi.infrastructure.editor" testsPluginID="org.eclipse.cmf.occi.infrastructure.tests" operationReflection="true">
+  <genAnnotations source="http://www.eclipse.org/OCL/GenModel">
+    <details key="Use Delegates" value="false"/>
+  </genAnnotations>
+  <foreignModel>Infrastructure.ecore</foreignModel>
+  <genPackages prefix="Infrastructure" basePackage="org.eclipse.cmf.occi" disposableProviderFactory="true">
+    <ecorePackage href="Infrastructure.ecore#/"/>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="Infrastructure.ecore#//SuspendMethod"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//SuspendMethod/hibernate"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//SuspendMethod/suspend"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="Infrastructure.ecore#//NetworkStatus"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//NetworkStatus/active"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//NetworkStatus/inactive"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//NetworkStatus/error"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="Infrastructure.ecore#//ComputeStatus"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//ComputeStatus/active"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//ComputeStatus/inactive"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//ComputeStatus/suspended"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//ComputeStatus/error"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="Infrastructure.ecore#//NetworkInterfaceStatus"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//NetworkInterfaceStatus/active"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//NetworkInterfaceStatus/inactive"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//NetworkInterfaceStatus/error"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="Infrastructure.ecore#//Architecture"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//Architecture/x86"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//Architecture/x64"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="Infrastructure.ecore#//StopMethod"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//StopMethod/graceful"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//StopMethod/acpioff"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//StopMethod/poweroff"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="Infrastructure.ecore#//RestartMethod"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//RestartMethod/graceful"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//RestartMethod/warm"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//RestartMethod/cold"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="Infrastructure.ecore#//Allocation"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//Allocation/dynamic"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//Allocation/static"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="Infrastructure.ecore#//StorageStatus"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//StorageStatus/online"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//StorageStatus/offline"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//StorageStatus/error"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="Infrastructure.ecore#//StorageLinkStatus"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//StorageLinkStatus/active"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//StorageLinkStatus/inactive"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//StorageLinkStatus/error"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="Infrastructure.ecore#//SaveMethod"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//SaveMethod/hot"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Infrastructure.ecore#//SaveMethod/deferred"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genDataTypes>
+      <ecoreDataType href="Infrastructure.ecore#//Vlan"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="Infrastructure.ecore#//Token"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="Infrastructure.ecore#//IpAddress"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="Infrastructure.ecore#//Core"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="Infrastructure.ecore#//GHz"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="Infrastructure.ecore#//GiB"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="Infrastructure.ecore#//IpAddressRange"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="Infrastructure.ecore#//Mac"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="Infrastructure.ecore#//Share"/>
+    </genDataTypes>
+    <genClasses>
+      <ecoreClass href="Infrastructure.ecore#//Network"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Network/occiNetworkVlan"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Network/occiNetworkLabel"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Network/occiNetworkState"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Network/occiNetworkStateMessage"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="Infrastructure.ecore#//Network/up"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="Infrastructure.ecore#//Network/down"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Infrastructure.ecore#//Compute"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Compute/occiComputeArchitecture"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Compute/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Compute/occiComputeHostname"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Compute/occiComputeShare"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Compute/occiComputeSpeed"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Compute/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Compute/occiComputeState"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Compute/occiComputeStateMessage"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="Infrastructure.ecore#//Compute/start"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="Infrastructure.ecore#//Compute/stop"/>
+        <genParameters>
+          <ecoreParameter href="Infrastructure.ecore#//Compute/stop/method"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="Infrastructure.ecore#//Compute/restart"/>
+        <genParameters>
+          <ecoreParameter href="Infrastructure.ecore#//Compute/restart/method"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="Infrastructure.ecore#//Compute/suspend"/>
+        <genParameters>
+          <ecoreParameter href="Infrastructure.ecore#//Compute/suspend/method"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="Infrastructure.ecore#//Compute/save"/>
+        <genParameters>
+          <ecoreParameter href="Infrastructure.ecore#//Compute/save/method"/>
+        </genParameters>
+        <genParameters>
+          <ecoreParameter href="Infrastructure.ecore#//Compute/save/name"/>
+        </genParameters>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Infrastructure.ecore#//Storage"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Storage/occiStorageSize"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Storage/occiStorageState"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Storage/occiStorageStateMessage"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="Infrastructure.ecore#//Storage/online"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="Infrastructure.ecore#//Storage/offline"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Infrastructure.ecore#//Storagelink"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Storagelink/occiStoragelinkDeviceid"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Storagelink/occiStoragelinkMountpoint"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Storagelink/occiStoragelinkState"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Storagelink/occiStoragelinkStateMessage"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Infrastructure.ecore#//Networkinterface"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Networkinterface/occiNetworkinterfaceInterface"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Networkinterface/occiNetworkinterfaceMac"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Networkinterface/occiNetworkinterfaceState"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Networkinterface/occiNetworkinterfaceStateMessage"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Infrastructure.ecore#//Ipnetwork"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Ipnetwork/occiNetworkAddress"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Ipnetwork/occiNetworkGateway"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Ipnetwork/occiNetworkAllocation"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Infrastructure.ecore#//Ipnetworkinterface"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Ipnetworkinterface/occiNetworkinterfaceAddress"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Ipnetworkinterface/occiNetworkinterfaceGateway"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Ipnetworkinterface/occiNetworkinterfaceAllocation"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Infrastructure.ecore#//Os_tpl"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Infrastructure.ecore#//Resource_tpl"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Infrastructure.ecore#//Ssh_key"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//Ssh_key/occiCredentialsSshPublickey"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Infrastructure.ecore#//User_data"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Infrastructure.ecore#//User_data/occiComputeUserdata"/>
+      </genFeatures>
+    </genClasses>
+  </genPackages>
+  <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>
+</genmodel:GenModel>

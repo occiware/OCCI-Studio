@@ -1,0 +1,137 @@
+/**
+ * Copyright (c) 2015-2017 Obeo, Inria
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 	
+ * Contributors:
+ * - William Piers <william.piers@obeo.fr>
+ * - Philippe Merle <philippe.merle@inria.fr>
+ * - Faiez Zalila <faiez.zalila@inria.fr>
+ */
+package org.eclipse.cmf.occi.infrastructure;
+
+import java.util.Map;
+
+import org.eclipse.cmf.occi.core.MixinBase;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Ipnetworkinterface</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface#getOcciNetworkinterfaceAddress <em>Occi Networkinterface Address</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface#getOcciNetworkinterfaceGateway <em>Occi Networkinterface Gateway</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface#getOcciNetworkinterfaceAllocation <em>Occi Networkinterface Allocation</em>}</li>
+ * </ul>
+ *
+ * @see org.eclipse.cmf.occi.infrastructure.InfrastructurePackage#getIpnetworkinterface()
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='IPAdressesMustBeUnique'"
+ * @generated
+ */
+public interface Ipnetworkinterface extends MixinBase {
+	/**
+	 * Returns the value of the '<em><b>Occi Networkinterface Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7) of the link
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Occi Networkinterface Address</em>' attribute.
+	 * @see #setOcciNetworkinterfaceAddress(String)
+	 * @see org.eclipse.cmf.occi.infrastructure.InfrastructurePackage#getIpnetworkinterface_OcciNetworkinterfaceAddress()
+	 * @model dataType="org.eclipse.cmf.occi.infrastructure.IpAddress" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/infrastructure/ecore!Ipnetworkinterface!occiNetworkinterfaceAddress'"
+	 * @generated
+	 */
+	String getOcciNetworkinterfaceAddress();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface#getOcciNetworkinterfaceAddress <em>Occi Networkinterface Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Occi Networkinterface Address</em>' attribute.
+	 * @see #getOcciNetworkinterfaceAddress()
+	 * @generated
+	 */
+	void setOcciNetworkinterfaceAddress(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Occi Networkinterface Gateway</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7)
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Occi Networkinterface Gateway</em>' attribute.
+	 * @see #setOcciNetworkinterfaceGateway(String)
+	 * @see org.eclipse.cmf.occi.infrastructure.InfrastructurePackage#getIpnetworkinterface_OcciNetworkinterfaceGateway()
+	 * @model dataType="org.eclipse.cmf.occi.infrastructure.IpAddress"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/infrastructure/ecore!Ipnetworkinterface!occiNetworkinterfaceGateway'"
+	 * @generated
+	 */
+	String getOcciNetworkinterfaceGateway();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface#getOcciNetworkinterfaceGateway <em>Occi Networkinterface Gateway</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Occi Networkinterface Gateway</em>' attribute.
+	 * @see #getOcciNetworkinterfaceGateway()
+	 * @generated
+	 */
+	void setOcciNetworkinterfaceGateway(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Occi Networkinterface Allocation</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.eclipse.cmf.occi.infrastructure.Allocation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Address mechanism: dynamic e.g., uses the dynamic host configuration protocol, static e.g., uses user supplied static network configurations
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Occi Networkinterface Allocation</em>' attribute.
+	 * @see org.eclipse.cmf.occi.infrastructure.Allocation
+	 * @see #setOcciNetworkinterfaceAllocation(Allocation)
+	 * @see org.eclipse.cmf.occi.infrastructure.InfrastructurePackage#getIpnetworkinterface_OcciNetworkinterfaceAllocation()
+	 * @model required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/infrastructure/ecore!Ipnetworkinterface!occiNetworkinterfaceAllocation'"
+	 * @generated
+	 */
+	Allocation getOcciNetworkinterfaceAllocation();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface#getOcciNetworkinterfaceAllocation <em>Occi Networkinterface Allocation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Occi Networkinterface Allocation</em>' attribute.
+	 * @see org.eclipse.cmf.occi.infrastructure.Allocation
+	 * @see #getOcciNetworkinterfaceAllocation()
+	 * @generated
+	 */
+	void setOcciNetworkinterfaceAllocation(Allocation value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n *\n * inv appliesConstraint:\n *   let\n *     severity : Integer[1] = \'Ipnetworkinterface::appliesConstraint\'.getSeverity()\n *   in\n *     if severity <= 0\n *     then true\n *     else\n *       let\n *         result : occi::Boolean[1] = self.entity.oclIsKindOf(Networkinterface)\n *       in\n *         \'Ipnetworkinterface::appliesConstraint\'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)\n *     endif\n \052/\nfinal /*@NonInvalid\052/ <%org.eclipse.ocl.pivot.evaluation.Executor%> executor = <%org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal%>.getExecutor(this);\nfinal /*@NonInvalid\052/ <%org.eclipse.ocl.pivot.ids.IdResolver%> idResolver = executor.getIdResolver();\nfinal /*@NonInvalid\052/ <%org.eclipse.ocl.pivot.values.IntegerValue%> severity_0 = <%org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation%>.INSTANCE.evaluate(executor, <%org.eclipse.cmf.occi.infrastructure.InfrastructureTables%>.STR_Ipnetworkinterface_c_c_appliesConstraint);\nfinal /*@NonInvalid\052/ boolean le = <%org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation%>.INSTANCE.evaluate(executor, severity_0, <%org.eclipse.cmf.occi.infrastructure.InfrastructureTables%>.INT_0).booleanValue();\n/*@NonInvalid\052/ boolean symbol_0;\nif (le) {\n\tsymbol_0 = <%org.eclipse.ocl.pivot.utilities.ValueUtil%>.TRUE_VALUE;\n}\nelse {\n\tfinal /*@NonInvalid\052/ <%org.eclipse.ocl.pivot.Class%> TYP_infrastructure_c_c_Networkinterface = idResolver.getClass(<%org.eclipse.cmf.occi.infrastructure.InfrastructureTables%>.CLSSid_Networkinterface, null);\n\tfinal /*@NonInvalid\052/ <%org.eclipse.cmf.occi.core.Entity%> entity = this.getEntity();\n\tfinal /*@NonInvalid\052/ boolean result = <%org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsKindOfOperation%>.INSTANCE.evaluate(executor, entity, TYP_infrastructure_c_c_Networkinterface).booleanValue();\n\tfinal /*@NonInvalid\052/ boolean logDiagnostic = <%org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation%>.INSTANCE.evaluate(executor, <%org.eclipse.ocl.pivot.ids.TypeId%>.BOOLEAN, <%org.eclipse.cmf.occi.infrastructure.InfrastructureTables%>.STR_Ipnetworkinterface_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, <%org.eclipse.cmf.occi.infrastructure.InfrastructureTables%>.INT_0).booleanValue();\n\tsymbol_0 = logDiagnostic;\n}\nreturn Boolean.TRUE == symbol_0;'"
+	 * @generated
+	 */
+	boolean appliesConstraint(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n *\n * inv IPAdressesMustBeUnique:\n *   let\n *     severity : Integer[1] = \'Ipnetworkinterface::IPAdressesMustBeUnique\'.getSeverity()\n *   in\n *     if severity <= 0\n *     then true\n *     else\n *       let\n *         result : occi::Boolean[1] = Ipnetworkinterface.allInstances()\n *         ->isUnique(occiNetworkinterfaceAddress)\n *       in\n *         \'Ipnetworkinterface::IPAdressesMustBeUnique\'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)\n *     endif\n \052/\nfinal /*@NonInvalid\052/ <%org.eclipse.ocl.pivot.evaluation.Executor%> executor = <%org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal%>.getExecutor(this);\nfinal /*@NonInvalid\052/ <%org.eclipse.ocl.pivot.ids.IdResolver%> idResolver = executor.getIdResolver();\nfinal /*@NonInvalid\052/ <%org.eclipse.ocl.pivot.values.IntegerValue%> severity_0 = <%org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation%>.INSTANCE.evaluate(executor, <%org.eclipse.cmf.occi.infrastructure.InfrastructureTables%>.STR_Ipnetworkinterface_c_c_IPAdressesMustBeUnique);\nfinal /*@NonInvalid\052/ boolean le = <%org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation%>.INSTANCE.evaluate(executor, severity_0, <%org.eclipse.cmf.occi.infrastructure.InfrastructureTables%>.INT_0).booleanValue();\n/*@NonInvalid\052/ boolean symbol_0;\nif (le) {\n\tsymbol_0 = <%org.eclipse.ocl.pivot.utilities.ValueUtil%>.TRUE_VALUE;\n}\nelse {\n\t/*@Caught\052/ /*@NonNull\052/ <%java.lang.Object%> CAUGHT_result;\n\ttry {\n\t\tfinal /*@NonInvalid\052/ <%org.eclipse.ocl.pivot.Class%> TYP_infrastructure_c_c_Ipnetworkinterface = idResolver.getClass(<%org.eclipse.cmf.occi.infrastructure.InfrastructureTables%>.CLSSid_Ipnetworkinterface, null);\n\t\tfinal /*@NonInvalid\052/ <%org.eclipse.ocl.pivot.values.SetValue%> allInstances = <%org.eclipse.ocl.pivot.library.classifier.ClassifierAllInstancesOperation%>.INSTANCE.evaluate(executor, <%org.eclipse.cmf.occi.infrastructure.InfrastructureTables%>.SET_CLSSid_Ipnetworkinterface, TYP_infrastructure_c_c_Ipnetworkinterface);\n\t\t/*@Thrown\052/ <%org.eclipse.ocl.pivot.values.SetValue%>.Accumulator accumulator = <%org.eclipse.ocl.pivot.utilities.ValueUtil%>.createSetAccumulatorValue(<%org.eclipse.cmf.occi.infrastructure.InfrastructureTables%>.SET_CLSSid_Ipnetworkinterface);\n\t\t/*@NonNull\052/ <%java.util.Iterator%><<%java.lang.Object%>> ITERATOR__1 = allInstances.iterator();\n\t\t/*@Thrown\052/ boolean result;\n\t\twhile (true) {\n\t\t\tif (!ITERATOR__1.hasNext()) {\n\t\t\t\tresult = <%org.eclipse.ocl.pivot.utilities.ValueUtil%>.TRUE_VALUE;\n\t\t\t\tbreak;\n\t\t\t}\n\t\t\t/*@NonInvalid\052/ <%org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface%> _1 = (<%org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface%>)ITERATOR__1.next();\n\t\t\t/**\n\t\t\t * occiNetworkinterfaceAddress\n\t\t\t \052/\n\t\t\tfinal /*@NonInvalid\052/ <%java.lang.String%> occiNetworkinterfaceAddress = _1.getOcciNetworkinterfaceAddress();\n\t\t\t//\n\t\t\tif (accumulator.includes(occiNetworkinterfaceAddress) == <%org.eclipse.ocl.pivot.utilities.ValueUtil%>.TRUE_VALUE) {\n\t\t\t\tresult = <%org.eclipse.ocl.pivot.utilities.ValueUtil%>.FALSE_VALUE;\t\t\t// Abort after second find\n\t\t\t\tbreak;\n\t\t\t}\n\t\t\telse {\n\t\t\t\taccumulator.add(occiNetworkinterfaceAddress);\n\t\t\t}\n\t\t}\n\t\tCAUGHT_result = result;\n\t}\n\tcatch (<%java.lang.Exception%> e) {\n\t\tCAUGHT_result = <%org.eclipse.ocl.pivot.utilities.ValueUtil%>.createInvalidValue(e);\n\t}\n\tfinal /*@NonInvalid\052/ boolean logDiagnostic = <%org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation%>.INSTANCE.evaluate(executor, <%org.eclipse.ocl.pivot.ids.TypeId%>.BOOLEAN, <%org.eclipse.cmf.occi.infrastructure.InfrastructureTables%>.STR_Ipnetworkinterface_c_c_IPAdressesMustBeUnique, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, <%org.eclipse.cmf.occi.infrastructure.InfrastructureTables%>.INT_0).booleanValue();\n\tsymbol_0 = logDiagnostic;\n}\nreturn Boolean.TRUE == symbol_0;'"
+	 * @generated
+	 */
+	boolean IPAdressesMustBeUnique(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+} // Ipnetworkinterface
