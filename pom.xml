@@ -57,6 +57,14 @@
     <module>plugins/org.eclipse.cmf.occi.monitoring.editor</module>
     <module>plugins/org.eclipse.cmf.occi.monitoring.tests</module>
     <module>plugins/org.eclipse.cmf.occi.monitoring.connector.dummy</module>        
+    
+    <!-- OCCI platform extension -->
+    <module>plugins/org.eclipse.cmf.occi.platform</module>
+    <module>plugins/org.eclipse.cmf.occi.platform.edit</module>
+    <module>plugins/org.eclipse.cmf.occi.platform.editor</module>
+    <module>plugins/org.eclipse.cmf.occi.platform.tests</module>
+    <module>plugins/org.eclipse.cmf.occi.platform.connector.dummy</module>        
+    
     <!-- Releng -->
     <module>features/org.eclipse.cmf.occi</module>
   </modules>

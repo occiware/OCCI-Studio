@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2015-2017 Obeo, Inria&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#x9;&#xA;Contributors:&#xA;- William Piers &lt;william.piers@obeo.fr>&#xA;- Philippe Merle &lt;philippe.merle@inria.fr>&#xA;- Faiez Zalila &lt;faiez.zalila@inria.fr>" modelDirectory="/org.eclipse.cmf.occi.platform/src-gen" editDirectory="/org.eclipse.cmf.occi.platform.edit/src-gen" editorDirectory="/org.eclipse.cmf.occi.platform.editor/src-gen" modelPluginID="org.eclipse.cmf.occi.platform" modelName="Platform" testsDirectory="/org.eclipse.cmf.occi.platform.tests/src" complianceLevel="8.0" copyrightFields="false" editPluginID="org.eclipse.cmf.occi.platform.edit" editorPluginID="org.eclipse.cmf.occi.platform.editor" testsPluginID="org.eclipse.cmf.occi.platform.tests" operationReflection="true">
+  <genAnnotations source="http://www.eclipse.org/OCL/GenModel">
+    <details key="Use Delegates" value="false"/>
+  </genAnnotations>
+  <foreignModel>Platform.ecore</foreignModel>
+  <genPackages prefix="Platform" basePackage="org.eclipse.cmf.occi" disposableProviderFactory="true">
+    <ecorePackage href="Platform.ecore#/"/>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="Platform.ecore#//Status"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Platform.ecore#//Status/active"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Platform.ecore#//Status/inactive"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Platform.ecore#//Status/error"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genDataTypes>
+      <ecoreDataType href="Platform.ecore#//URL"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="Platform.ecore#//URI"/>
+    </genDataTypes>
+    <genClasses>
+      <ecoreClass href="Platform.ecore#//Application"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Platform.ecore#//Application/occiAppName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Platform.ecore#//Application/occiAppContext"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Platform.ecore#//Application/occiAppUrl"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Platform.ecore#//Application/occiAppState"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Platform.ecore#//Application/occiAppStateMessage"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="Platform.ecore#//Application/start"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="Platform.ecore#//Application/stop"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Platform.ecore#//Component"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Platform.ecore#//Component/occiComponentState"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Platform.ecore#//Component/occiComponentStateMessage"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="Platform.ecore#//Component/start"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="Platform.ecore#//Component/stop"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Platform.ecore#//Componentlink"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Platform.ecore#//App_tpl"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Platform.ecore#//Restpl"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Platform.ecore#//Database"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Platform.ecore#//Database/occiDatabaseVersion"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Platform.ecore#//Databaselink"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Platform.ecore#//Databaselink/occiDatabaseUri"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Platform.ecore#//Databaselink/occiDatabaseUsername"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Platform.ecore#//Databaselink/occiDatabaseToken"/>
+      </genFeatures>
+    </genClasses>
+  </genPackages>
+  <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>
+</genmodel:GenModel>

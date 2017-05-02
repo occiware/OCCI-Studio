@@ -366,6 +366,38 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+   <plugin
+         id="org.eclipse.cmf.occi.platform"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
+         id="org.eclipse.cmf.occi.platform.connector.dummy"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
+         id="org.eclipse.cmf.occi.platform.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
+         id="org.eclipse.cmf.occi.platform.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
+         id="org.eclipse.cmf.occi.platform.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+
 <!-- TODO: add following plugins.
    <plugin
          id="org.eclipse.cmf.occi.gen.alloy"
