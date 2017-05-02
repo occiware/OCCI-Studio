@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2015-2017 Obeo, Inria&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#x9;&#xA;Contributors:&#xA;- William Piers &lt;william.piers@obeo.fr>&#xA;- Philippe Merle &lt;philippe.merle@inria.fr>&#xA;- Faiez Zalila &lt;faiez.zalila@inria.fr>" modelDirectory="/org.eclipse.cmf.occi.sla/src-gen" editDirectory="/org.eclipse.cmf.occi.sla.edit/src-gen" editorDirectory="/org.eclipse.cmf.occi.sla.editor/src-gen" modelPluginID="org.eclipse.cmf.occi.sla" modelName="Sla" testsDirectory="/org.eclipse.cmf.occi.sla.tests/src" complianceLevel="8.0" copyrightFields="false" editPluginID="org.eclipse.cmf.occi.sla.edit" editorPluginID="org.eclipse.cmf.occi.sla.editor" testsPluginID="org.eclipse.cmf.occi.sla.tests" operationReflection="true">
+  <genAnnotations source="http://www.eclipse.org/OCL/GenModel">
+    <details key="Use Delegates" value="false"/>
+  </genAnnotations>
+  <foreignModel>sla.ecore</foreignModel>
+  <genPackages prefix="Sla" basePackage="org.eclipse.cmf.occi" disposableProviderFactory="true">
+    <ecorePackage href="sla.ecore#/"/>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="sla.ecore#//AgreementStatus"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="sla.ecore#//AgreementStatus/Pending"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="sla.ecore#//AgreementStatus/Accepted"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="sla.ecore#//AgreementStatus/Rejected"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="sla.ecore#//AgreementStatus/Suspended"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="sla.ecore#//AgreementStatus/Terminated"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="sla.ecore#//AgreementTermType"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="sla.ecore#//AgreementTermType/SERVICE"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="sla.ecore#//AgreementTermType/SLO"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="sla.ecore#//AgreementTermStatus"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="sla.ecore#//AgreementTermStatus/Undefined"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="sla.ecore#//AgreementTermStatus/Fulfilled"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="sla.ecore#//AgreementTermStatus/Violated"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genDataTypes>
+      <ecoreDataType href="sla.ecore#//DateTime"/>
+    </genDataTypes>
+    <genClasses>
+      <ecoreClass href="sla.ecore#//Agreement"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="sla.ecore#//Agreement/occiAgreementState"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="sla.ecore#//Agreement/occiAgreementAgreedAt"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="sla.ecore#//Agreement/occiAgreementEffectiveFrom"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="sla.ecore#//Agreement/occiAgreementEffectiveUntil"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="sla.ecore#//Agreement/accept"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="sla.ecore#//Agreement/reject"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="sla.ecore#//Agreement/suspend"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="sla.ecore#//Agreement/resume"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="sla.ecore#//Agreement/terminate"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="sla.ecore#//Agreement_link"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="sla.ecore#//Agreement_tpl"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="sla.ecore#//Agreement_term"/>
+    </genClasses>
+  </genPackages>
+  <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>
+</genmodel:GenModel>

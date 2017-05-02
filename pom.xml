@@ -49,14 +49,7 @@
     <module>plugins/org.eclipse.cmf.occi.crtp.edit</module>
     <module>plugins/org.eclipse.cmf.occi.crtp.editor</module>
     <module>plugins/org.eclipse.cmf.occi.crtp.tests</module>
-    <module>plugins/org.eclipse.cmf.occi.crtp.connector.dummy</module>    
-    
-    <!-- OCCI monitoring extension -->
-    <module>plugins/org.eclipse.cmf.occi.monitoring</module>
-    <module>plugins/org.eclipse.cmf.occi.monitoring.edit</module>
-    <module>plugins/org.eclipse.cmf.occi.monitoring.editor</module>
-    <module>plugins/org.eclipse.cmf.occi.monitoring.tests</module>
-    <module>plugins/org.eclipse.cmf.occi.monitoring.connector.dummy</module>        
+    <module>plugins/org.eclipse.cmf.occi.crtp.connector.dummy</module>        
     
     <!-- OCCI platform extension -->
     <module>plugins/org.eclipse.cmf.occi.platform</module>
@@ -64,7 +57,21 @@
     <module>plugins/org.eclipse.cmf.occi.platform.editor</module>
     <module>plugins/org.eclipse.cmf.occi.platform.tests</module>
     <module>plugins/org.eclipse.cmf.occi.platform.connector.dummy</module>        
+
+    <!-- OCCI sla extension -->
+    <module>plugins/org.eclipse.cmf.occi.sla</module>
+    <module>plugins/org.eclipse.cmf.occi.sla.edit</module>
+    <module>plugins/org.eclipse.cmf.occi.sla.editor</module>
+    <module>plugins/org.eclipse.cmf.occi.sla.tests</module>
+    <module>plugins/org.eclipse.cmf.occi.sla.connector.dummy</module>      
     
+    <!-- OCCI monitoring extension -->
+    <module>plugins/org.eclipse.cmf.occi.monitoring</module>
+    <module>plugins/org.eclipse.cmf.occi.monitoring.edit</module>
+    <module>plugins/org.eclipse.cmf.occi.monitoring.editor</module>
+    <module>plugins/org.eclipse.cmf.occi.monitoring.tests</module>
+    <module>plugins/org.eclipse.cmf.occi.monitoring.connector.dummy</module>    
+             
     <!-- Releng -->
     <module>features/org.eclipse.cmf.occi</module>
   </modules>

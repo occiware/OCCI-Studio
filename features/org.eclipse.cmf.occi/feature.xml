@@ -396,7 +396,36 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
+   <plugin
+         id="org.eclipse.cmf.occi.sla"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
+         id="org.eclipse.cmf.occi.sla.connector.dummy"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
+         id="org.eclipse.cmf.occi.sla.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
+         id="org.eclipse.cmf.occi.sla.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
+         id="org.eclipse.cmf.occi.sla.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
 <!-- TODO: add following plugins.
    <plugin
@@ -506,13 +535,6 @@ litigation.
 
    <plugin
          id="org.eclipse.cmf.occi.platform.editor"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.sla"
          download-size="0"
          install-size="0"
          version="0.0.0"

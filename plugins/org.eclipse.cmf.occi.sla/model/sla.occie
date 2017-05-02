@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" name="sla" scheme="http://schemas.ogf.org/occi/sla#" description="OCCI Service Level Agreements API allows for the creation and management of resources related with the realization of agreements between an OCCI-enabled cloud service provider and potential consumers of the provider's resources.">
+  <import href="http://schemas.ogf.org/occi/core#/"/>
+  <kinds name="agreement" scheme="http://schemas.ogf.org/occi/sla#" title="A Service Level Agreement">
+    <attributes name="occi.agreement.state" mutable="false" required="true" description="Current state of the instance" type="//@types.1"/>
+    <attributes name="occi.agreement.agreedAt" mutable="false" description="The point in time when the agreement was made" type="//@types.0"/>
+    <attributes name="occi.agreement.effectiveFrom" description="The point in time when the agreement’s effectiveness begins" type="//@types.0"/>
+    <attributes name="occi.agreement.effectiveUntil" description="The point in time when the agreement’s effectiveness ends" type="//@types.0"/>
+    <actions name="Accept" scheme="http://schemas.ogf.org/occi/sla/agreement/action#"/>
+    <actions name="Reject" scheme="http://schemas.ogf.org/occi/sla/agreement/action#"/>
+    <actions name="Suspend" scheme="http://schemas.ogf.org/occi/sla/agreement/action#"/>
+    <actions name="Resume" scheme="http://schemas.ogf.org/occi/sla/agreement/action#"/>
+    <actions name="Terminate" scheme="http://schemas.ogf.org/occi/sla/agreement/action#"/>
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
+  </kinds>
+  <kinds name="agreement_link" scheme="http://schemas.ogf.org/occi/sla#" title="Link between a SLA and its associated resource">
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
+  </kinds>
+  <mixins name="agreement_tpl" scheme="http://schemas.ogf.org/occi/sla#" title="Mixin defining a SLA template collection" applies="//@kinds[term='agreement']"/>
+  <mixins name="agreement_term" scheme="http://schemas.ogf.org/occi/sla#" title="Mixin defining a Term collection for an agreement" applies="//@kinds[term='agreement']"/>
+  <types xsi:type="occi:StringType" name="DateTime" documentation="Data type for ISO8601 date time" pattern="^(\d{4}((-)?(0[1-9]|1[0-2])((-)?(0[1-9]|[1-2][0-9]|3[0-1])(T(24:00(:00(\.[0]+)?)?|(([0-1][0-9]|2[0-3])(:)[0-5][0-9])((:)[0-5][0-9](\.[\d]+)?)?)((\+|-)(14:00|(0[0-9]|1[0-3])(:)[0-5][0-9])|Z))?)?)?)$"/>
+  <types xsi:type="occi:EnumerationType" name="AgreementStatus" documentation="Enumeration of Agreement status">
+    <literals name="Pending"/>
+    <literals name="Accepted"/>
+    <literals name="Rejected"/>
+    <literals name="Suspended"/>
+    <literals name="Terminated"/>
+  </types>
+  <types xsi:type="occi:EnumerationType" name="AgreementTermType" documentation="Enumeration of AgreementTerm types">
+    <literals name="SERVICE"/>
+    <literals name="SLO"/>
+  </types>
+  <types xsi:type="occi:EnumerationType" name="AgreementTermStatus" documentation="Enumeration of AgreementTerm status">
+    <literals name="Undefined"/>
+    <literals name="Fulfilled"/>
+    <literals name="Violated"/>
+  </types>
+</occi:Extension>
