@@ -213,7 +213,7 @@ public class RegenerateConnectorAction implements IObjectActionDelegate {
 		IFile manifest = PDEProject.getManifest(connectorProject);
 		String manifestContent = "Manifest-Version: 1.0\n" + "Bundle-ManifestVersion: 2\n" + "Bundle-Name: "
 				+ connectorProjectName + "\n" + "Bundle-SymbolicName: " + connectorProjectName + ";singleton:=true\n"
-				+ "Bundle-Version: 0.1.0.qualifier\n" + "Bundle-ClassPath: .\n" + "Bundle-Vendor: OCCIware\n" +
+				+ "Bundle-Version: 1.0.0.qualifier\n" + "Bundle-ClassPath: .\n" + "Bundle-Vendor: OCCIware\n" +
 				// "Bundle-Localization: plugin\n" + // FIXME generate
 				// plugin.properties
 				"Bundle-RequiredExecutionEnvironment: JavaSE-1.8\n" + "Bundle-ActivationPolicy: lazy\n"
