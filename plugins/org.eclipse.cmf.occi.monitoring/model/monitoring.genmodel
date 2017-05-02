@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2015-2017 Obeo, Inria&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#x9;&#xA;Contributors:&#xA;- William Piers &lt;william.piers@obeo.fr>&#xA;- Philippe Merle &lt;philippe.merle@inria.fr>&#xA;- Faiez Zalila &lt;faiez.zalila@inria.fr>" modelDirectory="/org.eclipse.cmf.occi.monitoring/src-gen" editDirectory="/org.eclipse.cmf.occi.monitoring.edit/src-gen" editorDirectory="/org.eclipse.cmf.occi.monitoring.editor/src-gen" modelPluginID="org.eclipse.cmf.occi.monitoring" modelName="Monitoring" testsDirectory="/org.eclipse.cmf.occi.monitoring.tests/src" complianceLevel="8.0" copyrightFields="false" editPluginID="org.eclipse.cmf.occi.monitoring.edit" editorPluginID="org.eclipse.cmf.occi.monitoring.editor" testsPluginID="org.eclipse.cmf.occi.monitoring.tests" operationReflection="true">
+  <genAnnotations source="http://www.eclipse.org/OCL/GenModel">
+    <details key="Use Delegates" value="false"/>
+  </genAnnotations>
+  <foreignModel>monitoring.ecore</foreignModel>
+  <genPackages prefix="Monitoring" basePackage="org.eclipse.cmf.occi" disposableProviderFactory="true">
+    <ecorePackage href="monitoring.ecore#/"/>
+    <genDataTypes>
+      <ecoreDataType href="monitoring.ecore#//Second"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="monitoring.ecore#//DateTime"/>
+    </genDataTypes>
+    <genClasses>
+      <ecoreClass href="monitoring.ecore#//Sensor"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="monitoring.ecore#//Sensor/occiSensorTimebase"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="monitoring.ecore#//Sensor/occiSensorTimestart"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="monitoring.ecore#//Sensor/occiSensorTimestop"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="monitoring.ecore#//Sensor/occiSensorPeriod"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="monitoring.ecore#//Sensor/occiSensorGranularity"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="monitoring.ecore#//Sensor/occiSensorAccuracy"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="monitoring.ecore#//Collector"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="monitoring.ecore#//Collector/occiCollectorPeriod"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="monitoring.ecore#//Collector/occiSensorAccuracy"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="monitoring.ecore#//Collector/occiSensorGranularity"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="monitoring.ecore#//Metric"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="monitoring.ecore#//Aggregator"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="monitoring.ecore#//Publisher"/>
+    </genClasses>
+  </genPackages>
+  <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>
+</genmodel:GenModel>
