@@ -306,6 +306,36 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+   <plugin
+         id="org.eclipse.cmf.occi.crtp"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
+         id="org.eclipse.cmf.occi.crtp.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
+         id="org.eclipse.cmf.occi.crtp.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
+         id="org.eclipse.cmf.occi.crtp.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
+         id="org.eclipse.cmf.occi.crtp.connector.dummy"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 <!-- TODO: add following plugins.
    <plugin
          id="org.eclipse.cmf.occi.gen.alloy"

@@ -43,6 +43,13 @@
     <module>plugins/org.eclipse.cmf.occi.infrastructure.editor</module>
     <module>plugins/org.eclipse.cmf.occi.infrastructure.tests</module>
     <module>plugins/org.eclipse.cmf.occi.infrastructure.connector.dummy</module>
+
+    <!-- OCCI crtp extension -->
+    <module>plugins/org.eclipse.cmf.occi.crtp</module>
+    <module>plugins/org.eclipse.cmf.occi.crtp.edit</module>
+    <module>plugins/org.eclipse.cmf.occi.crtp.editor</module>
+    <module>plugins/org.eclipse.cmf.occi.crtp.tests</module>
+    <module>plugins/org.eclipse.cmf.occi.crtp.connector.dummy</module>    
     
     <!-- Releng -->
     <module>features/org.eclipse.cmf.occi</module>
