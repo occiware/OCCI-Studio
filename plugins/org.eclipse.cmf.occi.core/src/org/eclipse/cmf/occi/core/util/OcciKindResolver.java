@@ -49,7 +49,7 @@ public class OcciKindResolver
 	 {
 		 // Get the Eclass of the given entity.
 		 EClass entityEClass = entity.eClass();
-
+		 Boolean put = true;
 		 Extension extension = null;
 		 String kindTermToSearch = Occi2Ecore.convertEcoreClassName2OcciCategoryTerm(entityEClass.getName());
 
@@ -69,7 +69,7 @@ public class OcciKindResolver
 				 if(extensionURI == null) {
 					 // This is no way to resolve the kind of the given entity :-(
 					 // TODO: perhaps compute extensionURI of the ePackage of the entity's eClass.
-
+					 put= false;
 					 // Use OCCI Core resource, link or entity kind instances.
 					 extensionURI = OcciRegistry.getInstance().getExtensionURI(OcciCoreConstants.OCCI_CORE_SCHEME);
 					 if(entity instanceof org.eclipse.cmf.occi.core.Resource) {
@@ -101,6 +101,7 @@ public class OcciKindResolver
 				 extension = (Extension) extensionResource.getContents().get(0);
 
 				 // Map the metamodelURI to the found extension for optimizing next searches.
+				 if(put)
 				 namespace2extension.put(metamodelURI, extension);
 			 }
 
