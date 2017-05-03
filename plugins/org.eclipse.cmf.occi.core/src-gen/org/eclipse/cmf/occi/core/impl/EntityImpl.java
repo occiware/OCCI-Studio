@@ -114,7 +114,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * Initialize the logger.
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(EntityImpl.class);
-	
+	private static String PREFIX = "urn:uuid:";
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -213,7 +213,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	protected EntityImpl() {
 		super();
 		// Generate a new ID for this entity.
-		setId(UUID.randomUUID().toString());
+		setId(PREFIX+UUID.randomUUID().toString());
 		// If kind is not set then
 		if (kind == null) {
 			try {
