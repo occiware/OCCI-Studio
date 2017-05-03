@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue May 02 11:32:03 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.monitoring/model/monitoring.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed May 03 17:20:59 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.monitoring/model/monitoring.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.monitoring.connector.dummy;
 
@@ -30,33 +30,26 @@ public class CollectorConnector extends org.eclipse.cmf.occi.monitoring.impl.Col
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(CollectorConnector.class);
 
+	// Start of user code Collectorconnector_constructor
 	/**
 	 * Constructs a collector connector.
 	 */
 	CollectorConnector()
 	{
 		LOGGER.debug("Constructor called on " + this);
-		// Start of user code Collectorconnector constructor
 		// TODO: Implement this constructor.
-		// End of user code
 	}
+	// End of user code
 
 	//
 	// OCCI CRUD callback operations.
 	//
-
-	/**
-	 * Called when this Collector instance is completely created.
-	 */
-	@Override
-	public void occiCreate()
-	{
-		LOGGER.debug("occiCreate() called on " + this);
-		// Start of user code CollectorocciCreate
+	
+	// Start of user code CollectorocciCreate
 		// TODO: Implement this callback or remove this method.
 		// End of user code
-	}
 
+	// Start of user code Collector_occiRetrieve_method
 	/**
 	 * Called when this Collector instance must be retrieved.
 	 */
@@ -64,11 +57,11 @@ public class CollectorConnector extends org.eclipse.cmf.occi.monitoring.impl.Col
 	public void occiRetrieve()
 	{
 		LOGGER.debug("occiRetrieve() called on " + this);
-		// Start of user code CollectorocciRetrieve
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code Collector_occiUpdate_method
 	/**
 	 * Called when this Collector instance is completely updated.
 	 */
@@ -76,11 +69,11 @@ public class CollectorConnector extends org.eclipse.cmf.occi.monitoring.impl.Col
 	public void occiUpdate()
 	{
 		LOGGER.debug("occiUpdate() called on " + this);
-		// Start of user code CollectorocciUpdate
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code CollectorocciDelete_method
 	/**
 	 * Called when this Collector instance will be deleted.
 	 */
@@ -88,10 +81,9 @@ public class CollectorConnector extends org.eclipse.cmf.occi.monitoring.impl.Col
 	public void occiDelete()
 	{
 		LOGGER.debug("occiDelete() called on " + this);
-		// Start of user code CollectorocciDelete
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
 	//
 	// Collector actions.
