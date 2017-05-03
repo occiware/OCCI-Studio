@@ -125,7 +125,7 @@ public class NewConnectorWizard extends BasicNewProjectResourceWizard {
 		@Override
 		protected boolean validatePage() {
 			// TODO add error messages
-			return super.validatePage() && refExtensionViewer.getCheckedElements().length == 1;
+			return super.validatePage() && refExtensionViewer.getCheckedElements().length == 1 && newProjectPage.getProjectName().matches("([a-z\\_]{1}[a-z0-9\\_]*(\\.[a-z\\_]{1}[a-z0-9\\_]*)*)");
 		}
 	}
 
