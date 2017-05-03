@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue May 02 12:57:08 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.platform/model/Platform.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed May 03 17:22:54 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.platform/model/Platform.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.platform.connector.dummy;
 
@@ -31,33 +31,26 @@ public class ApplicationConnector extends org.eclipse.cmf.occi.platform.impl.App
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(ApplicationConnector.class);
 
+	// Start of user code Applicationconnector_constructor
 	/**
 	 * Constructs a application connector.
 	 */
 	ApplicationConnector()
 	{
 		LOGGER.debug("Constructor called on " + this);
-		// Start of user code Applicationconnector constructor
 		// TODO: Implement this constructor.
-		// End of user code
 	}
+	// End of user code
 
 	//
 	// OCCI CRUD callback operations.
 	//
-
-	/**
-	 * Called when this Application instance is completely created.
-	 */
-	@Override
-	public void occiCreate()
-	{
-		LOGGER.debug("occiCreate() called on " + this);
-		// Start of user code ApplicationocciCreate
+	
+	// Start of user code ApplicationocciCreate
 		// TODO: Implement this callback or remove this method.
 		// End of user code
-	}
 
+	// Start of user code Application_occiRetrieve_method
 	/**
 	 * Called when this Application instance must be retrieved.
 	 */
@@ -65,11 +58,11 @@ public class ApplicationConnector extends org.eclipse.cmf.occi.platform.impl.App
 	public void occiRetrieve()
 	{
 		LOGGER.debug("occiRetrieve() called on " + this);
-		// Start of user code ApplicationocciRetrieve
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code Application_occiUpdate_method
 	/**
 	 * Called when this Application instance is completely updated.
 	 */
@@ -77,11 +70,11 @@ public class ApplicationConnector extends org.eclipse.cmf.occi.platform.impl.App
 	public void occiUpdate()
 	{
 		LOGGER.debug("occiUpdate() called on " + this);
-		// Start of user code ApplicationocciUpdate
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code ApplicationocciDelete_method
 	/**
 	 * Called when this Application instance will be deleted.
 	 */
@@ -89,15 +82,15 @@ public class ApplicationConnector extends org.eclipse.cmf.occi.platform.impl.App
 	public void occiDelete()
 	{
 		LOGGER.debug("occiDelete() called on " + this);
-		// Start of user code ApplicationocciDelete
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
 	//
 	// Application actions.
 	//
 
+	// Start of user code Application_Kind_Start_action
 	/**
 	 * Implement OCCI action:
      * - scheme: http://schemas.ogf.org/occi/platform/application/action#
@@ -122,7 +115,9 @@ public class ApplicationConnector extends org.eclipse.cmf.occi.platform.impl.App
 			break;
 		}
 	}
+	// End of user code
 
+	// Start of user code Application_Kind_Stop_action
 	/**
 	 * Implement OCCI action:
      * - scheme: http://schemas.ogf.org/occi/platform/application/action#
@@ -147,5 +142,6 @@ public class ApplicationConnector extends org.eclipse.cmf.occi.platform.impl.App
 			break;
 		}
 	}
+	// End of user code
 
 }	

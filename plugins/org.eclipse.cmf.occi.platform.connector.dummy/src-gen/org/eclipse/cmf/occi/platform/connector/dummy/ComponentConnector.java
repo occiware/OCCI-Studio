@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue May 02 12:57:08 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.platform/model/Platform.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed May 03 17:22:54 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.platform/model/Platform.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.platform.connector.dummy;
 
@@ -31,33 +31,26 @@ public class ComponentConnector extends org.eclipse.cmf.occi.platform.impl.Compo
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(ComponentConnector.class);
 
+	// Start of user code Componentconnector_constructor
 	/**
 	 * Constructs a component connector.
 	 */
 	ComponentConnector()
 	{
 		LOGGER.debug("Constructor called on " + this);
-		// Start of user code Componentconnector constructor
 		// TODO: Implement this constructor.
-		// End of user code
 	}
+	// End of user code
 
 	//
 	// OCCI CRUD callback operations.
 	//
-
-	/**
-	 * Called when this Component instance is completely created.
-	 */
-	@Override
-	public void occiCreate()
-	{
-		LOGGER.debug("occiCreate() called on " + this);
-		// Start of user code ComponentocciCreate
+	
+	// Start of user code ComponentocciCreate
 		// TODO: Implement this callback or remove this method.
 		// End of user code
-	}
 
+	// Start of user code Component_occiRetrieve_method
 	/**
 	 * Called when this Component instance must be retrieved.
 	 */
@@ -65,11 +58,11 @@ public class ComponentConnector extends org.eclipse.cmf.occi.platform.impl.Compo
 	public void occiRetrieve()
 	{
 		LOGGER.debug("occiRetrieve() called on " + this);
-		// Start of user code ComponentocciRetrieve
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code Component_occiUpdate_method
 	/**
 	 * Called when this Component instance is completely updated.
 	 */
@@ -77,11 +70,11 @@ public class ComponentConnector extends org.eclipse.cmf.occi.platform.impl.Compo
 	public void occiUpdate()
 	{
 		LOGGER.debug("occiUpdate() called on " + this);
-		// Start of user code ComponentocciUpdate
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code ComponentocciDelete_method
 	/**
 	 * Called when this Component instance will be deleted.
 	 */
@@ -89,15 +82,15 @@ public class ComponentConnector extends org.eclipse.cmf.occi.platform.impl.Compo
 	public void occiDelete()
 	{
 		LOGGER.debug("occiDelete() called on " + this);
-		// Start of user code ComponentocciDelete
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
 	//
 	// Component actions.
 	//
 
+	// Start of user code Component_Kind_Start_action
 	/**
 	 * Implement OCCI action:
      * - scheme: http://schemas.ogf.org/occi/platform/component/action#
@@ -122,7 +115,9 @@ public class ComponentConnector extends org.eclipse.cmf.occi.platform.impl.Compo
 			break;
 		}
 	}
+	// End of user code
 
+	// Start of user code Component_Kind_Stop_action
 	/**
 	 * Implement OCCI action:
      * - scheme: http://schemas.ogf.org/occi/platform/component/action#
@@ -147,5 +142,6 @@ public class ComponentConnector extends org.eclipse.cmf.occi.platform.impl.Compo
 			break;
 		}
 	}
+	// End of user code
 
 }	
