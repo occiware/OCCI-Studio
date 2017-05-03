@@ -101,21 +101,22 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger([kindClassName/]Connector.class);
 
+	// [protected (kindClassName.concat('connector_constructor'))]
 	/**
 	 * Constructs a [kind.term/] connector.
 	 */
 	[kindClassName/]Connector()
 	{
 		LOGGER.debug("Constructor called on " + this);
-		// [protected (kindClassName.concat('connector constructor'))]
 		// TODO: Implement this constructor.
-		// [/protected]
 	}
+	// [/protected]
 
 	//
 	// OCCI CRUD callback operations.
 	//
-
+	
+	// [protected (kindClassName.concat('occiCreate'))]
 	/**
 	 * Called when this [kindClassName/] instance is completely created.
 	 */
@@ -123,11 +124,11 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 	public void occiCreate()
 	{
 		LOGGER.debug("occiCreate() called on " + this);
-		// [protected (kindClassName.concat('occiCreate'))]
 		// TODO: Implement this callback or remove this method.
-		// [/protected]
 	}
+	// [/protected]
 
+	// [protected (kindClassName.concat('_occiRetrieve_method'))]
 	/**
 	 * Called when this [kindClassName/] instance must be retrieved.
 	 */
@@ -135,11 +136,11 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 	public void occiRetrieve()
 	{
 		LOGGER.debug("occiRetrieve() called on " + this);
-		// [protected (kindClassName.concat('occiRetrieve'))]
 		// TODO: Implement this callback or remove this method.
-		// [/protected]
 	}
+	// [/protected]
 
+	// [protected (kindClassName.concat('_occiUpdate_method'))]
 	/**
 	 * Called when this [kindClassName/] instance is completely updated.
 	 */
@@ -147,11 +148,11 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 	public void occiUpdate()
 	{
 		LOGGER.debug("occiUpdate() called on " + this);
-		// [protected (kindClassName.concat('occiUpdate'))]
 		// TODO: Implement this callback or remove this method.
-		// [/protected]
 	}
+	// [/protected]
 
+	// [protected (kindClassName.concat('occiDelete_method'))]
 	/**
 	 * Called when this [kindClassName/] instance will be deleted.
 	 */
@@ -159,17 +160,19 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 	public void occiDelete()
 	{
 		LOGGER.debug("occiDelete() called on " + this);
-		// [protected (kindClassName.concat('occiDelete'))]
 		// TODO: Implement this callback or remove this method.
-		// [/protected]
 	}
+	// [/protected]
 
 	//
 	// [kindClassName/] actions.
 	//
 
 [for (action : Action | kind.actions)]
+	// [protected (kindClassName.concat('_Kind_').concat(action.name).concat('_action'))]
 [generateActionMethod(action, kind, extendedPackageName)/]
+		// [/protected]
+
 [/for]
 }	
 [/let]
@@ -205,12 +208,14 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 [else]
 [for (eEnumLiteral2 : EnumerationLiteral | targetLiterals)]
 		[if targetLiterals->indexOf(eEnumLiteral2)=1]
-			if(true)
-			set[getJavaAttributeName(stateAttribute).toString().toU1Case()/]([stateAttribute.type.name/].[eEnumLiteral2.name.toUpperCase()/]);
+			if(true){
+				set[getJavaAttributeName(stateAttribute).toString().toU1Case()/]([stateAttribute.type.name/].[eEnumLiteral2.name.toUpperCase()/]);
+			}
 		[else]
-			else
-			if(true)
-			set[getJavaAttributeName(stateAttribute).toString().toU1Case()/]([stateAttribute.type.name/].[eEnumLiteral2.name.toUpperCase()/]);
+			else	
+				if(true){
+					set[getJavaAttributeName(stateAttribute).toString().toU1Case()/]([stateAttribute.type.name/].[eEnumLiteral2.name.toUpperCase()/]);
+				}
 		[/if]
 [/for]		
 [/if]
@@ -224,7 +229,6 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 [/let]
 [/if]
 	}
-
 [/template]
 
 [comment the following query returns a set of states which are target of transitions containing the action "action"/]
