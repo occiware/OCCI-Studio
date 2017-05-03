@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue May 02 10:22:21 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed May 03 16:49:36 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.infrastructure.connector.dummy;
 
@@ -35,21 +35,22 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(ComputeConnector.class);
 
+	// Start of user code Computeconnector_constructor
 	/**
 	 * Constructs a compute connector.
 	 */
 	ComputeConnector()
 	{
 		LOGGER.debug("Constructor called on " + this);
-		// Start of user code Computeconnector constructor
 		// TODO: Implement this constructor.
-		// End of user code
 	}
+	// End of user code
 
 	//
 	// OCCI CRUD callback operations.
 	//
-
+	
+	// Start of user code ComputeocciCreate
 	/**
 	 * Called when this Compute instance is completely created.
 	 */
@@ -57,11 +58,11 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 	public void occiCreate()
 	{
 		LOGGER.debug("occiCreate() called on " + this);
-		// Start of user code ComputeocciCreate
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code Compute_occiRetrieve_method
 	/**
 	 * Called when this Compute instance must be retrieved.
 	 */
@@ -69,11 +70,11 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 	public void occiRetrieve()
 	{
 		LOGGER.debug("occiRetrieve() called on " + this);
-		// Start of user code ComputeocciRetrieve
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code Compute_occiUpdate_method
 	/**
 	 * Called when this Compute instance is completely updated.
 	 */
@@ -81,11 +82,11 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 	public void occiUpdate()
 	{
 		LOGGER.debug("occiUpdate() called on " + this);
-		// Start of user code ComputeocciUpdate
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code ComputeocciDelete_method
 	/**
 	 * Called when this Compute instance will be deleted.
 	 */
@@ -93,15 +94,15 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 	public void occiDelete()
 	{
 		LOGGER.debug("occiDelete() called on " + this);
-		// Start of user code ComputeocciDelete
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
 	//
 	// Compute actions.
 	//
 
+	// Start of user code Compute_Kind_Start_action
 	/**
 	 * Implement OCCI action:
      * - scheme: http://schemas.ogf.org/occi/infrastructure/compute/action#
@@ -119,29 +120,35 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 		case ComputeStatus.SUSPENDED_VALUE:
 			LOGGER.debug("Fire transition(state=suspended, action=\"start\")...");
 			// TODO Implement transition(state=suspended, action="start")
-			if(true)
-			setOcciComputeState(ComputeStatus.ERROR);
-			else
-			if(true)
-			setOcciComputeState(ComputeStatus.ACTIVE);
+			if(true){
+				setOcciComputeState(ComputeStatus.ACTIVE);
+			}
+			else	
+				if(true){
+					setOcciComputeState(ComputeStatus.ERROR);
+				}
 			break;
 
 
 		case ComputeStatus.INACTIVE_VALUE:
 			LOGGER.debug("Fire transition(state=inactive, action=\"start\")...");
 			// TODO Implement transition(state=inactive, action="start")
-			if(true)
-			setOcciComputeState(ComputeStatus.ERROR);
-			else
-			if(true)
-			setOcciComputeState(ComputeStatus.ACTIVE);
+			if(true){
+				setOcciComputeState(ComputeStatus.ACTIVE);
+			}
+			else	
+				if(true){
+					setOcciComputeState(ComputeStatus.ERROR);
+				}
 			break;
 
 		default:
 			break;
 		}
 	}
+	// End of user code
 
+	// Start of user code Compute_Kind_Stop_action
 	/**
 	 * Implement OCCI action:
      * - scheme: http://schemas.ogf.org/occi/infrastructure/compute/action#
@@ -159,18 +166,22 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 		case ComputeStatus.ACTIVE_VALUE:
 			LOGGER.debug("Fire transition(state=active, action=\"stop\")...");
 			// TODO Implement transition(state=active, action="stop")
-			if(true)
-			setOcciComputeState(ComputeStatus.ERROR);
-			else
-			if(true)
-			setOcciComputeState(ComputeStatus.INACTIVE);
+			if(true){
+				setOcciComputeState(ComputeStatus.ERROR);
+			}
+			else	
+				if(true){
+					setOcciComputeState(ComputeStatus.INACTIVE);
+				}
 			break;
 
 		default:
 			break;
 		}
 	}
+	// End of user code
 
+	// Start of user code Compute_Kind_Restart_action
 	/**
 	 * Implement OCCI action:
      * - scheme: http://schemas.ogf.org/occi/infrastructure/compute/action#
@@ -188,7 +199,9 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 			break;
 		}
 	}
+	// End of user code
 
+	// Start of user code Compute_Kind_Suspend_action
 	/**
 	 * Implement OCCI action:
      * - scheme: http://schemas.ogf.org/occi/infrastructure/compute/action#
@@ -206,18 +219,22 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 		case ComputeStatus.ACTIVE_VALUE:
 			LOGGER.debug("Fire transition(state=active, action=\"suspend\")...");
 			// TODO Implement transition(state=active, action="suspend")
-			if(true)
-			setOcciComputeState(ComputeStatus.ERROR);
-			else
-			if(true)
-			setOcciComputeState(ComputeStatus.SUSPENDED);
+			if(true){
+				setOcciComputeState(ComputeStatus.SUSPENDED);
+			}
+			else	
+				if(true){
+					setOcciComputeState(ComputeStatus.ERROR);
+				}
 			break;
 
 		default:
 			break;
 		}
 	}
+	// End of user code
 
+	// Start of user code Compute_Kind_Save_action
 	/**
 	 * Implement OCCI action:
      * - scheme: http://schemas.ogf.org/occi/infrastructure/compute/action#
@@ -235,5 +252,6 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 			break;
 		}
 	}
+	// End of user code
 
 }	

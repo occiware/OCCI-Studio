@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue May 02 10:22:21 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed May 03 16:49:36 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.infrastructure.connector.dummy;
 
@@ -31,21 +31,22 @@ public class NetworkinterfaceConnector extends org.eclipse.cmf.occi.infrastructu
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(NetworkinterfaceConnector.class);
 
+	// Start of user code Networkinterfaceconnector_constructor
 	/**
 	 * Constructs a networkinterface connector.
 	 */
 	NetworkinterfaceConnector()
 	{
 		LOGGER.debug("Constructor called on " + this);
-		// Start of user code Networkinterfaceconnector constructor
 		// TODO: Implement this constructor.
-		// End of user code
 	}
+	// End of user code
 
 	//
 	// OCCI CRUD callback operations.
 	//
-
+	
+	// Start of user code NetworkinterfaceocciCreate
 	/**
 	 * Called when this Networkinterface instance is completely created.
 	 */
@@ -53,11 +54,11 @@ public class NetworkinterfaceConnector extends org.eclipse.cmf.occi.infrastructu
 	public void occiCreate()
 	{
 		LOGGER.debug("occiCreate() called on " + this);
-		// Start of user code NetworkinterfaceocciCreate
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code Networkinterface_occiRetrieve_method
 	/**
 	 * Called when this Networkinterface instance must be retrieved.
 	 */
@@ -65,11 +66,11 @@ public class NetworkinterfaceConnector extends org.eclipse.cmf.occi.infrastructu
 	public void occiRetrieve()
 	{
 		LOGGER.debug("occiRetrieve() called on " + this);
-		// Start of user code NetworkinterfaceocciRetrieve
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code Networkinterface_occiUpdate_method
 	/**
 	 * Called when this Networkinterface instance is completely updated.
 	 */
@@ -77,11 +78,11 @@ public class NetworkinterfaceConnector extends org.eclipse.cmf.occi.infrastructu
 	public void occiUpdate()
 	{
 		LOGGER.debug("occiUpdate() called on " + this);
-		// Start of user code NetworkinterfaceocciUpdate
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code NetworkinterfaceocciDelete_method
 	/**
 	 * Called when this Networkinterface instance will be deleted.
 	 */
@@ -89,10 +90,9 @@ public class NetworkinterfaceConnector extends org.eclipse.cmf.occi.infrastructu
 	public void occiDelete()
 	{
 		LOGGER.debug("occiDelete() called on " + this);
-		// Start of user code NetworkinterfaceocciDelete
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
 	//
 	// Networkinterface actions.

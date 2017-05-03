@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue May 02 10:22:21 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed May 03 16:49:36 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.infrastructure.connector.dummy;
 
@@ -31,21 +31,22 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(NetworkConnector.class);
 
+	// Start of user code Networkconnector_constructor
 	/**
 	 * Constructs a network connector.
 	 */
 	NetworkConnector()
 	{
 		LOGGER.debug("Constructor called on " + this);
-		// Start of user code Networkconnector constructor
 		// TODO: Implement this constructor.
-		// End of user code
 	}
+	// End of user code
 
 	//
 	// OCCI CRUD callback operations.
 	//
-
+	
+	// Start of user code NetworkocciCreate
 	/**
 	 * Called when this Network instance is completely created.
 	 */
@@ -53,11 +54,11 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 	public void occiCreate()
 	{
 		LOGGER.debug("occiCreate() called on " + this);
-		// Start of user code NetworkocciCreate
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code Network_occiRetrieve_method
 	/**
 	 * Called when this Network instance must be retrieved.
 	 */
@@ -65,11 +66,11 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 	public void occiRetrieve()
 	{
 		LOGGER.debug("occiRetrieve() called on " + this);
-		// Start of user code NetworkocciRetrieve
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code Network_occiUpdate_method
 	/**
 	 * Called when this Network instance is completely updated.
 	 */
@@ -77,11 +78,11 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 	public void occiUpdate()
 	{
 		LOGGER.debug("occiUpdate() called on " + this);
-		// Start of user code NetworkocciUpdate
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code NetworkocciDelete_method
 	/**
 	 * Called when this Network instance will be deleted.
 	 */
@@ -89,15 +90,15 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 	public void occiDelete()
 	{
 		LOGGER.debug("occiDelete() called on " + this);
-		// Start of user code NetworkocciDelete
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
 	//
 	// Network actions.
 	//
 
+	// Start of user code Network_Kind_Up_action
 	/**
 	 * Implement OCCI action:
      * - scheme: http://schemas.ogf.org/occi/infrastructure/network/action#
@@ -115,18 +116,22 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 		case NetworkStatus.INACTIVE_VALUE:
 			LOGGER.debug("Fire transition(state=inactive, action=\"up\")...");
 			// TODO Implement transition(state=inactive, action="up")
-			if(true)
-			setOcciNetworkState(NetworkStatus.ERROR);
-			else
-			if(true)
-			setOcciNetworkState(NetworkStatus.ACTIVE);
+			if(true){
+				setOcciNetworkState(NetworkStatus.ACTIVE);
+			}
+			else	
+				if(true){
+					setOcciNetworkState(NetworkStatus.ERROR);
+				}
 			break;
 
 		default:
 			break;
 		}
 	}
+	// End of user code
 
+	// Start of user code Network_Kind_Down_action
 	/**
 	 * Implement OCCI action:
      * - scheme: http://schemas.ogf.org/occi/infrastructure/network/action#
@@ -144,16 +149,19 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 		case NetworkStatus.ACTIVE_VALUE:
 			LOGGER.debug("Fire transition(state=active, action=\"down\")...");
 			// TODO Implement transition(state=active, action="down")
-			if(true)
-			setOcciNetworkState(NetworkStatus.ERROR);
-			else
-			if(true)
-			setOcciNetworkState(NetworkStatus.INACTIVE);
+			if(true){
+				setOcciNetworkState(NetworkStatus.ERROR);
+			}
+			else	
+				if(true){
+					setOcciNetworkState(NetworkStatus.INACTIVE);
+				}
 			break;
 
 		default:
 			break;
 		}
 	}
+	// End of user code
 
 }	

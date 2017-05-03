@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue May 02 10:22:21 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed May 03 16:49:36 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.infrastructure.connector.dummy;
 
@@ -31,21 +31,22 @@ public class StorageConnector extends org.eclipse.cmf.occi.infrastructure.impl.S
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(StorageConnector.class);
 
+	// Start of user code Storageconnector_constructor
 	/**
 	 * Constructs a storage connector.
 	 */
 	StorageConnector()
 	{
 		LOGGER.debug("Constructor called on " + this);
-		// Start of user code Storageconnector constructor
 		// TODO: Implement this constructor.
-		// End of user code
 	}
+	// End of user code
 
 	//
 	// OCCI CRUD callback operations.
 	//
-
+	
+	// Start of user code StorageocciCreate
 	/**
 	 * Called when this Storage instance is completely created.
 	 */
@@ -53,11 +54,11 @@ public class StorageConnector extends org.eclipse.cmf.occi.infrastructure.impl.S
 	public void occiCreate()
 	{
 		LOGGER.debug("occiCreate() called on " + this);
-		// Start of user code StorageocciCreate
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code Storage_occiRetrieve_method
 	/**
 	 * Called when this Storage instance must be retrieved.
 	 */
@@ -65,11 +66,11 @@ public class StorageConnector extends org.eclipse.cmf.occi.infrastructure.impl.S
 	public void occiRetrieve()
 	{
 		LOGGER.debug("occiRetrieve() called on " + this);
-		// Start of user code StorageocciRetrieve
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code Storage_occiUpdate_method
 	/**
 	 * Called when this Storage instance is completely updated.
 	 */
@@ -77,11 +78,11 @@ public class StorageConnector extends org.eclipse.cmf.occi.infrastructure.impl.S
 	public void occiUpdate()
 	{
 		LOGGER.debug("occiUpdate() called on " + this);
-		// Start of user code StorageocciUpdate
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code StorageocciDelete_method
 	/**
 	 * Called when this Storage instance will be deleted.
 	 */
@@ -89,15 +90,15 @@ public class StorageConnector extends org.eclipse.cmf.occi.infrastructure.impl.S
 	public void occiDelete()
 	{
 		LOGGER.debug("occiDelete() called on " + this);
-		// Start of user code StorageocciDelete
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
 	//
 	// Storage actions.
 	//
 
+	// Start of user code Storage_Kind_Online_action
 	/**
 	 * Implement OCCI action:
      * - scheme: http://schemas.ogf.org/occi/infrastructure/storage/action#
@@ -115,18 +116,22 @@ public class StorageConnector extends org.eclipse.cmf.occi.infrastructure.impl.S
 		case StorageStatus.OFFLINE_VALUE:
 			LOGGER.debug("Fire transition(state=offline, action=\"online\")...");
 			// TODO Implement transition(state=offline, action="online")
-			if(true)
-			setOcciStorageState(StorageStatus.ERROR);
-			else
-			if(true)
-			setOcciStorageState(StorageStatus.ONLINE);
+			if(true){
+				setOcciStorageState(StorageStatus.ONLINE);
+			}
+			else	
+				if(true){
+					setOcciStorageState(StorageStatus.ERROR);
+				}
 			break;
 
 		default:
 			break;
 		}
 	}
+	// End of user code
 
+	// Start of user code Storage_Kind_Offline_action
 	/**
 	 * Implement OCCI action:
      * - scheme: http://schemas.ogf.org/occi/infrastructure/storage/action#
@@ -144,16 +149,19 @@ public class StorageConnector extends org.eclipse.cmf.occi.infrastructure.impl.S
 		case StorageStatus.ONLINE_VALUE:
 			LOGGER.debug("Fire transition(state=online, action=\"offline\")...");
 			// TODO Implement transition(state=online, action="offline")
-			if(true)
-			setOcciStorageState(StorageStatus.ERROR);
-			else
-			if(true)
-			setOcciStorageState(StorageStatus.OFFLINE);
+			if(true){
+				setOcciStorageState(StorageStatus.OFFLINE);
+			}
+			else	
+				if(true){
+					setOcciStorageState(StorageStatus.ERROR);
+				}
 			break;
 
 		default:
 			break;
 		}
 	}
+	// End of user code
 
 }	

@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue May 02 10:22:21 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed May 03 16:49:36 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.infrastructure.connector.dummy;
 
@@ -31,21 +31,22 @@ public class StoragelinkConnector extends org.eclipse.cmf.occi.infrastructure.im
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(StoragelinkConnector.class);
 
+	// Start of user code Storagelinkconnector_constructor
 	/**
 	 * Constructs a storagelink connector.
 	 */
 	StoragelinkConnector()
 	{
 		LOGGER.debug("Constructor called on " + this);
-		// Start of user code Storagelinkconnector constructor
 		// TODO: Implement this constructor.
-		// End of user code
 	}
+	// End of user code
 
 	//
 	// OCCI CRUD callback operations.
 	//
-
+	
+	// Start of user code StoragelinkocciCreate
 	/**
 	 * Called when this Storagelink instance is completely created.
 	 */
@@ -53,11 +54,11 @@ public class StoragelinkConnector extends org.eclipse.cmf.occi.infrastructure.im
 	public void occiCreate()
 	{
 		LOGGER.debug("occiCreate() called on " + this);
-		// Start of user code StoragelinkocciCreate
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code Storagelink_occiRetrieve_method
 	/**
 	 * Called when this Storagelink instance must be retrieved.
 	 */
@@ -65,11 +66,11 @@ public class StoragelinkConnector extends org.eclipse.cmf.occi.infrastructure.im
 	public void occiRetrieve()
 	{
 		LOGGER.debug("occiRetrieve() called on " + this);
-		// Start of user code StoragelinkocciRetrieve
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code Storagelink_occiUpdate_method
 	/**
 	 * Called when this Storagelink instance is completely updated.
 	 */
@@ -77,11 +78,11 @@ public class StoragelinkConnector extends org.eclipse.cmf.occi.infrastructure.im
 	public void occiUpdate()
 	{
 		LOGGER.debug("occiUpdate() called on " + this);
-		// Start of user code StoragelinkocciUpdate
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code StoragelinkocciDelete_method
 	/**
 	 * Called when this Storagelink instance will be deleted.
 	 */
@@ -89,10 +90,9 @@ public class StoragelinkConnector extends org.eclipse.cmf.occi.infrastructure.im
 	public void occiDelete()
 	{
 		LOGGER.debug("occiDelete() called on " + this);
-		// Start of user code StoragelinkocciDelete
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
 	//
 	// Storagelink actions.
