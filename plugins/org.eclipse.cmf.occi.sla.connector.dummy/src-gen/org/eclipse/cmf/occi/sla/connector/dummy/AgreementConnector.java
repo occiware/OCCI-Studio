@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue May 02 13:07:04 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.sla/model/sla.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed May 03 17:26:33 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.sla/model/sla.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.sla.connector.dummy;
 
@@ -31,33 +31,26 @@ public class AgreementConnector extends org.eclipse.cmf.occi.sla.impl.AgreementI
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(AgreementConnector.class);
 
+	// Start of user code Agreementconnector_constructor
 	/**
 	 * Constructs a agreement connector.
 	 */
 	AgreementConnector()
 	{
 		LOGGER.debug("Constructor called on " + this);
-		// Start of user code Agreementconnector constructor
 		// TODO: Implement this constructor.
-		// End of user code
 	}
+	// End of user code
 
 	//
 	// OCCI CRUD callback operations.
 	//
-
-	/**
-	 * Called when this Agreement instance is completely created.
-	 */
-	@Override
-	public void occiCreate()
-	{
-		LOGGER.debug("occiCreate() called on " + this);
-		// Start of user code AgreementocciCreate
+	
+	// Start of user code AgreementocciCreate
 		// TODO: Implement this callback or remove this method.
 		// End of user code
-	}
 
+	// Start of user code Agreement_occiRetrieve_method
 	/**
 	 * Called when this Agreement instance must be retrieved.
 	 */
@@ -65,11 +58,11 @@ public class AgreementConnector extends org.eclipse.cmf.occi.sla.impl.AgreementI
 	public void occiRetrieve()
 	{
 		LOGGER.debug("occiRetrieve() called on " + this);
-		// Start of user code AgreementocciRetrieve
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code Agreement_occiUpdate_method
 	/**
 	 * Called when this Agreement instance is completely updated.
 	 */
@@ -77,11 +70,11 @@ public class AgreementConnector extends org.eclipse.cmf.occi.sla.impl.AgreementI
 	public void occiUpdate()
 	{
 		LOGGER.debug("occiUpdate() called on " + this);
-		// Start of user code AgreementocciUpdate
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code AgreementocciDelete_method
 	/**
 	 * Called when this Agreement instance will be deleted.
 	 */
@@ -89,15 +82,15 @@ public class AgreementConnector extends org.eclipse.cmf.occi.sla.impl.AgreementI
 	public void occiDelete()
 	{
 		LOGGER.debug("occiDelete() called on " + this);
-		// Start of user code AgreementocciDelete
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
 	//
 	// Agreement actions.
 	//
 
+	// Start of user code Agreement_Kind_Accept_action
 	/**
 	 * Implement OCCI action:
      * - scheme: http://schemas.ogf.org/occi/sla/agreement/action#
@@ -115,7 +108,9 @@ public class AgreementConnector extends org.eclipse.cmf.occi.sla.impl.AgreementI
 			break;
 		}
 	}
+	// End of user code
 
+	// Start of user code Agreement_Kind_Reject_action
 	/**
 	 * Implement OCCI action:
      * - scheme: http://schemas.ogf.org/occi/sla/agreement/action#
@@ -133,7 +128,9 @@ public class AgreementConnector extends org.eclipse.cmf.occi.sla.impl.AgreementI
 			break;
 		}
 	}
+	// End of user code
 
+	// Start of user code Agreement_Kind_Suspend_action
 	/**
 	 * Implement OCCI action:
      * - scheme: http://schemas.ogf.org/occi/sla/agreement/action#
@@ -151,7 +148,9 @@ public class AgreementConnector extends org.eclipse.cmf.occi.sla.impl.AgreementI
 			break;
 		}
 	}
+	// End of user code
 
+	// Start of user code Agreement_Kind_Resume_action
 	/**
 	 * Implement OCCI action:
      * - scheme: http://schemas.ogf.org/occi/sla/agreement/action#
@@ -169,7 +168,9 @@ public class AgreementConnector extends org.eclipse.cmf.occi.sla.impl.AgreementI
 			break;
 		}
 	}
+	// End of user code
 
+	// Start of user code Agreement_Kind_Terminate_action
 	/**
 	 * Implement OCCI action:
      * - scheme: http://schemas.ogf.org/occi/sla/agreement/action#
@@ -187,5 +188,6 @@ public class AgreementConnector extends org.eclipse.cmf.occi.sla.impl.AgreementI
 			break;
 		}
 	}
+	// End of user code
 
 }	

@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue May 02 13:07:04 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.sla/model/sla.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed May 03 17:26:33 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.sla/model/sla.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.sla.connector.dummy;
 
@@ -30,33 +30,26 @@ public class Agreement_linkConnector extends org.eclipse.cmf.occi.sla.impl.Agree
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(Agreement_linkConnector.class);
 
+	// Start of user code Agreement_linkconnector_constructor
 	/**
 	 * Constructs a agreement_link connector.
 	 */
 	Agreement_linkConnector()
 	{
 		LOGGER.debug("Constructor called on " + this);
-		// Start of user code Agreement_linkconnector constructor
 		// TODO: Implement this constructor.
-		// End of user code
 	}
+	// End of user code
 
 	//
 	// OCCI CRUD callback operations.
 	//
-
-	/**
-	 * Called when this Agreement_link instance is completely created.
-	 */
-	@Override
-	public void occiCreate()
-	{
-		LOGGER.debug("occiCreate() called on " + this);
-		// Start of user code Agreement_linkocciCreate
+	
+	// Start of user code Agreement_linkocciCreate
 		// TODO: Implement this callback or remove this method.
 		// End of user code
-	}
 
+	// Start of user code Agreement_link_occiRetrieve_method
 	/**
 	 * Called when this Agreement_link instance must be retrieved.
 	 */
@@ -64,11 +57,11 @@ public class Agreement_linkConnector extends org.eclipse.cmf.occi.sla.impl.Agree
 	public void occiRetrieve()
 	{
 		LOGGER.debug("occiRetrieve() called on " + this);
-		// Start of user code Agreement_linkocciRetrieve
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code Agreement_link_occiUpdate_method
 	/**
 	 * Called when this Agreement_link instance is completely updated.
 	 */
@@ -76,11 +69,11 @@ public class Agreement_linkConnector extends org.eclipse.cmf.occi.sla.impl.Agree
 	public void occiUpdate()
 	{
 		LOGGER.debug("occiUpdate() called on " + this);
-		// Start of user code Agreement_linkocciUpdate
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
+	// Start of user code Agreement_linkocciDelete_method
 	/**
 	 * Called when this Agreement_link instance will be deleted.
 	 */
@@ -88,10 +81,9 @@ public class Agreement_linkConnector extends org.eclipse.cmf.occi.sla.impl.Agree
 	public void occiDelete()
 	{
 		LOGGER.debug("occiDelete() called on " + this);
-		// Start of user code Agreement_linkocciDelete
 		// TODO: Implement this callback or remove this method.
-		// End of user code
 	}
+	// End of user code
 
 	//
 	// Agreement_link actions.
