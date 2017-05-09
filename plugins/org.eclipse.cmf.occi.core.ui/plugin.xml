@@ -25,7 +25,7 @@
          </action>
       </objectContribution>
    </extension>
- <!-- Popup menu for generate an OCCI configuration from Extension configuration. -->
+ <!-- Popup menu for generate an OCCI configuration from Extension configuration. 
    <extension
          point="org.eclipse.ui.popupMenus">
       <objectContribution
@@ -49,4 +49,5 @@
          </action>
       </objectContribution>
    </extension>
+   -->
 </plugin>
