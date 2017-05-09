@@ -165,30 +165,67 @@
           </style>
         </containerMappings>
         <containerMappings name="BooleanTypeContainer" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditName']" semanticCandidatesExpression="feature:types" synchronizationLock="true" domainClass="occi.BooleanType" childrenPresentation="List">
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" labelSize="12" showIcon="false">
+          <subNodeMappings name="EC_BooleanType_Type" semanticCandidatesExpression="var:self" domainClass="occi.BooleanType">
+            <style xsi:type="style:BundledImageDescription" showIcon="false" labelExpression="aql:'boolean'" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" labelSize="12" showIcon="false" hideLabelByDefault="true" backgroundStyle="Liquid" foregroundColor="//@userColorsPalettes[name='OCCI-Studio']/@entries[name='DataTypeColor']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
         </containerMappings>
         <containerMappings name="StringTypeContainer" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditName']" semanticCandidatesExpression="feature:types" synchronizationLock="true" domainClass="occi.StringType" childrenPresentation="List">
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" labelSize="12" showIcon="false">
+          <subNodeMappings name="EC_StringType_Type" semanticCandidatesExpression="var:self" domainClass="occi.StringType">
+            <style xsi:type="style:BundledImageDescription" showIcon="false" labelExpression="aql:'java.lang.String'" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" labelSize="12" showIcon="false" backgroundStyle="Liquid" foregroundColor="//@userColorsPalettes[name='OCCI-Studio']/@entries[name='DataTypeColor']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
         </containerMappings>
         <containerMappings name="NumericTypeContainer" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditName']" semanticCandidatesExpression="feature:types" synchronizationLock="true" domainClass="occi.NumericType" childrenPresentation="List">
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql:self.name+'&lt;&lt;'+self.type+'>>'">
+          <subNodeMappings name="EC_ENumericType_Type" semanticCandidatesExpression="var:self" domainClass="occi.NumericType">
+            <style xsi:type="style:BundledImageDescription" showIcon="false" labelExpression="feature:type" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql:self.name" backgroundStyle="Liquid" foregroundColor="//@userColorsPalettes[name='OCCI-Studio']/@entries[name='DataTypeColor']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="EObjectTypeContainer" semanticCandidatesExpression="feature:types" domainClass="occi.EObjectType" childrenPresentation="List">
+          <subNodeMappings name="EC_EObjectType_InstanceClassName" semanticCandidatesExpression="var:self" domainClass="occi.EObjectType">
+            <style xsi:type="style:BundledImageDescription" showIcon="false" labelExpression="feature:instanceClassName" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" labelSize="12" showIcon="false" backgroundStyle="Liquid" foregroundColor="//@userColorsPalettes[name='OCCI-Studio']/@entries[name='DataTypeColor']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </containerMappings>
         <toolSections name="Tool">
@@ -359,6 +396,18 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="occi.NumericType" referenceName="types">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['NumericType' + container.oclAsType(Extension).types->size().toString()/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="EObjectType" containerMappings="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='EObjectTypeContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="occi.EObjectType" referenceName="types">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['EObjectType' + container.oclAsType(Extension).types->size().toString()/]"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="instanceClassName" valueExpression="java.lang.Object"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -537,6 +586,6 @@
     <entries xsi:type="description:UserFixedColor" red="255" green="255" blue="168" name="ResourceColor"/>
     <entries xsi:type="description:UserFixedColor" red="255" green="216" blue="176" name="LinkColor"/>
     <entries xsi:type="description:UserFixedColor" red="214" green="214" blue="214" name="ImportColor"/>
-    <entries xsi:type="description:UserFixedColor" red="255" green="255" blue="255" name="DataTypeColor"/>
+    <entries xsi:type="description:UserFixedColor" red="255" green="250" blue="191" name="DataTypeColor"/>
   </userColorsPalettes>
 </description:Group>
