@@ -2724,13 +2724,22 @@ public interface OCCIPackage extends EPackage {
 	int RECORD_FIELD_FEATURE_COUNT = 2;
 
 	/**
+	 * The operation id for the '<em>Type Different Container</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_FIELD___TYPE_DIFFERENT_CONTAINER__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
 	 * The number of operations of the '<em>Record Field</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECORD_FIELD_OPERATION_COUNT = 0;
+	int RECORD_FIELD_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.ArrayTypeImpl <em>Array Type</em>}' class.
@@ -2779,13 +2788,22 @@ public interface OCCIPackage extends EPackage {
 	int ARRAY_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Type Different Container</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_TYPE___TYPE_DIFFERENT_CONTAINER__DIAGNOSTICCHAIN_MAP = DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Array Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+	int ARRAY_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.NumericTypeEnum <em>Numeric Type Enum</em>}' enum.
@@ -4533,6 +4551,16 @@ public interface OCCIPackage extends EPackage {
 	EAttribute getRecordField_Name();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.RecordField#TypeDifferentContainer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Type Different Container</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Type Different Container</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.RecordField#TypeDifferentContainer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getRecordField__TypeDifferentContainer__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.ArrayType <em>Array Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4552,6 +4580,16 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getArrayType_Type();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.ArrayType#TypeDifferentContainer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Type Different Container</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Type Different Container</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.ArrayType#TypeDifferentContainer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getArrayType__TypeDifferentContainer__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.cmf.occi.core.NumericTypeEnum <em>Numeric Type Enum</em>}'.
@@ -5988,6 +6026,14 @@ public interface OCCIPackage extends EPackage {
 		EAttribute RECORD_FIELD__NAME = eINSTANCE.getRecordField_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Type Different Container</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation RECORD_FIELD___TYPE_DIFFERENT_CONTAINER__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRecordField__TypeDifferentContainer__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.ArrayTypeImpl <em>Array Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6004,6 +6050,14 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ARRAY_TYPE__TYPE = eINSTANCE.getArrayType_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Different Container</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ARRAY_TYPE___TYPE_DIFFERENT_CONTAINER__DIAGNOSTICCHAIN_MAP = eINSTANCE.getArrayType__TypeDifferentContainer__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.NumericTypeEnum <em>Numeric Type Enum</em>}' enum.

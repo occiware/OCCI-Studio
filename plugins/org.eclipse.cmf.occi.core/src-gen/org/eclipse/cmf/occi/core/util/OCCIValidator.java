@@ -371,12 +371,28 @@ public class OCCIValidator extends EObjectValidator {
 	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_KINDS_IN_USE = 40;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Type Different Container' of 'Record Field'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int RECORD_FIELD__TYPE_DIFFERENT_CONTAINER = 41;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Type Different Container' of 'Array Type'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ARRAY_TYPE__TYPE_DIFFERENT_CONTAINER = 42;
+
+	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 40;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 42;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -1314,7 +1330,27 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateRecordField(RecordField recordField, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(recordField, diagnostics, context);
+		if (!validate_NoCircularContainment(recordField, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(recordField, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(recordField, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(recordField, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(recordField, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(recordField, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(recordField, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(recordField, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(recordField, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRecordField_TypeDifferentContainer(recordField, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the TypeDifferentContainer constraint of '<em>Record Field</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRecordField_TypeDifferentContainer(RecordField recordField, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return recordField.TypeDifferentContainer(diagnostics, context);
 	}
 
 	/**
@@ -1323,7 +1359,27 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateArrayType(ArrayType arrayType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(arrayType, diagnostics, context);
+		if (!validate_NoCircularContainment(arrayType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(arrayType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(arrayType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(arrayType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(arrayType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(arrayType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(arrayType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(arrayType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(arrayType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateArrayType_TypeDifferentContainer(arrayType, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the TypeDifferentContainer constraint of '<em>Array Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateArrayType_TypeDifferentContainer(ArrayType arrayType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return arrayType.TypeDifferentContainer(diagnostics, context);
 	}
 
 	/**

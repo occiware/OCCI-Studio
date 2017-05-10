@@ -1810,6 +1810,15 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getRecordField__TypeDifferentContainer__DiagnosticChain_Map() {
+		return recordFieldEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getArrayType() {
 		return arrayTypeEClass;
 	}
@@ -1821,6 +1830,15 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 */
 	public EReference getArrayType_Type() {
 		return (EReference)arrayTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getArrayType__TypeDifferentContainer__DiagnosticChain_Map() {
+		return arrayTypeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -2115,9 +2133,11 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		recordFieldEClass = createEClass(RECORD_FIELD);
 		createEReference(recordFieldEClass, RECORD_FIELD__TYPE);
 		createEAttribute(recordFieldEClass, RECORD_FIELD__NAME);
+		createEOperation(recordFieldEClass, RECORD_FIELD___TYPE_DIFFERENT_CONTAINER__DIAGNOSTICCHAIN_MAP);
 
 		arrayTypeEClass = createEClass(ARRAY_TYPE);
 		createEReference(arrayTypeEClass, ARRAY_TYPE__TYPE);
+		createEOperation(arrayTypeEClass, ARRAY_TYPE___TYPE_DIFFERENT_CONTAINER__DIAGNOSTICCHAIN_MAP);
 
 		// Create enums
 		numericTypeEnumEEnum = createEEnum(NUMERIC_TYPE_ENUM);
@@ -2689,8 +2709,26 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEReference(getRecordField_Type(), this.getDataType(), null, "type", null, 1, 1, RecordField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRecordField_Name(), this.getString(), "name", null, 0, 1, RecordField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		op = initEOperation(getRecordField__TypeDifferentContainer__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "TypeDifferentContainer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(arrayTypeEClass, ArrayType.class, "ArrayType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getArrayType_Type(), this.getDataType(), null, "type", null, 1, 1, ArrayType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getArrayType__TypeDifferentContainer__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "TypeDifferentContainer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(numericTypeEnumEEnum, NumericTypeEnum.class, "NumericTypeEnum");
@@ -2811,6 +2849,18 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		   source, 
 		   new String[] {
 			 "constraints", "AllResourcesLinksKindsInUse"
+		   });	
+		addAnnotation
+		  (recordFieldEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "TypeDifferentContainer"
+		   });	
+		addAnnotation
+		  (arrayTypeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "TypeDifferentContainer"
 		   });
 	}
 

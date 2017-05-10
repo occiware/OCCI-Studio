@@ -20,6 +20,12 @@ import org.eclipse.cmf.occi.core.OCCIFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Array Type</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link org.eclipse.cmf.occi.core.ArrayType#TypeDifferentContainer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Type Different Container</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class ArrayTypeTest extends DataTypeTest {
@@ -74,6 +80,19 @@ public class ArrayTypeTest extends DataTypeTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.ArrayType#TypeDifferentContainer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Type Different Container</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.ArrayType#TypeDifferentContainer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated NOT
+	 */
+	public void testTypeDifferentContainer__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		// fail();
 	}
 
 } //ArrayTypeTest

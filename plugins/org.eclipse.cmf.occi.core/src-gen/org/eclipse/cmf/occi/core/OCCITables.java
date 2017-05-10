@@ -115,6 +115,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_PRIMid_String = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(org.eclipse.ocl.pivot.ids.TypeId.STRING);
 	public static final /*@NonInvalid*/ java.lang.String STR_Action_c_c_CorrectScheme = "Action::CorrectScheme";
 	public static final /*@NonInvalid*/ java.lang.String STR_Action_c_c_containedAction = "Action::containedAction";
+	public static final /*@NonInvalid*/ java.lang.String STR_ArrayType_c_c_TypeDifferentContainer = "ArrayType::TypeDifferentContainer";
 	public static final /*@NonInvalid*/ java.lang.String STR_Category_c_c_AttributesNameUnique = "Category::AttributesNameUnique";
 	public static final /*@NonInvalid*/ java.lang.String STR_Category_c_c_IdentityUnique = "Category::IdentityUnique";
 	public static final /*@NonInvalid*/ java.lang.String STR_Category_c_c_SchemeEndsWithSharp = "Category::SchemeEndsWithSharp";
@@ -148,6 +149,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR_Mixin_c_c_AttributesNameNotAlreadyDefinedInDepends = "Mixin::AttributesNameNotAlreadyDefinedInDepends";
 	public static final /*@NonInvalid*/ java.lang.String STR_Mixin_c_c_CorrectScheme = "Mixin::CorrectScheme";
 	public static final /*@NonInvalid*/ java.lang.String STR_Mixin_c_c_NoCyclicInheritance = "Mixin::NoCyclicInheritance";
+	public static final /*@NonInvalid*/ java.lang.String STR_RecordField_c_c_TypeDifferentContainer = "RecordField::TypeDifferentContainer";
 	public static final /*@NonInvalid*/ java.lang.String STR_Resource_c_c_ResourceKindIsInParent = "Resource::ResourceKindIsInParent";
 	public static final /*@NonInvalid*/ java.lang.String STR_State_c_c_StateLiteralAlreadyDefinedInFSMAttributeType = "State::StateLiteralAlreadyDefinedInFSMAttributeType";
 	public static final /*@NonInvalid*/ java.lang.String STR_The_32_action_32 = "The action ";
