@@ -525,7 +525,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Type" edgeMappings="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@edgeMappings[name='TypeEdge']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Type" precondition="aql:preTarget.differs(preSource)" edgeMappings="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@edgeMappings[name='TypeEdge']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -536,7 +536,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="TypeArrayType">
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="TypeArrayType" precondition="aql:target.differs(element)">
             <source name="source"/>
             <target name="target"/>
             <sourceView name="sourceView"/>
@@ -554,7 +554,7 @@
             <elementView name="elementView"/>
             <containerView name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:Unset" featureName="type" elementExpression="[elementView.targetNode.oclAsType(DSemanticDecorator).target/]"/>
+              <firstModelOperations xsi:type="tool_1:Unset" featureName="type"/>
             </initialOperation>
           </ownedTools>
         </toolSections>
