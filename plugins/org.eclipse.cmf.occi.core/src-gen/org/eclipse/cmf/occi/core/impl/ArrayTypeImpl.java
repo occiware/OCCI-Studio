@@ -136,7 +136,6 @@ public class ArrayTypeImpl extends DataTypeImpl implements ArrayType {
 		 *     endif
 		 */
 		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
-		System.out.println(CGStringGetSeverityOperation.INSTANCE.evaluate(executor, OCCITables.STR_ArrayType_c_c_TypeDifferentContainer));
 		final /*@NonInvalid*/ IntegerValue severity_0 = ValueUtil.integerValueOf(4);//CGStringGetSeverityOperation.INSTANCE.evaluate(executor, OCCITables.STR_ArrayType_c_c_TypeDifferentContainer);
 		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
 		/*@NonInvalid*/ boolean symbol_0;
