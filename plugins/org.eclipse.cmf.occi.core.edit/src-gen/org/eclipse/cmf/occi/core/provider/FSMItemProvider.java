@@ -155,9 +155,13 @@ public class FSMItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		if (((FSM) object).getAttribute() != null & ((FSM) object).getAttribute().getType() != null)
+		if (((FSM) object).getAttribute() != null){
+			if(((FSM) object).getAttribute().getType() != null)
 			return getString("_UI_FSM_type") + " " + ((FSM) object).getAttribute().getName() + " "
 					+ ((FSM) object).getAttribute().getType().getName();
+			else
+				return getString("_UI_FSM_type");
+			}
 		else
 			return getString("_UI_FSM_type");
 	}
@@ -271,20 +275,24 @@ public class FSMItemProvider
 			// However in this part, the type notifies when its name changes.
 			// The type say: Hey, my name is changed
 			// last target
-			if (notification.getNotifier() != null && getTarget() != null
-					&& notification.getNotifier() == ((FSM) getTarget()).getAttribute().getType()) {
-				((IChangeNotifier) getAdapterFactory()).removeListener(this);
-				fireNotifyChanged(new ViewerNotification(notification, getTarget(), false, true));
-				((IChangeNotifier) getAdapterFactory()).addListener(this);
-			}
-			// other targets
-			if (targets != null) {
-				for (Notifier target : targets) {
-					if (notification.getNotifier() != null && target != null
+			if (((FSM) getTarget()) != null) {
+				if (((FSM) getTarget()).getAttribute() != null) {
+					if (notification.getNotifier() != null && getTarget() != null
 							&& notification.getNotifier() == ((FSM) getTarget()).getAttribute().getType()) {
 						((IChangeNotifier) getAdapterFactory()).removeListener(this);
-						fireNotifyChanged(new ViewerNotification(notification, target, false, true));
+						fireNotifyChanged(new ViewerNotification(notification, getTarget(), false, true));
 						((IChangeNotifier) getAdapterFactory()).addListener(this);
+					}
+					// other targets
+					if (targets != null) {
+						for (Notifier target : targets) {
+							if (notification.getNotifier() != null && target != null
+									&& notification.getNotifier() == ((FSM) getTarget()).getAttribute().getType()) {
+								((IChangeNotifier) getAdapterFactory()).removeListener(this);
+								fireNotifyChanged(new ViewerNotification(notification, target, false, true));
+								((IChangeNotifier) getAdapterFactory()).addListener(this);
+							}
+						}
 					}
 				}
 			}
