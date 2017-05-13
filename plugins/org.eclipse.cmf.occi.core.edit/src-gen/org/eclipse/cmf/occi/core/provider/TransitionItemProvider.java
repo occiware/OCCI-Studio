@@ -231,6 +231,7 @@ public class TransitionItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, getTarget(), false, true));
 				((IChangeNotifier) getAdapterFactory()).addListener(this);
 			}
+			if(targets!=null){
 			for (Notifier target : targets){
 				if(notification.getNotifier() != null &&  target != null && notification.getNotifier() == ((Transition) target).getAction()) {
 					((IChangeNotifier) getAdapterFactory()).removeListener(this);
@@ -238,18 +239,21 @@ public class TransitionItemProvider
 					((IChangeNotifier) getAdapterFactory()).addListener(this);
 				}
 			}
+			}
 			//Target changed
 			if(notification.getNotifier() != null &&  getTarget() != null && notification.getNotifier() == ((Transition) getTarget()).getTarget().getLiteral()) {
 				((IChangeNotifier) getAdapterFactory()).removeListener(this);
 				fireNotifyChanged(new ViewerNotification(notification, getTarget(), false, true));
 				((IChangeNotifier) getAdapterFactory()).addListener(this);
 			}
+			if(targets!=null){
 			for (Notifier target : targets){
 				if(notification.getNotifier() != null &&  target != null && notification.getNotifier() == ((Transition) getTarget()).getTarget().getLiteral()) {
 					((IChangeNotifier) getAdapterFactory()).removeListener(this);
 					fireNotifyChanged(new ViewerNotification(notification, target, false, true));
 					((IChangeNotifier) getAdapterFactory()).addListener(this);
 				}
+			}
 			}
 		}
 	}
