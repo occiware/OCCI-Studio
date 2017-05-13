@@ -66,6 +66,7 @@ public class OCCIFactoryImpl extends EFactoryImpl implements OCCIFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case OCCIPackage.ANNOTATION: return createAnnotation();
 			case OCCIPackage.CONSTRAINT: return createConstraint();
 			case OCCIPackage.FSM: return createFSM();
 			case OCCIPackage.STATE: return createState();
@@ -154,6 +155,16 @@ public class OCCIFactoryImpl extends EFactoryImpl implements OCCIFactory {
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Annotation createAnnotation() {
+		AnnotationImpl annotation = new AnnotationImpl();
+		return annotation;
 	}
 
 	/**

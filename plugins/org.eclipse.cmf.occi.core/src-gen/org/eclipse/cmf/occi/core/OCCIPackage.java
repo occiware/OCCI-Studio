@@ -69,6 +69,89 @@ public interface OCCIPackage extends EPackage {
 	OCCIPackage eINSTANCE = org.eclipse.cmf.occi.core.impl.OCCIPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.AnnotatedElementImpl <em>Annotated Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.impl.AnnotatedElementImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getAnnotatedElement()
+	 * @generated
+	 */
+	int ANNOTATED_ELEMENT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANNOTATED_ELEMENT__ANNOTATIONS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Annotated Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANNOTATED_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Annotated Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANNOTATED_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.AnnotationImpl <em>Annotation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.impl.AnnotationImpl
+	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getAnnotation()
+	 * @generated
+	 */
+	int ANNOTATION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANNOTATION__KEY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANNOTATION__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Annotation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANNOTATION_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Annotation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANNOTATION_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.CategoryImpl <em>Category</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -76,7 +159,16 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getCategory()
 	 * @generated
 	 */
-	int CATEGORY = 0;
+	int CATEGORY = 2;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATEGORY__ANNOTATIONS = ANNOTATED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -85,7 +177,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATEGORY__NAME = 0;
+	int CATEGORY__NAME = ANNOTATED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Term</b></em>' attribute.
@@ -94,7 +186,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATEGORY__TERM = 1;
+	int CATEGORY__TERM = ANNOTATED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Scheme</b></em>' attribute.
@@ -103,7 +195,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATEGORY__SCHEME = 2;
+	int CATEGORY__SCHEME = ANNOTATED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -112,7 +204,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATEGORY__TITLE = 3;
+	int CATEGORY__TITLE = ANNOTATED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -121,7 +213,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATEGORY__ATTRIBUTES = 4;
+	int CATEGORY__ATTRIBUTES = ANNOTATED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Category</em>' class.
@@ -130,7 +222,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATEGORY_FEATURE_COUNT = 5;
+	int CATEGORY_FEATURE_COUNT = ANNOTATED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Attributes Name Unique</em>' operation.
@@ -139,7 +231,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATEGORY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = 0;
+	int CATEGORY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = ANNOTATED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Identity Unique</em>' operation.
@@ -148,7 +240,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATEGORY___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP = 1;
+	int CATEGORY___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP = ANNOTATED_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Scheme Ends With Sharp</em>' operation.
@@ -157,7 +249,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATEGORY___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP = 2;
+	int CATEGORY___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP = ANNOTATED_ELEMENT_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Category</em>' class.
@@ -166,7 +258,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATEGORY_OPERATION_COUNT = 3;
+	int CATEGORY_OPERATION_COUNT = ANNOTATED_ELEMENT_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.ConstraintImpl <em>Constraint</em>}' class.
@@ -176,7 +268,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getConstraint()
 	 * @generated
 	 */
-	int CONSTRAINT = 1;
+	int CONSTRAINT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -231,7 +323,16 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getType()
 	 * @generated
 	 */
-	int TYPE = 2;
+	int TYPE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE__ANNOTATIONS = CATEGORY__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -367,7 +468,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getFSM()
 	 * @generated
 	 */
-	int FSM = 3;
+	int FSM = 5;
 
 	/**
 	 * The feature id for the '<em><b>Owned State</b></em>' containment reference list.
@@ -431,7 +532,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getState()
 	 * @generated
 	 */
-	int STATE = 4;
+	int STATE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Literal</b></em>' reference.
@@ -522,7 +623,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getTransition()
 	 * @generated
 	 */
-	int TRANSITION = 5;
+	int TRANSITION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' container reference.
@@ -586,7 +687,16 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getAttribute()
 	 * @generated
 	 */
-	int ATTRIBUTE = 6;
+	int ATTRIBUTE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__ANNOTATIONS = ANNOTATED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -595,7 +705,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__NAME = 0;
+	int ATTRIBUTE__NAME = ANNOTATED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Mutable</b></em>' attribute.
@@ -604,7 +714,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__MUTABLE = 1;
+	int ATTRIBUTE__MUTABLE = ANNOTATED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -613,7 +723,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__REQUIRED = 2;
+	int ATTRIBUTE__REQUIRED = ANNOTATED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Default</b></em>' attribute.
@@ -622,7 +732,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__DEFAULT = 3;
+	int ATTRIBUTE__DEFAULT = ANNOTATED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -631,7 +741,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__DESCRIPTION = 4;
+	int ATTRIBUTE__DESCRIPTION = ANNOTATED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -640,7 +750,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__TYPE = 5;
+	int ATTRIBUTE__TYPE = ANNOTATED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Attribute</em>' class.
@@ -649,7 +759,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_FEATURE_COUNT = 6;
+	int ATTRIBUTE_FEATURE_COUNT = ANNOTATED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Attribute</em>' class.
@@ -658,7 +768,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_OPERATION_COUNT = 0;
+	int ATTRIBUTE_OPERATION_COUNT = ANNOTATED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.KindImpl <em>Kind</em>}' class.
@@ -668,7 +778,16 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getKind()
 	 * @generated
 	 */
-	int KIND = 7;
+	int KIND = 9;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KIND__ANNOTATIONS = TYPE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -912,7 +1031,16 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getAction()
 	 * @generated
 	 */
-	int ACTION = 8;
+	int ACTION = 10;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__ANNOTATIONS = CATEGORY__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1030,7 +1158,16 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getMixin()
 	 * @generated
 	 */
-	int MIXIN = 9;
+	int MIXIN = 11;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXIN__ANNOTATIONS = TYPE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1220,7 +1357,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getEntity()
 	 * @generated
 	 */
-	int ENTITY = 10;
+	int ENTITY = 12;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1374,7 +1511,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getMixinBase()
 	 * @generated
 	 */
-	int MIXIN_BASE = 11;
+	int MIXIN_BASE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1429,7 +1566,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getAttributeState()
 	 * @generated
 	 */
-	int ATTRIBUTE_STATE = 12;
+	int ATTRIBUTE_STATE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1475,7 +1612,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getResource()
 	 * @generated
 	 */
-	int RESOURCE = 13;
+	int RESOURCE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1665,7 +1802,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getLink()
 	 * @generated
 	 */
-	int LINK = 14;
+	int LINK = 16;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1864,7 +2001,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getExtension()
 	 * @generated
 	 */
-	int EXTENSION = 15;
+	int EXTENSION = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2027,7 +2164,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getConfiguration()
 	 * @generated
 	 */
-	int CONFIGURATION = 16;
+	int CONFIGURATION = 18;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -2154,7 +2291,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getDataType()
 	 * @generated
 	 */
-	int DATA_TYPE = 17;
+	int DATA_TYPE = 19;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2200,7 +2337,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getBasicType()
 	 * @generated
 	 */
-	int BASIC_TYPE = 18;
+	int BASIC_TYPE = 20;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2246,7 +2383,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getStringType()
 	 * @generated
 	 */
-	int STRING_TYPE = 19;
+	int STRING_TYPE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2328,7 +2465,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getBooleanType()
 	 * @generated
 	 */
-	int BOOLEAN_TYPE = 21;
+	int BOOLEAN_TYPE = 23;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.NumericTypeImpl <em>Numeric Type</em>}' class.
@@ -2338,7 +2475,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getNumericType()
 	 * @generated
 	 */
-	int NUMERIC_TYPE = 22;
+	int NUMERIC_TYPE = 24;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.EObjectTypeImpl <em>EObject Type</em>}' class.
@@ -2348,7 +2485,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getEObjectType()
 	 * @generated
 	 */
-	int EOBJECT_TYPE = 20;
+	int EOBJECT_TYPE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2529,7 +2666,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getEnumerationType()
 	 * @generated
 	 */
-	int ENUMERATION_TYPE = 23;
+	int ENUMERATION_TYPE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2584,7 +2721,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getEnumerationLiteral()
 	 * @generated
 	 */
-	int ENUMERATION_LITERAL = 24;
+	int ENUMERATION_LITERAL = 26;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2639,7 +2776,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getRecordType()
 	 * @generated
 	 */
-	int RECORD_TYPE = 25;
+	int RECORD_TYPE = 27;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2694,7 +2831,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getRecordField()
 	 * @generated
 	 */
-	int RECORD_FIELD = 26;
+	int RECORD_FIELD = 28;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -2749,7 +2886,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getArrayType()
 	 * @generated
 	 */
-	int ARRAY_TYPE = 27;
+	int ARRAY_TYPE = 29;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2813,7 +2950,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getNumericTypeEnum()
 	 * @generated
 	 */
-	int NUMERIC_TYPE_ENUM = 28;
+	int NUMERIC_TYPE_ENUM = 30;
 
 	/**
 	 * The meta object id for the '<em>URI</em>' data type.
@@ -2823,7 +2960,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getURI()
 	 * @generated
 	 */
-	int URI = 29;
+	int URI = 31;
 
 	/**
 	 * The meta object id for the '<em>OCL</em>' data type.
@@ -2833,7 +2970,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getOCL()
 	 * @generated
 	 */
-	int OCL = 30;
+	int OCL = 32;
 
 	/**
 	 * The meta object id for the '<em>String</em>' data type.
@@ -2843,7 +2980,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getString()
 	 * @generated
 	 */
-	int STRING = 31;
+	int STRING = 33;
 
 	/**
 	 * The meta object id for the '<em>Integer</em>' data type.
@@ -2853,7 +2990,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getInteger()
 	 * @generated
 	 */
-	int INTEGER = 32;
+	int INTEGER = 34;
 
 	/**
 	 * The meta object id for the '<em>Boolean</em>' data type.
@@ -2862,7 +2999,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getBoolean()
 	 * @generated
 	 */
-	int BOOLEAN = 33;
+	int BOOLEAN = 35;
 
 	/**
 	 * The meta object id for the '<em>Attribute Name</em>' data type.
@@ -2872,7 +3009,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getAttributeName()
 	 * @generated
 	 */
-	int ATTRIBUTE_NAME = 34;
+	int ATTRIBUTE_NAME = 36;
 
 	/**
 	 * The meta object id for the '<em>Name</em>' data type.
@@ -2882,7 +3019,7 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getName_()
 	 * @generated
 	 */
-	int NAME = 35;
+	int NAME = 37;
 
 	/**
 	 * The meta object id for the '<em>Scheme</em>' data type.
@@ -2892,8 +3029,61 @@ public interface OCCIPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getScheme()
 	 * @generated
 	 */
-	int SCHEME = 36;
+	int SCHEME = 38;
 
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.AnnotatedElement <em>Annotated Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Annotated Element</em>'.
+	 * @see org.eclipse.cmf.occi.core.AnnotatedElement
+	 * @generated
+	 */
+	EClass getAnnotatedElement();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.cmf.occi.core.AnnotatedElement#getAnnotations <em>Annotations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Annotations</em>'.
+	 * @see org.eclipse.cmf.occi.core.AnnotatedElement#getAnnotations()
+	 * @see #getAnnotatedElement()
+	 * @generated
+	 */
+	EReference getAnnotatedElement_Annotations();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Annotation <em>Annotation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Annotation</em>'.
+	 * @see org.eclipse.cmf.occi.core.Annotation
+	 * @generated
+	 */
+	EClass getAnnotation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.Annotation#getKey <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see org.eclipse.cmf.occi.core.Annotation#getKey()
+	 * @see #getAnnotation()
+	 * @generated
+	 */
+	EAttribute getAnnotation_Key();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.Annotation#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.eclipse.cmf.occi.core.Annotation#getValue()
+	 * @see #getAnnotation()
+	 * @generated
+	 */
+	EAttribute getAnnotation_Value();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Category <em>Category</em>}'.
@@ -4715,6 +4905,50 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
+		/**
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.AnnotatedElementImpl <em>Annotated Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.cmf.occi.core.impl.AnnotatedElementImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getAnnotatedElement()
+		 * @generated
+		 */
+		EClass ANNOTATED_ELEMENT = eINSTANCE.getAnnotatedElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ANNOTATED_ELEMENT__ANNOTATIONS = eINSTANCE.getAnnotatedElement_Annotations();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.AnnotationImpl <em>Annotation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.cmf.occi.core.impl.AnnotationImpl
+		 * @see org.eclipse.cmf.occi.core.impl.OCCIPackageImpl#getAnnotation()
+		 * @generated
+		 */
+		EClass ANNOTATION = eINSTANCE.getAnnotation();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ANNOTATION__KEY = eINSTANCE.getAnnotation_Key();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ANNOTATION__VALUE = eINSTANCE.getAnnotation_Value();
+
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.CategoryImpl <em>Category</em>}' class.
 		 * <!-- begin-user-doc -->

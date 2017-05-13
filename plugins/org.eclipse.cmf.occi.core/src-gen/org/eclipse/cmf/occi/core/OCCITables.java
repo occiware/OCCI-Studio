@@ -73,6 +73,8 @@ public class OCCITables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_www_eclipse_org_s_emf_s_2002_s_Ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://www.eclipse.org/emf/2002/Ecore", null, org.eclipse.emf.ecore.EcorePackage.eINSTANCE);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_PRIMid_String = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.ocl.pivot.ids.TypeId.STRING);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Action = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Action", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_AnnotatedElement = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("AnnotatedElement", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Annotation = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Annotation", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_ArrayType = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("ArrayType", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Attribute = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Attribute", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_AttributeState = OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("AttributeState", 0);
@@ -194,6 +196,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Transition = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.CLSSid_Transition);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_DATAid_AttributeName = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(OCCITables.DATAid_AttributeName);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Action = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_Action);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Annotation = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_Annotation);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Attribute = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_Attribute);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_AttributeState = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_AttributeState);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Constraint = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(OCCITables.CLSSid_Constraint);
@@ -255,6 +258,8 @@ public class OCCITables
 		}
 
 		public static final /*@NonNull*/ EcoreExecutorType _Action = new EcoreExecutorType(OCCIPackage.Literals.ACTION, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _AnnotatedElement = new EcoreExecutorType(OCCIPackage.Literals.ANNOTATED_ELEMENT, PACKAGE, 0 | ExecutorType.ABSTRACT);
+		public static final /*@NonNull*/ EcoreExecutorType _Annotation = new EcoreExecutorType(OCCIPackage.Literals.ANNOTATION, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _ArrayType = new EcoreExecutorType(OCCIPackage.Literals.ARRAY_TYPE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Attribute = new EcoreExecutorType(OCCIPackage.Literals.ATTRIBUTE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _AttributeName = new EcoreExecutorType("AttributeName", PACKAGE, 0);
@@ -294,6 +299,8 @@ public class OCCITables
 
 		private static final /*@NonNull*/ EcoreExecutorType /*@NonNull*/ [] types = {
 			_Action,
+			_AnnotatedElement,
+			_Annotation,
 			_ArrayType,
 			_Attribute,
 			_AttributeName,
@@ -356,15 +363,25 @@ public class OCCITables
 		}
 
 		private static final /*@NonNull*/ ExecutorFragment _Action__Action = new ExecutorFragment(Types._Action, OCCITables.Types._Action);
+		private static final /*@NonNull*/ ExecutorFragment _Action__AnnotatedElement = new ExecutorFragment(Types._Action, OCCITables.Types._AnnotatedElement);
 		private static final /*@NonNull*/ ExecutorFragment _Action__Category = new ExecutorFragment(Types._Action, OCCITables.Types._Category);
 		private static final /*@NonNull*/ ExecutorFragment _Action__OclAny = new ExecutorFragment(Types._Action, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Action__OclElement = new ExecutorFragment(Types._Action, OCLstdlibTables.Types._OclElement);
+
+		private static final /*@NonNull*/ ExecutorFragment _AnnotatedElement__AnnotatedElement = new ExecutorFragment(Types._AnnotatedElement, OCCITables.Types._AnnotatedElement);
+		private static final /*@NonNull*/ ExecutorFragment _AnnotatedElement__OclAny = new ExecutorFragment(Types._AnnotatedElement, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _AnnotatedElement__OclElement = new ExecutorFragment(Types._AnnotatedElement, OCLstdlibTables.Types._OclElement);
+
+		private static final /*@NonNull*/ ExecutorFragment _Annotation__Annotation = new ExecutorFragment(Types._Annotation, OCCITables.Types._Annotation);
+		private static final /*@NonNull*/ ExecutorFragment _Annotation__OclAny = new ExecutorFragment(Types._Annotation, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Annotation__OclElement = new ExecutorFragment(Types._Annotation, OCLstdlibTables.Types._OclElement);
 
 		private static final /*@NonNull*/ ExecutorFragment _ArrayType__ArrayType = new ExecutorFragment(Types._ArrayType, OCCITables.Types._ArrayType);
 		private static final /*@NonNull*/ ExecutorFragment _ArrayType__DataType = new ExecutorFragment(Types._ArrayType, OCCITables.Types._DataType);
 		private static final /*@NonNull*/ ExecutorFragment _ArrayType__OclAny = new ExecutorFragment(Types._ArrayType, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _ArrayType__OclElement = new ExecutorFragment(Types._ArrayType, OCLstdlibTables.Types._OclElement);
 
+		private static final /*@NonNull*/ ExecutorFragment _Attribute__AnnotatedElement = new ExecutorFragment(Types._Attribute, OCCITables.Types._AnnotatedElement);
 		private static final /*@NonNull*/ ExecutorFragment _Attribute__Attribute = new ExecutorFragment(Types._Attribute, OCCITables.Types._Attribute);
 		private static final /*@NonNull*/ ExecutorFragment _Attribute__OclAny = new ExecutorFragment(Types._Attribute, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Attribute__OclElement = new ExecutorFragment(Types._Attribute, OCLstdlibTables.Types._OclElement);
@@ -390,6 +407,7 @@ public class OCCITables
 		private static final /*@NonNull*/ ExecutorFragment _BooleanType__OclAny = new ExecutorFragment(Types._BooleanType, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _BooleanType__OclElement = new ExecutorFragment(Types._BooleanType, OCLstdlibTables.Types._OclElement);
 
+		private static final /*@NonNull*/ ExecutorFragment _Category__AnnotatedElement = new ExecutorFragment(Types._Category, OCCITables.Types._AnnotatedElement);
 		private static final /*@NonNull*/ ExecutorFragment _Category__Category = new ExecutorFragment(Types._Category, OCCITables.Types._Category);
 		private static final /*@NonNull*/ ExecutorFragment _Category__OclAny = new ExecutorFragment(Types._Category, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Category__OclElement = new ExecutorFragment(Types._Category, OCLstdlibTables.Types._OclElement);
@@ -439,6 +457,7 @@ public class OCCITables
 		private static final /*@NonNull*/ ExecutorFragment _Integer__OclSummable = new ExecutorFragment(Types._Integer, OCLstdlibTables.Types._OclSummable);
 		private static final /*@NonNull*/ ExecutorFragment _Integer__Real = new ExecutorFragment(Types._Integer, OCLstdlibTables.Types._Real);
 
+		private static final /*@NonNull*/ ExecutorFragment _Kind__AnnotatedElement = new ExecutorFragment(Types._Kind, OCCITables.Types._AnnotatedElement);
 		private static final /*@NonNull*/ ExecutorFragment _Kind__Category = new ExecutorFragment(Types._Kind, OCCITables.Types._Category);
 		private static final /*@NonNull*/ ExecutorFragment _Kind__Kind = new ExecutorFragment(Types._Kind, OCCITables.Types._Kind);
 		private static final /*@NonNull*/ ExecutorFragment _Kind__OclAny = new ExecutorFragment(Types._Kind, OCLstdlibTables.Types._OclAny);
@@ -450,6 +469,7 @@ public class OCCITables
 		private static final /*@NonNull*/ ExecutorFragment _Link__OclAny = new ExecutorFragment(Types._Link, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Link__OclElement = new ExecutorFragment(Types._Link, OCLstdlibTables.Types._OclElement);
 
+		private static final /*@NonNull*/ ExecutorFragment _Mixin__AnnotatedElement = new ExecutorFragment(Types._Mixin, OCCITables.Types._AnnotatedElement);
 		private static final /*@NonNull*/ ExecutorFragment _Mixin__Category = new ExecutorFragment(Types._Mixin, OCCITables.Types._Category);
 		private static final /*@NonNull*/ ExecutorFragment _Mixin__Mixin = new ExecutorFragment(Types._Mixin, OCCITables.Types._Mixin);
 		private static final /*@NonNull*/ ExecutorFragment _Mixin__OclAny = new ExecutorFragment(Types._Mixin, OCLstdlibTables.Types._OclAny);
@@ -514,6 +534,7 @@ public class OCCITables
 		private static final /*@NonNull*/ ExecutorFragment _Transition__OclElement = new ExecutorFragment(Types._Transition, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _Transition__Transition = new ExecutorFragment(Types._Transition, OCCITables.Types._Transition);
 
+		private static final /*@NonNull*/ ExecutorFragment _Type__AnnotatedElement = new ExecutorFragment(Types._Type, OCCITables.Types._AnnotatedElement);
 		private static final /*@NonNull*/ ExecutorFragment _Type__Category = new ExecutorFragment(Types._Type, OCCITables.Types._Category);
 		private static final /*@NonNull*/ ExecutorFragment _Type__OclAny = new ExecutorFragment(Types._Type, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Type__OclElement = new ExecutorFragment(Types._Type, OCLstdlibTables.Types._OclElement);
@@ -748,6 +769,12 @@ public class OCCITables
 		public static final /*@NonNull*/ ExecutorProperty _Action__Transition__action = new ExecutorPropertyWithImplementation("Transition", Types._Action, 0, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.TRANSITION__ACTION));
 		public static final /*@NonNull*/ ExecutorProperty _Action__Type__actions = new ExecutorPropertyWithImplementation("Type", Types._Action, 1, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.TYPE__ACTIONS));
 
+		public static final /*@NonNull*/ ExecutorProperty _AnnotatedElement__annotations = new EcoreExecutorProperty(OCCIPackage.Literals.ANNOTATED_ELEMENT__ANNOTATIONS, Types._AnnotatedElement, 0);
+
+		public static final /*@NonNull*/ ExecutorProperty _Annotation__key = new EcoreExecutorProperty(OCCIPackage.Literals.ANNOTATION__KEY, Types._Annotation, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Annotation__value = new EcoreExecutorProperty(OCCIPackage.Literals.ANNOTATION__VALUE, Types._Annotation, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Annotation__AnnotatedElement__annotations = new ExecutorPropertyWithImplementation("AnnotatedElement", Types._Annotation, 2, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.ANNOTATED_ELEMENT__ANNOTATIONS));
+
 		public static final /*@NonNull*/ ExecutorProperty _ArrayType__type = new EcoreExecutorProperty(OCCIPackage.Literals.ARRAY_TYPE__TYPE, Types._ArrayType, 0);
 
 		public static final /*@NonNull*/ ExecutorProperty _Attribute__default = new EcoreExecutorProperty(OCCIPackage.Literals.ATTRIBUTE__DEFAULT, Types._Attribute, 0);
@@ -909,10 +936,27 @@ public class OCCITables
 		{
 			Fragments._Action__OclAny /* 0 */,
 			Fragments._Action__OclElement /* 1 */,
-			Fragments._Action__Category /* 2 */,
-			Fragments._Action__Action /* 3 */
+			Fragments._Action__AnnotatedElement /* 2 */,
+			Fragments._Action__Category /* 3 */,
+			Fragments._Action__Action /* 4 */
 		};
-		private static final int /*@NonNull*/ [] __Action = { 1,1,1,1 };
+		private static final int /*@NonNull*/ [] __Action = { 1,1,1,1,1 };
+
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _AnnotatedElement =
+		{
+			Fragments._AnnotatedElement__OclAny /* 0 */,
+			Fragments._AnnotatedElement__OclElement /* 1 */,
+			Fragments._AnnotatedElement__AnnotatedElement /* 2 */
+		};
+		private static final int /*@NonNull*/ [] __AnnotatedElement = { 1,1,1 };
+
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Annotation =
+		{
+			Fragments._Annotation__OclAny /* 0 */,
+			Fragments._Annotation__OclElement /* 1 */,
+			Fragments._Annotation__Annotation /* 2 */
+		};
+		private static final int /*@NonNull*/ [] __Annotation = { 1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _ArrayType =
 		{
@@ -927,9 +971,10 @@ public class OCCITables
 		{
 			Fragments._Attribute__OclAny /* 0 */,
 			Fragments._Attribute__OclElement /* 1 */,
-			Fragments._Attribute__Attribute /* 2 */
+			Fragments._Attribute__AnnotatedElement /* 2 */,
+			Fragments._Attribute__Attribute /* 3 */
 		};
-		private static final int /*@NonNull*/ [] __Attribute = { 1,1,1 };
+		private static final int /*@NonNull*/ [] __Attribute = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _AttributeName =
 		{
@@ -976,9 +1021,10 @@ public class OCCITables
 		{
 			Fragments._Category__OclAny /* 0 */,
 			Fragments._Category__OclElement /* 1 */,
-			Fragments._Category__Category /* 2 */
+			Fragments._Category__AnnotatedElement /* 2 */,
+			Fragments._Category__Category /* 3 */
 		};
-		private static final int /*@NonNull*/ [] __Category = { 1,1,1 };
+		private static final int /*@NonNull*/ [] __Category = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Configuration =
 		{
@@ -1069,11 +1115,12 @@ public class OCCITables
 		{
 			Fragments._Kind__OclAny /* 0 */,
 			Fragments._Kind__OclElement /* 1 */,
-			Fragments._Kind__Category /* 2 */,
-			Fragments._Kind__Type /* 3 */,
-			Fragments._Kind__Kind /* 4 */
+			Fragments._Kind__AnnotatedElement /* 2 */,
+			Fragments._Kind__Category /* 3 */,
+			Fragments._Kind__Type /* 4 */,
+			Fragments._Kind__Kind /* 5 */
 		};
-		private static final int /*@NonNull*/ [] __Kind = { 1,1,1,1,1 };
+		private static final int /*@NonNull*/ [] __Kind = { 1,1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Link =
 		{
@@ -1088,11 +1135,12 @@ public class OCCITables
 		{
 			Fragments._Mixin__OclAny /* 0 */,
 			Fragments._Mixin__OclElement /* 1 */,
-			Fragments._Mixin__Category /* 2 */,
-			Fragments._Mixin__Type /* 3 */,
-			Fragments._Mixin__Mixin /* 4 */
+			Fragments._Mixin__AnnotatedElement /* 2 */,
+			Fragments._Mixin__Category /* 3 */,
+			Fragments._Mixin__Type /* 4 */,
+			Fragments._Mixin__Mixin /* 5 */
 		};
-		private static final int /*@NonNull*/ [] __Mixin = { 1,1,1,1,1 };
+		private static final int /*@NonNull*/ [] __Mixin = { 1,1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _MixinBase =
 		{
@@ -1208,10 +1256,11 @@ public class OCCITables
 		{
 			Fragments._Type__OclAny /* 0 */,
 			Fragments._Type__OclElement /* 1 */,
-			Fragments._Type__Category /* 2 */,
-			Fragments._Type__Type /* 3 */
+			Fragments._Type__AnnotatedElement /* 2 */,
+			Fragments._Type__Category /* 3 */,
+			Fragments._Type__Type /* 4 */
 		};
-		private static final int /*@NonNull*/ [] __Type = { 1,1,1,1 };
+		private static final int /*@NonNull*/ [] __Type = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _URI =
 		{
@@ -1225,6 +1274,8 @@ public class OCCITables
 		 */
 		static {
 			Types._Action.initFragments(_Action, __Action);
+			Types._AnnotatedElement.initFragments(_AnnotatedElement, __AnnotatedElement);
+			Types._Annotation.initFragments(_Annotation, __Annotation);
 			Types._ArrayType.initFragments(_ArrayType, __ArrayType);
 			Types._Attribute.initFragments(_Attribute, __Attribute);
 			Types._AttributeName.initFragments(_AttributeName, __AttributeName);
@@ -1281,6 +1332,7 @@ public class OCCITables
 		}
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Action__Action = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Action__AnnotatedElement = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Action__Category = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Action__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -1300,6 +1352,62 @@ public class OCCITables
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Action__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _AnnotatedElement__AnnotatedElement = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _AnnotatedElement__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _AnnotatedElement__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Annotation__Annotation = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Annotation__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Annotation__OclElement = {
 			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
 			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
 			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
@@ -1339,6 +1447,7 @@ public class OCCITables
 		};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Attribute__Attribute = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Attribute__AnnotatedElement = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Attribute__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
@@ -1507,6 +1616,7 @@ public class OCCITables
 		};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Category__Category = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Category__AnnotatedElement = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Category__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
@@ -1855,6 +1965,7 @@ public class OCCITables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Kind__Kind = {
 			OCCITables.Operations._Kind__occiIsKindOf /* occiIsKindOf(Kind[?]) */
 		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Kind__AnnotatedElement = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Kind__Category = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Kind__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -1919,6 +2030,7 @@ public class OCCITables
 		};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Mixin__Mixin = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Mixin__AnnotatedElement = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Mixin__Category = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Mixin__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -2344,6 +2456,7 @@ public class OCCITables
 		};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Type__Type = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Type__AnnotatedElement = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Type__Category = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Type__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -2396,15 +2509,25 @@ public class OCCITables
 		 */
 		static {
 			Fragments._Action__Action.initOperations(_Action__Action);
+			Fragments._Action__AnnotatedElement.initOperations(_Action__AnnotatedElement);
 			Fragments._Action__Category.initOperations(_Action__Category);
 			Fragments._Action__OclAny.initOperations(_Action__OclAny);
 			Fragments._Action__OclElement.initOperations(_Action__OclElement);
+
+			Fragments._AnnotatedElement__AnnotatedElement.initOperations(_AnnotatedElement__AnnotatedElement);
+			Fragments._AnnotatedElement__OclAny.initOperations(_AnnotatedElement__OclAny);
+			Fragments._AnnotatedElement__OclElement.initOperations(_AnnotatedElement__OclElement);
+
+			Fragments._Annotation__Annotation.initOperations(_Annotation__Annotation);
+			Fragments._Annotation__OclAny.initOperations(_Annotation__OclAny);
+			Fragments._Annotation__OclElement.initOperations(_Annotation__OclElement);
 
 			Fragments._ArrayType__ArrayType.initOperations(_ArrayType__ArrayType);
 			Fragments._ArrayType__DataType.initOperations(_ArrayType__DataType);
 			Fragments._ArrayType__OclAny.initOperations(_ArrayType__OclAny);
 			Fragments._ArrayType__OclElement.initOperations(_ArrayType__OclElement);
 
+			Fragments._Attribute__AnnotatedElement.initOperations(_Attribute__AnnotatedElement);
 			Fragments._Attribute__Attribute.initOperations(_Attribute__Attribute);
 			Fragments._Attribute__OclAny.initOperations(_Attribute__OclAny);
 			Fragments._Attribute__OclElement.initOperations(_Attribute__OclElement);
@@ -2430,6 +2553,7 @@ public class OCCITables
 			Fragments._BooleanType__OclAny.initOperations(_BooleanType__OclAny);
 			Fragments._BooleanType__OclElement.initOperations(_BooleanType__OclElement);
 
+			Fragments._Category__AnnotatedElement.initOperations(_Category__AnnotatedElement);
 			Fragments._Category__Category.initOperations(_Category__Category);
 			Fragments._Category__OclAny.initOperations(_Category__OclAny);
 			Fragments._Category__OclElement.initOperations(_Category__OclElement);
@@ -2479,6 +2603,7 @@ public class OCCITables
 			Fragments._Integer__OclSummable.initOperations(_Integer__OclSummable);
 			Fragments._Integer__Real.initOperations(_Integer__Real);
 
+			Fragments._Kind__AnnotatedElement.initOperations(_Kind__AnnotatedElement);
 			Fragments._Kind__Category.initOperations(_Kind__Category);
 			Fragments._Kind__Kind.initOperations(_Kind__Kind);
 			Fragments._Kind__OclAny.initOperations(_Kind__OclAny);
@@ -2490,6 +2615,7 @@ public class OCCITables
 			Fragments._Link__OclAny.initOperations(_Link__OclAny);
 			Fragments._Link__OclElement.initOperations(_Link__OclElement);
 
+			Fragments._Mixin__AnnotatedElement.initOperations(_Mixin__AnnotatedElement);
 			Fragments._Mixin__Category.initOperations(_Mixin__Category);
 			Fragments._Mixin__Mixin.initOperations(_Mixin__Mixin);
 			Fragments._Mixin__OclAny.initOperations(_Mixin__OclAny);
@@ -2554,6 +2680,7 @@ public class OCCITables
 			Fragments._Transition__OclElement.initOperations(_Transition__OclElement);
 			Fragments._Transition__Transition.initOperations(_Transition__Transition);
 
+			Fragments._Type__AnnotatedElement.initOperations(_Type__AnnotatedElement);
 			Fragments._Type__Category.initOperations(_Type__Category);
 			Fragments._Type__OclAny.initOperations(_Type__OclAny);
 			Fragments._Type__OclElement.initOperations(_Type__OclElement);
@@ -2581,11 +2708,21 @@ public class OCCITables
 		}
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Action = {
+			OCCITables.Properties._AnnotatedElement__annotations,
 			OCCITables.Properties._Category__attributes,
 			OCCITables.Properties._Category__name,
 			OCCITables.Properties._Category__scheme,
 			OCCITables.Properties._Category__term,
 			OCCITables.Properties._Category__title
+		};
+
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _AnnotatedElement = {
+			OCCITables.Properties._AnnotatedElement__annotations
+		};
+
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Annotation = {
+			OCCITables.Properties._Annotation__key,
+			OCCITables.Properties._Annotation__value
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _ArrayType = {
@@ -2595,6 +2732,7 @@ public class OCCITables
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Attribute = {
+			OCCITables.Properties._AnnotatedElement__annotations,
 			OCCITables.Properties._Attribute__default,
 			OCCITables.Properties._Attribute__description,
 			OCCITables.Properties._Attribute__mutable,
@@ -2623,6 +2761,7 @@ public class OCCITables
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Category = {
+			OCCITables.Properties._AnnotatedElement__annotations,
 			OCCITables.Properties._Category__attributes,
 			OCCITables.Properties._Category__name,
 			OCCITables.Properties._Category__scheme,
@@ -2697,6 +2836,7 @@ public class OCCITables
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Kind = {
 			OCCITables.Properties._Type__actions,
+			OCCITables.Properties._AnnotatedElement__annotations,
 			OCCITables.Properties._Category__attributes,
 			OCCITables.Properties._Type__constraints,
 			OCCITables.Properties._Kind__entities,
@@ -2724,6 +2864,7 @@ public class OCCITables
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Mixin = {
 			OCCITables.Properties._Type__actions,
+			OCCITables.Properties._AnnotatedElement__annotations,
 			OCCITables.Properties._Mixin__applies,
 			OCCITables.Properties._Category__attributes,
 			OCCITables.Properties._Type__constraints,
@@ -2812,6 +2953,7 @@ public class OCCITables
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Type = {
 			OCCITables.Properties._Type__actions,
+			OCCITables.Properties._AnnotatedElement__annotations,
 			OCCITables.Properties._Category__attributes,
 			OCCITables.Properties._Type__constraints,
 			OCCITables.Properties._Category__name,
@@ -2827,6 +2969,8 @@ public class OCCITables
 		 */
 		static {
 			Fragments._Action__Action.initProperties(_Action);
+			Fragments._AnnotatedElement__AnnotatedElement.initProperties(_AnnotatedElement);
+			Fragments._Annotation__Annotation.initProperties(_Annotation);
 			Fragments._ArrayType__ArrayType.initProperties(_ArrayType);
 			Fragments._Attribute__Attribute.initProperties(_Attribute);
 			Fragments._AttributeName__AttributeName.initProperties(_AttributeName);

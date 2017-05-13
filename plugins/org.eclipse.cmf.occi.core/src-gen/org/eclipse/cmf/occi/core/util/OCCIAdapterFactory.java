@@ -77,6 +77,14 @@ public class OCCIAdapterFactory extends AdapterFactoryImpl {
 	protected OCCISwitch<Adapter> modelSwitch =
 		new OCCISwitch<Adapter>() {
 			@Override
+			public Adapter caseAnnotatedElement(AnnotatedElement object) {
+				return createAnnotatedElementAdapter();
+			}
+			@Override
+			public Adapter caseAnnotation(Annotation object) {
+				return createAnnotationAdapter();
+			}
+			@Override
 			public Adapter caseCategory(Category object) {
 				return createCategoryAdapter();
 			}
@@ -207,6 +215,34 @@ public class OCCIAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.AnnotatedElement <em>Annotated Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.AnnotatedElement
+	 * @generated
+	 */
+	public Adapter createAnnotatedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.Annotation <em>Annotation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.Annotation
+	 * @generated
+	 */
+	public Adapter createAnnotationAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.Category <em>Category</em>}'.

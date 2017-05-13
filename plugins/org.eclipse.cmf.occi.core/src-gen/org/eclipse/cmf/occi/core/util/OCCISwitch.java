@@ -75,9 +75,22 @@ public class OCCISwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case OCCIPackage.ANNOTATED_ELEMENT: {
+				AnnotatedElement annotatedElement = (AnnotatedElement)theEObject;
+				T result = caseAnnotatedElement(annotatedElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OCCIPackage.ANNOTATION: {
+				Annotation annotation = (Annotation)theEObject;
+				T result = caseAnnotation(annotation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case OCCIPackage.CATEGORY: {
 				Category category = (Category)theEObject;
 				T result = caseCategory(category);
+				if (result == null) result = caseAnnotatedElement(category);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -91,6 +104,7 @@ public class OCCISwitch<T> extends Switch<T> {
 				Type type = (Type)theEObject;
 				T result = caseType(type);
 				if (result == null) result = caseCategory(type);
+				if (result == null) result = caseAnnotatedElement(type);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -115,6 +129,7 @@ public class OCCISwitch<T> extends Switch<T> {
 			case OCCIPackage.ATTRIBUTE: {
 				Attribute attribute = (Attribute)theEObject;
 				T result = caseAttribute(attribute);
+				if (result == null) result = caseAnnotatedElement(attribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -123,6 +138,7 @@ public class OCCISwitch<T> extends Switch<T> {
 				T result = caseKind(kind);
 				if (result == null) result = caseType(kind);
 				if (result == null) result = caseCategory(kind);
+				if (result == null) result = caseAnnotatedElement(kind);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -130,6 +146,7 @@ public class OCCISwitch<T> extends Switch<T> {
 				Action action = (Action)theEObject;
 				T result = caseAction(action);
 				if (result == null) result = caseCategory(action);
+				if (result == null) result = caseAnnotatedElement(action);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -138,6 +155,7 @@ public class OCCISwitch<T> extends Switch<T> {
 				T result = caseMixin(mixin);
 				if (result == null) result = caseType(mixin);
 				if (result == null) result = caseCategory(mixin);
+				if (result == null) result = caseAnnotatedElement(mixin);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -265,6 +283,36 @@ public class OCCISwitch<T> extends Switch<T> {
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Annotated Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Annotated Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAnnotatedElement(AnnotatedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Annotation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Annotation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAnnotation(Annotation object) {
+		return null;
 	}
 
 	/**

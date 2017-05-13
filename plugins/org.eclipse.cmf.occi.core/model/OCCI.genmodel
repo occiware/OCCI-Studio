@@ -30,6 +30,13 @@
     <genDataTypes ecoreDataType="OCCI.ecore#//AttributeName"/>
     <genDataTypes ecoreDataType="OCCI.ecore#//Name"/>
     <genDataTypes ecoreDataType="OCCI.ecore#//Scheme"/>
+    <genClasses image="false" ecoreClass="OCCI.ecore#//AnnotatedElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OCCI.ecore#//AnnotatedElement/annotations"/>
+    </genClasses>
+    <genClasses ecoreClass="OCCI.ecore#//Annotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Annotation/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Annotation/value"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="OCCI.ecore#//Category">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Category/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Category/term"/>

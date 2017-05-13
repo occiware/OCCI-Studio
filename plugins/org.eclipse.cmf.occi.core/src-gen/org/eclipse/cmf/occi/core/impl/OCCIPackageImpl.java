@@ -12,6 +12,8 @@
 package org.eclipse.cmf.occi.core.impl;
 
 import org.eclipse.cmf.occi.core.Action;
+import org.eclipse.cmf.occi.core.AnnotatedElement;
+import org.eclipse.cmf.occi.core.Annotation;
 import org.eclipse.cmf.occi.core.ArrayType;
 import org.eclipse.cmf.occi.core.Attribute;
 import org.eclipse.cmf.occi.core.AttributeState;
@@ -63,6 +65,20 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass annotatedElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass annotationEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -390,6 +406,51 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(OCCIPackage.eNS_URI, theOCCIPackage);
 		return theOCCIPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAnnotatedElement() {
+		return annotatedElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAnnotatedElement_Annotations() {
+		return (EReference)annotatedElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAnnotation() {
+		return annotationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAnnotation_Key() {
+		return (EAttribute)annotationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAnnotation_Value() {
+		return (EAttribute)annotationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1950,6 +2011,13 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		isCreated = true;
 
 		// Create classes and their features
+		annotatedElementEClass = createEClass(ANNOTATED_ELEMENT);
+		createEReference(annotatedElementEClass, ANNOTATED_ELEMENT__ANNOTATIONS);
+
+		annotationEClass = createEClass(ANNOTATION);
+		createEAttribute(annotationEClass, ANNOTATION__KEY);
+		createEAttribute(annotationEClass, ANNOTATION__VALUE);
+
 		categoryEClass = createEClass(CATEGORY);
 		createEAttribute(categoryEClass, CATEGORY__NAME);
 		createEAttribute(categoryEClass, CATEGORY__TERM);
@@ -2181,7 +2249,9 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		categoryEClass.getESuperTypes().add(this.getAnnotatedElement());
 		typeEClass.getESuperTypes().add(this.getCategory());
+		attributeEClass.getESuperTypes().add(this.getAnnotatedElement());
 		kindEClass.getESuperTypes().add(this.getType());
 		actionEClass.getESuperTypes().add(this.getCategory());
 		mixinEClass.getESuperTypes().add(this.getType());
@@ -2197,6 +2267,13 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		arrayTypeEClass.getESuperTypes().add(this.getDataType());
 
 		// Initialize classes, features, and operations; add parameters
+		initEClass(annotatedElementEClass, AnnotatedElement.class, "AnnotatedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAnnotatedElement_Annotations(), this.getAnnotation(), null, "annotations", null, 0, -1, AnnotatedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(annotationEClass, Annotation.class, "Annotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAnnotation_Key(), this.getString(), "key", null, 1, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAnnotation_Value(), this.getString(), "value", null, 1, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(categoryEClass, Category.class, "Category", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCategory_Name(), this.getName_(), "name", null, 1, 1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCategory_Term(), this.getString(), "term", null, 1, 1, Category.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);

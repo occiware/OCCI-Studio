@@ -81,6 +81,29 @@ public class OCCIItemProviderAdapterFactory extends OCCIAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.core.Annotation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AnnotationItemProvider annotationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.core.Annotation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAnnotationAdapter() {
+		if (annotationItemProvider == null) {
+			annotationItemProvider = new AnnotationItemProvider(this);
+		}
+
+		return annotationItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.core.Constraint} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -708,6 +731,7 @@ public class OCCIItemProviderAdapterFactory extends OCCIAdapterFactory implement
 	 * @generated
 	 */
 	public void dispose() {
+		if (annotationItemProvider != null) annotationItemProvider.dispose();
 		if (constraintItemProvider != null) constraintItemProvider.dispose();
 		if (fsmItemProvider != null) fsmItemProvider.dispose();
 		if (stateItemProvider != null) stateItemProvider.dispose();

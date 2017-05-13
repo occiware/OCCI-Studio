@@ -432,6 +432,10 @@ public class OCCIValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
+			case OCCIPackage.ANNOTATED_ELEMENT:
+				return validateAnnotatedElement((AnnotatedElement)value, diagnostics, context);
+			case OCCIPackage.ANNOTATION:
+				return validateAnnotation((Annotation)value, diagnostics, context);
 			case OCCIPackage.CATEGORY:
 				return validateCategory((Category)value, diagnostics, context);
 			case OCCIPackage.CONSTRAINT:
@@ -509,6 +513,24 @@ public class OCCIValidator extends EObjectValidator {
 			default:
 				return true;
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAnnotatedElement(AnnotatedElement annotatedElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(annotatedElement, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAnnotation(Annotation annotation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(annotation, diagnostics, context);
 	}
 
 	/**

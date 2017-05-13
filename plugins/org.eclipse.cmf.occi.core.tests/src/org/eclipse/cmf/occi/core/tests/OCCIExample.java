@@ -14,7 +14,7 @@ package org.eclipse.cmf.occi.core.tests;
 import java.io.File;
 import java.io.IOException;
 
-import org.eclipse.cmf.occi.core.Constraint;
+import org.eclipse.cmf.occi.core.Annotation;
 import org.eclipse.cmf.occi.core.OCCIFactory;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
@@ -69,7 +69,7 @@ public class OCCIExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.occie"));
-				Constraint root = OCCIFactory.eINSTANCE.createConstraint();
+				Annotation root = OCCIFactory.eINSTANCE.createAnnotation();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}
