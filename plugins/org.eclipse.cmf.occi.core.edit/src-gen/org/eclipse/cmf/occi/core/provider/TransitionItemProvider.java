@@ -241,6 +241,9 @@ public class TransitionItemProvider
 			}
 			}
 			//Target changed
+			if(getTarget()!=null){
+				if(((Transition) getTarget()).getTarget() !=null){
+					if(((Transition) getTarget()).getTarget().getLiteral()!=null){
 			if(notification.getNotifier() != null &&  getTarget() != null && notification.getNotifier() == ((Transition) getTarget()).getTarget().getLiteral()) {
 				((IChangeNotifier) getAdapterFactory()).removeListener(this);
 				fireNotifyChanged(new ViewerNotification(notification, getTarget(), false, true));
@@ -253,6 +256,9 @@ public class TransitionItemProvider
 					fireNotifyChanged(new ViewerNotification(notification, target, false, true));
 					((IChangeNotifier) getAdapterFactory()).addListener(this);
 				}
+			}
+			}
+			}
 			}
 			}
 		}

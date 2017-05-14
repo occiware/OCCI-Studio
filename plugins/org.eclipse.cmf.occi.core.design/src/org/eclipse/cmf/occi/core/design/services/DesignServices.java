@@ -26,6 +26,8 @@ import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.Mixin;
 import org.eclipse.cmf.occi.core.OCCIFactory;
 import org.eclipse.cmf.occi.core.OcciCoreConstants;
+import org.eclipse.cmf.occi.core.State;
+import org.eclipse.cmf.occi.core.Transition;
 import org.eclipse.cmf.occi.core.Type;
 import org.eclipse.cmf.occi.core.design.dialog.LoadExtensionDialog;
 import org.eclipse.cmf.occi.core.util.OcciHelper;
@@ -221,4 +223,7 @@ public class DesignServices {
 	public void deleteElement(EObject eo) {
 		EcoreUtil.delete(eo);
 	}
+    public void setTarget(EObject host, EObject target) {
+    	((Transition)host).setTarget((State)target);
+    }
 }
