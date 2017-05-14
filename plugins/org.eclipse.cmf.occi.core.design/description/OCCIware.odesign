@@ -326,13 +326,13 @@
             </style>
           </subNodeMappings>
           <subNodeMappings name="FinalStateNode" semanticCandidatesExpression="aql:self.ownedState->select(s|s.final)" domainClass="occi.State">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="-1" resizeKind="NSEW" arcWidth="1" arcHeight="1" workspacePath="/org.eclipse.cmf.occi.core.design/icons/final_state.png">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="1" resizeKind="NSEW" arcWidth="1" arcHeight="1" workspacePath="/org.eclipse.cmf.occi.core.design/icons/final_state.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </subNodeMappings>
           <subContainerMappings name="StateContainer" semanticCandidatesExpression="feature:ownedState" domainClass="occi.State">
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="aql:self.literal.name" roundedCorner="true">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql:self.literal.name" roundedCorner="true" widthComputationExpression="6" heightComputationExpression="4">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
