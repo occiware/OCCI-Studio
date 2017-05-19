@@ -2834,13 +2834,13 @@ public interface OCCIPackage extends EPackage {
 	int RECORD_FIELD = 28;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECORD_FIELD__TYPE = 0;
+	int RECORD_FIELD__ANNOTATIONS = ATTRIBUTE__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2849,7 +2849,52 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECORD_FIELD__NAME = 1;
+	int RECORD_FIELD__NAME = ATTRIBUTE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Mutable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_FIELD__MUTABLE = ATTRIBUTE__MUTABLE;
+
+	/**
+	 * The feature id for the '<em><b>Required</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_FIELD__REQUIRED = ATTRIBUTE__REQUIRED;
+
+	/**
+	 * The feature id for the '<em><b>Default</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_FIELD__DEFAULT = ATTRIBUTE__DEFAULT;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_FIELD__DESCRIPTION = ATTRIBUTE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_FIELD__TYPE = ATTRIBUTE__TYPE;
 
 	/**
 	 * The number of structural features of the '<em>Record Field</em>' class.
@@ -2858,7 +2903,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECORD_FIELD_FEATURE_COUNT = 2;
+	int RECORD_FIELD_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Type Different Container</em>' operation.
@@ -2867,7 +2912,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECORD_FIELD___TYPE_DIFFERENT_CONTAINER__DIAGNOSTICCHAIN_MAP = 0;
+	int RECORD_FIELD___TYPE_DIFFERENT_CONTAINER__DIAGNOSTICCHAIN_MAP = ATTRIBUTE_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Record Field</em>' class.
@@ -2876,7 +2921,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECORD_FIELD_OPERATION_COUNT = 1;
+	int RECORD_FIELD_OPERATION_COUNT = ATTRIBUTE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.ArrayTypeImpl <em>Array Type</em>}' class.
@@ -4719,28 +4764,6 @@ public interface OCCIPackage extends EPackage {
 	EClass getRecordField();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.cmf.occi.core.RecordField#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see org.eclipse.cmf.occi.core.RecordField#getType()
-	 * @see #getRecordField()
-	 * @generated
-	 */
-	EReference getRecordField_Type();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.RecordField#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.eclipse.cmf.occi.core.RecordField#getName()
-	 * @see #getRecordField()
-	 * @generated
-	 */
-	EAttribute getRecordField_Name();
-
-	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.RecordField#TypeDifferentContainer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Type Different Container</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6242,22 +6265,6 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RECORD_FIELD = eINSTANCE.getRecordField();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RECORD_FIELD__TYPE = eINSTANCE.getRecordField_Type();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RECORD_FIELD__NAME = eINSTANCE.getRecordField_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Type Different Container</b></em>' operation.

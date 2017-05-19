@@ -238,6 +238,11 @@ public class CategoryItemProvider
 			(createChildParameter
 				(OCCIPackage.Literals.CATEGORY__ATTRIBUTES,
 				 OCCIFactory.eINSTANCE.createAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.CATEGORY__ATTRIBUTES,
+				 OCCIFactory.eINSTANCE.createRecordField()));
 	}
 
 }

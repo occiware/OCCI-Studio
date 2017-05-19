@@ -176,10 +176,7 @@
     <genClasses ecoreClass="OCCI.ecore#//RecordType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OCCI.ecore#//RecordType/recordFields"/>
     </genClasses>
-    <genClasses ecoreClass="OCCI.ecore#//RecordField">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//RecordField/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//RecordField/name"/>
-    </genClasses>
+    <genClasses ecoreClass="OCCI.ecore#//RecordField"/>
     <genClasses ecoreClass="OCCI.ecore#//ArrayType">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//ArrayType/type"/>
     </genClasses>

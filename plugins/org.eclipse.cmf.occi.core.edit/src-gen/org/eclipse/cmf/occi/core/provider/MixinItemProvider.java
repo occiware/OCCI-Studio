@@ -14,8 +14,6 @@ package org.eclipse.cmf.occi.core.provider;
 
 import java.util.Collection;
 import java.util.List;
-
-import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Mixin;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
@@ -23,9 +21,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.cmf.occi.core.Mixin} object.
@@ -90,48 +86,48 @@ public class MixinItemProvider extends TypeItemProvider {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addAppliesPropertyDescriptor(Object object) {
-		final IItemLabelProvider lp = new IItemLabelProvider() {
-			public String getText(Object object) {
-				if (object instanceof Kind) {
-					return ((Kind) object).getScheme() + ((Kind) object).getTerm();
-				}
-				return "";
-			}
-
-			public Object getImage(Object object) {
-				return null;
-			}
-		};
-		itemPropertyDescriptors
-				.add(new ItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Mixin_applies_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Mixin_applies_feature", "_UI_Mixin_type"),
-						OCCIPackage.Literals.MIXIN__APPLIES, true, false, true, null, null, null) {
-					@Override
-					public IItemLabelProvider getLabelProvider(Object object) {
-						if (object instanceof Mixin) {
-							return lp;
-						}
-						return super.getLabelProvider(object);
-					}
-				});
-	}
 //	protected void addAppliesPropertyDescriptor(Object object) {
-//		itemPropertyDescriptors.add
-//			(createItemPropertyDescriptor
-//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-//				 getResourceLocator(),
-//				 getString("_UI_Mixin_applies_feature"),
-//				 getString("_UI_PropertyDescriptor_description", "_UI_Mixin_applies_feature", "_UI_Mixin_type"),
-//				 OCCIPackage.Literals.MIXIN__APPLIES,
-//				 true,
-//				 false,
-//				 true,
-//				 null,
-//				 null,
-//				 null));
+//		final IItemLabelProvider lp = new IItemLabelProvider() {
+//			public String getText(Object object) {
+//				if (object instanceof Kind) {
+//					return ((Kind) object).getScheme() + ((Kind) object).getTerm();
+//				}
+//				return "";
+//			}
+//
+//			public Object getImage(Object object) {
+//				return null;
+//			}
+//		};
+//		itemPropertyDescriptors
+//				.add(new ItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+//						getResourceLocator(), getString("_UI_Mixin_applies_feature"),
+//						getString("_UI_PropertyDescriptor_description", "_UI_Mixin_applies_feature", "_UI_Mixin_type"),
+//						OCCIPackage.Literals.MIXIN__APPLIES, true, false, true, null, null, null) {
+//					@Override
+//					public IItemLabelProvider getLabelProvider(Object object) {
+//						if (object instanceof Mixin) {
+//							return lp;
+//						}
+//						return super.getLabelProvider(object);
+//					}
+//				});
 //	}
+	protected void addAppliesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Mixin_applies_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Mixin_applies_feature", "_UI_Mixin_type"),
+				 OCCIPackage.Literals.MIXIN__APPLIES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
 
 	/**
 	 * This adds a property descriptor for the Entities feature.

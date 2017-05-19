@@ -1853,24 +1853,6 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRecordField_Type() {
-		return (EReference)recordFieldEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRecordField_Name() {
-		return (EAttribute)recordFieldEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getRecordField__TypeDifferentContainer__DiagnosticChain_Map() {
 		return recordFieldEClass.getEOperations().get(0);
 	}
@@ -2199,8 +2181,6 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		createEReference(recordTypeEClass, RECORD_TYPE__RECORD_FIELDS);
 
 		recordFieldEClass = createEClass(RECORD_FIELD);
-		createEReference(recordFieldEClass, RECORD_FIELD__TYPE);
-		createEAttribute(recordFieldEClass, RECORD_FIELD__NAME);
 		createEOperation(recordFieldEClass, RECORD_FIELD___TYPE_DIFFERENT_CONTAINER__DIAGNOSTICCHAIN_MAP);
 
 		arrayTypeEClass = createEClass(ARRAY_TYPE);
@@ -2264,6 +2244,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		numericTypeEClass.getESuperTypes().add(this.getBasicType());
 		enumerationTypeEClass.getESuperTypes().add(this.getDataType());
 		recordTypeEClass.getESuperTypes().add(this.getDataType());
+		recordFieldEClass.getESuperTypes().add(this.getAttribute());
 		arrayTypeEClass.getESuperTypes().add(this.getDataType());
 
 		// Initialize classes, features, and operations; add parameters
@@ -2783,8 +2764,6 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEReference(getRecordType_RecordFields(), this.getRecordField(), null, "recordFields", null, 1, -1, RecordType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(recordFieldEClass, RecordField.class, "RecordField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRecordField_Type(), this.getDataType(), null, "type", null, 1, 1, RecordField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRecordField_Name(), this.getString(), "name", null, 0, 1, RecordField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getRecordField__TypeDifferentContainer__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "TypeDifferentContainer", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);

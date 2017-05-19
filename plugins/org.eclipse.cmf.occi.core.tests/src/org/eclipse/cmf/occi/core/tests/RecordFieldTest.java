@@ -12,8 +12,6 @@
  */
 package org.eclipse.cmf.occi.core.tests;
 
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import org.eclipse.cmf.occi.core.OCCIFactory;
@@ -31,15 +29,7 @@ import org.eclipse.cmf.occi.core.RecordField;
  * </p>
  * @generated
  */
-public class RecordFieldTest extends TestCase {
-
-	/**
-	 * The fixture for this Record Field test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RecordField fixture = null;
+public class RecordFieldTest extends AttributeTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,23 +51,14 @@ public class RecordFieldTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Record Field test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(RecordField fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Record Field test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected RecordField getFixture() {
-		return fixture;
+		return (RecordField)fixture;
 	}
 
 	/**

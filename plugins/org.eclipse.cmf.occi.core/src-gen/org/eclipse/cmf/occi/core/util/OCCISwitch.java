@@ -271,6 +271,8 @@ public class OCCISwitch<T> extends Switch<T> {
 			case OCCIPackage.RECORD_FIELD: {
 				RecordField recordField = (RecordField)theEObject;
 				T result = caseRecordField(recordField);
+				if (result == null) result = caseAttribute(recordField);
+				if (result == null) result = caseAnnotatedElement(recordField);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
