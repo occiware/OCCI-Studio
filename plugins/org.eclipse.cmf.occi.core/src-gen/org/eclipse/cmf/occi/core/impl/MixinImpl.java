@@ -171,7 +171,7 @@ public class MixinImpl extends TypeImpl implements Mixin {
 		final /*@NonInvalid*/ SetValue allInstances = ClassifierAllInstancesOperation.INSTANCE.evaluate(executor, OCCITables.SET_CLSSid_Entity, TYP_occi_c_c_Entity_0);
 		/*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(OCCITables.SET_CLSSid_Entity);
 		/*@NonNull*/ Iterator<Object> ITERATOR__1_0 = allInstances.iterator();
-		/*@Thrown*/ SetValue select;
+		/*@NonInvalid*/ SetValue select;
 		while (true) {
 			if (!ITERATOR__1_0.hasNext()) {
 				select = accumulator;
@@ -185,7 +185,7 @@ public class MixinImpl extends TypeImpl implements Mixin {
 			final /*@NonInvalid*/ OrderedSetValue BOXED_parts = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_MixinBase, parts);
 			/*@Thrown*/ SequenceValue.Accumulator accumulator_0 = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_CLSSid_Mixin);
 			/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_parts.iterator();
-			/*@Thrown*/ SequenceValue collect;
+			/*@NonInvalid*/ SequenceValue collect;
 			while (true) {
 				if (!ITERATOR__1.hasNext()) {
 					collect = accumulator_0;
@@ -199,13 +199,13 @@ public class MixinImpl extends TypeImpl implements Mixin {
 				//
 				accumulator_0.add(mixin);
 			}
-			final /*@Thrown*/ boolean includes = CollectionIncludesOperation.INSTANCE.evaluate(collect, this).booleanValue();
+			final /*@NonInvalid*/ boolean includes = CollectionIncludesOperation.INSTANCE.evaluate(collect, this).booleanValue();
 			//
 			if (includes == ValueUtil.TRUE_VALUE) {
 				accumulator.add(_1_0);
 			}
 		}
-		final /*@Thrown*/ List<Entity> ECORE_select = ((IdResolver.IdResolverExtension)idResolver).ecoreValueOfAll(Entity.class, select);
+		final /*@NonInvalid*/ List<Entity> ECORE_select = ((IdResolver.IdResolverExtension)idResolver).ecoreValueOfAll(Entity.class, select);
 		return (EList<Entity>)ECORE_select;
 	}
 
@@ -387,7 +387,7 @@ public class MixinImpl extends TypeImpl implements Mixin {
 				final /*@NonInvalid*/ OrderedSetValue BOXED_attributes = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Attribute, attributes);
 				/*@Thrown*/ SequenceValue.Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_DATAid_AttributeName);
 				/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_attributes.iterator();
-				/*@Thrown*/ SequenceValue collect;
+				/*@NonInvalid*/ SequenceValue collect;
 				while (true) {
 					if (!ITERATOR__1.hasNext()) {
 						collect = accumulator;

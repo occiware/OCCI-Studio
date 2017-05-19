@@ -158,38 +158,31 @@ public abstract class TypeImpl extends CategoryImpl implements Type {
 			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			/*@Caught*/ /*@NonNull*/ Object CAUGHT_result;
-			try {
-				final /*@NonInvalid*/ List<Action> actions = this.getActions();
-				final /*@NonInvalid*/ OrderedSetValue BOXED_actions = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Action, actions);
-				/*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(OCCITables.ORD_CLSSid_Action);
-				/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_actions.iterator();
-				/*@Thrown*/ boolean result;
-				while (true) {
-					if (!ITERATOR__1.hasNext()) {
-						result = ValueUtil.TRUE_VALUE;
-						break;
-					}
-					/*@NonInvalid*/ Action _1 = (Action)ITERATOR__1.next();
-					/**
-					 * term
-					 */
-					final /*@NonInvalid*/ String term = _1.getTerm();
-					//
-					if (accumulator.includes(term) == ValueUtil.TRUE_VALUE) {
-						result = ValueUtil.FALSE_VALUE;			// Abort after second find
-						break;
-					}
-					else {
-						accumulator.add(term);
-					}
+			final /*@NonInvalid*/ List<Action> actions = this.getActions();
+			final /*@NonInvalid*/ OrderedSetValue BOXED_actions = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Action, actions);
+			/*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(OCCITables.ORD_CLSSid_Action);
+			/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_actions.iterator();
+			/*@NonInvalid*/ boolean result;
+			while (true) {
+				if (!ITERATOR__1.hasNext()) {
+					result = ValueUtil.TRUE_VALUE;
+					break;
 				}
-				CAUGHT_result = result;
+				/*@NonInvalid*/ Action _1 = (Action)ITERATOR__1.next();
+				/**
+				 * term
+				 */
+				final /*@NonInvalid*/ String term = _1.getTerm();
+				//
+				if (accumulator.includes(term) == ValueUtil.TRUE_VALUE) {
+					result = ValueUtil.FALSE_VALUE;			// Abort after second find
+					break;
+				}
+				else {
+					accumulator.add(term);
+				}
 			}
-			catch (Exception e) {
-				CAUGHT_result = ValueUtil.createInvalidValue(e);
-			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Type_c_c_ActionTermUnicity, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, OCCITables.INT_0).booleanValue();
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Type_c_c_ActionTermUnicity, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, OCCITables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_0;
@@ -223,38 +216,31 @@ public abstract class TypeImpl extends CategoryImpl implements Type {
 			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			/*@Caught*/ /*@NonNull*/ Object CAUGHT_result;
-			try {
-				final /*@NonInvalid*/ List<Constraint> constraints = this.getConstraints();
-				final /*@NonInvalid*/ OrderedSetValue BOXED_constraints = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Constraint, constraints);
-				/*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(OCCITables.ORD_CLSSid_Constraint);
-				/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_constraints.iterator();
-				/*@Thrown*/ boolean result;
-				while (true) {
-					if (!ITERATOR__1.hasNext()) {
-						result = ValueUtil.TRUE_VALUE;
-						break;
-					}
-					/*@NonInvalid*/ Constraint _1 = (Constraint)ITERATOR__1.next();
-					/**
-					 * name
-					 */
-					final /*@NonInvalid*/ String name = _1.getName();
-					//
-					if (accumulator.includes(name) == ValueUtil.TRUE_VALUE) {
-						result = ValueUtil.FALSE_VALUE;			// Abort after second find
-						break;
-					}
-					else {
-						accumulator.add(name);
-					}
+			final /*@NonInvalid*/ List<Constraint> constraints = this.getConstraints();
+			final /*@NonInvalid*/ OrderedSetValue BOXED_constraints = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Constraint, constraints);
+			/*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(OCCITables.ORD_CLSSid_Constraint);
+			/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_constraints.iterator();
+			/*@NonInvalid*/ boolean result;
+			while (true) {
+				if (!ITERATOR__1.hasNext()) {
+					result = ValueUtil.TRUE_VALUE;
+					break;
 				}
-				CAUGHT_result = result;
+				/*@NonInvalid*/ Constraint _1 = (Constraint)ITERATOR__1.next();
+				/**
+				 * name
+				 */
+				final /*@NonInvalid*/ String name = _1.getName();
+				//
+				if (accumulator.includes(name) == ValueUtil.TRUE_VALUE) {
+					result = ValueUtil.FALSE_VALUE;			// Abort after second find
+					break;
+				}
+				else {
+					accumulator.add(name);
+				}
 			}
-			catch (Exception e) {
-				CAUGHT_result = ValueUtil.createInvalidValue(e);
-			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Type_c_c_ConstraintNameUnique, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, OCCITables.INT_0).booleanValue();
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Type_c_c_ConstraintNameUnique, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, OCCITables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_0;

@@ -444,7 +444,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 		final /*@NonInvalid*/ OrderedSetValue BOXED_parts = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_MixinBase, parts);
 		/*@Thrown*/ SequenceValue.Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_CLSSid_Mixin);
 		/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_parts.iterator();
-		/*@Thrown*/ SequenceValue collect;
+		/*@NonInvalid*/ SequenceValue collect;
 		while (true) {
 			if (!ITERATOR__1.hasNext()) {
 				collect = accumulator;
@@ -458,8 +458,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 			//
 			accumulator.add(mixin);
 		}
-		final /*@Thrown*/ SetValue asSet = CollectionAsSetOperation.INSTANCE.evaluate(collect);
-		final /*@Thrown*/ List<Mixin> ECORE_asSet = ((IdResolver.IdResolverExtension)idResolver).ecoreValueOfAll(Mixin.class, asSet);
+		final /*@NonInvalid*/ SetValue asSet = CollectionAsSetOperation.INSTANCE.evaluate(collect);
+		final /*@NonInvalid*/ List<Mixin> ECORE_asSet = ((IdResolver.IdResolverExtension)idResolver).ecoreValueOfAll(Mixin.class, asSet);
 		return (EList<Mixin>)ECORE_asSet;
 	}
 
@@ -540,38 +540,31 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			/*@Caught*/ /*@NonNull*/ Object CAUGHT_result;
-			try {
-				final /*@NonInvalid*/ List<AttributeState> attributes = this.getAttributes();
-				final /*@NonInvalid*/ OrderedSetValue BOXED_attributes = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_AttributeState, attributes);
-				/*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(OCCITables.ORD_CLSSid_AttributeState);
-				/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_attributes.iterator();
-				/*@Thrown*/ boolean result;
-				while (true) {
-					if (!ITERATOR__1.hasNext()) {
-						result = ValueUtil.TRUE_VALUE;
-						break;
-					}
-					/*@NonInvalid*/ AttributeState _1 = (AttributeState)ITERATOR__1.next();
-					/**
-					 * name
-					 */
-					final /*@NonInvalid*/ String name = _1.getName();
-					//
-					if (accumulator.includes(name) == ValueUtil.TRUE_VALUE) {
-						result = ValueUtil.FALSE_VALUE;			// Abort after second find
-						break;
-					}
-					else {
-						accumulator.add(name);
-					}
+			final /*@NonInvalid*/ List<AttributeState> attributes = this.getAttributes();
+			final /*@NonInvalid*/ OrderedSetValue BOXED_attributes = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_AttributeState, attributes);
+			/*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(OCCITables.ORD_CLSSid_AttributeState);
+			/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_attributes.iterator();
+			/*@NonInvalid*/ boolean result;
+			while (true) {
+				if (!ITERATOR__1.hasNext()) {
+					result = ValueUtil.TRUE_VALUE;
+					break;
 				}
-				CAUGHT_result = result;
+				/*@NonInvalid*/ AttributeState _1 = (AttributeState)ITERATOR__1.next();
+				/**
+				 * name
+				 */
+				final /*@NonInvalid*/ String name = _1.getName();
+				//
+				if (accumulator.includes(name) == ValueUtil.TRUE_VALUE) {
+					result = ValueUtil.FALSE_VALUE;			// Abort after second find
+					break;
+				}
+				else {
+					accumulator.add(name);
+				}
 			}
-			catch (Exception e) {
-				CAUGHT_result = ValueUtil.createInvalidValue(e);
-			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Entity_c_c_AttributesNameUnique, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, OCCITables.INT_0).booleanValue();
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Entity_c_c_AttributesNameUnique, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, OCCITables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_0;
@@ -615,7 +608,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 				final /*@NonInvalid*/ OrderedSetValue BOXED_parts = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_MixinBase, parts);
 				/*@Thrown*/ SequenceValue.Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_CLSSid_Mixin);
 				/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_parts.iterator();
-				/*@Thrown*/ SequenceValue collect;
+				/*@NonInvalid*/ SequenceValue collect;
 				while (true) {
 					if (!ITERATOR__1.hasNext()) {
 						collect = accumulator;
@@ -784,38 +777,31 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			/*@Caught*/ /*@NonNull*/ Object CAUGHT_result;
-			try {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Entity_0 = idResolver.getClass(OCCITables.CLSSid_Entity, null);
-				final /*@NonInvalid*/ SetValue allInstances = ClassifierAllInstancesOperation.INSTANCE.evaluate(executor, OCCITables.SET_CLSSid_Entity, TYP_occi_c_c_Entity_0);
-				/*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(OCCITables.SET_CLSSid_Entity);
-				/*@NonNull*/ Iterator<Object> ITERATOR__1 = allInstances.iterator();
-				/*@Thrown*/ boolean result;
-				while (true) {
-					if (!ITERATOR__1.hasNext()) {
-						result = ValueUtil.TRUE_VALUE;
-						break;
-					}
-					/*@NonInvalid*/ Entity _1 = (Entity)ITERATOR__1.next();
-					/**
-					 * id
-					 */
-					final /*@NonInvalid*/ String id = _1.getId();
-					//
-					if (accumulator.includes(id) == ValueUtil.TRUE_VALUE) {
-						result = ValueUtil.FALSE_VALUE;			// Abort after second find
-						break;
-					}
-					else {
-						accumulator.add(id);
-					}
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Entity_0 = idResolver.getClass(OCCITables.CLSSid_Entity, null);
+			final /*@NonInvalid*/ SetValue allInstances = ClassifierAllInstancesOperation.INSTANCE.evaluate(executor, OCCITables.SET_CLSSid_Entity, TYP_occi_c_c_Entity_0);
+			/*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(OCCITables.SET_CLSSid_Entity);
+			/*@NonNull*/ Iterator<Object> ITERATOR__1 = allInstances.iterator();
+			/*@NonInvalid*/ boolean result;
+			while (true) {
+				if (!ITERATOR__1.hasNext()) {
+					result = ValueUtil.TRUE_VALUE;
+					break;
 				}
-				CAUGHT_result = result;
+				/*@NonInvalid*/ Entity _1 = (Entity)ITERATOR__1.next();
+				/**
+				 * id
+				 */
+				final /*@NonInvalid*/ String id = _1.getId();
+				//
+				if (accumulator.includes(id) == ValueUtil.TRUE_VALUE) {
+					result = ValueUtil.FALSE_VALUE;			// Abort after second find
+					break;
+				}
+				else {
+					accumulator.add(id);
+				}
 			}
-			catch (Exception e) {
-				CAUGHT_result = ValueUtil.createInvalidValue(e);
-			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Entity_c_c_IdUnique, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, OCCITables.INT_0).booleanValue();
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Entity_c_c_IdUnique, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, OCCITables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_0;

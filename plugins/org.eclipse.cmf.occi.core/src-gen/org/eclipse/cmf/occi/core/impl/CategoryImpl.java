@@ -292,38 +292,31 @@ public abstract class CategoryImpl extends AnnotatedElementImpl implements Categ
 			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			/*@Caught*/ /*@NonNull*/ Object CAUGHT_result;
-			try {
-				final /*@NonInvalid*/ List<Attribute> attributes = this.getAttributes();
-				final /*@NonInvalid*/ OrderedSetValue BOXED_attributes = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Attribute, attributes);
-				/*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(OCCITables.ORD_CLSSid_Attribute);
-				/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_attributes.iterator();
-				/*@Thrown*/ boolean result;
-				while (true) {
-					if (!ITERATOR__1.hasNext()) {
-						result = ValueUtil.TRUE_VALUE;
-						break;
-					}
-					/*@NonInvalid*/ Attribute _1 = (Attribute)ITERATOR__1.next();
-					/**
-					 * name
-					 */
-					final /*@NonInvalid*/ String name = _1.getName();
-					//
-					if (accumulator.includes(name) == ValueUtil.TRUE_VALUE) {
-						result = ValueUtil.FALSE_VALUE;			// Abort after second find
-						break;
-					}
-					else {
-						accumulator.add(name);
-					}
+			final /*@NonInvalid*/ List<Attribute> attributes = this.getAttributes();
+			final /*@NonInvalid*/ OrderedSetValue BOXED_attributes = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Attribute, attributes);
+			/*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(OCCITables.ORD_CLSSid_Attribute);
+			/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_attributes.iterator();
+			/*@NonInvalid*/ boolean result;
+			while (true) {
+				if (!ITERATOR__1.hasNext()) {
+					result = ValueUtil.TRUE_VALUE;
+					break;
 				}
-				CAUGHT_result = result;
+				/*@NonInvalid*/ Attribute _1 = (Attribute)ITERATOR__1.next();
+				/**
+				 * name
+				 */
+				final /*@NonInvalid*/ String name = _1.getName();
+				//
+				if (accumulator.includes(name) == ValueUtil.TRUE_VALUE) {
+					result = ValueUtil.FALSE_VALUE;			// Abort after second find
+					break;
+				}
+				else {
+					accumulator.add(name);
+				}
 			}
-			catch (Exception e) {
-				CAUGHT_result = ValueUtil.createInvalidValue(e);
-			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Category_c_c_AttributesNameUnique, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, OCCITables.INT_0).booleanValue();
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Category_c_c_AttributesNameUnique, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, OCCITables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_0;
@@ -359,40 +352,33 @@ public abstract class CategoryImpl extends AnnotatedElementImpl implements Categ
 			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			/*@Caught*/ /*@NonNull*/ Object CAUGHT_result;
-			try {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Category = idResolver.getClass(OCCITables.CLSSid_Category, null);
-				final /*@NonInvalid*/ SetValue allInstances = ClassifierAllInstancesOperation.INSTANCE.evaluate(executor, OCCITables.SET_CLSSid_Category, TYP_occi_c_c_Category);
-				/*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(OCCITables.SET_CLSSid_Category);
-				/*@NonNull*/ Iterator<Object> ITERATOR__1 = allInstances.iterator();
-				/*@Thrown*/ boolean result;
-				while (true) {
-					if (!ITERATOR__1.hasNext()) {
-						result = ValueUtil.TRUE_VALUE;
-						break;
-					}
-					/*@NonInvalid*/ Category _1 = (Category)ITERATOR__1.next();
-					/**
-					 * scheme + term
-					 */
-					final /*@NonInvalid*/ String scheme = _1.getScheme();
-					final /*@NonInvalid*/ String term = _1.getTerm();
-					final /*@NonInvalid*/ String sum = StringConcatOperation.INSTANCE.evaluate(scheme, term);
-					//
-					if (accumulator.includes(sum) == ValueUtil.TRUE_VALUE) {
-						result = ValueUtil.FALSE_VALUE;			// Abort after second find
-						break;
-					}
-					else {
-						accumulator.add(sum);
-					}
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Category = idResolver.getClass(OCCITables.CLSSid_Category, null);
+			final /*@NonInvalid*/ SetValue allInstances = ClassifierAllInstancesOperation.INSTANCE.evaluate(executor, OCCITables.SET_CLSSid_Category, TYP_occi_c_c_Category);
+			/*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(OCCITables.SET_CLSSid_Category);
+			/*@NonNull*/ Iterator<Object> ITERATOR__1 = allInstances.iterator();
+			/*@NonInvalid*/ boolean result;
+			while (true) {
+				if (!ITERATOR__1.hasNext()) {
+					result = ValueUtil.TRUE_VALUE;
+					break;
 				}
-				CAUGHT_result = result;
+				/*@NonInvalid*/ Category _1 = (Category)ITERATOR__1.next();
+				/**
+				 * scheme + term
+				 */
+				final /*@NonInvalid*/ String scheme = _1.getScheme();
+				final /*@NonInvalid*/ String term = _1.getTerm();
+				final /*@NonInvalid*/ String sum = StringConcatOperation.INSTANCE.evaluate(scheme, term);
+				//
+				if (accumulator.includes(sum) == ValueUtil.TRUE_VALUE) {
+					result = ValueUtil.FALSE_VALUE;			// Abort after second find
+					break;
+				}
+				else {
+					accumulator.add(sum);
+				}
 			}
-			catch (Exception e) {
-				CAUGHT_result = ValueUtil.createInvalidValue(e);
-			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Category_c_c_IdentityUnique, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, OCCITables.INT_0).booleanValue();
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Category_c_c_IdentityUnique, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, OCCITables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_0;

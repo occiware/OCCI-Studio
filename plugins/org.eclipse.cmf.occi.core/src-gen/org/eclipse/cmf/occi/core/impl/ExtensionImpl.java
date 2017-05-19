@@ -395,48 +395,41 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			/*@Caught*/ /*@Nullable*/ Object CAUGHT_result;
-			try {
-				final /*@NonInvalid*/ List<Kind> kinds = this.getKinds();
-				final /*@NonInvalid*/ OrderedSetValue BOXED_kinds = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Kind, kinds);
-				/*@Thrown*/ Object accumulator = ValueUtil.TRUE_VALUE;
-				/*@NonNull*/ Iterator<Object> ITERATOR_k = BOXED_kinds.iterator();
-				/*@Thrown*/ Boolean result;
-				while (true) {
-					if (!ITERATOR_k.hasNext()) {
-						if (accumulator == ValueUtil.TRUE_VALUE) {
-							result = ValueUtil.TRUE_VALUE;
-						}
-						else {
-							throw (InvalidValueException)accumulator;
-						}
-						break;
+			final /*@NonInvalid*/ List<Kind> kinds = this.getKinds();
+			final /*@NonInvalid*/ OrderedSetValue BOXED_kinds = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Kind, kinds);
+			/*@Thrown*/ Object accumulator = ValueUtil.TRUE_VALUE;
+			/*@NonNull*/ Iterator<Object> ITERATOR_k = BOXED_kinds.iterator();
+			/*@NonInvalid*/ Boolean result;
+			while (true) {
+				if (!ITERATOR_k.hasNext()) {
+					if (accumulator == ValueUtil.TRUE_VALUE) {
+						result = ValueUtil.TRUE_VALUE;
 					}
-					/*@NonInvalid*/ Kind k = (Kind)ITERATOR_k.next();
-					/**
-					 * k.scheme = self.scheme
-					 */
-					final /*@NonInvalid*/ String scheme = k.getScheme();
-					final /*@NonInvalid*/ String scheme_0 = this.getScheme();
-					final /*@NonInvalid*/ boolean eq = scheme.equals(scheme_0);
-					//
-					if (eq == ValueUtil.FALSE_VALUE) {					// Normal unsuccessful body evaluation result
-						result = ValueUtil.FALSE_VALUE;
-						break;														// Stop immediately
+					else {
+						throw (InvalidValueException)accumulator;
 					}
-					else if (eq == ValueUtil.TRUE_VALUE) {				// Normal successful body evaluation result
-						;															// Carry on
-					}
-					else {															// Impossible badly typed result
-						accumulator = new InvalidValueException(PivotMessages.NonBooleanBody, "forAll");
-					}
+					break;
 				}
-				CAUGHT_result = result;
+				/*@NonInvalid*/ Kind k = (Kind)ITERATOR_k.next();
+				/**
+				 * k.scheme = self.scheme
+				 */
+				final /*@NonInvalid*/ String scheme = k.getScheme();
+				final /*@NonInvalid*/ String scheme_0 = this.getScheme();
+				final /*@NonInvalid*/ boolean eq = scheme.equals(scheme_0);
+				//
+				if (eq == ValueUtil.FALSE_VALUE) {					// Normal unsuccessful body evaluation result
+					result = ValueUtil.FALSE_VALUE;
+					break;														// Stop immediately
+				}
+				else if (eq == ValueUtil.TRUE_VALUE) {				// Normal successful body evaluation result
+					;															// Carry on
+				}
+				else {															// Impossible badly typed result
+					accumulator = new InvalidValueException(PivotMessages.NonBooleanBody, "forAll");
+				}
 			}
-			catch (Exception e) {
-				CAUGHT_result = ValueUtil.createInvalidValue(e);
-			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Extension_c_c_KindsSchemeValid, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, OCCITables.INT_0).booleanValue();
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Extension_c_c_KindsSchemeValid, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, OCCITables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_0;
@@ -705,52 +698,45 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			/*@Caught*/ /*@NonNull*/ Object CAUGHT_result;
-			try {
-				final /*@NonInvalid*/ List<Kind> kinds = this.getKinds();
-				final /*@NonInvalid*/ OrderedSetValue BOXED_kinds = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Kind, kinds);
-				/*@Thrown*/ SequenceValue.Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_PRIMid_String);
-				/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_kinds.iterator();
-				/*@Thrown*/ SequenceValue collect;
-				while (true) {
-					if (!ITERATOR__1.hasNext()) {
-						collect = accumulator;
-						break;
-					}
-					/*@NonInvalid*/ Kind _1 = (Kind)ITERATOR__1.next();
-					/**
-					 * term
-					 */
-					final /*@NonInvalid*/ String term = _1.getTerm();
-					//
-					accumulator.add(term);
+			final /*@NonInvalid*/ List<Kind> kinds = this.getKinds();
+			final /*@NonInvalid*/ OrderedSetValue BOXED_kinds = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Kind, kinds);
+			/*@Thrown*/ SequenceValue.Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_PRIMid_String);
+			/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_kinds.iterator();
+			/*@NonInvalid*/ SequenceValue collect;
+			while (true) {
+				if (!ITERATOR__1.hasNext()) {
+					collect = accumulator;
+					break;
 				}
-				final /*@NonInvalid*/ List<Mixin> mixins = this.getMixins();
-				final /*@NonInvalid*/ OrderedSetValue BOXED_mixins = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Mixin, mixins);
-				/*@Thrown*/ SequenceValue.Accumulator accumulator_0 = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_PRIMid_String);
-				/*@NonNull*/ Iterator<Object> ITERATOR__1_0 = BOXED_mixins.iterator();
-				/*@Thrown*/ SequenceValue collect_0;
-				while (true) {
-					if (!ITERATOR__1_0.hasNext()) {
-						collect_0 = accumulator_0;
-						break;
-					}
-					/*@NonInvalid*/ Mixin _1_0 = (Mixin)ITERATOR__1_0.next();
-					/**
-					 * term
-					 */
-					final /*@NonInvalid*/ String term_0 = _1_0.getTerm();
-					//
-					accumulator_0.add(term_0);
+				/*@NonInvalid*/ Kind _1 = (Kind)ITERATOR__1.next();
+				/**
+				 * term
+				 */
+				final /*@NonInvalid*/ String term = _1.getTerm();
+				//
+				accumulator.add(term);
+			}
+			final /*@NonInvalid*/ List<Mixin> mixins = this.getMixins();
+			final /*@NonInvalid*/ OrderedSetValue BOXED_mixins = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Mixin, mixins);
+			/*@Thrown*/ SequenceValue.Accumulator accumulator_0 = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_PRIMid_String);
+			/*@NonNull*/ Iterator<Object> ITERATOR__1_0 = BOXED_mixins.iterator();
+			/*@NonInvalid*/ SequenceValue collect_0;
+			while (true) {
+				if (!ITERATOR__1_0.hasNext()) {
+					collect_0 = accumulator_0;
+					break;
 				}
-				final /*@Thrown*/ BagValue intersection = (BagValue)CollectionIntersectionOperation.INSTANCE.evaluate(collect, collect_0);
-				final /*@Thrown*/ boolean result = CollectionIsEmptyOperation.INSTANCE.evaluate(intersection).booleanValue();
-				CAUGHT_result = result;
+				/*@NonInvalid*/ Mixin _1_0 = (Mixin)ITERATOR__1_0.next();
+				/**
+				 * term
+				 */
+				final /*@NonInvalid*/ String term_0 = _1_0.getTerm();
+				//
+				accumulator_0.add(term_0);
 			}
-			catch (Exception e) {
-				CAUGHT_result = ValueUtil.createInvalidValue(e);
-			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Extension_c_c_TermUnicity, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, OCCITables.INT_0).booleanValue();
+			final /*@NonInvalid*/ BagValue intersection = (BagValue)CollectionIntersectionOperation.INSTANCE.evaluate(collect, collect_0);
+			final /*@NonInvalid*/ boolean result = CollectionIsEmptyOperation.INSTANCE.evaluate(intersection).booleanValue();
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Extension_c_c_TermUnicity, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, OCCITables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_0;
@@ -794,7 +780,7 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 				final /*@NonInvalid*/ OrderedSetValue BOXED_mixins = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Mixin, mixins);
 				/*@Thrown*/ SequenceValue.Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_CLSSid_Kind);
 				/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_mixins.iterator();
-				/*@Thrown*/ SequenceValue collect;
+				/*@NonInvalid*/ SequenceValue collect;
 				while (true) {
 					if (!ITERATOR__1.hasNext()) {
 						collect = accumulator;
@@ -905,38 +891,31 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			/*@Caught*/ /*@NonNull*/ Object CAUGHT_result;
-			try {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Extension_0 = idResolver.getClass(OCCITables.CLSSid_Extension, null);
-				final /*@NonInvalid*/ SetValue allInstances = ClassifierAllInstancesOperation.INSTANCE.evaluate(executor, OCCITables.SET_CLSSid_Extension, TYP_occi_c_c_Extension_0);
-				/*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(OCCITables.SET_CLSSid_Extension);
-				/*@NonNull*/ Iterator<Object> ITERATOR__1 = allInstances.iterator();
-				/*@Thrown*/ boolean result;
-				while (true) {
-					if (!ITERATOR__1.hasNext()) {
-						result = ValueUtil.TRUE_VALUE;
-						break;
-					}
-					/*@NonInvalid*/ Extension _1 = (Extension)ITERATOR__1.next();
-					/**
-					 * scheme
-					 */
-					final /*@NonInvalid*/ String scheme = _1.getScheme();
-					//
-					if (accumulator.includes(scheme) == ValueUtil.TRUE_VALUE) {
-						result = ValueUtil.FALSE_VALUE;			// Abort after second find
-						break;
-					}
-					else {
-						accumulator.add(scheme);
-					}
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Extension_0 = idResolver.getClass(OCCITables.CLSSid_Extension, null);
+			final /*@NonInvalid*/ SetValue allInstances = ClassifierAllInstancesOperation.INSTANCE.evaluate(executor, OCCITables.SET_CLSSid_Extension, TYP_occi_c_c_Extension_0);
+			/*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(OCCITables.SET_CLSSid_Extension);
+			/*@NonNull*/ Iterator<Object> ITERATOR__1 = allInstances.iterator();
+			/*@NonInvalid*/ boolean result;
+			while (true) {
+				if (!ITERATOR__1.hasNext()) {
+					result = ValueUtil.TRUE_VALUE;
+					break;
 				}
-				CAUGHT_result = result;
+				/*@NonInvalid*/ Extension _1 = (Extension)ITERATOR__1.next();
+				/**
+				 * scheme
+				 */
+				final /*@NonInvalid*/ String scheme = _1.getScheme();
+				//
+				if (accumulator.includes(scheme) == ValueUtil.TRUE_VALUE) {
+					result = ValueUtil.FALSE_VALUE;			// Abort after second find
+					break;
+				}
+				else {
+					accumulator.add(scheme);
+				}
 			}
-			catch (Exception e) {
-				CAUGHT_result = ValueUtil.createInvalidValue(e);
-			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Extension_c_c_SchemeUnique, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, OCCITables.INT_0).booleanValue();
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Extension_c_c_SchemeUnique, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, OCCITables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_0;
@@ -980,7 +959,7 @@ public class ExtensionImpl extends MinimalEObjectImpl.Container implements Exten
 				final /*@NonInvalid*/ OrderedSetValue BOXED_mixins = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Mixin, mixins);
 				/*@Thrown*/ SequenceValue.Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_CLSSid_Mixin);
 				/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_mixins.iterator();
-				/*@Thrown*/ SequenceValue collect;
+				/*@NonInvalid*/ SequenceValue collect;
 				while (true) {
 					if (!ITERATOR__1.hasNext()) {
 						collect = accumulator;

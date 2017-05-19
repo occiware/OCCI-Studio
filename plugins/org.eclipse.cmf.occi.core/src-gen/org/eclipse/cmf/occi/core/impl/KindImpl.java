@@ -210,7 +210,7 @@ public class KindImpl extends TypeImpl implements Kind {
 		final /*@NonInvalid*/ SetValue allInstances = ClassifierAllInstancesOperation.INSTANCE.evaluate(executor, OCCITables.SET_CLSSid_Entity, TYP_occi_c_c_Entity_0);
 		/*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(OCCITables.SET_CLSSid_Entity);
 		/*@NonNull*/ Iterator<Object> ITERATOR__1 = allInstances.iterator();
-		/*@Thrown*/ SetValue select;
+		/*@NonInvalid*/ SetValue select;
 		while (true) {
 			if (!ITERATOR__1.hasNext()) {
 				select = accumulator;
@@ -227,7 +227,7 @@ public class KindImpl extends TypeImpl implements Kind {
 				accumulator.add(_1);
 			}
 		}
-		final /*@Thrown*/ List<Entity> ECORE_select = ((IdResolver.IdResolverExtension)idResolver).ecoreValueOfAll(Entity.class, select);
+		final /*@NonInvalid*/ List<Entity> ECORE_select = ((IdResolver.IdResolverExtension)idResolver).ecoreValueOfAll(Entity.class, select);
 		return (EList<Entity>)ECORE_select;
 	}
 
@@ -498,7 +498,7 @@ public class KindImpl extends TypeImpl implements Kind {
 				final /*@NonInvalid*/ OrderedSetValue BOXED_attributes = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Attribute, attributes);
 				/*@Thrown*/ SequenceValue.Accumulator accumulator = ValueUtil.createSequenceAccumulatorValue(OCCITables.SEQ_DATAid_AttributeName);
 				/*@NonNull*/ Iterator<Object> ITERATOR__1 = BOXED_attributes.iterator();
-				/*@Thrown*/ SequenceValue collect;
+				/*@NonInvalid*/ SequenceValue collect;
 				while (true) {
 					if (!ITERATOR__1.hasNext()) {
 						collect = accumulator;
