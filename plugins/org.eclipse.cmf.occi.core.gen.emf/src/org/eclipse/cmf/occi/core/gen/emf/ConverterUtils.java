@@ -104,15 +104,6 @@ public final class ConverterUtils {
 	public static EClass getMappedEClass(Kind kind) {
 		return (EClass) ConverterUtils.getEPackage(kind).getEClassifier(ConverterUtils.toU1Case(kind.getTerm()));
 	}
-
-	public static Collection<Attribute> getAllAttributes(Kind kind) {
-		List<Attribute> res = new ArrayList<Attribute>();
-		res.addAll(kind.getAttributes());
-		if (kind.getParent() != null) {
-			res.addAll(getAllAttributes(kind.getParent()));
-		}
-		return res;
-	}
 	
 	public static void persistMetamodel(ResourceSet resourceSet, EPackage generated, String path) throws IOException {
 		if (new File(path).exists()) {

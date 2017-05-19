@@ -28,9 +28,9 @@ import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.OCCIFactory;
 import org.eclipse.cmf.occi.core.Resource;
-import org.eclipse.cmf.occi.core.gen.emf.ConverterUtils;
 import org.eclipse.cmf.occi.core.util.OcciRegistry;
 import org.eclipse.cmf.occi.core.util.Occi2Ecore;
+import org.eclipse.cmf.occi.core.util.OcciHelper;
 
 public class Ecore2OCCI {
 
@@ -68,7 +68,7 @@ public class Ecore2OCCI {
 		targetResource.setKind(kind);
 
 		Set<EAttribute> setAttributes = new HashSet<EAttribute>();
-		for (Attribute attribute : ConverterUtils.getAllAttributes(kind)) {
+		for (Attribute attribute : OcciHelper.getAllAttributes(kind)) {
 			String convertedAttributeName = Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName());
 			EAttribute eAttribute = (EAttribute) sourceResource.eClass().getEStructuralFeature(convertedAttributeName);
 			// an attr cannot be set twice
@@ -96,7 +96,7 @@ public class Ecore2OCCI {
 		targetLink.setSource(mappedResources.get(sourceLink.getSource()));
 		targetLink.setTarget(mappedResources.get(sourceLink.getTarget()));
 		Set<EAttribute> setAttributes = new HashSet<EAttribute>();
-		for (Attribute attribute : ConverterUtils.getAllAttributes(kind)) {
+		for (Attribute attribute : OcciHelper.getAllAttributes(kind)) {
 			String convertedAttributeName = Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName());
 			EAttribute eAttribute = (EAttribute) sourceLink.eClass().getEStructuralFeature(convertedAttributeName);
 			// an attr cannot be set twice

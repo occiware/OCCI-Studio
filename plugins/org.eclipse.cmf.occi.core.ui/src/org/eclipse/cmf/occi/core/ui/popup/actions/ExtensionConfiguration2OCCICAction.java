@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.Collections;
 
 import org.eclipse.cmf.occi.core.Configuration;
-import org.eclipse.cmf.occi.core.gen.emf.ConverterUtils;
 import org.eclipse.cmf.occi.core.ui.Activator;
 import org.eclipse.cmf.occi.core.util.OcciHelper;
 import org.eclipse.core.resources.IFile;

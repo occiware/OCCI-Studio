@@ -194,7 +194,16 @@ public final class OcciHelper
 		// Kind not found.
 		throw new IllegalArgumentException("term '" + kindTerm + "' is not found into extension '" + extension.getScheme() + "'!");
 	}
-
+	
+	public static Collection<Attribute> getAllAttributes(Kind kind) {
+		List<Attribute> res = new ArrayList<Attribute>();
+		res.addAll(kind.getAttributes());
+		if (kind.getParent() != null) {
+			res.addAll(getAllAttributes(kind.getParent()));
+		}
+		return res;
+	}
+	
 	// ----------------------------------------------------------------------
 	//
 	// Related to Entity.
