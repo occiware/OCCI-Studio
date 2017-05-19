@@ -6,6 +6,7 @@ import java.util.Collections;
 import org.eclipse.cmf.occi.core.Configuration;
 import org.eclipse.cmf.occi.core.gen.emf.ConverterUtils;
 import org.eclipse.cmf.occi.core.ui.Activator;
+import org.eclipse.cmf.occi.core.util.OcciHelper;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
@@ -52,7 +53,7 @@ public class ExtensionConfiguration2OCCICAction implements IObjectActionDelegate
 	public void run(IAction action) {
 		IFile configFile = (IFile) ((IStructuredSelection) selection).getFirstElement();
 		try {
-			EObject root = ConverterUtils.getRootElement(resourceSet, "file:/" + configFile.getLocation().toString());
+			EObject root = OcciHelper.getRootElement(resourceSet, "file:/" + configFile.getLocation().toString());
 			Configuration newConfig = new Ecore2OCCI().convertConfig((Configuration) root);
 			Resource newResource = resourceSet
 					.createResource(URI.createURI("file:/" + configFile.getLocation().addFileExtension("occic").toString()));

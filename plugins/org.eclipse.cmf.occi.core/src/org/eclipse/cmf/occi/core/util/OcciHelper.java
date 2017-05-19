@@ -43,6 +43,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -450,4 +451,10 @@ public final class OcciHelper
 
 		return attr;
 	}
+	
+	public static EObject getRootElement(ResourceSet resourceSet, String path) {
+	org.eclipse.emf.ecore.resource.Resource resource = resourceSet.getResource(URI.createURI(path), true);
+	EcoreUtil.resolveAll(resource);
+	return resource.getContents().get(0);
+}
 }

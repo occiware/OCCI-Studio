@@ -39,6 +39,7 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.cmf.occi.core.Attribute; 
 import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.Kind;
+import org.eclipse.cmf.occi.core.util.OcciHelper;
 import org.eclipse.cmf.occi.core.util.OcciRegistry;
 
 public final class ConverterUtils {
@@ -56,12 +57,6 @@ public final class ConverterUtils {
 		BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(file));
 		stream.write(content.getBytes());
 		stream.close();
-	}
-
-	public static EObject getRootElement(ResourceSet resourceSet, String path) {
-		Resource resource = resourceSet.getResource(URI.createURI(path), true);
-		EcoreUtil.resolveAll(resource);
-		return resource.getContents().get(0);
 	}
 
 	public static void save(ResourceSet resourceSet, EObject rootElement, String path) throws IOException {
@@ -121,7 +116,7 @@ public final class ConverterUtils {
 	
 	public static void persistMetamodel(ResourceSet resourceSet, EPackage generated, String path) throws IOException {
 		if (new File(path).exists()) {
-			EPackage existing = (EPackage) ConverterUtils.getRootElement(resourceSet, "file:/" + path);
+			EPackage existing = (EPackage) OcciHelper.getRootElement(resourceSet, "file:/" + path);
 			for (Iterator<EObject> iterator = existing.eAllContents(); iterator.hasNext();) {
 				EObject eo = iterator.next();
 				if (eo instanceof EAnnotation && isOCLRelated((EAnnotation) eo)) {

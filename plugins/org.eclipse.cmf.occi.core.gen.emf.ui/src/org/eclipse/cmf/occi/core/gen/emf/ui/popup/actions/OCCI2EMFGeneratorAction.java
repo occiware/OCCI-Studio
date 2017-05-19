@@ -16,6 +16,7 @@ import org.eclipse.cmf.occi.core.Transition;
 import org.eclipse.cmf.occi.core.gen.emf.ConverterUtils;
 import org.eclipse.cmf.occi.core.gen.emf.OCCIExtension2Ecore;
 import org.eclipse.cmf.occi.core.gen.emf.ui.Activator;
+import org.eclipse.cmf.occi.core.util.OcciHelper;
 import org.eclipse.cmf.occi.core.util.OcciRegistry;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
@@ -84,7 +85,7 @@ public class OCCI2EMFGeneratorAction implements IObjectActionDelegate {
 		try {
 			EPackage.Registry.INSTANCE.put(ECORE_PLATFORM_URI, EcorePackage.eINSTANCE);
 			resourceSet = new ResourceSetImpl();
-			Extension ext = (Extension) ConverterUtils.getRootElement(resourceSet,
+			Extension ext = (Extension) OcciHelper.getRootElement(resourceSet,
 					"file:" + occieFile.getLocation().toString());
 
 			Map<Object, Object> validationContext = LabelUtil.createDefaultContext(Diagnostician.INSTANCE);
@@ -196,7 +197,7 @@ public class OCCI2EMFGeneratorAction implements IObjectActionDelegate {
 		/*
 		 * Create genmodel
 		 */
-		GenPackage coreGenPackage = (GenPackage) ConverterUtils.getRootElement(resourceSet, CORE_GEN_PACKAGE_URI)
+		GenPackage coreGenPackage = (GenPackage) OcciHelper.getRootElement(resourceSet, CORE_GEN_PACKAGE_URI)
 				.eContents().get(1);
 		usedPackages.add(coreGenPackage);
 		GenUtils.createGenModel(ePackage,

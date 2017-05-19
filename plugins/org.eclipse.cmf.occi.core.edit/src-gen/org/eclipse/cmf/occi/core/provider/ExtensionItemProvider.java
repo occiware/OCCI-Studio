@@ -19,7 +19,7 @@ import java.util.Map.Entry;
 import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.OCCIFactory;
 import org.eclipse.cmf.occi.core.OCCIPackage;
-import org.eclipse.cmf.occi.core.gen.emf.ConverterUtils;
+import org.eclipse.cmf.occi.core.util.OcciHelper;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -176,7 +176,7 @@ public class ExtensionItemProvider extends ItemProviderAdapter implements IEditi
 									// Extension class (and not uri, or string)
 									// because the import reference has the
 									// Extension type.
-									Extension ext = (Extension) ConverterUtils.getRootElement(resourceSet,
+									Extension ext = (Extension) OcciHelper.getRootElement(resourceSet,
 											entry.getKey().toString());
 									if (!(ext.getScheme().equals(((Extension) object).getScheme()))) {
 										//System.out.println("extension " + ext.eResource().getURI());

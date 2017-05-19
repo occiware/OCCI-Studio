@@ -14,6 +14,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
- com.google.guava,
- org.eclipse.cmf.occi.core.gen.emf
+ com.google.guava
 Bundle-ActivationPolicy: lazy
