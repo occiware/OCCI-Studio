@@ -20,12 +20,24 @@
       <!-- @generated Infrastructure -->
       <package
             uri="http://schemas.ogf.org/occi/infrastructure/ecore"
-            class="org.eclipse.cmf.occi.infrastructure.InfrastructurePackage"/>
+            class="org.eclipse.cmf.occi.infrastructure.InfrastructurePackage"
+            genModel="model/Infrastructure.genmodel"/>
+   </extension>
+   <!-- Register the parser for .infrastructure files. -->
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="infrastructure"
+            class="org.eclipse.cmf.occi.core.util.OCCIResourceFactoryImpl"/>
    </extension>
    <!-- Define URI mapping. -->
    <extension point="org.eclipse.emf.ecore.uri_mapping" >
       <mapping
             source="http://schemas.ogf.org/occi/infrastructure"
             target="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.occie"/>
+   </extension>
+   
+   <!-- Register the OCCI Infrastructure extension. -->
+   <extension point="org.eclipse.cmf.occi.core.occie">
+      <occie scheme="http://schemas.ogf.org/occi/infrastructure#" file="model/Infrastructure.occie"/>
    </extension>
 </plugin>
