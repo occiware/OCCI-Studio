@@ -440,6 +440,11 @@ public class OCCIExtension2Ecore {
 		case SHORT:
 			edatatype.setInstanceTypeName("java.lang.Short");
 			break;
+		case BIG_DECIMAL:
+			edatatype.setInstanceTypeName("java.math.BigDecimal");
+			break;
+		default:
+			break;
 		}
 		if (type.isSetTotalDigits() || type.isSetMinInclusive() || type.isSetMinExclusive() || type.isSetMaxInclusive()
 				|| type.isSetMaxExclusive()) {
