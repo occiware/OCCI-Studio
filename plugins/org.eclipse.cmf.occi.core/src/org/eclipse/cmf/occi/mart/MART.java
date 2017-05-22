@@ -8,6 +8,7 @@
  * 
  * Contributors:
  *  - Philippe Merle <philippe.merle@inria.fr>
+ *  - Christophe Gourdin <christophe.gourdin@inria.fr>
  *******************************************************************************/
 package org.eclipse.cmf.occi.mart;
 
@@ -108,7 +109,7 @@ public class MART
 											String uri = childElement.getAttribute("uri");
 											String className = childElement.getAttribute("class");
 											// Do not dealt with Eclipse packages.
-											if(!className.startsWith("org.eclipse.")) {
+											if(!className.startsWith("org.eclipse") || className.startsWith("org.eclipse.cmf")) {
 												// Load the class.
 												Class<?> ePackageClass = loadClass(className);
 												if(ePackageClass != null) {
@@ -148,7 +149,7 @@ public class MART
 											String uri = childElement.getAttribute("uri");
 											String className = childElement.getAttribute("class");
 											// Do not dealt with Eclipse packages.
-											if(!className.startsWith("org.eclipse.")) {
+											if(!className.startsWith("org.eclipse")|| className.startsWith("org.eclipse.cmf")) {
 												// Instantiate the factory class.
 												EFactory eFactory = (EFactory)newInstance(className);
 												if(eFactory != null) {
@@ -175,7 +176,7 @@ public class MART
 											String type = childElement.getAttribute("type");
 											String className = childElement.getAttribute("class");
 											// Do not dealt with Eclipse packages.
-											if(!className.startsWith("org.eclipse.")) {
+											if(!className.startsWith("org.eclipse") || className.startsWith("org.eclipse.cmf")) {
 												// Instantiate the class.
 												Object extensionParser = newInstance(className);
 												if(extensionParser != null) {
