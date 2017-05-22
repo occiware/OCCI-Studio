@@ -531,20 +531,51 @@ public class OCCIExtension2Ecore {
 	private void completeRecordTypeFeatures(RecordType recordType, EClass type) {
 
 		for (RecordField rf : recordType.getRecordFields()) {
+			// if the type of the recordField is different to arraytype or a recordtype
+			// it will be translated into a EMF attribute
 			if (!(rf.getType() instanceof RecordType || rf.getType() instanceof ArrayType)) {
 				EAttribute attribute = EcoreFactory.eINSTANCE.createEAttribute();
 				type.getEStructuralFeatures().add(attribute);
 				attribute.setName(rf.getName());
 				attribute.setLowerBound(1);
 				attribute.setEType(getMappedType(rf.getType()));
+				
+				// Set the default value of the Ecore attribute.
+				String defaultValue = rf.getDefault();
+				if (defaultValue != null && !defaultValue.isEmpty()) {
+					attribute.setDefaultValue(defaultValue);
+				}
+				// The Ecore attribute is required when the OCCI attribute is required.
+				if (attribute.isRequired()) {
+					attribute.setLowerBound(1);
+				}
+				attachInfo(attribute, rf.getDescription());
+				
 			} else {
+				// otherwise, il will be translated into an EMF reference
 				EReference reference = EcoreFactory.eINSTANCE.createEReference();
 				type.getEStructuralFeatures().add(reference);
 				reference.setName(rf.getName());
-				reference.setLowerBound(1);
+				
+				// The Ecore attribute is required when the OCCI attribute is required.
+				if (rf.isRequired()) {
+					reference.setLowerBound(1);
+				}
+				
 				reference.setUpperBound(1);
 				reference.setEType(getMappedType(rf.getType()));
 				reference.setContainment(true);
+				
+				// Set the default value of the Ecore attribute.
+				// Default values for EMF EReference is not supported
+				// see https://www.eclipse.org/forums/index.php?t=msg&th=131049&goto=406266&#msg_406266 
+//				String defaultValue = rf.getDefault();
+//				if (defaultValue != null && !defaultValue.isEmpty()) {
+//					reference.setDefaultValue(defaultValue);
+//				}
+				
+				attachInfo(reference, rf.getDescription());
+				
 			}
 		}
 	}
