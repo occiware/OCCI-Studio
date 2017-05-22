@@ -405,5 +405,6 @@
     <eLiterals name="Integer" value="3"/>
     <eLiterals name="Long" value="4"/>
     <eLiterals name="Short" value="5"/>
+    <eLiterals name="BigDecimal" value="6"/>
   </eClassifiers>
 </ecore:EPackage>

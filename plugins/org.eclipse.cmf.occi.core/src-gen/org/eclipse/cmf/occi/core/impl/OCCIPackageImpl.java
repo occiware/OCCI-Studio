@@ -2794,6 +2794,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		addEEnumLiteral(numericTypeEnumEEnum, NumericTypeEnum.INTEGER);
 		addEEnumLiteral(numericTypeEnumEEnum, NumericTypeEnum.LONG);
 		addEEnumLiteral(numericTypeEnumEEnum, NumericTypeEnum.SHORT);
+		addEEnumLiteral(numericTypeEnumEEnum, NumericTypeEnum.BIG_DECIMAL);
 
 		// Initialize data types
 		initEDataType(uriEDataType, String.class, "URI", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

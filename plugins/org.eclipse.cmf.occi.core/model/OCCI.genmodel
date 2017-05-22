@@ -21,6 +21,7 @@
       <genEnumLiterals ecoreEnumLiteral="OCCI.ecore#//NumericTypeEnum/Integer"/>
       <genEnumLiterals ecoreEnumLiteral="OCCI.ecore#//NumericTypeEnum/Long"/>
       <genEnumLiterals ecoreEnumLiteral="OCCI.ecore#//NumericTypeEnum/Short"/>
+      <genEnumLiterals ecoreEnumLiteral="OCCI.ecore#//NumericTypeEnum/BigDecimal"/>
     </genEnums>
     <genDataTypes ecoreDataType="OCCI.ecore#//URI"/>
     <genDataTypes ecoreDataType="OCCI.ecore#//OCL"/>

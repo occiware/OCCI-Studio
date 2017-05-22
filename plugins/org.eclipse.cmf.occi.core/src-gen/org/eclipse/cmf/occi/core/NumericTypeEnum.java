@@ -85,7 +85,15 @@ public enum NumericTypeEnum implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SHORT(5, "Short", "Short");
+	SHORT(5, "Short", "Short"), /**
+	 * The '<em><b>Big Decimal</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #BIG_DECIMAL_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	BIG_DECIMAL(6, "BigDecimal", "BigDecimal");
 
 	/**
 	 * The '<em><b>Byte</b></em>' literal value.
@@ -178,6 +186,21 @@ public enum NumericTypeEnum implements Enumerator {
 	public static final int SHORT_VALUE = 5;
 
 	/**
+	 * The '<em><b>Big Decimal</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Big Decimal</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #BIG_DECIMAL
+	 * @model name="BigDecimal"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int BIG_DECIMAL_VALUE = 6;
+
+	/**
 	 * An array of all the '<em><b>Numeric Type Enum</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -191,6 +214,7 @@ public enum NumericTypeEnum implements Enumerator {
 			INTEGER,
 			LONG,
 			SHORT,
+			BIG_DECIMAL,
 		};
 
 	/**
@@ -253,6 +277,7 @@ public enum NumericTypeEnum implements Enumerator {
 			case INTEGER_VALUE: return INTEGER;
 			case LONG_VALUE: return LONG;
 			case SHORT_VALUE: return SHORT;
+			case BIG_DECIMAL_VALUE: return BIG_DECIMAL;
 		}
 		return null;
 	}

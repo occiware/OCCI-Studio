@@ -3041,13 +3041,15 @@ public class OCCITables
 		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _NumericTypeEnum__Integer = new EcoreExecutorEnumerationLiteral(OCCIPackage.Literals.NUMERIC_TYPE_ENUM.getEEnumLiteral("Integer"), Types._NumericTypeEnum, 3);
 		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _NumericTypeEnum__Long = new EcoreExecutorEnumerationLiteral(OCCIPackage.Literals.NUMERIC_TYPE_ENUM.getEEnumLiteral("Long"), Types._NumericTypeEnum, 4);
 		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _NumericTypeEnum__Short = new EcoreExecutorEnumerationLiteral(OCCIPackage.Literals.NUMERIC_TYPE_ENUM.getEEnumLiteral("Short"), Types._NumericTypeEnum, 5);
+		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _NumericTypeEnum__BigDecimal = new EcoreExecutorEnumerationLiteral(OCCIPackage.Literals.NUMERIC_TYPE_ENUM.getEEnumLiteral("BigDecimal"), Types._NumericTypeEnum, 6);
 		private static final /*@NonNull*/ EcoreExecutorEnumerationLiteral /*@NonNull*/ [] _NumericTypeEnum = {
 			_NumericTypeEnum__Byte,
 			_NumericTypeEnum__Double,
 			_NumericTypeEnum__Float,
 			_NumericTypeEnum__Integer,
 			_NumericTypeEnum__Long,
-			_NumericTypeEnum__Short
+			_NumericTypeEnum__Short,
+			_NumericTypeEnum__BigDecimal
 		};
 
 		/**
