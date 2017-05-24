@@ -20,7 +20,24 @@
       <!-- @generated monitoring -->
       <package
             uri="http://schemas.ogf.org/occi/monitoring/ecore"
-            class="org.eclipse.cmf.occi.monitoring.MonitoringPackage"/>
+            class="org.eclipse.cmf.occi.monitoring.MonitoringPackage"
+            genModel="model/monitoring.genmodel"/>
    </extension>
-
+   <!-- Register the parser for .monitoring files. -->
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="monitoring"
+            class="org.eclipse.cmf.occi.core.util.OCCIResourceFactoryImpl"/>
+   </extension>
+   <!-- Define URI mapping. -->
+   <extension point="org.eclipse.emf.ecore.uri_mapping" >
+      <mapping
+            source="http://schemas.ogf.org/occi/monitoring"
+            target="platform:/plugin/org.eclipse.cmf.occi.monitoring/model/monitoring.occie"/>
+   </extension>
+   
+   <!-- Register the OCCI Infrastructure extension. -->
+   <extension point="org.eclipse.cmf.occi.core.occie">
+      <occie scheme="http://schemas.ogf.org/occi/monitoring#" file="model/monitoring.occie"/>
+   </extension>
 </plugin>
