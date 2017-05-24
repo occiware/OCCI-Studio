@@ -7,6 +7,9 @@
 [for (kind : Kind | extension.kinds)]
 [generateConnectorClass(kind, extension, targetPackageName, extendedPackageName)/]
 [/for]
+[for (mixin : Mixin | extension.mixins)]
+[generateConnectorClass(mixin, extension, targetPackageName, extendedPackageName)/]
+[/for]
 [/template]
 
 [template public generateConnectorFactory(extension : Extension, targetPackageName : String, extendedPackageName : String)]
@@ -37,11 +40,14 @@ public class ConnectorFactory extends [extendedPackageName/].impl.[toU1Case(exte
 [for (kind : Kind | extension.kinds)]
 [generateCreateKindMethod(kind, extension, extendedPackageName)/]
 [/for]
+[for (mixin : Mixin | extension.mixins)]
+[generateCreateKindMethod(mixin, extension, extendedPackageName)/]
+[/for]
 }
 [/file]
 [/template]
 
-[template public generateCreateKindMethod(kind : Kind, extension : Extension, extendedPackageName : String)]
+[template public generateCreateKindMethod(kind : Type, extension : Extension, extendedPackageName : String)]
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: [kind.scheme/]
@@ -56,8 +62,8 @@ public class ConnectorFactory extends [extendedPackageName/].impl.[toU1Case(exte
 [/let]
 [/template]
 
-[template public generateConnectorClass(kind : Kind, extension : Extension, targetPackageName : String, extendedPackageName : String)]
-[file (getPackagePath(targetPackageName).concat(toU1Case(kind.term)).concat('Connector.java'), false, 'UTF-8')]
+[template public generateConnectorClass(type : Type, extension : Extension, targetPackageName : String, extendedPackageName : String)]
+[file (getPackagePath(targetPackageName).concat(toU1Case(type.term)).concat('Connector.java'), false, 'UTF-8')]
 /**
  * Copyright (c) 2016-2017 Inria
  *  
@@ -77,10 +83,10 @@ package [targetPackageName/];
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-[let stateAttribute : Attribute = getStateAttribute(kind)]
+[let stateAttribute : Attribute = getStateAttribute(type)]
 import [extendedPackageName/].[stateAttribute.type.name/];
 [/let]
-[for (action: Action| kind.actions)] 
+[for (action: Action| type.actions)] 
 [for (attribute: Attribute| action.attributes)]
 [if not (attribute.type.eContainer().oclAsType(Extension).scheme.equalsIgnoreCase('http://schemas.ogf.org/occi/core#'))]
 import [extendedPackageName/].[getJavaTypeName(attribute)/]; 
@@ -89,11 +95,11 @@ import [extendedPackageName/].[getJavaTypeName(attribute)/];
 [/for]
 /**
  * Connector implementation for the OCCI kind:
- * - scheme: [kind.scheme/]
- * - term: [kind.term/]
- * - title: [kind.title/]
+ * - scheme: [type.scheme/]
+ * - term: [type.term/]
+ * - title: [type.title/]
  */
-[let kindClassName : String = toU1Case(kind.term)]
+[let kindClassName : String = toU1Case(type.term)]
 public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kindClassName/]Impl
 {
 	/**
@@ -103,7 +109,7 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 
 	// [protected (kindClassName.concat('connector_constructor'))]
 	/**
-	 * Constructs a [kind.term/] connector.
+	 * Constructs a [type.term/] connector.
 	 */
 	[kindClassName/]Connector()
 	{
@@ -111,7 +117,7 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 		// TODO: Implement this constructor.
 	}
 	// [/protected]
-
+	[if(type.oclIsTypeOf(Kind))]
 	//
 	// OCCI CRUD callback operations.
 	//
@@ -167,10 +173,10 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 	//
 	// [kindClassName/] actions.
 	//
-
-[for (action : Action | kind.actions)]
+[/if]
+[for (action : Action | type.actions)]
 	// [protected (kindClassName.concat('_Kind_').concat(action.name).concat('_action'))]
-[generateActionMethod(action, kind, extendedPackageName)/]
+[generateActionMethod(action, type, extendedPackageName)/]
 		// [/protected]
 
 [/for]
@@ -179,7 +185,8 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 [/file]
 [/template]
 
-[template public generateActionMethod(action : Action, kind : Kind, extendedPackageName : String)]
+
+[template public generateActionMethod(action : Action, kind : Type, extendedPackageName : String)]
 	/**
 	 * Implement OCCI action:
      * - scheme: [action.scheme/]
@@ -238,7 +245,7 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 																				action.eContainer().oclAsType(Kind).fsm.ownedState->collect(ow|ow.oclAsType(State).outgoingTransition)->flatten()
 																				->select(tr| tr.action=action)->collect(tr|tr.oclAsType(Transition).source)->flatten()->asSet() else Set{} endif /]
 
-[query public getStateAttribute(kind : Kind) : Attribute = kind.attributes->any(attribute : Attribute | attribute.name.endsWith('state') and attribute.type.oclIsTypeOf(EnumerationType)) /]
+[query public getStateAttribute(kind : Type) : Attribute = kind.attributes->any(attribute : Attribute | attribute.name.endsWith('state') and attribute.type.oclIsTypeOf(EnumerationType)) /]
 
 [query public toU1Case(string : String) : String = string.substring(1,1).toUpperCase() + string.substring(2) /]
 
