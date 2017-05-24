@@ -20,7 +20,24 @@
       <!-- @generated sla -->
       <package
             uri="http://schemas.ogf.org/occi/sla/ecore"
-            class="org.eclipse.cmf.occi.sla.SlaPackage"/>
+            class="org.eclipse.cmf.occi.sla.SlaPackage"
+            genModel="model/sla.genmodel"/>
    </extension>
-
+   <!-- Register the parser for .sla files. -->
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="sla"
+            class="org.eclipse.cmf.occi.core.util.OCCIResourceFactoryImpl"/>
+   </extension>
+   <!-- Define URI mapping. -->
+   <extension point="org.eclipse.emf.ecore.uri_mapping" >
+      <mapping
+            source="http://schemas.ogf.org/occi/sla"
+            target="platform:/plugin/org.eclipse.cmf.occi.sla/model/sla.occie"/>
+   </extension>
+   
+   <!-- Register the OCCI Platform extension. -->
+   <extension point="org.eclipse.cmf.occi.core.occie">
+      <occie scheme="http://schemas.ogf.org/occi/sla#" file="model/sla.occie"/>
+   </extension>
 </plugin>

@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed May 03 17:26:33 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.sla/model/sla.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed May 24 09:15:12 CEST 2017 from platform:/plugin/org.eclipse.cmf.occi.sla/model/sla.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.sla.connector.dummy;
 
@@ -41,6 +41,28 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.sla.impl.SlaFactoryIm
 	@Override
 	public org.eclipse.cmf.occi.sla.Agreement_link createAgreement_link() {
 		return new Agreement_linkConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://schemas.ogf.org/occi/sla#
+	 * - term: agreement_tpl
+	 * - title: Mixin defining a SLA template collection
+	 */
+	@Override
+	public org.eclipse.cmf.occi.sla.Agreement_tpl createAgreement_tpl() {
+		return new Agreement_tplConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://schemas.ogf.org/occi/sla#
+	 * - term: agreement_term
+	 * - title: Mixin defining a Term collection for an agreement
+	 */
+	@Override
+	public org.eclipse.cmf.occi.sla.Agreement_term createAgreement_term() {
+		return new Agreement_termConnector();
 	}
 
 }
