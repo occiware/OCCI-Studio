@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed May 03 17:22:54 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.platform/model/Platform.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed May 24 09:14:43 CEST 2017 from platform:/plugin/org.eclipse.cmf.occi.platform/model/Platform.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.platform.connector.dummy;
 
@@ -40,7 +40,6 @@ public class ComponentlinkConnector extends org.eclipse.cmf.occi.platform.impl.C
 		// TODO: Implement this constructor.
 	}
 	// End of user code
-
 	//
 	// OCCI CRUD callback operations.
 	//
@@ -88,5 +87,4 @@ public class ComponentlinkConnector extends org.eclipse.cmf.occi.platform.impl.C
 	//
 	// Componentlink actions.
 	//
-
 }	

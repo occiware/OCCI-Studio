@@ -20,7 +20,24 @@
       <!-- @generated Platform -->
       <package
             uri="http://schemas.ogf.org/occi/platform/ecore"
-            class="org.eclipse.cmf.occi.platform.PlatformPackage"/>
+            class="org.eclipse.cmf.occi.platform.PlatformPackage"
+            genModel="model/Platform.genmodel"/>
    </extension>
-
+   <!-- Register the parser for .platform files. -->
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="platform"
+            class="org.eclipse.cmf.occi.core.util.OCCIResourceFactoryImpl"/>
+   </extension>
+   <!-- Define URI mapping. -->
+   <extension point="org.eclipse.emf.ecore.uri_mapping" >
+      <mapping
+            source="http://schemas.ogf.org/occi/platform"
+            target="platform:/plugin/org.eclipse.cmf.occi.platform/model/Platform.occie"/>
+   </extension>
+   
+   <!-- Register the OCCI Platform extension. -->
+   <extension point="org.eclipse.cmf.occi.core.occie">
+      <occie scheme="http://schemas.ogf.org/occi/platform#" file="model/Platform.occie"/>
+   </extension>
 </plugin>

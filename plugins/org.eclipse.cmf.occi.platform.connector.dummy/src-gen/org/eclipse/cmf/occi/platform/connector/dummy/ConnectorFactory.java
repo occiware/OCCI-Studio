@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed May 03 17:22:54 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.platform/model/Platform.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed May 24 09:14:43 CEST 2017 from platform:/plugin/org.eclipse.cmf.occi.platform/model/Platform.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.platform.connector.dummy;
 
@@ -52,6 +52,50 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.platform.impl.Platfor
 	@Override
 	public org.eclipse.cmf.occi.platform.Componentlink createComponentlink() {
 		return new ComponentlinkConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://schemas.ogf.org/occi/platform#
+	 * - term: app_tpl
+	 * - title: Application Template
+	 */
+	@Override
+	public org.eclipse.cmf.occi.platform.App_tpl createApp_tpl() {
+		return new App_tplConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://schemas.ogf.org/occi/platform#
+	 * - term: restpl
+	 * - title: Resource Template
+	 */
+	@Override
+	public org.eclipse.cmf.occi.platform.Restpl createRestpl() {
+		return new RestplConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://schemas.ogf.org/occi/platform#
+	 * - term: database
+	 * - title: Database Mixin
+	 */
+	@Override
+	public org.eclipse.cmf.occi.platform.Database createDatabase() {
+		return new DatabaseConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://schemas.ogf.org/occi/platform#
+	 * - term: databaselink
+	 * - title: Database Link
+	 */
+	@Override
+	public org.eclipse.cmf.occi.platform.Databaselink createDatabaselink() {
+		return new DatabaselinkConnector();
 	}
 
 }
