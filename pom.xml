@@ -26,7 +26,12 @@
     <module>plugins/org.eclipse.cmf.occi.core.editor</module>
     <module>plugins/org.eclipse.cmf.occi.core.tests</module>
     <module>plugins/org.eclipse.cmf.occi.core.design</module>
-    
+<!-- <module>plugins/org.eclipse.cmf.occi.core.xtext</module>
+    <module>plugins/org.eclipse.cmf.occi.core.xtext.ide</module>
+    <module>plugins/org.eclipse.cmf.occi.core.xtext.tests</module>
+    <module>plugins/org.eclipse.cmf.occi.core.xtext.ui</module>
+    <module>plugins/org.eclipse.cmf.occi.core.xtext.ui.tests</module>
+-->
     <!-- OCCI EMF Generator -->
     <module>plugins/org.eclipse.cmf.occi.core.gen.emf</module>
     <module>plugins/org.eclipse.cmf.occi.core.gen.emf.ui</module>

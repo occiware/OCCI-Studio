@@ -243,7 +243,6 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
   <plugin
          id="org.eclipse.cmf.occi.core.editor"
          download-size="0"
@@ -256,6 +255,37 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+<!--  <plugin
+         id="org.eclipse.cmf.occi.core.xtext"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+  <plugin
+         id="org.eclipse.cmf.occi.core.xtext.ide"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+  <plugin
+         id="org.eclipse.cmf.occi.core.xtext.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+  <plugin
+         id="org.eclipse.cmf.occi.core.xtext.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+  <plugin
+         id="org.eclipse.cmf.occi.core.xtext.ui.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+-->
    <plugin
          id="org.eclipse.cmf.occi.core.gen.emf"
          download-size="0"
