@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed May 03 16:49:36 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Tue May 23 13:55:26 CEST 2017 from platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.infrastructure.connector.dummy;
 
@@ -41,7 +41,6 @@ public class StorageConnector extends org.eclipse.cmf.occi.infrastructure.impl.S
 		// TODO: Implement this constructor.
 	}
 	// End of user code
-
 	//
 	// OCCI CRUD callback operations.
 	//
@@ -97,7 +96,6 @@ public class StorageConnector extends org.eclipse.cmf.occi.infrastructure.impl.S
 	//
 	// Storage actions.
 	//
-
 	// Start of user code Storage_Kind_Online_action
 	/**
 	 * Implement OCCI action:

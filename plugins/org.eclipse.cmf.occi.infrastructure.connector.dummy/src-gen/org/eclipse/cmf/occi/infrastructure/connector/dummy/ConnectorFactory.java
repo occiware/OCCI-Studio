@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed May 03 16:49:36 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Tue May 23 13:55:26 CEST 2017 from platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.infrastructure.connector.dummy;
 
@@ -74,6 +74,72 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.infrastructure.impl.I
 	@Override
 	public org.eclipse.cmf.occi.infrastructure.Networkinterface createNetworkinterface() {
 		return new NetworkinterfaceConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://schemas.ogf.org/occi/infrastructure/network#
+	 * - term: ipnetwork
+	 * - title: An IP Networking Mixin
+	 */
+	@Override
+	public org.eclipse.cmf.occi.infrastructure.Ipnetwork createIpnetwork() {
+		return new IpnetworkConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://schemas.ogf.org/occi/infrastructure/networkinterface#
+	 * - term: ipnetworkinterface
+	 * - title: IP NetworkInterface Mixin
+	 */
+	@Override
+	public org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface createIpnetworkinterface() {
+		return new IpnetworkinterfaceConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://schemas.ogf.org/occi/infrastructure#
+	 * - term: os_tpl
+	 * - title: OS Template
+	 */
+	@Override
+	public org.eclipse.cmf.occi.infrastructure.Os_tpl createOs_tpl() {
+		return new Os_tplConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://schemas.ogf.org/occi/infrastructure#
+	 * - term: resource_tpl
+	 * - title: Resource template
+	 */
+	@Override
+	public org.eclipse.cmf.occi.infrastructure.Resource_tpl createResource_tpl() {
+		return new Resource_tplConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://schemas.ogf.org/occi/infrastructure/credentials#
+	 * - term: ssh_key
+	 * - title: Credentials Mixin
+	 */
+	@Override
+	public org.eclipse.cmf.occi.infrastructure.Ssh_key createSsh_key() {
+		return new Ssh_keyConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://schemas.ogf.org/occi/infrastructure/compute#
+	 * - term: user_data
+	 * - title: Contextualization Mixin
+	 */
+	@Override
+	public org.eclipse.cmf.occi.infrastructure.User_data createUser_data() {
+		return new User_dataConnector();
 	}
 
 }
