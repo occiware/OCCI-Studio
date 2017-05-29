@@ -35,7 +35,7 @@ import org.eclipse.cmf.occi.core.Transition
 class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 
 	override getScope(EObject object, EReference ref) {
-		println("getScope " + object)
+		//println("getScope " + object)
 		if (object instanceof Extension) {
 			scope_Extension_import(object as Extension, ref)
 		} else {
@@ -45,13 +45,13 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 				if (object instanceof ArrayType) {
 					scope_ArrayType_type(object as ArrayType, ref)
 				} else {
-					// println(object)
-					// println(ref)
+					// //println(object)
+					// //println(ref)
 					if (object instanceof Mixin) {
 						if (ref.name.equals("depends")) {
 							scope_Mixin_depends(object as Mixin, ref)
 						} else {
-							// println("ref" +ref)
+							// //println("ref" +ref)
 							scope_Mixin_applies(object as Mixin, ref)
 						}
 					} else {
@@ -66,10 +66,14 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 								} else {
 									if (object instanceof Transition) {
 										if (ref.name.equals("target")) {
+											//println("target " +ref)
 											scope_Transition_target(object as Transition, ref)
 										} else {
 											scope_Transition_action(object as Transition, ref)
 										}
+									}
+									else{
+										super.getScope(object, ref)
 									}
 								}
 							}
@@ -81,7 +85,7 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 	}
 
 	def scope_Transition_action(Transition transition, EReference reference) {
-		println("ccccc ")
+		//println("ccccc ")
 		var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
 		var State s = transition.eContainer as State
 		var FSM fsm = s.eContainer as FSM
@@ -90,22 +94,24 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 			res.add(
 				EObjectDescription.create(QualifiedName.create(action.name), action))
 				}
-				println("res " + res)
+				//println("res " + res)
 				return new SimpleScope(IScope.NULLSCOPE, res)
 			}
 
 			def scope_Transition_target(Transition transition, EReference reference) {
-				println("scope_Transition_target ")
+				//println("scope_Transition_target ")
 				var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
 				var State s = transition.eContainer as State
 				var FSM fsm = s.eContainer as FSM
 				for (state : fsm.ownedState) {
+					//println("state.literal.name " + state.literal.name)
+					//println("state.literal " + state.literal )
 					res.add(
 						EObjectDescription.create(
-							QualifiedName.create(state.literal.enumerationType.name,
-								state.literal.name), state.literal))
+							QualifiedName.create((state.literal.eContainer as EnumerationType).name,
+								state.literal.name), state))
 				}
-				println("res " + res)
+				//println("res " + res)
 				return new SimpleScope(IScope.NULLSCOPE, res)
 			}
 
@@ -120,7 +126,7 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 					}
 
 				}
-				println("ccccc " + res)
+				//println("ccccc " + res)
 				new SimpleScope(IScope.NULLSCOPE, res);
 			}
 
@@ -131,44 +137,44 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 				for (attribute : kind.attributes) {
 					res.add(EObjectDescription.create(QualifiedName.create(attribute.name.split("\\.")), attribute));
 				}
-				println("ccccc " + res)
+				//println("ccccc " + res)
 				new SimpleScope(IScope.NULLSCOPE, res);
 			}
 
 			def scope_Mixin_applies(Mixin mixin, EReference reference) {
-				// println("ccccc ")
+				// //println("ccccc ")
 				var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
 				var Extension ext = mixin.eContainer as Extension
 				for (Kind k : ext.getKinds()) {
-					// println("ext.name "+ext.name)
-					// println("k.name "+k.name)
+					// //println("ext.name "+ext.name)
+					// //println("k.name "+k.name)
 					res.add(EObjectDescription.create(QualifiedName.create(ext.name, k.name), k));
 				}
 				for (Extension importExtension : ext.getImport()) {
-					// println("applies importExtension " + importExtension)
+					// //println("applies importExtension " + importExtension)
 					for (Kind kind : importExtension.getKinds()) {
-						// println("applies qua " + importExtension.name)
-						// println("applies term " + kind.name)
+						// //println("applies qua " + importExtension.name)
+						// //println("applies term " + kind.name)
 						res.add(EObjectDescription.create(QualifiedName.create(importExtension.name, kind.name), kind));
 					}
 				}
-				println("res " + res)
+				//println("mixin applies " + res)
 				return new SimpleScope(IScope.NULLSCOPE, res);
 			}
 
 			def scope_Mixin_depends(Mixin mixin, EReference reference) {
-				// println("ccccc ")
+				// //println("ccccc ")
 				var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
 				var Extension ext = mixin.eContainer as Extension
 				for (Mixin k : ext.mixins) {
 					res.add(EObjectDescription.create(QualifiedName.create(k.name), k));
 				}
 				for (Extension importExtension : ext.getImport()) {
-					// println("importExtension " + importExtension)
+					// //println("importExtension " + importExtension)
 					for (Mixin k : importExtension.mixins) {
-						// println("qua " + QualifiedName.create(importExtension.getName()))
-						// println("term " + k.term)
-						// println("k " + k)
+						// //println("qua " + QualifiedName.create(importExtension.getName()))
+						// //println("term " + k.term)
+						// //println("k " + k)
 						res.add(EObjectDescription.create(QualifiedName.create(importExtension.getName(), k.name), k));
 					}
 				}
@@ -176,7 +182,7 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 			}
 
 			def IScope scopeForExtensions(EList<Extension> extensions) {
-				// println("ccccc ")
+				// //println("ccccc ")
 				var ArrayList<IEObjectDescription> result = new ArrayList<IEObjectDescription>
 
 				for (exte : extensions) {
@@ -186,23 +192,23 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 			}
 
 			def IScope scope_Extension_import(Extension ext, EReference ref) {
-				// println("ccccc ")
+				// //println("ccccc ")
 				return scopeForExtensions(ext.getImport());
 			}
 
 			def IScope scope_Kind_parent(Kind kind, EReference ref) {
-				// println("ccccc ")
+				// //println("ccccc ")
 				var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
 				var Extension ext = kind.eContainer as Extension
 				for (Kind k : ext.getKinds()) {
 					res.add(EObjectDescription.create(QualifiedName.create(k.getTerm()), k));
 				}
 				for (Extension importExtension : ext.getImport()) {
-					// println("importExtension " + importExtension)
+					// //println("importExtension " + importExtension)
 					for (Kind k : importExtension.getKinds()) {
-						// println("qua " + QualifiedName.create(importExtension.getName()))
-						// println("term " + k.term)
-						// println("k " + k)
+						// //println("qua " + QualifiedName.create(importExtension.getName()))
+						// //println("term " + k.term)
+						// //println("k " + k)
 						res.add(EObjectDescription.create(QualifiedName.create(importExtension.getName(), k.name), k));
 					}
 				}
@@ -210,14 +216,14 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 			}
 
 			def IScope scope_ArrayType_type(ArrayType arrayType, EReference ref) {
-				// println("ccccc ")
+				// //println("ccccc ")
 				var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
 				var Extension ext = arrayType.eContainer as Extension
 				for (DataType k : ext.types) {
 					res.add(EObjectDescription.create(QualifiedName.create(k.name), k))
 				}
 				for (Extension importExtension : ext.getImport()) {
-					// println("importExtension " + importExtension)
+					// //println("importExtension " + importExtension)
 					for (DataType k : importExtension.types) {
 						res.add(EObjectDescription.create(QualifiedName.create(importExtension.getName(), k.name), k))
 					}
@@ -226,7 +232,7 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 			}
 
 			def IScope scope_Attribute_type(Attribute attribute, EReference ref) {
-				// println("attributes ")
+				// //println("attributes ")
 				var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
 				if (attribute.eContainer instanceof Type) {
 					var Extension ext = (attribute.eContainer as Type).eContainer as Extension
@@ -234,7 +240,7 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 						res.add(EObjectDescription.create(QualifiedName.create(k.name), k))
 					}
 					for (Extension importExtension : ext.getImport()) {
-						// println("importExtension " + importExtension)
+						// //println("importExtension " + importExtension)
 						for (DataType k : importExtension.types) {
 							res.add(
 								EObjectDescription.create(QualifiedName.create(importExtension.getName(), k.name), k))
@@ -247,7 +253,7 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 						res.add(EObjectDescription.create(QualifiedName.create(k.name), k))
 					}
 					for (Extension importExtension : ext.getImport()) {
-						// println("importExtension " + importExtension)
+						// //println("importExtension " + importExtension)
 						for (DataType k : importExtension.types) {
 							res.add(
 								EObjectDescription.create(QualifiedName.create(importExtension.getName(), k.name), k))

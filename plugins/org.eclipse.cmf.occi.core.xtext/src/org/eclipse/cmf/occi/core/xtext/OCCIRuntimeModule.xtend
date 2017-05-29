@@ -11,6 +11,7 @@ import org.eclipse.xtext.resource.IResourceDescription.Manager
 import org.eclipse.xtext.resource.DerivedStateAwareResourceDescriptionManager
 import org.eclipse.xtext.resource.DerivedStateAwareResource
 import org.eclipse.xtext.resource.XtextResource
+import org.eclipse.cmf.occi.core.xtext.scoping.OCCILinkingService
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
@@ -22,7 +23,7 @@ class OCCIRuntimeModule extends AbstractOCCIRuntimeModule {
 		OCCILinker
 	}
 	override Class<? extends ITransientValueService> bindITransientValueService() {
-			OCCITransientValueService
+		OCCITransientValueService
 	}
 	def Class<? extends IDerivedStateComputer> bindIDerivedStateComputer() {
 		OCCIDerivedStateComputer
@@ -35,4 +36,7 @@ class OCCIRuntimeModule extends AbstractOCCIRuntimeModule {
 	override Class<? extends XtextResource> bindXtextResource() {
 		DerivedStateAwareResource
 	}
+//	override Class<? extends org.eclipse.xtext.linking.ILinkingService> bindILinkingService() {
+//		return OCCILinkingService;
+//	}
 }

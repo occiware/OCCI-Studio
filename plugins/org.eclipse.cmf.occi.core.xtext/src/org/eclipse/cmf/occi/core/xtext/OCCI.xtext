@@ -126,12 +126,10 @@ State returns State:
 		('transitions' '(' (outgoingTransition+=Transition)* ')')?
 	'}';
 
-Transition returns Transition:
-	'to'
-	'{'
-		'target' target=[State|QualifiedID]
+Transition returns Transition:		
 		('action' action=[Action|QualifiedID])?
-	'}';
+		'to' target=[State|QualifiedID]
+	;
 
 DataType returns DataType:
 	StringType | EObjectType | BooleanType | NumericType | EnumerationType | RecordType | ArrayType;

@@ -13,6 +13,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -39,6 +40,7 @@ public class OCCIDocumentProvider extends XtextDocumentProvider {
 		ByteArrayOutputStream os = new ByteArrayOutputStream();
 		try {
 			//System.out.println("contentStream "+contentStream);
+			EcoreUtil.resolveAll(resourceSet);
 			xmiResource.load(contentStream, Collections.emptyMap());
 			xtextResource.getContents().addAll(xmiResource.getContents());
 			xtextResource.save(os, Collections.EMPTY_MAP);

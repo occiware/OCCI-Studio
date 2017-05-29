@@ -1813,38 +1813,10 @@ ruleTransition returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='to'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getTransitionAccess().getToKeyword_0());
-		}
-		otherlv_1='{'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getTransitionAccess().getLeftCurlyBracketKeyword_1());
-		}
-		otherlv_2='target'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getTransitionAccess().getTargetKeyword_2());
-		}
 		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getTransitionRule());
-					}
-				}
-				{
-					newCompositeNode(grammarAccess.getTransitionAccess().getTargetStateCrossReference_3_0());
-				}
-				ruleQualifiedID
-				{
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_4='action'
+			otherlv_0='action'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getTransitionAccess().getActionKeyword_4_0());
+				newLeafNode(otherlv_0, grammarAccess.getTransitionAccess().getActionKeyword_0_0());
 			}
 			(
 				(
@@ -1854,7 +1826,7 @@ ruleTransition returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getTransitionAccess().getActionActionCrossReference_4_1_0());
+						newCompositeNode(grammarAccess.getTransitionAccess().getActionActionCrossReference_0_1_0());
 					}
 					ruleQualifiedID
 					{
@@ -1863,10 +1835,26 @@ ruleTransition returns [EObject current=null]
 				)
 			)
 		)?
-		otherlv_6='}'
+		otherlv_2='to'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getTransitionAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_2, grammarAccess.getTransitionAccess().getToKeyword_1());
 		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTransitionRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getTransitionAccess().getTargetStateCrossReference_2_0());
+				}
+				ruleQualifiedID
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 

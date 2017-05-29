@@ -18,69 +18,99 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.common.util.URI
 import java.io.ByteArrayOutputStream
 import java.nio.charset.StandardCharsets
+import org.eclipse.emf.ecore.util.EcoreUtil
 
 @RunWith(XtextRunner)
 @InjectWith(OCCIInjectorProvider)
-class OCCIParsingTest {
-	@Inject
+class OCCIParsingTest { 
+	@Inject extension 
 	ParseHelper<org.eclipse.cmf.occi.core.Extension> parseHelper
 	
-	@Inject extension ValidationTestHelper h
-	
+	@Inject extension ValidationTestHelper 
+
+	@Test
+	def void testCorrectParsing() {
+		EPackage.Registry.INSTANCE.put(OCCIPackage.eNS_URI, OCCIPackage::eINSTANCE)
+		'''
+						extension infrastructure : "http://schemas.ogf.org/occi/infrastructure#"
+									description "OCCI Infrastructure Model" specification
+									"https://www.ogf.org/documents/GFD.224.pdf" kind Network { title
+									"Network Resource" scheme "http://schemas.ogf.org/occi/infrastructure#"
+									attribute occi.network.vlan : type Vlan {
+									}
+									attribute occi.network.label : type Token {
+									}
+									attribute required occi.network.state : type NetworkStatus = "inactive" {
+									}
+									attribute occi.network.state.message : type Token {
+									}
+									action Up scheme "http://schemas.ogf.org/occi/infrastructure/network/action#"
+									action Down scheme "http://schemas.ogf.org/occi/infrastructure/network/action#"
+									{
+										title ""
+									}
+									constraint UniqueVlan description "chaque network a un vlan différent" body
+									"Network.allInstances()->isUnique(occi.network.vlan)" fsm FSM {
+										attribute occi.network.state states {
+											State {
+												initial final literal NetworkStatus.inactive transitions ( action Down to NetworkStatus.active)
+											},
+											State {
+												literal NetworkStatus.active
+											},
+											State {
+												literal NetworkStatus.error
+											}
+										}
+									}
+									NumericType Vlan type Integer ( minInclusive "0" maxInclusive "4095" )
+									StringType Token ( ) EnumerationType NetworkStatus ( literals ( active ( ),
+									inactive ( ),
+									error ( ) ) )
+		'''.parse.assertNoErrors
+	}
 	@Test
 	def void loadModel() {
 		EPackage.Registry.INSTANCE.put(OCCIPackage.eNS_URI, OCCIPackage::eINSTANCE)
 		val result = parseHelper.parse('''
 			extension infrastructure : "http://schemas.ogf.org/occi/infrastructure#"
 			description "OCCI Infrastructure Model" specification
-			"https://www.ogf.org/documents/GFD.224.pdf" kind Network  {
-				title "Network Resource" scheme "http://schemas.ogf.org/occi/infrastructure#"
-				attribute occi.network.vlan : type Vlan {
-				}
-				attribute occi.network.label : type Token {
-				}
-				attribute occi.network.state : type NetworkStatus = "inactive" {
-				}
-				attribute occi.network.state.message : type Token {
-				}
-				action Up scheme "http://schemas.ogf.org/occi/infrastructure/network/action#"
-				action Down scheme
-				"http://schemas.ogf.org/occi/infrastructure/network/action#" {
-					title ""
-				}
-				constraint UniqueVlan description "chaque network a un vlan différent" body
-				"Network.allInstances()->isUnique(occi.network.vlan)"
+			"https://www.ogf.org/documents/GFD.224.pdf"  kind Network  { title
+			"Network Resource" scheme "http://schemas.ogf.org/occi/infrastructure#"
+			attribute occi.network.vlan : type Vlan {
 			}
-			EnumerationType SuspendMethod ( literals ( hibernate ( ),
-			suspend ( ) ) ) NumericType Vlan type Integer ( minInclusive "0" maxInclusive
-			"4095" ) StringType Token ( ) EnumerationType NetworkStatus ( literals ( active
-			( ),
+			attribute occi.network.label : type Token {
+			}
+			attribute required occi.network.state : type NetworkStatus = "inactive" {
+			}
+			attribute occi.network.state.message : type Token {
+			}
+			action Up scheme "http://schemas.ogf.org/occi/infrastructure/network/action#"
+			action Down scheme "http://schemas.ogf.org/occi/infrastructure/network/action#"
+			{
+				title ""
+			}
+			constraint UniqueVlan description "chaque network a un vlan différent" body
+			"Network.allInstances()->isUnique(occi.network.vlan)" fsm FSM {
+				attribute occi.network.state states {
+					State {
+						initial final literal NetworkStatus.inactive transitions ( action Down to NetworkStatus.active)
+					},
+					State {
+						literal NetworkStatus.active
+					},
+					State {
+						literal NetworkStatus.error
+					}
+				}
+			}
+			NumericType Vlan type Integer ( minInclusive "0" maxInclusive "4095" )
+			StringType Token ( ) EnumerationType NetworkStatus ( literals ( active ( ),
 			inactive ( ),
-			error ( ) ) ) EnumerationType ComputeStatus ( literals ( active ( ),
-			inactive ( ),
-			suspended ( ),
-			error ( ) ) ) EnumerationType NetworkInterfaceStatus ( literals ( active ( ),
-			inactive ( ),
-			error ( ) ) ) EnumerationType Architecture ( literals ( x86 ( ),
-			x64 ( ) ) ) EnumerationType StopMethod ( literals ( graceful ( ),
-			acpioff ( ),
-			poweroff ( ) ) ) EnumerationType RestartMethod ( literals ( graceful ( ),
-			warm ( ),
-			cold ( ) ) ) StringType IpAddress ( ) EnumerationType Allocation ( literals (
-			dynamic ( documentation "" ),
-			static ( ) ) ) EnumerationType StorageStatus ( literals ( online ( ),
-			offline ( ),
-			error ( ) ) ) EnumerationType StorageLinkStatus ( literals ( active ( ),
-			inactive ( ),
-			error ( ) ) ) NumericType Core type Integer ( minExclusive "0" ) NumericType
-			GHz type Float ( minExclusive "0" ) NumericType GiB type Float ( minExclusive
-			"0" ) StringType IpAddressRange ( ) StringType Mac ( ) NumericType Share type
-			Integer ( minInclusive "0" ) EnumerationType SaveMethod ( literals ( hot (
-			documentation "hot documentation" ),
-			deferred ( ) ) )
+			error ( ) ) )
 		''')
 		Assert.assertNotNull(result)
-		//Assert.assertTrue(result.eResource.errors.isEmpty)
+		Assert.assertTrue(result.eResource.errors.isEmpty)
 		println(result.validate)
 //		println('''
 //		«FOR s : result.ownedState»
@@ -94,6 +124,7 @@ class OCCIParsingTest {
 		
 		val RS2 = new ResourceSetImpl
 		val r2 = RS2.createResource(URI.createURI("dummy.xmi"))
+		EcoreUtil.resolveAll(result.eResource.resourceSet)
 		r2.contents.add(result)
 		val baos = new ByteArrayOutputStream
 		r2.save(baos, null)

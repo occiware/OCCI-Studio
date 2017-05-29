@@ -1238,64 +1238,50 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	public class TransitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.Transition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cToKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cTargetKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cTargetAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cTargetStateCrossReference_3_0 = (CrossReference)cTargetAssignment_3.eContents().get(0);
-		private final RuleCall cTargetStateQualifiedIDParserRuleCall_3_0_1 = (RuleCall)cTargetStateCrossReference_3_0.eContents().get(1);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cActionKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cActionAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final CrossReference cActionActionCrossReference_4_1_0 = (CrossReference)cActionAssignment_4_1.eContents().get(0);
-		private final RuleCall cActionActionQualifiedIDParserRuleCall_4_1_0_1 = (RuleCall)cActionActionCrossReference_4_1_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
+		private final Keyword cActionKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cActionAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final CrossReference cActionActionCrossReference_0_1_0 = (CrossReference)cActionAssignment_0_1.eContents().get(0);
+		private final RuleCall cActionActionQualifiedIDParserRuleCall_0_1_0_1 = (RuleCall)cActionActionCrossReference_0_1_0.eContents().get(1);
+		private final Keyword cToKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTargetAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cTargetStateCrossReference_2_0 = (CrossReference)cTargetAssignment_2.eContents().get(0);
+		private final RuleCall cTargetStateQualifiedIDParserRuleCall_2_0_1 = (RuleCall)cTargetStateCrossReference_2_0.eContents().get(1);
 		
 		//Transition:
-		//	'to'
-		//	'{'
-		//	'target' target=[State|QualifiedID] ('action' action=[Action|QualifiedID])?
-		//	'}';
+		//	('action' action=[Action|QualifiedID])?
+		//	'to' target=[State|QualifiedID];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'to' '{' 'target' target=[State|QualifiedID] ('action' action=[Action|QualifiedID])? '}'
+		//('action' action=[Action|QualifiedID])? 'to' target=[State|QualifiedID]
 		public Group getGroup() { return cGroup; }
 		
-		//'to'
-		public Keyword getToKeyword_0() { return cToKeyword_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
-		
-		//'target'
-		public Keyword getTargetKeyword_2() { return cTargetKeyword_2; }
-		
-		//target=[State|QualifiedID]
-		public Assignment getTargetAssignment_3() { return cTargetAssignment_3; }
-		
-		//[State|QualifiedID]
-		public CrossReference getTargetStateCrossReference_3_0() { return cTargetStateCrossReference_3_0; }
-		
-		//QualifiedID
-		public RuleCall getTargetStateQualifiedIDParserRuleCall_3_0_1() { return cTargetStateQualifiedIDParserRuleCall_3_0_1; }
-		
 		//('action' action=[Action|QualifiedID])?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_0() { return cGroup_0; }
 		
 		//'action'
-		public Keyword getActionKeyword_4_0() { return cActionKeyword_4_0; }
+		public Keyword getActionKeyword_0_0() { return cActionKeyword_0_0; }
 		
 		//action=[Action|QualifiedID]
-		public Assignment getActionAssignment_4_1() { return cActionAssignment_4_1; }
+		public Assignment getActionAssignment_0_1() { return cActionAssignment_0_1; }
 		
 		//[Action|QualifiedID]
-		public CrossReference getActionActionCrossReference_4_1_0() { return cActionActionCrossReference_4_1_0; }
+		public CrossReference getActionActionCrossReference_0_1_0() { return cActionActionCrossReference_0_1_0; }
 		
 		//QualifiedID
-		public RuleCall getActionActionQualifiedIDParserRuleCall_4_1_0_1() { return cActionActionQualifiedIDParserRuleCall_4_1_0_1; }
+		public RuleCall getActionActionQualifiedIDParserRuleCall_0_1_0_1() { return cActionActionQualifiedIDParserRuleCall_0_1_0_1; }
 		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		//'to'
+		public Keyword getToKeyword_1() { return cToKeyword_1; }
+		
+		//target=[State|QualifiedID]
+		public Assignment getTargetAssignment_2() { return cTargetAssignment_2; }
+		
+		//[State|QualifiedID]
+		public CrossReference getTargetStateCrossReference_2_0() { return cTargetStateCrossReference_2_0; }
+		
+		//QualifiedID
+		public RuleCall getTargetStateQualifiedIDParserRuleCall_2_0_1() { return cTargetStateQualifiedIDParserRuleCall_2_0_1; }
 	}
 	public class DataTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.DataType");
@@ -2784,10 +2770,8 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Transition:
-	//	'to'
-	//	'{'
-	//	'target' target=[State|QualifiedID] ('action' action=[Action|QualifiedID])?
-	//	'}';
+	//	('action' action=[Action|QualifiedID])?
+	//	'to' target=[State|QualifiedID];
 	public TransitionElements getTransitionAccess() {
 		return pTransition;
 	}

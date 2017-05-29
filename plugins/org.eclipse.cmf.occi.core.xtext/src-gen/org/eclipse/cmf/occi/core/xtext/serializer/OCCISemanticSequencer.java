@@ -431,7 +431,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Transition returns Transition
 	 *
 	 * Constraint:
-	 *     (target=[State|QualifiedID] action=[Action|QualifiedID]?)
+	 *     (action=[Action|QualifiedID]? target=[State|QualifiedID])
 	 */
 	protected void sequence_Transition(ISerializationContext context, Transition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
