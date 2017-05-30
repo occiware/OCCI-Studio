@@ -87,7 +87,13 @@ public class Occi2Ecore
 		}
 		return newattribute;
 	}
-
+	
+	public static String convertOcciAttributeName2EntityAttributeName(final String attributeName)
+	{
+		int index = attributeName.lastIndexOf('.');
+		return (index != -1) ? attributeName.substring(index+1) : attributeName;
+	}
+	
 	/**
 	 * Upper case the first character.
 	 */

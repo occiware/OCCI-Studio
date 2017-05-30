@@ -392,7 +392,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 		for(Attribute attribute : OcciHelper.getAllAttributes(this)) {
 			final String attributeName = attribute.getName();
 			// Search the Ecore structural feature associated to this OCCI attribute.
-			final EStructuralFeature eStructuralFeature = eClass().getEStructuralFeature(Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attributeName));
+			final EStructuralFeature eStructuralFeature = eClass().getEStructuralFeature(Occi2Ecore.convertOcciAttributeName2EntityAttributeName(attributeName));
 			// If this is an Ecore attribute then
 			if(eStructuralFeature != null && eStructuralFeature instanceof EAttribute) {
 				final int featureId = eStructuralFeature.getFeatureID();
