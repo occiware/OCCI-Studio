@@ -222,7 +222,9 @@ public final class OcciHelper
 		if(entityKind != null) {
 			addAllAttributes(attributes, entityKind);
 		}
+	
 		for(Mixin mixin : entity.getMixins()) {
+			if(mixin != null)
 			addAllAttributes(attributes, mixin);
 		}	
 		return attributes;
