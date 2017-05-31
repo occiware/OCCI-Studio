@@ -18,6 +18,7 @@ import org.eclipse.cmf.occi.core.Action;
 import org.eclipse.cmf.occi.core.Attribute;
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Category;
+import org.eclipse.cmf.occi.core.Configuration;
 import org.eclipse.cmf.occi.core.DataType;
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Extension;
@@ -139,6 +140,22 @@ public class DesignServices {
 			if (!resource.getContents().isEmpty() && (resource.getContents().get(0) instanceof Extension)
 					&& !extension.getImport().contains(resource.getContents().get(0))) {
 				extension.getImport().add((Extension) resource.getContents().get(0));
+			}
+		}
+	}
+	
+	public void useExtension(Configuration configuration) {
+		Shell shell = Display.getCurrent().getActiveShell();
+		Session session = SessionManager.INSTANCE.getSession(configuration);
+		LoadExtensionDialog dialog = new LoadExtensionDialog(shell, session.getTransactionalEditingDomain());
+		dialog.open();
+
+		for (URI uri : dialog.getURIs()) {
+			session.addSemanticResource(uri, new NullProgressMonitor());
+			Resource resource = session.getTransactionalEditingDomain().getResourceSet().getResource(uri, true);
+			if (!resource.getContents().isEmpty() && (resource.getContents().get(0) instanceof Extension)
+					&& !configuration.getUse().contains(resource.getContents().get(0))) {
+				configuration.getUse().add((Extension) resource.getContents().get(0));
 			}
 		}
 	}
