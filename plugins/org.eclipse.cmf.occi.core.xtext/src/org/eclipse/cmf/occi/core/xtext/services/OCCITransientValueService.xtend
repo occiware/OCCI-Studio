@@ -16,16 +16,16 @@ class OCCITransientValueService extends DefaultTransientValueService {
 	override boolean isTransient(EObject owner, EStructuralFeature feature, int index) {
 		//println("owner "+owner)
 		//println("feature "+feature)
-//		if (feature == OCCIPackage.Literals.ATTRIBUTE__MUTABLE) {
-//			// println("mutable "+owner)
-//			var Boolean value = owner.eGet(feature) as Boolean
-//			println("mutable value " + value)
-//			if (value === null) {
-//				return false;
-//			} else if (value == Boolean.FALSE) {
-//				return true;
-//			}
-//		}
+		if (feature == OCCIPackage.Literals.ATTRIBUTE__MUTABLE) {
+			// println("mutable "+owner)
+			var Boolean value = owner.eGet(feature) as Boolean
+			println("mutable value " + value)
+			if (value === null) {
+				return false;
+			} else if (value == Boolean.FALSE) {
+				return true;
+			}
+		}
 		if (feature == OCCIPackage.Literals.ATTRIBUTE__REQUIRED) {
 			if(owner.eContainer instanceof Action){
 				return true;
