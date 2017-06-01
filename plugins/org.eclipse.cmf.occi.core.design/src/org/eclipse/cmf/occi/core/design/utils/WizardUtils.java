@@ -88,10 +88,9 @@ public final class WizardUtils {
 
 				@Override
 				protected void doExecute() {
-					DRepresentation representation = DialectManager.INSTANCE.createRepresentation(diagramInstanceName, rootObject,
-							representationDescription, session, monitor);
-					IEditorPart part = DialectUIManager.INSTANCE.openEditor(session, representation, monitor);
-					part.doSave( monitor ); // #44: sometimes, Sirius editors are marked as dirty on the first opening
+					DRepresentation representation = DialectManager.INSTANCE.createRepresentation(diagramInstanceName,
+							rootObject, representationDescription, session, monitor);
+					DialectUIManager.INSTANCE.openEditor(session, representation, monitor);
 				}
 			};
 			try {
@@ -133,8 +132,8 @@ public final class WizardUtils {
 		return null;
 	}
 
-	public static void addNature(final IProject project, String nature, final IProgressMonitor progressMonitor) throws CoreException
-	{
+	public static void addNature(final IProject project, String nature, final IProgressMonitor progressMonitor)
+			throws CoreException {
 		IProjectDescription description = project.getDescription();
 		String[] natures = description.getNatureIds();
 		String[] newNatures = new String[natures.length + 1];
@@ -144,11 +143,11 @@ public final class WizardUtils {
 		project.setDescription(description, progressMonitor);
 	}
 
-	public static void addXTextNature(final IProject project, final IProgressMonitor progressMonitor) throws CoreException
-	{
+	public static void addXTextNature(final IProject project, final IProgressMonitor progressMonitor)
+			throws CoreException {
 		// add XText nature
-// FIXME: don' build on Travis CI!
-//		addNature(project, XtextProjectHelper.NATURE_ID, progressMonitor);
+		// FIXME: don' build on Travis CI!
+		// addNature(project, XtextProjectHelper.NATURE_ID, progressMonitor);
 		addNature(project, "org.eclipse.xtext.ui.shared.xtextNature", progressMonitor);
 	}
 }

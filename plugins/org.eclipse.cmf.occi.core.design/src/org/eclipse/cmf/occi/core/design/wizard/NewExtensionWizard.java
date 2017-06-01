@@ -12,21 +12,25 @@
 package org.eclipse.cmf.occi.core.design.wizard;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
+import org.eclipse.cmf.occi.core.OcciCoreConstants;
 import org.eclipse.cmf.occi.core.design.Activator;
 import org.eclipse.cmf.occi.core.design.Messages;
 import org.eclipse.cmf.occi.core.design.utils.WizardUtils;
+import org.eclipse.cmf.occi.core.util.OcciRegistry;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.layout.TableColumnLayout;
 import org.eclipse.jface.operation.IRunnableWithProgress;
@@ -34,14 +38,19 @@ import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.CheckboxTableViewer;
 import org.eclipse.pde.internal.core.project.PDEProject;
 import org.eclipse.pde.internal.ui.wizards.tools.ConvertProjectToPluginOperation;
+import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.modelingproject.ModelingProject;
+import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.ui.tools.api.project.ModelingProjectManager;
+import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.Text;
@@ -49,8 +58,6 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
 import org.eclipse.ui.wizards.newresource.BasicNewProjectResourceWizard;
-import org.eclipse.cmf.occi.core.util.OcciRegistry;
-import org.eclipse.cmf.occi.core.OcciCoreConstants;
 
 import com.google.common.base.Strings;
 
@@ -220,7 +227,8 @@ public class NewExtensionWizard extends BasicNewProjectResourceWizard {
 							}
 
 							// Register this new OCCI extension.
-							OcciRegistry.getInstance().registerExtension(extensionScheme, init.getSemanticModelURI().toString());
+							OcciRegistry.getInstance().registerExtension(extensionScheme,
+									init.getSemanticModelURI().toString());
 
 							// Get the newly created file
 							final IResource newModelFile = project.findMember("/model/" //$NON-NLS-1$
@@ -232,10 +240,33 @@ public class NewExtensionWizard extends BasicNewProjectResourceWizard {
 							PlatformUI.getWorkbench().showPerspective(WizardUtils.MODELING_PERSPECTIVE_ID,
 									PlatformUI.getWorkbench().getActiveWorkbenchWindow());
 
-							WizardUtils.openDiagram(monitor, project, EXTENSION_DIAGRAM_NAME, extensionName,
-									WizardUtils.getRoot(ModelingProject.asModelingProject(project).get().getSession(),
-											init.getSemanticModelURI()));
+							Session session = ModelingProject.asModelingProject(project).get().getSession();
+							EObject root = WizardUtils.getRoot(session, init.getSemanticModelURI());
+							WizardUtils.openDiagram(monitor, project, EXTENSION_DIAGRAM_NAME, extensionName, root);
 
+							// #44: sometimes, Sirius editors are marked as
+							// dirty on the first opening
+							final RepresentationDescription representationDescription = WizardUtils
+									.getRepresentationDescription(root, session, extensionName);
+							Display.getDefault().asyncExec(new Runnable() {
+								@Override
+								public void run() {
+									// first save the session to avoid reload
+									// dialog
+									session.save(monitor);
+
+									// then save the resource
+									for (DRepresentation rep : DialectManager.INSTANCE
+											.getRepresentations(representationDescription, session)) {
+										try {
+											rep.eResource().save(Collections.EMPTY_MAP);
+										} catch (IOException e) {
+											Activator.getDefault().getLog().log(
+													new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e));
+										}
+									}
+								}
+							});
 						}
 					};
 					try {
@@ -279,7 +310,9 @@ public class NewExtensionWizard extends BasicNewProjectResourceWizard {
 					}
 				}
 			});
-		} catch (InvocationTargetException | InterruptedException e) {
+		} catch (InvocationTargetException |
+
+				InterruptedException e) {
 			Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e));
 		}
 		return true;
@@ -287,98 +320,58 @@ public class NewExtensionWizard extends BasicNewProjectResourceWizard {
 
 	private void configureOCCIEExtension(IProgressMonitor monitor) throws CoreException {
 		IFile manifest = PDEProject.getManifest(project);
-		String manifestContent =
-				"Manifest-Version: 1.0\n" +
-				"Bundle-ManifestVersion: 2\n" +
-				"Bundle-Name: " + project.getName() + "\n" +
-				"Bundle-SymbolicName: " + project.getName() + ";singleton:=true\n" +
-				"Bundle-Version: 1.0.0.qualifier\n" +
-				"Bundle-ClassPath: .\n" +
-				"Bundle-Vendor: OCCIware\n" +
-//				"Bundle-Localization: plugin\n" + // FIXME: require to generate plugin.properties
-				"Bundle-RequiredExecutionEnvironment: JavaSE-1.7\n" +
-				"Bundle-ActivationPolicy: lazy\n" +
-				"Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,\n" +
-				" org.eclipse.cmf.occi.core;visibility:=reexport,\n" +
-				" org.eclipse.cmf.occi.core.gen.emf.ui\n";
+		String manifestContent = "Manifest-Version: 1.0\n" + "Bundle-ManifestVersion: 2\n" + "Bundle-Name: "
+				+ project.getName() + "\n" + "Bundle-SymbolicName: " + project.getName() + ";singleton:=true\n"
+				+ "Bundle-Version: 1.0.0.qualifier\n" + "Bundle-ClassPath: .\n" + "Bundle-Vendor: OCCIware\n" +
+				// "Bundle-Localization: plugin\n" + // FIXME: require to
+				// generate plugin.properties
+				"Bundle-RequiredExecutionEnvironment: JavaSE-1.7\n" + "Bundle-ActivationPolicy: lazy\n"
+				+ "Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,\n"
+				+ " org.eclipse.cmf.occi.core;visibility:=reexport,\n" + " org.eclipse.cmf.occi.core.gen.emf.ui\n";
 		manifest.setContents(new ByteArrayInputStream(manifestContent.getBytes()), true, false, monitor);
 
 		IFile pluginXML = PDEProject.getPluginXml(project);
-		String pluginContent =
-				"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-				"<?eclipse version=\"3.0\"?>\n" +
-				"<!--\n" +
-				" Copyright (c) 2015-2016 Obeo, Inria\n" +
-				" All rights reserved. This program and the accompanying materials\n" +
-				" are made available under the terms of the Eclipse Public License v1.0\n" +
-				" which accompanies this distribution, and is available at\n" +
-				" http://www.eclipse.org/legal/epl-v10.html\n" +
-				"\n" +
-				" Contributors:\n" +
-				" - William Piers <william.piers@obeo.fr>\n" +
-				" - Philippe Merle <philippe.merle@inria.fr>\n" +
-				"-->\n" +
-				"<plugin>\n" +
-				"\n" +
-				"   <!-- Register the " + extensionName + " extension. -->\n" +
-				"   <extension point=\"org.eclipse.cmf.occi.core.occie\">\n" +
-				"      <occie scheme=\"" + extensionScheme + "\" file=\"model/" + extensionName + ".occie\"/>\n" +
-				"   </extension>\n" +
-				"\n" +
-				"   <!-- Define URI mapping. -->\n" +
-				"   <extension point=\"org.eclipse.emf.ecore.uri_mapping\">\n" +
-				"      <mapping source=\"" + extensionScheme.substring(0,extensionScheme.length()-1) + "\" target=\"platform:/plugin/" + project.getName() + "/model/" + extensionName + ".occie\"/>\n" +
-				"   </extension>\n" +
-				"\n" +
-				"   <!-- Register the parser for ." + extensionName + " files. -->\n" +
-				"   <extension point=\"org.eclipse.emf.ecore.extension_parser\">\n" +
-				"      <parser type=\"" + extensionName + "\" class=\"org.eclipse.cmf.occi.core.util.OCCIResourceFactoryImpl\"/>\n" +
-				"   </extension>\n" +
-				"\n" +
-				"   <!-- Popup menu for converting to an OCCI Configuration file. -->\n" +
-				"   <extension point=\"org.eclipse.ui.popupMenus\">\n" +
-				"      <objectContribution\n" +
-				"            id=\"" +  newProjectPage.getProjectName() + ".contribution\"\n" +
-				"            nameFilter=\"*." + extensionName +"\"\n" +
-				"            objectClass=\"org.eclipse.core.resources.IFile\">\n" +
-				"         <menu\n" +
-				"               id=\"org.eclipse.cmf.occi.core.occi-studio.ui.menu\"\n" +
-				"               label=\"OCCI Studio\"\n" +
-				"               path=\"additionsOCCIStudio\">\n" +
-				"            <separator name=\"group\"/>\n" +
-				"         </menu>\n" +
-				"         <action\n" +
-				"               class=\"org.eclipse.cmf.occi.core.ui.popup.actions.ExtensionConfiguration2OCCICAction\"\n" +
-				"               enablesFor=\"1\"\n" +
-			 	"               id=\"" +  newProjectPage.getProjectName() + ".ecore2occi\"\n" +
-			 	"               label=\"Convert to an OCCI Configuration File\"\n" +
-			 	"               menubarPath=\"org.eclipse.cmf.occi.core.occi-studio.ui.menu/group\">\n" +
-				"         </action>\n" +
-				"      </objectContribution>\n" +
-				"   </extension>\n" +
-				"</plugin>\n";
+		String pluginContent = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + "<?eclipse version=\"3.0\"?>\n"
+				+ "<!--\n" + " Copyright (c) 2015-2016 Obeo, Inria\n"
+				+ " All rights reserved. This program and the accompanying materials\n"
+				+ " are made available under the terms of the Eclipse Public License v1.0\n"
+				+ " which accompanies this distribution, and is available at\n"
+				+ " http://www.eclipse.org/legal/epl-v10.html\n" + "\n" + " Contributors:\n"
+				+ " - William Piers <william.piers@obeo.fr>\n" + " - Philippe Merle <philippe.merle@inria.fr>\n"
+				+ "-->\n" + "<plugin>\n" + "\n" + "   <!-- Register the " + extensionName + " extension. -->\n"
+				+ "   <extension point=\"org.eclipse.cmf.occi.core.occie\">\n" + "      <occie scheme=\""
+				+ extensionScheme + "\" file=\"model/" + extensionName + ".occie\"/>\n" + "   </extension>\n" + "\n"
+				+ "   <!-- Define URI mapping. -->\n" + "   <extension point=\"org.eclipse.emf.ecore.uri_mapping\">\n"
+				+ "      <mapping source=\"" + extensionScheme.substring(0, extensionScheme.length() - 1)
+				+ "\" target=\"platform:/plugin/" + project.getName() + "/model/" + extensionName + ".occie\"/>\n"
+				+ "   </extension>\n" + "\n" + "   <!-- Register the parser for ." + extensionName + " files. -->\n"
+				+ "   <extension point=\"org.eclipse.emf.ecore.extension_parser\">\n" + "      <parser type=\""
+				+ extensionName + "\" class=\"org.eclipse.cmf.occi.core.util.OCCIResourceFactoryImpl\"/>\n"
+				+ "   </extension>\n" + "\n" + "   <!-- Popup menu for converting to an OCCI Configuration file. -->\n"
+				+ "   <extension point=\"org.eclipse.ui.popupMenus\">\n" + "      <objectContribution\n"
+				+ "            id=\"" + newProjectPage.getProjectName() + ".contribution\"\n"
+				+ "            nameFilter=\"*." + extensionName + "\"\n"
+				+ "            objectClass=\"org.eclipse.core.resources.IFile\">\n" + "         <menu\n"
+				+ "               id=\"org.eclipse.cmf.occi.core.occi-studio.ui.menu\"\n"
+				+ "               label=\"OCCI Studio\"\n" + "               path=\"additionsOCCIStudio\">\n"
+				+ "            <separator name=\"group\"/>\n" + "         </menu>\n" + "         <action\n"
+				+ "               class=\"org.eclipse.cmf.occi.core.ui.popup.actions.ExtensionConfiguration2OCCICAction\"\n"
+				+ "               enablesFor=\"1\"\n" + "               id=\"" + newProjectPage.getProjectName()
+				+ ".ecore2occi\"\n" + "               label=\"Convert to an OCCI Configuration File\"\n"
+				+ "               menubarPath=\"org.eclipse.cmf.occi.core.occi-studio.ui.menu/group\">\n"
+				+ "         </action>\n" + "      </objectContribution>\n" + "   </extension>\n" + "</plugin>\n";
 		pluginXML.create(new ByteArrayInputStream(pluginContent.getBytes()), true, monitor);
 
 		IFile build = PDEProject.getBuildProperties(project);
-		String buildContent = 
-				"# Copyright (c) 2015-2016 Obeo, Inria\n" +
-				"# All rights reserved. This program and the accompanying materials\n" +
-				"# are made available under the terms of the Eclipse Public License v1.0\n" +
-				"# which accompanies this distribution, and is available at\n" +
-				"# http://www.eclipse.org/legal/epl-v10.html\n" +
-				"#\n" +
-				"# Contributors:\n" +
-				"# - William Piers <william.piers@obeo.fr>\n" +
-				"# - Philippe Merle <philippe.merle@inria.fr>\n" +
-				"\n" +
-				"source.. = src-gen/\n" +
-				"jars.compile.order = .\n" +
-				"output.. = bin/\n" +
-				"bin.includes = .,\\\n" +
-				"				model/,\\\n" +
-				"				META-INF/,\\\n" +
-				"				plugin.xml,\\\n" +
-				"				plugin.properties\n";
+		String buildContent = "# Copyright (c) 2015-2016 Obeo, Inria\n"
+				+ "# All rights reserved. This program and the accompanying materials\n"
+				+ "# are made available under the terms of the Eclipse Public License v1.0\n"
+				+ "# which accompanies this distribution, and is available at\n"
+				+ "# http://www.eclipse.org/legal/epl-v10.html\n" + "#\n" + "# Contributors:\n"
+				+ "# - William Piers <william.piers@obeo.fr>\n" + "# - Philippe Merle <philippe.merle@inria.fr>\n"
+				+ "\n" + "source.. = src-gen/\n" + "jars.compile.order = .\n" + "output.. = bin/\n"
+				+ "bin.includes = .,\\\n" + "				model/,\\\n" + "				META-INF/,\\\n"
+				+ "				plugin.xml,\\\n" + "				plugin.properties\n";
 		build.setContents(new ByteArrayInputStream(buildContent.getBytes()), true, false, monitor);
 	}
 
