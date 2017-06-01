@@ -51,12 +51,12 @@ class OCCITransientValueService extends DefaultTransientValueService {
 			}
 		// //println("rrrequired "+value)
 		}
-		if (feature == OCCIPackage.Literals.STATE__INCOMING_TRANSITION) {
-
-			return super.isTransient(owner, feature, index)
-
-		// //println("rrrequired "+value)
-		}
+//		if (feature == OCCIPackage.Literals.STATE__INCOMING_TRANSITION) {
+//
+//			return super.isTransient(owner, feature, index)
+//
+//		// //println("rrrequired "+value)
+//		}
 		if (feature == OCCIPackage.Literals.STATE__OWNING_FSM) {
 
 			return super.isTransient(owner, feature, index)
@@ -72,6 +72,7 @@ class OCCITransientValueService extends DefaultTransientValueService {
 		if (feature == OCCIPackage.Literals.TRANSITION__SOURCE) {
 			 return true
 		}
+		return super.isTransient(owner, feature, index)
 
 	}
 }
