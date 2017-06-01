@@ -719,15 +719,6 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_IncomingTransition() {
-		return (EReference)stateEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getState__StateLiteralAlreadyDefinedInFSMAttributeType__DiagnosticChain_Map() {
 		return stateEClass.getEOperations().get(0);
 	}
@@ -2033,7 +2024,6 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		createEAttribute(stateEClass, STATE__FINAL);
 		createEReference(stateEClass, STATE__OWNING_FSM);
 		createEReference(stateEClass, STATE__OUTGOING_TRANSITION);
-		createEReference(stateEClass, STATE__INCOMING_TRANSITION);
 		createEOperation(stateEClass, STATE___STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE__DIAGNOSTICCHAIN_MAP);
 
 		transitionEClass = createEClass(TRANSITION);
@@ -2344,7 +2334,6 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEAttribute(getState_Final(), this.getBoolean(), "final", "false", 1, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_OwningFSM(), this.getFSM(), this.getFSM_OwnedState(), "owningFSM", null, 1, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_OutgoingTransition(), this.getTransition(), this.getTransition_Source(), "outgoingTransition", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getState_IncomingTransition(), this.getTransition(), this.getTransition_Target(), "incomingTransition", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getState__StateLiteralAlreadyDefinedInFSMAttributeType__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "StateLiteralAlreadyDefinedInFSMAttributeType", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -2357,7 +2346,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTransition_Source(), this.getState(), this.getState_OutgoingTransition(), "source", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTransition_Target(), this.getState(), this.getState_IncomingTransition(), "target", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransition_Target(), this.getState(), null, "target", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_Action(), this.getAction(), null, "action", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getTransition__ContainedActionMustBeDeclaredInTheAppropriateKind__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "containedActionMustBeDeclaredInTheAppropriateKind", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -2949,12 +2938,6 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		   });	
 		addAnnotation
 		  (getState_OutgoingTransition(), 
-		   source, 
-		   new String[] {
-			 "name", "State"
-		   });	
-		addAnnotation
-		  (getState_IncomingTransition(), 
 		   source, 
 		   new String[] {
 			 "name", "State"

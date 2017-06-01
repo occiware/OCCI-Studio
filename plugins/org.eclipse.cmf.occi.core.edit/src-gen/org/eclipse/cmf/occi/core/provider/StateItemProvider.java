@@ -75,7 +75,6 @@ public class StateItemProvider
 			addLiteralPropertyDescriptor(object);
 			addInitialPropertyDescriptor(object);
 			addFinalPropertyDescriptor(object);
-			addIncomingTransitionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -142,28 +141,6 @@ public class StateItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Incoming Transition feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIncomingTransitionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_State_incomingTransition_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_State_incomingTransition_feature", "_UI_State_type"),
-				 OCCIPackage.Literals.STATE__INCOMING_TRANSITION,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

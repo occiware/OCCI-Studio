@@ -580,22 +580,13 @@ public interface OCCIPackage extends EPackage {
 	int STATE__OUTGOING_TRANSITION = 4;
 
 	/**
-	 * The feature id for the '<em><b>Incoming Transition</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE__INCOMING_TRANSITION = 5;
-
-	/**
 	 * The number of structural features of the '<em>State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = 6;
+	int STATE_FEATURE_COUNT = 5;
 
 	/**
 	 * The operation id for the '<em>State Literal Already Defined In FSM Attribute Type</em>' operation.
@@ -3438,17 +3429,6 @@ public interface OCCIPackage extends EPackage {
 	EReference getState_OutgoingTransition();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.cmf.occi.core.State#getIncomingTransition <em>Incoming Transition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Incoming Transition</em>'.
-	 * @see org.eclipse.cmf.occi.core.State#getIncomingTransition()
-	 * @see #getState()
-	 * @generated
-	 */
-	EReference getState_IncomingTransition();
-
-	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.State#StateLiteralAlreadyDefinedInFSMAttributeType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>State Literal Already Defined In FSM Attribute Type</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5213,14 +5193,6 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STATE__OUTGOING_TRANSITION = eINSTANCE.getState_OutgoingTransition();
-
-		/**
-		 * The meta object literal for the '<em><b>Incoming Transition</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STATE__INCOMING_TRANSITION = eINSTANCE.getState_IncomingTransition();
 
 		/**
 		 * The meta object literal for the '<em><b>State Literal Already Defined In FSM Attribute Type</b></em>' operation.

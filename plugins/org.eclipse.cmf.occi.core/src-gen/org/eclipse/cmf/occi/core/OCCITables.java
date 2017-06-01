@@ -894,11 +894,11 @@ public class OCCITables
 		public static final /*@NonNull*/ ExecutorProperty _Resource__Configuration__resources = new ExecutorPropertyWithImplementation("Configuration", Types._Resource, 3, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.CONFIGURATION__RESOURCES));
 
 		public static final /*@NonNull*/ ExecutorProperty _State__final = new EcoreExecutorProperty(OCCIPackage.Literals.STATE__FINAL, Types._State, 0);
-		public static final /*@NonNull*/ ExecutorProperty _State__incomingTransition = new EcoreExecutorProperty(OCCIPackage.Literals.STATE__INCOMING_TRANSITION, Types._State, 1);
-		public static final /*@NonNull*/ ExecutorProperty _State__initial = new EcoreExecutorProperty(OCCIPackage.Literals.STATE__INITIAL, Types._State, 2);
-		public static final /*@NonNull*/ ExecutorProperty _State__literal = new EcoreExecutorProperty(OCCIPackage.Literals.STATE__LITERAL, Types._State, 3);
-		public static final /*@NonNull*/ ExecutorProperty _State__outgoingTransition = new EcoreExecutorProperty(OCCIPackage.Literals.STATE__OUTGOING_TRANSITION, Types._State, 4);
-		public static final /*@NonNull*/ ExecutorProperty _State__owningFSM = new EcoreExecutorProperty(OCCIPackage.Literals.STATE__OWNING_FSM, Types._State, 5);
+		public static final /*@NonNull*/ ExecutorProperty _State__initial = new EcoreExecutorProperty(OCCIPackage.Literals.STATE__INITIAL, Types._State, 1);
+		public static final /*@NonNull*/ ExecutorProperty _State__literal = new EcoreExecutorProperty(OCCIPackage.Literals.STATE__LITERAL, Types._State, 2);
+		public static final /*@NonNull*/ ExecutorProperty _State__outgoingTransition = new EcoreExecutorProperty(OCCIPackage.Literals.STATE__OUTGOING_TRANSITION, Types._State, 3);
+		public static final /*@NonNull*/ ExecutorProperty _State__owningFSM = new EcoreExecutorProperty(OCCIPackage.Literals.STATE__OWNING_FSM, Types._State, 4);
+		public static final /*@NonNull*/ ExecutorProperty _State__Transition__target = new ExecutorPropertyWithImplementation("Transition", Types._State, 5, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.TRANSITION__TARGET));
 
 		public static final /*@NonNull*/ ExecutorProperty _StringType__length = new EcoreExecutorProperty(OCCIPackage.Literals.STRING_TYPE__LENGTH, Types._StringType, 0);
 		public static final /*@NonNull*/ ExecutorProperty _StringType__maxLength = new EcoreExecutorProperty(OCCIPackage.Literals.STRING_TYPE__MAX_LENGTH, Types._StringType, 1);
@@ -2936,7 +2936,6 @@ public class OCCITables
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _State = {
 			OCCITables.Properties._State__final,
-			OCCITables.Properties._State__incomingTransition,
 			OCCITables.Properties._State__initial,
 			OCCITables.Properties._State__literal,
 			OCCITables.Properties._State__outgoingTransition,

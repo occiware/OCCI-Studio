@@ -38,7 +38,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -71,7 +70,6 @@ import org.eclipse.ocl.pivot.values.InvalidValueException;
  *   <li>{@link org.eclipse.cmf.occi.core.impl.StateImpl#isFinal <em>Final</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.impl.StateImpl#getOwningFSM <em>Owning FSM</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.impl.StateImpl#getOutgoingTransition <em>Outgoing Transition</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.core.impl.StateImpl#getIncomingTransition <em>Incoming Transition</em>}</li>
  * </ul>
  *
  * @generated
@@ -136,16 +134,6 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	 * @ordered
 	 */
 	protected EList<Transition> outgoingTransition;
-
-	/**
-	 * The cached value of the '{@link #getIncomingTransition() <em>Incoming Transition</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIncomingTransition()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Transition> incomingTransition;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -304,18 +292,6 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Transition> getIncomingTransition() {
-		if (incomingTransition == null) {
-			incomingTransition = new EObjectWithInverseResolvingEList<Transition>(Transition.class, this, OCCIPackage.STATE__INCOMING_TRANSITION, OCCIPackage.TRANSITION__TARGET);
-		}
-		return incomingTransition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean StateLiteralAlreadyDefinedInFSMAttributeType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
 		 *
@@ -376,8 +352,6 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 				return basicSetOwningFSM((FSM)otherEnd, msgs);
 			case OCCIPackage.STATE__OUTGOING_TRANSITION:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingTransition()).basicAdd(otherEnd, msgs);
-			case OCCIPackage.STATE__INCOMING_TRANSITION:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingTransition()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -394,8 +368,6 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 				return basicSetOwningFSM(null, msgs);
 			case OCCIPackage.STATE__OUTGOING_TRANSITION:
 				return ((InternalEList<?>)getOutgoingTransition()).basicRemove(otherEnd, msgs);
-			case OCCIPackage.STATE__INCOMING_TRANSITION:
-				return ((InternalEList<?>)getIncomingTransition()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -433,8 +405,6 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 				return getOwningFSM();
 			case OCCIPackage.STATE__OUTGOING_TRANSITION:
 				return getOutgoingTransition();
-			case OCCIPackage.STATE__INCOMING_TRANSITION:
-				return getIncomingTransition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -464,10 +434,6 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 				getOutgoingTransition().clear();
 				getOutgoingTransition().addAll((Collection<? extends Transition>)newValue);
 				return;
-			case OCCIPackage.STATE__INCOMING_TRANSITION:
-				getIncomingTransition().clear();
-				getIncomingTransition().addAll((Collection<? extends Transition>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -495,9 +461,6 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 			case OCCIPackage.STATE__OUTGOING_TRANSITION:
 				getOutgoingTransition().clear();
 				return;
-			case OCCIPackage.STATE__INCOMING_TRANSITION:
-				getIncomingTransition().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -520,8 +483,6 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 				return getOwningFSM() != null;
 			case OCCIPackage.STATE__OUTGOING_TRANSITION:
 				return outgoingTransition != null && !outgoingTransition.isEmpty();
-			case OCCIPackage.STATE__INCOMING_TRANSITION:
-				return incomingTransition != null && !incomingTransition.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

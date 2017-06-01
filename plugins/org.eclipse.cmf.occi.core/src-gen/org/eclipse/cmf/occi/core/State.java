@@ -30,7 +30,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.cmf.occi.core.State#isFinal <em>Final</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.State#getOwningFSM <em>Owning FSM</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.State#getOutgoingTransition <em>Outgoing Transition</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.core.State#getIncomingTransition <em>Incoming Transition</em>}</li>
  * </ul>
  *
  * @see org.eclipse.cmf.occi.core.OCCIPackage#getState()
@@ -169,26 +168,6 @@ public interface State extends EObject {
 	 * @generated
 	 */
 	EList<Transition> getOutgoingTransition();
-
-	/**
-	 * Returns the value of the '<em><b>Incoming Transition</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.cmf.occi.core.Transition}.
-	 * It is bidirectional and its opposite is '{@link org.eclipse.cmf.occi.core.Transition#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Incoming Transition</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Incoming Transition</em>' reference list.
-	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getState_IncomingTransition()
-	 * @see org.eclipse.cmf.occi.core.Transition#getTarget
-	 * @model opposite="target"
-	 *        extendedMetaData="name='State'"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!State!incomingTransition'"
-	 * @generated
-	 */
-	EList<Transition> getIncomingTransition();
 
 	/**
 	 * <!-- begin-user-doc -->
