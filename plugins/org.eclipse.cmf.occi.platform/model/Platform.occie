@@ -15,15 +15,15 @@
     <actions name="Stop" scheme="http://schemas.ogf.org/occi/platform/application/action#" title="Stop the application."/>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
     <fsm attribute="//@kinds[term='application']/@attributes.3">
-      <ownedState literal="//@types.2/@literals.0" initial="true" final="true" incomingTransition="//@kinds[term='application']/@fsm/@ownedState.1/@outgoingTransition.0">
+      <ownedState literal="//@types.2/@literals.0" initial="true" final="true">
         <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.1" action="//@kinds[term='application']/@actions.1"/>
         <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.2"/>
       </ownedState>
-      <ownedState literal="//@types.2/@literals.1" incomingTransition="//@kinds[term='application']/@fsm/@ownedState.0/@outgoingTransition.0">
+      <ownedState literal="//@types.2/@literals.1">
         <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.0" action="//@kinds[term='application']/@actions.0"/>
         <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.2"/>
       </ownedState>
-      <ownedState literal="//@types.2/@literals.2" incomingTransition="//@kinds[term='application']/@fsm/@ownedState.0/@outgoingTransition.1 //@kinds[term='application']/@fsm/@ownedState.1/@outgoingTransition.1"/>
+      <ownedState literal="//@types.2/@literals.2"/>
     </fsm>
   </kinds>
   <kinds name="Component" scheme="http://schemas.ogf.org/occi/platform#" title="Component">
@@ -35,15 +35,15 @@
     <actions name="Stop" scheme="http://schemas.ogf.org/occi/platform/component/action#" title="Stop the application."/>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
     <fsm attribute="//@kinds[term='component']/@attributes.0">
-      <ownedState literal="//@types.2/@literals.0" incomingTransition="//@kinds[term='component']/@fsm/@ownedState.1/@outgoingTransition.0">
+      <ownedState literal="//@types.2/@literals.0">
         <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.1" action="//@kinds[term='component']/@actions.1"/>
         <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.2"/>
       </ownedState>
-      <ownedState literal="//@types.2/@literals.1" incomingTransition="//@kinds[term='component']/@fsm/@ownedState.0/@outgoingTransition.0">
+      <ownedState literal="//@types.2/@literals.1">
         <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.0" action="//@kinds[term='component']/@actions.0"/>
         <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.2"/>
       </ownedState>
-      <ownedState literal="//@types.2/@literals.2" incomingTransition="//@kinds[term='component']/@fsm/@ownedState.0/@outgoingTransition.1 //@kinds[term='component']/@fsm/@ownedState.1/@outgoingTransition.1"/>
+      <ownedState literal="//@types.2/@literals.2"/>
     </fsm>
   </kinds>
   <kinds name="ComponentLink" scheme="http://schemas.ogf.org/occi/platform#" title="ComponentLink">
