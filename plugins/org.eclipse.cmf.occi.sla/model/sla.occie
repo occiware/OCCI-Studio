@@ -4,8 +4,8 @@
   <kinds name="agreement" scheme="http://schemas.ogf.org/occi/sla#" title="A Service Level Agreement">
     <attributes name="occi.agreement.state" mutable="false" required="true" description="Current state of the instance" type="//@types.1"/>
     <attributes name="occi.agreement.agreedAt" mutable="false" description="The point in time when the agreement was made" type="//@types.0"/>
-    <attributes name="occi.agreement.effectiveFrom" description="The point in time when the agreement’s effectiveness begins" type="//@types.0"/>
-    <attributes name="occi.agreement.effectiveUntil" description="The point in time when the agreement’s effectiveness ends" type="//@types.0"/>
+    <attributes name="occi.agreement.effectiveFrom" mutable="true" description="The point in time when the agreement’s effectiveness begins" type="//@types.0"/>
+    <attributes name="occi.agreement.effectiveUntil" mutable="true" description="The point in time when the agreement’s effectiveness ends" type="//@types.0"/>
     <actions name="Accept" scheme="http://schemas.ogf.org/occi/sla/agreement/action#"/>
     <actions name="Reject" scheme="http://schemas.ogf.org/occi/sla/agreement/action#"/>
     <actions name="Suspend" scheme="http://schemas.ogf.org/occi/sla/agreement/action#"/>
