@@ -2,7 +2,7 @@
 <occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" name="platform" scheme="http://schemas.ogf.org/occi/platform#" description="OCCI Platform Extension, version 1.2." specification="https://www.ogf.org/documents/GFD.227.pdf">
   <import href="http://schemas.ogf.org/occi/core#/"/>
   <kinds name="Application" scheme="http://schemas.ogf.org/occi/platform#" title="Application">
-    <attributes name="occi.app.name" required="true" description="Name of the application.">
+    <attributes name="occi.app.name" mutable="true" required="true" description="Name of the application.">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <attributes name="occi.app.context" mutable="false" required="true" description="URL for contextualizing the app." type="//@types.0"/>
@@ -19,11 +19,11 @@
         <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.1" action="//@kinds[term='application']/@actions.1"/>
         <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.2"/>
       </ownedState>
-      <ownedState literal="//@types.2/@literals.1">
+      <ownedState literal="//@types.2/@literals.1" initial="false" final="false">
         <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.0" action="//@kinds[term='application']/@actions.0"/>
         <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.2"/>
       </ownedState>
-      <ownedState literal="//@types.2/@literals.2"/>
+      <ownedState literal="//@types.2/@literals.2" initial="false" final="false"/>
     </fsm>
   </kinds>
   <kinds name="Component" scheme="http://schemas.ogf.org/occi/platform#" title="Component">
@@ -35,15 +35,15 @@
     <actions name="Stop" scheme="http://schemas.ogf.org/occi/platform/component/action#" title="Stop the application."/>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
     <fsm attribute="//@kinds[term='component']/@attributes.0">
-      <ownedState literal="//@types.2/@literals.0">
+      <ownedState literal="//@types.2/@literals.0" initial="false" final="false">
         <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.1" action="//@kinds[term='component']/@actions.1"/>
         <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.2"/>
       </ownedState>
-      <ownedState literal="//@types.2/@literals.1">
+      <ownedState literal="//@types.2/@literals.1" initial="false" final="false">
         <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.0" action="//@kinds[term='component']/@actions.0"/>
         <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.2"/>
       </ownedState>
-      <ownedState literal="//@types.2/@literals.2"/>
+      <ownedState literal="//@types.2/@literals.2" initial="false" final="false"/>
     </fsm>
   </kinds>
   <kinds name="ComponentLink" scheme="http://schemas.ogf.org/occi/platform#" title="ComponentLink">
