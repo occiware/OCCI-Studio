@@ -26,9 +26,9 @@ import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.model.XtextDocumentProvider;
 
 public class OCCIDocumentProvider extends XtextDocumentProvider {
-	static {
-		OCCIStandaloneSetup.doSetup();
-	}
+//	static {
+//		OCCIStandaloneSetup.doSetup();
+//	}
 
 	@Override
 	protected void setDocumentContent(IDocument document, InputStream contentStream, String encoding)
@@ -71,7 +71,7 @@ public class OCCIDocumentProvider extends XtextDocumentProvider {
 			is.close();
 			URI uri = URI.createPlatformResourceURI(
 					((org.eclipse.ui.part.FileEditorInput) element).getFile().getFullPath().toString(), true);
-			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
+			//resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
 			Resource xmiResource = resourceSet.getResource(uri, true);
 			((XMLResource) xmiResource).getDefaultSaveOptions().put(XMLResource.OPTION_URI_HANDLER,
 					new URIHandlerImpl.PlatformSchemeAware());

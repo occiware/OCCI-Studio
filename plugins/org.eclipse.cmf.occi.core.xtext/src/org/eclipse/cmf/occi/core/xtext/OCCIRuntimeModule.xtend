@@ -19,6 +19,17 @@ class OCCIRuntimeModule extends AbstractOCCIRuntimeModule {
 	override Class<? extends ITransientValueService> bindITransientValueService() {
 		OCCITransientValueService
 	}
+	
+	def Class<? extends org.eclipse.xtext.serializer.sequencer.ITransientValueService> bindITransientValueServiceOld() {
+		CustomLegacyTransientValueService
+	}
+	
+	override bindIAstFactory() {
+		CustomDefaultEcoreElementFactory
+	}
+//	def Class<? extends org.eclipse.xtext.serializer.tokens.ICrossReferenceSerializer> bindICrossReferenceSerializer() {
+//		OCCICrossReferenceSerializer
+//	}
 //	def Class<? extends IDerivedStateComputer> bindIDerivedStateComputer() {
 //		OCCIDerivedStateComputer
 //	}

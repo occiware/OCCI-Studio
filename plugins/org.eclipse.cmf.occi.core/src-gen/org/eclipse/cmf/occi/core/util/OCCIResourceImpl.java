@@ -11,9 +11,19 @@
  */
 package org.eclipse.cmf.occi.core.util;
 
-import org.eclipse.emf.common.util.URI;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.Writer;
+import java.util.Map;
 
+import org.eclipse.cmf.occi.core.OCCIPackage;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.emf.ecore.xmi.XMLSave;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMLSaveImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,5 +43,11 @@ public class OCCIResourceImpl extends XMIResourceImpl {
 	public OCCIResourceImpl(URI uri) {
 		super(uri);
 	}
-
+	@Override
+	public void doSave(OutputStream outputStream, Map<?,?> options) throws
+	IOException {
+	this.getDefaultSaveOptions().put(XMLResource.OPTION_KEEP_DEFAULT_CONTENT,
+	Boolean.TRUE);
+	super.doSave(outputStream, options);
+	}
 } //OCCIResourceImpl
