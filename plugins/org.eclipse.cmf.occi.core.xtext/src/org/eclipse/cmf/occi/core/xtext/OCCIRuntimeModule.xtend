@@ -6,6 +6,7 @@ package org.eclipse.cmf.occi.core.xtext
 import org.eclipse.cmf.occi.core.xtext.scoping.OCCILinker
 import org.eclipse.xtext.parsetree.reconstr.ITransientValueService
 import org.eclipse.cmf.occi.core.xtext.services.OCCITransientValueService
+import org.eclipse.xtext.serializer.tokens.ICrossReferenceSerializer
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
@@ -26,6 +27,9 @@ class OCCIRuntimeModule extends AbstractOCCIRuntimeModule {
 	
 	override bindIAstFactory() {
 		CustomDefaultEcoreElementFactory
+	}
+	def Class<? extends ICrossReferenceSerializer> bindICrossReferenceSerializer() {
+		OCCICrossReferenceSerializer
 	}
 //	def Class<? extends org.eclipse.xtext.serializer.tokens.ICrossReferenceSerializer> bindICrossReferenceSerializer() {
 //		OCCICrossReferenceSerializer
