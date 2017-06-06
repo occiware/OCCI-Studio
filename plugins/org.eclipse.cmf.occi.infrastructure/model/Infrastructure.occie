@@ -145,6 +145,7 @@
     <attributes name="occi.network.allocation" mutable="true" description="Address allocation mechanism: dynamic e.g., uses the dynamic host configuration protocol, static e.g., uses user supplied static network configurations" type="//@types.10"/>
     <constraints name="test" description="true" body="true"/>
     <applies href="http://schemas.ogf.org/occi/core#//@kinds[term='entity']"/>
+    <applies href="#//@kinds[term='network']"/>
   </mixins>
   <mixins name="IpNetworkInterface" scheme="http://schemas.ogf.org/occi/infrastructure/networkinterface#" title="IP NetworkInterface Mixin" applies="//@kinds[term='networkinterface']">
     <attributes name="occi.networkinterface.address" mutable="true" required="true" description="Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7) of the link" type="//@types.9"/>
