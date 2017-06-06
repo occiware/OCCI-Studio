@@ -563,28 +563,22 @@ ruleKind returns [EObject current=null]
 			)
 		)*
 		(
-			otherlv_22='fsm'
-			{
-				newLeafNode(otherlv_22, grammarAccess.getKindAccess().getFsmKeyword_11_0());
-			}
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getKindAccess().getFsmFSMParserRuleCall_11_1_0());
+				{
+					newCompositeNode(grammarAccess.getKindAccess().getFsmFSMParserRuleCall_11_0());
+				}
+				lv_fsm_22_0=ruleFSM
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getKindRule());
 					}
-					lv_fsm_23_0=ruleFSM
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getKindRule());
-						}
-						set(
-							$current,
-							"fsm",
-							lv_fsm_23_0,
-							"org.eclipse.cmf.occi.core.xtext.OCCI.FSM");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"fsm",
+						lv_fsm_22_0,
+						"org.eclipse.cmf.occi.core.xtext.OCCI.FSM");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)?
 	)
@@ -1784,15 +1778,40 @@ ruleState returns [EObject current=null]
 						afterParserOrEnumRuleCall();
 					}
 				)
+			)
+			(
+				otherlv_9=','
+				{
+					newLeafNode(otherlv_9, grammarAccess.getStateAccess().getCommaKeyword_5_3_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getStateAccess().getOutgoingTransitionTransitionParserRuleCall_5_3_1_0());
+						}
+						lv_outgoingTransition_10_0=ruleTransition
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getStateRule());
+							}
+							add(
+								$current,
+								"outgoingTransition",
+								lv_outgoingTransition_10_0,
+								"org.eclipse.cmf.occi.core.xtext.OCCI.Transition");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
 			)*
-			otherlv_9=')'
+			otherlv_11=')'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getStateAccess().getRightParenthesisKeyword_5_3());
+				newLeafNode(otherlv_11, grammarAccess.getStateAccess().getRightParenthesisKeyword_5_4());
 			}
 		)?
-		otherlv_10='}'
+		otherlv_12='}'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getStateAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_12, grammarAccess.getStateAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;
@@ -2661,38 +2680,40 @@ ruleEnumerationLiteral returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_1='('
-		{
-			newLeafNode(otherlv_1, grammarAccess.getEnumerationLiteralAccess().getLeftParenthesisKeyword_1());
-		}
 		(
-			otherlv_2='documentation'
+			otherlv_1='('
 			{
-				newLeafNode(otherlv_2, grammarAccess.getEnumerationLiteralAccess().getDocumentationKeyword_2_0());
+				newLeafNode(otherlv_1, grammarAccess.getEnumerationLiteralAccess().getLeftParenthesisKeyword_1_0());
 			}
 			(
+				otherlv_2='documentation'
+				{
+					newLeafNode(otherlv_2, grammarAccess.getEnumerationLiteralAccess().getDocumentationKeyword_1_1_0());
+				}
 				(
-					lv_documentation_3_0=RULE_STRING
-					{
-						newLeafNode(lv_documentation_3_0, grammarAccess.getEnumerationLiteralAccess().getDocumentationSTRINGTerminalRuleCall_2_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEnumerationLiteralRule());
+					(
+						lv_documentation_3_0=RULE_STRING
+						{
+							newLeafNode(lv_documentation_3_0, grammarAccess.getEnumerationLiteralAccess().getDocumentationSTRINGTerminalRuleCall_1_1_1_0());
 						}
-						setWithLastConsumed(
-							$current,
-							"documentation",
-							lv_documentation_3_0,
-							"org.eclipse.xtext.common.Terminals.STRING");
-					}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getEnumerationLiteralRule());
+							}
+							setWithLastConsumed(
+								$current,
+								"documentation",
+								lv_documentation_3_0,
+								"org.eclipse.xtext.common.Terminals.STRING");
+						}
+					)
 				)
 			)
+			otherlv_4=')'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getEnumerationLiteralAccess().getRightParenthesisKeyword_1_2());
+			}
 		)?
-		otherlv_4=')'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getEnumerationLiteralAccess().getRightParenthesisKeyword_3());
-		}
 	)
 ;
 

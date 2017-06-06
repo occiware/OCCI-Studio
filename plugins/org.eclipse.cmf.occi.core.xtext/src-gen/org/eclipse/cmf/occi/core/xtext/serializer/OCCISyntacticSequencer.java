@@ -22,13 +22,11 @@ public class OCCISyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected OCCIGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Extension___AsKeyword_6_2_0_IDTerminalRuleCall_6_2_1__q;
-	protected AbstractElementAlias match_State___TransitionsKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (OCCIGrammarAccess) access;
 		match_Extension___AsKeyword_6_2_0_IDTerminalRuleCall_6_2_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getExtensionAccess().getAsKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getExtensionAccess().getIDTerminalRuleCall_6_2_1()));
-		match_State___TransitionsKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getStateAccess().getTransitionsKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getStateAccess().getLeftParenthesisKeyword_5_1()), new TokenAlias(false, false, grammarAccess.getStateAccess().getRightParenthesisKeyword_5_3()));
 	}
 	
 	@Override
@@ -55,8 +53,6 @@ public class OCCISyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if (match_Extension___AsKeyword_6_2_0_IDTerminalRuleCall_6_2_1__q.equals(syntax))
 				emit_Extension___AsKeyword_6_2_0_IDTerminalRuleCall_6_2_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_State___TransitionsKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q.equals(syntax))
-				emit_State___TransitionsKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -73,17 +69,6 @@ public class OCCISyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     import+=[Extension|STRING] (ambiguity) types+=DataType
 	 */
 	protected void emit_Extension___AsKeyword_6_2_0_IDTerminalRuleCall_6_2_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ('transitions' '(' ')')?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     literal=[EnumerationLiteral|QualifiedID] (ambiguity) '}' (rule end)
-	 */
-	protected void emit_State___TransitionsKeyword_5_0_LeftParenthesisKeyword_5_1_RightParenthesisKeyword_5_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

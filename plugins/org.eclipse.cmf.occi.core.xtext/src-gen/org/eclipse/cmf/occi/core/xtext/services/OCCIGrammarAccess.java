@@ -216,10 +216,8 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cActionsActionParserRuleCall_10_1_0 = (RuleCall)cActionsAssignment_10_1.eContents().get(0);
 		private final Assignment cConstraintsAssignment_10_2 = (Assignment)cAlternatives_10.eContents().get(2);
 		private final RuleCall cConstraintsConstraintParserRuleCall_10_2_0 = (RuleCall)cConstraintsAssignment_10_2.eContents().get(0);
-		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
-		private final Keyword cFsmKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
-		private final Assignment cFsmAssignment_11_1 = (Assignment)cGroup_11.eContents().get(1);
-		private final RuleCall cFsmFSMParserRuleCall_11_1_0 = (RuleCall)cFsmAssignment_11_1.eContents().get(0);
+		private final Assignment cFsmAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cFsmFSMParserRuleCall_11_0 = (RuleCall)cFsmAssignment_11.eContents().get(0);
 		
 		//Kind:
 		//	'kind'
@@ -228,14 +226,14 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//	'{' ('title' title=STRING)?
 		//	'scheme' scheme=STRING (attributes+=Attribute
 		//	| actions+=Action
-		//	| constraints+=Constraint)* ('fsm'
-		//	fsm=FSM)?;
+		//	| constraints+=Constraint)*
+		//	fsm=FSM?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'kind' name=NameID ('extends' parent=[Kind|QualifiedID])? ('source' source=[Kind|QualifiedID])? ('target'
 		//target=[Kind|QualifiedID])? ('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')? '{'
 		//('title' title=STRING)? 'scheme' scheme=STRING (attributes+=Attribute | actions+=Action | constraints+=Constraint)*
-		//('fsm' fsm=FSM)?
+		//fsm=FSM?
 		public Group getGroup() { return cGroup; }
 		
 		//'kind'
@@ -367,17 +365,11 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//Constraint
 		public RuleCall getConstraintsConstraintParserRuleCall_10_2_0() { return cConstraintsConstraintParserRuleCall_10_2_0; }
 		
-		//('fsm' fsm=FSM)?
-		public Group getGroup_11() { return cGroup_11; }
-		
-		//'fsm'
-		public Keyword getFsmKeyword_11_0() { return cFsmKeyword_11_0; }
-		
-		//fsm=FSM
-		public Assignment getFsmAssignment_11_1() { return cFsmAssignment_11_1; }
+		//fsm=FSM?
+		public Assignment getFsmAssignment_11() { return cFsmAssignment_11; }
 		
 		//FSM
-		public RuleCall getFsmFSMParserRuleCall_11_1_0() { return cFsmFSMParserRuleCall_11_1_0; }
+		public RuleCall getFsmFSMParserRuleCall_11_0() { return cFsmFSMParserRuleCall_11_0; }
 	}
 	public class MixinElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.Mixin");
@@ -1165,20 +1157,24 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftParenthesisKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
 		private final Assignment cOutgoingTransitionAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
 		private final RuleCall cOutgoingTransitionTransitionParserRuleCall_5_2_0 = (RuleCall)cOutgoingTransitionAssignment_5_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
+		private final Group cGroup_5_3 = (Group)cGroup_5.eContents().get(3);
+		private final Keyword cCommaKeyword_5_3_0 = (Keyword)cGroup_5_3.eContents().get(0);
+		private final Assignment cOutgoingTransitionAssignment_5_3_1 = (Assignment)cGroup_5_3.eContents().get(1);
+		private final RuleCall cOutgoingTransitionTransitionParserRuleCall_5_3_1_0 = (RuleCall)cOutgoingTransitionAssignment_5_3_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//State:
 		//	'State'
 		//	'{'
 		//	initial?='initial'?
-		//	final?='final'? ('literal' literal=[EnumerationLiteral|QualifiedID]) ('transitions' '('
-		//	outgoingTransition+=Transition* ')')?
+		//	final?='final'? ('literal' literal=[EnumerationLiteral|QualifiedID]) ('transitions' '(' outgoingTransition+=Transition
+		//	("," outgoingTransition+=Transition)* ')')?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'State' '{' initial?='initial'? final?='final'? ('literal' literal=[EnumerationLiteral|QualifiedID]) ('transitions' '('
-		//outgoingTransition+=Transition* ')')? '}'
+		//outgoingTransition+=Transition ("," outgoingTransition+=Transition)* ')')? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'State'
@@ -1214,7 +1210,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedID
 		public RuleCall getLiteralEnumerationLiteralQualifiedIDParserRuleCall_4_1_0_1() { return cLiteralEnumerationLiteralQualifiedIDParserRuleCall_4_1_0_1; }
 		
-		//('transitions' '(' outgoingTransition+=Transition* ')')?
+		//('transitions' '(' outgoingTransition+=Transition ("," outgoingTransition+=Transition)* ')')?
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//'transitions'
@@ -1223,14 +1219,26 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_5_1() { return cLeftParenthesisKeyword_5_1; }
 		
-		//outgoingTransition+=Transition*
+		//outgoingTransition+=Transition
 		public Assignment getOutgoingTransitionAssignment_5_2() { return cOutgoingTransitionAssignment_5_2; }
 		
 		//Transition
 		public RuleCall getOutgoingTransitionTransitionParserRuleCall_5_2_0() { return cOutgoingTransitionTransitionParserRuleCall_5_2_0; }
 		
+		//("," outgoingTransition+=Transition)*
+		public Group getGroup_5_3() { return cGroup_5_3; }
+		
+		//","
+		public Keyword getCommaKeyword_5_3_0() { return cCommaKeyword_5_3_0; }
+		
+		//outgoingTransition+=Transition
+		public Assignment getOutgoingTransitionAssignment_5_3_1() { return cOutgoingTransitionAssignment_5_3_1; }
+		
+		//Transition
+		public RuleCall getOutgoingTransitionTransitionParserRuleCall_5_3_1_0() { return cOutgoingTransitionTransitionParserRuleCall_5_3_1_0; }
+		
 		//')'
-		public Keyword getRightParenthesisKeyword_5_3() { return cRightParenthesisKeyword_5_3; }
+		public Keyword getRightParenthesisKeyword_5_4() { return cRightParenthesisKeyword_5_4; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
@@ -1794,20 +1802,20 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cDocumentationKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cDocumentationAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cDocumentationSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cDocumentationAssignment_2_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
+		private final Keyword cDocumentationKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
+		private final Assignment cDocumentationAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
+		private final RuleCall cDocumentationSTRINGTerminalRuleCall_1_1_1_0 = (RuleCall)cDocumentationAssignment_1_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
 		//EnumerationLiteral:
-		//	name=ID
-		//	'(' ('documentation' documentation=STRING)?
-		//	')';
+		//	name=ID ('(' ('documentation' documentation=STRING)
+		//	')')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID '(' ('documentation' documentation=STRING)? ')'
+		//name=ID ('(' ('documentation' documentation=STRING) ')')?
 		public Group getGroup() { return cGroup; }
 		
 		//name=ID
@@ -1816,23 +1824,26 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		//('(' ('documentation' documentation=STRING) ')')?
+		public Group getGroup_1() { return cGroup_1; }
 		
-		//('documentation' documentation=STRING)?
-		public Group getGroup_2() { return cGroup_2; }
+		//'('
+		public Keyword getLeftParenthesisKeyword_1_0() { return cLeftParenthesisKeyword_1_0; }
+		
+		//'documentation' documentation=STRING
+		public Group getGroup_1_1() { return cGroup_1_1; }
 		
 		//'documentation'
-		public Keyword getDocumentationKeyword_2_0() { return cDocumentationKeyword_2_0; }
+		public Keyword getDocumentationKeyword_1_1_0() { return cDocumentationKeyword_1_1_0; }
 		
 		//documentation=STRING
-		public Assignment getDocumentationAssignment_2_1() { return cDocumentationAssignment_2_1; }
+		public Assignment getDocumentationAssignment_1_1_1() { return cDocumentationAssignment_1_1_1; }
 		
 		//STRING
-		public RuleCall getDocumentationSTRINGTerminalRuleCall_2_1_0() { return cDocumentationSTRINGTerminalRuleCall_2_1_0; }
+		public RuleCall getDocumentationSTRINGTerminalRuleCall_1_1_1_0() { return cDocumentationSTRINGTerminalRuleCall_1_1_1_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		public Keyword getRightParenthesisKeyword_1_2() { return cRightParenthesisKeyword_1_2; }
 	}
 	public class RecordTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.RecordType");
@@ -2647,8 +2658,8 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	//	'{' ('title' title=STRING)?
 	//	'scheme' scheme=STRING (attributes+=Attribute
 	//	| actions+=Action
-	//	| constraints+=Constraint)* ('fsm'
-	//	fsm=FSM)?;
+	//	| constraints+=Constraint)*
+	//	fsm=FSM?;
 	public KindElements getKindAccess() {
 		return pKind;
 	}
@@ -2758,8 +2769,8 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	//	'State'
 	//	'{'
 	//	initial?='initial'?
-	//	final?='final'? ('literal' literal=[EnumerationLiteral|QualifiedID]) ('transitions' '('
-	//	outgoingTransition+=Transition* ')')?
+	//	final?='final'? ('literal' literal=[EnumerationLiteral|QualifiedID]) ('transitions' '(' outgoingTransition+=Transition
+	//	("," outgoingTransition+=Transition)* ')')?
 	//	'}';
 	public StateElements getStateAccess() {
 		return pState;
@@ -2871,9 +2882,8 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//EnumerationLiteral:
-	//	name=ID
-	//	'(' ('documentation' documentation=STRING)?
-	//	')';
+	//	name=ID ('(' ('documentation' documentation=STRING)
+	//	')')?;
 	public EnumerationLiteralElements getEnumerationLiteralAccess() {
 		return pEnumerationLiteral;
 	}

@@ -399,7 +399,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     State returns State
 	 *
 	 * Constraint:
-	 *     (initial?='initial'? final?='final'? literal=[EnumerationLiteral|QualifiedID] outgoingTransition+=Transition*)
+	 *     (initial?='initial'? final?='final'? literal=[EnumerationLiteral|QualifiedID] (outgoingTransition+=Transition outgoingTransition+=Transition*)?)
 	 */
 	protected void sequence_State(ISerializationContext context, State semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

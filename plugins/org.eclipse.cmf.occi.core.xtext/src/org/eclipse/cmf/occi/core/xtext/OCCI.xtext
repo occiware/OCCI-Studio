@@ -37,7 +37,7 @@ Kind returns Kind:
 			|	actions+=Action
 			|	constraints+=Constraint
 		)*
-		('fsm' 
+		(
 			fsm=FSM
 		)?
 	;
@@ -123,7 +123,7 @@ State returns State:
 		('literal' literal=[EnumerationLiteral|QualifiedID])
 		
 //		('incomingTransition' '(' incomingTransition+=[Transition|EString] ( "," incomingTransition+=[Transition|EString])* ')' )?
-		('transitions' '(' (outgoingTransition+=Transition)* ')')?
+		('transitions' '(' (outgoingTransition+=Transition) ( "," outgoingTransition+=Transition)* ')')?
 	'}';
 
 Transition returns Transition:		
@@ -185,9 +185,9 @@ EnumerationType returns EnumerationType:
 					
 EnumerationLiteral returns EnumerationLiteral:
 	name=ID
-	'('
-		('documentation' documentation=STRING)?
-	')';
+	('('
+		('documentation' documentation=STRING)
+	')' )?;
 	
 RecordType returns RecordType:
 	'RecordType'
