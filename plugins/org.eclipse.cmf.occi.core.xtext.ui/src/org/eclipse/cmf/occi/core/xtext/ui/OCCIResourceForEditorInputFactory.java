@@ -33,7 +33,6 @@ public class OCCIResourceForEditorInputFactory extends JavaClassPathResourceForI
 
 	@Override
 	protected Resource createResourceFor(IStorage storage) {
-		System.out.println("Hello2");
 		ResourceSet resourceSet = getResourceSet(storage);
 		URI uri = URI.createPlatformResourceURI(storage.getFullPath().toString(), true);
 		configureResourceSet(resourceSet, uri);

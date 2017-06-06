@@ -32,8 +32,6 @@ public class OCCICrossReferenceSerializer extends CrossReferenceSerializer {
 	public EObject getEObjectfromEProxy(EObject model, EObject target) {
 		if (target.eIsProxy()) {
 			URI proxyURI = ((InternalEObject) target).eProxyURI();
-			System.out.println("proxyURI.fragment()) "+proxyURI);
-			System.out.println("proxyURI.fragment()) "+proxyURI.fragment());
 			return model.eResource().getEObject(proxyURI.fragment());
 		}
 		return null;
