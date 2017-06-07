@@ -7,10 +7,10 @@ import org.eclipse.cmf.occi.core.Type;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.xtext.serializer.sequencer.LegacyTransientValueService;
-
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ListTransient;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
-public class CustomLegacyTransientValueService extends LegacyTransientValueService {
+public class OCCICustomLegacyTransientValueService extends LegacyTransientValueService {
 
 	@Override
 	public ValueTransient isValueTransient(EObject semanticObject, EStructuralFeature feature) {
@@ -22,6 +22,9 @@ public class CustomLegacyTransientValueService extends LegacyTransientValueServi
 				}
 			}
 		}
+		if (feature == OCCIPackage.Literals.RESOURCE__RLINKS) {
+			return ValueTransient.YES;
+		}
 		return super.isValueTransient(semanticObject, feature);
 	}
 
@@ -32,5 +35,16 @@ public class CustomLegacyTransientValueService extends LegacyTransientValueServi
 		}
 		return super.defaultValueIsSerializeable(feature);
 	}
+
+
+	@Override
+	public ListTransient isListTransient(EObject semanticObject, EStructuralFeature feature) {
+		//System.out.println("occi "+semanticObject);
+		if (feature == OCCIPackage.Literals.RESOURCE__RLINKS) {
+			return ListTransient.YES;
+		}
+		return super.isListTransient(semanticObject, feature);
+	}
+
 
 }

@@ -13,8 +13,7 @@ import org.eclipse.xtext.serializer.tokens.ICrossReferenceSerializer
  */
 class OCCIRuntimeModule extends AbstractOCCIRuntimeModule {
 	
-	override Class<? extends org.eclipse.xtext.linking.ILinker> bindILinker() 
-	{ 
+	override Class<? extends org.eclipse.xtext.linking.ILinker> bindILinker() { 
 		OCCILinker
 	}
 	override Class<? extends ITransientValueService> bindITransientValueService() {
@@ -22,7 +21,7 @@ class OCCIRuntimeModule extends AbstractOCCIRuntimeModule {
 	}
 	
 	def Class<? extends org.eclipse.xtext.serializer.sequencer.ITransientValueService> bindITransientValueServiceOld() {
-		CustomLegacyTransientValueService
+		OCCICustomLegacyTransientValueService
 	}
 	
 	override bindIAstFactory() {
