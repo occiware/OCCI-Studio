@@ -7,7 +7,7 @@
 			class="org.eclipse.cmf.occi.core.xtext.ui.OCCIExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
 			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
 			default="true"
-			extensions="occi, occie"
+			extensions="occi, occie, occic"
 			id="org.eclipse.cmf.occi.core.xtext.OCCI"
 			name="OCCI Editor">
 		</editor>

@@ -92,6 +92,7 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 	 */
 	protected AttributeStateImpl() {
 		super();
+		setValue("");
 	}
 
 	/**

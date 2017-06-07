@@ -8,7 +8,9 @@ import java.util.Set;
 import org.eclipse.cmf.occi.core.Annotation;
 import org.eclipse.cmf.occi.core.ArrayType;
 import org.eclipse.cmf.occi.core.Attribute;
+import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.BooleanType;
+import org.eclipse.cmf.occi.core.Configuration;
 import org.eclipse.cmf.occi.core.Constraint;
 import org.eclipse.cmf.occi.core.EObjectType;
 import org.eclipse.cmf.occi.core.EnumerationLiteral;
@@ -16,11 +18,14 @@ import org.eclipse.cmf.occi.core.EnumerationType;
 import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.FSM;
 import org.eclipse.cmf.occi.core.Kind;
+import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.Mixin;
+import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.NumericType;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.cmf.occi.core.RecordField;
 import org.eclipse.cmf.occi.core.RecordType;
+import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.cmf.occi.core.State;
 import org.eclipse.cmf.occi.core.StringType;
 import org.eclipse.cmf.occi.core.Transition;
@@ -68,8 +73,14 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
+			case OCCIPackage.ATTRIBUTE_STATE:
+				sequence_AttributeState(context, (AttributeState) semanticObject); 
+				return; 
 			case OCCIPackage.BOOLEAN_TYPE:
 				sequence_BooleanType(context, (BooleanType) semanticObject); 
+				return; 
+			case OCCIPackage.CONFIGURATION:
+				sequence_Configuration(context, (Configuration) semanticObject); 
 				return; 
 			case OCCIPackage.CONSTRAINT:
 				sequence_Constraint(context, (Constraint) semanticObject); 
@@ -92,8 +103,14 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case OCCIPackage.KIND:
 				sequence_Kind(context, (Kind) semanticObject); 
 				return; 
+			case OCCIPackage.LINK:
+				sequence_Link(context, (Link) semanticObject); 
+				return; 
 			case OCCIPackage.MIXIN:
 				sequence_Mixin(context, (Mixin) semanticObject); 
+				return; 
+			case OCCIPackage.MIXIN_BASE:
+				sequence_MixinBase(context, (MixinBase) semanticObject); 
 				return; 
 			case OCCIPackage.NUMERIC_TYPE:
 				sequence_NumericType(context, (NumericType) semanticObject); 
@@ -103,6 +120,9 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case OCCIPackage.RECORD_TYPE:
 				sequence_RecordType(context, (RecordType) semanticObject); 
+				return; 
+			case OCCIPackage.RESOURCE:
+				sequence_Resource(context, (Resource) semanticObject); 
 				return; 
 			case OCCIPackage.STATE:
 				sequence_State(context, (State) semanticObject); 
@@ -172,6 +192,27 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     AttributeState returns AttributeState
+	 *
+	 * Constraint:
+	 *     (name=QualifiedID value=STRING)
+	 */
+	protected void sequence_AttributeState(ISerializationContext context, AttributeState semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, OCCIPackage.Literals.ATTRIBUTE_STATE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OCCIPackage.Literals.ATTRIBUTE_STATE__NAME));
+			if (transientValues.isValueTransient(semanticObject, OCCIPackage.Literals.ATTRIBUTE_STATE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OCCIPackage.Literals.ATTRIBUTE_STATE__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAttributeStateAccess().getNameQualifiedIDParserRuleCall_3_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getAttributeStateAccess().getValueSTRINGTerminalRuleCall_5_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Attribute returns Attribute
 	 *
 	 * Constraint:
@@ -199,6 +240,25 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (name=ID documentation=STRING?)
 	 */
 	protected void sequence_BooleanType(ISerializationContext context, BooleanType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Grammar returns Configuration
+	 *     Configuration returns Configuration
+	 *
+	 * Constraint:
+	 *     (
+	 *         description=STRING? 
+	 *         location=STRING? 
+	 *         (use+=[Extension|STRING] use+=[Extension|STRING]*)? 
+	 *         (resources+=Resource resources+=Resource*)? 
+	 *         (mixins+=Mixin mixins+=Mixin*)?
+	 *     )
+	 */
+	protected void sequence_Configuration(ISerializationContext context, Configuration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -309,6 +369,38 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Link returns Link
+	 *
+	 * Constraint:
+	 *     (
+	 *         id=STRING 
+	 *         title=STRING? 
+	 *         location=STRING? 
+	 *         kind=[Kind|QualifiedID] 
+	 *         target=[Resource|STRING] 
+	 *         (attributes+=AttributeState attributes+=AttributeState*)? 
+	 *         (parts+=MixinBase parts+=MixinBase*)?
+	 *     )
+	 */
+	protected void sequence_Link(ISerializationContext context, Link semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MixinBase returns MixinBase
+	 *
+	 * Constraint:
+	 *     (mixin=[Mixin|QualifiedID] (attributes+=AttributeState attributes+=AttributeState*)?)
+	 */
+	protected void sequence_MixinBase(ISerializationContext context, MixinBase semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Mixin returns Mixin
 	 *
 	 * Constraint:
@@ -390,6 +482,27 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (name=ID recordFields+=RecordField recordFields+=RecordField* documentation=STRING?)
 	 */
 	protected void sequence_RecordType(ISerializationContext context, RecordType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Resource returns Resource
+	 *
+	 * Constraint:
+	 *     (
+	 *         id=STRING 
+	 *         title=STRING? 
+	 *         location=STRING? 
+	 *         summary=STRING? 
+	 *         kind=[Kind|QualifiedID] 
+	 *         (attributes+=AttributeState attributes+=AttributeState*)? 
+	 *         (parts+=MixinBase parts+=MixinBase*)? 
+	 *         (links+=Link links+=Link*)?
+	 *     )
+	 */
+	protected void sequence_Resource(ISerializationContext context, Resource semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -6,60 +6,59 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 
 Grammar returns ecore::EObject:
-	Extension// | Configuration
+	Extension | Configuration
 	;
 
-//Configuration returns Configuration:
-//	{Configuration}
-//	'Configuration'
-//	'{'
-//		('description' description=String0)?
-//		('location' location=URI)?
-//		('use' '(' use+=[Extension|EString] ( "," use+=[Extension|EString])* ')' )?
-//		('resources' '{' resources+=Resource ( "," resources+=Resource)* '}' )?
-//		('mixins' '{' mixins+=Mixin ( "," mixins+=Mixin)* '}' )?
-//	'}';
-//	
-//AttributeState returns AttributeState:
-//	'AttributeState'
-//	'{'
-//		'name' name=AttributeName
-//		'value' value=String0
-//	'}';
-//
-//MixinBase returns MixinBase:
-//	'MixinBase'
-//	'{'
-//		'mixin' mixin=[Mixin|EString]
-//		('attributes' '{' attributes+=AttributeState ( "," attributes+=AttributeState)* '}' )?
-//	'}';
-//
-//Link returns Link:
-//	'Link'
-//	'{'
-//		'id' id=URI
-//		('title' title=String0)?
-//		('location' location=String0)?
-//		'kind' kind=[Kind|EString]
-//		'target' target=[Resource|EString]
-//		('attributes' '{' attributes+=AttributeState ( "," attributes+=AttributeState)* '}' )?
-//		('parts' '{' parts+=MixinBase ( "," parts+=MixinBase)* '}' )?
-//	'}';
-//
-//Resource returns Resource:
-//	'Resource'
-//	'{'
-//		'id' id=URI
-//		('title' title=String0)?
-//		('location' location=String0)?
-//		('summary' summary=String0)?
-//		'kind' kind=[Kind|EString]
+Configuration returns Configuration:
+	{Configuration}
+	'Configuration'
+	'{'
+		('description' description=STRING)?
+		('location' location=STRING)?
+		('use' '(' use+=[Extension|STRING] ( "," use+=[Extension|STRING])* ')' )?
+		('resources' '{' resources+=Resource ( "," resources+=Resource)* '}' )?
+		('mixins' '{' mixins+=Mixin ( "," mixins+=Mixin)* '}' )?
+	'}';
+Resource returns Resource:
+	'Resource'
+	'{'
+		'id' id=STRING
+		('title' title=STRING)?
+		('location' location=STRING)?
+		('summary' summary=STRING)?
+		'kind' kind=[Kind|QualifiedID]
 //		('rlinks' '(' rlinks+=[Link|EString] ( "," rlinks+=[Link|EString])* ')' )?
-//		('attributes' '{' attributes+=AttributeState ( "," attributes+=AttributeState)* '}' )?
-//		('parts' '{' parts+=MixinBase ( "," parts+=MixinBase)* '}' )?
-//		('links' '{' links+=Link ( "," links+=Link)* '}' )?
-//	'}';
+		('attributes' '{' attributes+=AttributeState ( "," attributes+=AttributeState)* '}' )?
+		('parts' '{' parts+=MixinBase ( "," parts+=MixinBase)* '}' )?
+		('links' '{' links+=Link ( "," links+=Link)* '}' )?
+	'}';
 	
+Link returns Link:
+	'Link'
+	'{'
+		'id' id=STRING
+		('title' title=STRING)?
+		('location' location=STRING)?
+		'kind' kind=[Kind|QualifiedID]
+		'target' target=[Resource|STRING]
+		('attributes' '{' attributes+=AttributeState ( "," attributes+=AttributeState)* '}' )?
+		('parts' '{' parts+=MixinBase ( "," parts+=MixinBase)* '}' )?
+	'}';
+
+MixinBase returns MixinBase:
+	'MixinBase'
+	'{'
+		'mixin' mixin=[Mixin|QualifiedID]
+		('attributes' '{' attributes+=AttributeState ( "," attributes+=AttributeState)* '}' )?
+	'}';
+		
+AttributeState returns AttributeState:
+	'AttributeState'
+	'{'
+		'name' name=QualifiedID
+		'value' value=STRING
+	'}';
+
 Extension returns Extension:
 	'extension'
 	name=NameID ':' scheme=STRING /* URI */
