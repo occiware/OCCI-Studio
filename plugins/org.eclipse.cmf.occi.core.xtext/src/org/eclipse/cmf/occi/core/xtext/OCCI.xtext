@@ -8,6 +8,57 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 Grammar returns ecore::EObject:
 	Extension// | Configuration
 	;
+
+//Configuration returns Configuration:
+//	{Configuration}
+//	'Configuration'
+//	'{'
+//		('description' description=String0)?
+//		('location' location=URI)?
+//		('use' '(' use+=[Extension|EString] ( "," use+=[Extension|EString])* ')' )?
+//		('resources' '{' resources+=Resource ( "," resources+=Resource)* '}' )?
+//		('mixins' '{' mixins+=Mixin ( "," mixins+=Mixin)* '}' )?
+//	'}';
+//	
+//AttributeState returns AttributeState:
+//	'AttributeState'
+//	'{'
+//		'name' name=AttributeName
+//		'value' value=String0
+//	'}';
+//
+//MixinBase returns MixinBase:
+//	'MixinBase'
+//	'{'
+//		'mixin' mixin=[Mixin|EString]
+//		('attributes' '{' attributes+=AttributeState ( "," attributes+=AttributeState)* '}' )?
+//	'}';
+//
+//Link returns Link:
+//	'Link'
+//	'{'
+//		'id' id=URI
+//		('title' title=String0)?
+//		('location' location=String0)?
+//		'kind' kind=[Kind|EString]
+//		'target' target=[Resource|EString]
+//		('attributes' '{' attributes+=AttributeState ( "," attributes+=AttributeState)* '}' )?
+//		('parts' '{' parts+=MixinBase ( "," parts+=MixinBase)* '}' )?
+//	'}';
+//
+//Resource returns Resource:
+//	'Resource'
+//	'{'
+//		'id' id=URI
+//		('title' title=String0)?
+//		('location' location=String0)?
+//		('summary' summary=String0)?
+//		'kind' kind=[Kind|EString]
+//		('rlinks' '(' rlinks+=[Link|EString] ( "," rlinks+=[Link|EString])* ')' )?
+//		('attributes' '{' attributes+=AttributeState ( "," attributes+=AttributeState)* '}' )?
+//		('parts' '{' parts+=MixinBase ( "," parts+=MixinBase)* '}' )?
+//		('links' '{' links+=Link ( "," links+=Link)* '}' )?
+//	'}';
 	
 Extension returns Extension:
 	'extension'
@@ -29,17 +80,20 @@ Kind returns Kind:
 		('extends' parent=[Kind|QualifiedID])?
 		('source' source=[Kind|QualifiedID])?
 		('target' target=[Kind|QualifiedID])?
-		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
-		'{'
 		('title' title=STRING)?
 		'scheme' scheme=STRING
+		(
+		'(' 
 		( 	attributes+=Attribute
 			|	actions+=Action
 			|	constraints+=Constraint
-		)*
+		)+ 
+		')'
+		)?
 		(
 			fsm=FSM
 		)?
+		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 	;
 
 Mixin returns Mixin:
@@ -47,42 +101,37 @@ Mixin returns Mixin:
 		name=NameID
 		('depends' '(' depends+=[Mixin|QualifiedID] ( "," depends+=[Mixin|QualifiedID])* ')' )?
 		('applies' '(' applies+=[Kind|QualifiedID] ( "," applies+=[Kind|QualifiedID])* ')' )?
-		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
-		'{'
-			'scheme' scheme=STRING
-			('title' title=STRING)?
+		'scheme' scheme=STRING
+		('title' title=STRING)?
 		
-		( 	attributes+=Attribute
+		(
+		'(' 
+			( 	attributes+=Attribute
 			|	actions+=Action
 			|	constraints+=Constraint
-		)*
-		'}';
+		)+ 
+		')'
+		)?
+		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
+		;
 //
 Annotation returns Annotation:
-	'annotation'
-	'{'
-		'key' key=STRING
-		'value' value=STRING
-	'}';
+	'('
+	'key' key=STRING
+	'value' value=STRING
+	')'
+	;
 
 Attribute returns Attribute:
 	'attribute'
-		(mutable?='mutable')?
-		(required?='required')? 
-		name=QualifiedID
-		':'
-		
-		('type' type=[DataType|QualifiedID])?
-		
-		('=' default=STRING)?
-		
-		(
-			'{'('description' description=STRING)? '}'
-		)
-		
-		(
-			'annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' 
-		)?
+	(mutable?='mutable')?
+	(required?='required')? 
+	name=QualifiedID
+	':'
+	('type' type=[DataType|QualifiedID])?
+	('=' default=STRING)?
+	('description' description=STRING)?
+	('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}')?
 	;
 
 Action returns Action:
@@ -110,21 +159,20 @@ Constraint returns Constraint:
 
 FSM returns FSM:
 	'FSM'
-	'{'
+	'('
 		'attribute' attribute=[Attribute|QualifiedID]
 		('states' '{' ownedState+=State ( "," ownedState+=State)* '}' )?
-	'}';
+	')';
 
 State returns State:
 	'State'
-	'{'
+	'('
 		(initial?='initial')? 
 		(final?='final')?
 		('literal' literal=[EnumerationLiteral|QualifiedID])
-		
 //		('incomingTransition' '(' incomingTransition+=[Transition|EString] ( "," incomingTransition+=[Transition|EString])* ')' )?
 		('transitions' '(' (outgoingTransition+=Transition) ( "," outgoingTransition+=Transition)* ')')?
-	'}';
+	')';
 
 Transition returns Transition:		
 		('action' action=[Action|QualifiedID])?
@@ -137,39 +185,36 @@ DataType returns DataType:
 StringType returns StringType:
 	'StringType'
 	name=ID
-	'('
-		('documentation' documentation=STRING)?
-		('pattern' pattern=STRING)?
-		('length' length=EIntegerObject)?
-		('minLength' minLength=EIntegerObject)?
-		('maxLength' maxLength=EIntegerObject)?
-	')';
+	('pattern' pattern=STRING)?
+	('length' length=EIntegerObject)?
+	('minLength' minLength=EIntegerObject)?
+	('maxLength' maxLength=EIntegerObject)?
+	('documentation' documentation=STRING)?
+	;
 
 EObjectType returns EObjectType:
 	'EObjectType'
 	name=ID
-	'('
-		('documentation' documentation=STRING)?
-		('instanceClassName' instanceClassName=STRING)?
-	')';
+	('instanceClassName' instanceClassName=STRING)?
+	('documentation' documentation=STRING)?
+	;
 
 BooleanType returns BooleanType:
 	'BooleanType'
 	name=ID
-	'('
-		('documentation' documentation=STRING)?
-	')';
+	('documentation' documentation=STRING)?
+	;
 
 NumericType returns NumericType:
 	'NumericType'
 	name=ID 'type' type=NumericTypeEnum
 	'('
-		('documentation' documentation=STRING)?
 		('totalDigits' totalDigits=EIntegerObject)?
 		('minExclusive' minExclusive=STRING)?
 		('maxExclusive' maxExclusive=STRING)?
 		('minInclusive' minInclusive=STRING)?
 		('maxInclusive' maxInclusive=STRING)?
+		('documentation' documentation=STRING)?
 	')';
 		
 enum NumericTypeEnum returns NumericTypeEnum:
@@ -178,50 +223,37 @@ enum NumericTypeEnum returns NumericTypeEnum:
 EnumerationType returns EnumerationType:
 	'EnumerationType'
 	name=ID
-	'('	
-		'literals' '(' literals+=EnumerationLiteral ( "," literals+=EnumerationLiteral)* ')' 
-		('documentation' documentation=STRING)?
-	')';
+	'literals' '(' literals+=EnumerationLiteral ( "," literals+=EnumerationLiteral)* ')' 
+	('documentation' documentation=STRING)?
+	;
 					
 EnumerationLiteral returns EnumerationLiteral:
 	name=ID
-	('('
-		('documentation' documentation=STRING)
-	')' )?;
+	('documentation' documentation=STRING)?
+	;
 	
 RecordType returns RecordType:
 	'RecordType'
 	name=ID
-	'('
-		('documentation' documentation=STRING)?
-		'fields' '(' recordFields+=RecordField ( "," recordFields+=RecordField)* ')' 
-	')';
+	'fields' '(' recordFields+=RecordField ( "," recordFields+=RecordField)* ')' 
+	('documentation' documentation=STRING)?
+	;
 
 RecordField returns RecordField:
-	'field'
 	(mutable?='mutable')?
 	(required?='required')? 
 	name=QualifiedID
-	':'
 	('type' type=[DataType|QualifiedID])
 	('=' default=STRING)?	
-	(
-		'{'('description' description=STRING)? '}'
-	)
-	(
-		'annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' 
-	)?
+	('description' description=STRING)? 
+	('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
 	;
 
 ArrayType returns ArrayType:
 	'ArrayType'
 	name=ID 'type' type=[DataType|QualifiedID]
-	(
-	'('
-		'documentation' documentation=STRING
-		
-	')'
-	)?;
+	'documentation' documentation=STRING?
+	;
 
 
 

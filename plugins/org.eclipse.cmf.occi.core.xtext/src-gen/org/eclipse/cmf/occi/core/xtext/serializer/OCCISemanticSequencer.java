@@ -151,8 +151,8 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OCCIPackage.Literals.ANNOTATION__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAnnotationAccess().getKeySTRINGTerminalRuleCall_3_0(), semanticObject.getKey());
-		feeder.accept(grammarAccess.getAnnotationAccess().getValueSTRINGTerminalRuleCall_5_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getAnnotationAccess().getKeySTRINGTerminalRuleCall_2_0(), semanticObject.getKey());
+		feeder.accept(grammarAccess.getAnnotationAccess().getValueSTRINGTerminalRuleCall_4_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -221,7 +221,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     EObjectType returns EObjectType
 	 *
 	 * Constraint:
-	 *     (name=ID documentation=STRING? instanceClassName=STRING?)
+	 *     (name=ID instanceClassName=STRING? documentation=STRING?)
 	 */
 	protected void sequence_EObjectType(ISerializationContext context, EObjectType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -295,11 +295,11 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         parent=[Kind|QualifiedID]? 
 	 *         source=[Kind|QualifiedID]? 
 	 *         target=[Kind|QualifiedID]? 
-	 *         (annotations+=Annotation annotations+=Annotation*)? 
 	 *         title=STRING? 
 	 *         scheme=STRING 
 	 *         (attributes+=Attribute | actions+=Action | constraints+=Constraint)* 
-	 *         fsm=FSM?
+	 *         fsm=FSM? 
+	 *         (annotations+=Annotation annotations+=Annotation*)?
 	 *     )
 	 */
 	protected void sequence_Kind(ISerializationContext context, Kind semanticObject) {
@@ -316,10 +316,10 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         name=NameID 
 	 *         (depends+=[Mixin|QualifiedID] depends+=[Mixin|QualifiedID]*)? 
 	 *         (applies+=[Kind|QualifiedID] applies+=[Kind|QualifiedID]*)? 
-	 *         (annotations+=Annotation annotations+=Annotation*)? 
 	 *         scheme=STRING 
 	 *         title=STRING? 
-	 *         (attributes+=Attribute | actions+=Action | constraints+=Constraint)*
+	 *         (attributes+=Attribute | actions+=Action | constraints+=Constraint)* 
+	 *         (annotations+=Annotation annotations+=Annotation*)?
 	 *     )
 	 */
 	protected void sequence_Mixin(ISerializationContext context, Mixin semanticObject) {
@@ -336,12 +336,12 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (
 	 *         name=ID 
 	 *         type=NumericTypeEnum 
-	 *         documentation=STRING? 
 	 *         totalDigits=EIntegerObject? 
 	 *         minExclusive=STRING? 
 	 *         maxExclusive=STRING? 
 	 *         minInclusive=STRING? 
-	 *         maxInclusive=STRING?
+	 *         maxInclusive=STRING? 
+	 *         documentation=STRING?
 	 *     )
 	 */
 	protected void sequence_NumericType(ISerializationContext context, NumericType semanticObject) {
@@ -387,7 +387,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     RecordType returns RecordType
 	 *
 	 * Constraint:
-	 *     (name=ID documentation=STRING? recordFields+=RecordField recordFields+=RecordField*)
+	 *     (name=ID recordFields+=RecordField recordFields+=RecordField* documentation=STRING?)
 	 */
 	protected void sequence_RecordType(ISerializationContext context, RecordType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -414,11 +414,11 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         documentation=STRING? 
 	 *         pattern=STRING? 
 	 *         length=EIntegerObject? 
 	 *         minLength=EIntegerObject? 
-	 *         maxLength=EIntegerObject?
+	 *         maxLength=EIntegerObject? 
+	 *         documentation=STRING?
 	 *     )
 	 */
 	protected void sequence_StringType(ISerializationContext context, StringType semanticObject) {
