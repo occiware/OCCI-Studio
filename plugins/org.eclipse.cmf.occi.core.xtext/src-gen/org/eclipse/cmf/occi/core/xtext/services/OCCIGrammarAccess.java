@@ -1967,45 +1967,41 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cTypeKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cTypeNumericTypeEnumEnumRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cTotalDigitsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cTotalDigitsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cTotalDigitsEIntegerObjectParserRuleCall_4_1_0 = (RuleCall)cTotalDigitsAssignment_4_1.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cTotalDigitsKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cTotalDigitsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cTotalDigitsEIntegerObjectParserRuleCall_5_1_0 = (RuleCall)cTotalDigitsAssignment_5_1.eContents().get(0);
+		private final Keyword cMinExclusiveKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cMinExclusiveAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cMinExclusiveSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cMinExclusiveAssignment_5_1.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cMinExclusiveKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cMinExclusiveAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cMinExclusiveSTRINGTerminalRuleCall_6_1_0 = (RuleCall)cMinExclusiveAssignment_6_1.eContents().get(0);
+		private final Keyword cMaxExclusiveKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cMaxExclusiveAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cMaxExclusiveSTRINGTerminalRuleCall_6_1_0 = (RuleCall)cMaxExclusiveAssignment_6_1.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cMaxExclusiveKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cMaxExclusiveAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cMaxExclusiveSTRINGTerminalRuleCall_7_1_0 = (RuleCall)cMaxExclusiveAssignment_7_1.eContents().get(0);
+		private final Keyword cMinInclusiveKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cMinInclusiveAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cMinInclusiveSTRINGTerminalRuleCall_7_1_0 = (RuleCall)cMinInclusiveAssignment_7_1.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cMinInclusiveKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Assignment cMinInclusiveAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
-		private final RuleCall cMinInclusiveSTRINGTerminalRuleCall_8_1_0 = (RuleCall)cMinInclusiveAssignment_8_1.eContents().get(0);
+		private final Keyword cMaxInclusiveKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cMaxInclusiveAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cMaxInclusiveSTRINGTerminalRuleCall_8_1_0 = (RuleCall)cMaxInclusiveAssignment_8_1.eContents().get(0);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cMaxInclusiveKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final Assignment cMaxInclusiveAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
-		private final RuleCall cMaxInclusiveSTRINGTerminalRuleCall_9_1_0 = (RuleCall)cMaxInclusiveAssignment_9_1.eContents().get(0);
-		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
-		private final Keyword cDocumentationKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final Assignment cDocumentationAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
-		private final RuleCall cDocumentationSTRINGTerminalRuleCall_10_1_0 = (RuleCall)cDocumentationAssignment_10_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cDocumentationKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Assignment cDocumentationAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final RuleCall cDocumentationSTRINGTerminalRuleCall_9_1_0 = (RuleCall)cDocumentationAssignment_9_1.eContents().get(0);
 		
 		//NumericType:
 		//	'NumericType'
-		//	name=TypeID 'type' type=NumericTypeEnum
-		//	'(' ('totalDigits' totalDigits=EIntegerObject)? ('minExclusive' minExclusive=STRING)? ('maxExclusive'
-		//	maxExclusive=STRING)? ('minInclusive' minInclusive=STRING)? ('maxInclusive' maxInclusive=STRING)? ('documentation'
-		//	documentation=STRING)?
-		//	')';
+		//	name=TypeID 'type' type=NumericTypeEnum ('totalDigits' totalDigits=EIntegerObject)? ('minExclusive'
+		//	minExclusive=STRING)? ('maxExclusive' maxExclusive=STRING)? ('minInclusive' minInclusive=STRING)? ('maxInclusive'
+		//	maxInclusive=STRING)? ('documentation' documentation=STRING)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'NumericType' name=TypeID 'type' type=NumericTypeEnum '(' ('totalDigits' totalDigits=EIntegerObject)? ('minExclusive'
+		//'NumericType' name=TypeID 'type' type=NumericTypeEnum ('totalDigits' totalDigits=EIntegerObject)? ('minExclusive'
 		//minExclusive=STRING)? ('maxExclusive' maxExclusive=STRING)? ('minInclusive' minInclusive=STRING)? ('maxInclusive'
-		//maxInclusive=STRING)? ('documentation' documentation=STRING)? ')'
+		//maxInclusive=STRING)? ('documentation' documentation=STRING)?
 		public Group getGroup() { return cGroup; }
 		
 		//'NumericType'
@@ -2026,83 +2022,77 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//NumericTypeEnum
 		public RuleCall getTypeNumericTypeEnumEnumRuleCall_3_0() { return cTypeNumericTypeEnumEnumRuleCall_3_0; }
 		
-		//'('
-		public Keyword getLeftParenthesisKeyword_4() { return cLeftParenthesisKeyword_4; }
-		
 		//('totalDigits' totalDigits=EIntegerObject)?
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//'totalDigits'
-		public Keyword getTotalDigitsKeyword_5_0() { return cTotalDigitsKeyword_5_0; }
+		public Keyword getTotalDigitsKeyword_4_0() { return cTotalDigitsKeyword_4_0; }
 		
 		//totalDigits=EIntegerObject
-		public Assignment getTotalDigitsAssignment_5_1() { return cTotalDigitsAssignment_5_1; }
+		public Assignment getTotalDigitsAssignment_4_1() { return cTotalDigitsAssignment_4_1; }
 		
 		//EIntegerObject
-		public RuleCall getTotalDigitsEIntegerObjectParserRuleCall_5_1_0() { return cTotalDigitsEIntegerObjectParserRuleCall_5_1_0; }
+		public RuleCall getTotalDigitsEIntegerObjectParserRuleCall_4_1_0() { return cTotalDigitsEIntegerObjectParserRuleCall_4_1_0; }
 		
 		//('minExclusive' minExclusive=STRING)?
-		public Group getGroup_6() { return cGroup_6; }
+		public Group getGroup_5() { return cGroup_5; }
 		
 		//'minExclusive'
-		public Keyword getMinExclusiveKeyword_6_0() { return cMinExclusiveKeyword_6_0; }
+		public Keyword getMinExclusiveKeyword_5_0() { return cMinExclusiveKeyword_5_0; }
 		
 		//minExclusive=STRING
-		public Assignment getMinExclusiveAssignment_6_1() { return cMinExclusiveAssignment_6_1; }
+		public Assignment getMinExclusiveAssignment_5_1() { return cMinExclusiveAssignment_5_1; }
 		
 		//STRING
-		public RuleCall getMinExclusiveSTRINGTerminalRuleCall_6_1_0() { return cMinExclusiveSTRINGTerminalRuleCall_6_1_0; }
+		public RuleCall getMinExclusiveSTRINGTerminalRuleCall_5_1_0() { return cMinExclusiveSTRINGTerminalRuleCall_5_1_0; }
 		
 		//('maxExclusive' maxExclusive=STRING)?
-		public Group getGroup_7() { return cGroup_7; }
+		public Group getGroup_6() { return cGroup_6; }
 		
 		//'maxExclusive'
-		public Keyword getMaxExclusiveKeyword_7_0() { return cMaxExclusiveKeyword_7_0; }
+		public Keyword getMaxExclusiveKeyword_6_0() { return cMaxExclusiveKeyword_6_0; }
 		
 		//maxExclusive=STRING
-		public Assignment getMaxExclusiveAssignment_7_1() { return cMaxExclusiveAssignment_7_1; }
+		public Assignment getMaxExclusiveAssignment_6_1() { return cMaxExclusiveAssignment_6_1; }
 		
 		//STRING
-		public RuleCall getMaxExclusiveSTRINGTerminalRuleCall_7_1_0() { return cMaxExclusiveSTRINGTerminalRuleCall_7_1_0; }
+		public RuleCall getMaxExclusiveSTRINGTerminalRuleCall_6_1_0() { return cMaxExclusiveSTRINGTerminalRuleCall_6_1_0; }
 		
 		//('minInclusive' minInclusive=STRING)?
-		public Group getGroup_8() { return cGroup_8; }
+		public Group getGroup_7() { return cGroup_7; }
 		
 		//'minInclusive'
-		public Keyword getMinInclusiveKeyword_8_0() { return cMinInclusiveKeyword_8_0; }
+		public Keyword getMinInclusiveKeyword_7_0() { return cMinInclusiveKeyword_7_0; }
 		
 		//minInclusive=STRING
-		public Assignment getMinInclusiveAssignment_8_1() { return cMinInclusiveAssignment_8_1; }
+		public Assignment getMinInclusiveAssignment_7_1() { return cMinInclusiveAssignment_7_1; }
 		
 		//STRING
-		public RuleCall getMinInclusiveSTRINGTerminalRuleCall_8_1_0() { return cMinInclusiveSTRINGTerminalRuleCall_8_1_0; }
+		public RuleCall getMinInclusiveSTRINGTerminalRuleCall_7_1_0() { return cMinInclusiveSTRINGTerminalRuleCall_7_1_0; }
 		
 		//('maxInclusive' maxInclusive=STRING)?
-		public Group getGroup_9() { return cGroup_9; }
+		public Group getGroup_8() { return cGroup_8; }
 		
 		//'maxInclusive'
-		public Keyword getMaxInclusiveKeyword_9_0() { return cMaxInclusiveKeyword_9_0; }
+		public Keyword getMaxInclusiveKeyword_8_0() { return cMaxInclusiveKeyword_8_0; }
 		
 		//maxInclusive=STRING
-		public Assignment getMaxInclusiveAssignment_9_1() { return cMaxInclusiveAssignment_9_1; }
+		public Assignment getMaxInclusiveAssignment_8_1() { return cMaxInclusiveAssignment_8_1; }
 		
 		//STRING
-		public RuleCall getMaxInclusiveSTRINGTerminalRuleCall_9_1_0() { return cMaxInclusiveSTRINGTerminalRuleCall_9_1_0; }
+		public RuleCall getMaxInclusiveSTRINGTerminalRuleCall_8_1_0() { return cMaxInclusiveSTRINGTerminalRuleCall_8_1_0; }
 		
 		//('documentation' documentation=STRING)?
-		public Group getGroup_10() { return cGroup_10; }
+		public Group getGroup_9() { return cGroup_9; }
 		
 		//'documentation'
-		public Keyword getDocumentationKeyword_10_0() { return cDocumentationKeyword_10_0; }
+		public Keyword getDocumentationKeyword_9_0() { return cDocumentationKeyword_9_0; }
 		
 		//documentation=STRING
-		public Assignment getDocumentationAssignment_10_1() { return cDocumentationAssignment_10_1; }
+		public Assignment getDocumentationAssignment_9_1() { return cDocumentationAssignment_9_1; }
 		
 		//STRING
-		public RuleCall getDocumentationSTRINGTerminalRuleCall_10_1_0() { return cDocumentationSTRINGTerminalRuleCall_10_1_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_11() { return cRightParenthesisKeyword_11; }
+		public RuleCall getDocumentationSTRINGTerminalRuleCall_9_1_0() { return cDocumentationSTRINGTerminalRuleCall_9_1_0; }
 	}
 	public class EnumerationTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.EnumerationType");
@@ -3425,11 +3415,9 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//NumericType:
 	//	'NumericType'
-	//	name=TypeID 'type' type=NumericTypeEnum
-	//	'(' ('totalDigits' totalDigits=EIntegerObject)? ('minExclusive' minExclusive=STRING)? ('maxExclusive'
-	//	maxExclusive=STRING)? ('minInclusive' minInclusive=STRING)? ('maxInclusive' maxInclusive=STRING)? ('documentation'
-	//	documentation=STRING)?
-	//	')';
+	//	name=TypeID 'type' type=NumericTypeEnum ('totalDigits' totalDigits=EIntegerObject)? ('minExclusive'
+	//	minExclusive=STRING)? ('maxExclusive' maxExclusive=STRING)? ('minInclusive' minInclusive=STRING)? ('maxInclusive'
+	//	maxInclusive=STRING)? ('documentation' documentation=STRING)?;
 	public NumericTypeElements getNumericTypeAccess() {
 		return pNumericType;
 	}

@@ -3003,21 +3003,17 @@ ruleNumericType returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_4='('
-		{
-			newLeafNode(otherlv_4, grammarAccess.getNumericTypeAccess().getLeftParenthesisKeyword_4());
-		}
 		(
-			otherlv_5='totalDigits'
+			otherlv_4='totalDigits'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getNumericTypeAccess().getTotalDigitsKeyword_5_0());
+				newLeafNode(otherlv_4, grammarAccess.getNumericTypeAccess().getTotalDigitsKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getNumericTypeAccess().getTotalDigitsEIntegerObjectParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getNumericTypeAccess().getTotalDigitsEIntegerObjectParserRuleCall_4_1_0());
 					}
-					lv_totalDigits_6_0=ruleEIntegerObject
+					lv_totalDigits_5_0=ruleEIntegerObject
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getNumericTypeRule());
@@ -3025,7 +3021,7 @@ ruleNumericType returns [EObject current=null]
 						set(
 							$current,
 							"totalDigits",
-							lv_totalDigits_6_0,
+							lv_totalDigits_5_0,
 							"org.eclipse.cmf.occi.core.xtext.OCCI.EIntegerObject");
 						afterParserOrEnumRuleCall();
 					}
@@ -3033,15 +3029,15 @@ ruleNumericType returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_7='minExclusive'
+			otherlv_6='minExclusive'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getNumericTypeAccess().getMinExclusiveKeyword_6_0());
+				newLeafNode(otherlv_6, grammarAccess.getNumericTypeAccess().getMinExclusiveKeyword_5_0());
 			}
 			(
 				(
-					lv_minExclusive_8_0=RULE_STRING
+					lv_minExclusive_7_0=RULE_STRING
 					{
-						newLeafNode(lv_minExclusive_8_0, grammarAccess.getNumericTypeAccess().getMinExclusiveSTRINGTerminalRuleCall_6_1_0());
+						newLeafNode(lv_minExclusive_7_0, grammarAccess.getNumericTypeAccess().getMinExclusiveSTRINGTerminalRuleCall_5_1_0());
 					}
 					{
 						if ($current==null) {
@@ -3050,22 +3046,22 @@ ruleNumericType returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"minExclusive",
-							lv_minExclusive_8_0,
+							lv_minExclusive_7_0,
 							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
 		)?
 		(
-			otherlv_9='maxExclusive'
+			otherlv_8='maxExclusive'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getNumericTypeAccess().getMaxExclusiveKeyword_7_0());
+				newLeafNode(otherlv_8, grammarAccess.getNumericTypeAccess().getMaxExclusiveKeyword_6_0());
 			}
 			(
 				(
-					lv_maxExclusive_10_0=RULE_STRING
+					lv_maxExclusive_9_0=RULE_STRING
 					{
-						newLeafNode(lv_maxExclusive_10_0, grammarAccess.getNumericTypeAccess().getMaxExclusiveSTRINGTerminalRuleCall_7_1_0());
+						newLeafNode(lv_maxExclusive_9_0, grammarAccess.getNumericTypeAccess().getMaxExclusiveSTRINGTerminalRuleCall_6_1_0());
 					}
 					{
 						if ($current==null) {
@@ -3074,22 +3070,22 @@ ruleNumericType returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"maxExclusive",
-							lv_maxExclusive_10_0,
+							lv_maxExclusive_9_0,
 							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
 		)?
 		(
-			otherlv_11='minInclusive'
+			otherlv_10='minInclusive'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getNumericTypeAccess().getMinInclusiveKeyword_8_0());
+				newLeafNode(otherlv_10, grammarAccess.getNumericTypeAccess().getMinInclusiveKeyword_7_0());
 			}
 			(
 				(
-					lv_minInclusive_12_0=RULE_STRING
+					lv_minInclusive_11_0=RULE_STRING
 					{
-						newLeafNode(lv_minInclusive_12_0, grammarAccess.getNumericTypeAccess().getMinInclusiveSTRINGTerminalRuleCall_8_1_0());
+						newLeafNode(lv_minInclusive_11_0, grammarAccess.getNumericTypeAccess().getMinInclusiveSTRINGTerminalRuleCall_7_1_0());
 					}
 					{
 						if ($current==null) {
@@ -3098,22 +3094,22 @@ ruleNumericType returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"minInclusive",
-							lv_minInclusive_12_0,
+							lv_minInclusive_11_0,
 							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
 		)?
 		(
-			otherlv_13='maxInclusive'
+			otherlv_12='maxInclusive'
 			{
-				newLeafNode(otherlv_13, grammarAccess.getNumericTypeAccess().getMaxInclusiveKeyword_9_0());
+				newLeafNode(otherlv_12, grammarAccess.getNumericTypeAccess().getMaxInclusiveKeyword_8_0());
 			}
 			(
 				(
-					lv_maxInclusive_14_0=RULE_STRING
+					lv_maxInclusive_13_0=RULE_STRING
 					{
-						newLeafNode(lv_maxInclusive_14_0, grammarAccess.getNumericTypeAccess().getMaxInclusiveSTRINGTerminalRuleCall_9_1_0());
+						newLeafNode(lv_maxInclusive_13_0, grammarAccess.getNumericTypeAccess().getMaxInclusiveSTRINGTerminalRuleCall_8_1_0());
 					}
 					{
 						if ($current==null) {
@@ -3122,22 +3118,22 @@ ruleNumericType returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"maxInclusive",
-							lv_maxInclusive_14_0,
+							lv_maxInclusive_13_0,
 							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
 		)?
 		(
-			otherlv_15='documentation'
+			otherlv_14='documentation'
 			{
-				newLeafNode(otherlv_15, grammarAccess.getNumericTypeAccess().getDocumentationKeyword_10_0());
+				newLeafNode(otherlv_14, grammarAccess.getNumericTypeAccess().getDocumentationKeyword_9_0());
 			}
 			(
 				(
-					lv_documentation_16_0=RULE_STRING
+					lv_documentation_15_0=RULE_STRING
 					{
-						newLeafNode(lv_documentation_16_0, grammarAccess.getNumericTypeAccess().getDocumentationSTRINGTerminalRuleCall_10_1_0());
+						newLeafNode(lv_documentation_15_0, grammarAccess.getNumericTypeAccess().getDocumentationSTRINGTerminalRuleCall_9_1_0());
 					}
 					{
 						if ($current==null) {
@@ -3146,16 +3142,12 @@ ruleNumericType returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"documentation",
-							lv_documentation_16_0,
+							lv_documentation_15_0,
 							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)
 			)
 		)?
-		otherlv_17=')'
-		{
-			newLeafNode(otherlv_17, grammarAccess.getNumericTypeAccess().getRightParenthesisKeyword_11());
-		}
 	)
 ;
 
