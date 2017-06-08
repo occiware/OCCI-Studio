@@ -2,185 +2,150 @@
 grammar org.eclipse.cmf.occi.core.xtext.OCCI with org.eclipse.xtext.common.Terminals
 
 import "http://schemas.ogf.org/occi/core/ecore"
-import "http://www.eclipse.org/emf/2002/Ecore" as ecore   
-
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Grammar returns ecore::EObject:
-	Extension | Configuration
-	;
+	Extension | Configuration;
 
 Configuration returns Configuration:
 	{Configuration}
-	'Configuration'
-	'{'
-		('description' description=STRING)?
-		('location' location=STRING)?
-		('use' '(' use+=[Extension|STRING] ( "," use+=[Extension|STRING])* ')' )?
-		('resources' '{' resources+=Resource ( "," resources+=Resource)* '}' )?
-		('mixins' '{' mixins+=Mixin ( "," mixins+=Mixin)* '}' )?
-	'}';
+	'configuration'
+	('description' description=STRING)?
+	('location' location=STRING)?
+	('use' '(' use+=[Extension|STRING] ("," use+=[Extension|STRING])* ')')?
+	resources+=Resource*
+	mixins+=Mixin*;
+
 Resource returns Resource:
-	'Resource'
-	'{'
-		'id' id=STRING
-		('title' title=STRING)?
-		('location' location=STRING)?
-		('summary' summary=STRING)?
-		'kind' kind=[Kind|QualifiedID]
-//		('rlinks' '(' rlinks+=[Link|EString] ( "," rlinks+=[Link|EString])* ')' )?
-		('attributes' '{' attributes+=AttributeState ( "," attributes+=AttributeState)* '}' )?
-		('parts' '{' parts+=MixinBase ( "," parts+=MixinBase)* '}' )?
-		('links' '{' links+=Link ( "," links+=Link)* '}' )?
-	'}';
-	
+	'resource'
+	id=STRING
+	':'
+	kind=[Kind|QualifiedID]
+	('title' title=STRING)?
+	('location' location=STRING)?
+	('summary' summary=STRING)?
+	('parts' '{' parts+=MixinBase ("," parts+=MixinBase)* '}')?
+	attributes+=AttributeState*
+	links+=Link*;
+
 Link returns Link:
-	'Link'
-	'{'
-		'id' id=STRING
-		('title' title=STRING)?
-		('location' location=STRING)?
-		'kind' kind=[Kind|QualifiedID]
-		'target' target=[Resource|STRING]
-		('attributes' '{' attributes+=AttributeState ( "," attributes+=AttributeState)* '}' )?
-		('parts' '{' parts+=MixinBase ( "," parts+=MixinBase)* '}' )?
-	'}';
+	'link'
+	'id' id=STRING
+	('title' title=STRING)?
+	('location' location=STRING)?
+	'kind' kind=[Kind|QualifiedID]
+	'target' target=[Resource|STRING]
+	attributes+=AttributeState*
+	parts+=MixinBase*;
 
 MixinBase returns MixinBase:
-	'MixinBase'
-	'{'
-		'mixin' mixin=[Mixin|QualifiedID]
-		('attributes' '{' attributes+=AttributeState ( "," attributes+=AttributeState)* '}' )?
-	'}';
-		
+	'mixinBase'
+	mixin=[Mixin|QualifiedID]
+	attributes+=AttributeState*;
+
 AttributeState returns AttributeState:
-	'AttributeState'
-	'{'
-		'name' name=QualifiedID
-		'value' value=STRING
-	'}';
+	'attribute'
+	name=QualifiedID
+	'=' value=STRING;
 
 Extension returns Extension:
 	'extension'
 	name=NameID ':' scheme=STRING /* URI */
 	('description' description=STRING)?
 	('specification' specification=STRING)?
-	
-	( 'import' ^import+=[Extension|STRING /* URI */] ( 'as' ID )? )*
-	(
-		kinds+=Kind 
-	 	| mixins+=Mixin  
-     	| types+=DataType
-	)*
-	;
+	('import' ^import+=[Extension|STRING /* URI */] ('as' ID)?)*
+	(kinds+=Kind
+	| mixins+=Mixin
+	| types+=DataType)*;
 
 Kind returns Kind:
 	'kind'
-		name=NameID
-		('extends' parent=[Kind|QualifiedID])?
-		('source' source=[Kind|QualifiedID])?
-		('target' target=[Kind|QualifiedID])?
-		('title' title=STRING)?
-		'scheme' scheme=STRING
-		(
-		'(' 
-		( 	attributes+=Attribute
-			|	actions+=Action
-			|	constraints+=Constraint
-		)+ 
-		')'
-		)?
-		(
-			fsm=FSM
-		)?
-		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
-	;
+	name=NameID
+	('extends' parent=[Kind|QualifiedID])?
+	('source' source=[Kind|QualifiedID])?
+	('target' target=[Kind|QualifiedID])?
+	('title' title=STRING)?
+	'scheme' scheme=STRING
+	('('
+	(attributes+=Attribute
+	| actions+=Action
+	| constraints+=Constraint)+
+	')')?
+	(fsm=FSM)?
+	('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?;
 
 Mixin returns Mixin:
 	'mixin'
-		name=NameID
-		('depends' '(' depends+=[Mixin|QualifiedID] ( "," depends+=[Mixin|QualifiedID])* ')' )?
-		('applies' '(' applies+=[Kind|QualifiedID] ( "," applies+=[Kind|QualifiedID])* ')' )?
-		'scheme' scheme=STRING
-		('title' title=STRING)?
-		
-		(
-		'(' 
-			( 	attributes+=Attribute
-			|	actions+=Action
-			|	constraints+=Constraint
-		)+ 
-		')'
-		)?
-		('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
-		;
-//
+	name=NameID
+	('depends' '(' depends+=[Mixin|QualifiedID] ("," depends+=[Mixin|QualifiedID])* ')')?
+	('applies' '(' applies+=[Kind|QualifiedID] ("," applies+=[Kind|QualifiedID])* ')')?
+	'scheme' scheme=STRING
+	('title' title=STRING)?
+	('('
+	(attributes+=Attribute
+	| actions+=Action
+	| constraints+=Constraint)+
+	')')?
+	('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?;
+
 Annotation returns Annotation:
 	'('
 	'key' key=STRING
 	'value' value=STRING
-	')'
-	;
+	')';
 
 Attribute returns Attribute:
 	'attribute'
 	(mutable?='mutable')?
-	(required?='required')? 
+	(required?='required')?
 	name=QualifiedID
 	':'
 	('type' type=[DataType|QualifiedID])?
 	('=' default=STRING)?
 	('description' description=STRING)?
-	('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}')?
-	;
+	('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?;
 
 Action returns Action:
 	'action'
 	name=NameID
 	'scheme' scheme=STRING
-	
-	('(' attributes+=ParameterDecl ( "," attributes+=ParameterDecl)* ')' )?
+	('(' attributes+=ParameterDecl ("," attributes+=ParameterDecl)* ')')?
 	('{' 'title' title=STRING '}')?
-	('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?	
-	;
-	
+	('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?;
+
 ParameterDecl returns Attribute:
-    name=QualifiedID 
-    ':'
-    type=[DataType|QualifiedID]
-	( '=' default=STRING )?
-    ;
+	name=QualifiedID
+	':'
+	type=[DataType|QualifiedID]
+	('=' default=STRING)?;
 
 Constraint returns Constraint:
 	'constraint' name=NameID
 	('description' description=STRING)?
-	'body' body=STRING
-	;
+	'body' body=STRING;
 
 FSM returns FSM:
 	'FSM'
-	'('
-		'attribute' attribute=[Attribute|QualifiedID]
-		('states' '{' ownedState+=State ( "," ownedState+=State)* '}' )?
-	')';
+	'attribute' attribute=[Attribute|QualifiedID]
+	('{' ownedState+=State ("," ownedState+=State)* '}')?
+	;
 
 State returns State:
 	'State'
-	'('
-		(initial?='initial')? 
-		(final?='final')?
-		('literal' literal=[EnumerationLiteral|QualifiedID])
-//		('incomingTransition' '(' incomingTransition+=[Transition|EString] ( "," incomingTransition+=[Transition|EString])* ')' )?
-		('transitions' '(' (outgoingTransition+=Transition) ( "," outgoingTransition+=Transition)* ')')?
-	')';
-
-Transition returns Transition:		
-		('action' action=[Action|QualifiedID])?
-		'to' target=[State|QualifiedID]
+	(initial?='initial')?
+	(final?='final')?
+	('literal' literal=[EnumerationLiteral|QualifiedID])
+	//		('incomingTransition' '(' incomingTransition+=[Transition|EString] ( "," incomingTransition+=[Transition|EString])* ')' )?
+	('transitions' '(' (outgoingTransition+=Transition) ("," outgoingTransition+=Transition)* ')')?
 	;
+
+Transition returns Transition:
+	('action' action=[Action|QualifiedID])?
+	'to' target=[State|QualifiedID];
 
 DataType returns DataType:
 	StringType | EObjectType | BooleanType | NumericType | EnumerationType | RecordType | ArrayType;
-	
+
 StringType returns StringType:
 	'StringType'
 	name=ID
@@ -188,87 +153,85 @@ StringType returns StringType:
 	('length' length=EIntegerObject)?
 	('minLength' minLength=EIntegerObject)?
 	('maxLength' maxLength=EIntegerObject)?
-	('documentation' documentation=STRING)?
-	;
+	('documentation' documentation=STRING)?;
 
 EObjectType returns EObjectType:
 	'EObjectType'
 	name=ID
 	('instanceClassName' instanceClassName=STRING)?
-	('documentation' documentation=STRING)?
-	;
+	('documentation' documentation=STRING)?;
 
 BooleanType returns BooleanType:
 	'BooleanType'
 	name=ID
-	('documentation' documentation=STRING)?
-	;
+	('documentation' documentation=STRING)?;
 
 NumericType returns NumericType:
 	'NumericType'
 	name=ID 'type' type=NumericTypeEnum
 	'('
-		('totalDigits' totalDigits=EIntegerObject)?
-		('minExclusive' minExclusive=STRING)?
-		('maxExclusive' maxExclusive=STRING)?
-		('minInclusive' minInclusive=STRING)?
-		('maxInclusive' maxInclusive=STRING)?
-		('documentation' documentation=STRING)?
+	('totalDigits' totalDigits=EIntegerObject)?
+	('minExclusive' minExclusive=STRING)?
+	('maxExclusive' maxExclusive=STRING)?
+	('minInclusive' minInclusive=STRING)?
+	('maxInclusive' maxInclusive=STRING)?
+	('documentation' documentation=STRING)?
 	')';
-		
+
 enum NumericTypeEnum returns NumericTypeEnum:
-				Byte = 'Byte' | Double = 'Double' | Float = 'Float' | Integer = 'Integer' | Long = 'Long' | Short = 'Short' | BigDecimal = 'BigDecimal';
+	Byte='Byte' | Double='Double' | Float='Float' | Integer='Integer' | Long='Long' | Short='Short' |
+	BigDecimal='BigDecimal';
 
 EnumerationType returns EnumerationType:
 	'EnumerationType'
 	name=ID
-	'literals' '(' literals+=EnumerationLiteral ( "," literals+=EnumerationLiteral)* ')' 
-	('documentation' documentation=STRING)?
-	;
-					
+	'literals' '(' literals+=EnumerationLiteral ("," literals+=EnumerationLiteral)* ')'
+	('documentation' documentation=STRING)?;
+
 EnumerationLiteral returns EnumerationLiteral:
 	name=ID
-	('documentation' documentation=STRING)?
-	;
-	
+	('documentation' documentation=STRING)?;
+
 RecordType returns RecordType:
 	'RecordType'
 	name=ID
-	'fields' '(' recordFields+=RecordField ( "," recordFields+=RecordField)* ')' 
-	('documentation' documentation=STRING)?
-	;
+	'fields' '(' recordFields+=RecordField ("," recordFields+=RecordField)* ')'
+	('documentation' documentation=STRING)?;
 
 RecordField returns RecordField:
 	(mutable?='mutable')?
-	(required?='required')? 
+	(required?='required')?
 	name=QualifiedID
 	('type' type=[DataType|QualifiedID])
-	('=' default=STRING)?	
-	('description' description=STRING)? 
-	('annotations' '{' annotations+=Annotation ( "," annotations+=Annotation)* '}' )?
-	;
+	('=' default=STRING)?
+	('description' description=STRING)?
+	('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?;
 
 ArrayType returns ArrayType:
 	'ArrayType'
 	name=ID 'type' type=[DataType|QualifiedID]
-	'documentation' documentation=STRING?
-	;
-
-
+	'documentation' documentation=STRING?;
 
 EIntegerObject returns ecore::EIntegerObject:
 	'-'? INT;
 
-QualifiedID : (ID | QUALIFIED_ID | KEYWORD) ;
+QualifiedID:
+	(ID | QUALIFIED_ID | KEYWORD);
 
-NameID :  (ID (ID | ('-') )*) | KEYWORD;
+NameID:
+	(ID (ID | ('-'))*) | KEYWORD;
 
-terminal QUALIFIED_ID : 
-  '^'?('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9')*  '.' ('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9')* ( '.' ('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9')* )*;
+terminal QUALIFIED_ID:
+	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')* '.' ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' |
+	'A'..'Z' | '_' | '0'..'9')* ('.' ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*)*;
 
-KEYWORD: 'extension' | 'description' | 'specification' | 'as' | 'kind' | 'extends' | 'source' | 'target' | 'annotations' | 'title' | 'scheme' | 'mixin'
-		| 'depends' | 'applies' | 'annotation' |  'key' | 'value' | 'attribute' | 'mutable' | 'required' | 'type' | 'action' | 'constraint' | 'body'
-		| 'StringType' | 'documentation' | 'pattern' | 'length' | 'minLength' | 'maxLength' | 'EObjectType' | 'instanceClassName' | 'BooleanType' 
-		| 'NumericType' | 'totalDigits' | 'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' | 'Byte' | 'Double' | 'Float' |'Integer' | 'Long' |'Short' | 'BigDecimal'
-		| 'EnumerationType' | 'literals' | 'RecordType' | 'fields' | 'field' | 'ArrayType'
-;
+KEYWORD:
+	'extension' | 'description' | 'specification' | 'as' | 'kind' | 'extends' | 'source' | 'target' | 'annotations' |
+	'title' | 'scheme' | 'mixin'
+	| 'depends' | 'applies' | 'annotation' | 'key' | 'value' | 'attribute' | 'mutable' | 'required' | 'type' | 'action' |
+	'constraint' | 'body'
+	| 'StringType' | 'documentation' | 'pattern' | 'length' | 'minLength' | 'maxLength' | 'EObjectType' |
+	'instanceClassName' | 'BooleanType'
+	| 'NumericType' | 'totalDigits' | 'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' | 'Byte' |
+	'Double' | 'Float' | 'Integer' | 'Long' | 'Short' | 'BigDecimal'
+	| 'EnumerationType' | 'literals' | 'RecordType' | 'fields' | 'field' | 'ArrayType';

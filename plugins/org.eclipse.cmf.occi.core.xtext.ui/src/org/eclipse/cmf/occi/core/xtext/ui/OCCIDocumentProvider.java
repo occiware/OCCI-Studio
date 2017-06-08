@@ -72,6 +72,7 @@ public class OCCIDocumentProvider extends XtextDocumentProvider {
 			URI uri = URI.createPlatformResourceURI(
 					((org.eclipse.ui.part.FileEditorInput) element).getFile().getFullPath().toString(), true);
 			//resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
+			//System.out.println("uriii "+uri);
 			Resource xmiResource = resourceSet.getResource(uri, true);
 			((XMLResource) xmiResource).getDefaultSaveOptions().put(XMLResource.OPTION_URI_HANDLER,
 					new URIHandlerImpl.PlatformSchemeAware());

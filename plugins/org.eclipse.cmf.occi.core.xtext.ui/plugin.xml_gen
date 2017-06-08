@@ -7,7 +7,7 @@
 			class="org.eclipse.cmf.occi.core.xtext.ui.OCCIExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
 			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
 			default="true"
-			extensions="occi, occie, occic"
+			extensions="occi"
 			id="org.eclipse.cmf.occi.core.xtext.OCCI"
 			name="OCCI Editor">
 		</editor>
@@ -58,20 +58,20 @@
 			<and>
 				<reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
 				<with variable="activeEditor">
-					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-						value="org.eclipse.cmf.occi.core.xtext.OCCI" 
+					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
+						value="org.eclipse.cmf.occi.core.xtext.OCCI"
 						forcePluginActivation="true"/>
-				</with>		
+				</with>
 			</and>
 		</definition>
 		<definition id="org.eclipse.cmf.occi.core.xtext.OCCI.XtextEditor.opened">
 			<and>
 				<reference definitionId="isXtextEditorActive"/>
 				<with variable="activeEditor">
-					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-						value="org.eclipse.cmf.occi.core.xtext.OCCI" 
+					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
+						value="org.eclipse.cmf.occi.core.xtext.OCCI"
 						forcePluginActivation="true"/>
-				</with>		
+				</with>
 			</and>
 		</definition>
 	</extension>
@@ -154,7 +154,7 @@
 		</menuContribution>
 		<!-- copy qualified name -->
 		<menuContribution locationURI="popup:#TextEditorContext?after=copy">
-			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName" 
+			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
 					<reference definitionId="org.eclipse.cmf.occi.core.xtext.OCCI.Editor.opened" />
@@ -170,7 +170,7 @@
 			</command>
 		</menuContribution>
 		<menuContribution locationURI="popup:org.eclipse.xtext.ui.outline?after=additions">
-			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName" 
+			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
 					<and>

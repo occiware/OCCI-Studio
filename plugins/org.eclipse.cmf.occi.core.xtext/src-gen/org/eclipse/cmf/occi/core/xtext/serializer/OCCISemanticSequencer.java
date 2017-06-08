@@ -205,8 +205,8 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OCCIPackage.Literals.ATTRIBUTE_STATE__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAttributeStateAccess().getNameQualifiedIDParserRuleCall_3_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getAttributeStateAccess().getValueSTRINGTerminalRuleCall_5_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getAttributeStateAccess().getNameQualifiedIDParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getAttributeStateAccess().getValueSTRINGTerminalRuleCall_3_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -250,13 +250,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Configuration returns Configuration
 	 *
 	 * Constraint:
-	 *     (
-	 *         description=STRING? 
-	 *         location=STRING? 
-	 *         (use+=[Extension|STRING] use+=[Extension|STRING]*)? 
-	 *         (resources+=Resource resources+=Resource*)? 
-	 *         (mixins+=Mixin mixins+=Mixin*)?
-	 *     )
+	 *     (description=STRING? location=STRING? (use+=[Extension|STRING] use+=[Extension|STRING]*)? resources+=Resource* mixins+=Mixin*)
 	 */
 	protected void sequence_Configuration(ISerializationContext context, Configuration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -378,8 +372,8 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         location=STRING? 
 	 *         kind=[Kind|QualifiedID] 
 	 *         target=[Resource|STRING] 
-	 *         (attributes+=AttributeState attributes+=AttributeState*)? 
-	 *         (parts+=MixinBase parts+=MixinBase*)?
+	 *         attributes+=AttributeState* 
+	 *         parts+=MixinBase*
 	 *     )
 	 */
 	protected void sequence_Link(ISerializationContext context, Link semanticObject) {
@@ -392,7 +386,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     MixinBase returns MixinBase
 	 *
 	 * Constraint:
-	 *     (mixin=[Mixin|QualifiedID] (attributes+=AttributeState attributes+=AttributeState*)?)
+	 *     (mixin=[Mixin|QualifiedID] attributes+=AttributeState*)
 	 */
 	protected void sequence_MixinBase(ISerializationContext context, MixinBase semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -493,13 +487,13 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         id=STRING 
+	 *         kind=[Kind|QualifiedID] 
 	 *         title=STRING? 
 	 *         location=STRING? 
 	 *         summary=STRING? 
-	 *         kind=[Kind|QualifiedID] 
-	 *         (attributes+=AttributeState attributes+=AttributeState*)? 
 	 *         (parts+=MixinBase parts+=MixinBase*)? 
-	 *         (links+=Link links+=Link*)?
+	 *         attributes+=AttributeState* 
+	 *         links+=Link*
 	 *     )
 	 */
 	protected void sequence_Resource(ISerializationContext context, Resource semanticObject) {
