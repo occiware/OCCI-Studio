@@ -243,4 +243,7 @@ public class DesignServices {
     public void setTarget(EObject host, EObject target) {
     	((Transition)host).setTarget((State)target);
     }
+    public String renderTooltip(EObject eo) {
+        return eo.toString();
+    }
 }
