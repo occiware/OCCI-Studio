@@ -360,35 +360,47 @@ public class KindImpl extends TypeImpl implements Kind {
 		 *
 		 * if self.parent <> null
 		 * then
-		 *   if self.parent = kind
+		 *   if self = kind
 		 *   then true
-		 *   else self.parent.occiIsKindOf(kind)
+		 *   else
+		 *     if self.parent = kind
+		 *     then true
+		 *     else self.parent.occiIsKindOf(kind)
+		 *     endif
 		 *   endif
 		 * else false
 		 * endif
 		 */
 		final /*@NonInvalid*/ Kind parent = this.getParent();
 		final /*@NonInvalid*/ boolean ne = parent != null;
-		/*@Thrown*/ boolean symbol_1;
+		/*@Thrown*/ boolean symbol_2;
 		if (ne) {
-			final /*@NonInvalid*/ boolean eq = (parent != null) ? parent.equals(kind) : (kind == null);
-			/*@Thrown*/ boolean symbol_0;
+			final /*@NonInvalid*/ boolean eq = this.equals(kind);
+			/*@Thrown*/ boolean symbol_1;
 			if (eq) {
-				symbol_0 = ValueUtil.TRUE_VALUE;
+				symbol_1 = ValueUtil.TRUE_VALUE;
 			}
 			else {
-				if (parent == null) {
-					throw new InvalidValueException("Null source for \'occi::Kind::occiIsKindOf(occi::Kind[?]) : Boolean[1]\'");
+				final /*@NonInvalid*/ boolean eq_0 = (parent != null) ? parent.equals(kind) : (kind == null);
+				/*@Thrown*/ boolean symbol_0;
+				if (eq_0) {
+					symbol_0 = ValueUtil.TRUE_VALUE;
 				}
-				final /*@Thrown*/ boolean occiIsKindOf = parent.occiIsKindOf(kind);
-				symbol_0 = occiIsKindOf;
+				else {
+					if (parent == null) {
+						throw new InvalidValueException("Null source for \'occi::Kind::occiIsKindOf(occi::Kind[?]) : Boolean[1]\'");
+					}
+					final /*@Thrown*/ boolean occiIsKindOf = parent.occiIsKindOf(kind);
+					symbol_0 = occiIsKindOf;
+				}
+				symbol_1 = symbol_0;
 			}
-			symbol_1 = symbol_0;
+			symbol_2 = symbol_1;
 		}
 		else {
-			symbol_1 = ValueUtil.FALSE_VALUE;
+			symbol_2 = ValueUtil.FALSE_VALUE;
 		}
-		return symbol_1;
+		return symbol_2;
 	}
 
 	/**
