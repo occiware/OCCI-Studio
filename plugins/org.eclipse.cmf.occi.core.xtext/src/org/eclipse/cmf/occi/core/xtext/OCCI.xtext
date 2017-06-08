@@ -146,7 +146,7 @@ DataType returns DataType:
 
 StringType returns StringType:
 	'StringType'
-	name=ID
+	name=TypeID
 	('pattern' pattern=STRING)?
 	('length' length=EIntegerObject)?
 	('minLength' minLength=EIntegerObject)?
@@ -155,18 +155,18 @@ StringType returns StringType:
 
 EObjectType returns EObjectType:
 	'EObjectType'
-	name=ID
+	name=TypeID
 	('type' instanceClassName=STRING)?
 	('documentation' documentation=STRING)?;
 
 BooleanType returns BooleanType:
 	'BooleanType'
-	name=ID
+	name=TypeID
 	('documentation' documentation=STRING)?;
 
 NumericType returns NumericType:
 	'NumericType'
-	name=ID 'type' type=NumericTypeEnum
+	name=TypeID 'type' type=NumericTypeEnum
 	'('
 	('totalDigits' totalDigits=EIntegerObject)?
 	('minExclusive' minExclusive=STRING)?
@@ -182,17 +182,17 @@ enum NumericTypeEnum returns NumericTypeEnum:
 
 EnumerationType returns EnumerationType:
 	'EnumerationType'
-	name=ID
+	name=TypeID
 	'literals' '(' literals+=EnumerationLiteral ("," literals+=EnumerationLiteral)* ')'
 	('documentation' documentation=STRING)?;
 
 EnumerationLiteral returns EnumerationLiteral:
-	name=ID
+	name=TypeID
 	('documentation' documentation=STRING)?;
 
 RecordType returns RecordType:
 	'RecordType'
-	name=ID
+	name=TypeID
 	'fields' '(' recordFields+=RecordField ("," recordFields+=RecordField)* ')'
 	('documentation' documentation=STRING)?;
 
@@ -207,12 +207,15 @@ RecordField returns RecordField:
 
 ArrayType returns ArrayType:
 	'ArrayType'
-	name=ID 'type' type=[DataType|QualifiedID]
+	name=TypeID 'type' type=[DataType|QualifiedID]
 	'documentation' documentation=STRING?;
 
 EIntegerObject returns ecore::EIntegerObject:
 	'-'? INT;
 
+TypeID:
+	(ID | KEYWORD);
+	
 QualifiedID:
 	(ID | QUALIFIED_ID | KEYWORD);
 
