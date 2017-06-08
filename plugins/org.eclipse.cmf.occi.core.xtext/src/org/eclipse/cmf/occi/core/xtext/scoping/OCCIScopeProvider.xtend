@@ -255,14 +255,14 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 				var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
 				var Extension ext = kind.eContainer as Extension
 				for (Kind k : ext.getKinds()) {
-					res.add(EObjectDescription.create(QualifiedName.create(k.getTerm()), k));
+					res.add(EObjectDescription.create(QualifiedName.create(k.name), k))
 				}
 				for (Extension importExtension : ext.getImport()) {
 					for (Kind k : importExtension.getKinds()) {
-						res.add(EObjectDescription.create(QualifiedName.create(importExtension.getName(), k.name), k));
+						res.add(EObjectDescription.create(QualifiedName.create(importExtension.name, k.name), k))
 					}
 				}
-				new SimpleScope(IScope.NULLSCOPE, res);
+				new SimpleScope(IScope.NULLSCOPE, res)
 			}
 
 			def IScope scope_ArrayType_type(ArrayType arrayType, EReference ref) {
