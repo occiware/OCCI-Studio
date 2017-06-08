@@ -146,7 +146,7 @@
     </eAnnotations>
     <eOperations name="occiIsKindOf" lowerBound="1" eType="#//Boolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="body" value="&#x9;if (self.parent &lt;> null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if(self.parent = kind) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.parent.occiIsKindOf(kind)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;false&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif"/>
+        <details key="body" value="&#x9;if (self.parent &lt;> null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if(self = kind)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if(self.parent = kind) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.parent.occiIsKindOf(kind)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;false&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif"/>
       </eAnnotations>
       <eParameters name="kind" eType="#//Kind"/>
     </eOperations>
