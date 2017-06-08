@@ -167,14 +167,13 @@ BooleanType returns BooleanType:
 NumericType returns NumericType:
 	'NumericType'
 	name=TypeID 'type' type=NumericTypeEnum
-	'('
 	('totalDigits' totalDigits=EIntegerObject)?
 	('minExclusive' minExclusive=STRING)?
 	('maxExclusive' maxExclusive=STRING)?
 	('minInclusive' minInclusive=STRING)?
 	('maxInclusive' maxInclusive=STRING)?
 	('documentation' documentation=STRING)?
-	')';
+	;
 
 enum NumericTypeEnum returns NumericTypeEnum:
 	Byte='Byte' | Double='Double' | Float='Float' | Integer='Integer' | Long='Long' | Short='Short' |
