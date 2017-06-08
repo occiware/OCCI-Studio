@@ -749,6 +749,31 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRuleTypeID
+entryRuleTypeID
+:
+{ before(grammarAccess.getTypeIDRule()); }
+	 ruleTypeID
+{ after(grammarAccess.getTypeIDRule()); } 
+	 EOF 
+;
+
+// Rule TypeID
+ruleTypeID 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getTypeIDAccess().getAlternatives()); }
+		(rule__TypeID__Alternatives)
+		{ after(grammarAccess.getTypeIDAccess().getAlternatives()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 // Entry rule entryRuleQualifiedID
 entryRuleQualifiedID
 :
@@ -987,6 +1012,27 @@ rule__DataType__Alternatives
 		{ before(grammarAccess.getDataTypeAccess().getArrayTypeParserRuleCall_6()); }
 		ruleArrayType
 		{ after(grammarAccess.getDataTypeAccess().getArrayTypeParserRuleCall_6()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__TypeID__Alternatives
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getTypeIDAccess().getIDTerminalRuleCall_0()); }
+		RULE_ID
+		{ after(grammarAccess.getTypeIDAccess().getIDTerminalRuleCall_0()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getTypeIDAccess().getKEYWORDParserRuleCall_1()); }
+		ruleKEYWORD
+		{ after(grammarAccess.getTypeIDAccess().getKEYWORDParserRuleCall_1()); }
 	)
 ;
 finally {
@@ -12416,9 +12462,9 @@ rule__StringType__NameAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getStringTypeAccess().getNameIDTerminalRuleCall_1_0()); }
-		RULE_ID
-		{ after(grammarAccess.getStringTypeAccess().getNameIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getStringTypeAccess().getNameTypeIDParserRuleCall_1_0()); }
+		ruleTypeID
+		{ after(grammarAccess.getStringTypeAccess().getNameTypeIDParserRuleCall_1_0()); }
 	)
 ;
 finally {
@@ -12506,9 +12552,9 @@ rule__EObjectType__NameAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getEObjectTypeAccess().getNameIDTerminalRuleCall_1_0()); }
-		RULE_ID
-		{ after(grammarAccess.getEObjectTypeAccess().getNameIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getEObjectTypeAccess().getNameTypeIDParserRuleCall_1_0()); }
+		ruleTypeID
+		{ after(grammarAccess.getEObjectTypeAccess().getNameTypeIDParserRuleCall_1_0()); }
 	)
 ;
 finally {
@@ -12551,9 +12597,9 @@ rule__BooleanType__NameAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getBooleanTypeAccess().getNameIDTerminalRuleCall_1_0()); }
-		RULE_ID
-		{ after(grammarAccess.getBooleanTypeAccess().getNameIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getBooleanTypeAccess().getNameTypeIDParserRuleCall_1_0()); }
+		ruleTypeID
+		{ after(grammarAccess.getBooleanTypeAccess().getNameTypeIDParserRuleCall_1_0()); }
 	)
 ;
 finally {
@@ -12581,9 +12627,9 @@ rule__NumericType__NameAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getNumericTypeAccess().getNameIDTerminalRuleCall_1_0()); }
-		RULE_ID
-		{ after(grammarAccess.getNumericTypeAccess().getNameIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getNumericTypeAccess().getNameTypeIDParserRuleCall_1_0()); }
+		ruleTypeID
+		{ after(grammarAccess.getNumericTypeAccess().getNameTypeIDParserRuleCall_1_0()); }
 	)
 ;
 finally {
@@ -12701,9 +12747,9 @@ rule__EnumerationType__NameAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getEnumerationTypeAccess().getNameIDTerminalRuleCall_1_0()); }
-		RULE_ID
-		{ after(grammarAccess.getEnumerationTypeAccess().getNameIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getEnumerationTypeAccess().getNameTypeIDParserRuleCall_1_0()); }
+		ruleTypeID
+		{ after(grammarAccess.getEnumerationTypeAccess().getNameTypeIDParserRuleCall_1_0()); }
 	)
 ;
 finally {
@@ -12761,9 +12807,9 @@ rule__EnumerationLiteral__NameAssignment_0
 	}
 :
 	(
-		{ before(grammarAccess.getEnumerationLiteralAccess().getNameIDTerminalRuleCall_0_0()); }
-		RULE_ID
-		{ after(grammarAccess.getEnumerationLiteralAccess().getNameIDTerminalRuleCall_0_0()); }
+		{ before(grammarAccess.getEnumerationLiteralAccess().getNameTypeIDParserRuleCall_0_0()); }
+		ruleTypeID
+		{ after(grammarAccess.getEnumerationLiteralAccess().getNameTypeIDParserRuleCall_0_0()); }
 	)
 ;
 finally {
@@ -12791,9 +12837,9 @@ rule__RecordType__NameAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getRecordTypeAccess().getNameIDTerminalRuleCall_1_0()); }
-		RULE_ID
-		{ after(grammarAccess.getRecordTypeAccess().getNameIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getRecordTypeAccess().getNameTypeIDParserRuleCall_1_0()); }
+		ruleTypeID
+		{ after(grammarAccess.getRecordTypeAccess().getNameTypeIDParserRuleCall_1_0()); }
 	)
 ;
 finally {
@@ -12983,9 +13029,9 @@ rule__ArrayType__NameAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getArrayTypeAccess().getNameIDTerminalRuleCall_1_0()); }
-		RULE_ID
-		{ after(grammarAccess.getArrayTypeAccess().getNameIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getArrayTypeAccess().getNameTypeIDParserRuleCall_1_0()); }
+		ruleTypeID
+		{ after(grammarAccess.getArrayTypeAccess().getNameTypeIDParserRuleCall_1_0()); }
 	)
 ;
 finally {

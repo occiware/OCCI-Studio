@@ -2642,19 +2642,20 @@ ruleStringType returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getStringTypeAccess().getNameIDTerminalRuleCall_1_0());
+					newCompositeNode(grammarAccess.getStringTypeAccess().getNameTypeIDParserRuleCall_1_0());
 				}
+				lv_name_1_0=ruleTypeID
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getStringTypeRule());
+						$current = createModelElementForParent(grammarAccess.getStringTypeRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"name",
 						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"org.eclipse.cmf.occi.core.xtext.OCCI.TypeID");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -2806,19 +2807,20 @@ ruleEObjectType returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getEObjectTypeAccess().getNameIDTerminalRuleCall_1_0());
+					newCompositeNode(grammarAccess.getEObjectTypeAccess().getNameTypeIDParserRuleCall_1_0());
 				}
+				lv_name_1_0=ruleTypeID
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getEObjectTypeRule());
+						$current = createModelElementForParent(grammarAccess.getEObjectTypeRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"name",
 						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"org.eclipse.cmf.occi.core.xtext.OCCI.TypeID");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -2895,19 +2897,20 @@ ruleBooleanType returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getBooleanTypeAccess().getNameIDTerminalRuleCall_1_0());
+					newCompositeNode(grammarAccess.getBooleanTypeAccess().getNameTypeIDParserRuleCall_1_0());
 				}
+				lv_name_1_0=ruleTypeID
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getBooleanTypeRule());
+						$current = createModelElementForParent(grammarAccess.getBooleanTypeRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"name",
 						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"org.eclipse.cmf.occi.core.xtext.OCCI.TypeID");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -2960,19 +2963,20 @@ ruleNumericType returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getNumericTypeAccess().getNameIDTerminalRuleCall_1_0());
+					newCompositeNode(grammarAccess.getNumericTypeAccess().getNameTypeIDParserRuleCall_1_0());
 				}
+				lv_name_1_0=ruleTypeID
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getNumericTypeRule());
+						$current = createModelElementForParent(grammarAccess.getNumericTypeRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"name",
 						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"org.eclipse.cmf.occi.core.xtext.OCCI.TypeID");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -3177,19 +3181,20 @@ ruleEnumerationType returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getEnumerationTypeAccess().getNameIDTerminalRuleCall_1_0());
+					newCompositeNode(grammarAccess.getEnumerationTypeAccess().getNameTypeIDParserRuleCall_1_0());
 				}
+				lv_name_1_0=ruleTypeID
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getEnumerationTypeRule());
+						$current = createModelElementForParent(grammarAccess.getEnumerationTypeRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"name",
 						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"org.eclipse.cmf.occi.core.xtext.OCCI.TypeID");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -3294,19 +3299,20 @@ ruleEnumerationLiteral returns [EObject current=null]
 	(
 		(
 			(
-				lv_name_0_0=RULE_ID
 				{
-					newLeafNode(lv_name_0_0, grammarAccess.getEnumerationLiteralAccess().getNameIDTerminalRuleCall_0_0());
+					newCompositeNode(grammarAccess.getEnumerationLiteralAccess().getNameTypeIDParserRuleCall_0_0());
 				}
+				lv_name_0_0=ruleTypeID
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getEnumerationLiteralRule());
+						$current = createModelElementForParent(grammarAccess.getEnumerationLiteralRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"name",
 						lv_name_0_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"org.eclipse.cmf.occi.core.xtext.OCCI.TypeID");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -3359,19 +3365,20 @@ ruleRecordType returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getRecordTypeAccess().getNameIDTerminalRuleCall_1_0());
+					newCompositeNode(grammarAccess.getRecordTypeAccess().getNameTypeIDParserRuleCall_1_0());
 				}
+				lv_name_1_0=ruleTypeID
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getRecordTypeRule());
+						$current = createModelElementForParent(grammarAccess.getRecordTypeRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"name",
 						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"org.eclipse.cmf.occi.core.xtext.OCCI.TypeID");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -3674,19 +3681,20 @@ ruleArrayType returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getArrayTypeAccess().getNameIDTerminalRuleCall_1_0());
+					newCompositeNode(grammarAccess.getArrayTypeAccess().getNameTypeIDParserRuleCall_1_0());
 				}
+				lv_name_1_0=ruleTypeID
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getArrayTypeRule());
+						$current = createModelElementForParent(grammarAccess.getArrayTypeRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"name",
 						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"org.eclipse.cmf.occi.core.xtext.OCCI.TypeID");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -3764,6 +3772,43 @@ ruleEIntegerObject returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRule
 		}
 		{
 			newLeafNode(this_INT_1, grammarAccess.getEIntegerObjectAccess().getINTTerminalRuleCall_1());
+		}
+	)
+;
+
+// Entry rule entryRuleTypeID
+entryRuleTypeID returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getTypeIDRule()); }
+	iv_ruleTypeID=ruleTypeID
+	{ $current=$iv_ruleTypeID.current.getText(); }
+	EOF;
+
+// Rule TypeID
+ruleTypeID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_ID_0=RULE_ID
+		{
+			$current.merge(this_ID_0);
+		}
+		{
+			newLeafNode(this_ID_0, grammarAccess.getTypeIDAccess().getIDTerminalRuleCall_0());
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getTypeIDAccess().getKEYWORDParserRuleCall_1());
+		}
+		this_KEYWORD_1=ruleKEYWORD
+		{
+			$current.merge(this_KEYWORD_1);
+		}
+		{
+			afterParserOrEnumRuleCall();
 		}
 	)
 ;

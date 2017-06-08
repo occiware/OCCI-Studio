@@ -1761,7 +1761,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cStringTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameTypeIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cPatternKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cPatternAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
@@ -1785,22 +1785,22 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//StringType:
 		//	'StringType'
-		//	name=ID ('pattern' pattern=STRING)? ('length' length=EIntegerObject)? ('minLength' minLength=EIntegerObject)?
+		//	name=TypeID ('pattern' pattern=STRING)? ('length' length=EIntegerObject)? ('minLength' minLength=EIntegerObject)?
 		//	('maxLength' maxLength=EIntegerObject)? ('documentation' documentation=STRING)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'StringType' name=ID ('pattern' pattern=STRING)? ('length' length=EIntegerObject)? ('minLength'
+		//'StringType' name=TypeID ('pattern' pattern=STRING)? ('length' length=EIntegerObject)? ('minLength'
 		//minLength=EIntegerObject)? ('maxLength' maxLength=EIntegerObject)? ('documentation' documentation=STRING)?
 		public Group getGroup() { return cGroup; }
 		
 		//'StringType'
 		public Keyword getStringTypeKeyword_0() { return cStringTypeKeyword_0; }
 		
-		//name=ID
+		//name=TypeID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		//TypeID
+		public RuleCall getNameTypeIDParserRuleCall_1_0() { return cNameTypeIDParserRuleCall_1_0; }
 		
 		//('pattern' pattern=STRING)?
 		public Group getGroup_2() { return cGroup_2; }
@@ -1867,7 +1867,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cEObjectTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameTypeIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cTypeKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cInstanceClassNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
@@ -1879,20 +1879,20 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//EObjectType:
 		//	'EObjectType'
-		//	name=ID ('type' instanceClassName=STRING)? ('documentation' documentation=STRING)?;
+		//	name=TypeID ('type' instanceClassName=STRING)? ('documentation' documentation=STRING)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'EObjectType' name=ID ('type' instanceClassName=STRING)? ('documentation' documentation=STRING)?
+		//'EObjectType' name=TypeID ('type' instanceClassName=STRING)? ('documentation' documentation=STRING)?
 		public Group getGroup() { return cGroup; }
 		
 		//'EObjectType'
 		public Keyword getEObjectTypeKeyword_0() { return cEObjectTypeKeyword_0; }
 		
-		//name=ID
+		//name=TypeID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		//TypeID
+		public RuleCall getNameTypeIDParserRuleCall_1_0() { return cNameTypeIDParserRuleCall_1_0; }
 		
 		//('type' instanceClassName=STRING)?
 		public Group getGroup_2() { return cGroup_2; }
@@ -1923,7 +1923,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cBooleanTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameTypeIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cDocumentationKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cDocumentationAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
@@ -1931,20 +1931,20 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//BooleanType:
 		//	'BooleanType'
-		//	name=ID ('documentation' documentation=STRING)?;
+		//	name=TypeID ('documentation' documentation=STRING)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'BooleanType' name=ID ('documentation' documentation=STRING)?
+		//'BooleanType' name=TypeID ('documentation' documentation=STRING)?
 		public Group getGroup() { return cGroup; }
 		
 		//'BooleanType'
 		public Keyword getBooleanTypeKeyword_0() { return cBooleanTypeKeyword_0; }
 		
-		//name=ID
+		//name=TypeID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		//TypeID
+		public RuleCall getNameTypeIDParserRuleCall_1_0() { return cNameTypeIDParserRuleCall_1_0; }
 		
 		//('documentation' documentation=STRING)?
 		public Group getGroup_2() { return cGroup_2; }
@@ -1963,7 +1963,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cNumericTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameTypeIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cTypeKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cTypeNumericTypeEnumEnumRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
@@ -1996,14 +1996,14 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//NumericType:
 		//	'NumericType'
-		//	name=ID 'type' type=NumericTypeEnum
+		//	name=TypeID 'type' type=NumericTypeEnum
 		//	'(' ('totalDigits' totalDigits=EIntegerObject)? ('minExclusive' minExclusive=STRING)? ('maxExclusive'
 		//	maxExclusive=STRING)? ('minInclusive' minInclusive=STRING)? ('maxInclusive' maxInclusive=STRING)? ('documentation'
 		//	documentation=STRING)?
 		//	')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'NumericType' name=ID 'type' type=NumericTypeEnum '(' ('totalDigits' totalDigits=EIntegerObject)? ('minExclusive'
+		//'NumericType' name=TypeID 'type' type=NumericTypeEnum '(' ('totalDigits' totalDigits=EIntegerObject)? ('minExclusive'
 		//minExclusive=STRING)? ('maxExclusive' maxExclusive=STRING)? ('minInclusive' minInclusive=STRING)? ('maxInclusive'
 		//maxInclusive=STRING)? ('documentation' documentation=STRING)? ')'
 		public Group getGroup() { return cGroup; }
@@ -2011,11 +2011,11 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//'NumericType'
 		public Keyword getNumericTypeKeyword_0() { return cNumericTypeKeyword_0; }
 		
-		//name=ID
+		//name=TypeID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		//TypeID
+		public RuleCall getNameTypeIDParserRuleCall_1_0() { return cNameTypeIDParserRuleCall_1_0; }
 		
 		//'type'
 		public Keyword getTypeKeyword_2() { return cTypeKeyword_2; }
@@ -2109,7 +2109,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cEnumerationTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameTypeIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLiteralsKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cLiteralsAssignment_4 = (Assignment)cGroup.eContents().get(4);
@@ -2126,23 +2126,23 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//EnumerationType:
 		//	'EnumerationType'
-		//	name=ID
+		//	name=TypeID
 		//	'literals' '(' literals+=EnumerationLiteral ("," literals+=EnumerationLiteral)* ')' ('documentation'
 		//	documentation=STRING)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'EnumerationType' name=ID 'literals' '(' literals+=EnumerationLiteral ("," literals+=EnumerationLiteral)* ')'
+		//'EnumerationType' name=TypeID 'literals' '(' literals+=EnumerationLiteral ("," literals+=EnumerationLiteral)* ')'
 		//('documentation' documentation=STRING)?
 		public Group getGroup() { return cGroup; }
 		
 		//'EnumerationType'
 		public Keyword getEnumerationTypeKeyword_0() { return cEnumerationTypeKeyword_0; }
 		
-		//name=ID
+		//name=TypeID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		//TypeID
+		public RuleCall getNameTypeIDParserRuleCall_1_0() { return cNameTypeIDParserRuleCall_1_0; }
 		
 		//'literals'
 		public Keyword getLiteralsKeyword_2() { return cLiteralsKeyword_2; }
@@ -2187,24 +2187,24 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.EnumerationLiteral");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final RuleCall cNameTypeIDParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cDocumentationKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cDocumentationAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cDocumentationSTRINGTerminalRuleCall_1_1_0 = (RuleCall)cDocumentationAssignment_1_1.eContents().get(0);
 		
 		//EnumerationLiteral:
-		//	name=ID ('documentation' documentation=STRING)?;
+		//	name=TypeID ('documentation' documentation=STRING)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID ('documentation' documentation=STRING)?
+		//name=TypeID ('documentation' documentation=STRING)?
 		public Group getGroup() { return cGroup; }
 		
-		//name=ID
+		//name=TypeID
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		//TypeID
+		public RuleCall getNameTypeIDParserRuleCall_0_0() { return cNameTypeIDParserRuleCall_0_0; }
 		
 		//('documentation' documentation=STRING)?
 		public Group getGroup_1() { return cGroup_1; }
@@ -2223,7 +2223,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cRecordTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameTypeIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cFieldsKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cRecordFieldsAssignment_4 = (Assignment)cGroup.eContents().get(4);
@@ -2240,22 +2240,22 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//RecordType:
 		//	'RecordType'
-		//	name=ID
+		//	name=TypeID
 		//	'fields' '(' recordFields+=RecordField ("," recordFields+=RecordField)* ')' ('documentation' documentation=STRING)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'RecordType' name=ID 'fields' '(' recordFields+=RecordField ("," recordFields+=RecordField)* ')' ('documentation'
+		//'RecordType' name=TypeID 'fields' '(' recordFields+=RecordField ("," recordFields+=RecordField)* ')' ('documentation'
 		//documentation=STRING)?
 		public Group getGroup() { return cGroup; }
 		
 		//'RecordType'
 		public Keyword getRecordTypeKeyword_0() { return cRecordTypeKeyword_0; }
 		
-		//name=ID
+		//name=TypeID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		//TypeID
+		public RuleCall getNameTypeIDParserRuleCall_1_0() { return cNameTypeIDParserRuleCall_1_0; }
 		
 		//'fields'
 		public Keyword getFieldsKeyword_2() { return cFieldsKeyword_2; }
@@ -2432,7 +2432,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cArrayTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameTypeIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cTypeKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final CrossReference cTypeDataTypeCrossReference_3_0 = (CrossReference)cTypeAssignment_3.eContents().get(0);
@@ -2443,21 +2443,21 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ArrayType:
 		//	'ArrayType'
-		//	name=ID 'type' type=[DataType|QualifiedID]
+		//	name=TypeID 'type' type=[DataType|QualifiedID]
 		//	'documentation' documentation=STRING?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ArrayType' name=ID 'type' type=[DataType|QualifiedID] 'documentation' documentation=STRING?
+		//'ArrayType' name=TypeID 'type' type=[DataType|QualifiedID] 'documentation' documentation=STRING?
 		public Group getGroup() { return cGroup; }
 		
 		//'ArrayType'
 		public Keyword getArrayTypeKeyword_0() { return cArrayTypeKeyword_0; }
 		
-		//name=ID
+		//name=TypeID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		//TypeID
+		public RuleCall getNameTypeIDParserRuleCall_1_0() { return cNameTypeIDParserRuleCall_1_0; }
 		
 		//'type'
 		public Keyword getTypeKeyword_2() { return cTypeKeyword_2; }
@@ -2498,6 +2498,25 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//INT
 		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
+	}
+	public class TypeIDElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.TypeID");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cKEYWORDParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//TypeID:
+		//	ID | KEYWORD;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ID | KEYWORD
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+		
+		//KEYWORD
+		public RuleCall getKEYWORDParserRuleCall_1() { return cKEYWORDParserRuleCall_1; }
 	}
 	public class QualifiedIDElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.QualifiedID");
@@ -3059,6 +3078,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	private final RecordFieldElements pRecordField;
 	private final ArrayTypeElements pArrayType;
 	private final EIntegerObjectElements pEIntegerObject;
+	private final TypeIDElements pTypeID;
 	private final QualifiedIDElements pQualifiedID;
 	private final NameIDElements pNameID;
 	private final TerminalRule tQUALIFIED_ID;
@@ -3102,6 +3122,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		this.pRecordField = new RecordFieldElements();
 		this.pArrayType = new ArrayTypeElements();
 		this.pEIntegerObject = new EIntegerObjectElements();
+		this.pTypeID = new TypeIDElements();
 		this.pQualifiedID = new QualifiedIDElements();
 		this.pNameID = new NameIDElements();
 		this.tQUALIFIED_ID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.QUALIFIED_ID");
@@ -3370,7 +3391,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//StringType:
 	//	'StringType'
-	//	name=ID ('pattern' pattern=STRING)? ('length' length=EIntegerObject)? ('minLength' minLength=EIntegerObject)?
+	//	name=TypeID ('pattern' pattern=STRING)? ('length' length=EIntegerObject)? ('minLength' minLength=EIntegerObject)?
 	//	('maxLength' maxLength=EIntegerObject)? ('documentation' documentation=STRING)?;
 	public StringTypeElements getStringTypeAccess() {
 		return pStringType;
@@ -3382,7 +3403,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//EObjectType:
 	//	'EObjectType'
-	//	name=ID ('type' instanceClassName=STRING)? ('documentation' documentation=STRING)?;
+	//	name=TypeID ('type' instanceClassName=STRING)? ('documentation' documentation=STRING)?;
 	public EObjectTypeElements getEObjectTypeAccess() {
 		return pEObjectType;
 	}
@@ -3393,7 +3414,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//BooleanType:
 	//	'BooleanType'
-	//	name=ID ('documentation' documentation=STRING)?;
+	//	name=TypeID ('documentation' documentation=STRING)?;
 	public BooleanTypeElements getBooleanTypeAccess() {
 		return pBooleanType;
 	}
@@ -3404,7 +3425,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//NumericType:
 	//	'NumericType'
-	//	name=ID 'type' type=NumericTypeEnum
+	//	name=TypeID 'type' type=NumericTypeEnum
 	//	'(' ('totalDigits' totalDigits=EIntegerObject)? ('minExclusive' minExclusive=STRING)? ('maxExclusive'
 	//	maxExclusive=STRING)? ('minInclusive' minInclusive=STRING)? ('maxInclusive' maxInclusive=STRING)? ('documentation'
 	//	documentation=STRING)?
@@ -3430,7 +3451,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//EnumerationType:
 	//	'EnumerationType'
-	//	name=ID
+	//	name=TypeID
 	//	'literals' '(' literals+=EnumerationLiteral ("," literals+=EnumerationLiteral)* ')' ('documentation'
 	//	documentation=STRING)?;
 	public EnumerationTypeElements getEnumerationTypeAccess() {
@@ -3442,7 +3463,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//EnumerationLiteral:
-	//	name=ID ('documentation' documentation=STRING)?;
+	//	name=TypeID ('documentation' documentation=STRING)?;
 	public EnumerationLiteralElements getEnumerationLiteralAccess() {
 		return pEnumerationLiteral;
 	}
@@ -3453,7 +3474,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//RecordType:
 	//	'RecordType'
-	//	name=ID
+	//	name=TypeID
 	//	'fields' '(' recordFields+=RecordField ("," recordFields+=RecordField)* ')' ('documentation' documentation=STRING)?;
 	public RecordTypeElements getRecordTypeAccess() {
 		return pRecordType;
@@ -3478,7 +3499,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ArrayType:
 	//	'ArrayType'
-	//	name=ID 'type' type=[DataType|QualifiedID]
+	//	name=TypeID 'type' type=[DataType|QualifiedID]
 	//	'documentation' documentation=STRING?;
 	public ArrayTypeElements getArrayTypeAccess() {
 		return pArrayType;
@@ -3496,6 +3517,16 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getEIntegerObjectRule() {
 		return getEIntegerObjectAccess().getRule();
+	}
+	
+	//TypeID:
+	//	ID | KEYWORD;
+	public TypeIDElements getTypeIDAccess() {
+		return pTypeID;
+	}
+	
+	public ParserRule getTypeIDRule() {
+		return getTypeIDAccess().getRule();
 	}
 	
 	//QualifiedID:

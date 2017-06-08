@@ -36,6 +36,7 @@ public class OCCIParser extends AbstractContentAssistParser {
 					put(grammarAccess.getKindAccess().getAlternatives_8_1(), "rule__Kind__Alternatives_8_1");
 					put(grammarAccess.getMixinAccess().getAlternatives_7_1(), "rule__Mixin__Alternatives_7_1");
 					put(grammarAccess.getDataTypeAccess().getAlternatives(), "rule__DataType__Alternatives");
+					put(grammarAccess.getTypeIDAccess().getAlternatives(), "rule__TypeID__Alternatives");
 					put(grammarAccess.getQualifiedIDAccess().getAlternatives(), "rule__QualifiedID__Alternatives");
 					put(grammarAccess.getNameIDAccess().getAlternatives(), "rule__NameID__Alternatives");
 					put(grammarAccess.getNameIDAccess().getAlternatives_0_1(), "rule__NameID__Alternatives_0_1");

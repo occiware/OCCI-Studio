@@ -183,7 +183,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ArrayType returns ArrayType
 	 *
 	 * Constraint:
-	 *     (name=ID type=[DataType|QualifiedID] documentation=STRING?)
+	 *     (name=TypeID type=[DataType|QualifiedID] documentation=STRING?)
 	 */
 	protected void sequence_ArrayType(ISerializationContext context, ArrayType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -237,7 +237,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     BooleanType returns BooleanType
 	 *
 	 * Constraint:
-	 *     (name=ID documentation=STRING?)
+	 *     (name=TypeID documentation=STRING?)
 	 */
 	protected void sequence_BooleanType(ISerializationContext context, BooleanType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -275,7 +275,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     EObjectType returns EObjectType
 	 *
 	 * Constraint:
-	 *     (name=ID instanceClassName=STRING? documentation=STRING?)
+	 *     (name=TypeID instanceClassName=STRING? documentation=STRING?)
 	 */
 	protected void sequence_EObjectType(ISerializationContext context, EObjectType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -287,7 +287,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     EnumerationLiteral returns EnumerationLiteral
 	 *
 	 * Constraint:
-	 *     (name=ID documentation=STRING?)
+	 *     (name=TypeID documentation=STRING?)
 	 */
 	protected void sequence_EnumerationLiteral(ISerializationContext context, EnumerationLiteral semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -300,7 +300,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     EnumerationType returns EnumerationType
 	 *
 	 * Constraint:
-	 *     (name=ID literals+=EnumerationLiteral literals+=EnumerationLiteral* documentation=STRING?)
+	 *     (name=TypeID literals+=EnumerationLiteral literals+=EnumerationLiteral* documentation=STRING?)
 	 */
 	protected void sequence_EnumerationType(ISerializationContext context, EnumerationType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -420,7 +420,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=ID 
+	 *         name=TypeID 
 	 *         type=NumericTypeEnum 
 	 *         totalDigits=EIntegerObject? 
 	 *         minExclusive=STRING? 
@@ -473,7 +473,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     RecordType returns RecordType
 	 *
 	 * Constraint:
-	 *     (name=ID recordFields+=RecordField recordFields+=RecordField* documentation=STRING?)
+	 *     (name=TypeID recordFields+=RecordField recordFields+=RecordField* documentation=STRING?)
 	 */
 	protected void sequence_RecordType(ISerializationContext context, RecordType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -520,7 +520,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=ID 
+	 *         name=TypeID 
 	 *         pattern=STRING? 
 	 *         length=EIntegerObject? 
 	 *         minLength=EIntegerObject? 
