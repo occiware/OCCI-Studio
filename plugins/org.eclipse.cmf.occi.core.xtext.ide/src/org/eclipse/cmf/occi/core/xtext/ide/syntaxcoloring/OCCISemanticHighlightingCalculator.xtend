@@ -11,6 +11,8 @@ import org.eclipse.cmf.occi.core.Attribute
 import org.eclipse.xtext.ide.editor.syntaxcoloring.HighlightingStyles
 import org.eclipse.cmf.occi.core.Mixin
 import org.eclipse.cmf.occi.core.MixinBase
+import org.eclipse.cmf.occi.core.DataType
+import org.eclipse.cmf.occi.core.Kind
 
 class OCCISemanticHighlightingCalculator extends DefaultSemanticHighlightingCalculator {
 		@Inject package OCCIGrammarAccess grammar
@@ -30,6 +32,16 @@ class OCCISemanticHighlightingCalculator extends DefaultSemanticHighlightingCalc
 				highlightFeature(acceptor, object, OCCIPackage.eINSTANCE.mixinBase_Mixin, HighlightingStyles.DEFAULT_ID)
 				return true
 			}
+			DataType: {
+				highlightFeature(acceptor, object, OCCIPackage.eINSTANCE.dataType_Name, HighlightingStyles.DEFAULT_ID)
+				return true
+			}
+			Kind: {
+				highlightFeature(acceptor, object, OCCIPackage.eINSTANCE.kind_Source, HighlightingStyles.DEFAULT_ID)
+				highlightFeature(acceptor, object, OCCIPackage.eINSTANCE.kind_Target, HighlightingStyles.DEFAULT_ID)
+				return true
+			}
+			
 			default: false
 		}
 	}
