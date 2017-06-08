@@ -7,7 +7,7 @@
   <kinds name="Resource" scheme="http://schemas.ogf.org/occi/core#" title="Resource type" parent="//@kinds[term='entity']">
     <attributes name="occi.core.summary" description="A summarizing description of the Resource instance." type="//@types.0"/>
   </kinds>
-  <kinds name="Link" scheme="http://schemas.ogf.org/occi/core#" title="Link type" parent="//@kinds[term='entity']"/>
+  <kinds name="Link" scheme="http://schemas.ogf.org/occi/core#" title="Link type" parent="//@kinds[term='entity']" source="//@kinds[term='resource']" target="//@kinds[term='resource']"/>
   <types xsi:type="occi:StringType" name="String" documentation="Data type for strings"/>
   <types xsi:type="occi:BooleanType" name="Boolean" documentation="Data type for booleans"/>
   <types xsi:type="occi:NumericType" name="Integer" documentation="Data type for integers" type="Integer"/>
