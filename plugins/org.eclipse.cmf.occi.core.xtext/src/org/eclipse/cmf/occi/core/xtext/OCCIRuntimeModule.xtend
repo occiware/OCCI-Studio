@@ -7,6 +7,15 @@ import org.eclipse.cmf.occi.core.xtext.scoping.OCCILinker
 import org.eclipse.xtext.parsetree.reconstr.ITransientValueService
 import org.eclipse.cmf.occi.core.xtext.services.OCCITransientValueService
 import org.eclipse.xtext.serializer.tokens.ICrossReferenceSerializer
+import org.eclipse.xtext.resource.IDerivedStateComputer
+import org.eclipse.xtext.resource.DerivedStateAwareResourceDescriptionManager
+import org.eclipse.xtext.resource.IResourceDescription.Manager
+import org.eclipse.xtext.resource.XtextResource
+import org.eclipse.xtext.resource.DerivedStateAwareResource
+import org.eclipse.cmf.occi.core.xtext.serializer.OCCICrossReferenceSerializer
+import org.eclipse.cmf.occi.core.xtext.services.OCCICustomLegacyTransientValueService
+import org.eclipse.cmf.occi.core.xtext.services.CustomDefaultEcoreElementFactory
+import org.eclipse.cmf.occi.core.xtext.services.OCCIDerivedStateComputer
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
@@ -21,7 +30,7 @@ class OCCIRuntimeModule extends AbstractOCCIRuntimeModule {
 	}
 	
 	def Class<? extends org.eclipse.xtext.serializer.sequencer.ITransientValueService> bindITransientValueServiceOld() {
-		OCCICustomLegacyTransientValueService
+		OCCICustomLegacyTransientValueService 
 	}
 	
 	override bindIAstFactory() {
@@ -30,21 +39,15 @@ class OCCIRuntimeModule extends AbstractOCCIRuntimeModule {
 	def Class<? extends ICrossReferenceSerializer> bindICrossReferenceSerializer() {
 		OCCICrossReferenceSerializer
 	}
-//	def Class<? extends org.eclipse.xtext.serializer.tokens.ICrossReferenceSerializer> bindICrossReferenceSerializer() {
-//		OCCICrossReferenceSerializer
-//	}
-//	def Class<? extends IDerivedStateComputer> bindIDerivedStateComputer() {
-//		OCCIDerivedStateComputer
-//	}
+	def Class<? extends IDerivedStateComputer> bindIDerivedStateComputer() {
+		OCCIDerivedStateComputer 
+	}
 	
-//	def Class<? extends Manager> bindIResourceDescription$Manager() {
-//		DerivedStateAwareResourceDescriptionManager
-//	}
-//	
-//	override Class<? extends XtextResource> bindXtextResource() {
-//		DerivedStateAwareResource
-//	}
-//	override Class<? extends org.eclipse.xtext.linking.ILinkingService> bindILinkingService() {
-//		return OCCILinkingService;
-//	}
+	def Class<? extends Manager> bindIResourceDescription$Manager() {
+		DerivedStateAwareResourceDescriptionManager
+	}
+	
+	override Class<? extends XtextResource> bindXtextResource() {
+		DerivedStateAwareResource
+	}
 }

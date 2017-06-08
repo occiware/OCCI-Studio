@@ -1,4 +1,4 @@
-package org.eclipse.cmf.occi.core.xtext;
+package org.eclipse.cmf.occi.core.xtext.serializer;
 
 import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.emf.common.util.URI;

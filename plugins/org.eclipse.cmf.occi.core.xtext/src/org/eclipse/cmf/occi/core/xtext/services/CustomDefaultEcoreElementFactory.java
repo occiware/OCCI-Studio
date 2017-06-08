@@ -1,4 +1,4 @@
-package org.eclipse.cmf.occi.core.xtext;
+package org.eclipse.cmf.occi.core.xtext.services;
 
 import org.eclipse.cmf.occi.core.Attribute;
 import org.eclipse.emf.ecore.EClassifier;
