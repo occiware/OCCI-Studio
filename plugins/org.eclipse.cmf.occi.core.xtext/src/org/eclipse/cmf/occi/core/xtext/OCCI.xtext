@@ -30,7 +30,7 @@ Resource returns Resource:
 
 Link returns Link:
 	'link'
-	'id' id=STRING
+	id=STRING
 	('title' title=STRING)?
 	('location' location=STRING)?
 	'kind' kind=[Kind|QualifiedID]
@@ -127,8 +127,7 @@ Constraint returns Constraint:
 FSM returns FSM:
 	'FSM'
 	'attribute' attribute=[Attribute|QualifiedID]
-	('{' ownedState+=State ("," ownedState+=State)* '}')?
-	;
+	('{' ownedState+=State ("," ownedState+=State)* '}')?;
 
 State returns State:
 	'State'
@@ -136,8 +135,7 @@ State returns State:
 	(final?='final')?
 	('literal' literal=[EnumerationLiteral|QualifiedID])
 	//		('incomingTransition' '(' incomingTransition+=[Transition|EString] ( "," incomingTransition+=[Transition|EString])* ')' )?
-	('transitions' '(' (outgoingTransition+=Transition) ("," outgoingTransition+=Transition)* ')')?
-	;
+	('transitions' '(' (outgoingTransition+=Transition) ("," outgoingTransition+=Transition)* ')')?;
 
 Transition returns Transition:
 	('action' action=[Action|QualifiedID])?
@@ -158,7 +156,7 @@ StringType returns StringType:
 EObjectType returns EObjectType:
 	'EObjectType'
 	name=ID
-	('instanceClassName' instanceClassName=STRING)?
+	('type' instanceClassName=STRING)?
 	('documentation' documentation=STRING)?;
 
 BooleanType returns BooleanType:
@@ -226,12 +224,82 @@ terminal QUALIFIED_ID:
 	'A'..'Z' | '_' | '0'..'9')* ('.' ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*)*;
 
 KEYWORD:
-	'extension' | 'description' | 'specification' | 'as' | 'kind' | 'extends' | 'source' | 'target' | 'annotations' |
-	'title' | 'scheme' | 'mixin'
-	| 'depends' | 'applies' | 'annotation' | 'key' | 'value' | 'attribute' | 'mutable' | 'required' | 'type' | 'action' |
-	'constraint' | 'body'
-	| 'StringType' | 'documentation' | 'pattern' | 'length' | 'minLength' | 'maxLength' | 'EObjectType' |
-	'instanceClassName' | 'BooleanType'
-	| 'NumericType' | 'totalDigits' | 'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' | 'Byte' |
-	'Double' | 'Float' | 'Integer' | 'Long' | 'Short' | 'BigDecimal'
-	| 'EnumerationType' | 'literals' | 'RecordType' | 'fields' | 'field' | 'ArrayType';
+		// Configuration
+	'configuration' | 'description' | 'location' | 'use' | 
+	
+	// Resource
+	'resource' | 'title' | 'summary' | 'parts' | //‘location’|
+	
+	// Link
+	'link' | 'kind' | 'target' | // 'title'| 'location'|
+	
+	// MixinBase
+	'mixinBase' | 
+	
+	// AttributeState
+	'attribute' | 
+	
+	// Extension
+	'extension' | 'specification' | 'import' | 'as' | //'description'|
+	
+	// Kind
+	'extends' | 'source' | 'scheme' | 'annotations' | // 'kind' |'target' | 'title'|
+	
+	// Mixin
+	'mixin' | 'depends' | 'applies' | // 'scheme' | 'title'| 'annotations' |
+	
+	// Annotation
+	'key' | 'value' | 
+	
+	// Attribute
+	'mutable' | 'required' | 'type' | // 'attribute' |'description'| 'annotations' |
+	
+	// Action
+	'action' | // 'scheme' | 'title'| 'annotations' |
+	
+	// ParameterDecl
+	
+	// Constraint
+	'constraint' | 'body' | // 'description'| 
+	
+	// FSM
+	'FSM' | // 'attribute'|
+	
+	// State
+	'State' | 'initial' | 'final' | 'literal' |'transitions' | 
+	
+	// Transition
+	'to' | // 'action'|
+	
+	// DataType
+	
+	// StringType
+	'StringType' | 'pattern' | 'length' | 'minLength' | 'maxLength' | 'documentation' | 
+	
+	// EObjectType
+	'EObjectType' | // 'type' | 'documentation' | 
+	
+	// BooleanType
+	'BooleanType' | // 'documentation' | 
+	
+	// NumericType
+	'NumericType' | 'totalDigits' | 'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' |  // 'type' | 'documentation' | 
+	
+	// NumericTypeEnum
+	'Byte' | 'Double' | 'Float' | 'Integer' | 'Long' | 'Short' | 'BigDecimal' | 
+	
+	// EnumerationType
+	'EnumerationType' | 'literals' | // 'documentation' | 
+	
+	//EnumerationLiteral
+	// 'documentation' | 
+
+	// RecordType
+	'RecordType' | 'fields' | // 'documentation' | 
+	
+	// RecordField
+	// 'mutable’| 'required' | 'type’| 'description'| 'annotations'
+	
+	// ArrayType
+	'ArrayType' // 'type'| 'documentation' | 
+	;
