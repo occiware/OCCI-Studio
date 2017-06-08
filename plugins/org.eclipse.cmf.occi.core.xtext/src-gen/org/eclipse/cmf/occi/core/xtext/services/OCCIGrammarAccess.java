@@ -320,113 +320,109 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.Link");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLinkKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cIdKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cIdAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cIdSTRINGTerminalRuleCall_2_0 = (RuleCall)cIdAssignment_2.eContents().get(0);
+		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cIdSTRINGTerminalRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cTitleKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cTitleAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cTitleSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cTitleAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cTitleKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cTitleAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cTitleSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cTitleAssignment_3_1.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cLocationKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cLocationAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cLocationSTRINGTerminalRuleCall_4_1_0 = (RuleCall)cLocationAssignment_4_1.eContents().get(0);
-		private final Keyword cKindKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cKindAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cKindKindCrossReference_6_0 = (CrossReference)cKindAssignment_6.eContents().get(0);
-		private final RuleCall cKindKindQualifiedIDParserRuleCall_6_0_1 = (RuleCall)cKindKindCrossReference_6_0.eContents().get(1);
-		private final Keyword cTargetKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cTargetAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final CrossReference cTargetResourceCrossReference_8_0 = (CrossReference)cTargetAssignment_8.eContents().get(0);
-		private final RuleCall cTargetResourceSTRINGTerminalRuleCall_8_0_1 = (RuleCall)cTargetResourceCrossReference_8_0.eContents().get(1);
-		private final Assignment cAttributesAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cAttributesAttributeStateParserRuleCall_9_0 = (RuleCall)cAttributesAssignment_9.eContents().get(0);
-		private final Assignment cPartsAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cPartsMixinBaseParserRuleCall_10_0 = (RuleCall)cPartsAssignment_10.eContents().get(0);
+		private final Keyword cLocationKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cLocationAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cLocationSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cLocationAssignment_3_1.eContents().get(0);
+		private final Keyword cKindKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cKindAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cKindKindCrossReference_5_0 = (CrossReference)cKindAssignment_5.eContents().get(0);
+		private final RuleCall cKindKindQualifiedIDParserRuleCall_5_0_1 = (RuleCall)cKindKindCrossReference_5_0.eContents().get(1);
+		private final Keyword cTargetKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cTargetAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cTargetResourceCrossReference_7_0 = (CrossReference)cTargetAssignment_7.eContents().get(0);
+		private final RuleCall cTargetResourceSTRINGTerminalRuleCall_7_0_1 = (RuleCall)cTargetResourceCrossReference_7_0.eContents().get(1);
+		private final Assignment cAttributesAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cAttributesAttributeStateParserRuleCall_8_0 = (RuleCall)cAttributesAssignment_8.eContents().get(0);
+		private final Assignment cPartsAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cPartsMixinBaseParserRuleCall_9_0 = (RuleCall)cPartsAssignment_9.eContents().get(0);
 		
 		//Link:
 		//	'link'
-		//	'id' id=STRING ('title' title=STRING)? ('location' location=STRING)?
+		//	id=STRING ('title' title=STRING)? ('location' location=STRING)?
 		//	'kind' kind=[Kind|QualifiedID]
 		//	'target' target=[Resource|STRING] attributes+=AttributeState*
 		//	parts+=MixinBase*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'link' 'id' id=STRING ('title' title=STRING)? ('location' location=STRING)? 'kind' kind=[Kind|QualifiedID] 'target'
+		//'link' id=STRING ('title' title=STRING)? ('location' location=STRING)? 'kind' kind=[Kind|QualifiedID] 'target'
 		//target=[Resource|STRING] attributes+=AttributeState* parts+=MixinBase*
 		public Group getGroup() { return cGroup; }
 		
 		//'link'
 		public Keyword getLinkKeyword_0() { return cLinkKeyword_0; }
 		
-		//'id'
-		public Keyword getIdKeyword_1() { return cIdKeyword_1; }
-		
 		//id=STRING
-		public Assignment getIdAssignment_2() { return cIdAssignment_2; }
+		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
 		
 		//STRING
-		public RuleCall getIdSTRINGTerminalRuleCall_2_0() { return cIdSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getIdSTRINGTerminalRuleCall_1_0() { return cIdSTRINGTerminalRuleCall_1_0; }
 		
 		//('title' title=STRING)?
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_2() { return cGroup_2; }
 		
 		//'title'
-		public Keyword getTitleKeyword_3_0() { return cTitleKeyword_3_0; }
+		public Keyword getTitleKeyword_2_0() { return cTitleKeyword_2_0; }
 		
 		//title=STRING
-		public Assignment getTitleAssignment_3_1() { return cTitleAssignment_3_1; }
+		public Assignment getTitleAssignment_2_1() { return cTitleAssignment_2_1; }
 		
 		//STRING
-		public RuleCall getTitleSTRINGTerminalRuleCall_3_1_0() { return cTitleSTRINGTerminalRuleCall_3_1_0; }
+		public RuleCall getTitleSTRINGTerminalRuleCall_2_1_0() { return cTitleSTRINGTerminalRuleCall_2_1_0; }
 		
 		//('location' location=STRING)?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_3() { return cGroup_3; }
 		
 		//'location'
-		public Keyword getLocationKeyword_4_0() { return cLocationKeyword_4_0; }
+		public Keyword getLocationKeyword_3_0() { return cLocationKeyword_3_0; }
 		
 		//location=STRING
-		public Assignment getLocationAssignment_4_1() { return cLocationAssignment_4_1; }
+		public Assignment getLocationAssignment_3_1() { return cLocationAssignment_3_1; }
 		
 		//STRING
-		public RuleCall getLocationSTRINGTerminalRuleCall_4_1_0() { return cLocationSTRINGTerminalRuleCall_4_1_0; }
+		public RuleCall getLocationSTRINGTerminalRuleCall_3_1_0() { return cLocationSTRINGTerminalRuleCall_3_1_0; }
 		
 		//'kind'
-		public Keyword getKindKeyword_5() { return cKindKeyword_5; }
+		public Keyword getKindKeyword_4() { return cKindKeyword_4; }
 		
 		//kind=[Kind|QualifiedID]
-		public Assignment getKindAssignment_6() { return cKindAssignment_6; }
+		public Assignment getKindAssignment_5() { return cKindAssignment_5; }
 		
 		//[Kind|QualifiedID]
-		public CrossReference getKindKindCrossReference_6_0() { return cKindKindCrossReference_6_0; }
+		public CrossReference getKindKindCrossReference_5_0() { return cKindKindCrossReference_5_0; }
 		
 		//QualifiedID
-		public RuleCall getKindKindQualifiedIDParserRuleCall_6_0_1() { return cKindKindQualifiedIDParserRuleCall_6_0_1; }
+		public RuleCall getKindKindQualifiedIDParserRuleCall_5_0_1() { return cKindKindQualifiedIDParserRuleCall_5_0_1; }
 		
 		//'target'
-		public Keyword getTargetKeyword_7() { return cTargetKeyword_7; }
+		public Keyword getTargetKeyword_6() { return cTargetKeyword_6; }
 		
 		//target=[Resource|STRING]
-		public Assignment getTargetAssignment_8() { return cTargetAssignment_8; }
+		public Assignment getTargetAssignment_7() { return cTargetAssignment_7; }
 		
 		//[Resource|STRING]
-		public CrossReference getTargetResourceCrossReference_8_0() { return cTargetResourceCrossReference_8_0; }
+		public CrossReference getTargetResourceCrossReference_7_0() { return cTargetResourceCrossReference_7_0; }
 		
 		//STRING
-		public RuleCall getTargetResourceSTRINGTerminalRuleCall_8_0_1() { return cTargetResourceSTRINGTerminalRuleCall_8_0_1; }
+		public RuleCall getTargetResourceSTRINGTerminalRuleCall_7_0_1() { return cTargetResourceSTRINGTerminalRuleCall_7_0_1; }
 		
 		//attributes+=AttributeState*
-		public Assignment getAttributesAssignment_9() { return cAttributesAssignment_9; }
+		public Assignment getAttributesAssignment_8() { return cAttributesAssignment_8; }
 		
 		//AttributeState
-		public RuleCall getAttributesAttributeStateParserRuleCall_9_0() { return cAttributesAttributeStateParserRuleCall_9_0; }
+		public RuleCall getAttributesAttributeStateParserRuleCall_8_0() { return cAttributesAttributeStateParserRuleCall_8_0; }
 		
 		//parts+=MixinBase*
-		public Assignment getPartsAssignment_10() { return cPartsAssignment_10; }
+		public Assignment getPartsAssignment_9() { return cPartsAssignment_9; }
 		
 		//MixinBase
-		public RuleCall getPartsMixinBaseParserRuleCall_10_0() { return cPartsMixinBaseParserRuleCall_10_0; }
+		public RuleCall getPartsMixinBaseParserRuleCall_9_0() { return cPartsMixinBaseParserRuleCall_9_0; }
 	}
 	public class MixinBaseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.MixinBase");
@@ -1873,7 +1869,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cInstanceClassNameKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cTypeKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cInstanceClassNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cInstanceClassNameSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cInstanceClassNameAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
@@ -1883,10 +1879,10 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//EObjectType:
 		//	'EObjectType'
-		//	name=ID ('instanceClassName' instanceClassName=STRING)? ('documentation' documentation=STRING)?;
+		//	name=ID ('type' instanceClassName=STRING)? ('documentation' documentation=STRING)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'EObjectType' name=ID ('instanceClassName' instanceClassName=STRING)? ('documentation' documentation=STRING)?
+		//'EObjectType' name=ID ('type' instanceClassName=STRING)? ('documentation' documentation=STRING)?
 		public Group getGroup() { return cGroup; }
 		
 		//'EObjectType'
@@ -1898,11 +1894,11 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//('instanceClassName' instanceClassName=STRING)?
+		//('type' instanceClassName=STRING)?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//'instanceClassName'
-		public Keyword getInstanceClassNameKeyword_2_0() { return cInstanceClassNameKeyword_2_0; }
+		//'type'
+		public Keyword getTypeKeyword_2_0() { return cTypeKeyword_2_0; }
 		
 		//instanceClassName=STRING
 		public Assignment getInstanceClassNameAssignment_2_1() { return cInstanceClassNameAssignment_2_1; }
@@ -2564,234 +2560,405 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	public class KEYWORDElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.KEYWORD");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cExtensionKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cConfigurationKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cDescriptionKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cSpecificationKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cAsKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
-		private final Keyword cKindKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
-		private final Keyword cExtendsKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
-		private final Keyword cSourceKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
-		private final Keyword cTargetKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
-		private final Keyword cAnnotationsKeyword_8 = (Keyword)cAlternatives.eContents().get(8);
-		private final Keyword cTitleKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
-		private final Keyword cSchemeKeyword_10 = (Keyword)cAlternatives.eContents().get(10);
-		private final Keyword cMixinKeyword_11 = (Keyword)cAlternatives.eContents().get(11);
-		private final Keyword cDependsKeyword_12 = (Keyword)cAlternatives.eContents().get(12);
-		private final Keyword cAppliesKeyword_13 = (Keyword)cAlternatives.eContents().get(13);
-		private final Keyword cAnnotationKeyword_14 = (Keyword)cAlternatives.eContents().get(14);
-		private final Keyword cKeyKeyword_15 = (Keyword)cAlternatives.eContents().get(15);
-		private final Keyword cValueKeyword_16 = (Keyword)cAlternatives.eContents().get(16);
-		private final Keyword cAttributeKeyword_17 = (Keyword)cAlternatives.eContents().get(17);
-		private final Keyword cMutableKeyword_18 = (Keyword)cAlternatives.eContents().get(18);
-		private final Keyword cRequiredKeyword_19 = (Keyword)cAlternatives.eContents().get(19);
-		private final Keyword cTypeKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
-		private final Keyword cActionKeyword_21 = (Keyword)cAlternatives.eContents().get(21);
-		private final Keyword cConstraintKeyword_22 = (Keyword)cAlternatives.eContents().get(22);
-		private final Keyword cBodyKeyword_23 = (Keyword)cAlternatives.eContents().get(23);
-		private final Keyword cStringTypeKeyword_24 = (Keyword)cAlternatives.eContents().get(24);
-		private final Keyword cDocumentationKeyword_25 = (Keyword)cAlternatives.eContents().get(25);
-		private final Keyword cPatternKeyword_26 = (Keyword)cAlternatives.eContents().get(26);
-		private final Keyword cLengthKeyword_27 = (Keyword)cAlternatives.eContents().get(27);
-		private final Keyword cMinLengthKeyword_28 = (Keyword)cAlternatives.eContents().get(28);
-		private final Keyword cMaxLengthKeyword_29 = (Keyword)cAlternatives.eContents().get(29);
-		private final Keyword cEObjectTypeKeyword_30 = (Keyword)cAlternatives.eContents().get(30);
-		private final Keyword cInstanceClassNameKeyword_31 = (Keyword)cAlternatives.eContents().get(31);
-		private final Keyword cBooleanTypeKeyword_32 = (Keyword)cAlternatives.eContents().get(32);
-		private final Keyword cNumericTypeKeyword_33 = (Keyword)cAlternatives.eContents().get(33);
-		private final Keyword cTotalDigitsKeyword_34 = (Keyword)cAlternatives.eContents().get(34);
-		private final Keyword cMinExclusiveKeyword_35 = (Keyword)cAlternatives.eContents().get(35);
-		private final Keyword cMaxExclusiveKeyword_36 = (Keyword)cAlternatives.eContents().get(36);
-		private final Keyword cMinInclusiveKeyword_37 = (Keyword)cAlternatives.eContents().get(37);
-		private final Keyword cMaxInclusiveKeyword_38 = (Keyword)cAlternatives.eContents().get(38);
-		private final Keyword cByteKeyword_39 = (Keyword)cAlternatives.eContents().get(39);
-		private final Keyword cDoubleKeyword_40 = (Keyword)cAlternatives.eContents().get(40);
-		private final Keyword cFloatKeyword_41 = (Keyword)cAlternatives.eContents().get(41);
-		private final Keyword cIntegerKeyword_42 = (Keyword)cAlternatives.eContents().get(42);
-		private final Keyword cLongKeyword_43 = (Keyword)cAlternatives.eContents().get(43);
-		private final Keyword cShortKeyword_44 = (Keyword)cAlternatives.eContents().get(44);
-		private final Keyword cBigDecimalKeyword_45 = (Keyword)cAlternatives.eContents().get(45);
-		private final Keyword cEnumerationTypeKeyword_46 = (Keyword)cAlternatives.eContents().get(46);
-		private final Keyword cLiteralsKeyword_47 = (Keyword)cAlternatives.eContents().get(47);
-		private final Keyword cRecordTypeKeyword_48 = (Keyword)cAlternatives.eContents().get(48);
-		private final Keyword cFieldsKeyword_49 = (Keyword)cAlternatives.eContents().get(49);
-		private final Keyword cFieldKeyword_50 = (Keyword)cAlternatives.eContents().get(50);
-		private final Keyword cArrayTypeKeyword_51 = (Keyword)cAlternatives.eContents().get(51);
+		private final Keyword cLocationKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cUseKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cResourceKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cTitleKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Keyword cSummaryKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Keyword cPartsKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
+		private final Keyword cLinkKeyword_8 = (Keyword)cAlternatives.eContents().get(8);
+		private final Keyword cKindKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
+		private final Keyword cTargetKeyword_10 = (Keyword)cAlternatives.eContents().get(10);
+		private final Keyword cMixinBaseKeyword_11 = (Keyword)cAlternatives.eContents().get(11);
+		private final Keyword cAttributeKeyword_12 = (Keyword)cAlternatives.eContents().get(12);
+		private final Keyword cExtensionKeyword_13 = (Keyword)cAlternatives.eContents().get(13);
+		private final Keyword cSpecificationKeyword_14 = (Keyword)cAlternatives.eContents().get(14);
+		private final Keyword cImportKeyword_15 = (Keyword)cAlternatives.eContents().get(15);
+		private final Keyword cAsKeyword_16 = (Keyword)cAlternatives.eContents().get(16);
+		private final Keyword cExtendsKeyword_17 = (Keyword)cAlternatives.eContents().get(17);
+		private final Keyword cSourceKeyword_18 = (Keyword)cAlternatives.eContents().get(18);
+		private final Keyword cSchemeKeyword_19 = (Keyword)cAlternatives.eContents().get(19);
+		private final Keyword cAnnotationsKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
+		private final Keyword cMixinKeyword_21 = (Keyword)cAlternatives.eContents().get(21);
+		private final Keyword cDependsKeyword_22 = (Keyword)cAlternatives.eContents().get(22);
+		private final Keyword cAppliesKeyword_23 = (Keyword)cAlternatives.eContents().get(23);
+		private final Keyword cKeyKeyword_24 = (Keyword)cAlternatives.eContents().get(24);
+		private final Keyword cValueKeyword_25 = (Keyword)cAlternatives.eContents().get(25);
+		private final Keyword cMutableKeyword_26 = (Keyword)cAlternatives.eContents().get(26);
+		private final Keyword cRequiredKeyword_27 = (Keyword)cAlternatives.eContents().get(27);
+		private final Keyword cTypeKeyword_28 = (Keyword)cAlternatives.eContents().get(28);
+		private final Keyword cActionKeyword_29 = (Keyword)cAlternatives.eContents().get(29);
+		private final Keyword cConstraintKeyword_30 = (Keyword)cAlternatives.eContents().get(30);
+		private final Keyword cBodyKeyword_31 = (Keyword)cAlternatives.eContents().get(31);
+		private final Keyword cFSMKeyword_32 = (Keyword)cAlternatives.eContents().get(32);
+		private final Keyword cStateKeyword_33 = (Keyword)cAlternatives.eContents().get(33);
+		private final Keyword cInitialKeyword_34 = (Keyword)cAlternatives.eContents().get(34);
+		private final Keyword cFinalKeyword_35 = (Keyword)cAlternatives.eContents().get(35);
+		private final Keyword cLiteralKeyword_36 = (Keyword)cAlternatives.eContents().get(36);
+		private final Keyword cTransitionsKeyword_37 = (Keyword)cAlternatives.eContents().get(37);
+		private final Keyword cToKeyword_38 = (Keyword)cAlternatives.eContents().get(38);
+		private final Keyword cStringTypeKeyword_39 = (Keyword)cAlternatives.eContents().get(39);
+		private final Keyword cPatternKeyword_40 = (Keyword)cAlternatives.eContents().get(40);
+		private final Keyword cLengthKeyword_41 = (Keyword)cAlternatives.eContents().get(41);
+		private final Keyword cMinLengthKeyword_42 = (Keyword)cAlternatives.eContents().get(42);
+		private final Keyword cMaxLengthKeyword_43 = (Keyword)cAlternatives.eContents().get(43);
+		private final Keyword cDocumentationKeyword_44 = (Keyword)cAlternatives.eContents().get(44);
+		private final Keyword cEObjectTypeKeyword_45 = (Keyword)cAlternatives.eContents().get(45);
+		private final Keyword cBooleanTypeKeyword_46 = (Keyword)cAlternatives.eContents().get(46);
+		private final Keyword cNumericTypeKeyword_47 = (Keyword)cAlternatives.eContents().get(47);
+		private final Keyword cTotalDigitsKeyword_48 = (Keyword)cAlternatives.eContents().get(48);
+		private final Keyword cMinExclusiveKeyword_49 = (Keyword)cAlternatives.eContents().get(49);
+		private final Keyword cMaxExclusiveKeyword_50 = (Keyword)cAlternatives.eContents().get(50);
+		private final Keyword cMinInclusiveKeyword_51 = (Keyword)cAlternatives.eContents().get(51);
+		private final Keyword cMaxInclusiveKeyword_52 = (Keyword)cAlternatives.eContents().get(52);
+		private final Keyword cByteKeyword_53 = (Keyword)cAlternatives.eContents().get(53);
+		private final Keyword cDoubleKeyword_54 = (Keyword)cAlternatives.eContents().get(54);
+		private final Keyword cFloatKeyword_55 = (Keyword)cAlternatives.eContents().get(55);
+		private final Keyword cIntegerKeyword_56 = (Keyword)cAlternatives.eContents().get(56);
+		private final Keyword cLongKeyword_57 = (Keyword)cAlternatives.eContents().get(57);
+		private final Keyword cShortKeyword_58 = (Keyword)cAlternatives.eContents().get(58);
+		private final Keyword cBigDecimalKeyword_59 = (Keyword)cAlternatives.eContents().get(59);
+		private final Keyword cEnumerationTypeKeyword_60 = (Keyword)cAlternatives.eContents().get(60);
+		private final Keyword cLiteralsKeyword_61 = (Keyword)cAlternatives.eContents().get(61);
+		private final Keyword cRecordTypeKeyword_62 = (Keyword)cAlternatives.eContents().get(62);
+		private final Keyword cFieldsKeyword_63 = (Keyword)cAlternatives.eContents().get(63);
+		private final Keyword cArrayTypeKeyword_64 = (Keyword)cAlternatives.eContents().get(64);
 		
-		//KEYWORD:
-		//	'extension' | 'description' | 'specification' | 'as' | 'kind' | 'extends' | 'source' | 'target' | 'annotations' |
-		//	'title' | 'scheme' | 'mixin'
-		//	| 'depends' | 'applies' | 'annotation' | 'key' | 'value' | 'attribute' | 'mutable' | 'required' | 'type' | 'action' |
-		//	'constraint' | 'body'
-		//	| 'StringType' | 'documentation' | 'pattern' | 'length' | 'minLength' | 'maxLength' | 'EObjectType' |
-		//	'instanceClassName' | 'BooleanType'
-		//	| 'NumericType' | 'totalDigits' | 'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' | 'Byte' |
-		//	'Double' | 'Float' | 'Integer' | 'Long' | 'Short' | 'BigDecimal'
-		//	| 'EnumerationType' | 'literals' | 'RecordType' | 'fields' | 'field' | 'ArrayType';
+		//KEYWORD: // Configuration
+		//	'configuration' | 'description' | 'location' | 'use' | // Resource
+		//	'resource' | 'title' | 'summary' | 'parts' | //‘location’|
+		//	// Link
+		//	'link' | 'kind' | 'target' | // 'title'| 'location'|
+		//	// MixinBase
+		//	'mixinBase' | // AttributeState
+		//	'attribute' | // Extension
+		//	'extension' | 'specification' | 'import' | 'as' | //'description'|
+		//	// Kind
+		//	'extends' | 'source' | 'scheme' | 'annotations' | // 'kind' |'target' | 'title'|
+		//	// Mixin
+		//	'mixin' | 'depends' | 'applies' | // 'scheme' | 'title'| 'annotations' |
+		//	// Annotation
+		//	'key' | 'value' | // Attribute
+		//	'mutable' | 'required' | 'type' | // 'attribute' |'description'| 'annotations' |
+		//	// Action
+		//	'action' | // 'scheme' | 'title'| 'annotations' |
+		//	// ParameterDecl
+		//	// Constraint
+		//	'constraint' | 'body' | // 'description'| 
+		//	// FSM
+		//	'FSM' | // 'attribute'|
+		//	// State
+		//	'State' | 'initial' | 'final' | 'literal' | 'transitions' | // Transition
+		//	'to' | // 'action'|
+		//	// DataType
+		//	// StringType
+		//	'StringType' | 'pattern' | 'length' | 'minLength' | 'maxLength' | 'documentation' | // EObjectType
+		//	'EObjectType' | // 'type' | 'documentation' | 
+		//	// BooleanType
+		//	'BooleanType' | // 'documentation' | 
+		//	// NumericType
+		//	'NumericType' | 'totalDigits' | 'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' | // 'type' | 'documentation' | 
+		//	// NumericTypeEnum
+		//	'Byte' | 'Double' | 'Float' | 'Integer' | 'Long' | 'Short' | 'BigDecimal' | // EnumerationType
+		//	'EnumerationType' | 'literals' | // 'documentation' | 
+		//	//EnumerationLiteral
+		//	// 'documentation' | 
+		//	// RecordType
+		//	'RecordType' | 'fields' | // 'documentation' | 
+		//	// RecordField
+		//	// 'mutable’| 'required' | 'type’| 'description'| 'annotations'
+		//	// ArrayType
+		//	'ArrayType' // 'type'| 'documentation' | 
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'extension' | 'description' | 'specification' | 'as' | 'kind' | 'extends' | 'source' | 'target' | 'annotations' |
-		//'title' | 'scheme' | 'mixin' | 'depends' | 'applies' | 'annotation' | 'key' | 'value' | 'attribute' | 'mutable' |
-		//'required' | 'type' | 'action' | 'constraint' | 'body' | 'StringType' | 'documentation' | 'pattern' | 'length' |
-		//'minLength' | 'maxLength' | 'EObjectType' | 'instanceClassName' | 'BooleanType' | 'NumericType' | 'totalDigits' |
-		//'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' | 'Byte' | 'Double' | 'Float' | 'Integer' | 'Long' |
-		//'Short' | 'BigDecimal' | 'EnumerationType' | 'literals' | 'RecordType' | 'fields' | 'field' | 'ArrayType'
+		//// Configuration
+		//'configuration' | 'description' | 'location' | 'use' | // Resource
+		//'resource' | 'title' | 'summary' | 'parts' | //‘location’|
+		//// Link
+		//'link' | 'kind' | 'target' | // 'title'| 'location'|
+		//// MixinBase
+		//'mixinBase' | // AttributeState
+		//'attribute' | // Extension
+		//'extension' | 'specification' | 'import' | 'as' | //'description'|
+		//// Kind
+		//'extends' | 'source' | 'scheme' | 'annotations' | // 'kind' |'target' | 'title'|
+		//// Mixin
+		//'mixin' | 'depends' | 'applies' | // 'scheme' | 'title'| 'annotations' |
+		//// Annotation
+		//'key' | 'value' | // Attribute
+		//'mutable' | 'required' | 'type' | // 'attribute' |'description'| 'annotations' |
+		//// Action
+		//'action' | // 'scheme' | 'title'| 'annotations' |
+		//// ParameterDecl
+		//// Constraint
+		//'constraint' | 'body' | // 'description'| 
+		//// FSM
+		//'FSM' | // 'attribute'|
+		//// State
+		//'State' | 'initial' | 'final' | 'literal' | 'transitions' | // Transition
+		//'to' | // 'action'|
+		//// DataType
+		//// StringType
+		//'StringType' | 'pattern' | 'length' | 'minLength' | 'maxLength' | 'documentation' | // EObjectType
+		//'EObjectType' | // 'type' | 'documentation' | 
+		//// BooleanType
+		//'BooleanType' | // 'documentation' | 
+		//// NumericType
+		//'NumericType' | 'totalDigits' | 'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' | // 'type' | 'documentation' | 
+		//// NumericTypeEnum
+		//'Byte' | 'Double' | 'Float' | 'Integer' | 'Long' | 'Short' | 'BigDecimal' | // EnumerationType
+		//'EnumerationType' | 'literals' | // 'documentation' | 
+		////EnumerationLiteral
+		//// 'documentation' | 
+		//// RecordType
+		//'RecordType' | 'fields' | // 'documentation' | 
+		//// RecordField
+		//// 'mutable’| 'required' | 'type’| 'description'| 'annotations'
+		//// ArrayType
+		//'ArrayType'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'extension'
-		public Keyword getExtensionKeyword_0() { return cExtensionKeyword_0; }
+		//// Configuration
+		//'configuration'
+		public Keyword getConfigurationKeyword_0() { return cConfigurationKeyword_0; }
 		
 		//'description'
 		public Keyword getDescriptionKeyword_1() { return cDescriptionKeyword_1; }
 		
-		//'specification'
-		public Keyword getSpecificationKeyword_2() { return cSpecificationKeyword_2; }
+		//'location'
+		public Keyword getLocationKeyword_2() { return cLocationKeyword_2; }
 		
-		//'as'
-		public Keyword getAsKeyword_3() { return cAsKeyword_3; }
+		//'use'
+		public Keyword getUseKeyword_3() { return cUseKeyword_3; }
 		
-		//'kind'
-		public Keyword getKindKeyword_4() { return cKindKeyword_4; }
-		
-		//'extends'
-		public Keyword getExtendsKeyword_5() { return cExtendsKeyword_5; }
-		
-		//'source'
-		public Keyword getSourceKeyword_6() { return cSourceKeyword_6; }
-		
-		//'target'
-		public Keyword getTargetKeyword_7() { return cTargetKeyword_7; }
-		
-		//'annotations'
-		public Keyword getAnnotationsKeyword_8() { return cAnnotationsKeyword_8; }
+		//// Resource
+		//'resource'
+		public Keyword getResourceKeyword_4() { return cResourceKeyword_4; }
 		
 		//'title'
-		public Keyword getTitleKeyword_9() { return cTitleKeyword_9; }
+		public Keyword getTitleKeyword_5() { return cTitleKeyword_5; }
+		
+		//'summary'
+		public Keyword getSummaryKeyword_6() { return cSummaryKeyword_6; }
+		
+		//'parts'
+		public Keyword getPartsKeyword_7() { return cPartsKeyword_7; }
+		
+		////‘location’|
+		//// Link
+		//'link'
+		public Keyword getLinkKeyword_8() { return cLinkKeyword_8; }
+		
+		//'kind'
+		public Keyword getKindKeyword_9() { return cKindKeyword_9; }
+		
+		//'target'
+		public Keyword getTargetKeyword_10() { return cTargetKeyword_10; }
+		
+		//// 'title'| 'location'|
+		//// MixinBase
+		//'mixinBase'
+		public Keyword getMixinBaseKeyword_11() { return cMixinBaseKeyword_11; }
+		
+		//// AttributeState
+		//'attribute'
+		public Keyword getAttributeKeyword_12() { return cAttributeKeyword_12; }
+		
+		//// Extension
+		//'extension'
+		public Keyword getExtensionKeyword_13() { return cExtensionKeyword_13; }
+		
+		//'specification'
+		public Keyword getSpecificationKeyword_14() { return cSpecificationKeyword_14; }
+		
+		//'import'
+		public Keyword getImportKeyword_15() { return cImportKeyword_15; }
+		
+		//'as'
+		public Keyword getAsKeyword_16() { return cAsKeyword_16; }
+		
+		////'description'|
+		//// Kind
+		//'extends'
+		public Keyword getExtendsKeyword_17() { return cExtendsKeyword_17; }
+		
+		//'source'
+		public Keyword getSourceKeyword_18() { return cSourceKeyword_18; }
 		
 		//'scheme'
-		public Keyword getSchemeKeyword_10() { return cSchemeKeyword_10; }
+		public Keyword getSchemeKeyword_19() { return cSchemeKeyword_19; }
 		
+		//'annotations'
+		public Keyword getAnnotationsKeyword_20() { return cAnnotationsKeyword_20; }
+		
+		//// 'kind' |'target' | 'title'|
+		//// Mixin
 		//'mixin'
-		public Keyword getMixinKeyword_11() { return cMixinKeyword_11; }
+		public Keyword getMixinKeyword_21() { return cMixinKeyword_21; }
 		
 		//'depends'
-		public Keyword getDependsKeyword_12() { return cDependsKeyword_12; }
+		public Keyword getDependsKeyword_22() { return cDependsKeyword_22; }
 		
 		//'applies'
-		public Keyword getAppliesKeyword_13() { return cAppliesKeyword_13; }
+		public Keyword getAppliesKeyword_23() { return cAppliesKeyword_23; }
 		
-		//'annotation'
-		public Keyword getAnnotationKeyword_14() { return cAnnotationKeyword_14; }
-		
+		//// 'scheme' | 'title'| 'annotations' |
+		//// Annotation
 		//'key'
-		public Keyword getKeyKeyword_15() { return cKeyKeyword_15; }
+		public Keyword getKeyKeyword_24() { return cKeyKeyword_24; }
 		
 		//'value'
-		public Keyword getValueKeyword_16() { return cValueKeyword_16; }
+		public Keyword getValueKeyword_25() { return cValueKeyword_25; }
 		
-		//'attribute'
-		public Keyword getAttributeKeyword_17() { return cAttributeKeyword_17; }
-		
+		//// Attribute
 		//'mutable'
-		public Keyword getMutableKeyword_18() { return cMutableKeyword_18; }
+		public Keyword getMutableKeyword_26() { return cMutableKeyword_26; }
 		
 		//'required'
-		public Keyword getRequiredKeyword_19() { return cRequiredKeyword_19; }
+		public Keyword getRequiredKeyword_27() { return cRequiredKeyword_27; }
 		
 		//'type'
-		public Keyword getTypeKeyword_20() { return cTypeKeyword_20; }
+		public Keyword getTypeKeyword_28() { return cTypeKeyword_28; }
 		
+		//// 'attribute' |'description'| 'annotations' |
+		//// Action
 		//'action'
-		public Keyword getActionKeyword_21() { return cActionKeyword_21; }
+		public Keyword getActionKeyword_29() { return cActionKeyword_29; }
 		
+		//// 'scheme' | 'title'| 'annotations' |
+		//// ParameterDecl
+		//// Constraint
 		//'constraint'
-		public Keyword getConstraintKeyword_22() { return cConstraintKeyword_22; }
+		public Keyword getConstraintKeyword_30() { return cConstraintKeyword_30; }
 		
 		//'body'
-		public Keyword getBodyKeyword_23() { return cBodyKeyword_23; }
+		public Keyword getBodyKeyword_31() { return cBodyKeyword_31; }
 		
+		//// 'description'| 
+		//// FSM
+		//'FSM'
+		public Keyword getFSMKeyword_32() { return cFSMKeyword_32; }
+		
+		//// 'attribute'|
+		//// State
+		//'State'
+		public Keyword getStateKeyword_33() { return cStateKeyword_33; }
+		
+		//'initial'
+		public Keyword getInitialKeyword_34() { return cInitialKeyword_34; }
+		
+		//'final'
+		public Keyword getFinalKeyword_35() { return cFinalKeyword_35; }
+		
+		//'literal'
+		public Keyword getLiteralKeyword_36() { return cLiteralKeyword_36; }
+		
+		//'transitions'
+		public Keyword getTransitionsKeyword_37() { return cTransitionsKeyword_37; }
+		
+		//// Transition
+		//'to'
+		public Keyword getToKeyword_38() { return cToKeyword_38; }
+		
+		//// 'action'|
+		//// DataType
+		//// StringType
 		//'StringType'
-		public Keyword getStringTypeKeyword_24() { return cStringTypeKeyword_24; }
-		
-		//'documentation'
-		public Keyword getDocumentationKeyword_25() { return cDocumentationKeyword_25; }
+		public Keyword getStringTypeKeyword_39() { return cStringTypeKeyword_39; }
 		
 		//'pattern'
-		public Keyword getPatternKeyword_26() { return cPatternKeyword_26; }
+		public Keyword getPatternKeyword_40() { return cPatternKeyword_40; }
 		
 		//'length'
-		public Keyword getLengthKeyword_27() { return cLengthKeyword_27; }
+		public Keyword getLengthKeyword_41() { return cLengthKeyword_41; }
 		
 		//'minLength'
-		public Keyword getMinLengthKeyword_28() { return cMinLengthKeyword_28; }
+		public Keyword getMinLengthKeyword_42() { return cMinLengthKeyword_42; }
 		
 		//'maxLength'
-		public Keyword getMaxLengthKeyword_29() { return cMaxLengthKeyword_29; }
+		public Keyword getMaxLengthKeyword_43() { return cMaxLengthKeyword_43; }
 		
+		//'documentation'
+		public Keyword getDocumentationKeyword_44() { return cDocumentationKeyword_44; }
+		
+		//// EObjectType
 		//'EObjectType'
-		public Keyword getEObjectTypeKeyword_30() { return cEObjectTypeKeyword_30; }
+		public Keyword getEObjectTypeKeyword_45() { return cEObjectTypeKeyword_45; }
 		
-		//'instanceClassName'
-		public Keyword getInstanceClassNameKeyword_31() { return cInstanceClassNameKeyword_31; }
-		
+		//// 'type' | 'documentation' | 
+		//// BooleanType
 		//'BooleanType'
-		public Keyword getBooleanTypeKeyword_32() { return cBooleanTypeKeyword_32; }
+		public Keyword getBooleanTypeKeyword_46() { return cBooleanTypeKeyword_46; }
 		
+		//// 'documentation' | 
+		//// NumericType
 		//'NumericType'
-		public Keyword getNumericTypeKeyword_33() { return cNumericTypeKeyword_33; }
+		public Keyword getNumericTypeKeyword_47() { return cNumericTypeKeyword_47; }
 		
 		//'totalDigits'
-		public Keyword getTotalDigitsKeyword_34() { return cTotalDigitsKeyword_34; }
+		public Keyword getTotalDigitsKeyword_48() { return cTotalDigitsKeyword_48; }
 		
 		//'minExclusive'
-		public Keyword getMinExclusiveKeyword_35() { return cMinExclusiveKeyword_35; }
+		public Keyword getMinExclusiveKeyword_49() { return cMinExclusiveKeyword_49; }
 		
 		//'maxExclusive'
-		public Keyword getMaxExclusiveKeyword_36() { return cMaxExclusiveKeyword_36; }
+		public Keyword getMaxExclusiveKeyword_50() { return cMaxExclusiveKeyword_50; }
 		
 		//'minInclusive'
-		public Keyword getMinInclusiveKeyword_37() { return cMinInclusiveKeyword_37; }
+		public Keyword getMinInclusiveKeyword_51() { return cMinInclusiveKeyword_51; }
 		
 		//'maxInclusive'
-		public Keyword getMaxInclusiveKeyword_38() { return cMaxInclusiveKeyword_38; }
+		public Keyword getMaxInclusiveKeyword_52() { return cMaxInclusiveKeyword_52; }
 		
+		//// 'type' | 'documentation' | 
+		//// NumericTypeEnum
 		//'Byte'
-		public Keyword getByteKeyword_39() { return cByteKeyword_39; }
+		public Keyword getByteKeyword_53() { return cByteKeyword_53; }
 		
 		//'Double'
-		public Keyword getDoubleKeyword_40() { return cDoubleKeyword_40; }
+		public Keyword getDoubleKeyword_54() { return cDoubleKeyword_54; }
 		
 		//'Float'
-		public Keyword getFloatKeyword_41() { return cFloatKeyword_41; }
+		public Keyword getFloatKeyword_55() { return cFloatKeyword_55; }
 		
 		//'Integer'
-		public Keyword getIntegerKeyword_42() { return cIntegerKeyword_42; }
+		public Keyword getIntegerKeyword_56() { return cIntegerKeyword_56; }
 		
 		//'Long'
-		public Keyword getLongKeyword_43() { return cLongKeyword_43; }
+		public Keyword getLongKeyword_57() { return cLongKeyword_57; }
 		
 		//'Short'
-		public Keyword getShortKeyword_44() { return cShortKeyword_44; }
+		public Keyword getShortKeyword_58() { return cShortKeyword_58; }
 		
 		//'BigDecimal'
-		public Keyword getBigDecimalKeyword_45() { return cBigDecimalKeyword_45; }
+		public Keyword getBigDecimalKeyword_59() { return cBigDecimalKeyword_59; }
 		
+		//// EnumerationType
 		//'EnumerationType'
-		public Keyword getEnumerationTypeKeyword_46() { return cEnumerationTypeKeyword_46; }
+		public Keyword getEnumerationTypeKeyword_60() { return cEnumerationTypeKeyword_60; }
 		
 		//'literals'
-		public Keyword getLiteralsKeyword_47() { return cLiteralsKeyword_47; }
+		public Keyword getLiteralsKeyword_61() { return cLiteralsKeyword_61; }
 		
+		//// 'documentation' | 
+		////EnumerationLiteral
+		//// 'documentation' | 
+		//// RecordType
 		//'RecordType'
-		public Keyword getRecordTypeKeyword_48() { return cRecordTypeKeyword_48; }
+		public Keyword getRecordTypeKeyword_62() { return cRecordTypeKeyword_62; }
 		
 		//'fields'
-		public Keyword getFieldsKeyword_49() { return cFieldsKeyword_49; }
+		public Keyword getFieldsKeyword_63() { return cFieldsKeyword_63; }
 		
-		//'field'
-		public Keyword getFieldKeyword_50() { return cFieldKeyword_50; }
-		
+		//// 'documentation' | 
+		//// RecordField
+		//// 'mutable’| 'required' | 'type’| 'description'| 'annotations'
+		//// ArrayType
 		//'ArrayType'
-		public Keyword getArrayTypeKeyword_51() { return cArrayTypeKeyword_51; }
+		public Keyword getArrayTypeKeyword_64() { return cArrayTypeKeyword_64; }
 	}
 	
 	public class NumericTypeEnumElements extends AbstractEnumRuleElementFinder {
@@ -3010,7 +3177,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Link:
 	//	'link'
-	//	'id' id=STRING ('title' title=STRING)? ('location' location=STRING)?
+	//	id=STRING ('title' title=STRING)? ('location' location=STRING)?
 	//	'kind' kind=[Kind|QualifiedID]
 	//	'target' target=[Resource|STRING] attributes+=AttributeState*
 	//	parts+=MixinBase*;
@@ -3215,7 +3382,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//EObjectType:
 	//	'EObjectType'
-	//	name=ID ('instanceClassName' instanceClassName=STRING)? ('documentation' documentation=STRING)?;
+	//	name=ID ('type' instanceClassName=STRING)? ('documentation' documentation=STRING)?;
 	public EObjectTypeElements getEObjectTypeAccess() {
 		return pEObjectType;
 	}
@@ -3358,16 +3525,52 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		return tQUALIFIED_ID;
 	}
 	
-	//KEYWORD:
-	//	'extension' | 'description' | 'specification' | 'as' | 'kind' | 'extends' | 'source' | 'target' | 'annotations' |
-	//	'title' | 'scheme' | 'mixin'
-	//	| 'depends' | 'applies' | 'annotation' | 'key' | 'value' | 'attribute' | 'mutable' | 'required' | 'type' | 'action' |
-	//	'constraint' | 'body'
-	//	| 'StringType' | 'documentation' | 'pattern' | 'length' | 'minLength' | 'maxLength' | 'EObjectType' |
-	//	'instanceClassName' | 'BooleanType'
-	//	| 'NumericType' | 'totalDigits' | 'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' | 'Byte' |
-	//	'Double' | 'Float' | 'Integer' | 'Long' | 'Short' | 'BigDecimal'
-	//	| 'EnumerationType' | 'literals' | 'RecordType' | 'fields' | 'field' | 'ArrayType';
+	//KEYWORD: // Configuration
+	//	'configuration' | 'description' | 'location' | 'use' | // Resource
+	//	'resource' | 'title' | 'summary' | 'parts' | //‘location’|
+	//	// Link
+	//	'link' | 'kind' | 'target' | // 'title'| 'location'|
+	//	// MixinBase
+	//	'mixinBase' | // AttributeState
+	//	'attribute' | // Extension
+	//	'extension' | 'specification' | 'import' | 'as' | //'description'|
+	//	// Kind
+	//	'extends' | 'source' | 'scheme' | 'annotations' | // 'kind' |'target' | 'title'|
+	//	// Mixin
+	//	'mixin' | 'depends' | 'applies' | // 'scheme' | 'title'| 'annotations' |
+	//	// Annotation
+	//	'key' | 'value' | // Attribute
+	//	'mutable' | 'required' | 'type' | // 'attribute' |'description'| 'annotations' |
+	//	// Action
+	//	'action' | // 'scheme' | 'title'| 'annotations' |
+	//	// ParameterDecl
+	//	// Constraint
+	//	'constraint' | 'body' | // 'description'| 
+	//	// FSM
+	//	'FSM' | // 'attribute'|
+	//	// State
+	//	'State' | 'initial' | 'final' | 'literal' | 'transitions' | // Transition
+	//	'to' | // 'action'|
+	//	// DataType
+	//	// StringType
+	//	'StringType' | 'pattern' | 'length' | 'minLength' | 'maxLength' | 'documentation' | // EObjectType
+	//	'EObjectType' | // 'type' | 'documentation' | 
+	//	// BooleanType
+	//	'BooleanType' | // 'documentation' | 
+	//	// NumericType
+	//	'NumericType' | 'totalDigits' | 'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' | // 'type' | 'documentation' | 
+	//	// NumericTypeEnum
+	//	'Byte' | 'Double' | 'Float' | 'Integer' | 'Long' | 'Short' | 'BigDecimal' | // EnumerationType
+	//	'EnumerationType' | 'literals' | // 'documentation' | 
+	//	//EnumerationLiteral
+	//	// 'documentation' | 
+	//	// RecordType
+	//	'RecordType' | 'fields' | // 'documentation' | 
+	//	// RecordField
+	//	// 'mutable’| 'required' | 'type’| 'description'| 'annotations'
+	//	// ArrayType
+	//	'ArrayType' // 'type'| 'documentation' | 
+	//;
 	public KEYWORDElements getKEYWORDAccess() {
 		return pKEYWORD;
 	}
