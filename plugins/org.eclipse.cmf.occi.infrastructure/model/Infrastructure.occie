@@ -106,7 +106,7 @@
     </attributes>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
     <fsm attribute="//@kinds[term='storagelink']/@attributes.2">
-      <ownedState literal="//@types.12/@literals.1" initial="false" final="false">
+      <ownedState literal="//@types.12/@literals.1" initial="true" final="true">
         <outgoingTransition target="//@kinds[term='storagelink']/@fsm/@ownedState.1"/>
         <outgoingTransition target="//@kinds[term='storagelink']/@fsm/@ownedState.2"/>
       </ownedState>
