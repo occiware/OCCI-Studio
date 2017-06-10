@@ -5,7 +5,7 @@ Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.eclipse.cmf.occi.core.xtext; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.eclipse.cmf.occi.core;bundle-version="1.0.0", 
+Require-Bundle: org.eclipse.cmf.occi.core;bundle-version="1.0.0",
  org.eclipse.xtext,
  org.eclipse.xtext.xbase,
  org.eclipse.equinox.common;bundle-version="3.5.0",
@@ -22,5 +22,6 @@ Export-Package: org.eclipse.cmf.occi.core.xtext.parser.antlr,
  org.eclipse.cmf.occi.core.xtext.parser.antlr.internal,
  org.eclipse.cmf.occi.core.xtext.services,
  org.eclipse.cmf.occi.core.xtext.validation,
- org.eclipse.cmf.occi.core.xtext.formatting
+ org.eclipse.cmf.occi.core.xtext.formatting,
+ org.eclipse.cmf.occi.core.xtext.formatting2
 Import-Package: org.apache.log4j
