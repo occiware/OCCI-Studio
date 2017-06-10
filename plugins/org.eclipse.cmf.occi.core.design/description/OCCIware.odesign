@@ -626,7 +626,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="S FSM" label="Behavior">
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="FSM" precondition="aql:self.oclIsKindOf(occi::Kind) and self.fsm=null" containerMappings="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='FSMContainer']" extraMappings="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='KindContainer']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="FSM" precondition="aql:self.fsm=null" containerMappings="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='FSMContainer']" extraMappings="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='KindContainer']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
