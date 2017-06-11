@@ -31,9 +31,10 @@ Resource returns Resource:
 Link returns Link:
 	'link'
 	id=STRING
+	':'
+	kind=[Kind|QualifiedID]
 	('title' title=STRING)?
 	('location' location=STRING)?
-	'kind' kind=[Kind|QualifiedID]
 	'target' target=[Resource|STRING]
 	attributes+=AttributeState*
 	parts+=MixinBase*;
