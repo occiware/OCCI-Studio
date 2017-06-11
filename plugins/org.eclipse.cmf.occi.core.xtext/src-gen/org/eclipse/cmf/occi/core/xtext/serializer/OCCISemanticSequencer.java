@@ -368,9 +368,9 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         id=STRING 
+	 *         kind=[Kind|QualifiedID] 
 	 *         title=STRING? 
 	 *         location=STRING? 
-	 *         kind=[Kind|QualifiedID] 
 	 *         target=[Resource|STRING] 
 	 *         attributes+=AttributeState* 
 	 *         parts+=MixinBase*

@@ -54,8 +54,8 @@ public class OCCIParser extends AbstractContentAssistParser {
 					put(grammarAccess.getResourceAccess().getGroup_7(), "rule__Resource__Group_7__0");
 					put(grammarAccess.getResourceAccess().getGroup_7_3(), "rule__Resource__Group_7_3__0");
 					put(grammarAccess.getLinkAccess().getGroup(), "rule__Link__Group__0");
-					put(grammarAccess.getLinkAccess().getGroup_2(), "rule__Link__Group_2__0");
-					put(grammarAccess.getLinkAccess().getGroup_3(), "rule__Link__Group_3__0");
+					put(grammarAccess.getLinkAccess().getGroup_4(), "rule__Link__Group_4__0");
+					put(grammarAccess.getLinkAccess().getGroup_5(), "rule__Link__Group_5__0");
 					put(grammarAccess.getMixinBaseAccess().getGroup(), "rule__MixinBase__Group__0");
 					put(grammarAccess.getAttributeStateAccess().getGroup(), "rule__AttributeState__Group__0");
 					put(grammarAccess.getExtensionAccess().getGroup(), "rule__Extension__Group__0");
@@ -157,9 +157,9 @@ public class OCCIParser extends AbstractContentAssistParser {
 					put(grammarAccess.getResourceAccess().getAttributesAssignment_8(), "rule__Resource__AttributesAssignment_8");
 					put(grammarAccess.getResourceAccess().getLinksAssignment_9(), "rule__Resource__LinksAssignment_9");
 					put(grammarAccess.getLinkAccess().getIdAssignment_1(), "rule__Link__IdAssignment_1");
-					put(grammarAccess.getLinkAccess().getTitleAssignment_2_1(), "rule__Link__TitleAssignment_2_1");
-					put(grammarAccess.getLinkAccess().getLocationAssignment_3_1(), "rule__Link__LocationAssignment_3_1");
-					put(grammarAccess.getLinkAccess().getKindAssignment_5(), "rule__Link__KindAssignment_5");
+					put(grammarAccess.getLinkAccess().getKindAssignment_3(), "rule__Link__KindAssignment_3");
+					put(grammarAccess.getLinkAccess().getTitleAssignment_4_1(), "rule__Link__TitleAssignment_4_1");
+					put(grammarAccess.getLinkAccess().getLocationAssignment_5_1(), "rule__Link__LocationAssignment_5_1");
 					put(grammarAccess.getLinkAccess().getTargetAssignment_7(), "rule__Link__TargetAssignment_7");
 					put(grammarAccess.getLinkAccess().getAttributesAssignment_8(), "rule__Link__AttributesAssignment_8");
 					put(grammarAccess.getLinkAccess().getPartsAssignment_9(), "rule__Link__PartsAssignment_9");

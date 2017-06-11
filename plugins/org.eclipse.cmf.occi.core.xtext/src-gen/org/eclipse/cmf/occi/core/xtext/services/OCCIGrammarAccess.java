@@ -322,18 +322,18 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLinkKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cIdSTRINGTerminalRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cTitleKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cTitleAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cTitleSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cTitleAssignment_2_1.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cLocationKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cLocationAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cLocationSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cLocationAssignment_3_1.eContents().get(0);
-		private final Keyword cKindKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cKindAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cKindKindCrossReference_5_0 = (CrossReference)cKindAssignment_5.eContents().get(0);
-		private final RuleCall cKindKindQualifiedIDParserRuleCall_5_0_1 = (RuleCall)cKindKindCrossReference_5_0.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cKindAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cKindKindCrossReference_3_0 = (CrossReference)cKindAssignment_3.eContents().get(0);
+		private final RuleCall cKindKindQualifiedIDParserRuleCall_3_0_1 = (RuleCall)cKindKindCrossReference_3_0.eContents().get(1);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cTitleKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cTitleAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cTitleSTRINGTerminalRuleCall_4_1_0 = (RuleCall)cTitleAssignment_4_1.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cLocationKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cLocationAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cLocationSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cLocationAssignment_5_1.eContents().get(0);
 		private final Keyword cTargetKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cTargetAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final CrossReference cTargetResourceCrossReference_7_0 = (CrossReference)cTargetAssignment_7.eContents().get(0);
@@ -345,13 +345,14 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Link:
 		//	'link'
-		//	id=STRING ('title' title=STRING)? ('location' location=STRING)?
-		//	'kind' kind=[Kind|QualifiedID]
+		//	id=STRING
+		//	':'
+		//	kind=[Kind|QualifiedID] ('title' title=STRING)? ('location' location=STRING)?
 		//	'target' target=[Resource|STRING] attributes+=AttributeState*
 		//	parts+=MixinBase*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'link' id=STRING ('title' title=STRING)? ('location' location=STRING)? 'kind' kind=[Kind|QualifiedID] 'target'
+		//'link' id=STRING ':' kind=[Kind|QualifiedID] ('title' title=STRING)? ('location' location=STRING)? 'target'
 		//target=[Resource|STRING] attributes+=AttributeState* parts+=MixinBase*
 		public Group getGroup() { return cGroup; }
 		
@@ -364,41 +365,41 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getIdSTRINGTerminalRuleCall_1_0() { return cIdSTRINGTerminalRuleCall_1_0; }
 		
-		//('title' title=STRING)?
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//'title'
-		public Keyword getTitleKeyword_2_0() { return cTitleKeyword_2_0; }
-		
-		//title=STRING
-		public Assignment getTitleAssignment_2_1() { return cTitleAssignment_2_1; }
-		
-		//STRING
-		public RuleCall getTitleSTRINGTerminalRuleCall_2_1_0() { return cTitleSTRINGTerminalRuleCall_2_1_0; }
-		
-		//('location' location=STRING)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'location'
-		public Keyword getLocationKeyword_3_0() { return cLocationKeyword_3_0; }
-		
-		//location=STRING
-		public Assignment getLocationAssignment_3_1() { return cLocationAssignment_3_1; }
-		
-		//STRING
-		public RuleCall getLocationSTRINGTerminalRuleCall_3_1_0() { return cLocationSTRINGTerminalRuleCall_3_1_0; }
-		
-		//'kind'
-		public Keyword getKindKeyword_4() { return cKindKeyword_4; }
+		//':'
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
 		//kind=[Kind|QualifiedID]
-		public Assignment getKindAssignment_5() { return cKindAssignment_5; }
+		public Assignment getKindAssignment_3() { return cKindAssignment_3; }
 		
 		//[Kind|QualifiedID]
-		public CrossReference getKindKindCrossReference_5_0() { return cKindKindCrossReference_5_0; }
+		public CrossReference getKindKindCrossReference_3_0() { return cKindKindCrossReference_3_0; }
 		
 		//QualifiedID
-		public RuleCall getKindKindQualifiedIDParserRuleCall_5_0_1() { return cKindKindQualifiedIDParserRuleCall_5_0_1; }
+		public RuleCall getKindKindQualifiedIDParserRuleCall_3_0_1() { return cKindKindQualifiedIDParserRuleCall_3_0_1; }
+		
+		//('title' title=STRING)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'title'
+		public Keyword getTitleKeyword_4_0() { return cTitleKeyword_4_0; }
+		
+		//title=STRING
+		public Assignment getTitleAssignment_4_1() { return cTitleAssignment_4_1; }
+		
+		//STRING
+		public RuleCall getTitleSTRINGTerminalRuleCall_4_1_0() { return cTitleSTRINGTerminalRuleCall_4_1_0; }
+		
+		//('location' location=STRING)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'location'
+		public Keyword getLocationKeyword_5_0() { return cLocationKeyword_5_0; }
+		
+		//location=STRING
+		public Assignment getLocationAssignment_5_1() { return cLocationAssignment_5_1; }
+		
+		//STRING
+		public RuleCall getLocationSTRINGTerminalRuleCall_5_1_0() { return cLocationSTRINGTerminalRuleCall_5_1_0; }
 		
 		//'target'
 		public Keyword getTargetKeyword_6() { return cTargetKeyword_6; }
@@ -3188,8 +3189,9 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Link:
 	//	'link'
-	//	id=STRING ('title' title=STRING)? ('location' location=STRING)?
-	//	'kind' kind=[Kind|QualifiedID]
+	//	id=STRING
+	//	':'
+	//	kind=[Kind|QualifiedID] ('title' title=STRING)? ('location' location=STRING)?
 	//	'target' target=[Resource|STRING] attributes+=AttributeState*
 	//	parts+=MixinBase*;
 	public LinkElements getLinkAccess() {
