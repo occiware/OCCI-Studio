@@ -11,24 +11,16 @@
  */
 package org.eclipse.cmf.occi.core.provider;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Map.Entry;
-
 import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.OCCIFactory;
 import org.eclipse.cmf.occi.core.OCCIPackage;
-import org.eclipse.cmf.occi.core.util.OcciHelper;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.URIConverter;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -148,47 +140,62 @@ public class ExtensionItemProvider extends ItemProviderAdapter implements IEditi
 	 * This adds a property descriptor for the Import feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated NOT
+	 * @generated
 	 */
 	protected void addImportPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(new ItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Extension_import_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Extension_import_feature",
-								"_UI_Extension_type"),
-						OCCIPackage.Literals.EXTENSION__IMPORT, true, false, true, null, null, null) {
-					@Override
-					public Collection<?> getChoiceOfValues(Object object) {
-						List<Object> result = new ArrayList<Object>();
-						ResourceSet resourceSet = new ResourceSetImpl();
-						ArrayList<String> imports = new ArrayList<String>();
-						for (Extension extension : ((Extension) object).getImport()) {
-							imports.add(extension.getScheme().substring(0, extension.getScheme().length() - 1));
-						}
-						//System.out.println("imports " + imports);
-						for (Entry<URI, URI> entry : URIConverter.URI_MAP.entrySet()) {
-							if (entry.getValue().toString().endsWith("occie")) {
-								if (!(imports.contains(entry.getKey().toString()))) {
-									// The objects in the result list must have
-									// the type of the concerned reference.
-									// for example, for this case, the objects
-									// of the result list must be instanceof
-									// Extension class (and not uri, or string)
-									// because the import reference has the
-									// Extension type.
-									Extension ext = (Extension) OcciHelper.getRootElement(resourceSet,
-											entry.getKey().toString());
-									if (!(ext.getScheme().equals(((Extension) object).getScheme()))) {
-										//System.out.println("extension " + ext.eResource().getURI());
-										result.add(ext);
-									}
-								}
-							}
-						}
-						return result;
-					}
-				});
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Extension_import_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Extension_import_feature", "_UI_Extension_type"),
+				 OCCIPackage.Literals.EXTENSION__IMPORT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
+//	protected void addImportPropertyDescriptor(Object object) {
+//		itemPropertyDescriptors
+//				.add(new ItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+//						getResourceLocator(), getString("_UI_Extension_import_feature"),
+//						getString("_UI_PropertyDescriptor_description", "_UI_Extension_import_feature",
+//								"_UI_Extension_type"),
+//						OCCIPackage.Literals.EXTENSION__IMPORT, true, false, true, null, null, null) {
+//					@Override
+//					public Collection<?> getChoiceOfValues(Object object) {
+//						List<Object> result = new ArrayList<Object>();
+//						ResourceSet resourceSet = new ResourceSetImpl();
+//						ArrayList<String> imports = new ArrayList<String>();
+//						for (Extension extension : ((Extension) object).getImport()) {
+//							imports.add(extension.getScheme().substring(0, extension.getScheme().length() - 1));
+//						}
+//						//System.out.println("imports " + imports);
+//						for (Entry<URI, URI> entry : URIConverter.URI_MAP.entrySet()) {
+//							if (entry.getValue().toString().endsWith("occie")) {
+//								if (!(imports.contains(entry.getKey().toString()))) {
+//									// The objects in the result list must have
+//									// the type of the concerned reference.
+//									// for example, for this case, the objects
+//									// of the result list must be instanceof
+//									// Extension class (and not uri, or string)
+//									// because the import reference has the
+//									// Extension type.
+//									Extension ext = (Extension) OcciHelper.getRootElement(resourceSet,
+//											entry.getKey().toString());
+//									if (!(ext.getScheme().equals(((Extension) object).getScheme()))) {
+//										//System.out.println("extension " + ext.eResource().getURI());
+//										result.add(ext);
+//									}
+//								}
+//							}
+//						}
+//						return result;
+//					}
+//				});
+//	}
 
 	/**
 	 * This adds a property descriptor for the Specification feature. <!--
