@@ -136,7 +136,13 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 
 	def scope_MixinBase_mixin(MixinBase base, EReference reference) {
 		var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
-		var Configuration config = (base.eContainer as Entity).eContainer as Configuration
+		var Configuration config
+		if((base.eContainer as Entity).eContainer instanceof Configuration){
+			config = (base.eContainer as Entity).eContainer as Configuration 
+		}
+		else{
+			config = ((base.eContainer as Entity).eContainer as Resource).eContainer as Configuration
+		}
 		for (Mixin k : config.mixins) {
 			res.add(EObjectDescription.create(k.name, k));
 		}
