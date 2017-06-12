@@ -137,10 +137,9 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 	def scope_MixinBase_mixin(MixinBase base, EReference reference) {
 		var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
 		var Configuration config
-		if((base.eContainer as Entity).eContainer instanceof Configuration){
-			config = (base.eContainer as Entity).eContainer as Configuration 
-		}
-		else{
+		if ((base.eContainer as Entity).eContainer instanceof Configuration) {
+			config = (base.eContainer as Entity).eContainer as Configuration
+		} else {
 			config = ((base.eContainer as Entity).eContainer as Resource).eContainer as Configuration
 		}
 		for (Mixin k : config.mixins) {
@@ -181,137 +180,139 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 		var State s = transition.eContainer as State
 		var FSM fsm = s.eContainer as FSM
 		for (state : fsm.ownedState) {
-			res.add(
-				EObjectDescription.create(
-					QualifiedName.create((state.literal.eContainer as EnumerationType).name, state.literal.name),
-					state))
+			if (state.literal !== null) {
+				res.add(
+					EObjectDescription.create(
+						QualifiedName.create((state.literal.eContainer as EnumerationType).name, state.literal.name),
+						state))
 				}
-				new SimpleScope(IScope.NULLSCOPE, res)
 			}
+			new SimpleScope(IScope.NULLSCOPE, res)
+		}
 
-			def scope_State_literal(State state, EReference reference) {
-				var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
-				var FSM fsm = state.eContainer as FSM
-				var Kind kind = fsm.eContainer as Kind
-				var Extension ext = kind.eContainer as Extension
-				for (type : ext.types.filter[t|t instanceof EnumerationType]) {
-					for (literal : (type as EnumerationType).literals) {
-						res.add(EObjectDescription.create(QualifiedName.create(type.name, literal.name), literal));
-					}
-
+		def scope_State_literal(State state, EReference reference) {
+			var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
+			var FSM fsm = state.eContainer as FSM
+			var Kind kind = fsm.eContainer as Kind
+			var Extension ext = kind.eContainer as Extension
+			for (type : ext.types.filter[t|t instanceof EnumerationType]) {
+				for (literal : (type as EnumerationType).literals) {
+					res.add(EObjectDescription.create(QualifiedName.create(type.name, literal.name), literal));
 				}
-				new SimpleScope(IScope.NULLSCOPE, res);
+
 			}
+			new SimpleScope(IScope.NULLSCOPE, res);
+		}
 
-			def scope_FSM_attribute(FSM fsm, EReference reference) {
-				var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
-				var Kind kind = fsm.eContainer as Kind
-				for (attribute : kind.attributes) {
-					res.add(EObjectDescription.create(QualifiedName.create(attribute.name.split("\\.")), attribute));
-				}
-				new SimpleScope(IScope.NULLSCOPE, res);
+		def scope_FSM_attribute(FSM fsm, EReference reference) {
+			var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
+			var Kind kind = fsm.eContainer as Kind
+			for (attribute : kind.attributes) {
+				res.add(EObjectDescription.create(QualifiedName.create(attribute.name.split("\\.")), attribute));
 			}
+			new SimpleScope(IScope.NULLSCOPE, res);
+		}
 
-			def scope_Mixin_applies(Mixin mixin, EReference reference) {
-				var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
-				var Extension ext = mixin.eContainer as Extension
-				for (Kind k : ext.getKinds()) {
-					res.add(EObjectDescription.create(QualifiedName.create(ext.name, k.name), k));
-				}
-				for (Extension importExtension : ext.getImport()) {
-					for (Kind kind : importExtension.getKinds()) {
-						res.add(EObjectDescription.create(QualifiedName.create(importExtension.name, kind.name), kind));
-					}
-				}
-				new SimpleScope(IScope.NULLSCOPE, res);
+		def scope_Mixin_applies(Mixin mixin, EReference reference) {
+			var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
+			var Extension ext = mixin.eContainer as Extension
+			for (Kind k : ext.getKinds()) {
+				res.add(EObjectDescription.create(QualifiedName.create(ext.name, k.name), k));
 			}
-
-			def scope_Mixin_depends(Mixin mixin, EReference reference) {
-				var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
-				var Extension ext = mixin.eContainer as Extension
-				for (Mixin k : ext.mixins) {
-					res.add(EObjectDescription.create(QualifiedName.create(k.name), k));
+			for (Extension importExtension : ext.getImport()) {
+				for (Kind kind : importExtension.getKinds()) {
+					res.add(EObjectDescription.create(QualifiedName.create(importExtension.name, kind.name), kind));
 				}
-				for (Extension importExtension : ext.getImport()) {
-					for (Mixin k : importExtension.mixins) {
-						res.add(EObjectDescription.create(QualifiedName.create(importExtension.getName(), k.name), k));
-					}
-				}
-				new SimpleScope(IScope.NULLSCOPE, res);
 			}
+			new SimpleScope(IScope.NULLSCOPE, res);
+		}
 
-			def IScope scope_Configuration_use(Configuration config, EReference ref) {
-				scopeForExtensions(config.use);
+		def scope_Mixin_depends(Mixin mixin, EReference reference) {
+			var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
+			var Extension ext = mixin.eContainer as Extension
+			for (Mixin k : ext.mixins) {
+				res.add(EObjectDescription.create(QualifiedName.create(k.name), k));
 			}
-
-			def IScope scope_Extension_import(Extension ext, EReference ref) {
-				scopeForExtensions(ext.getImport());
+			for (Extension importExtension : ext.getImport()) {
+				for (Mixin k : importExtension.mixins) {
+					res.add(EObjectDescription.create(QualifiedName.create(importExtension.getName(), k.name), k));
+				}
 			}
+			new SimpleScope(IScope.NULLSCOPE, res);
+		}
 
-			def IScope scopeForExtensions(EList<Extension> extensions) {
-				var ArrayList<IEObjectDescription> result = new ArrayList<IEObjectDescription>
+		def IScope scope_Configuration_use(Configuration config, EReference ref) {
+			scopeForExtensions(config.use);
+		}
 
-				for (exte : extensions) {
-					result.add(EObjectDescription.create(QualifiedName.create(EcoreUtil.getURI(exte).toString()), exte))
-				}
-				new SimpleScope(IScope.NULLSCOPE, result)
+		def IScope scope_Extension_import(Extension ext, EReference ref) {
+			scopeForExtensions(ext.getImport());
+		}
+
+		def IScope scopeForExtensions(EList<Extension> extensions) {
+			var ArrayList<IEObjectDescription> result = new ArrayList<IEObjectDescription>
+
+			for (exte : extensions) {
+				result.add(EObjectDescription.create(QualifiedName.create(EcoreUtil.getURI(exte).toString()), exte))
 			}
+			new SimpleScope(IScope.NULLSCOPE, result)
+		}
 
-			def IScope scopeForKind(Kind kind, EReference ref) {
-				var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
-				var Extension ext = kind.eContainer as Extension
-				for (Kind k : ext.getKinds()) {
-					res.add(EObjectDescription.create(QualifiedName.create(k.name), k))
-				}
-				for (Extension importExtension : ext.getImport()) {
-					for (Kind k : importExtension.getKinds()) {
-						res.add(EObjectDescription.create(QualifiedName.create(importExtension.name, k.name), k))
-					}
-				}
-				new SimpleScope(IScope.NULLSCOPE, res)
+		def IScope scopeForKind(Kind kind, EReference ref) {
+			var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
+			var Extension ext = kind.eContainer as Extension
+			for (Kind k : ext.getKinds()) {
+				res.add(EObjectDescription.create(QualifiedName.create(k.name), k))
 			}
-
-			def IScope scope_ArrayType_type(ArrayType arrayType, EReference ref) {
-				var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
-				var Extension ext = arrayType.eContainer as Extension
-				for (DataType k : ext.types) {
-					res.add(EObjectDescription.create(QualifiedName.create(k.name), k))
+			for (Extension importExtension : ext.getImport()) {
+				for (Kind k : importExtension.getKinds()) {
+					res.add(EObjectDescription.create(QualifiedName.create(importExtension.name, k.name), k))
 				}
-				for (Extension importExtension : ext.getImport()) {
-					for (DataType k : importExtension.types) {
-						res.add(EObjectDescription.create(QualifiedName.create(importExtension.getName(), k.name), k))
-					}
-				}
-				new SimpleScope(IScope.NULLSCOPE, res);
 			}
+			new SimpleScope(IScope.NULLSCOPE, res)
+		}
 
-			def IScope scope_Attribute_type(Attribute attribute, EReference ref) {
-				if (attribute.eContainer instanceof Type) {
-					new SimpleScope(IScope.NULLSCOPE, getTypes((attribute.eContainer as Type).eContainer as Extension));
+		def IScope scope_ArrayType_type(ArrayType arrayType, EReference ref) {
+			var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
+			var Extension ext = arrayType.eContainer as Extension
+			for (DataType k : ext.types) {
+				res.add(EObjectDescription.create(QualifiedName.create(k.name), k))
+			}
+			for (Extension importExtension : ext.getImport()) {
+				for (DataType k : importExtension.types) {
+					res.add(EObjectDescription.create(QualifiedName.create(importExtension.getName(), k.name), k))
+				}
+			}
+			new SimpleScope(IScope.NULLSCOPE, res);
+		}
+
+		def IScope scope_Attribute_type(Attribute attribute, EReference ref) {
+			if (attribute.eContainer instanceof Type) {
+				new SimpleScope(IScope.NULLSCOPE, getTypes((attribute.eContainer as Type).eContainer as Extension));
+			} else {
+				if (attribute.eContainer instanceof Action) {
+					new SimpleScope(IScope.NULLSCOPE,
+						getTypes(((attribute.eContainer as Action).eContainer as Type).eContainer as Extension));
 				} else {
-					if (attribute.eContainer instanceof Action) {
-						new SimpleScope(IScope.NULLSCOPE,
-							getTypes(((attribute.eContainer as Action).eContainer as Type).eContainer as Extension));
-					} else {
-						new SimpleScope(IScope.NULLSCOPE,
-							getTypes((attribute.eContainer as RecordType).eContainer as Extension));
-					}
+					new SimpleScope(IScope.NULLSCOPE,
+						getTypes((attribute.eContainer as RecordType).eContainer as Extension));
 				}
-
-			}
-
-			def ArrayList<IEObjectDescription> getTypes(Extension ext) {
-				var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
-				for (DataType k : ext.types) {
-					res.add(EObjectDescription.create(QualifiedName.create(k.name), k))
-				}
-				for (Extension importExtension : ext.getImport()) {
-					for (DataType k : importExtension.types) {
-						res.add(EObjectDescription.create(QualifiedName.create(importExtension.getName(), k.name), k))
-					}
-				}
-				res
 			}
 
 		}
-		
+
+		def ArrayList<IEObjectDescription> getTypes(Extension ext) {
+			var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
+			for (DataType k : ext.types) {
+				res.add(EObjectDescription.create(QualifiedName.create(k.name), k))
+			}
+			for (Extension importExtension : ext.getImport()) {
+				for (DataType k : importExtension.types) {
+					res.add(EObjectDescription.create(QualifiedName.create(importExtension.getName(), k.name), k))
+				}
+			}
+			res
+		}
+
+	}
+	
