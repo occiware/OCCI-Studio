@@ -11,6 +11,7 @@
  *******************************************************************************/
 package org.eclipse.cmf.occi.core.design.services;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
@@ -25,6 +26,7 @@ import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.Mixin;
+import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.OCCIFactory;
 import org.eclipse.cmf.occi.core.OcciCoreConstants;
 import org.eclipse.cmf.occi.core.State;
@@ -236,7 +238,33 @@ public class DesignServices {
 			}
 		}
 	}
-	
+	public void addAllAttributes(MixinBase mixinBase)
+	{
+		// Compute already present attribute names.
+		List<AttributeState> attributeStates = mixinBase.getAttributes();
+		HashSet<String> attributeNames = new HashSet<String>();
+		// Iterate over all attribute state instances.
+		for(AttributeState attributeState : attributeStates) {
+			attributeNames.add(attributeState.getName());
+		}
+
+		// Iterate over all attributes.
+		for(Attribute attribute : mixinBase.getMixin().getAttributes()) {
+			String attributeName = attribute.getName();
+			if(!attributeNames.contains(attributeName)) {
+				// If not already present create it.
+				AttributeState attributeState = OCCIFactory.eINSTANCE.createAttributeState();
+				attributeState.setName(attributeName);
+				String attributeDefault = attribute.getDefault();
+				if(attributeDefault != null) {
+					// if default set then set value.
+					attributeState.setValue(attributeDefault);
+				}
+				// Add it to attribute states of this entity.
+				attributeStates.add(attributeState);
+			}
+		}
+	}
 	public void deleteElement(EObject eo) {
 		EcoreUtil.delete(eo);
 	}
