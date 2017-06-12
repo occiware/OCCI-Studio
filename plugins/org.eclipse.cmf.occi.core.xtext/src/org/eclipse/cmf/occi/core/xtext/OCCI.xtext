@@ -65,8 +65,8 @@ Kind returns Kind:
 	('extends' parent=[Kind|QualifiedID])?
 	('source' source=[Kind|QualifiedID])?
 	('target' target=[Kind|QualifiedID])?
-	('title' title=STRING)?
 	'scheme' scheme=STRING
+	('title' title=STRING)?
 	('('
 	(attributes+=Attribute
 	| actions+=Action
@@ -109,9 +109,9 @@ Attribute returns Attribute:
 Action returns Action:
 	'action'
 	name=NameID
-	'scheme' scheme=STRING
 	('(' attributes+=ParameterDecl ("," attributes+=ParameterDecl)* ')')?
-	('{' 'title' title=STRING '}')?
+	'scheme' scheme=STRING
+	('title' title=STRING)?
 	('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?;
 
 ParameterDecl returns Attribute:
@@ -208,7 +208,7 @@ RecordField returns RecordField:
 ArrayType returns ArrayType:
 	'ArrayType'
 	name=TypeID 'type' type=[DataType|QualifiedID]
-	'documentation' documentation=STRING?;
+	('documentation' documentation=STRING)?;
 
 EIntegerObject returns ecore::EIntegerObject:
 	'-'? INT;
@@ -227,7 +227,7 @@ terminal QUALIFIED_ID:
 	'A'..'Z' | '_' | '0'..'9')* ('.' ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*)*;
 
 KEYWORD:
-		// Configuration
+	// Configuration
 	'configuration' | 'description' | 'location' | 'use' | 
 	
 	// Resource
