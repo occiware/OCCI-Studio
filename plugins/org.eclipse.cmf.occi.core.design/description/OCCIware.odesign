@@ -692,25 +692,34 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="ResourceContainer" deletionDescription="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteTool']" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='EditTitle']" semanticCandidatesExpression="feature:resources" domainClass="occi.Resource" childrenPresentation="List">
-          <subNodeMappings name="ResourceKind" deletionDescription="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='noDeleteTool']" semanticCandidatesExpression="feature:kind" domainClass="occi.Kind">
-            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="[scheme+term/]" labelPosition="node" resizeKind="NSEW">
+        <containerMappings name="ResourceContainer" deletionDescription="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteTool']" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='EditTitle']" semanticCandidatesExpression="feature:resources" domainClass="occi.Resource">
+          <subContainerMappings name="SubResourceContainer" semanticCandidatesExpression="[self/]" domainClass="occi.Resource" childrenPresentation="List">
+            <subNodeMappings name="ResourceAttributeState" deletionDescription="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteTool']" semanticCandidatesExpression="feature:attributes" domainClass="occi.AttributeState">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="[name+'= '+value/]" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="aql:self.kind.scheme+self.kind.term">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
-          </subNodeMappings>
-          <subNodeMappings name="ResourceAttributeState" deletionDescription="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteTool']" semanticCandidatesExpression="feature:attributes" domainClass="occi.AttributeState">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="[name+'= '+value/]" labelAlignment="LEFT" resizeKind="NSEW">
+          </subContainerMappings>
+          <subContainerMappings name="ResourceMixinBase" semanticCandidatesExpression="feature:parts" domainClass="occi.MixinBase" childrenPresentation="List">
+            <subNodeMappings name="ResourceMixinBaseAttributeState" deletionDescription="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteTool']" semanticCandidatesExpression="feature:attributes" domainClass="occi.AttributeState">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="[name+'= '+value/]" labelAlignment="LEFT" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="aql:self.mixin.scheme+self.mixin.term">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            </style>
-          </subNodeMappings>
-          <subContainerMappings name="ResourceMixinBase" semanticCandidatesExpression="feature:parts" domainClass="occi.MixinBase">
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:'toto'">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
@@ -723,36 +732,44 @@
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </containerMappings>
-        <containerMappings name="LinkContainer" deletionDescription="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteTool']" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='EditTitle']" semanticCandidatesExpression="[resources.links/]" domainClass="occi.Link" childrenPresentation="List">
-          <subNodeMappings name="LinkKind" deletionDescription="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='noDeleteTool']" semanticCandidatesExpression="feature:kind" domainClass="occi.Kind">
-            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="[scheme+term/]" labelPosition="node" resizeKind="NSEW">
+        <containerMappings name="LinkContainer" deletionDescription="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteTool']" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='EditTitle']" semanticCandidatesExpression="[resources.links/]" domainClass="occi.Link">
+          <subContainerMappings name="SubLinkContainer" semanticCandidatesExpression="[self/]" domainClass="occi.Link" childrenPresentation="List">
+            <subNodeMappings name="LinkAttributeState" semanticCandidatesExpression="feature:attributes" domainClass="occi.AttributeState">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="[name+'= '+value/]" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="aql:self.kind.scheme+self.kind.term">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
-          </subNodeMappings>
-          <subNodeMappings name="LinkMixin" deletionDescription="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='noDeleteTool']" semanticCandidatesExpression="feature:mixins" domainClass="occi.Mixin">
-            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="[scheme+term/]" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+          </subContainerMappings>
+          <subContainerMappings name="LinkMixinBase" semanticCandidatesExpression="feature:parts" domainClass="occi.MixinBase" childrenPresentation="List">
+            <subNodeMappings name="LinkMixinBaseAttributeState" deletionDescription="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteTool']" semanticCandidatesExpression="feature:attributes" domainClass="occi.AttributeState">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="[name+'= '+value/]" labelAlignment="LEFT" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="aql:self.mixin.scheme+self.mixin.term">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelFormat>italic</labelFormat>
+              <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
-          </subNodeMappings>
-          <subNodeMappings name="LinkAttributeState" deletionDescription="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteTool']" semanticCandidatesExpression="feature:attributes" domainClass="occi.AttributeState">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="[name+'= '+value/]" labelAlignment="LEFT" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            </style>
-          </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="[title+': '+kind.term/]">
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="[title+': '+kind.term/]" foregroundColor="//@userColorsPalettes[name='OCCI-Studio']/@entries[name='LinkColor']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
         </containerMappings>
         <containerMappings name="MixinContainer" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditName']" semanticCandidatesExpression="feature:mixins" synchronizationLock="true" domainClass="occi.Mixin" childrenPresentation="List">
@@ -884,6 +901,15 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="MixinBase" containerMappings="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']/@subContainerMappings[name='ResourceMixinBase'] //@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@subContainerMappings[name='LinkMixinBase']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="occi.MixinBase" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
         </toolSections>
         <toolSections name="Attribute">
           <ownedTools xsi:type="tool_1:ToolDescription" name="AddAllAttributes" label="Add All Attributes" precondition="[oclIsKindOf(Entity)/]">
@@ -893,7 +919,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:addAllAttributes"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Attribute" nodeMappings="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@subNodeMappings[name='LinkAttributeState'] //@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']/@subNodeMappings[name='ResourceAttributeState']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Attribute" nodeMappings="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']/@subContainerMappings[name='SubResourceContainer']/@subNodeMappings[name='ResourceAttributeState'] //@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']/@subContainerMappings[name='ResourceMixinBase']/@subNodeMappings[name='ResourceMixinBaseAttributeState'] //@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@subContainerMappings[name='LinkMixinBase']/@subNodeMappings[name='LinkMixinBaseAttributeState'] //@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@subContainerMappings[name='SubLinkContainer']/@subNodeMappings[name='LinkAttributeState']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
