@@ -13,13 +13,20 @@ import org.eclipse.cmf.occi.core.Mixin
 import org.eclipse.cmf.occi.core.MixinBase
 import org.eclipse.cmf.occi.core.DataType
 import org.eclipse.cmf.occi.core.Kind
+import org.eclipse.cmf.occi.core.RecordField
+import org.eclipse.cmf.occi.core.RecordType
 
 class OCCISemanticHighlightingCalculator extends DefaultSemanticHighlightingCalculator {
-		@Inject package OCCIGrammarAccess grammar
+	@Inject package OCCIGrammarAccess grammar
 
-	override protected boolean highlightElement(EObject object, IHighlightedPositionAcceptor acceptor, CancelIndicator cancelIndicator) {
+	override protected boolean highlightElement(EObject object, IHighlightedPositionAcceptor acceptor,
+		CancelIndicator cancelIndicator) {
 		switch (object) {
 			// TODO To be completed
+			RecordField: {
+				highlightFeature(acceptor, object, OCCIPackage.eINSTANCE.attribute_Name, HighlightingStyles.DEFAULT_ID)
+				return true
+			}
 			Attribute: {
 				highlightFeature(acceptor, object, OCCIPackage.eINSTANCE.attribute_Name, HighlightingStyles.DEFAULT_ID)
 				return true
@@ -34,6 +41,11 @@ class OCCISemanticHighlightingCalculator extends DefaultSemanticHighlightingCalc
 			}
 			DataType: {
 				highlightFeature(acceptor, object, OCCIPackage.eINSTANCE.dataType_Name, HighlightingStyles.DEFAULT_ID)
+				if (object instanceof RecordType) {
+					for (field : (object as RecordType).recordFields) {
+						highlightElement(field, acceptor, cancelIndicator)
+					}
+				}
 				return true
 			}
 			Kind: {
@@ -41,9 +53,9 @@ class OCCISemanticHighlightingCalculator extends DefaultSemanticHighlightingCalc
 				highlightFeature(acceptor, object, OCCIPackage.eINSTANCE.kind_Target, HighlightingStyles.DEFAULT_ID)
 				return true
 			}
-			
-			default: false
+			default:
+				false
 		}
 	}
-	
+
 }
