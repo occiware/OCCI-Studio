@@ -67,7 +67,7 @@ public class OCCIParser extends AbstractContentAssistParser {
 					put(grammarAccess.getKindAccess().getGroup_2(), "rule__Kind__Group_2__0");
 					put(grammarAccess.getKindAccess().getGroup_3(), "rule__Kind__Group_3__0");
 					put(grammarAccess.getKindAccess().getGroup_4(), "rule__Kind__Group_4__0");
-					put(grammarAccess.getKindAccess().getGroup_5(), "rule__Kind__Group_5__0");
+					put(grammarAccess.getKindAccess().getGroup_7(), "rule__Kind__Group_7__0");
 					put(grammarAccess.getKindAccess().getGroup_8(), "rule__Kind__Group_8__0");
 					put(grammarAccess.getKindAccess().getGroup_10(), "rule__Kind__Group_10__0");
 					put(grammarAccess.getKindAccess().getGroup_10_3(), "rule__Kind__Group_10_3__0");
@@ -88,8 +88,8 @@ public class OCCIParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAttributeAccess().getGroup_8(), "rule__Attribute__Group_8__0");
 					put(grammarAccess.getAttributeAccess().getGroup_8_3(), "rule__Attribute__Group_8_3__0");
 					put(grammarAccess.getActionAccess().getGroup(), "rule__Action__Group__0");
-					put(grammarAccess.getActionAccess().getGroup_4(), "rule__Action__Group_4__0");
-					put(grammarAccess.getActionAccess().getGroup_4_2(), "rule__Action__Group_4_2__0");
+					put(grammarAccess.getActionAccess().getGroup_2(), "rule__Action__Group_2__0");
+					put(grammarAccess.getActionAccess().getGroup_2_2(), "rule__Action__Group_2_2__0");
 					put(grammarAccess.getActionAccess().getGroup_5(), "rule__Action__Group_5__0");
 					put(grammarAccess.getActionAccess().getGroup_6(), "rule__Action__Group_6__0");
 					put(grammarAccess.getActionAccess().getGroup_6_3(), "rule__Action__Group_6_3__0");
@@ -139,6 +139,7 @@ public class OCCIParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRecordFieldAccess().getGroup_6(), "rule__RecordField__Group_6__0");
 					put(grammarAccess.getRecordFieldAccess().getGroup_6_3(), "rule__RecordField__Group_6_3__0");
 					put(grammarAccess.getArrayTypeAccess().getGroup(), "rule__ArrayType__Group__0");
+					put(grammarAccess.getArrayTypeAccess().getGroup_4(), "rule__ArrayType__Group_4__0");
 					put(grammarAccess.getEIntegerObjectAccess().getGroup(), "rule__EIntegerObject__Group__0");
 					put(grammarAccess.getNameIDAccess().getGroup_0(), "rule__NameID__Group_0__0");
 					put(grammarAccess.getConfigurationAccess().getDescriptionAssignment_2_1(), "rule__Configuration__DescriptionAssignment_2_1");
@@ -179,8 +180,8 @@ public class OCCIParser extends AbstractContentAssistParser {
 					put(grammarAccess.getKindAccess().getParentAssignment_2_1(), "rule__Kind__ParentAssignment_2_1");
 					put(grammarAccess.getKindAccess().getSourceAssignment_3_1(), "rule__Kind__SourceAssignment_3_1");
 					put(grammarAccess.getKindAccess().getTargetAssignment_4_1(), "rule__Kind__TargetAssignment_4_1");
-					put(grammarAccess.getKindAccess().getTitleAssignment_5_1(), "rule__Kind__TitleAssignment_5_1");
-					put(grammarAccess.getKindAccess().getSchemeAssignment_7(), "rule__Kind__SchemeAssignment_7");
+					put(grammarAccess.getKindAccess().getSchemeAssignment_6(), "rule__Kind__SchemeAssignment_6");
+					put(grammarAccess.getKindAccess().getTitleAssignment_7_1(), "rule__Kind__TitleAssignment_7_1");
 					put(grammarAccess.getKindAccess().getAttributesAssignment_8_1_0(), "rule__Kind__AttributesAssignment_8_1_0");
 					put(grammarAccess.getKindAccess().getActionsAssignment_8_1_1(), "rule__Kind__ActionsAssignment_8_1_1");
 					put(grammarAccess.getKindAccess().getConstraintsAssignment_8_1_2(), "rule__Kind__ConstraintsAssignment_8_1_2");
@@ -210,10 +211,10 @@ public class OCCIParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAttributeAccess().getAnnotationsAssignment_8_2(), "rule__Attribute__AnnotationsAssignment_8_2");
 					put(grammarAccess.getAttributeAccess().getAnnotationsAssignment_8_3_1(), "rule__Attribute__AnnotationsAssignment_8_3_1");
 					put(grammarAccess.getActionAccess().getNameAssignment_1(), "rule__Action__NameAssignment_1");
-					put(grammarAccess.getActionAccess().getSchemeAssignment_3(), "rule__Action__SchemeAssignment_3");
-					put(grammarAccess.getActionAccess().getAttributesAssignment_4_1(), "rule__Action__AttributesAssignment_4_1");
-					put(grammarAccess.getActionAccess().getAttributesAssignment_4_2_1(), "rule__Action__AttributesAssignment_4_2_1");
-					put(grammarAccess.getActionAccess().getTitleAssignment_5_2(), "rule__Action__TitleAssignment_5_2");
+					put(grammarAccess.getActionAccess().getAttributesAssignment_2_1(), "rule__Action__AttributesAssignment_2_1");
+					put(grammarAccess.getActionAccess().getAttributesAssignment_2_2_1(), "rule__Action__AttributesAssignment_2_2_1");
+					put(grammarAccess.getActionAccess().getSchemeAssignment_4(), "rule__Action__SchemeAssignment_4");
+					put(grammarAccess.getActionAccess().getTitleAssignment_5_1(), "rule__Action__TitleAssignment_5_1");
 					put(grammarAccess.getActionAccess().getAnnotationsAssignment_6_2(), "rule__Action__AnnotationsAssignment_6_2");
 					put(grammarAccess.getActionAccess().getAnnotationsAssignment_6_3_1(), "rule__Action__AnnotationsAssignment_6_3_1");
 					put(grammarAccess.getParameterDeclAccess().getNameAssignment_0(), "rule__ParameterDecl__NameAssignment_0");
@@ -271,7 +272,7 @@ public class OCCIParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRecordFieldAccess().getAnnotationsAssignment_6_3_1(), "rule__RecordField__AnnotationsAssignment_6_3_1");
 					put(grammarAccess.getArrayTypeAccess().getNameAssignment_1(), "rule__ArrayType__NameAssignment_1");
 					put(grammarAccess.getArrayTypeAccess().getTypeAssignment_3(), "rule__ArrayType__TypeAssignment_3");
-					put(grammarAccess.getArrayTypeAccess().getDocumentationAssignment_5(), "rule__ArrayType__DocumentationAssignment_5");
+					put(grammarAccess.getArrayTypeAccess().getDocumentationAssignment_4_1(), "rule__ArrayType__DocumentationAssignment_4_1");
 				}
 			};
 		}

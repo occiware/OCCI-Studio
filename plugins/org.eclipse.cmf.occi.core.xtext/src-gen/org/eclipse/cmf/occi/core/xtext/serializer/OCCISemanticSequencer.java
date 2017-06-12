@@ -145,8 +145,8 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         name=NameID 
-	 *         scheme=STRING 
 	 *         (attributes+=ParameterDecl attributes+=ParameterDecl*)? 
+	 *         scheme=STRING 
 	 *         title=STRING? 
 	 *         (annotations+=Annotation annotations+=Annotation*)?
 	 *     )
@@ -349,8 +349,8 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         parent=[Kind|QualifiedID]? 
 	 *         source=[Kind|QualifiedID]? 
 	 *         target=[Kind|QualifiedID]? 
-	 *         title=STRING? 
 	 *         scheme=STRING 
+	 *         title=STRING? 
 	 *         (attributes+=Attribute | actions+=Action | constraints+=Constraint)* 
 	 *         fsm=FSM? 
 	 *         (annotations+=Annotation annotations+=Annotation*)?

@@ -2362,7 +2362,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleKind"
-    // InternalOCCI.g:987:1: ruleKind returns [EObject current=null] : (otherlv_0= 'kind' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= 'extends' ( ( ruleQualifiedID ) ) )? (otherlv_4= 'source' ( ( ruleQualifiedID ) ) )? (otherlv_6= 'target' ( ( ruleQualifiedID ) ) )? (otherlv_8= 'title' ( (lv_title_9_0= RULE_STRING ) ) )? otherlv_10= 'scheme' ( (lv_scheme_11_0= RULE_STRING ) ) (otherlv_12= '(' ( ( (lv_attributes_13_0= ruleAttribute ) ) | ( (lv_actions_14_0= ruleAction ) ) | ( (lv_constraints_15_0= ruleConstraint ) ) )+ otherlv_16= ')' )? ( (lv_fsm_17_0= ruleFSM ) )? (otherlv_18= 'annotations' otherlv_19= '{' ( (lv_annotations_20_0= ruleAnnotation ) ) (otherlv_21= ',' ( (lv_annotations_22_0= ruleAnnotation ) ) )* otherlv_23= '}' )? ) ;
+    // InternalOCCI.g:987:1: ruleKind returns [EObject current=null] : (otherlv_0= 'kind' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= 'extends' ( ( ruleQualifiedID ) ) )? (otherlv_4= 'source' ( ( ruleQualifiedID ) ) )? (otherlv_6= 'target' ( ( ruleQualifiedID ) ) )? otherlv_8= 'scheme' ( (lv_scheme_9_0= RULE_STRING ) ) (otherlv_10= 'title' ( (lv_title_11_0= RULE_STRING ) ) )? (otherlv_12= '(' ( ( (lv_attributes_13_0= ruleAttribute ) ) | ( (lv_actions_14_0= ruleAction ) ) | ( (lv_constraints_15_0= ruleConstraint ) ) )+ otherlv_16= ')' )? ( (lv_fsm_17_0= ruleFSM ) )? (otherlv_18= 'annotations' otherlv_19= '{' ( (lv_annotations_20_0= ruleAnnotation ) ) (otherlv_21= ',' ( (lv_annotations_22_0= ruleAnnotation ) ) )* otherlv_23= '}' )? ) ;
     public final EObject ruleKind() throws RecognitionException {
         EObject current = null;
 
@@ -2371,9 +2371,9 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         Token otherlv_4=null;
         Token otherlv_6=null;
         Token otherlv_8=null;
-        Token lv_title_9_0=null;
+        Token lv_scheme_9_0=null;
         Token otherlv_10=null;
-        Token lv_scheme_11_0=null;
+        Token lv_title_11_0=null;
         Token otherlv_12=null;
         Token otherlv_16=null;
         Token otherlv_18=null;
@@ -2399,11 +2399,11 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:993:2: ( (otherlv_0= 'kind' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= 'extends' ( ( ruleQualifiedID ) ) )? (otherlv_4= 'source' ( ( ruleQualifiedID ) ) )? (otherlv_6= 'target' ( ( ruleQualifiedID ) ) )? (otherlv_8= 'title' ( (lv_title_9_0= RULE_STRING ) ) )? otherlv_10= 'scheme' ( (lv_scheme_11_0= RULE_STRING ) ) (otherlv_12= '(' ( ( (lv_attributes_13_0= ruleAttribute ) ) | ( (lv_actions_14_0= ruleAction ) ) | ( (lv_constraints_15_0= ruleConstraint ) ) )+ otherlv_16= ')' )? ( (lv_fsm_17_0= ruleFSM ) )? (otherlv_18= 'annotations' otherlv_19= '{' ( (lv_annotations_20_0= ruleAnnotation ) ) (otherlv_21= ',' ( (lv_annotations_22_0= ruleAnnotation ) ) )* otherlv_23= '}' )? ) )
-            // InternalOCCI.g:994:2: (otherlv_0= 'kind' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= 'extends' ( ( ruleQualifiedID ) ) )? (otherlv_4= 'source' ( ( ruleQualifiedID ) ) )? (otherlv_6= 'target' ( ( ruleQualifiedID ) ) )? (otherlv_8= 'title' ( (lv_title_9_0= RULE_STRING ) ) )? otherlv_10= 'scheme' ( (lv_scheme_11_0= RULE_STRING ) ) (otherlv_12= '(' ( ( (lv_attributes_13_0= ruleAttribute ) ) | ( (lv_actions_14_0= ruleAction ) ) | ( (lv_constraints_15_0= ruleConstraint ) ) )+ otherlv_16= ')' )? ( (lv_fsm_17_0= ruleFSM ) )? (otherlv_18= 'annotations' otherlv_19= '{' ( (lv_annotations_20_0= ruleAnnotation ) ) (otherlv_21= ',' ( (lv_annotations_22_0= ruleAnnotation ) ) )* otherlv_23= '}' )? )
+            // InternalOCCI.g:993:2: ( (otherlv_0= 'kind' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= 'extends' ( ( ruleQualifiedID ) ) )? (otherlv_4= 'source' ( ( ruleQualifiedID ) ) )? (otherlv_6= 'target' ( ( ruleQualifiedID ) ) )? otherlv_8= 'scheme' ( (lv_scheme_9_0= RULE_STRING ) ) (otherlv_10= 'title' ( (lv_title_11_0= RULE_STRING ) ) )? (otherlv_12= '(' ( ( (lv_attributes_13_0= ruleAttribute ) ) | ( (lv_actions_14_0= ruleAction ) ) | ( (lv_constraints_15_0= ruleConstraint ) ) )+ otherlv_16= ')' )? ( (lv_fsm_17_0= ruleFSM ) )? (otherlv_18= 'annotations' otherlv_19= '{' ( (lv_annotations_20_0= ruleAnnotation ) ) (otherlv_21= ',' ( (lv_annotations_22_0= ruleAnnotation ) ) )* otherlv_23= '}' )? ) )
+            // InternalOCCI.g:994:2: (otherlv_0= 'kind' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= 'extends' ( ( ruleQualifiedID ) ) )? (otherlv_4= 'source' ( ( ruleQualifiedID ) ) )? (otherlv_6= 'target' ( ( ruleQualifiedID ) ) )? otherlv_8= 'scheme' ( (lv_scheme_9_0= RULE_STRING ) ) (otherlv_10= 'title' ( (lv_title_11_0= RULE_STRING ) ) )? (otherlv_12= '(' ( ( (lv_attributes_13_0= ruleAttribute ) ) | ( (lv_actions_14_0= ruleAction ) ) | ( (lv_constraints_15_0= ruleConstraint ) ) )+ otherlv_16= ')' )? ( (lv_fsm_17_0= ruleFSM ) )? (otherlv_18= 'annotations' otherlv_19= '{' ( (lv_annotations_20_0= ruleAnnotation ) ) (otherlv_21= ',' ( (lv_annotations_22_0= ruleAnnotation ) ) )* otherlv_23= '}' )? )
             {
-            // InternalOCCI.g:994:2: (otherlv_0= 'kind' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= 'extends' ( ( ruleQualifiedID ) ) )? (otherlv_4= 'source' ( ( ruleQualifiedID ) ) )? (otherlv_6= 'target' ( ( ruleQualifiedID ) ) )? (otherlv_8= 'title' ( (lv_title_9_0= RULE_STRING ) ) )? otherlv_10= 'scheme' ( (lv_scheme_11_0= RULE_STRING ) ) (otherlv_12= '(' ( ( (lv_attributes_13_0= ruleAttribute ) ) | ( (lv_actions_14_0= ruleAction ) ) | ( (lv_constraints_15_0= ruleConstraint ) ) )+ otherlv_16= ')' )? ( (lv_fsm_17_0= ruleFSM ) )? (otherlv_18= 'annotations' otherlv_19= '{' ( (lv_annotations_20_0= ruleAnnotation ) ) (otherlv_21= ',' ( (lv_annotations_22_0= ruleAnnotation ) ) )* otherlv_23= '}' )? )
-            // InternalOCCI.g:995:3: otherlv_0= 'kind' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= 'extends' ( ( ruleQualifiedID ) ) )? (otherlv_4= 'source' ( ( ruleQualifiedID ) ) )? (otherlv_6= 'target' ( ( ruleQualifiedID ) ) )? (otherlv_8= 'title' ( (lv_title_9_0= RULE_STRING ) ) )? otherlv_10= 'scheme' ( (lv_scheme_11_0= RULE_STRING ) ) (otherlv_12= '(' ( ( (lv_attributes_13_0= ruleAttribute ) ) | ( (lv_actions_14_0= ruleAction ) ) | ( (lv_constraints_15_0= ruleConstraint ) ) )+ otherlv_16= ')' )? ( (lv_fsm_17_0= ruleFSM ) )? (otherlv_18= 'annotations' otherlv_19= '{' ( (lv_annotations_20_0= ruleAnnotation ) ) (otherlv_21= ',' ( (lv_annotations_22_0= ruleAnnotation ) ) )* otherlv_23= '}' )?
+            // InternalOCCI.g:994:2: (otherlv_0= 'kind' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= 'extends' ( ( ruleQualifiedID ) ) )? (otherlv_4= 'source' ( ( ruleQualifiedID ) ) )? (otherlv_6= 'target' ( ( ruleQualifiedID ) ) )? otherlv_8= 'scheme' ( (lv_scheme_9_0= RULE_STRING ) ) (otherlv_10= 'title' ( (lv_title_11_0= RULE_STRING ) ) )? (otherlv_12= '(' ( ( (lv_attributes_13_0= ruleAttribute ) ) | ( (lv_actions_14_0= ruleAction ) ) | ( (lv_constraints_15_0= ruleConstraint ) ) )+ otherlv_16= ')' )? ( (lv_fsm_17_0= ruleFSM ) )? (otherlv_18= 'annotations' otherlv_19= '{' ( (lv_annotations_20_0= ruleAnnotation ) ) (otherlv_21= ',' ( (lv_annotations_22_0= ruleAnnotation ) ) )* otherlv_23= '}' )? )
+            // InternalOCCI.g:995:3: otherlv_0= 'kind' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= 'extends' ( ( ruleQualifiedID ) ) )? (otherlv_4= 'source' ( ( ruleQualifiedID ) ) )? (otherlv_6= 'target' ( ( ruleQualifiedID ) ) )? otherlv_8= 'scheme' ( (lv_scheme_9_0= RULE_STRING ) ) (otherlv_10= 'title' ( (lv_title_11_0= RULE_STRING ) ) )? (otherlv_12= '(' ( ( (lv_attributes_13_0= ruleAttribute ) ) | ( (lv_actions_14_0= ruleAction ) ) | ( (lv_constraints_15_0= ruleConstraint ) ) )+ otherlv_16= ')' )? ( (lv_fsm_17_0= ruleFSM ) )? (otherlv_18= 'annotations' otherlv_19= '{' ( (lv_annotations_20_0= ruleAnnotation ) ) (otherlv_21= ',' ( (lv_annotations_22_0= ruleAnnotation ) ) )* otherlv_23= '}' )?
             {
             otherlv_0=(Token)match(input,35,FOLLOW_12); 
 
@@ -2587,7 +2587,37 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:1084:3: (otherlv_8= 'title' ( (lv_title_9_0= RULE_STRING ) ) )?
+            otherlv_8=(Token)match(input,38,FOLLOW_4); 
+
+            			newLeafNode(otherlv_8, grammarAccess.getKindAccess().getSchemeKeyword_5());
+            		
+            // InternalOCCI.g:1088:3: ( (lv_scheme_9_0= RULE_STRING ) )
+            // InternalOCCI.g:1089:4: (lv_scheme_9_0= RULE_STRING )
+            {
+            // InternalOCCI.g:1089:4: (lv_scheme_9_0= RULE_STRING )
+            // InternalOCCI.g:1090:5: lv_scheme_9_0= RULE_STRING
+            {
+            lv_scheme_9_0=(Token)match(input,RULE_STRING,FOLLOW_39); 
+
+            					newLeafNode(lv_scheme_9_0, grammarAccess.getKindAccess().getSchemeSTRINGTerminalRuleCall_6_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getKindRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"scheme",
+            						lv_scheme_9_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            // InternalOCCI.g:1106:3: (otherlv_10= 'title' ( (lv_title_11_0= RULE_STRING ) ) )?
             int alt28=2;
             int LA28_0 = input.LA(1);
 
@@ -2596,21 +2626,21 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt28) {
                 case 1 :
-                    // InternalOCCI.g:1085:4: otherlv_8= 'title' ( (lv_title_9_0= RULE_STRING ) )
+                    // InternalOCCI.g:1107:4: otherlv_10= 'title' ( (lv_title_11_0= RULE_STRING ) )
                     {
-                    otherlv_8=(Token)match(input,21,FOLLOW_4); 
+                    otherlv_10=(Token)match(input,21,FOLLOW_4); 
 
-                    				newLeafNode(otherlv_8, grammarAccess.getKindAccess().getTitleKeyword_5_0());
+                    				newLeafNode(otherlv_10, grammarAccess.getKindAccess().getTitleKeyword_7_0());
                     			
-                    // InternalOCCI.g:1089:4: ( (lv_title_9_0= RULE_STRING ) )
-                    // InternalOCCI.g:1090:5: (lv_title_9_0= RULE_STRING )
+                    // InternalOCCI.g:1111:4: ( (lv_title_11_0= RULE_STRING ) )
+                    // InternalOCCI.g:1112:5: (lv_title_11_0= RULE_STRING )
                     {
-                    // InternalOCCI.g:1090:5: (lv_title_9_0= RULE_STRING )
-                    // InternalOCCI.g:1091:6: lv_title_9_0= RULE_STRING
+                    // InternalOCCI.g:1112:5: (lv_title_11_0= RULE_STRING )
+                    // InternalOCCI.g:1113:6: lv_title_11_0= RULE_STRING
                     {
-                    lv_title_9_0=(Token)match(input,RULE_STRING,FOLLOW_39); 
+                    lv_title_11_0=(Token)match(input,RULE_STRING,FOLLOW_40); 
 
-                    						newLeafNode(lv_title_9_0, grammarAccess.getKindAccess().getTitleSTRINGTerminalRuleCall_5_1_0());
+                    						newLeafNode(lv_title_11_0, grammarAccess.getKindAccess().getTitleSTRINGTerminalRuleCall_7_1_0());
                     					
 
                     						if (current==null) {
@@ -2619,7 +2649,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     						setWithLastConsumed(
                     							current,
                     							"title",
-                    							lv_title_9_0,
+                    							lv_title_11_0,
                     							"org.eclipse.xtext.common.Terminals.STRING");
                     					
 
@@ -2631,36 +2661,6 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-
-            }
-
-            otherlv_10=(Token)match(input,38,FOLLOW_4); 
-
-            			newLeafNode(otherlv_10, grammarAccess.getKindAccess().getSchemeKeyword_6());
-            		
-            // InternalOCCI.g:1112:3: ( (lv_scheme_11_0= RULE_STRING ) )
-            // InternalOCCI.g:1113:4: (lv_scheme_11_0= RULE_STRING )
-            {
-            // InternalOCCI.g:1113:4: (lv_scheme_11_0= RULE_STRING )
-            // InternalOCCI.g:1114:5: lv_scheme_11_0= RULE_STRING
-            {
-            lv_scheme_11_0=(Token)match(input,RULE_STRING,FOLLOW_40); 
-
-            					newLeafNode(lv_scheme_11_0, grammarAccess.getKindAccess().getSchemeSTRINGTerminalRuleCall_7_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getKindRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"scheme",
-            						lv_scheme_11_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
-            				
-
-            }
-
 
             }
 
@@ -3352,7 +3352,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_13=(Token)match(input,18,FOLLOW_39); 
+                    otherlv_13=(Token)match(input,18,FOLLOW_38); 
 
                     				newLeafNode(otherlv_13, grammarAccess.getMixinAccess().getRightParenthesisKeyword_3_4());
                     			
@@ -4404,44 +4404,42 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAction"
-    // InternalOCCI.g:1883:1: ruleAction returns [EObject current=null] : (otherlv_0= 'action' ( (lv_name_1_0= ruleNameID ) ) otherlv_2= 'scheme' ( (lv_scheme_3_0= RULE_STRING ) ) (otherlv_4= '(' ( (lv_attributes_5_0= ruleParameterDecl ) ) (otherlv_6= ',' ( (lv_attributes_7_0= ruleParameterDecl ) ) )* otherlv_8= ')' )? (otherlv_9= '{' otherlv_10= 'title' ( (lv_title_11_0= RULE_STRING ) ) otherlv_12= '}' )? (otherlv_13= 'annotations' otherlv_14= '{' ( (lv_annotations_15_0= ruleAnnotation ) ) (otherlv_16= ',' ( (lv_annotations_17_0= ruleAnnotation ) ) )* otherlv_18= '}' )? ) ;
+    // InternalOCCI.g:1883:1: ruleAction returns [EObject current=null] : (otherlv_0= 'action' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= '(' ( (lv_attributes_3_0= ruleParameterDecl ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleParameterDecl ) ) )* otherlv_6= ')' )? otherlv_7= 'scheme' ( (lv_scheme_8_0= RULE_STRING ) ) (otherlv_9= 'title' ( (lv_title_10_0= RULE_STRING ) ) )? (otherlv_11= 'annotations' otherlv_12= '{' ( (lv_annotations_13_0= ruleAnnotation ) ) (otherlv_14= ',' ( (lv_annotations_15_0= ruleAnnotation ) ) )* otherlv_16= '}' )? ) ;
     public final EObject ruleAction() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_2=null;
-        Token lv_scheme_3_0=null;
         Token otherlv_4=null;
         Token otherlv_6=null;
-        Token otherlv_8=null;
+        Token otherlv_7=null;
+        Token lv_scheme_8_0=null;
         Token otherlv_9=null;
-        Token otherlv_10=null;
-        Token lv_title_11_0=null;
+        Token lv_title_10_0=null;
+        Token otherlv_11=null;
         Token otherlv_12=null;
-        Token otherlv_13=null;
         Token otherlv_14=null;
         Token otherlv_16=null;
-        Token otherlv_18=null;
         AntlrDatatypeRuleToken lv_name_1_0 = null;
+
+        EObject lv_attributes_3_0 = null;
 
         EObject lv_attributes_5_0 = null;
 
-        EObject lv_attributes_7_0 = null;
+        EObject lv_annotations_13_0 = null;
 
         EObject lv_annotations_15_0 = null;
-
-        EObject lv_annotations_17_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalOCCI.g:1889:2: ( (otherlv_0= 'action' ( (lv_name_1_0= ruleNameID ) ) otherlv_2= 'scheme' ( (lv_scheme_3_0= RULE_STRING ) ) (otherlv_4= '(' ( (lv_attributes_5_0= ruleParameterDecl ) ) (otherlv_6= ',' ( (lv_attributes_7_0= ruleParameterDecl ) ) )* otherlv_8= ')' )? (otherlv_9= '{' otherlv_10= 'title' ( (lv_title_11_0= RULE_STRING ) ) otherlv_12= '}' )? (otherlv_13= 'annotations' otherlv_14= '{' ( (lv_annotations_15_0= ruleAnnotation ) ) (otherlv_16= ',' ( (lv_annotations_17_0= ruleAnnotation ) ) )* otherlv_18= '}' )? ) )
-            // InternalOCCI.g:1890:2: (otherlv_0= 'action' ( (lv_name_1_0= ruleNameID ) ) otherlv_2= 'scheme' ( (lv_scheme_3_0= RULE_STRING ) ) (otherlv_4= '(' ( (lv_attributes_5_0= ruleParameterDecl ) ) (otherlv_6= ',' ( (lv_attributes_7_0= ruleParameterDecl ) ) )* otherlv_8= ')' )? (otherlv_9= '{' otherlv_10= 'title' ( (lv_title_11_0= RULE_STRING ) ) otherlv_12= '}' )? (otherlv_13= 'annotations' otherlv_14= '{' ( (lv_annotations_15_0= ruleAnnotation ) ) (otherlv_16= ',' ( (lv_annotations_17_0= ruleAnnotation ) ) )* otherlv_18= '}' )? )
+            // InternalOCCI.g:1889:2: ( (otherlv_0= 'action' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= '(' ( (lv_attributes_3_0= ruleParameterDecl ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleParameterDecl ) ) )* otherlv_6= ')' )? otherlv_7= 'scheme' ( (lv_scheme_8_0= RULE_STRING ) ) (otherlv_9= 'title' ( (lv_title_10_0= RULE_STRING ) ) )? (otherlv_11= 'annotations' otherlv_12= '{' ( (lv_annotations_13_0= ruleAnnotation ) ) (otherlv_14= ',' ( (lv_annotations_15_0= ruleAnnotation ) ) )* otherlv_16= '}' )? ) )
+            // InternalOCCI.g:1890:2: (otherlv_0= 'action' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= '(' ( (lv_attributes_3_0= ruleParameterDecl ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleParameterDecl ) ) )* otherlv_6= ')' )? otherlv_7= 'scheme' ( (lv_scheme_8_0= RULE_STRING ) ) (otherlv_9= 'title' ( (lv_title_10_0= RULE_STRING ) ) )? (otherlv_11= 'annotations' otherlv_12= '{' ( (lv_annotations_13_0= ruleAnnotation ) ) (otherlv_14= ',' ( (lv_annotations_15_0= ruleAnnotation ) ) )* otherlv_16= '}' )? )
             {
-            // InternalOCCI.g:1890:2: (otherlv_0= 'action' ( (lv_name_1_0= ruleNameID ) ) otherlv_2= 'scheme' ( (lv_scheme_3_0= RULE_STRING ) ) (otherlv_4= '(' ( (lv_attributes_5_0= ruleParameterDecl ) ) (otherlv_6= ',' ( (lv_attributes_7_0= ruleParameterDecl ) ) )* otherlv_8= ')' )? (otherlv_9= '{' otherlv_10= 'title' ( (lv_title_11_0= RULE_STRING ) ) otherlv_12= '}' )? (otherlv_13= 'annotations' otherlv_14= '{' ( (lv_annotations_15_0= ruleAnnotation ) ) (otherlv_16= ',' ( (lv_annotations_17_0= ruleAnnotation ) ) )* otherlv_18= '}' )? )
-            // InternalOCCI.g:1891:3: otherlv_0= 'action' ( (lv_name_1_0= ruleNameID ) ) otherlv_2= 'scheme' ( (lv_scheme_3_0= RULE_STRING ) ) (otherlv_4= '(' ( (lv_attributes_5_0= ruleParameterDecl ) ) (otherlv_6= ',' ( (lv_attributes_7_0= ruleParameterDecl ) ) )* otherlv_8= ')' )? (otherlv_9= '{' otherlv_10= 'title' ( (lv_title_11_0= RULE_STRING ) ) otherlv_12= '}' )? (otherlv_13= 'annotations' otherlv_14= '{' ( (lv_annotations_15_0= ruleAnnotation ) ) (otherlv_16= ',' ( (lv_annotations_17_0= ruleAnnotation ) ) )* otherlv_18= '}' )?
+            // InternalOCCI.g:1890:2: (otherlv_0= 'action' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= '(' ( (lv_attributes_3_0= ruleParameterDecl ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleParameterDecl ) ) )* otherlv_6= ')' )? otherlv_7= 'scheme' ( (lv_scheme_8_0= RULE_STRING ) ) (otherlv_9= 'title' ( (lv_title_10_0= RULE_STRING ) ) )? (otherlv_11= 'annotations' otherlv_12= '{' ( (lv_annotations_13_0= ruleAnnotation ) ) (otherlv_14= ',' ( (lv_annotations_15_0= ruleAnnotation ) ) )* otherlv_16= '}' )? )
+            // InternalOCCI.g:1891:3: otherlv_0= 'action' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= '(' ( (lv_attributes_3_0= ruleParameterDecl ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleParameterDecl ) ) )* otherlv_6= ')' )? otherlv_7= 'scheme' ( (lv_scheme_8_0= RULE_STRING ) ) (otherlv_9= 'title' ( (lv_title_10_0= RULE_STRING ) ) )? (otherlv_11= 'annotations' otherlv_12= '{' ( (lv_annotations_13_0= ruleAnnotation ) ) (otherlv_14= ',' ( (lv_annotations_15_0= ruleAnnotation ) ) )* otherlv_16= '}' )?
             {
             otherlv_0=(Token)match(input,48,FOLLOW_12); 
 
@@ -4456,7 +4454,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getActionAccess().getNameNameIDParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_39);
+            pushFollow(FOLLOW_55);
             lv_name_1_0=ruleNameID();
 
             state._fsp--;
@@ -4478,37 +4476,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,38,FOLLOW_4); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getActionAccess().getSchemeKeyword_2());
-            		
-            // InternalOCCI.g:1918:3: ( (lv_scheme_3_0= RULE_STRING ) )
-            // InternalOCCI.g:1919:4: (lv_scheme_3_0= RULE_STRING )
-            {
-            // InternalOCCI.g:1919:4: (lv_scheme_3_0= RULE_STRING )
-            // InternalOCCI.g:1920:5: lv_scheme_3_0= RULE_STRING
-            {
-            lv_scheme_3_0=(Token)match(input,RULE_STRING,FOLLOW_55); 
-
-            					newLeafNode(lv_scheme_3_0, grammarAccess.getActionAccess().getSchemeSTRINGTerminalRuleCall_3_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getActionRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"scheme",
-            						lv_scheme_3_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
-            				
-
-            }
-
-
-            }
-
-            // InternalOCCI.g:1936:3: (otherlv_4= '(' ( (lv_attributes_5_0= ruleParameterDecl ) ) (otherlv_6= ',' ( (lv_attributes_7_0= ruleParameterDecl ) ) )* otherlv_8= ')' )?
+            // InternalOCCI.g:1914:3: (otherlv_2= '(' ( (lv_attributes_3_0= ruleParameterDecl ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleParameterDecl ) ) )* otherlv_6= ')' )?
             int alt51=2;
             int LA51_0 = input.LA(1);
 
@@ -4517,23 +4485,23 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt51) {
                 case 1 :
-                    // InternalOCCI.g:1937:4: otherlv_4= '(' ( (lv_attributes_5_0= ruleParameterDecl ) ) (otherlv_6= ',' ( (lv_attributes_7_0= ruleParameterDecl ) ) )* otherlv_8= ')'
+                    // InternalOCCI.g:1915:4: otherlv_2= '(' ( (lv_attributes_3_0= ruleParameterDecl ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleParameterDecl ) ) )* otherlv_6= ')'
                     {
-                    otherlv_4=(Token)match(input,16,FOLLOW_12); 
+                    otherlv_2=(Token)match(input,16,FOLLOW_12); 
 
-                    				newLeafNode(otherlv_4, grammarAccess.getActionAccess().getLeftParenthesisKeyword_4_0());
+                    				newLeafNode(otherlv_2, grammarAccess.getActionAccess().getLeftParenthesisKeyword_2_0());
                     			
-                    // InternalOCCI.g:1941:4: ( (lv_attributes_5_0= ruleParameterDecl ) )
-                    // InternalOCCI.g:1942:5: (lv_attributes_5_0= ruleParameterDecl )
+                    // InternalOCCI.g:1919:4: ( (lv_attributes_3_0= ruleParameterDecl ) )
+                    // InternalOCCI.g:1920:5: (lv_attributes_3_0= ruleParameterDecl )
                     {
-                    // InternalOCCI.g:1942:5: (lv_attributes_5_0= ruleParameterDecl )
-                    // InternalOCCI.g:1943:6: lv_attributes_5_0= ruleParameterDecl
+                    // InternalOCCI.g:1920:5: (lv_attributes_3_0= ruleParameterDecl )
+                    // InternalOCCI.g:1921:6: lv_attributes_3_0= ruleParameterDecl
                     {
 
-                    						newCompositeNode(grammarAccess.getActionAccess().getAttributesParameterDeclParserRuleCall_4_1_0());
+                    						newCompositeNode(grammarAccess.getActionAccess().getAttributesParameterDeclParserRuleCall_2_1_0());
                     					
                     pushFollow(FOLLOW_8);
-                    lv_attributes_5_0=ruleParameterDecl();
+                    lv_attributes_3_0=ruleParameterDecl();
 
                     state._fsp--;
 
@@ -4544,7 +4512,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     						add(
                     							current,
                     							"attributes",
-                    							lv_attributes_5_0,
+                    							lv_attributes_3_0,
                     							"org.eclipse.cmf.occi.core.xtext.OCCI.ParameterDecl");
                     						afterParserOrEnumRuleCall();
                     					
@@ -4554,7 +4522,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOCCI.g:1960:4: (otherlv_6= ',' ( (lv_attributes_7_0= ruleParameterDecl ) ) )*
+                    // InternalOCCI.g:1938:4: (otherlv_4= ',' ( (lv_attributes_5_0= ruleParameterDecl ) ) )*
                     loop50:
                     do {
                         int alt50=2;
@@ -4567,23 +4535,23 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
                         switch (alt50) {
                     	case 1 :
-                    	    // InternalOCCI.g:1961:5: otherlv_6= ',' ( (lv_attributes_7_0= ruleParameterDecl ) )
+                    	    // InternalOCCI.g:1939:5: otherlv_4= ',' ( (lv_attributes_5_0= ruleParameterDecl ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,17,FOLLOW_12); 
+                    	    otherlv_4=(Token)match(input,17,FOLLOW_12); 
 
-                    	    					newLeafNode(otherlv_6, grammarAccess.getActionAccess().getCommaKeyword_4_2_0());
+                    	    					newLeafNode(otherlv_4, grammarAccess.getActionAccess().getCommaKeyword_2_2_0());
                     	    				
-                    	    // InternalOCCI.g:1965:5: ( (lv_attributes_7_0= ruleParameterDecl ) )
-                    	    // InternalOCCI.g:1966:6: (lv_attributes_7_0= ruleParameterDecl )
+                    	    // InternalOCCI.g:1943:5: ( (lv_attributes_5_0= ruleParameterDecl ) )
+                    	    // InternalOCCI.g:1944:6: (lv_attributes_5_0= ruleParameterDecl )
                     	    {
-                    	    // InternalOCCI.g:1966:6: (lv_attributes_7_0= ruleParameterDecl )
-                    	    // InternalOCCI.g:1967:7: lv_attributes_7_0= ruleParameterDecl
+                    	    // InternalOCCI.g:1944:6: (lv_attributes_5_0= ruleParameterDecl )
+                    	    // InternalOCCI.g:1945:7: lv_attributes_5_0= ruleParameterDecl
                     	    {
 
-                    	    							newCompositeNode(grammarAccess.getActionAccess().getAttributesParameterDeclParserRuleCall_4_2_1_0());
+                    	    							newCompositeNode(grammarAccess.getActionAccess().getAttributesParameterDeclParserRuleCall_2_2_1_0());
                     	    						
                     	    pushFollow(FOLLOW_8);
-                    	    lv_attributes_7_0=ruleParameterDecl();
+                    	    lv_attributes_5_0=ruleParameterDecl();
 
                     	    state._fsp--;
 
@@ -4594,7 +4562,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     	    							add(
                     	    								current,
                     	    								"attributes",
-                    	    								lv_attributes_7_0,
+                    	    								lv_attributes_5_0,
                     	    								"org.eclipse.cmf.occi.core.xtext.OCCI.ParameterDecl");
                     	    							afterParserOrEnumRuleCall();
                     	    						
@@ -4613,9 +4581,9 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_8=(Token)match(input,18,FOLLOW_56); 
+                    otherlv_6=(Token)match(input,18,FOLLOW_38); 
 
-                    				newLeafNode(otherlv_8, grammarAccess.getActionAccess().getRightParenthesisKeyword_4_3());
+                    				newLeafNode(otherlv_6, grammarAccess.getActionAccess().getRightParenthesisKeyword_2_3());
                     			
 
                     }
@@ -4623,34 +4591,60 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:1990:3: (otherlv_9= '{' otherlv_10= 'title' ( (lv_title_11_0= RULE_STRING ) ) otherlv_12= '}' )?
+            otherlv_7=(Token)match(input,38,FOLLOW_4); 
+
+            			newLeafNode(otherlv_7, grammarAccess.getActionAccess().getSchemeKeyword_3());
+            		
+            // InternalOCCI.g:1972:3: ( (lv_scheme_8_0= RULE_STRING ) )
+            // InternalOCCI.g:1973:4: (lv_scheme_8_0= RULE_STRING )
+            {
+            // InternalOCCI.g:1973:4: (lv_scheme_8_0= RULE_STRING )
+            // InternalOCCI.g:1974:5: lv_scheme_8_0= RULE_STRING
+            {
+            lv_scheme_8_0=(Token)match(input,RULE_STRING,FOLLOW_56); 
+
+            					newLeafNode(lv_scheme_8_0, grammarAccess.getActionAccess().getSchemeSTRINGTerminalRuleCall_4_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getActionRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"scheme",
+            						lv_scheme_8_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            // InternalOCCI.g:1990:3: (otherlv_9= 'title' ( (lv_title_10_0= RULE_STRING ) ) )?
             int alt52=2;
             int LA52_0 = input.LA(1);
 
-            if ( (LA52_0==24) ) {
+            if ( (LA52_0==21) ) {
                 alt52=1;
             }
             switch (alt52) {
                 case 1 :
-                    // InternalOCCI.g:1991:4: otherlv_9= '{' otherlv_10= 'title' ( (lv_title_11_0= RULE_STRING ) ) otherlv_12= '}'
+                    // InternalOCCI.g:1991:4: otherlv_9= 'title' ( (lv_title_10_0= RULE_STRING ) )
                     {
-                    otherlv_9=(Token)match(input,24,FOLLOW_57); 
+                    otherlv_9=(Token)match(input,21,FOLLOW_4); 
 
-                    				newLeafNode(otherlv_9, grammarAccess.getActionAccess().getLeftCurlyBracketKeyword_5_0());
+                    				newLeafNode(otherlv_9, grammarAccess.getActionAccess().getTitleKeyword_5_0());
                     			
-                    otherlv_10=(Token)match(input,21,FOLLOW_4); 
-
-                    				newLeafNode(otherlv_10, grammarAccess.getActionAccess().getTitleKeyword_5_1());
-                    			
-                    // InternalOCCI.g:1999:4: ( (lv_title_11_0= RULE_STRING ) )
-                    // InternalOCCI.g:2000:5: (lv_title_11_0= RULE_STRING )
+                    // InternalOCCI.g:1995:4: ( (lv_title_10_0= RULE_STRING ) )
+                    // InternalOCCI.g:1996:5: (lv_title_10_0= RULE_STRING )
                     {
-                    // InternalOCCI.g:2000:5: (lv_title_11_0= RULE_STRING )
-                    // InternalOCCI.g:2001:6: lv_title_11_0= RULE_STRING
+                    // InternalOCCI.g:1996:5: (lv_title_10_0= RULE_STRING )
+                    // InternalOCCI.g:1997:6: lv_title_10_0= RULE_STRING
                     {
-                    lv_title_11_0=(Token)match(input,RULE_STRING,FOLLOW_58); 
+                    lv_title_10_0=(Token)match(input,RULE_STRING,FOLLOW_44); 
 
-                    						newLeafNode(lv_title_11_0, grammarAccess.getActionAccess().getTitleSTRINGTerminalRuleCall_5_2_0());
+                    						newLeafNode(lv_title_10_0, grammarAccess.getActionAccess().getTitleSTRINGTerminalRuleCall_5_1_0());
                     					
 
                     						if (current==null) {
@@ -4659,7 +4653,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     						setWithLastConsumed(
                     							current,
                     							"title",
-                    							lv_title_11_0,
+                    							lv_title_10_0,
                     							"org.eclipse.xtext.common.Terminals.STRING");
                     					
 
@@ -4668,17 +4662,13 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_12=(Token)match(input,25,FOLLOW_44); 
-
-                    				newLeafNode(otherlv_12, grammarAccess.getActionAccess().getRightCurlyBracketKeyword_5_3());
-                    			
 
                     }
                     break;
 
             }
 
-            // InternalOCCI.g:2022:3: (otherlv_13= 'annotations' otherlv_14= '{' ( (lv_annotations_15_0= ruleAnnotation ) ) (otherlv_16= ',' ( (lv_annotations_17_0= ruleAnnotation ) ) )* otherlv_18= '}' )?
+            // InternalOCCI.g:2014:3: (otherlv_11= 'annotations' otherlv_12= '{' ( (lv_annotations_13_0= ruleAnnotation ) ) (otherlv_14= ',' ( (lv_annotations_15_0= ruleAnnotation ) ) )* otherlv_16= '}' )?
             int alt54=2;
             int LA54_0 = input.LA(1);
 
@@ -4687,27 +4677,27 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt54) {
                 case 1 :
-                    // InternalOCCI.g:2023:4: otherlv_13= 'annotations' otherlv_14= '{' ( (lv_annotations_15_0= ruleAnnotation ) ) (otherlv_16= ',' ( (lv_annotations_17_0= ruleAnnotation ) ) )* otherlv_18= '}'
+                    // InternalOCCI.g:2015:4: otherlv_11= 'annotations' otherlv_12= '{' ( (lv_annotations_13_0= ruleAnnotation ) ) (otherlv_14= ',' ( (lv_annotations_15_0= ruleAnnotation ) ) )* otherlv_16= '}'
                     {
-                    otherlv_13=(Token)match(input,39,FOLLOW_17); 
+                    otherlv_11=(Token)match(input,39,FOLLOW_17); 
 
-                    				newLeafNode(otherlv_13, grammarAccess.getActionAccess().getAnnotationsKeyword_6_0());
+                    				newLeafNode(otherlv_11, grammarAccess.getActionAccess().getAnnotationsKeyword_6_0());
                     			
-                    otherlv_14=(Token)match(input,24,FOLLOW_7); 
+                    otherlv_12=(Token)match(input,24,FOLLOW_7); 
 
-                    				newLeafNode(otherlv_14, grammarAccess.getActionAccess().getLeftCurlyBracketKeyword_6_1());
+                    				newLeafNode(otherlv_12, grammarAccess.getActionAccess().getLeftCurlyBracketKeyword_6_1());
                     			
-                    // InternalOCCI.g:2031:4: ( (lv_annotations_15_0= ruleAnnotation ) )
-                    // InternalOCCI.g:2032:5: (lv_annotations_15_0= ruleAnnotation )
+                    // InternalOCCI.g:2023:4: ( (lv_annotations_13_0= ruleAnnotation ) )
+                    // InternalOCCI.g:2024:5: (lv_annotations_13_0= ruleAnnotation )
                     {
-                    // InternalOCCI.g:2032:5: (lv_annotations_15_0= ruleAnnotation )
-                    // InternalOCCI.g:2033:6: lv_annotations_15_0= ruleAnnotation
+                    // InternalOCCI.g:2024:5: (lv_annotations_13_0= ruleAnnotation )
+                    // InternalOCCI.g:2025:6: lv_annotations_13_0= ruleAnnotation
                     {
 
                     						newCompositeNode(grammarAccess.getActionAccess().getAnnotationsAnnotationParserRuleCall_6_2_0());
                     					
                     pushFollow(FOLLOW_19);
-                    lv_annotations_15_0=ruleAnnotation();
+                    lv_annotations_13_0=ruleAnnotation();
 
                     state._fsp--;
 
@@ -4718,7 +4708,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     						add(
                     							current,
                     							"annotations",
-                    							lv_annotations_15_0,
+                    							lv_annotations_13_0,
                     							"org.eclipse.cmf.occi.core.xtext.OCCI.Annotation");
                     						afterParserOrEnumRuleCall();
                     					
@@ -4728,7 +4718,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOCCI.g:2050:4: (otherlv_16= ',' ( (lv_annotations_17_0= ruleAnnotation ) ) )*
+                    // InternalOCCI.g:2042:4: (otherlv_14= ',' ( (lv_annotations_15_0= ruleAnnotation ) ) )*
                     loop53:
                     do {
                         int alt53=2;
@@ -4741,23 +4731,23 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
                         switch (alt53) {
                     	case 1 :
-                    	    // InternalOCCI.g:2051:5: otherlv_16= ',' ( (lv_annotations_17_0= ruleAnnotation ) )
+                    	    // InternalOCCI.g:2043:5: otherlv_14= ',' ( (lv_annotations_15_0= ruleAnnotation ) )
                     	    {
-                    	    otherlv_16=(Token)match(input,17,FOLLOW_7); 
+                    	    otherlv_14=(Token)match(input,17,FOLLOW_7); 
 
-                    	    					newLeafNode(otherlv_16, grammarAccess.getActionAccess().getCommaKeyword_6_3_0());
+                    	    					newLeafNode(otherlv_14, grammarAccess.getActionAccess().getCommaKeyword_6_3_0());
                     	    				
-                    	    // InternalOCCI.g:2055:5: ( (lv_annotations_17_0= ruleAnnotation ) )
-                    	    // InternalOCCI.g:2056:6: (lv_annotations_17_0= ruleAnnotation )
+                    	    // InternalOCCI.g:2047:5: ( (lv_annotations_15_0= ruleAnnotation ) )
+                    	    // InternalOCCI.g:2048:6: (lv_annotations_15_0= ruleAnnotation )
                     	    {
-                    	    // InternalOCCI.g:2056:6: (lv_annotations_17_0= ruleAnnotation )
-                    	    // InternalOCCI.g:2057:7: lv_annotations_17_0= ruleAnnotation
+                    	    // InternalOCCI.g:2048:6: (lv_annotations_15_0= ruleAnnotation )
+                    	    // InternalOCCI.g:2049:7: lv_annotations_15_0= ruleAnnotation
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getActionAccess().getAnnotationsAnnotationParserRuleCall_6_3_1_0());
                     	    						
                     	    pushFollow(FOLLOW_19);
-                    	    lv_annotations_17_0=ruleAnnotation();
+                    	    lv_annotations_15_0=ruleAnnotation();
 
                     	    state._fsp--;
 
@@ -4768,7 +4758,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     	    							add(
                     	    								current,
                     	    								"annotations",
-                    	    								lv_annotations_17_0,
+                    	    								lv_annotations_15_0,
                     	    								"org.eclipse.cmf.occi.core.xtext.OCCI.Annotation");
                     	    							afterParserOrEnumRuleCall();
                     	    						
@@ -4787,9 +4777,9 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_18=(Token)match(input,25,FOLLOW_2); 
+                    otherlv_16=(Token)match(input,25,FOLLOW_2); 
 
-                    				newLeafNode(otherlv_18, grammarAccess.getActionAccess().getRightCurlyBracketKeyword_6_4());
+                    				newLeafNode(otherlv_16, grammarAccess.getActionAccess().getRightCurlyBracketKeyword_6_4());
                     			
 
                     }
@@ -4820,7 +4810,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParameterDecl"
-    // InternalOCCI.g:2084:1: entryRuleParameterDecl returns [EObject current=null] : iv_ruleParameterDecl= ruleParameterDecl EOF ;
+    // InternalOCCI.g:2076:1: entryRuleParameterDecl returns [EObject current=null] : iv_ruleParameterDecl= ruleParameterDecl EOF ;
     public final EObject entryRuleParameterDecl() throws RecognitionException {
         EObject current = null;
 
@@ -4828,8 +4818,8 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOCCI.g:2084:54: (iv_ruleParameterDecl= ruleParameterDecl EOF )
-            // InternalOCCI.g:2085:2: iv_ruleParameterDecl= ruleParameterDecl EOF
+            // InternalOCCI.g:2076:54: (iv_ruleParameterDecl= ruleParameterDecl EOF )
+            // InternalOCCI.g:2077:2: iv_ruleParameterDecl= ruleParameterDecl EOF
             {
              newCompositeNode(grammarAccess.getParameterDeclRule()); 
             pushFollow(FOLLOW_1);
@@ -4856,7 +4846,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterDecl"
-    // InternalOCCI.g:2091:1: ruleParameterDecl returns [EObject current=null] : ( ( (lv_name_0_0= ruleQualifiedID ) ) otherlv_1= ':' ( ( ruleQualifiedID ) ) (otherlv_3= '=' ( (lv_default_4_0= RULE_STRING ) ) )? ) ;
+    // InternalOCCI.g:2083:1: ruleParameterDecl returns [EObject current=null] : ( ( (lv_name_0_0= ruleQualifiedID ) ) otherlv_1= ':' ( ( ruleQualifiedID ) ) (otherlv_3= '=' ( (lv_default_4_0= RULE_STRING ) ) )? ) ;
     public final EObject ruleParameterDecl() throws RecognitionException {
         EObject current = null;
 
@@ -4870,17 +4860,17 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:2097:2: ( ( ( (lv_name_0_0= ruleQualifiedID ) ) otherlv_1= ':' ( ( ruleQualifiedID ) ) (otherlv_3= '=' ( (lv_default_4_0= RULE_STRING ) ) )? ) )
-            // InternalOCCI.g:2098:2: ( ( (lv_name_0_0= ruleQualifiedID ) ) otherlv_1= ':' ( ( ruleQualifiedID ) ) (otherlv_3= '=' ( (lv_default_4_0= RULE_STRING ) ) )? )
+            // InternalOCCI.g:2089:2: ( ( ( (lv_name_0_0= ruleQualifiedID ) ) otherlv_1= ':' ( ( ruleQualifiedID ) ) (otherlv_3= '=' ( (lv_default_4_0= RULE_STRING ) ) )? ) )
+            // InternalOCCI.g:2090:2: ( ( (lv_name_0_0= ruleQualifiedID ) ) otherlv_1= ':' ( ( ruleQualifiedID ) ) (otherlv_3= '=' ( (lv_default_4_0= RULE_STRING ) ) )? )
             {
-            // InternalOCCI.g:2098:2: ( ( (lv_name_0_0= ruleQualifiedID ) ) otherlv_1= ':' ( ( ruleQualifiedID ) ) (otherlv_3= '=' ( (lv_default_4_0= RULE_STRING ) ) )? )
-            // InternalOCCI.g:2099:3: ( (lv_name_0_0= ruleQualifiedID ) ) otherlv_1= ':' ( ( ruleQualifiedID ) ) (otherlv_3= '=' ( (lv_default_4_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:2090:2: ( ( (lv_name_0_0= ruleQualifiedID ) ) otherlv_1= ':' ( ( ruleQualifiedID ) ) (otherlv_3= '=' ( (lv_default_4_0= RULE_STRING ) ) )? )
+            // InternalOCCI.g:2091:3: ( (lv_name_0_0= ruleQualifiedID ) ) otherlv_1= ':' ( ( ruleQualifiedID ) ) (otherlv_3= '=' ( (lv_default_4_0= RULE_STRING ) ) )?
             {
-            // InternalOCCI.g:2099:3: ( (lv_name_0_0= ruleQualifiedID ) )
-            // InternalOCCI.g:2100:4: (lv_name_0_0= ruleQualifiedID )
+            // InternalOCCI.g:2091:3: ( (lv_name_0_0= ruleQualifiedID ) )
+            // InternalOCCI.g:2092:4: (lv_name_0_0= ruleQualifiedID )
             {
-            // InternalOCCI.g:2100:4: (lv_name_0_0= ruleQualifiedID )
-            // InternalOCCI.g:2101:5: lv_name_0_0= ruleQualifiedID
+            // InternalOCCI.g:2092:4: (lv_name_0_0= ruleQualifiedID )
+            // InternalOCCI.g:2093:5: lv_name_0_0= ruleQualifiedID
             {
 
             					newCompositeNode(grammarAccess.getParameterDeclAccess().getNameQualifiedIDParserRuleCall_0_0());
@@ -4911,11 +4901,11 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getParameterDeclAccess().getColonKeyword_1());
             		
-            // InternalOCCI.g:2122:3: ( ( ruleQualifiedID ) )
-            // InternalOCCI.g:2123:4: ( ruleQualifiedID )
+            // InternalOCCI.g:2114:3: ( ( ruleQualifiedID ) )
+            // InternalOCCI.g:2115:4: ( ruleQualifiedID )
             {
-            // InternalOCCI.g:2123:4: ( ruleQualifiedID )
-            // InternalOCCI.g:2124:5: ruleQualifiedID
+            // InternalOCCI.g:2115:4: ( ruleQualifiedID )
+            // InternalOCCI.g:2116:5: ruleQualifiedID
             {
 
             					if (current==null) {
@@ -4925,7 +4915,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getParameterDeclAccess().getTypeDataTypeCrossReference_2_0());
             				
-            pushFollow(FOLLOW_59);
+            pushFollow(FOLLOW_57);
             ruleQualifiedID();
 
             state._fsp--;
@@ -4939,7 +4929,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:2138:3: (otherlv_3= '=' ( (lv_default_4_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:2130:3: (otherlv_3= '=' ( (lv_default_4_0= RULE_STRING ) ) )?
             int alt55=2;
             int LA55_0 = input.LA(1);
 
@@ -4948,17 +4938,17 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt55) {
                 case 1 :
-                    // InternalOCCI.g:2139:4: otherlv_3= '=' ( (lv_default_4_0= RULE_STRING ) )
+                    // InternalOCCI.g:2131:4: otherlv_3= '=' ( (lv_default_4_0= RULE_STRING ) )
                     {
                     otherlv_3=(Token)match(input,30,FOLLOW_4); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getParameterDeclAccess().getEqualsSignKeyword_3_0());
                     			
-                    // InternalOCCI.g:2143:4: ( (lv_default_4_0= RULE_STRING ) )
-                    // InternalOCCI.g:2144:5: (lv_default_4_0= RULE_STRING )
+                    // InternalOCCI.g:2135:4: ( (lv_default_4_0= RULE_STRING ) )
+                    // InternalOCCI.g:2136:5: (lv_default_4_0= RULE_STRING )
                     {
-                    // InternalOCCI.g:2144:5: (lv_default_4_0= RULE_STRING )
-                    // InternalOCCI.g:2145:6: lv_default_4_0= RULE_STRING
+                    // InternalOCCI.g:2136:5: (lv_default_4_0= RULE_STRING )
+                    // InternalOCCI.g:2137:6: lv_default_4_0= RULE_STRING
                     {
                     lv_default_4_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -5009,7 +4999,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConstraint"
-    // InternalOCCI.g:2166:1: entryRuleConstraint returns [EObject current=null] : iv_ruleConstraint= ruleConstraint EOF ;
+    // InternalOCCI.g:2158:1: entryRuleConstraint returns [EObject current=null] : iv_ruleConstraint= ruleConstraint EOF ;
     public final EObject entryRuleConstraint() throws RecognitionException {
         EObject current = null;
 
@@ -5017,8 +5007,8 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOCCI.g:2166:51: (iv_ruleConstraint= ruleConstraint EOF )
-            // InternalOCCI.g:2167:2: iv_ruleConstraint= ruleConstraint EOF
+            // InternalOCCI.g:2158:51: (iv_ruleConstraint= ruleConstraint EOF )
+            // InternalOCCI.g:2159:2: iv_ruleConstraint= ruleConstraint EOF
             {
              newCompositeNode(grammarAccess.getConstraintRule()); 
             pushFollow(FOLLOW_1);
@@ -5045,7 +5035,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConstraint"
-    // InternalOCCI.g:2173:1: ruleConstraint returns [EObject current=null] : (otherlv_0= 'constraint' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) ) )? otherlv_4= 'body' ( (lv_body_5_0= RULE_STRING ) ) ) ;
+    // InternalOCCI.g:2165:1: ruleConstraint returns [EObject current=null] : (otherlv_0= 'constraint' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) ) )? otherlv_4= 'body' ( (lv_body_5_0= RULE_STRING ) ) ) ;
     public final EObject ruleConstraint() throws RecognitionException {
         EObject current = null;
 
@@ -5061,26 +5051,26 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:2179:2: ( (otherlv_0= 'constraint' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) ) )? otherlv_4= 'body' ( (lv_body_5_0= RULE_STRING ) ) ) )
-            // InternalOCCI.g:2180:2: (otherlv_0= 'constraint' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) ) )? otherlv_4= 'body' ( (lv_body_5_0= RULE_STRING ) ) )
+            // InternalOCCI.g:2171:2: ( (otherlv_0= 'constraint' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) ) )? otherlv_4= 'body' ( (lv_body_5_0= RULE_STRING ) ) ) )
+            // InternalOCCI.g:2172:2: (otherlv_0= 'constraint' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) ) )? otherlv_4= 'body' ( (lv_body_5_0= RULE_STRING ) ) )
             {
-            // InternalOCCI.g:2180:2: (otherlv_0= 'constraint' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) ) )? otherlv_4= 'body' ( (lv_body_5_0= RULE_STRING ) ) )
-            // InternalOCCI.g:2181:3: otherlv_0= 'constraint' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) ) )? otherlv_4= 'body' ( (lv_body_5_0= RULE_STRING ) )
+            // InternalOCCI.g:2172:2: (otherlv_0= 'constraint' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) ) )? otherlv_4= 'body' ( (lv_body_5_0= RULE_STRING ) ) )
+            // InternalOCCI.g:2173:3: otherlv_0= 'constraint' ( (lv_name_1_0= ruleNameID ) ) (otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) ) )? otherlv_4= 'body' ( (lv_body_5_0= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,49,FOLLOW_12); 
 
             			newLeafNode(otherlv_0, grammarAccess.getConstraintAccess().getConstraintKeyword_0());
             		
-            // InternalOCCI.g:2185:3: ( (lv_name_1_0= ruleNameID ) )
-            // InternalOCCI.g:2186:4: (lv_name_1_0= ruleNameID )
+            // InternalOCCI.g:2177:3: ( (lv_name_1_0= ruleNameID ) )
+            // InternalOCCI.g:2178:4: (lv_name_1_0= ruleNameID )
             {
-            // InternalOCCI.g:2186:4: (lv_name_1_0= ruleNameID )
-            // InternalOCCI.g:2187:5: lv_name_1_0= ruleNameID
+            // InternalOCCI.g:2178:4: (lv_name_1_0= ruleNameID )
+            // InternalOCCI.g:2179:5: lv_name_1_0= ruleNameID
             {
 
             					newCompositeNode(grammarAccess.getConstraintAccess().getNameNameIDParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_60);
+            pushFollow(FOLLOW_58);
             lv_name_1_0=ruleNameID();
 
             state._fsp--;
@@ -5102,7 +5092,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:2204:3: (otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:2196:3: (otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) ) )?
             int alt56=2;
             int LA56_0 = input.LA(1);
 
@@ -5111,19 +5101,19 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt56) {
                 case 1 :
-                    // InternalOCCI.g:2205:4: otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) )
+                    // InternalOCCI.g:2197:4: otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) )
                     {
                     otherlv_2=(Token)match(input,13,FOLLOW_4); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getConstraintAccess().getDescriptionKeyword_2_0());
                     			
-                    // InternalOCCI.g:2209:4: ( (lv_description_3_0= RULE_STRING ) )
-                    // InternalOCCI.g:2210:5: (lv_description_3_0= RULE_STRING )
+                    // InternalOCCI.g:2201:4: ( (lv_description_3_0= RULE_STRING ) )
+                    // InternalOCCI.g:2202:5: (lv_description_3_0= RULE_STRING )
                     {
-                    // InternalOCCI.g:2210:5: (lv_description_3_0= RULE_STRING )
-                    // InternalOCCI.g:2211:6: lv_description_3_0= RULE_STRING
+                    // InternalOCCI.g:2202:5: (lv_description_3_0= RULE_STRING )
+                    // InternalOCCI.g:2203:6: lv_description_3_0= RULE_STRING
                     {
-                    lv_description_3_0=(Token)match(input,RULE_STRING,FOLLOW_61); 
+                    lv_description_3_0=(Token)match(input,RULE_STRING,FOLLOW_59); 
 
                     						newLeafNode(lv_description_3_0, grammarAccess.getConstraintAccess().getDescriptionSTRINGTerminalRuleCall_2_1_0());
                     					
@@ -5153,11 +5143,11 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getConstraintAccess().getBodyKeyword_3());
             		
-            // InternalOCCI.g:2232:3: ( (lv_body_5_0= RULE_STRING ) )
-            // InternalOCCI.g:2233:4: (lv_body_5_0= RULE_STRING )
+            // InternalOCCI.g:2224:3: ( (lv_body_5_0= RULE_STRING ) )
+            // InternalOCCI.g:2225:4: (lv_body_5_0= RULE_STRING )
             {
-            // InternalOCCI.g:2233:4: (lv_body_5_0= RULE_STRING )
-            // InternalOCCI.g:2234:5: lv_body_5_0= RULE_STRING
+            // InternalOCCI.g:2225:4: (lv_body_5_0= RULE_STRING )
+            // InternalOCCI.g:2226:5: lv_body_5_0= RULE_STRING
             {
             lv_body_5_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -5202,7 +5192,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFSM"
-    // InternalOCCI.g:2254:1: entryRuleFSM returns [EObject current=null] : iv_ruleFSM= ruleFSM EOF ;
+    // InternalOCCI.g:2246:1: entryRuleFSM returns [EObject current=null] : iv_ruleFSM= ruleFSM EOF ;
     public final EObject entryRuleFSM() throws RecognitionException {
         EObject current = null;
 
@@ -5210,8 +5200,8 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOCCI.g:2254:44: (iv_ruleFSM= ruleFSM EOF )
-            // InternalOCCI.g:2255:2: iv_ruleFSM= ruleFSM EOF
+            // InternalOCCI.g:2246:44: (iv_ruleFSM= ruleFSM EOF )
+            // InternalOCCI.g:2247:2: iv_ruleFSM= ruleFSM EOF
             {
              newCompositeNode(grammarAccess.getFSMRule()); 
             pushFollow(FOLLOW_1);
@@ -5238,7 +5228,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFSM"
-    // InternalOCCI.g:2261:1: ruleFSM returns [EObject current=null] : (otherlv_0= 'FSM' otherlv_1= 'attribute' ( ( ruleQualifiedID ) ) (otherlv_3= '{' ( (lv_ownedState_4_0= ruleState ) ) (otherlv_5= ',' ( (lv_ownedState_6_0= ruleState ) ) )* otherlv_7= '}' )? ) ;
+    // InternalOCCI.g:2253:1: ruleFSM returns [EObject current=null] : (otherlv_0= 'FSM' otherlv_1= 'attribute' ( ( ruleQualifiedID ) ) (otherlv_3= '{' ( (lv_ownedState_4_0= ruleState ) ) (otherlv_5= ',' ( (lv_ownedState_6_0= ruleState ) ) )* otherlv_7= '}' )? ) ;
     public final EObject ruleFSM() throws RecognitionException {
         EObject current = null;
 
@@ -5256,13 +5246,13 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:2267:2: ( (otherlv_0= 'FSM' otherlv_1= 'attribute' ( ( ruleQualifiedID ) ) (otherlv_3= '{' ( (lv_ownedState_4_0= ruleState ) ) (otherlv_5= ',' ( (lv_ownedState_6_0= ruleState ) ) )* otherlv_7= '}' )? ) )
-            // InternalOCCI.g:2268:2: (otherlv_0= 'FSM' otherlv_1= 'attribute' ( ( ruleQualifiedID ) ) (otherlv_3= '{' ( (lv_ownedState_4_0= ruleState ) ) (otherlv_5= ',' ( (lv_ownedState_6_0= ruleState ) ) )* otherlv_7= '}' )? )
+            // InternalOCCI.g:2259:2: ( (otherlv_0= 'FSM' otherlv_1= 'attribute' ( ( ruleQualifiedID ) ) (otherlv_3= '{' ( (lv_ownedState_4_0= ruleState ) ) (otherlv_5= ',' ( (lv_ownedState_6_0= ruleState ) ) )* otherlv_7= '}' )? ) )
+            // InternalOCCI.g:2260:2: (otherlv_0= 'FSM' otherlv_1= 'attribute' ( ( ruleQualifiedID ) ) (otherlv_3= '{' ( (lv_ownedState_4_0= ruleState ) ) (otherlv_5= ',' ( (lv_ownedState_6_0= ruleState ) ) )* otherlv_7= '}' )? )
             {
-            // InternalOCCI.g:2268:2: (otherlv_0= 'FSM' otherlv_1= 'attribute' ( ( ruleQualifiedID ) ) (otherlv_3= '{' ( (lv_ownedState_4_0= ruleState ) ) (otherlv_5= ',' ( (lv_ownedState_6_0= ruleState ) ) )* otherlv_7= '}' )? )
-            // InternalOCCI.g:2269:3: otherlv_0= 'FSM' otherlv_1= 'attribute' ( ( ruleQualifiedID ) ) (otherlv_3= '{' ( (lv_ownedState_4_0= ruleState ) ) (otherlv_5= ',' ( (lv_ownedState_6_0= ruleState ) ) )* otherlv_7= '}' )?
+            // InternalOCCI.g:2260:2: (otherlv_0= 'FSM' otherlv_1= 'attribute' ( ( ruleQualifiedID ) ) (otherlv_3= '{' ( (lv_ownedState_4_0= ruleState ) ) (otherlv_5= ',' ( (lv_ownedState_6_0= ruleState ) ) )* otherlv_7= '}' )? )
+            // InternalOCCI.g:2261:3: otherlv_0= 'FSM' otherlv_1= 'attribute' ( ( ruleQualifiedID ) ) (otherlv_3= '{' ( (lv_ownedState_4_0= ruleState ) ) (otherlv_5= ',' ( (lv_ownedState_6_0= ruleState ) ) )* otherlv_7= '}' )?
             {
-            otherlv_0=(Token)match(input,51,FOLLOW_62); 
+            otherlv_0=(Token)match(input,51,FOLLOW_60); 
 
             			newLeafNode(otherlv_0, grammarAccess.getFSMAccess().getFSMKeyword_0());
             		
@@ -5270,11 +5260,11 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getFSMAccess().getAttributeKeyword_1());
             		
-            // InternalOCCI.g:2277:3: ( ( ruleQualifiedID ) )
-            // InternalOCCI.g:2278:4: ( ruleQualifiedID )
+            // InternalOCCI.g:2269:3: ( ( ruleQualifiedID ) )
+            // InternalOCCI.g:2270:4: ( ruleQualifiedID )
             {
-            // InternalOCCI.g:2278:4: ( ruleQualifiedID )
-            // InternalOCCI.g:2279:5: ruleQualifiedID
+            // InternalOCCI.g:2270:4: ( ruleQualifiedID )
+            // InternalOCCI.g:2271:5: ruleQualifiedID
             {
 
             					if (current==null) {
@@ -5284,7 +5274,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getFSMAccess().getAttributeAttributeCrossReference_2_0());
             				
-            pushFollow(FOLLOW_63);
+            pushFollow(FOLLOW_61);
             ruleQualifiedID();
 
             state._fsp--;
@@ -5298,7 +5288,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:2293:3: (otherlv_3= '{' ( (lv_ownedState_4_0= ruleState ) ) (otherlv_5= ',' ( (lv_ownedState_6_0= ruleState ) ) )* otherlv_7= '}' )?
+            // InternalOCCI.g:2285:3: (otherlv_3= '{' ( (lv_ownedState_4_0= ruleState ) ) (otherlv_5= ',' ( (lv_ownedState_6_0= ruleState ) ) )* otherlv_7= '}' )?
             int alt58=2;
             int LA58_0 = input.LA(1);
 
@@ -5307,17 +5297,17 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt58) {
                 case 1 :
-                    // InternalOCCI.g:2294:4: otherlv_3= '{' ( (lv_ownedState_4_0= ruleState ) ) (otherlv_5= ',' ( (lv_ownedState_6_0= ruleState ) ) )* otherlv_7= '}'
+                    // InternalOCCI.g:2286:4: otherlv_3= '{' ( (lv_ownedState_4_0= ruleState ) ) (otherlv_5= ',' ( (lv_ownedState_6_0= ruleState ) ) )* otherlv_7= '}'
                     {
-                    otherlv_3=(Token)match(input,24,FOLLOW_64); 
+                    otherlv_3=(Token)match(input,24,FOLLOW_62); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getFSMAccess().getLeftCurlyBracketKeyword_3_0());
                     			
-                    // InternalOCCI.g:2298:4: ( (lv_ownedState_4_0= ruleState ) )
-                    // InternalOCCI.g:2299:5: (lv_ownedState_4_0= ruleState )
+                    // InternalOCCI.g:2290:4: ( (lv_ownedState_4_0= ruleState ) )
+                    // InternalOCCI.g:2291:5: (lv_ownedState_4_0= ruleState )
                     {
-                    // InternalOCCI.g:2299:5: (lv_ownedState_4_0= ruleState )
-                    // InternalOCCI.g:2300:6: lv_ownedState_4_0= ruleState
+                    // InternalOCCI.g:2291:5: (lv_ownedState_4_0= ruleState )
+                    // InternalOCCI.g:2292:6: lv_ownedState_4_0= ruleState
                     {
 
                     						newCompositeNode(grammarAccess.getFSMAccess().getOwnedStateStateParserRuleCall_3_1_0());
@@ -5344,7 +5334,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOCCI.g:2317:4: (otherlv_5= ',' ( (lv_ownedState_6_0= ruleState ) ) )*
+                    // InternalOCCI.g:2309:4: (otherlv_5= ',' ( (lv_ownedState_6_0= ruleState ) ) )*
                     loop57:
                     do {
                         int alt57=2;
@@ -5357,17 +5347,17 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
                         switch (alt57) {
                     	case 1 :
-                    	    // InternalOCCI.g:2318:5: otherlv_5= ',' ( (lv_ownedState_6_0= ruleState ) )
+                    	    // InternalOCCI.g:2310:5: otherlv_5= ',' ( (lv_ownedState_6_0= ruleState ) )
                     	    {
-                    	    otherlv_5=(Token)match(input,17,FOLLOW_64); 
+                    	    otherlv_5=(Token)match(input,17,FOLLOW_62); 
 
                     	    					newLeafNode(otherlv_5, grammarAccess.getFSMAccess().getCommaKeyword_3_2_0());
                     	    				
-                    	    // InternalOCCI.g:2322:5: ( (lv_ownedState_6_0= ruleState ) )
-                    	    // InternalOCCI.g:2323:6: (lv_ownedState_6_0= ruleState )
+                    	    // InternalOCCI.g:2314:5: ( (lv_ownedState_6_0= ruleState ) )
+                    	    // InternalOCCI.g:2315:6: (lv_ownedState_6_0= ruleState )
                     	    {
-                    	    // InternalOCCI.g:2323:6: (lv_ownedState_6_0= ruleState )
-                    	    // InternalOCCI.g:2324:7: lv_ownedState_6_0= ruleState
+                    	    // InternalOCCI.g:2315:6: (lv_ownedState_6_0= ruleState )
+                    	    // InternalOCCI.g:2316:7: lv_ownedState_6_0= ruleState
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getFSMAccess().getOwnedStateStateParserRuleCall_3_2_1_0());
@@ -5436,7 +5426,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleState"
-    // InternalOCCI.g:2351:1: entryRuleState returns [EObject current=null] : iv_ruleState= ruleState EOF ;
+    // InternalOCCI.g:2343:1: entryRuleState returns [EObject current=null] : iv_ruleState= ruleState EOF ;
     public final EObject entryRuleState() throws RecognitionException {
         EObject current = null;
 
@@ -5444,8 +5434,8 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOCCI.g:2351:46: (iv_ruleState= ruleState EOF )
-            // InternalOCCI.g:2352:2: iv_ruleState= ruleState EOF
+            // InternalOCCI.g:2343:46: (iv_ruleState= ruleState EOF )
+            // InternalOCCI.g:2344:2: iv_ruleState= ruleState EOF
             {
              newCompositeNode(grammarAccess.getStateRule()); 
             pushFollow(FOLLOW_1);
@@ -5472,7 +5462,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleState"
-    // InternalOCCI.g:2358:1: ruleState returns [EObject current=null] : (otherlv_0= 'State' ( (lv_initial_1_0= 'initial' ) )? ( (lv_final_2_0= 'final' ) )? (otherlv_3= 'literal' ( ( ruleQualifiedID ) ) ) (otherlv_5= 'transitions' otherlv_6= '(' ( (lv_outgoingTransition_7_0= ruleTransition ) ) (otherlv_8= ',' ( (lv_outgoingTransition_9_0= ruleTransition ) ) )* otherlv_10= ')' )? ) ;
+    // InternalOCCI.g:2350:1: ruleState returns [EObject current=null] : (otherlv_0= 'State' ( (lv_initial_1_0= 'initial' ) )? ( (lv_final_2_0= 'final' ) )? (otherlv_3= 'literal' ( ( ruleQualifiedID ) ) ) (otherlv_5= 'transitions' otherlv_6= '(' ( (lv_outgoingTransition_7_0= ruleTransition ) ) (otherlv_8= ',' ( (lv_outgoingTransition_9_0= ruleTransition ) ) )* otherlv_10= ')' )? ) ;
     public final EObject ruleState() throws RecognitionException {
         EObject current = null;
 
@@ -5493,17 +5483,17 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:2364:2: ( (otherlv_0= 'State' ( (lv_initial_1_0= 'initial' ) )? ( (lv_final_2_0= 'final' ) )? (otherlv_3= 'literal' ( ( ruleQualifiedID ) ) ) (otherlv_5= 'transitions' otherlv_6= '(' ( (lv_outgoingTransition_7_0= ruleTransition ) ) (otherlv_8= ',' ( (lv_outgoingTransition_9_0= ruleTransition ) ) )* otherlv_10= ')' )? ) )
-            // InternalOCCI.g:2365:2: (otherlv_0= 'State' ( (lv_initial_1_0= 'initial' ) )? ( (lv_final_2_0= 'final' ) )? (otherlv_3= 'literal' ( ( ruleQualifiedID ) ) ) (otherlv_5= 'transitions' otherlv_6= '(' ( (lv_outgoingTransition_7_0= ruleTransition ) ) (otherlv_8= ',' ( (lv_outgoingTransition_9_0= ruleTransition ) ) )* otherlv_10= ')' )? )
+            // InternalOCCI.g:2356:2: ( (otherlv_0= 'State' ( (lv_initial_1_0= 'initial' ) )? ( (lv_final_2_0= 'final' ) )? (otherlv_3= 'literal' ( ( ruleQualifiedID ) ) ) (otherlv_5= 'transitions' otherlv_6= '(' ( (lv_outgoingTransition_7_0= ruleTransition ) ) (otherlv_8= ',' ( (lv_outgoingTransition_9_0= ruleTransition ) ) )* otherlv_10= ')' )? ) )
+            // InternalOCCI.g:2357:2: (otherlv_0= 'State' ( (lv_initial_1_0= 'initial' ) )? ( (lv_final_2_0= 'final' ) )? (otherlv_3= 'literal' ( ( ruleQualifiedID ) ) ) (otherlv_5= 'transitions' otherlv_6= '(' ( (lv_outgoingTransition_7_0= ruleTransition ) ) (otherlv_8= ',' ( (lv_outgoingTransition_9_0= ruleTransition ) ) )* otherlv_10= ')' )? )
             {
-            // InternalOCCI.g:2365:2: (otherlv_0= 'State' ( (lv_initial_1_0= 'initial' ) )? ( (lv_final_2_0= 'final' ) )? (otherlv_3= 'literal' ( ( ruleQualifiedID ) ) ) (otherlv_5= 'transitions' otherlv_6= '(' ( (lv_outgoingTransition_7_0= ruleTransition ) ) (otherlv_8= ',' ( (lv_outgoingTransition_9_0= ruleTransition ) ) )* otherlv_10= ')' )? )
-            // InternalOCCI.g:2366:3: otherlv_0= 'State' ( (lv_initial_1_0= 'initial' ) )? ( (lv_final_2_0= 'final' ) )? (otherlv_3= 'literal' ( ( ruleQualifiedID ) ) ) (otherlv_5= 'transitions' otherlv_6= '(' ( (lv_outgoingTransition_7_0= ruleTransition ) ) (otherlv_8= ',' ( (lv_outgoingTransition_9_0= ruleTransition ) ) )* otherlv_10= ')' )?
+            // InternalOCCI.g:2357:2: (otherlv_0= 'State' ( (lv_initial_1_0= 'initial' ) )? ( (lv_final_2_0= 'final' ) )? (otherlv_3= 'literal' ( ( ruleQualifiedID ) ) ) (otherlv_5= 'transitions' otherlv_6= '(' ( (lv_outgoingTransition_7_0= ruleTransition ) ) (otherlv_8= ',' ( (lv_outgoingTransition_9_0= ruleTransition ) ) )* otherlv_10= ')' )? )
+            // InternalOCCI.g:2358:3: otherlv_0= 'State' ( (lv_initial_1_0= 'initial' ) )? ( (lv_final_2_0= 'final' ) )? (otherlv_3= 'literal' ( ( ruleQualifiedID ) ) ) (otherlv_5= 'transitions' otherlv_6= '(' ( (lv_outgoingTransition_7_0= ruleTransition ) ) (otherlv_8= ',' ( (lv_outgoingTransition_9_0= ruleTransition ) ) )* otherlv_10= ')' )?
             {
-            otherlv_0=(Token)match(input,52,FOLLOW_65); 
+            otherlv_0=(Token)match(input,52,FOLLOW_63); 
 
             			newLeafNode(otherlv_0, grammarAccess.getStateAccess().getStateKeyword_0());
             		
-            // InternalOCCI.g:2370:3: ( (lv_initial_1_0= 'initial' ) )?
+            // InternalOCCI.g:2362:3: ( (lv_initial_1_0= 'initial' ) )?
             int alt59=2;
             int LA59_0 = input.LA(1);
 
@@ -5512,12 +5502,12 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt59) {
                 case 1 :
-                    // InternalOCCI.g:2371:4: (lv_initial_1_0= 'initial' )
+                    // InternalOCCI.g:2363:4: (lv_initial_1_0= 'initial' )
                     {
-                    // InternalOCCI.g:2371:4: (lv_initial_1_0= 'initial' )
-                    // InternalOCCI.g:2372:5: lv_initial_1_0= 'initial'
+                    // InternalOCCI.g:2363:4: (lv_initial_1_0= 'initial' )
+                    // InternalOCCI.g:2364:5: lv_initial_1_0= 'initial'
                     {
-                    lv_initial_1_0=(Token)match(input,53,FOLLOW_66); 
+                    lv_initial_1_0=(Token)match(input,53,FOLLOW_64); 
 
                     					newLeafNode(lv_initial_1_0, grammarAccess.getStateAccess().getInitialInitialKeyword_1_0());
                     				
@@ -5536,7 +5526,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:2384:3: ( (lv_final_2_0= 'final' ) )?
+            // InternalOCCI.g:2376:3: ( (lv_final_2_0= 'final' ) )?
             int alt60=2;
             int LA60_0 = input.LA(1);
 
@@ -5545,12 +5535,12 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt60) {
                 case 1 :
-                    // InternalOCCI.g:2385:4: (lv_final_2_0= 'final' )
+                    // InternalOCCI.g:2377:4: (lv_final_2_0= 'final' )
                     {
-                    // InternalOCCI.g:2385:4: (lv_final_2_0= 'final' )
-                    // InternalOCCI.g:2386:5: lv_final_2_0= 'final'
+                    // InternalOCCI.g:2377:4: (lv_final_2_0= 'final' )
+                    // InternalOCCI.g:2378:5: lv_final_2_0= 'final'
                     {
-                    lv_final_2_0=(Token)match(input,54,FOLLOW_67); 
+                    lv_final_2_0=(Token)match(input,54,FOLLOW_65); 
 
                     					newLeafNode(lv_final_2_0, grammarAccess.getStateAccess().getFinalFinalKeyword_2_0());
                     				
@@ -5569,18 +5559,18 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:2398:3: (otherlv_3= 'literal' ( ( ruleQualifiedID ) ) )
-            // InternalOCCI.g:2399:4: otherlv_3= 'literal' ( ( ruleQualifiedID ) )
+            // InternalOCCI.g:2390:3: (otherlv_3= 'literal' ( ( ruleQualifiedID ) ) )
+            // InternalOCCI.g:2391:4: otherlv_3= 'literal' ( ( ruleQualifiedID ) )
             {
             otherlv_3=(Token)match(input,55,FOLLOW_12); 
 
             				newLeafNode(otherlv_3, grammarAccess.getStateAccess().getLiteralKeyword_3_0());
             			
-            // InternalOCCI.g:2403:4: ( ( ruleQualifiedID ) )
-            // InternalOCCI.g:2404:5: ( ruleQualifiedID )
+            // InternalOCCI.g:2395:4: ( ( ruleQualifiedID ) )
+            // InternalOCCI.g:2396:5: ( ruleQualifiedID )
             {
-            // InternalOCCI.g:2404:5: ( ruleQualifiedID )
-            // InternalOCCI.g:2405:6: ruleQualifiedID
+            // InternalOCCI.g:2396:5: ( ruleQualifiedID )
+            // InternalOCCI.g:2397:6: ruleQualifiedID
             {
 
             						if (current==null) {
@@ -5590,7 +5580,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             						newCompositeNode(grammarAccess.getStateAccess().getLiteralEnumerationLiteralCrossReference_3_1_0());
             					
-            pushFollow(FOLLOW_68);
+            pushFollow(FOLLOW_66);
             ruleQualifiedID();
 
             state._fsp--;
@@ -5607,7 +5597,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:2420:3: (otherlv_5= 'transitions' otherlv_6= '(' ( (lv_outgoingTransition_7_0= ruleTransition ) ) (otherlv_8= ',' ( (lv_outgoingTransition_9_0= ruleTransition ) ) )* otherlv_10= ')' )?
+            // InternalOCCI.g:2412:3: (otherlv_5= 'transitions' otherlv_6= '(' ( (lv_outgoingTransition_7_0= ruleTransition ) ) (otherlv_8= ',' ( (lv_outgoingTransition_9_0= ruleTransition ) ) )* otherlv_10= ')' )?
             int alt62=2;
             int LA62_0 = input.LA(1);
 
@@ -5616,21 +5606,21 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt62) {
                 case 1 :
-                    // InternalOCCI.g:2421:4: otherlv_5= 'transitions' otherlv_6= '(' ( (lv_outgoingTransition_7_0= ruleTransition ) ) (otherlv_8= ',' ( (lv_outgoingTransition_9_0= ruleTransition ) ) )* otherlv_10= ')'
+                    // InternalOCCI.g:2413:4: otherlv_5= 'transitions' otherlv_6= '(' ( (lv_outgoingTransition_7_0= ruleTransition ) ) (otherlv_8= ',' ( (lv_outgoingTransition_9_0= ruleTransition ) ) )* otherlv_10= ')'
                     {
                     otherlv_5=(Token)match(input,56,FOLLOW_7); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getStateAccess().getTransitionsKeyword_4_0());
                     			
-                    otherlv_6=(Token)match(input,16,FOLLOW_69); 
+                    otherlv_6=(Token)match(input,16,FOLLOW_67); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getStateAccess().getLeftParenthesisKeyword_4_1());
                     			
-                    // InternalOCCI.g:2429:4: ( (lv_outgoingTransition_7_0= ruleTransition ) )
-                    // InternalOCCI.g:2430:5: (lv_outgoingTransition_7_0= ruleTransition )
+                    // InternalOCCI.g:2421:4: ( (lv_outgoingTransition_7_0= ruleTransition ) )
+                    // InternalOCCI.g:2422:5: (lv_outgoingTransition_7_0= ruleTransition )
                     {
-                    // InternalOCCI.g:2430:5: (lv_outgoingTransition_7_0= ruleTransition )
-                    // InternalOCCI.g:2431:6: lv_outgoingTransition_7_0= ruleTransition
+                    // InternalOCCI.g:2422:5: (lv_outgoingTransition_7_0= ruleTransition )
+                    // InternalOCCI.g:2423:6: lv_outgoingTransition_7_0= ruleTransition
                     {
 
                     						newCompositeNode(grammarAccess.getStateAccess().getOutgoingTransitionTransitionParserRuleCall_4_2_0());
@@ -5657,7 +5647,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOCCI.g:2448:4: (otherlv_8= ',' ( (lv_outgoingTransition_9_0= ruleTransition ) ) )*
+                    // InternalOCCI.g:2440:4: (otherlv_8= ',' ( (lv_outgoingTransition_9_0= ruleTransition ) ) )*
                     loop61:
                     do {
                         int alt61=2;
@@ -5670,17 +5660,17 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
                         switch (alt61) {
                     	case 1 :
-                    	    // InternalOCCI.g:2449:5: otherlv_8= ',' ( (lv_outgoingTransition_9_0= ruleTransition ) )
+                    	    // InternalOCCI.g:2441:5: otherlv_8= ',' ( (lv_outgoingTransition_9_0= ruleTransition ) )
                     	    {
-                    	    otherlv_8=(Token)match(input,17,FOLLOW_69); 
+                    	    otherlv_8=(Token)match(input,17,FOLLOW_67); 
 
                     	    					newLeafNode(otherlv_8, grammarAccess.getStateAccess().getCommaKeyword_4_3_0());
                     	    				
-                    	    // InternalOCCI.g:2453:5: ( (lv_outgoingTransition_9_0= ruleTransition ) )
-                    	    // InternalOCCI.g:2454:6: (lv_outgoingTransition_9_0= ruleTransition )
+                    	    // InternalOCCI.g:2445:5: ( (lv_outgoingTransition_9_0= ruleTransition ) )
+                    	    // InternalOCCI.g:2446:6: (lv_outgoingTransition_9_0= ruleTransition )
                     	    {
-                    	    // InternalOCCI.g:2454:6: (lv_outgoingTransition_9_0= ruleTransition )
-                    	    // InternalOCCI.g:2455:7: lv_outgoingTransition_9_0= ruleTransition
+                    	    // InternalOCCI.g:2446:6: (lv_outgoingTransition_9_0= ruleTransition )
+                    	    // InternalOCCI.g:2447:7: lv_outgoingTransition_9_0= ruleTransition
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getStateAccess().getOutgoingTransitionTransitionParserRuleCall_4_3_1_0());
@@ -5749,7 +5739,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTransition"
-    // InternalOCCI.g:2482:1: entryRuleTransition returns [EObject current=null] : iv_ruleTransition= ruleTransition EOF ;
+    // InternalOCCI.g:2474:1: entryRuleTransition returns [EObject current=null] : iv_ruleTransition= ruleTransition EOF ;
     public final EObject entryRuleTransition() throws RecognitionException {
         EObject current = null;
 
@@ -5757,8 +5747,8 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOCCI.g:2482:51: (iv_ruleTransition= ruleTransition EOF )
-            // InternalOCCI.g:2483:2: iv_ruleTransition= ruleTransition EOF
+            // InternalOCCI.g:2474:51: (iv_ruleTransition= ruleTransition EOF )
+            // InternalOCCI.g:2475:2: iv_ruleTransition= ruleTransition EOF
             {
              newCompositeNode(grammarAccess.getTransitionRule()); 
             pushFollow(FOLLOW_1);
@@ -5785,7 +5775,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransition"
-    // InternalOCCI.g:2489:1: ruleTransition returns [EObject current=null] : ( (otherlv_0= 'action' ( ( ruleQualifiedID ) ) )? otherlv_2= 'to' ( ( ruleQualifiedID ) ) ) ;
+    // InternalOCCI.g:2481:1: ruleTransition returns [EObject current=null] : ( (otherlv_0= 'action' ( ( ruleQualifiedID ) ) )? otherlv_2= 'to' ( ( ruleQualifiedID ) ) ) ;
     public final EObject ruleTransition() throws RecognitionException {
         EObject current = null;
 
@@ -5796,13 +5786,13 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:2495:2: ( ( (otherlv_0= 'action' ( ( ruleQualifiedID ) ) )? otherlv_2= 'to' ( ( ruleQualifiedID ) ) ) )
-            // InternalOCCI.g:2496:2: ( (otherlv_0= 'action' ( ( ruleQualifiedID ) ) )? otherlv_2= 'to' ( ( ruleQualifiedID ) ) )
+            // InternalOCCI.g:2487:2: ( ( (otherlv_0= 'action' ( ( ruleQualifiedID ) ) )? otherlv_2= 'to' ( ( ruleQualifiedID ) ) ) )
+            // InternalOCCI.g:2488:2: ( (otherlv_0= 'action' ( ( ruleQualifiedID ) ) )? otherlv_2= 'to' ( ( ruleQualifiedID ) ) )
             {
-            // InternalOCCI.g:2496:2: ( (otherlv_0= 'action' ( ( ruleQualifiedID ) ) )? otherlv_2= 'to' ( ( ruleQualifiedID ) ) )
-            // InternalOCCI.g:2497:3: (otherlv_0= 'action' ( ( ruleQualifiedID ) ) )? otherlv_2= 'to' ( ( ruleQualifiedID ) )
+            // InternalOCCI.g:2488:2: ( (otherlv_0= 'action' ( ( ruleQualifiedID ) ) )? otherlv_2= 'to' ( ( ruleQualifiedID ) ) )
+            // InternalOCCI.g:2489:3: (otherlv_0= 'action' ( ( ruleQualifiedID ) ) )? otherlv_2= 'to' ( ( ruleQualifiedID ) )
             {
-            // InternalOCCI.g:2497:3: (otherlv_0= 'action' ( ( ruleQualifiedID ) ) )?
+            // InternalOCCI.g:2489:3: (otherlv_0= 'action' ( ( ruleQualifiedID ) ) )?
             int alt63=2;
             int LA63_0 = input.LA(1);
 
@@ -5811,17 +5801,17 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt63) {
                 case 1 :
-                    // InternalOCCI.g:2498:4: otherlv_0= 'action' ( ( ruleQualifiedID ) )
+                    // InternalOCCI.g:2490:4: otherlv_0= 'action' ( ( ruleQualifiedID ) )
                     {
                     otherlv_0=(Token)match(input,48,FOLLOW_12); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getTransitionAccess().getActionKeyword_0_0());
                     			
-                    // InternalOCCI.g:2502:4: ( ( ruleQualifiedID ) )
-                    // InternalOCCI.g:2503:5: ( ruleQualifiedID )
+                    // InternalOCCI.g:2494:4: ( ( ruleQualifiedID ) )
+                    // InternalOCCI.g:2495:5: ( ruleQualifiedID )
                     {
-                    // InternalOCCI.g:2503:5: ( ruleQualifiedID )
-                    // InternalOCCI.g:2504:6: ruleQualifiedID
+                    // InternalOCCI.g:2495:5: ( ruleQualifiedID )
+                    // InternalOCCI.g:2496:6: ruleQualifiedID
                     {
 
                     						if (current==null) {
@@ -5831,7 +5821,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
                     						newCompositeNode(grammarAccess.getTransitionAccess().getActionActionCrossReference_0_1_0());
                     					
-                    pushFollow(FOLLOW_70);
+                    pushFollow(FOLLOW_68);
                     ruleQualifiedID();
 
                     state._fsp--;
@@ -5855,11 +5845,11 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getTransitionAccess().getToKeyword_1());
             		
-            // InternalOCCI.g:2523:3: ( ( ruleQualifiedID ) )
-            // InternalOCCI.g:2524:4: ( ruleQualifiedID )
+            // InternalOCCI.g:2515:3: ( ( ruleQualifiedID ) )
+            // InternalOCCI.g:2516:4: ( ruleQualifiedID )
             {
-            // InternalOCCI.g:2524:4: ( ruleQualifiedID )
-            // InternalOCCI.g:2525:5: ruleQualifiedID
+            // InternalOCCI.g:2516:4: ( ruleQualifiedID )
+            // InternalOCCI.g:2517:5: ruleQualifiedID
             {
 
             					if (current==null) {
@@ -5906,7 +5896,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDataType"
-    // InternalOCCI.g:2543:1: entryRuleDataType returns [EObject current=null] : iv_ruleDataType= ruleDataType EOF ;
+    // InternalOCCI.g:2535:1: entryRuleDataType returns [EObject current=null] : iv_ruleDataType= ruleDataType EOF ;
     public final EObject entryRuleDataType() throws RecognitionException {
         EObject current = null;
 
@@ -5914,8 +5904,8 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOCCI.g:2543:49: (iv_ruleDataType= ruleDataType EOF )
-            // InternalOCCI.g:2544:2: iv_ruleDataType= ruleDataType EOF
+            // InternalOCCI.g:2535:49: (iv_ruleDataType= ruleDataType EOF )
+            // InternalOCCI.g:2536:2: iv_ruleDataType= ruleDataType EOF
             {
              newCompositeNode(grammarAccess.getDataTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -5942,7 +5932,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDataType"
-    // InternalOCCI.g:2550:1: ruleDataType returns [EObject current=null] : (this_StringType_0= ruleStringType | this_EObjectType_1= ruleEObjectType | this_BooleanType_2= ruleBooleanType | this_NumericType_3= ruleNumericType | this_EnumerationType_4= ruleEnumerationType | this_RecordType_5= ruleRecordType | this_ArrayType_6= ruleArrayType ) ;
+    // InternalOCCI.g:2542:1: ruleDataType returns [EObject current=null] : (this_StringType_0= ruleStringType | this_EObjectType_1= ruleEObjectType | this_BooleanType_2= ruleBooleanType | this_NumericType_3= ruleNumericType | this_EnumerationType_4= ruleEnumerationType | this_RecordType_5= ruleRecordType | this_ArrayType_6= ruleArrayType ) ;
     public final EObject ruleDataType() throws RecognitionException {
         EObject current = null;
 
@@ -5965,10 +5955,10 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:2556:2: ( (this_StringType_0= ruleStringType | this_EObjectType_1= ruleEObjectType | this_BooleanType_2= ruleBooleanType | this_NumericType_3= ruleNumericType | this_EnumerationType_4= ruleEnumerationType | this_RecordType_5= ruleRecordType | this_ArrayType_6= ruleArrayType ) )
-            // InternalOCCI.g:2557:2: (this_StringType_0= ruleStringType | this_EObjectType_1= ruleEObjectType | this_BooleanType_2= ruleBooleanType | this_NumericType_3= ruleNumericType | this_EnumerationType_4= ruleEnumerationType | this_RecordType_5= ruleRecordType | this_ArrayType_6= ruleArrayType )
+            // InternalOCCI.g:2548:2: ( (this_StringType_0= ruleStringType | this_EObjectType_1= ruleEObjectType | this_BooleanType_2= ruleBooleanType | this_NumericType_3= ruleNumericType | this_EnumerationType_4= ruleEnumerationType | this_RecordType_5= ruleRecordType | this_ArrayType_6= ruleArrayType ) )
+            // InternalOCCI.g:2549:2: (this_StringType_0= ruleStringType | this_EObjectType_1= ruleEObjectType | this_BooleanType_2= ruleBooleanType | this_NumericType_3= ruleNumericType | this_EnumerationType_4= ruleEnumerationType | this_RecordType_5= ruleRecordType | this_ArrayType_6= ruleArrayType )
             {
-            // InternalOCCI.g:2557:2: (this_StringType_0= ruleStringType | this_EObjectType_1= ruleEObjectType | this_BooleanType_2= ruleBooleanType | this_NumericType_3= ruleNumericType | this_EnumerationType_4= ruleEnumerationType | this_RecordType_5= ruleRecordType | this_ArrayType_6= ruleArrayType )
+            // InternalOCCI.g:2549:2: (this_StringType_0= ruleStringType | this_EObjectType_1= ruleEObjectType | this_BooleanType_2= ruleBooleanType | this_NumericType_3= ruleNumericType | this_EnumerationType_4= ruleEnumerationType | this_RecordType_5= ruleRecordType | this_ArrayType_6= ruleArrayType )
             int alt64=7;
             switch ( input.LA(1) ) {
             case 58:
@@ -6015,7 +6005,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             switch (alt64) {
                 case 1 :
-                    // InternalOCCI.g:2558:3: this_StringType_0= ruleStringType
+                    // InternalOCCI.g:2550:3: this_StringType_0= ruleStringType
                     {
 
                     			newCompositeNode(grammarAccess.getDataTypeAccess().getStringTypeParserRuleCall_0());
@@ -6033,7 +6023,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOCCI.g:2567:3: this_EObjectType_1= ruleEObjectType
+                    // InternalOCCI.g:2559:3: this_EObjectType_1= ruleEObjectType
                     {
 
                     			newCompositeNode(grammarAccess.getDataTypeAccess().getEObjectTypeParserRuleCall_1());
@@ -6051,7 +6041,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOCCI.g:2576:3: this_BooleanType_2= ruleBooleanType
+                    // InternalOCCI.g:2568:3: this_BooleanType_2= ruleBooleanType
                     {
 
                     			newCompositeNode(grammarAccess.getDataTypeAccess().getBooleanTypeParserRuleCall_2());
@@ -6069,7 +6059,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalOCCI.g:2585:3: this_NumericType_3= ruleNumericType
+                    // InternalOCCI.g:2577:3: this_NumericType_3= ruleNumericType
                     {
 
                     			newCompositeNode(grammarAccess.getDataTypeAccess().getNumericTypeParserRuleCall_3());
@@ -6087,7 +6077,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalOCCI.g:2594:3: this_EnumerationType_4= ruleEnumerationType
+                    // InternalOCCI.g:2586:3: this_EnumerationType_4= ruleEnumerationType
                     {
 
                     			newCompositeNode(grammarAccess.getDataTypeAccess().getEnumerationTypeParserRuleCall_4());
@@ -6105,7 +6095,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalOCCI.g:2603:3: this_RecordType_5= ruleRecordType
+                    // InternalOCCI.g:2595:3: this_RecordType_5= ruleRecordType
                     {
 
                     			newCompositeNode(grammarAccess.getDataTypeAccess().getRecordTypeParserRuleCall_5());
@@ -6123,7 +6113,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalOCCI.g:2612:3: this_ArrayType_6= ruleArrayType
+                    // InternalOCCI.g:2604:3: this_ArrayType_6= ruleArrayType
                     {
 
                     			newCompositeNode(grammarAccess.getDataTypeAccess().getArrayTypeParserRuleCall_6());
@@ -6163,7 +6153,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringType"
-    // InternalOCCI.g:2624:1: entryRuleStringType returns [EObject current=null] : iv_ruleStringType= ruleStringType EOF ;
+    // InternalOCCI.g:2616:1: entryRuleStringType returns [EObject current=null] : iv_ruleStringType= ruleStringType EOF ;
     public final EObject entryRuleStringType() throws RecognitionException {
         EObject current = null;
 
@@ -6171,8 +6161,8 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOCCI.g:2624:51: (iv_ruleStringType= ruleStringType EOF )
-            // InternalOCCI.g:2625:2: iv_ruleStringType= ruleStringType EOF
+            // InternalOCCI.g:2616:51: (iv_ruleStringType= ruleStringType EOF )
+            // InternalOCCI.g:2617:2: iv_ruleStringType= ruleStringType EOF
             {
              newCompositeNode(grammarAccess.getStringTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -6199,7 +6189,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringType"
-    // InternalOCCI.g:2631:1: ruleStringType returns [EObject current=null] : (otherlv_0= 'StringType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'pattern' ( (lv_pattern_3_0= RULE_STRING ) ) )? (otherlv_4= 'length' ( (lv_length_5_0= ruleEIntegerObject ) ) )? (otherlv_6= 'minLength' ( (lv_minLength_7_0= ruleEIntegerObject ) ) )? (otherlv_8= 'maxLength' ( (lv_maxLength_9_0= ruleEIntegerObject ) ) )? (otherlv_10= 'documentation' ( (lv_documentation_11_0= RULE_STRING ) ) )? ) ;
+    // InternalOCCI.g:2623:1: ruleStringType returns [EObject current=null] : (otherlv_0= 'StringType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'pattern' ( (lv_pattern_3_0= RULE_STRING ) ) )? (otherlv_4= 'length' ( (lv_length_5_0= ruleEIntegerObject ) ) )? (otherlv_6= 'minLength' ( (lv_minLength_7_0= ruleEIntegerObject ) ) )? (otherlv_8= 'maxLength' ( (lv_maxLength_9_0= ruleEIntegerObject ) ) )? (otherlv_10= 'documentation' ( (lv_documentation_11_0= RULE_STRING ) ) )? ) ;
     public final EObject ruleStringType() throws RecognitionException {
         EObject current = null;
 
@@ -6224,26 +6214,26 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:2637:2: ( (otherlv_0= 'StringType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'pattern' ( (lv_pattern_3_0= RULE_STRING ) ) )? (otherlv_4= 'length' ( (lv_length_5_0= ruleEIntegerObject ) ) )? (otherlv_6= 'minLength' ( (lv_minLength_7_0= ruleEIntegerObject ) ) )? (otherlv_8= 'maxLength' ( (lv_maxLength_9_0= ruleEIntegerObject ) ) )? (otherlv_10= 'documentation' ( (lv_documentation_11_0= RULE_STRING ) ) )? ) )
-            // InternalOCCI.g:2638:2: (otherlv_0= 'StringType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'pattern' ( (lv_pattern_3_0= RULE_STRING ) ) )? (otherlv_4= 'length' ( (lv_length_5_0= ruleEIntegerObject ) ) )? (otherlv_6= 'minLength' ( (lv_minLength_7_0= ruleEIntegerObject ) ) )? (otherlv_8= 'maxLength' ( (lv_maxLength_9_0= ruleEIntegerObject ) ) )? (otherlv_10= 'documentation' ( (lv_documentation_11_0= RULE_STRING ) ) )? )
+            // InternalOCCI.g:2629:2: ( (otherlv_0= 'StringType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'pattern' ( (lv_pattern_3_0= RULE_STRING ) ) )? (otherlv_4= 'length' ( (lv_length_5_0= ruleEIntegerObject ) ) )? (otherlv_6= 'minLength' ( (lv_minLength_7_0= ruleEIntegerObject ) ) )? (otherlv_8= 'maxLength' ( (lv_maxLength_9_0= ruleEIntegerObject ) ) )? (otherlv_10= 'documentation' ( (lv_documentation_11_0= RULE_STRING ) ) )? ) )
+            // InternalOCCI.g:2630:2: (otherlv_0= 'StringType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'pattern' ( (lv_pattern_3_0= RULE_STRING ) ) )? (otherlv_4= 'length' ( (lv_length_5_0= ruleEIntegerObject ) ) )? (otherlv_6= 'minLength' ( (lv_minLength_7_0= ruleEIntegerObject ) ) )? (otherlv_8= 'maxLength' ( (lv_maxLength_9_0= ruleEIntegerObject ) ) )? (otherlv_10= 'documentation' ( (lv_documentation_11_0= RULE_STRING ) ) )? )
             {
-            // InternalOCCI.g:2638:2: (otherlv_0= 'StringType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'pattern' ( (lv_pattern_3_0= RULE_STRING ) ) )? (otherlv_4= 'length' ( (lv_length_5_0= ruleEIntegerObject ) ) )? (otherlv_6= 'minLength' ( (lv_minLength_7_0= ruleEIntegerObject ) ) )? (otherlv_8= 'maxLength' ( (lv_maxLength_9_0= ruleEIntegerObject ) ) )? (otherlv_10= 'documentation' ( (lv_documentation_11_0= RULE_STRING ) ) )? )
-            // InternalOCCI.g:2639:3: otherlv_0= 'StringType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'pattern' ( (lv_pattern_3_0= RULE_STRING ) ) )? (otherlv_4= 'length' ( (lv_length_5_0= ruleEIntegerObject ) ) )? (otherlv_6= 'minLength' ( (lv_minLength_7_0= ruleEIntegerObject ) ) )? (otherlv_8= 'maxLength' ( (lv_maxLength_9_0= ruleEIntegerObject ) ) )? (otherlv_10= 'documentation' ( (lv_documentation_11_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:2630:2: (otherlv_0= 'StringType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'pattern' ( (lv_pattern_3_0= RULE_STRING ) ) )? (otherlv_4= 'length' ( (lv_length_5_0= ruleEIntegerObject ) ) )? (otherlv_6= 'minLength' ( (lv_minLength_7_0= ruleEIntegerObject ) ) )? (otherlv_8= 'maxLength' ( (lv_maxLength_9_0= ruleEIntegerObject ) ) )? (otherlv_10= 'documentation' ( (lv_documentation_11_0= RULE_STRING ) ) )? )
+            // InternalOCCI.g:2631:3: otherlv_0= 'StringType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'pattern' ( (lv_pattern_3_0= RULE_STRING ) ) )? (otherlv_4= 'length' ( (lv_length_5_0= ruleEIntegerObject ) ) )? (otherlv_6= 'minLength' ( (lv_minLength_7_0= ruleEIntegerObject ) ) )? (otherlv_8= 'maxLength' ( (lv_maxLength_9_0= ruleEIntegerObject ) ) )? (otherlv_10= 'documentation' ( (lv_documentation_11_0= RULE_STRING ) ) )?
             {
             otherlv_0=(Token)match(input,58,FOLLOW_12); 
 
             			newLeafNode(otherlv_0, grammarAccess.getStringTypeAccess().getStringTypeKeyword_0());
             		
-            // InternalOCCI.g:2643:3: ( (lv_name_1_0= ruleTypeID ) )
-            // InternalOCCI.g:2644:4: (lv_name_1_0= ruleTypeID )
+            // InternalOCCI.g:2635:3: ( (lv_name_1_0= ruleTypeID ) )
+            // InternalOCCI.g:2636:4: (lv_name_1_0= ruleTypeID )
             {
-            // InternalOCCI.g:2644:4: (lv_name_1_0= ruleTypeID )
-            // InternalOCCI.g:2645:5: lv_name_1_0= ruleTypeID
+            // InternalOCCI.g:2636:4: (lv_name_1_0= ruleTypeID )
+            // InternalOCCI.g:2637:5: lv_name_1_0= ruleTypeID
             {
 
             					newCompositeNode(grammarAccess.getStringTypeAccess().getNameTypeIDParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_71);
+            pushFollow(FOLLOW_69);
             lv_name_1_0=ruleTypeID();
 
             state._fsp--;
@@ -6265,7 +6255,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:2662:3: (otherlv_2= 'pattern' ( (lv_pattern_3_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:2654:3: (otherlv_2= 'pattern' ( (lv_pattern_3_0= RULE_STRING ) ) )?
             int alt65=2;
             int LA65_0 = input.LA(1);
 
@@ -6274,19 +6264,19 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt65) {
                 case 1 :
-                    // InternalOCCI.g:2663:4: otherlv_2= 'pattern' ( (lv_pattern_3_0= RULE_STRING ) )
+                    // InternalOCCI.g:2655:4: otherlv_2= 'pattern' ( (lv_pattern_3_0= RULE_STRING ) )
                     {
                     otherlv_2=(Token)match(input,59,FOLLOW_4); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getStringTypeAccess().getPatternKeyword_2_0());
                     			
-                    // InternalOCCI.g:2667:4: ( (lv_pattern_3_0= RULE_STRING ) )
-                    // InternalOCCI.g:2668:5: (lv_pattern_3_0= RULE_STRING )
+                    // InternalOCCI.g:2659:4: ( (lv_pattern_3_0= RULE_STRING ) )
+                    // InternalOCCI.g:2660:5: (lv_pattern_3_0= RULE_STRING )
                     {
-                    // InternalOCCI.g:2668:5: (lv_pattern_3_0= RULE_STRING )
-                    // InternalOCCI.g:2669:6: lv_pattern_3_0= RULE_STRING
+                    // InternalOCCI.g:2660:5: (lv_pattern_3_0= RULE_STRING )
+                    // InternalOCCI.g:2661:6: lv_pattern_3_0= RULE_STRING
                     {
-                    lv_pattern_3_0=(Token)match(input,RULE_STRING,FOLLOW_72); 
+                    lv_pattern_3_0=(Token)match(input,RULE_STRING,FOLLOW_70); 
 
                     						newLeafNode(lv_pattern_3_0, grammarAccess.getStringTypeAccess().getPatternSTRINGTerminalRuleCall_2_1_0());
                     					
@@ -6312,7 +6302,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:2686:3: (otherlv_4= 'length' ( (lv_length_5_0= ruleEIntegerObject ) ) )?
+            // InternalOCCI.g:2678:3: (otherlv_4= 'length' ( (lv_length_5_0= ruleEIntegerObject ) ) )?
             int alt66=2;
             int LA66_0 = input.LA(1);
 
@@ -6321,22 +6311,22 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt66) {
                 case 1 :
-                    // InternalOCCI.g:2687:4: otherlv_4= 'length' ( (lv_length_5_0= ruleEIntegerObject ) )
+                    // InternalOCCI.g:2679:4: otherlv_4= 'length' ( (lv_length_5_0= ruleEIntegerObject ) )
                     {
-                    otherlv_4=(Token)match(input,60,FOLLOW_73); 
+                    otherlv_4=(Token)match(input,60,FOLLOW_71); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getStringTypeAccess().getLengthKeyword_3_0());
                     			
-                    // InternalOCCI.g:2691:4: ( (lv_length_5_0= ruleEIntegerObject ) )
-                    // InternalOCCI.g:2692:5: (lv_length_5_0= ruleEIntegerObject )
+                    // InternalOCCI.g:2683:4: ( (lv_length_5_0= ruleEIntegerObject ) )
+                    // InternalOCCI.g:2684:5: (lv_length_5_0= ruleEIntegerObject )
                     {
-                    // InternalOCCI.g:2692:5: (lv_length_5_0= ruleEIntegerObject )
-                    // InternalOCCI.g:2693:6: lv_length_5_0= ruleEIntegerObject
+                    // InternalOCCI.g:2684:5: (lv_length_5_0= ruleEIntegerObject )
+                    // InternalOCCI.g:2685:6: lv_length_5_0= ruleEIntegerObject
                     {
 
                     						newCompositeNode(grammarAccess.getStringTypeAccess().getLengthEIntegerObjectParserRuleCall_3_1_0());
                     					
-                    pushFollow(FOLLOW_74);
+                    pushFollow(FOLLOW_72);
                     lv_length_5_0=ruleEIntegerObject();
 
                     state._fsp--;
@@ -6364,7 +6354,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:2711:3: (otherlv_6= 'minLength' ( (lv_minLength_7_0= ruleEIntegerObject ) ) )?
+            // InternalOCCI.g:2703:3: (otherlv_6= 'minLength' ( (lv_minLength_7_0= ruleEIntegerObject ) ) )?
             int alt67=2;
             int LA67_0 = input.LA(1);
 
@@ -6373,22 +6363,22 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt67) {
                 case 1 :
-                    // InternalOCCI.g:2712:4: otherlv_6= 'minLength' ( (lv_minLength_7_0= ruleEIntegerObject ) )
+                    // InternalOCCI.g:2704:4: otherlv_6= 'minLength' ( (lv_minLength_7_0= ruleEIntegerObject ) )
                     {
-                    otherlv_6=(Token)match(input,61,FOLLOW_73); 
+                    otherlv_6=(Token)match(input,61,FOLLOW_71); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getStringTypeAccess().getMinLengthKeyword_4_0());
                     			
-                    // InternalOCCI.g:2716:4: ( (lv_minLength_7_0= ruleEIntegerObject ) )
-                    // InternalOCCI.g:2717:5: (lv_minLength_7_0= ruleEIntegerObject )
+                    // InternalOCCI.g:2708:4: ( (lv_minLength_7_0= ruleEIntegerObject ) )
+                    // InternalOCCI.g:2709:5: (lv_minLength_7_0= ruleEIntegerObject )
                     {
-                    // InternalOCCI.g:2717:5: (lv_minLength_7_0= ruleEIntegerObject )
-                    // InternalOCCI.g:2718:6: lv_minLength_7_0= ruleEIntegerObject
+                    // InternalOCCI.g:2709:5: (lv_minLength_7_0= ruleEIntegerObject )
+                    // InternalOCCI.g:2710:6: lv_minLength_7_0= ruleEIntegerObject
                     {
 
                     						newCompositeNode(grammarAccess.getStringTypeAccess().getMinLengthEIntegerObjectParserRuleCall_4_1_0());
                     					
-                    pushFollow(FOLLOW_75);
+                    pushFollow(FOLLOW_73);
                     lv_minLength_7_0=ruleEIntegerObject();
 
                     state._fsp--;
@@ -6416,7 +6406,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:2736:3: (otherlv_8= 'maxLength' ( (lv_maxLength_9_0= ruleEIntegerObject ) ) )?
+            // InternalOCCI.g:2728:3: (otherlv_8= 'maxLength' ( (lv_maxLength_9_0= ruleEIntegerObject ) ) )?
             int alt68=2;
             int LA68_0 = input.LA(1);
 
@@ -6425,22 +6415,22 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt68) {
                 case 1 :
-                    // InternalOCCI.g:2737:4: otherlv_8= 'maxLength' ( (lv_maxLength_9_0= ruleEIntegerObject ) )
+                    // InternalOCCI.g:2729:4: otherlv_8= 'maxLength' ( (lv_maxLength_9_0= ruleEIntegerObject ) )
                     {
-                    otherlv_8=(Token)match(input,62,FOLLOW_73); 
+                    otherlv_8=(Token)match(input,62,FOLLOW_71); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getStringTypeAccess().getMaxLengthKeyword_5_0());
                     			
-                    // InternalOCCI.g:2741:4: ( (lv_maxLength_9_0= ruleEIntegerObject ) )
-                    // InternalOCCI.g:2742:5: (lv_maxLength_9_0= ruleEIntegerObject )
+                    // InternalOCCI.g:2733:4: ( (lv_maxLength_9_0= ruleEIntegerObject ) )
+                    // InternalOCCI.g:2734:5: (lv_maxLength_9_0= ruleEIntegerObject )
                     {
-                    // InternalOCCI.g:2742:5: (lv_maxLength_9_0= ruleEIntegerObject )
-                    // InternalOCCI.g:2743:6: lv_maxLength_9_0= ruleEIntegerObject
+                    // InternalOCCI.g:2734:5: (lv_maxLength_9_0= ruleEIntegerObject )
+                    // InternalOCCI.g:2735:6: lv_maxLength_9_0= ruleEIntegerObject
                     {
 
                     						newCompositeNode(grammarAccess.getStringTypeAccess().getMaxLengthEIntegerObjectParserRuleCall_5_1_0());
                     					
-                    pushFollow(FOLLOW_76);
+                    pushFollow(FOLLOW_74);
                     lv_maxLength_9_0=ruleEIntegerObject();
 
                     state._fsp--;
@@ -6468,7 +6458,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:2761:3: (otherlv_10= 'documentation' ( (lv_documentation_11_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:2753:3: (otherlv_10= 'documentation' ( (lv_documentation_11_0= RULE_STRING ) ) )?
             int alt69=2;
             int LA69_0 = input.LA(1);
 
@@ -6477,17 +6467,17 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt69) {
                 case 1 :
-                    // InternalOCCI.g:2762:4: otherlv_10= 'documentation' ( (lv_documentation_11_0= RULE_STRING ) )
+                    // InternalOCCI.g:2754:4: otherlv_10= 'documentation' ( (lv_documentation_11_0= RULE_STRING ) )
                     {
                     otherlv_10=(Token)match(input,63,FOLLOW_4); 
 
                     				newLeafNode(otherlv_10, grammarAccess.getStringTypeAccess().getDocumentationKeyword_6_0());
                     			
-                    // InternalOCCI.g:2766:4: ( (lv_documentation_11_0= RULE_STRING ) )
-                    // InternalOCCI.g:2767:5: (lv_documentation_11_0= RULE_STRING )
+                    // InternalOCCI.g:2758:4: ( (lv_documentation_11_0= RULE_STRING ) )
+                    // InternalOCCI.g:2759:5: (lv_documentation_11_0= RULE_STRING )
                     {
-                    // InternalOCCI.g:2767:5: (lv_documentation_11_0= RULE_STRING )
-                    // InternalOCCI.g:2768:6: lv_documentation_11_0= RULE_STRING
+                    // InternalOCCI.g:2759:5: (lv_documentation_11_0= RULE_STRING )
+                    // InternalOCCI.g:2760:6: lv_documentation_11_0= RULE_STRING
                     {
                     lv_documentation_11_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -6538,7 +6528,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEObjectType"
-    // InternalOCCI.g:2789:1: entryRuleEObjectType returns [EObject current=null] : iv_ruleEObjectType= ruleEObjectType EOF ;
+    // InternalOCCI.g:2781:1: entryRuleEObjectType returns [EObject current=null] : iv_ruleEObjectType= ruleEObjectType EOF ;
     public final EObject entryRuleEObjectType() throws RecognitionException {
         EObject current = null;
 
@@ -6546,8 +6536,8 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOCCI.g:2789:52: (iv_ruleEObjectType= ruleEObjectType EOF )
-            // InternalOCCI.g:2790:2: iv_ruleEObjectType= ruleEObjectType EOF
+            // InternalOCCI.g:2781:52: (iv_ruleEObjectType= ruleEObjectType EOF )
+            // InternalOCCI.g:2782:2: iv_ruleEObjectType= ruleEObjectType EOF
             {
              newCompositeNode(grammarAccess.getEObjectTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -6574,7 +6564,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEObjectType"
-    // InternalOCCI.g:2796:1: ruleEObjectType returns [EObject current=null] : (otherlv_0= 'EObjectType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'type' ( (lv_instanceClassName_3_0= RULE_STRING ) ) )? (otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) ) )? ) ;
+    // InternalOCCI.g:2788:1: ruleEObjectType returns [EObject current=null] : (otherlv_0= 'EObjectType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'type' ( (lv_instanceClassName_3_0= RULE_STRING ) ) )? (otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) ) )? ) ;
     public final EObject ruleEObjectType() throws RecognitionException {
         EObject current = null;
 
@@ -6590,26 +6580,26 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:2802:2: ( (otherlv_0= 'EObjectType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'type' ( (lv_instanceClassName_3_0= RULE_STRING ) ) )? (otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) ) )? ) )
-            // InternalOCCI.g:2803:2: (otherlv_0= 'EObjectType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'type' ( (lv_instanceClassName_3_0= RULE_STRING ) ) )? (otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) ) )? )
+            // InternalOCCI.g:2794:2: ( (otherlv_0= 'EObjectType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'type' ( (lv_instanceClassName_3_0= RULE_STRING ) ) )? (otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) ) )? ) )
+            // InternalOCCI.g:2795:2: (otherlv_0= 'EObjectType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'type' ( (lv_instanceClassName_3_0= RULE_STRING ) ) )? (otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) ) )? )
             {
-            // InternalOCCI.g:2803:2: (otherlv_0= 'EObjectType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'type' ( (lv_instanceClassName_3_0= RULE_STRING ) ) )? (otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) ) )? )
-            // InternalOCCI.g:2804:3: otherlv_0= 'EObjectType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'type' ( (lv_instanceClassName_3_0= RULE_STRING ) ) )? (otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:2795:2: (otherlv_0= 'EObjectType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'type' ( (lv_instanceClassName_3_0= RULE_STRING ) ) )? (otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) ) )? )
+            // InternalOCCI.g:2796:3: otherlv_0= 'EObjectType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'type' ( (lv_instanceClassName_3_0= RULE_STRING ) ) )? (otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) ) )?
             {
             otherlv_0=(Token)match(input,64,FOLLOW_12); 
 
             			newLeafNode(otherlv_0, grammarAccess.getEObjectTypeAccess().getEObjectTypeKeyword_0());
             		
-            // InternalOCCI.g:2808:3: ( (lv_name_1_0= ruleTypeID ) )
-            // InternalOCCI.g:2809:4: (lv_name_1_0= ruleTypeID )
+            // InternalOCCI.g:2800:3: ( (lv_name_1_0= ruleTypeID ) )
+            // InternalOCCI.g:2801:4: (lv_name_1_0= ruleTypeID )
             {
-            // InternalOCCI.g:2809:4: (lv_name_1_0= ruleTypeID )
-            // InternalOCCI.g:2810:5: lv_name_1_0= ruleTypeID
+            // InternalOCCI.g:2801:4: (lv_name_1_0= ruleTypeID )
+            // InternalOCCI.g:2802:5: lv_name_1_0= ruleTypeID
             {
 
             					newCompositeNode(grammarAccess.getEObjectTypeAccess().getNameTypeIDParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_77);
+            pushFollow(FOLLOW_75);
             lv_name_1_0=ruleTypeID();
 
             state._fsp--;
@@ -6631,7 +6621,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:2827:3: (otherlv_2= 'type' ( (lv_instanceClassName_3_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:2819:3: (otherlv_2= 'type' ( (lv_instanceClassName_3_0= RULE_STRING ) ) )?
             int alt70=2;
             int LA70_0 = input.LA(1);
 
@@ -6640,19 +6630,19 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt70) {
                 case 1 :
-                    // InternalOCCI.g:2828:4: otherlv_2= 'type' ( (lv_instanceClassName_3_0= RULE_STRING ) )
+                    // InternalOCCI.g:2820:4: otherlv_2= 'type' ( (lv_instanceClassName_3_0= RULE_STRING ) )
                     {
                     otherlv_2=(Token)match(input,47,FOLLOW_4); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getEObjectTypeAccess().getTypeKeyword_2_0());
                     			
-                    // InternalOCCI.g:2832:4: ( (lv_instanceClassName_3_0= RULE_STRING ) )
-                    // InternalOCCI.g:2833:5: (lv_instanceClassName_3_0= RULE_STRING )
+                    // InternalOCCI.g:2824:4: ( (lv_instanceClassName_3_0= RULE_STRING ) )
+                    // InternalOCCI.g:2825:5: (lv_instanceClassName_3_0= RULE_STRING )
                     {
-                    // InternalOCCI.g:2833:5: (lv_instanceClassName_3_0= RULE_STRING )
-                    // InternalOCCI.g:2834:6: lv_instanceClassName_3_0= RULE_STRING
+                    // InternalOCCI.g:2825:5: (lv_instanceClassName_3_0= RULE_STRING )
+                    // InternalOCCI.g:2826:6: lv_instanceClassName_3_0= RULE_STRING
                     {
-                    lv_instanceClassName_3_0=(Token)match(input,RULE_STRING,FOLLOW_76); 
+                    lv_instanceClassName_3_0=(Token)match(input,RULE_STRING,FOLLOW_74); 
 
                     						newLeafNode(lv_instanceClassName_3_0, grammarAccess.getEObjectTypeAccess().getInstanceClassNameSTRINGTerminalRuleCall_2_1_0());
                     					
@@ -6678,7 +6668,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:2851:3: (otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:2843:3: (otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) ) )?
             int alt71=2;
             int LA71_0 = input.LA(1);
 
@@ -6687,17 +6677,17 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt71) {
                 case 1 :
-                    // InternalOCCI.g:2852:4: otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) )
+                    // InternalOCCI.g:2844:4: otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) )
                     {
                     otherlv_4=(Token)match(input,63,FOLLOW_4); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getEObjectTypeAccess().getDocumentationKeyword_3_0());
                     			
-                    // InternalOCCI.g:2856:4: ( (lv_documentation_5_0= RULE_STRING ) )
-                    // InternalOCCI.g:2857:5: (lv_documentation_5_0= RULE_STRING )
+                    // InternalOCCI.g:2848:4: ( (lv_documentation_5_0= RULE_STRING ) )
+                    // InternalOCCI.g:2849:5: (lv_documentation_5_0= RULE_STRING )
                     {
-                    // InternalOCCI.g:2857:5: (lv_documentation_5_0= RULE_STRING )
-                    // InternalOCCI.g:2858:6: lv_documentation_5_0= RULE_STRING
+                    // InternalOCCI.g:2849:5: (lv_documentation_5_0= RULE_STRING )
+                    // InternalOCCI.g:2850:6: lv_documentation_5_0= RULE_STRING
                     {
                     lv_documentation_5_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -6748,7 +6738,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBooleanType"
-    // InternalOCCI.g:2879:1: entryRuleBooleanType returns [EObject current=null] : iv_ruleBooleanType= ruleBooleanType EOF ;
+    // InternalOCCI.g:2871:1: entryRuleBooleanType returns [EObject current=null] : iv_ruleBooleanType= ruleBooleanType EOF ;
     public final EObject entryRuleBooleanType() throws RecognitionException {
         EObject current = null;
 
@@ -6756,8 +6746,8 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOCCI.g:2879:52: (iv_ruleBooleanType= ruleBooleanType EOF )
-            // InternalOCCI.g:2880:2: iv_ruleBooleanType= ruleBooleanType EOF
+            // InternalOCCI.g:2871:52: (iv_ruleBooleanType= ruleBooleanType EOF )
+            // InternalOCCI.g:2872:2: iv_ruleBooleanType= ruleBooleanType EOF
             {
              newCompositeNode(grammarAccess.getBooleanTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -6784,7 +6774,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBooleanType"
-    // InternalOCCI.g:2886:1: ruleBooleanType returns [EObject current=null] : (otherlv_0= 'BooleanType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'documentation' ( (lv_documentation_3_0= RULE_STRING ) ) )? ) ;
+    // InternalOCCI.g:2878:1: ruleBooleanType returns [EObject current=null] : (otherlv_0= 'BooleanType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'documentation' ( (lv_documentation_3_0= RULE_STRING ) ) )? ) ;
     public final EObject ruleBooleanType() throws RecognitionException {
         EObject current = null;
 
@@ -6798,26 +6788,26 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:2892:2: ( (otherlv_0= 'BooleanType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'documentation' ( (lv_documentation_3_0= RULE_STRING ) ) )? ) )
-            // InternalOCCI.g:2893:2: (otherlv_0= 'BooleanType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'documentation' ( (lv_documentation_3_0= RULE_STRING ) ) )? )
+            // InternalOCCI.g:2884:2: ( (otherlv_0= 'BooleanType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'documentation' ( (lv_documentation_3_0= RULE_STRING ) ) )? ) )
+            // InternalOCCI.g:2885:2: (otherlv_0= 'BooleanType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'documentation' ( (lv_documentation_3_0= RULE_STRING ) ) )? )
             {
-            // InternalOCCI.g:2893:2: (otherlv_0= 'BooleanType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'documentation' ( (lv_documentation_3_0= RULE_STRING ) ) )? )
-            // InternalOCCI.g:2894:3: otherlv_0= 'BooleanType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'documentation' ( (lv_documentation_3_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:2885:2: (otherlv_0= 'BooleanType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'documentation' ( (lv_documentation_3_0= RULE_STRING ) ) )? )
+            // InternalOCCI.g:2886:3: otherlv_0= 'BooleanType' ( (lv_name_1_0= ruleTypeID ) ) (otherlv_2= 'documentation' ( (lv_documentation_3_0= RULE_STRING ) ) )?
             {
             otherlv_0=(Token)match(input,65,FOLLOW_12); 
 
             			newLeafNode(otherlv_0, grammarAccess.getBooleanTypeAccess().getBooleanTypeKeyword_0());
             		
-            // InternalOCCI.g:2898:3: ( (lv_name_1_0= ruleTypeID ) )
-            // InternalOCCI.g:2899:4: (lv_name_1_0= ruleTypeID )
+            // InternalOCCI.g:2890:3: ( (lv_name_1_0= ruleTypeID ) )
+            // InternalOCCI.g:2891:4: (lv_name_1_0= ruleTypeID )
             {
-            // InternalOCCI.g:2899:4: (lv_name_1_0= ruleTypeID )
-            // InternalOCCI.g:2900:5: lv_name_1_0= ruleTypeID
+            // InternalOCCI.g:2891:4: (lv_name_1_0= ruleTypeID )
+            // InternalOCCI.g:2892:5: lv_name_1_0= ruleTypeID
             {
 
             					newCompositeNode(grammarAccess.getBooleanTypeAccess().getNameTypeIDParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_76);
+            pushFollow(FOLLOW_74);
             lv_name_1_0=ruleTypeID();
 
             state._fsp--;
@@ -6839,7 +6829,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:2917:3: (otherlv_2= 'documentation' ( (lv_documentation_3_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:2909:3: (otherlv_2= 'documentation' ( (lv_documentation_3_0= RULE_STRING ) ) )?
             int alt72=2;
             int LA72_0 = input.LA(1);
 
@@ -6848,17 +6838,17 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt72) {
                 case 1 :
-                    // InternalOCCI.g:2918:4: otherlv_2= 'documentation' ( (lv_documentation_3_0= RULE_STRING ) )
+                    // InternalOCCI.g:2910:4: otherlv_2= 'documentation' ( (lv_documentation_3_0= RULE_STRING ) )
                     {
                     otherlv_2=(Token)match(input,63,FOLLOW_4); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getBooleanTypeAccess().getDocumentationKeyword_2_0());
                     			
-                    // InternalOCCI.g:2922:4: ( (lv_documentation_3_0= RULE_STRING ) )
-                    // InternalOCCI.g:2923:5: (lv_documentation_3_0= RULE_STRING )
+                    // InternalOCCI.g:2914:4: ( (lv_documentation_3_0= RULE_STRING ) )
+                    // InternalOCCI.g:2915:5: (lv_documentation_3_0= RULE_STRING )
                     {
-                    // InternalOCCI.g:2923:5: (lv_documentation_3_0= RULE_STRING )
-                    // InternalOCCI.g:2924:6: lv_documentation_3_0= RULE_STRING
+                    // InternalOCCI.g:2915:5: (lv_documentation_3_0= RULE_STRING )
+                    // InternalOCCI.g:2916:6: lv_documentation_3_0= RULE_STRING
                     {
                     lv_documentation_3_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -6909,7 +6899,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNumericType"
-    // InternalOCCI.g:2945:1: entryRuleNumericType returns [EObject current=null] : iv_ruleNumericType= ruleNumericType EOF ;
+    // InternalOCCI.g:2937:1: entryRuleNumericType returns [EObject current=null] : iv_ruleNumericType= ruleNumericType EOF ;
     public final EObject entryRuleNumericType() throws RecognitionException {
         EObject current = null;
 
@@ -6917,8 +6907,8 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOCCI.g:2945:52: (iv_ruleNumericType= ruleNumericType EOF )
-            // InternalOCCI.g:2946:2: iv_ruleNumericType= ruleNumericType EOF
+            // InternalOCCI.g:2937:52: (iv_ruleNumericType= ruleNumericType EOF )
+            // InternalOCCI.g:2938:2: iv_ruleNumericType= ruleNumericType EOF
             {
              newCompositeNode(grammarAccess.getNumericTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -6945,7 +6935,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumericType"
-    // InternalOCCI.g:2952:1: ruleNumericType returns [EObject current=null] : (otherlv_0= 'NumericType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruleNumericTypeEnum ) ) (otherlv_4= 'totalDigits' ( (lv_totalDigits_5_0= ruleEIntegerObject ) ) )? (otherlv_6= 'minExclusive' ( (lv_minExclusive_7_0= RULE_STRING ) ) )? (otherlv_8= 'maxExclusive' ( (lv_maxExclusive_9_0= RULE_STRING ) ) )? (otherlv_10= 'minInclusive' ( (lv_minInclusive_11_0= RULE_STRING ) ) )? (otherlv_12= 'maxInclusive' ( (lv_maxInclusive_13_0= RULE_STRING ) ) )? (otherlv_14= 'documentation' ( (lv_documentation_15_0= RULE_STRING ) ) )? ) ;
+    // InternalOCCI.g:2944:1: ruleNumericType returns [EObject current=null] : (otherlv_0= 'NumericType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruleNumericTypeEnum ) ) (otherlv_4= 'totalDigits' ( (lv_totalDigits_5_0= ruleEIntegerObject ) ) )? (otherlv_6= 'minExclusive' ( (lv_minExclusive_7_0= RULE_STRING ) ) )? (otherlv_8= 'maxExclusive' ( (lv_maxExclusive_9_0= RULE_STRING ) ) )? (otherlv_10= 'minInclusive' ( (lv_minInclusive_11_0= RULE_STRING ) ) )? (otherlv_12= 'maxInclusive' ( (lv_maxInclusive_13_0= RULE_STRING ) ) )? (otherlv_14= 'documentation' ( (lv_documentation_15_0= RULE_STRING ) ) )? ) ;
     public final EObject ruleNumericType() throws RecognitionException {
         EObject current = null;
 
@@ -6973,26 +6963,26 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:2958:2: ( (otherlv_0= 'NumericType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruleNumericTypeEnum ) ) (otherlv_4= 'totalDigits' ( (lv_totalDigits_5_0= ruleEIntegerObject ) ) )? (otherlv_6= 'minExclusive' ( (lv_minExclusive_7_0= RULE_STRING ) ) )? (otherlv_8= 'maxExclusive' ( (lv_maxExclusive_9_0= RULE_STRING ) ) )? (otherlv_10= 'minInclusive' ( (lv_minInclusive_11_0= RULE_STRING ) ) )? (otherlv_12= 'maxInclusive' ( (lv_maxInclusive_13_0= RULE_STRING ) ) )? (otherlv_14= 'documentation' ( (lv_documentation_15_0= RULE_STRING ) ) )? ) )
-            // InternalOCCI.g:2959:2: (otherlv_0= 'NumericType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruleNumericTypeEnum ) ) (otherlv_4= 'totalDigits' ( (lv_totalDigits_5_0= ruleEIntegerObject ) ) )? (otherlv_6= 'minExclusive' ( (lv_minExclusive_7_0= RULE_STRING ) ) )? (otherlv_8= 'maxExclusive' ( (lv_maxExclusive_9_0= RULE_STRING ) ) )? (otherlv_10= 'minInclusive' ( (lv_minInclusive_11_0= RULE_STRING ) ) )? (otherlv_12= 'maxInclusive' ( (lv_maxInclusive_13_0= RULE_STRING ) ) )? (otherlv_14= 'documentation' ( (lv_documentation_15_0= RULE_STRING ) ) )? )
+            // InternalOCCI.g:2950:2: ( (otherlv_0= 'NumericType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruleNumericTypeEnum ) ) (otherlv_4= 'totalDigits' ( (lv_totalDigits_5_0= ruleEIntegerObject ) ) )? (otherlv_6= 'minExclusive' ( (lv_minExclusive_7_0= RULE_STRING ) ) )? (otherlv_8= 'maxExclusive' ( (lv_maxExclusive_9_0= RULE_STRING ) ) )? (otherlv_10= 'minInclusive' ( (lv_minInclusive_11_0= RULE_STRING ) ) )? (otherlv_12= 'maxInclusive' ( (lv_maxInclusive_13_0= RULE_STRING ) ) )? (otherlv_14= 'documentation' ( (lv_documentation_15_0= RULE_STRING ) ) )? ) )
+            // InternalOCCI.g:2951:2: (otherlv_0= 'NumericType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruleNumericTypeEnum ) ) (otherlv_4= 'totalDigits' ( (lv_totalDigits_5_0= ruleEIntegerObject ) ) )? (otherlv_6= 'minExclusive' ( (lv_minExclusive_7_0= RULE_STRING ) ) )? (otherlv_8= 'maxExclusive' ( (lv_maxExclusive_9_0= RULE_STRING ) ) )? (otherlv_10= 'minInclusive' ( (lv_minInclusive_11_0= RULE_STRING ) ) )? (otherlv_12= 'maxInclusive' ( (lv_maxInclusive_13_0= RULE_STRING ) ) )? (otherlv_14= 'documentation' ( (lv_documentation_15_0= RULE_STRING ) ) )? )
             {
-            // InternalOCCI.g:2959:2: (otherlv_0= 'NumericType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruleNumericTypeEnum ) ) (otherlv_4= 'totalDigits' ( (lv_totalDigits_5_0= ruleEIntegerObject ) ) )? (otherlv_6= 'minExclusive' ( (lv_minExclusive_7_0= RULE_STRING ) ) )? (otherlv_8= 'maxExclusive' ( (lv_maxExclusive_9_0= RULE_STRING ) ) )? (otherlv_10= 'minInclusive' ( (lv_minInclusive_11_0= RULE_STRING ) ) )? (otherlv_12= 'maxInclusive' ( (lv_maxInclusive_13_0= RULE_STRING ) ) )? (otherlv_14= 'documentation' ( (lv_documentation_15_0= RULE_STRING ) ) )? )
-            // InternalOCCI.g:2960:3: otherlv_0= 'NumericType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruleNumericTypeEnum ) ) (otherlv_4= 'totalDigits' ( (lv_totalDigits_5_0= ruleEIntegerObject ) ) )? (otherlv_6= 'minExclusive' ( (lv_minExclusive_7_0= RULE_STRING ) ) )? (otherlv_8= 'maxExclusive' ( (lv_maxExclusive_9_0= RULE_STRING ) ) )? (otherlv_10= 'minInclusive' ( (lv_minInclusive_11_0= RULE_STRING ) ) )? (otherlv_12= 'maxInclusive' ( (lv_maxInclusive_13_0= RULE_STRING ) ) )? (otherlv_14= 'documentation' ( (lv_documentation_15_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:2951:2: (otherlv_0= 'NumericType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruleNumericTypeEnum ) ) (otherlv_4= 'totalDigits' ( (lv_totalDigits_5_0= ruleEIntegerObject ) ) )? (otherlv_6= 'minExclusive' ( (lv_minExclusive_7_0= RULE_STRING ) ) )? (otherlv_8= 'maxExclusive' ( (lv_maxExclusive_9_0= RULE_STRING ) ) )? (otherlv_10= 'minInclusive' ( (lv_minInclusive_11_0= RULE_STRING ) ) )? (otherlv_12= 'maxInclusive' ( (lv_maxInclusive_13_0= RULE_STRING ) ) )? (otherlv_14= 'documentation' ( (lv_documentation_15_0= RULE_STRING ) ) )? )
+            // InternalOCCI.g:2952:3: otherlv_0= 'NumericType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruleNumericTypeEnum ) ) (otherlv_4= 'totalDigits' ( (lv_totalDigits_5_0= ruleEIntegerObject ) ) )? (otherlv_6= 'minExclusive' ( (lv_minExclusive_7_0= RULE_STRING ) ) )? (otherlv_8= 'maxExclusive' ( (lv_maxExclusive_9_0= RULE_STRING ) ) )? (otherlv_10= 'minInclusive' ( (lv_minInclusive_11_0= RULE_STRING ) ) )? (otherlv_12= 'maxInclusive' ( (lv_maxInclusive_13_0= RULE_STRING ) ) )? (otherlv_14= 'documentation' ( (lv_documentation_15_0= RULE_STRING ) ) )?
             {
             otherlv_0=(Token)match(input,66,FOLLOW_12); 
 
             			newLeafNode(otherlv_0, grammarAccess.getNumericTypeAccess().getNumericTypeKeyword_0());
             		
-            // InternalOCCI.g:2964:3: ( (lv_name_1_0= ruleTypeID ) )
-            // InternalOCCI.g:2965:4: (lv_name_1_0= ruleTypeID )
+            // InternalOCCI.g:2956:3: ( (lv_name_1_0= ruleTypeID ) )
+            // InternalOCCI.g:2957:4: (lv_name_1_0= ruleTypeID )
             {
-            // InternalOCCI.g:2965:4: (lv_name_1_0= ruleTypeID )
-            // InternalOCCI.g:2966:5: lv_name_1_0= ruleTypeID
+            // InternalOCCI.g:2957:4: (lv_name_1_0= ruleTypeID )
+            // InternalOCCI.g:2958:5: lv_name_1_0= ruleTypeID
             {
 
             					newCompositeNode(grammarAccess.getNumericTypeAccess().getNameTypeIDParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_78);
+            pushFollow(FOLLOW_76);
             lv_name_1_0=ruleTypeID();
 
             state._fsp--;
@@ -7014,20 +7004,20 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,47,FOLLOW_79); 
+            otherlv_2=(Token)match(input,47,FOLLOW_77); 
 
             			newLeafNode(otherlv_2, grammarAccess.getNumericTypeAccess().getTypeKeyword_2());
             		
-            // InternalOCCI.g:2987:3: ( (lv_type_3_0= ruleNumericTypeEnum ) )
-            // InternalOCCI.g:2988:4: (lv_type_3_0= ruleNumericTypeEnum )
+            // InternalOCCI.g:2979:3: ( (lv_type_3_0= ruleNumericTypeEnum ) )
+            // InternalOCCI.g:2980:4: (lv_type_3_0= ruleNumericTypeEnum )
             {
-            // InternalOCCI.g:2988:4: (lv_type_3_0= ruleNumericTypeEnum )
-            // InternalOCCI.g:2989:5: lv_type_3_0= ruleNumericTypeEnum
+            // InternalOCCI.g:2980:4: (lv_type_3_0= ruleNumericTypeEnum )
+            // InternalOCCI.g:2981:5: lv_type_3_0= ruleNumericTypeEnum
             {
 
             					newCompositeNode(grammarAccess.getNumericTypeAccess().getTypeNumericTypeEnumEnumRuleCall_3_0());
             				
-            pushFollow(FOLLOW_80);
+            pushFollow(FOLLOW_78);
             lv_type_3_0=ruleNumericTypeEnum();
 
             state._fsp--;
@@ -7049,7 +7039,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:3006:3: (otherlv_4= 'totalDigits' ( (lv_totalDigits_5_0= ruleEIntegerObject ) ) )?
+            // InternalOCCI.g:2998:3: (otherlv_4= 'totalDigits' ( (lv_totalDigits_5_0= ruleEIntegerObject ) ) )?
             int alt73=2;
             int LA73_0 = input.LA(1);
 
@@ -7058,22 +7048,22 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt73) {
                 case 1 :
-                    // InternalOCCI.g:3007:4: otherlv_4= 'totalDigits' ( (lv_totalDigits_5_0= ruleEIntegerObject ) )
+                    // InternalOCCI.g:2999:4: otherlv_4= 'totalDigits' ( (lv_totalDigits_5_0= ruleEIntegerObject ) )
                     {
-                    otherlv_4=(Token)match(input,67,FOLLOW_73); 
+                    otherlv_4=(Token)match(input,67,FOLLOW_71); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getNumericTypeAccess().getTotalDigitsKeyword_4_0());
                     			
-                    // InternalOCCI.g:3011:4: ( (lv_totalDigits_5_0= ruleEIntegerObject ) )
-                    // InternalOCCI.g:3012:5: (lv_totalDigits_5_0= ruleEIntegerObject )
+                    // InternalOCCI.g:3003:4: ( (lv_totalDigits_5_0= ruleEIntegerObject ) )
+                    // InternalOCCI.g:3004:5: (lv_totalDigits_5_0= ruleEIntegerObject )
                     {
-                    // InternalOCCI.g:3012:5: (lv_totalDigits_5_0= ruleEIntegerObject )
-                    // InternalOCCI.g:3013:6: lv_totalDigits_5_0= ruleEIntegerObject
+                    // InternalOCCI.g:3004:5: (lv_totalDigits_5_0= ruleEIntegerObject )
+                    // InternalOCCI.g:3005:6: lv_totalDigits_5_0= ruleEIntegerObject
                     {
 
                     						newCompositeNode(grammarAccess.getNumericTypeAccess().getTotalDigitsEIntegerObjectParserRuleCall_4_1_0());
                     					
-                    pushFollow(FOLLOW_81);
+                    pushFollow(FOLLOW_79);
                     lv_totalDigits_5_0=ruleEIntegerObject();
 
                     state._fsp--;
@@ -7101,7 +7091,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:3031:3: (otherlv_6= 'minExclusive' ( (lv_minExclusive_7_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:3023:3: (otherlv_6= 'minExclusive' ( (lv_minExclusive_7_0= RULE_STRING ) ) )?
             int alt74=2;
             int LA74_0 = input.LA(1);
 
@@ -7110,19 +7100,19 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt74) {
                 case 1 :
-                    // InternalOCCI.g:3032:4: otherlv_6= 'minExclusive' ( (lv_minExclusive_7_0= RULE_STRING ) )
+                    // InternalOCCI.g:3024:4: otherlv_6= 'minExclusive' ( (lv_minExclusive_7_0= RULE_STRING ) )
                     {
                     otherlv_6=(Token)match(input,68,FOLLOW_4); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getNumericTypeAccess().getMinExclusiveKeyword_5_0());
                     			
-                    // InternalOCCI.g:3036:4: ( (lv_minExclusive_7_0= RULE_STRING ) )
-                    // InternalOCCI.g:3037:5: (lv_minExclusive_7_0= RULE_STRING )
+                    // InternalOCCI.g:3028:4: ( (lv_minExclusive_7_0= RULE_STRING ) )
+                    // InternalOCCI.g:3029:5: (lv_minExclusive_7_0= RULE_STRING )
                     {
-                    // InternalOCCI.g:3037:5: (lv_minExclusive_7_0= RULE_STRING )
-                    // InternalOCCI.g:3038:6: lv_minExclusive_7_0= RULE_STRING
+                    // InternalOCCI.g:3029:5: (lv_minExclusive_7_0= RULE_STRING )
+                    // InternalOCCI.g:3030:6: lv_minExclusive_7_0= RULE_STRING
                     {
-                    lv_minExclusive_7_0=(Token)match(input,RULE_STRING,FOLLOW_82); 
+                    lv_minExclusive_7_0=(Token)match(input,RULE_STRING,FOLLOW_80); 
 
                     						newLeafNode(lv_minExclusive_7_0, grammarAccess.getNumericTypeAccess().getMinExclusiveSTRINGTerminalRuleCall_5_1_0());
                     					
@@ -7148,7 +7138,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:3055:3: (otherlv_8= 'maxExclusive' ( (lv_maxExclusive_9_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:3047:3: (otherlv_8= 'maxExclusive' ( (lv_maxExclusive_9_0= RULE_STRING ) ) )?
             int alt75=2;
             int LA75_0 = input.LA(1);
 
@@ -7157,19 +7147,19 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt75) {
                 case 1 :
-                    // InternalOCCI.g:3056:4: otherlv_8= 'maxExclusive' ( (lv_maxExclusive_9_0= RULE_STRING ) )
+                    // InternalOCCI.g:3048:4: otherlv_8= 'maxExclusive' ( (lv_maxExclusive_9_0= RULE_STRING ) )
                     {
                     otherlv_8=(Token)match(input,69,FOLLOW_4); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getNumericTypeAccess().getMaxExclusiveKeyword_6_0());
                     			
-                    // InternalOCCI.g:3060:4: ( (lv_maxExclusive_9_0= RULE_STRING ) )
-                    // InternalOCCI.g:3061:5: (lv_maxExclusive_9_0= RULE_STRING )
+                    // InternalOCCI.g:3052:4: ( (lv_maxExclusive_9_0= RULE_STRING ) )
+                    // InternalOCCI.g:3053:5: (lv_maxExclusive_9_0= RULE_STRING )
                     {
-                    // InternalOCCI.g:3061:5: (lv_maxExclusive_9_0= RULE_STRING )
-                    // InternalOCCI.g:3062:6: lv_maxExclusive_9_0= RULE_STRING
+                    // InternalOCCI.g:3053:5: (lv_maxExclusive_9_0= RULE_STRING )
+                    // InternalOCCI.g:3054:6: lv_maxExclusive_9_0= RULE_STRING
                     {
-                    lv_maxExclusive_9_0=(Token)match(input,RULE_STRING,FOLLOW_83); 
+                    lv_maxExclusive_9_0=(Token)match(input,RULE_STRING,FOLLOW_81); 
 
                     						newLeafNode(lv_maxExclusive_9_0, grammarAccess.getNumericTypeAccess().getMaxExclusiveSTRINGTerminalRuleCall_6_1_0());
                     					
@@ -7195,7 +7185,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:3079:3: (otherlv_10= 'minInclusive' ( (lv_minInclusive_11_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:3071:3: (otherlv_10= 'minInclusive' ( (lv_minInclusive_11_0= RULE_STRING ) ) )?
             int alt76=2;
             int LA76_0 = input.LA(1);
 
@@ -7204,19 +7194,19 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt76) {
                 case 1 :
-                    // InternalOCCI.g:3080:4: otherlv_10= 'minInclusive' ( (lv_minInclusive_11_0= RULE_STRING ) )
+                    // InternalOCCI.g:3072:4: otherlv_10= 'minInclusive' ( (lv_minInclusive_11_0= RULE_STRING ) )
                     {
                     otherlv_10=(Token)match(input,70,FOLLOW_4); 
 
                     				newLeafNode(otherlv_10, grammarAccess.getNumericTypeAccess().getMinInclusiveKeyword_7_0());
                     			
-                    // InternalOCCI.g:3084:4: ( (lv_minInclusive_11_0= RULE_STRING ) )
-                    // InternalOCCI.g:3085:5: (lv_minInclusive_11_0= RULE_STRING )
+                    // InternalOCCI.g:3076:4: ( (lv_minInclusive_11_0= RULE_STRING ) )
+                    // InternalOCCI.g:3077:5: (lv_minInclusive_11_0= RULE_STRING )
                     {
-                    // InternalOCCI.g:3085:5: (lv_minInclusive_11_0= RULE_STRING )
-                    // InternalOCCI.g:3086:6: lv_minInclusive_11_0= RULE_STRING
+                    // InternalOCCI.g:3077:5: (lv_minInclusive_11_0= RULE_STRING )
+                    // InternalOCCI.g:3078:6: lv_minInclusive_11_0= RULE_STRING
                     {
-                    lv_minInclusive_11_0=(Token)match(input,RULE_STRING,FOLLOW_84); 
+                    lv_minInclusive_11_0=(Token)match(input,RULE_STRING,FOLLOW_82); 
 
                     						newLeafNode(lv_minInclusive_11_0, grammarAccess.getNumericTypeAccess().getMinInclusiveSTRINGTerminalRuleCall_7_1_0());
                     					
@@ -7242,7 +7232,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:3103:3: (otherlv_12= 'maxInclusive' ( (lv_maxInclusive_13_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:3095:3: (otherlv_12= 'maxInclusive' ( (lv_maxInclusive_13_0= RULE_STRING ) ) )?
             int alt77=2;
             int LA77_0 = input.LA(1);
 
@@ -7251,19 +7241,19 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt77) {
                 case 1 :
-                    // InternalOCCI.g:3104:4: otherlv_12= 'maxInclusive' ( (lv_maxInclusive_13_0= RULE_STRING ) )
+                    // InternalOCCI.g:3096:4: otherlv_12= 'maxInclusive' ( (lv_maxInclusive_13_0= RULE_STRING ) )
                     {
                     otherlv_12=(Token)match(input,71,FOLLOW_4); 
 
                     				newLeafNode(otherlv_12, grammarAccess.getNumericTypeAccess().getMaxInclusiveKeyword_8_0());
                     			
-                    // InternalOCCI.g:3108:4: ( (lv_maxInclusive_13_0= RULE_STRING ) )
-                    // InternalOCCI.g:3109:5: (lv_maxInclusive_13_0= RULE_STRING )
+                    // InternalOCCI.g:3100:4: ( (lv_maxInclusive_13_0= RULE_STRING ) )
+                    // InternalOCCI.g:3101:5: (lv_maxInclusive_13_0= RULE_STRING )
                     {
-                    // InternalOCCI.g:3109:5: (lv_maxInclusive_13_0= RULE_STRING )
-                    // InternalOCCI.g:3110:6: lv_maxInclusive_13_0= RULE_STRING
+                    // InternalOCCI.g:3101:5: (lv_maxInclusive_13_0= RULE_STRING )
+                    // InternalOCCI.g:3102:6: lv_maxInclusive_13_0= RULE_STRING
                     {
-                    lv_maxInclusive_13_0=(Token)match(input,RULE_STRING,FOLLOW_76); 
+                    lv_maxInclusive_13_0=(Token)match(input,RULE_STRING,FOLLOW_74); 
 
                     						newLeafNode(lv_maxInclusive_13_0, grammarAccess.getNumericTypeAccess().getMaxInclusiveSTRINGTerminalRuleCall_8_1_0());
                     					
@@ -7289,7 +7279,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:3127:3: (otherlv_14= 'documentation' ( (lv_documentation_15_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:3119:3: (otherlv_14= 'documentation' ( (lv_documentation_15_0= RULE_STRING ) ) )?
             int alt78=2;
             int LA78_0 = input.LA(1);
 
@@ -7298,17 +7288,17 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt78) {
                 case 1 :
-                    // InternalOCCI.g:3128:4: otherlv_14= 'documentation' ( (lv_documentation_15_0= RULE_STRING ) )
+                    // InternalOCCI.g:3120:4: otherlv_14= 'documentation' ( (lv_documentation_15_0= RULE_STRING ) )
                     {
                     otherlv_14=(Token)match(input,63,FOLLOW_4); 
 
                     				newLeafNode(otherlv_14, grammarAccess.getNumericTypeAccess().getDocumentationKeyword_9_0());
                     			
-                    // InternalOCCI.g:3132:4: ( (lv_documentation_15_0= RULE_STRING ) )
-                    // InternalOCCI.g:3133:5: (lv_documentation_15_0= RULE_STRING )
+                    // InternalOCCI.g:3124:4: ( (lv_documentation_15_0= RULE_STRING ) )
+                    // InternalOCCI.g:3125:5: (lv_documentation_15_0= RULE_STRING )
                     {
-                    // InternalOCCI.g:3133:5: (lv_documentation_15_0= RULE_STRING )
-                    // InternalOCCI.g:3134:6: lv_documentation_15_0= RULE_STRING
+                    // InternalOCCI.g:3125:5: (lv_documentation_15_0= RULE_STRING )
+                    // InternalOCCI.g:3126:6: lv_documentation_15_0= RULE_STRING
                     {
                     lv_documentation_15_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -7359,7 +7349,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEnumerationType"
-    // InternalOCCI.g:3155:1: entryRuleEnumerationType returns [EObject current=null] : iv_ruleEnumerationType= ruleEnumerationType EOF ;
+    // InternalOCCI.g:3147:1: entryRuleEnumerationType returns [EObject current=null] : iv_ruleEnumerationType= ruleEnumerationType EOF ;
     public final EObject entryRuleEnumerationType() throws RecognitionException {
         EObject current = null;
 
@@ -7367,8 +7357,8 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOCCI.g:3155:56: (iv_ruleEnumerationType= ruleEnumerationType EOF )
-            // InternalOCCI.g:3156:2: iv_ruleEnumerationType= ruleEnumerationType EOF
+            // InternalOCCI.g:3147:56: (iv_ruleEnumerationType= ruleEnumerationType EOF )
+            // InternalOCCI.g:3148:2: iv_ruleEnumerationType= ruleEnumerationType EOF
             {
              newCompositeNode(grammarAccess.getEnumerationTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -7395,7 +7385,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEnumerationType"
-    // InternalOCCI.g:3162:1: ruleEnumerationType returns [EObject current=null] : (otherlv_0= 'EnumerationType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'literals' otherlv_3= '(' ( (lv_literals_4_0= ruleEnumerationLiteral ) ) (otherlv_5= ',' ( (lv_literals_6_0= ruleEnumerationLiteral ) ) )* otherlv_7= ')' (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )? ) ;
+    // InternalOCCI.g:3154:1: ruleEnumerationType returns [EObject current=null] : (otherlv_0= 'EnumerationType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'literals' otherlv_3= '(' ( (lv_literals_4_0= ruleEnumerationLiteral ) ) (otherlv_5= ',' ( (lv_literals_6_0= ruleEnumerationLiteral ) ) )* otherlv_7= ')' (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )? ) ;
     public final EObject ruleEnumerationType() throws RecognitionException {
         EObject current = null;
 
@@ -7417,26 +7407,26 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:3168:2: ( (otherlv_0= 'EnumerationType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'literals' otherlv_3= '(' ( (lv_literals_4_0= ruleEnumerationLiteral ) ) (otherlv_5= ',' ( (lv_literals_6_0= ruleEnumerationLiteral ) ) )* otherlv_7= ')' (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )? ) )
-            // InternalOCCI.g:3169:2: (otherlv_0= 'EnumerationType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'literals' otherlv_3= '(' ( (lv_literals_4_0= ruleEnumerationLiteral ) ) (otherlv_5= ',' ( (lv_literals_6_0= ruleEnumerationLiteral ) ) )* otherlv_7= ')' (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )? )
+            // InternalOCCI.g:3160:2: ( (otherlv_0= 'EnumerationType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'literals' otherlv_3= '(' ( (lv_literals_4_0= ruleEnumerationLiteral ) ) (otherlv_5= ',' ( (lv_literals_6_0= ruleEnumerationLiteral ) ) )* otherlv_7= ')' (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )? ) )
+            // InternalOCCI.g:3161:2: (otherlv_0= 'EnumerationType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'literals' otherlv_3= '(' ( (lv_literals_4_0= ruleEnumerationLiteral ) ) (otherlv_5= ',' ( (lv_literals_6_0= ruleEnumerationLiteral ) ) )* otherlv_7= ')' (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )? )
             {
-            // InternalOCCI.g:3169:2: (otherlv_0= 'EnumerationType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'literals' otherlv_3= '(' ( (lv_literals_4_0= ruleEnumerationLiteral ) ) (otherlv_5= ',' ( (lv_literals_6_0= ruleEnumerationLiteral ) ) )* otherlv_7= ')' (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )? )
-            // InternalOCCI.g:3170:3: otherlv_0= 'EnumerationType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'literals' otherlv_3= '(' ( (lv_literals_4_0= ruleEnumerationLiteral ) ) (otherlv_5= ',' ( (lv_literals_6_0= ruleEnumerationLiteral ) ) )* otherlv_7= ')' (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:3161:2: (otherlv_0= 'EnumerationType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'literals' otherlv_3= '(' ( (lv_literals_4_0= ruleEnumerationLiteral ) ) (otherlv_5= ',' ( (lv_literals_6_0= ruleEnumerationLiteral ) ) )* otherlv_7= ')' (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )? )
+            // InternalOCCI.g:3162:3: otherlv_0= 'EnumerationType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'literals' otherlv_3= '(' ( (lv_literals_4_0= ruleEnumerationLiteral ) ) (otherlv_5= ',' ( (lv_literals_6_0= ruleEnumerationLiteral ) ) )* otherlv_7= ')' (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )?
             {
             otherlv_0=(Token)match(input,72,FOLLOW_12); 
 
             			newLeafNode(otherlv_0, grammarAccess.getEnumerationTypeAccess().getEnumerationTypeKeyword_0());
             		
-            // InternalOCCI.g:3174:3: ( (lv_name_1_0= ruleTypeID ) )
-            // InternalOCCI.g:3175:4: (lv_name_1_0= ruleTypeID )
+            // InternalOCCI.g:3166:3: ( (lv_name_1_0= ruleTypeID ) )
+            // InternalOCCI.g:3167:4: (lv_name_1_0= ruleTypeID )
             {
-            // InternalOCCI.g:3175:4: (lv_name_1_0= ruleTypeID )
-            // InternalOCCI.g:3176:5: lv_name_1_0= ruleTypeID
+            // InternalOCCI.g:3167:4: (lv_name_1_0= ruleTypeID )
+            // InternalOCCI.g:3168:5: lv_name_1_0= ruleTypeID
             {
 
             					newCompositeNode(grammarAccess.getEnumerationTypeAccess().getNameTypeIDParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_85);
+            pushFollow(FOLLOW_83);
             lv_name_1_0=ruleTypeID();
 
             state._fsp--;
@@ -7466,11 +7456,11 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getEnumerationTypeAccess().getLeftParenthesisKeyword_3());
             		
-            // InternalOCCI.g:3201:3: ( (lv_literals_4_0= ruleEnumerationLiteral ) )
-            // InternalOCCI.g:3202:4: (lv_literals_4_0= ruleEnumerationLiteral )
+            // InternalOCCI.g:3193:3: ( (lv_literals_4_0= ruleEnumerationLiteral ) )
+            // InternalOCCI.g:3194:4: (lv_literals_4_0= ruleEnumerationLiteral )
             {
-            // InternalOCCI.g:3202:4: (lv_literals_4_0= ruleEnumerationLiteral )
-            // InternalOCCI.g:3203:5: lv_literals_4_0= ruleEnumerationLiteral
+            // InternalOCCI.g:3194:4: (lv_literals_4_0= ruleEnumerationLiteral )
+            // InternalOCCI.g:3195:5: lv_literals_4_0= ruleEnumerationLiteral
             {
 
             					newCompositeNode(grammarAccess.getEnumerationTypeAccess().getLiteralsEnumerationLiteralParserRuleCall_4_0());
@@ -7497,7 +7487,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:3220:3: (otherlv_5= ',' ( (lv_literals_6_0= ruleEnumerationLiteral ) ) )*
+            // InternalOCCI.g:3212:3: (otherlv_5= ',' ( (lv_literals_6_0= ruleEnumerationLiteral ) ) )*
             loop79:
             do {
                 int alt79=2;
@@ -7510,17 +7500,17 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
                 switch (alt79) {
             	case 1 :
-            	    // InternalOCCI.g:3221:4: otherlv_5= ',' ( (lv_literals_6_0= ruleEnumerationLiteral ) )
+            	    // InternalOCCI.g:3213:4: otherlv_5= ',' ( (lv_literals_6_0= ruleEnumerationLiteral ) )
             	    {
             	    otherlv_5=(Token)match(input,17,FOLLOW_12); 
 
             	    				newLeafNode(otherlv_5, grammarAccess.getEnumerationTypeAccess().getCommaKeyword_5_0());
             	    			
-            	    // InternalOCCI.g:3225:4: ( (lv_literals_6_0= ruleEnumerationLiteral ) )
-            	    // InternalOCCI.g:3226:5: (lv_literals_6_0= ruleEnumerationLiteral )
+            	    // InternalOCCI.g:3217:4: ( (lv_literals_6_0= ruleEnumerationLiteral ) )
+            	    // InternalOCCI.g:3218:5: (lv_literals_6_0= ruleEnumerationLiteral )
             	    {
-            	    // InternalOCCI.g:3226:5: (lv_literals_6_0= ruleEnumerationLiteral )
-            	    // InternalOCCI.g:3227:6: lv_literals_6_0= ruleEnumerationLiteral
+            	    // InternalOCCI.g:3218:5: (lv_literals_6_0= ruleEnumerationLiteral )
+            	    // InternalOCCI.g:3219:6: lv_literals_6_0= ruleEnumerationLiteral
             	    {
 
             	    						newCompositeNode(grammarAccess.getEnumerationTypeAccess().getLiteralsEnumerationLiteralParserRuleCall_5_1_0());
@@ -7556,11 +7546,11 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_7=(Token)match(input,18,FOLLOW_76); 
+            otherlv_7=(Token)match(input,18,FOLLOW_74); 
 
             			newLeafNode(otherlv_7, grammarAccess.getEnumerationTypeAccess().getRightParenthesisKeyword_6());
             		
-            // InternalOCCI.g:3249:3: (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:3241:3: (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )?
             int alt80=2;
             int LA80_0 = input.LA(1);
 
@@ -7569,17 +7559,17 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt80) {
                 case 1 :
-                    // InternalOCCI.g:3250:4: otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) )
+                    // InternalOCCI.g:3242:4: otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) )
                     {
                     otherlv_8=(Token)match(input,63,FOLLOW_4); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getEnumerationTypeAccess().getDocumentationKeyword_7_0());
                     			
-                    // InternalOCCI.g:3254:4: ( (lv_documentation_9_0= RULE_STRING ) )
-                    // InternalOCCI.g:3255:5: (lv_documentation_9_0= RULE_STRING )
+                    // InternalOCCI.g:3246:4: ( (lv_documentation_9_0= RULE_STRING ) )
+                    // InternalOCCI.g:3247:5: (lv_documentation_9_0= RULE_STRING )
                     {
-                    // InternalOCCI.g:3255:5: (lv_documentation_9_0= RULE_STRING )
-                    // InternalOCCI.g:3256:6: lv_documentation_9_0= RULE_STRING
+                    // InternalOCCI.g:3247:5: (lv_documentation_9_0= RULE_STRING )
+                    // InternalOCCI.g:3248:6: lv_documentation_9_0= RULE_STRING
                     {
                     lv_documentation_9_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -7630,7 +7620,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEnumerationLiteral"
-    // InternalOCCI.g:3277:1: entryRuleEnumerationLiteral returns [EObject current=null] : iv_ruleEnumerationLiteral= ruleEnumerationLiteral EOF ;
+    // InternalOCCI.g:3269:1: entryRuleEnumerationLiteral returns [EObject current=null] : iv_ruleEnumerationLiteral= ruleEnumerationLiteral EOF ;
     public final EObject entryRuleEnumerationLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -7638,8 +7628,8 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOCCI.g:3277:59: (iv_ruleEnumerationLiteral= ruleEnumerationLiteral EOF )
-            // InternalOCCI.g:3278:2: iv_ruleEnumerationLiteral= ruleEnumerationLiteral EOF
+            // InternalOCCI.g:3269:59: (iv_ruleEnumerationLiteral= ruleEnumerationLiteral EOF )
+            // InternalOCCI.g:3270:2: iv_ruleEnumerationLiteral= ruleEnumerationLiteral EOF
             {
              newCompositeNode(grammarAccess.getEnumerationLiteralRule()); 
             pushFollow(FOLLOW_1);
@@ -7666,7 +7656,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEnumerationLiteral"
-    // InternalOCCI.g:3284:1: ruleEnumerationLiteral returns [EObject current=null] : ( ( (lv_name_0_0= ruleTypeID ) ) (otherlv_1= 'documentation' ( (lv_documentation_2_0= RULE_STRING ) ) )? ) ;
+    // InternalOCCI.g:3276:1: ruleEnumerationLiteral returns [EObject current=null] : ( ( (lv_name_0_0= ruleTypeID ) ) (otherlv_1= 'documentation' ( (lv_documentation_2_0= RULE_STRING ) ) )? ) ;
     public final EObject ruleEnumerationLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -7679,22 +7669,22 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:3290:2: ( ( ( (lv_name_0_0= ruleTypeID ) ) (otherlv_1= 'documentation' ( (lv_documentation_2_0= RULE_STRING ) ) )? ) )
-            // InternalOCCI.g:3291:2: ( ( (lv_name_0_0= ruleTypeID ) ) (otherlv_1= 'documentation' ( (lv_documentation_2_0= RULE_STRING ) ) )? )
+            // InternalOCCI.g:3282:2: ( ( ( (lv_name_0_0= ruleTypeID ) ) (otherlv_1= 'documentation' ( (lv_documentation_2_0= RULE_STRING ) ) )? ) )
+            // InternalOCCI.g:3283:2: ( ( (lv_name_0_0= ruleTypeID ) ) (otherlv_1= 'documentation' ( (lv_documentation_2_0= RULE_STRING ) ) )? )
             {
-            // InternalOCCI.g:3291:2: ( ( (lv_name_0_0= ruleTypeID ) ) (otherlv_1= 'documentation' ( (lv_documentation_2_0= RULE_STRING ) ) )? )
-            // InternalOCCI.g:3292:3: ( (lv_name_0_0= ruleTypeID ) ) (otherlv_1= 'documentation' ( (lv_documentation_2_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:3283:2: ( ( (lv_name_0_0= ruleTypeID ) ) (otherlv_1= 'documentation' ( (lv_documentation_2_0= RULE_STRING ) ) )? )
+            // InternalOCCI.g:3284:3: ( (lv_name_0_0= ruleTypeID ) ) (otherlv_1= 'documentation' ( (lv_documentation_2_0= RULE_STRING ) ) )?
             {
-            // InternalOCCI.g:3292:3: ( (lv_name_0_0= ruleTypeID ) )
-            // InternalOCCI.g:3293:4: (lv_name_0_0= ruleTypeID )
+            // InternalOCCI.g:3284:3: ( (lv_name_0_0= ruleTypeID ) )
+            // InternalOCCI.g:3285:4: (lv_name_0_0= ruleTypeID )
             {
-            // InternalOCCI.g:3293:4: (lv_name_0_0= ruleTypeID )
-            // InternalOCCI.g:3294:5: lv_name_0_0= ruleTypeID
+            // InternalOCCI.g:3285:4: (lv_name_0_0= ruleTypeID )
+            // InternalOCCI.g:3286:5: lv_name_0_0= ruleTypeID
             {
 
             					newCompositeNode(grammarAccess.getEnumerationLiteralAccess().getNameTypeIDParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_76);
+            pushFollow(FOLLOW_74);
             lv_name_0_0=ruleTypeID();
 
             state._fsp--;
@@ -7716,7 +7706,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:3311:3: (otherlv_1= 'documentation' ( (lv_documentation_2_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:3303:3: (otherlv_1= 'documentation' ( (lv_documentation_2_0= RULE_STRING ) ) )?
             int alt81=2;
             int LA81_0 = input.LA(1);
 
@@ -7725,17 +7715,17 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt81) {
                 case 1 :
-                    // InternalOCCI.g:3312:4: otherlv_1= 'documentation' ( (lv_documentation_2_0= RULE_STRING ) )
+                    // InternalOCCI.g:3304:4: otherlv_1= 'documentation' ( (lv_documentation_2_0= RULE_STRING ) )
                     {
                     otherlv_1=(Token)match(input,63,FOLLOW_4); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getEnumerationLiteralAccess().getDocumentationKeyword_1_0());
                     			
-                    // InternalOCCI.g:3316:4: ( (lv_documentation_2_0= RULE_STRING ) )
-                    // InternalOCCI.g:3317:5: (lv_documentation_2_0= RULE_STRING )
+                    // InternalOCCI.g:3308:4: ( (lv_documentation_2_0= RULE_STRING ) )
+                    // InternalOCCI.g:3309:5: (lv_documentation_2_0= RULE_STRING )
                     {
-                    // InternalOCCI.g:3317:5: (lv_documentation_2_0= RULE_STRING )
-                    // InternalOCCI.g:3318:6: lv_documentation_2_0= RULE_STRING
+                    // InternalOCCI.g:3309:5: (lv_documentation_2_0= RULE_STRING )
+                    // InternalOCCI.g:3310:6: lv_documentation_2_0= RULE_STRING
                     {
                     lv_documentation_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -7786,7 +7776,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRecordType"
-    // InternalOCCI.g:3339:1: entryRuleRecordType returns [EObject current=null] : iv_ruleRecordType= ruleRecordType EOF ;
+    // InternalOCCI.g:3331:1: entryRuleRecordType returns [EObject current=null] : iv_ruleRecordType= ruleRecordType EOF ;
     public final EObject entryRuleRecordType() throws RecognitionException {
         EObject current = null;
 
@@ -7794,8 +7784,8 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOCCI.g:3339:51: (iv_ruleRecordType= ruleRecordType EOF )
-            // InternalOCCI.g:3340:2: iv_ruleRecordType= ruleRecordType EOF
+            // InternalOCCI.g:3331:51: (iv_ruleRecordType= ruleRecordType EOF )
+            // InternalOCCI.g:3332:2: iv_ruleRecordType= ruleRecordType EOF
             {
              newCompositeNode(grammarAccess.getRecordTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -7822,7 +7812,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRecordType"
-    // InternalOCCI.g:3346:1: ruleRecordType returns [EObject current=null] : (otherlv_0= 'RecordType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'fields' otherlv_3= '(' ( (lv_recordFields_4_0= ruleRecordField ) ) (otherlv_5= ',' ( (lv_recordFields_6_0= ruleRecordField ) ) )* otherlv_7= ')' (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )? ) ;
+    // InternalOCCI.g:3338:1: ruleRecordType returns [EObject current=null] : (otherlv_0= 'RecordType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'fields' otherlv_3= '(' ( (lv_recordFields_4_0= ruleRecordField ) ) (otherlv_5= ',' ( (lv_recordFields_6_0= ruleRecordField ) ) )* otherlv_7= ')' (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )? ) ;
     public final EObject ruleRecordType() throws RecognitionException {
         EObject current = null;
 
@@ -7844,26 +7834,26 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:3352:2: ( (otherlv_0= 'RecordType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'fields' otherlv_3= '(' ( (lv_recordFields_4_0= ruleRecordField ) ) (otherlv_5= ',' ( (lv_recordFields_6_0= ruleRecordField ) ) )* otherlv_7= ')' (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )? ) )
-            // InternalOCCI.g:3353:2: (otherlv_0= 'RecordType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'fields' otherlv_3= '(' ( (lv_recordFields_4_0= ruleRecordField ) ) (otherlv_5= ',' ( (lv_recordFields_6_0= ruleRecordField ) ) )* otherlv_7= ')' (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )? )
+            // InternalOCCI.g:3344:2: ( (otherlv_0= 'RecordType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'fields' otherlv_3= '(' ( (lv_recordFields_4_0= ruleRecordField ) ) (otherlv_5= ',' ( (lv_recordFields_6_0= ruleRecordField ) ) )* otherlv_7= ')' (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )? ) )
+            // InternalOCCI.g:3345:2: (otherlv_0= 'RecordType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'fields' otherlv_3= '(' ( (lv_recordFields_4_0= ruleRecordField ) ) (otherlv_5= ',' ( (lv_recordFields_6_0= ruleRecordField ) ) )* otherlv_7= ')' (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )? )
             {
-            // InternalOCCI.g:3353:2: (otherlv_0= 'RecordType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'fields' otherlv_3= '(' ( (lv_recordFields_4_0= ruleRecordField ) ) (otherlv_5= ',' ( (lv_recordFields_6_0= ruleRecordField ) ) )* otherlv_7= ')' (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )? )
-            // InternalOCCI.g:3354:3: otherlv_0= 'RecordType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'fields' otherlv_3= '(' ( (lv_recordFields_4_0= ruleRecordField ) ) (otherlv_5= ',' ( (lv_recordFields_6_0= ruleRecordField ) ) )* otherlv_7= ')' (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:3345:2: (otherlv_0= 'RecordType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'fields' otherlv_3= '(' ( (lv_recordFields_4_0= ruleRecordField ) ) (otherlv_5= ',' ( (lv_recordFields_6_0= ruleRecordField ) ) )* otherlv_7= ')' (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )? )
+            // InternalOCCI.g:3346:3: otherlv_0= 'RecordType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'fields' otherlv_3= '(' ( (lv_recordFields_4_0= ruleRecordField ) ) (otherlv_5= ',' ( (lv_recordFields_6_0= ruleRecordField ) ) )* otherlv_7= ')' (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )?
             {
             otherlv_0=(Token)match(input,74,FOLLOW_12); 
 
             			newLeafNode(otherlv_0, grammarAccess.getRecordTypeAccess().getRecordTypeKeyword_0());
             		
-            // InternalOCCI.g:3358:3: ( (lv_name_1_0= ruleTypeID ) )
-            // InternalOCCI.g:3359:4: (lv_name_1_0= ruleTypeID )
+            // InternalOCCI.g:3350:3: ( (lv_name_1_0= ruleTypeID ) )
+            // InternalOCCI.g:3351:4: (lv_name_1_0= ruleTypeID )
             {
-            // InternalOCCI.g:3359:4: (lv_name_1_0= ruleTypeID )
-            // InternalOCCI.g:3360:5: lv_name_1_0= ruleTypeID
+            // InternalOCCI.g:3351:4: (lv_name_1_0= ruleTypeID )
+            // InternalOCCI.g:3352:5: lv_name_1_0= ruleTypeID
             {
 
             					newCompositeNode(grammarAccess.getRecordTypeAccess().getNameTypeIDParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_86);
+            pushFollow(FOLLOW_84);
             lv_name_1_0=ruleTypeID();
 
             state._fsp--;
@@ -7893,11 +7883,11 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getRecordTypeAccess().getLeftParenthesisKeyword_3());
             		
-            // InternalOCCI.g:3385:3: ( (lv_recordFields_4_0= ruleRecordField ) )
-            // InternalOCCI.g:3386:4: (lv_recordFields_4_0= ruleRecordField )
+            // InternalOCCI.g:3377:3: ( (lv_recordFields_4_0= ruleRecordField ) )
+            // InternalOCCI.g:3378:4: (lv_recordFields_4_0= ruleRecordField )
             {
-            // InternalOCCI.g:3386:4: (lv_recordFields_4_0= ruleRecordField )
-            // InternalOCCI.g:3387:5: lv_recordFields_4_0= ruleRecordField
+            // InternalOCCI.g:3378:4: (lv_recordFields_4_0= ruleRecordField )
+            // InternalOCCI.g:3379:5: lv_recordFields_4_0= ruleRecordField
             {
 
             					newCompositeNode(grammarAccess.getRecordTypeAccess().getRecordFieldsRecordFieldParserRuleCall_4_0());
@@ -7924,7 +7914,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:3404:3: (otherlv_5= ',' ( (lv_recordFields_6_0= ruleRecordField ) ) )*
+            // InternalOCCI.g:3396:3: (otherlv_5= ',' ( (lv_recordFields_6_0= ruleRecordField ) ) )*
             loop82:
             do {
                 int alt82=2;
@@ -7937,17 +7927,17 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
                 switch (alt82) {
             	case 1 :
-            	    // InternalOCCI.g:3405:4: otherlv_5= ',' ( (lv_recordFields_6_0= ruleRecordField ) )
+            	    // InternalOCCI.g:3397:4: otherlv_5= ',' ( (lv_recordFields_6_0= ruleRecordField ) )
             	    {
             	    otherlv_5=(Token)match(input,17,FOLLOW_12); 
 
             	    				newLeafNode(otherlv_5, grammarAccess.getRecordTypeAccess().getCommaKeyword_5_0());
             	    			
-            	    // InternalOCCI.g:3409:4: ( (lv_recordFields_6_0= ruleRecordField ) )
-            	    // InternalOCCI.g:3410:5: (lv_recordFields_6_0= ruleRecordField )
+            	    // InternalOCCI.g:3401:4: ( (lv_recordFields_6_0= ruleRecordField ) )
+            	    // InternalOCCI.g:3402:5: (lv_recordFields_6_0= ruleRecordField )
             	    {
-            	    // InternalOCCI.g:3410:5: (lv_recordFields_6_0= ruleRecordField )
-            	    // InternalOCCI.g:3411:6: lv_recordFields_6_0= ruleRecordField
+            	    // InternalOCCI.g:3402:5: (lv_recordFields_6_0= ruleRecordField )
+            	    // InternalOCCI.g:3403:6: lv_recordFields_6_0= ruleRecordField
             	    {
 
             	    						newCompositeNode(grammarAccess.getRecordTypeAccess().getRecordFieldsRecordFieldParserRuleCall_5_1_0());
@@ -7983,11 +7973,11 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_7=(Token)match(input,18,FOLLOW_76); 
+            otherlv_7=(Token)match(input,18,FOLLOW_74); 
 
             			newLeafNode(otherlv_7, grammarAccess.getRecordTypeAccess().getRightParenthesisKeyword_6());
             		
-            // InternalOCCI.g:3433:3: (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:3425:3: (otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) ) )?
             int alt83=2;
             int LA83_0 = input.LA(1);
 
@@ -7996,17 +7986,17 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt83) {
                 case 1 :
-                    // InternalOCCI.g:3434:4: otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) )
+                    // InternalOCCI.g:3426:4: otherlv_8= 'documentation' ( (lv_documentation_9_0= RULE_STRING ) )
                     {
                     otherlv_8=(Token)match(input,63,FOLLOW_4); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getRecordTypeAccess().getDocumentationKeyword_7_0());
                     			
-                    // InternalOCCI.g:3438:4: ( (lv_documentation_9_0= RULE_STRING ) )
-                    // InternalOCCI.g:3439:5: (lv_documentation_9_0= RULE_STRING )
+                    // InternalOCCI.g:3430:4: ( (lv_documentation_9_0= RULE_STRING ) )
+                    // InternalOCCI.g:3431:5: (lv_documentation_9_0= RULE_STRING )
                     {
-                    // InternalOCCI.g:3439:5: (lv_documentation_9_0= RULE_STRING )
-                    // InternalOCCI.g:3440:6: lv_documentation_9_0= RULE_STRING
+                    // InternalOCCI.g:3431:5: (lv_documentation_9_0= RULE_STRING )
+                    // InternalOCCI.g:3432:6: lv_documentation_9_0= RULE_STRING
                     {
                     lv_documentation_9_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -8057,7 +8047,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRecordField"
-    // InternalOCCI.g:3461:1: entryRuleRecordField returns [EObject current=null] : iv_ruleRecordField= ruleRecordField EOF ;
+    // InternalOCCI.g:3453:1: entryRuleRecordField returns [EObject current=null] : iv_ruleRecordField= ruleRecordField EOF ;
     public final EObject entryRuleRecordField() throws RecognitionException {
         EObject current = null;
 
@@ -8065,8 +8055,8 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOCCI.g:3461:52: (iv_ruleRecordField= ruleRecordField EOF )
-            // InternalOCCI.g:3462:2: iv_ruleRecordField= ruleRecordField EOF
+            // InternalOCCI.g:3453:52: (iv_ruleRecordField= ruleRecordField EOF )
+            // InternalOCCI.g:3454:2: iv_ruleRecordField= ruleRecordField EOF
             {
              newCompositeNode(grammarAccess.getRecordFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -8093,7 +8083,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRecordField"
-    // InternalOCCI.g:3468:1: ruleRecordField returns [EObject current=null] : ( ( (lv_mutable_0_0= 'mutable' ) )? ( (lv_required_1_0= 'required' ) )? ( (lv_name_2_0= ruleQualifiedID ) ) (otherlv_3= 'type' ( ( ruleQualifiedID ) ) ) (otherlv_5= '=' ( (lv_default_6_0= RULE_STRING ) ) )? (otherlv_7= 'description' ( (lv_description_8_0= RULE_STRING ) ) )? (otherlv_9= 'annotations' otherlv_10= '{' ( (lv_annotations_11_0= ruleAnnotation ) ) (otherlv_12= ',' ( (lv_annotations_13_0= ruleAnnotation ) ) )* otherlv_14= '}' )? ) ;
+    // InternalOCCI.g:3460:1: ruleRecordField returns [EObject current=null] : ( ( (lv_mutable_0_0= 'mutable' ) )? ( (lv_required_1_0= 'required' ) )? ( (lv_name_2_0= ruleQualifiedID ) ) (otherlv_3= 'type' ( ( ruleQualifiedID ) ) ) (otherlv_5= '=' ( (lv_default_6_0= RULE_STRING ) ) )? (otherlv_7= 'description' ( (lv_description_8_0= RULE_STRING ) ) )? (otherlv_9= 'annotations' otherlv_10= '{' ( (lv_annotations_11_0= ruleAnnotation ) ) (otherlv_12= ',' ( (lv_annotations_13_0= ruleAnnotation ) ) )* otherlv_14= '}' )? ) ;
     public final EObject ruleRecordField() throws RecognitionException {
         EObject current = null;
 
@@ -8119,13 +8109,13 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:3474:2: ( ( ( (lv_mutable_0_0= 'mutable' ) )? ( (lv_required_1_0= 'required' ) )? ( (lv_name_2_0= ruleQualifiedID ) ) (otherlv_3= 'type' ( ( ruleQualifiedID ) ) ) (otherlv_5= '=' ( (lv_default_6_0= RULE_STRING ) ) )? (otherlv_7= 'description' ( (lv_description_8_0= RULE_STRING ) ) )? (otherlv_9= 'annotations' otherlv_10= '{' ( (lv_annotations_11_0= ruleAnnotation ) ) (otherlv_12= ',' ( (lv_annotations_13_0= ruleAnnotation ) ) )* otherlv_14= '}' )? ) )
-            // InternalOCCI.g:3475:2: ( ( (lv_mutable_0_0= 'mutable' ) )? ( (lv_required_1_0= 'required' ) )? ( (lv_name_2_0= ruleQualifiedID ) ) (otherlv_3= 'type' ( ( ruleQualifiedID ) ) ) (otherlv_5= '=' ( (lv_default_6_0= RULE_STRING ) ) )? (otherlv_7= 'description' ( (lv_description_8_0= RULE_STRING ) ) )? (otherlv_9= 'annotations' otherlv_10= '{' ( (lv_annotations_11_0= ruleAnnotation ) ) (otherlv_12= ',' ( (lv_annotations_13_0= ruleAnnotation ) ) )* otherlv_14= '}' )? )
+            // InternalOCCI.g:3466:2: ( ( ( (lv_mutable_0_0= 'mutable' ) )? ( (lv_required_1_0= 'required' ) )? ( (lv_name_2_0= ruleQualifiedID ) ) (otherlv_3= 'type' ( ( ruleQualifiedID ) ) ) (otherlv_5= '=' ( (lv_default_6_0= RULE_STRING ) ) )? (otherlv_7= 'description' ( (lv_description_8_0= RULE_STRING ) ) )? (otherlv_9= 'annotations' otherlv_10= '{' ( (lv_annotations_11_0= ruleAnnotation ) ) (otherlv_12= ',' ( (lv_annotations_13_0= ruleAnnotation ) ) )* otherlv_14= '}' )? ) )
+            // InternalOCCI.g:3467:2: ( ( (lv_mutable_0_0= 'mutable' ) )? ( (lv_required_1_0= 'required' ) )? ( (lv_name_2_0= ruleQualifiedID ) ) (otherlv_3= 'type' ( ( ruleQualifiedID ) ) ) (otherlv_5= '=' ( (lv_default_6_0= RULE_STRING ) ) )? (otherlv_7= 'description' ( (lv_description_8_0= RULE_STRING ) ) )? (otherlv_9= 'annotations' otherlv_10= '{' ( (lv_annotations_11_0= ruleAnnotation ) ) (otherlv_12= ',' ( (lv_annotations_13_0= ruleAnnotation ) ) )* otherlv_14= '}' )? )
             {
-            // InternalOCCI.g:3475:2: ( ( (lv_mutable_0_0= 'mutable' ) )? ( (lv_required_1_0= 'required' ) )? ( (lv_name_2_0= ruleQualifiedID ) ) (otherlv_3= 'type' ( ( ruleQualifiedID ) ) ) (otherlv_5= '=' ( (lv_default_6_0= RULE_STRING ) ) )? (otherlv_7= 'description' ( (lv_description_8_0= RULE_STRING ) ) )? (otherlv_9= 'annotations' otherlv_10= '{' ( (lv_annotations_11_0= ruleAnnotation ) ) (otherlv_12= ',' ( (lv_annotations_13_0= ruleAnnotation ) ) )* otherlv_14= '}' )? )
-            // InternalOCCI.g:3476:3: ( (lv_mutable_0_0= 'mutable' ) )? ( (lv_required_1_0= 'required' ) )? ( (lv_name_2_0= ruleQualifiedID ) ) (otherlv_3= 'type' ( ( ruleQualifiedID ) ) ) (otherlv_5= '=' ( (lv_default_6_0= RULE_STRING ) ) )? (otherlv_7= 'description' ( (lv_description_8_0= RULE_STRING ) ) )? (otherlv_9= 'annotations' otherlv_10= '{' ( (lv_annotations_11_0= ruleAnnotation ) ) (otherlv_12= ',' ( (lv_annotations_13_0= ruleAnnotation ) ) )* otherlv_14= '}' )?
+            // InternalOCCI.g:3467:2: ( ( (lv_mutable_0_0= 'mutable' ) )? ( (lv_required_1_0= 'required' ) )? ( (lv_name_2_0= ruleQualifiedID ) ) (otherlv_3= 'type' ( ( ruleQualifiedID ) ) ) (otherlv_5= '=' ( (lv_default_6_0= RULE_STRING ) ) )? (otherlv_7= 'description' ( (lv_description_8_0= RULE_STRING ) ) )? (otherlv_9= 'annotations' otherlv_10= '{' ( (lv_annotations_11_0= ruleAnnotation ) ) (otherlv_12= ',' ( (lv_annotations_13_0= ruleAnnotation ) ) )* otherlv_14= '}' )? )
+            // InternalOCCI.g:3468:3: ( (lv_mutable_0_0= 'mutable' ) )? ( (lv_required_1_0= 'required' ) )? ( (lv_name_2_0= ruleQualifiedID ) ) (otherlv_3= 'type' ( ( ruleQualifiedID ) ) ) (otherlv_5= '=' ( (lv_default_6_0= RULE_STRING ) ) )? (otherlv_7= 'description' ( (lv_description_8_0= RULE_STRING ) ) )? (otherlv_9= 'annotations' otherlv_10= '{' ( (lv_annotations_11_0= ruleAnnotation ) ) (otherlv_12= ',' ( (lv_annotations_13_0= ruleAnnotation ) ) )* otherlv_14= '}' )?
             {
-            // InternalOCCI.g:3476:3: ( (lv_mutable_0_0= 'mutable' ) )?
+            // InternalOCCI.g:3468:3: ( (lv_mutable_0_0= 'mutable' ) )?
             int alt84=2;
             int LA84_0 = input.LA(1);
 
@@ -8234,10 +8224,10 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt84) {
                 case 1 :
-                    // InternalOCCI.g:3477:4: (lv_mutable_0_0= 'mutable' )
+                    // InternalOCCI.g:3469:4: (lv_mutable_0_0= 'mutable' )
                     {
-                    // InternalOCCI.g:3477:4: (lv_mutable_0_0= 'mutable' )
-                    // InternalOCCI.g:3478:5: lv_mutable_0_0= 'mutable'
+                    // InternalOCCI.g:3469:4: (lv_mutable_0_0= 'mutable' )
+                    // InternalOCCI.g:3470:5: lv_mutable_0_0= 'mutable'
                     {
                     lv_mutable_0_0=(Token)match(input,45,FOLLOW_12); 
 
@@ -8258,7 +8248,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:3490:3: ( (lv_required_1_0= 'required' ) )?
+            // InternalOCCI.g:3482:3: ( (lv_required_1_0= 'required' ) )?
             int alt85=2;
             int LA85_0 = input.LA(1);
 
@@ -8367,10 +8357,10 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt85) {
                 case 1 :
-                    // InternalOCCI.g:3491:4: (lv_required_1_0= 'required' )
+                    // InternalOCCI.g:3483:4: (lv_required_1_0= 'required' )
                     {
-                    // InternalOCCI.g:3491:4: (lv_required_1_0= 'required' )
-                    // InternalOCCI.g:3492:5: lv_required_1_0= 'required'
+                    // InternalOCCI.g:3483:4: (lv_required_1_0= 'required' )
+                    // InternalOCCI.g:3484:5: lv_required_1_0= 'required'
                     {
                     lv_required_1_0=(Token)match(input,46,FOLLOW_12); 
 
@@ -8391,16 +8381,16 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:3504:3: ( (lv_name_2_0= ruleQualifiedID ) )
-            // InternalOCCI.g:3505:4: (lv_name_2_0= ruleQualifiedID )
+            // InternalOCCI.g:3496:3: ( (lv_name_2_0= ruleQualifiedID ) )
+            // InternalOCCI.g:3497:4: (lv_name_2_0= ruleQualifiedID )
             {
-            // InternalOCCI.g:3505:4: (lv_name_2_0= ruleQualifiedID )
-            // InternalOCCI.g:3506:5: lv_name_2_0= ruleQualifiedID
+            // InternalOCCI.g:3497:4: (lv_name_2_0= ruleQualifiedID )
+            // InternalOCCI.g:3498:5: lv_name_2_0= ruleQualifiedID
             {
 
             					newCompositeNode(grammarAccess.getRecordFieldAccess().getNameQualifiedIDParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_78);
+            pushFollow(FOLLOW_76);
             lv_name_2_0=ruleQualifiedID();
 
             state._fsp--;
@@ -8422,18 +8412,18 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:3523:3: (otherlv_3= 'type' ( ( ruleQualifiedID ) ) )
-            // InternalOCCI.g:3524:4: otherlv_3= 'type' ( ( ruleQualifiedID ) )
+            // InternalOCCI.g:3515:3: (otherlv_3= 'type' ( ( ruleQualifiedID ) ) )
+            // InternalOCCI.g:3516:4: otherlv_3= 'type' ( ( ruleQualifiedID ) )
             {
             otherlv_3=(Token)match(input,47,FOLLOW_12); 
 
             				newLeafNode(otherlv_3, grammarAccess.getRecordFieldAccess().getTypeKeyword_3_0());
             			
-            // InternalOCCI.g:3528:4: ( ( ruleQualifiedID ) )
-            // InternalOCCI.g:3529:5: ( ruleQualifiedID )
+            // InternalOCCI.g:3520:4: ( ( ruleQualifiedID ) )
+            // InternalOCCI.g:3521:5: ( ruleQualifiedID )
             {
-            // InternalOCCI.g:3529:5: ( ruleQualifiedID )
-            // InternalOCCI.g:3530:6: ruleQualifiedID
+            // InternalOCCI.g:3521:5: ( ruleQualifiedID )
+            // InternalOCCI.g:3522:6: ruleQualifiedID
             {
 
             						if (current==null) {
@@ -8460,7 +8450,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:3545:3: (otherlv_5= '=' ( (lv_default_6_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:3537:3: (otherlv_5= '=' ( (lv_default_6_0= RULE_STRING ) ) )?
             int alt86=2;
             int LA86_0 = input.LA(1);
 
@@ -8469,17 +8459,17 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt86) {
                 case 1 :
-                    // InternalOCCI.g:3546:4: otherlv_5= '=' ( (lv_default_6_0= RULE_STRING ) )
+                    // InternalOCCI.g:3538:4: otherlv_5= '=' ( (lv_default_6_0= RULE_STRING ) )
                     {
                     otherlv_5=(Token)match(input,30,FOLLOW_4); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getRecordFieldAccess().getEqualsSignKeyword_4_0());
                     			
-                    // InternalOCCI.g:3550:4: ( (lv_default_6_0= RULE_STRING ) )
-                    // InternalOCCI.g:3551:5: (lv_default_6_0= RULE_STRING )
+                    // InternalOCCI.g:3542:4: ( (lv_default_6_0= RULE_STRING ) )
+                    // InternalOCCI.g:3543:5: (lv_default_6_0= RULE_STRING )
                     {
-                    // InternalOCCI.g:3551:5: (lv_default_6_0= RULE_STRING )
-                    // InternalOCCI.g:3552:6: lv_default_6_0= RULE_STRING
+                    // InternalOCCI.g:3543:5: (lv_default_6_0= RULE_STRING )
+                    // InternalOCCI.g:3544:6: lv_default_6_0= RULE_STRING
                     {
                     lv_default_6_0=(Token)match(input,RULE_STRING,FOLLOW_54); 
 
@@ -8507,7 +8497,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:3569:3: (otherlv_7= 'description' ( (lv_description_8_0= RULE_STRING ) ) )?
+            // InternalOCCI.g:3561:3: (otherlv_7= 'description' ( (lv_description_8_0= RULE_STRING ) ) )?
             int alt87=2;
             int LA87_0 = input.LA(1);
 
@@ -8516,17 +8506,17 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt87) {
                 case 1 :
-                    // InternalOCCI.g:3570:4: otherlv_7= 'description' ( (lv_description_8_0= RULE_STRING ) )
+                    // InternalOCCI.g:3562:4: otherlv_7= 'description' ( (lv_description_8_0= RULE_STRING ) )
                     {
                     otherlv_7=(Token)match(input,13,FOLLOW_4); 
 
                     				newLeafNode(otherlv_7, grammarAccess.getRecordFieldAccess().getDescriptionKeyword_5_0());
                     			
-                    // InternalOCCI.g:3574:4: ( (lv_description_8_0= RULE_STRING ) )
-                    // InternalOCCI.g:3575:5: (lv_description_8_0= RULE_STRING )
+                    // InternalOCCI.g:3566:4: ( (lv_description_8_0= RULE_STRING ) )
+                    // InternalOCCI.g:3567:5: (lv_description_8_0= RULE_STRING )
                     {
-                    // InternalOCCI.g:3575:5: (lv_description_8_0= RULE_STRING )
-                    // InternalOCCI.g:3576:6: lv_description_8_0= RULE_STRING
+                    // InternalOCCI.g:3567:5: (lv_description_8_0= RULE_STRING )
+                    // InternalOCCI.g:3568:6: lv_description_8_0= RULE_STRING
                     {
                     lv_description_8_0=(Token)match(input,RULE_STRING,FOLLOW_44); 
 
@@ -8554,7 +8544,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOCCI.g:3593:3: (otherlv_9= 'annotations' otherlv_10= '{' ( (lv_annotations_11_0= ruleAnnotation ) ) (otherlv_12= ',' ( (lv_annotations_13_0= ruleAnnotation ) ) )* otherlv_14= '}' )?
+            // InternalOCCI.g:3585:3: (otherlv_9= 'annotations' otherlv_10= '{' ( (lv_annotations_11_0= ruleAnnotation ) ) (otherlv_12= ',' ( (lv_annotations_13_0= ruleAnnotation ) ) )* otherlv_14= '}' )?
             int alt89=2;
             int LA89_0 = input.LA(1);
 
@@ -8563,7 +8553,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt89) {
                 case 1 :
-                    // InternalOCCI.g:3594:4: otherlv_9= 'annotations' otherlv_10= '{' ( (lv_annotations_11_0= ruleAnnotation ) ) (otherlv_12= ',' ( (lv_annotations_13_0= ruleAnnotation ) ) )* otherlv_14= '}'
+                    // InternalOCCI.g:3586:4: otherlv_9= 'annotations' otherlv_10= '{' ( (lv_annotations_11_0= ruleAnnotation ) ) (otherlv_12= ',' ( (lv_annotations_13_0= ruleAnnotation ) ) )* otherlv_14= '}'
                     {
                     otherlv_9=(Token)match(input,39,FOLLOW_17); 
 
@@ -8573,11 +8563,11 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_10, grammarAccess.getRecordFieldAccess().getLeftCurlyBracketKeyword_6_1());
                     			
-                    // InternalOCCI.g:3602:4: ( (lv_annotations_11_0= ruleAnnotation ) )
-                    // InternalOCCI.g:3603:5: (lv_annotations_11_0= ruleAnnotation )
+                    // InternalOCCI.g:3594:4: ( (lv_annotations_11_0= ruleAnnotation ) )
+                    // InternalOCCI.g:3595:5: (lv_annotations_11_0= ruleAnnotation )
                     {
-                    // InternalOCCI.g:3603:5: (lv_annotations_11_0= ruleAnnotation )
-                    // InternalOCCI.g:3604:6: lv_annotations_11_0= ruleAnnotation
+                    // InternalOCCI.g:3595:5: (lv_annotations_11_0= ruleAnnotation )
+                    // InternalOCCI.g:3596:6: lv_annotations_11_0= ruleAnnotation
                     {
 
                     						newCompositeNode(grammarAccess.getRecordFieldAccess().getAnnotationsAnnotationParserRuleCall_6_2_0());
@@ -8604,7 +8594,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOCCI.g:3621:4: (otherlv_12= ',' ( (lv_annotations_13_0= ruleAnnotation ) ) )*
+                    // InternalOCCI.g:3613:4: (otherlv_12= ',' ( (lv_annotations_13_0= ruleAnnotation ) ) )*
                     loop88:
                     do {
                         int alt88=2;
@@ -8617,17 +8607,17 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
                         switch (alt88) {
                     	case 1 :
-                    	    // InternalOCCI.g:3622:5: otherlv_12= ',' ( (lv_annotations_13_0= ruleAnnotation ) )
+                    	    // InternalOCCI.g:3614:5: otherlv_12= ',' ( (lv_annotations_13_0= ruleAnnotation ) )
                     	    {
                     	    otherlv_12=(Token)match(input,17,FOLLOW_7); 
 
                     	    					newLeafNode(otherlv_12, grammarAccess.getRecordFieldAccess().getCommaKeyword_6_3_0());
                     	    				
-                    	    // InternalOCCI.g:3626:5: ( (lv_annotations_13_0= ruleAnnotation ) )
-                    	    // InternalOCCI.g:3627:6: (lv_annotations_13_0= ruleAnnotation )
+                    	    // InternalOCCI.g:3618:5: ( (lv_annotations_13_0= ruleAnnotation ) )
+                    	    // InternalOCCI.g:3619:6: (lv_annotations_13_0= ruleAnnotation )
                     	    {
-                    	    // InternalOCCI.g:3627:6: (lv_annotations_13_0= ruleAnnotation )
-                    	    // InternalOCCI.g:3628:7: lv_annotations_13_0= ruleAnnotation
+                    	    // InternalOCCI.g:3619:6: (lv_annotations_13_0= ruleAnnotation )
+                    	    // InternalOCCI.g:3620:7: lv_annotations_13_0= ruleAnnotation
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getRecordFieldAccess().getAnnotationsAnnotationParserRuleCall_6_3_1_0());
@@ -8696,7 +8686,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleArrayType"
-    // InternalOCCI.g:3655:1: entryRuleArrayType returns [EObject current=null] : iv_ruleArrayType= ruleArrayType EOF ;
+    // InternalOCCI.g:3647:1: entryRuleArrayType returns [EObject current=null] : iv_ruleArrayType= ruleArrayType EOF ;
     public final EObject entryRuleArrayType() throws RecognitionException {
         EObject current = null;
 
@@ -8704,8 +8694,8 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOCCI.g:3655:50: (iv_ruleArrayType= ruleArrayType EOF )
-            // InternalOCCI.g:3656:2: iv_ruleArrayType= ruleArrayType EOF
+            // InternalOCCI.g:3647:50: (iv_ruleArrayType= ruleArrayType EOF )
+            // InternalOCCI.g:3648:2: iv_ruleArrayType= ruleArrayType EOF
             {
              newCompositeNode(grammarAccess.getArrayTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -8732,7 +8722,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArrayType"
-    // InternalOCCI.g:3662:1: ruleArrayType returns [EObject current=null] : (otherlv_0= 'ArrayType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'type' ( ( ruleQualifiedID ) ) otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) )? ) ;
+    // InternalOCCI.g:3654:1: ruleArrayType returns [EObject current=null] : (otherlv_0= 'ArrayType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'type' ( ( ruleQualifiedID ) ) (otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) ) )? ) ;
     public final EObject ruleArrayType() throws RecognitionException {
         EObject current = null;
 
@@ -8747,26 +8737,26 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:3668:2: ( (otherlv_0= 'ArrayType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'type' ( ( ruleQualifiedID ) ) otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) )? ) )
-            // InternalOCCI.g:3669:2: (otherlv_0= 'ArrayType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'type' ( ( ruleQualifiedID ) ) otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) )? )
+            // InternalOCCI.g:3660:2: ( (otherlv_0= 'ArrayType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'type' ( ( ruleQualifiedID ) ) (otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) ) )? ) )
+            // InternalOCCI.g:3661:2: (otherlv_0= 'ArrayType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'type' ( ( ruleQualifiedID ) ) (otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) ) )? )
             {
-            // InternalOCCI.g:3669:2: (otherlv_0= 'ArrayType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'type' ( ( ruleQualifiedID ) ) otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) )? )
-            // InternalOCCI.g:3670:3: otherlv_0= 'ArrayType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'type' ( ( ruleQualifiedID ) ) otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) )?
+            // InternalOCCI.g:3661:2: (otherlv_0= 'ArrayType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'type' ( ( ruleQualifiedID ) ) (otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) ) )? )
+            // InternalOCCI.g:3662:3: otherlv_0= 'ArrayType' ( (lv_name_1_0= ruleTypeID ) ) otherlv_2= 'type' ( ( ruleQualifiedID ) ) (otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) ) )?
             {
             otherlv_0=(Token)match(input,76,FOLLOW_12); 
 
             			newLeafNode(otherlv_0, grammarAccess.getArrayTypeAccess().getArrayTypeKeyword_0());
             		
-            // InternalOCCI.g:3674:3: ( (lv_name_1_0= ruleTypeID ) )
-            // InternalOCCI.g:3675:4: (lv_name_1_0= ruleTypeID )
+            // InternalOCCI.g:3666:3: ( (lv_name_1_0= ruleTypeID ) )
+            // InternalOCCI.g:3667:4: (lv_name_1_0= ruleTypeID )
             {
-            // InternalOCCI.g:3675:4: (lv_name_1_0= ruleTypeID )
-            // InternalOCCI.g:3676:5: lv_name_1_0= ruleTypeID
+            // InternalOCCI.g:3667:4: (lv_name_1_0= ruleTypeID )
+            // InternalOCCI.g:3668:5: lv_name_1_0= ruleTypeID
             {
 
             					newCompositeNode(grammarAccess.getArrayTypeAccess().getNameTypeIDParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_78);
+            pushFollow(FOLLOW_76);
             lv_name_1_0=ruleTypeID();
 
             state._fsp--;
@@ -8792,11 +8782,11 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getArrayTypeAccess().getTypeKeyword_2());
             		
-            // InternalOCCI.g:3697:3: ( ( ruleQualifiedID ) )
-            // InternalOCCI.g:3698:4: ( ruleQualifiedID )
+            // InternalOCCI.g:3689:3: ( ( ruleQualifiedID ) )
+            // InternalOCCI.g:3690:4: ( ruleQualifiedID )
             {
-            // InternalOCCI.g:3698:4: ( ruleQualifiedID )
-            // InternalOCCI.g:3699:5: ruleQualifiedID
+            // InternalOCCI.g:3690:4: ( ruleQualifiedID )
+            // InternalOCCI.g:3691:5: ruleQualifiedID
             {
 
             					if (current==null) {
@@ -8806,7 +8796,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getArrayTypeAccess().getTypeDataTypeCrossReference_3_0());
             				
-            pushFollow(FOLLOW_87);
+            pushFollow(FOLLOW_74);
             ruleQualifiedID();
 
             state._fsp--;
@@ -8820,38 +8810,44 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,63,FOLLOW_88); 
-
-            			newLeafNode(otherlv_4, grammarAccess.getArrayTypeAccess().getDocumentationKeyword_4());
-            		
-            // InternalOCCI.g:3717:3: ( (lv_documentation_5_0= RULE_STRING ) )?
+            // InternalOCCI.g:3705:3: (otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) ) )?
             int alt90=2;
             int LA90_0 = input.LA(1);
 
-            if ( (LA90_0==RULE_STRING) ) {
+            if ( (LA90_0==63) ) {
                 alt90=1;
             }
             switch (alt90) {
                 case 1 :
-                    // InternalOCCI.g:3718:4: (lv_documentation_5_0= RULE_STRING )
+                    // InternalOCCI.g:3706:4: otherlv_4= 'documentation' ( (lv_documentation_5_0= RULE_STRING ) )
                     {
-                    // InternalOCCI.g:3718:4: (lv_documentation_5_0= RULE_STRING )
-                    // InternalOCCI.g:3719:5: lv_documentation_5_0= RULE_STRING
+                    otherlv_4=(Token)match(input,63,FOLLOW_4); 
+
+                    				newLeafNode(otherlv_4, grammarAccess.getArrayTypeAccess().getDocumentationKeyword_4_0());
+                    			
+                    // InternalOCCI.g:3710:4: ( (lv_documentation_5_0= RULE_STRING ) )
+                    // InternalOCCI.g:3711:5: (lv_documentation_5_0= RULE_STRING )
+                    {
+                    // InternalOCCI.g:3711:5: (lv_documentation_5_0= RULE_STRING )
+                    // InternalOCCI.g:3712:6: lv_documentation_5_0= RULE_STRING
                     {
                     lv_documentation_5_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
-                    					newLeafNode(lv_documentation_5_0, grammarAccess.getArrayTypeAccess().getDocumentationSTRINGTerminalRuleCall_5_0());
-                    				
+                    						newLeafNode(lv_documentation_5_0, grammarAccess.getArrayTypeAccess().getDocumentationSTRINGTerminalRuleCall_4_1_0());
+                    					
 
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getArrayTypeRule());
-                    					}
-                    					setWithLastConsumed(
-                    						current,
-                    						"documentation",
-                    						lv_documentation_5_0,
-                    						"org.eclipse.xtext.common.Terminals.STRING");
-                    				
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getArrayTypeRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"documentation",
+                    							lv_documentation_5_0,
+                    							"org.eclipse.xtext.common.Terminals.STRING");
+                    					
+
+                    }
+
 
                     }
 
@@ -8884,7 +8880,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEIntegerObject"
-    // InternalOCCI.g:3739:1: entryRuleEIntegerObject returns [String current=null] : iv_ruleEIntegerObject= ruleEIntegerObject EOF ;
+    // InternalOCCI.g:3733:1: entryRuleEIntegerObject returns [String current=null] : iv_ruleEIntegerObject= ruleEIntegerObject EOF ;
     public final String entryRuleEIntegerObject() throws RecognitionException {
         String current = null;
 
@@ -8892,8 +8888,8 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOCCI.g:3739:54: (iv_ruleEIntegerObject= ruleEIntegerObject EOF )
-            // InternalOCCI.g:3740:2: iv_ruleEIntegerObject= ruleEIntegerObject EOF
+            // InternalOCCI.g:3733:54: (iv_ruleEIntegerObject= ruleEIntegerObject EOF )
+            // InternalOCCI.g:3734:2: iv_ruleEIntegerObject= ruleEIntegerObject EOF
             {
              newCompositeNode(grammarAccess.getEIntegerObjectRule()); 
             pushFollow(FOLLOW_1);
@@ -8920,7 +8916,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEIntegerObject"
-    // InternalOCCI.g:3746:1: ruleEIntegerObject returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
+    // InternalOCCI.g:3740:1: ruleEIntegerObject returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleEIntegerObject() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8931,13 +8927,13 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:3752:2: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
-            // InternalOCCI.g:3753:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // InternalOCCI.g:3746:2: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
+            // InternalOCCI.g:3747:2: ( (kw= '-' )? this_INT_1= RULE_INT )
             {
-            // InternalOCCI.g:3753:2: ( (kw= '-' )? this_INT_1= RULE_INT )
-            // InternalOCCI.g:3754:3: (kw= '-' )? this_INT_1= RULE_INT
+            // InternalOCCI.g:3747:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // InternalOCCI.g:3748:3: (kw= '-' )? this_INT_1= RULE_INT
             {
-            // InternalOCCI.g:3754:3: (kw= '-' )?
+            // InternalOCCI.g:3748:3: (kw= '-' )?
             int alt91=2;
             int LA91_0 = input.LA(1);
 
@@ -8946,9 +8942,9 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt91) {
                 case 1 :
-                    // InternalOCCI.g:3755:4: kw= '-'
+                    // InternalOCCI.g:3749:4: kw= '-'
                     {
-                    kw=(Token)match(input,77,FOLLOW_89); 
+                    kw=(Token)match(input,77,FOLLOW_85); 
 
                     				current.merge(kw);
                     				newLeafNode(kw, grammarAccess.getEIntegerObjectAccess().getHyphenMinusKeyword_0());
@@ -8989,7 +8985,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTypeID"
-    // InternalOCCI.g:3772:1: entryRuleTypeID returns [String current=null] : iv_ruleTypeID= ruleTypeID EOF ;
+    // InternalOCCI.g:3766:1: entryRuleTypeID returns [String current=null] : iv_ruleTypeID= ruleTypeID EOF ;
     public final String entryRuleTypeID() throws RecognitionException {
         String current = null;
 
@@ -8997,8 +8993,8 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOCCI.g:3772:46: (iv_ruleTypeID= ruleTypeID EOF )
-            // InternalOCCI.g:3773:2: iv_ruleTypeID= ruleTypeID EOF
+            // InternalOCCI.g:3766:46: (iv_ruleTypeID= ruleTypeID EOF )
+            // InternalOCCI.g:3767:2: iv_ruleTypeID= ruleTypeID EOF
             {
              newCompositeNode(grammarAccess.getTypeIDRule()); 
             pushFollow(FOLLOW_1);
@@ -9025,7 +9021,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTypeID"
-    // InternalOCCI.g:3779:1: ruleTypeID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID | this_KEYWORD_1= ruleKEYWORD ) ;
+    // InternalOCCI.g:3773:1: ruleTypeID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID | this_KEYWORD_1= ruleKEYWORD ) ;
     public final AntlrDatatypeRuleToken ruleTypeID() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9037,10 +9033,10 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:3785:2: ( (this_ID_0= RULE_ID | this_KEYWORD_1= ruleKEYWORD ) )
-            // InternalOCCI.g:3786:2: (this_ID_0= RULE_ID | this_KEYWORD_1= ruleKEYWORD )
+            // InternalOCCI.g:3779:2: ( (this_ID_0= RULE_ID | this_KEYWORD_1= ruleKEYWORD ) )
+            // InternalOCCI.g:3780:2: (this_ID_0= RULE_ID | this_KEYWORD_1= ruleKEYWORD )
             {
-            // InternalOCCI.g:3786:2: (this_ID_0= RULE_ID | this_KEYWORD_1= ruleKEYWORD )
+            // InternalOCCI.g:3780:2: (this_ID_0= RULE_ID | this_KEYWORD_1= ruleKEYWORD )
             int alt92=2;
             int LA92_0 = input.LA(1);
 
@@ -9058,7 +9054,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt92) {
                 case 1 :
-                    // InternalOCCI.g:3787:3: this_ID_0= RULE_ID
+                    // InternalOCCI.g:3781:3: this_ID_0= RULE_ID
                     {
                     this_ID_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -9071,7 +9067,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOCCI.g:3795:3: this_KEYWORD_1= ruleKEYWORD
+                    // InternalOCCI.g:3789:3: this_KEYWORD_1= ruleKEYWORD
                     {
 
                     			newCompositeNode(grammarAccess.getTypeIDAccess().getKEYWORDParserRuleCall_1());
@@ -9113,7 +9109,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedID"
-    // InternalOCCI.g:3809:1: entryRuleQualifiedID returns [String current=null] : iv_ruleQualifiedID= ruleQualifiedID EOF ;
+    // InternalOCCI.g:3803:1: entryRuleQualifiedID returns [String current=null] : iv_ruleQualifiedID= ruleQualifiedID EOF ;
     public final String entryRuleQualifiedID() throws RecognitionException {
         String current = null;
 
@@ -9121,8 +9117,8 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOCCI.g:3809:51: (iv_ruleQualifiedID= ruleQualifiedID EOF )
-            // InternalOCCI.g:3810:2: iv_ruleQualifiedID= ruleQualifiedID EOF
+            // InternalOCCI.g:3803:51: (iv_ruleQualifiedID= ruleQualifiedID EOF )
+            // InternalOCCI.g:3804:2: iv_ruleQualifiedID= ruleQualifiedID EOF
             {
              newCompositeNode(grammarAccess.getQualifiedIDRule()); 
             pushFollow(FOLLOW_1);
@@ -9149,7 +9145,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedID"
-    // InternalOCCI.g:3816:1: ruleQualifiedID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID | this_QUALIFIED_ID_1= RULE_QUALIFIED_ID | this_KEYWORD_2= ruleKEYWORD ) ;
+    // InternalOCCI.g:3810:1: ruleQualifiedID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID | this_QUALIFIED_ID_1= RULE_QUALIFIED_ID | this_KEYWORD_2= ruleKEYWORD ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedID() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9162,10 +9158,10 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:3822:2: ( (this_ID_0= RULE_ID | this_QUALIFIED_ID_1= RULE_QUALIFIED_ID | this_KEYWORD_2= ruleKEYWORD ) )
-            // InternalOCCI.g:3823:2: (this_ID_0= RULE_ID | this_QUALIFIED_ID_1= RULE_QUALIFIED_ID | this_KEYWORD_2= ruleKEYWORD )
+            // InternalOCCI.g:3816:2: ( (this_ID_0= RULE_ID | this_QUALIFIED_ID_1= RULE_QUALIFIED_ID | this_KEYWORD_2= ruleKEYWORD ) )
+            // InternalOCCI.g:3817:2: (this_ID_0= RULE_ID | this_QUALIFIED_ID_1= RULE_QUALIFIED_ID | this_KEYWORD_2= ruleKEYWORD )
             {
-            // InternalOCCI.g:3823:2: (this_ID_0= RULE_ID | this_QUALIFIED_ID_1= RULE_QUALIFIED_ID | this_KEYWORD_2= ruleKEYWORD )
+            // InternalOCCI.g:3817:2: (this_ID_0= RULE_ID | this_QUALIFIED_ID_1= RULE_QUALIFIED_ID | this_KEYWORD_2= ruleKEYWORD )
             int alt93=3;
             switch ( input.LA(1) ) {
             case RULE_ID:
@@ -9256,7 +9252,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             switch (alt93) {
                 case 1 :
-                    // InternalOCCI.g:3824:3: this_ID_0= RULE_ID
+                    // InternalOCCI.g:3818:3: this_ID_0= RULE_ID
                     {
                     this_ID_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -9269,7 +9265,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOCCI.g:3832:3: this_QUALIFIED_ID_1= RULE_QUALIFIED_ID
+                    // InternalOCCI.g:3826:3: this_QUALIFIED_ID_1= RULE_QUALIFIED_ID
                     {
                     this_QUALIFIED_ID_1=(Token)match(input,RULE_QUALIFIED_ID,FOLLOW_2); 
 
@@ -9282,7 +9278,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOCCI.g:3840:3: this_KEYWORD_2= ruleKEYWORD
+                    // InternalOCCI.g:3834:3: this_KEYWORD_2= ruleKEYWORD
                     {
 
                     			newCompositeNode(grammarAccess.getQualifiedIDAccess().getKEYWORDParserRuleCall_2());
@@ -9324,7 +9320,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNameID"
-    // InternalOCCI.g:3854:1: entryRuleNameID returns [String current=null] : iv_ruleNameID= ruleNameID EOF ;
+    // InternalOCCI.g:3848:1: entryRuleNameID returns [String current=null] : iv_ruleNameID= ruleNameID EOF ;
     public final String entryRuleNameID() throws RecognitionException {
         String current = null;
 
@@ -9332,8 +9328,8 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOCCI.g:3854:46: (iv_ruleNameID= ruleNameID EOF )
-            // InternalOCCI.g:3855:2: iv_ruleNameID= ruleNameID EOF
+            // InternalOCCI.g:3848:46: (iv_ruleNameID= ruleNameID EOF )
+            // InternalOCCI.g:3849:2: iv_ruleNameID= ruleNameID EOF
             {
              newCompositeNode(grammarAccess.getNameIDRule()); 
             pushFollow(FOLLOW_1);
@@ -9360,7 +9356,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNameID"
-    // InternalOCCI.g:3861:1: ruleNameID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (this_ID_0= RULE_ID (this_ID_1= RULE_ID | kw= '-' )* ) | this_KEYWORD_3= ruleKEYWORD ) ;
+    // InternalOCCI.g:3855:1: ruleNameID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (this_ID_0= RULE_ID (this_ID_1= RULE_ID | kw= '-' )* ) | this_KEYWORD_3= ruleKEYWORD ) ;
     public final AntlrDatatypeRuleToken ruleNameID() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9374,10 +9370,10 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:3867:2: ( ( (this_ID_0= RULE_ID (this_ID_1= RULE_ID | kw= '-' )* ) | this_KEYWORD_3= ruleKEYWORD ) )
-            // InternalOCCI.g:3868:2: ( (this_ID_0= RULE_ID (this_ID_1= RULE_ID | kw= '-' )* ) | this_KEYWORD_3= ruleKEYWORD )
+            // InternalOCCI.g:3861:2: ( ( (this_ID_0= RULE_ID (this_ID_1= RULE_ID | kw= '-' )* ) | this_KEYWORD_3= ruleKEYWORD ) )
+            // InternalOCCI.g:3862:2: ( (this_ID_0= RULE_ID (this_ID_1= RULE_ID | kw= '-' )* ) | this_KEYWORD_3= ruleKEYWORD )
             {
-            // InternalOCCI.g:3868:2: ( (this_ID_0= RULE_ID (this_ID_1= RULE_ID | kw= '-' )* ) | this_KEYWORD_3= ruleKEYWORD )
+            // InternalOCCI.g:3862:2: ( (this_ID_0= RULE_ID (this_ID_1= RULE_ID | kw= '-' )* ) | this_KEYWORD_3= ruleKEYWORD )
             int alt95=2;
             int LA95_0 = input.LA(1);
 
@@ -9395,19 +9391,19 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
             }
             switch (alt95) {
                 case 1 :
-                    // InternalOCCI.g:3869:3: (this_ID_0= RULE_ID (this_ID_1= RULE_ID | kw= '-' )* )
+                    // InternalOCCI.g:3863:3: (this_ID_0= RULE_ID (this_ID_1= RULE_ID | kw= '-' )* )
                     {
-                    // InternalOCCI.g:3869:3: (this_ID_0= RULE_ID (this_ID_1= RULE_ID | kw= '-' )* )
-                    // InternalOCCI.g:3870:4: this_ID_0= RULE_ID (this_ID_1= RULE_ID | kw= '-' )*
+                    // InternalOCCI.g:3863:3: (this_ID_0= RULE_ID (this_ID_1= RULE_ID | kw= '-' )* )
+                    // InternalOCCI.g:3864:4: this_ID_0= RULE_ID (this_ID_1= RULE_ID | kw= '-' )*
                     {
-                    this_ID_0=(Token)match(input,RULE_ID,FOLLOW_90); 
+                    this_ID_0=(Token)match(input,RULE_ID,FOLLOW_86); 
 
                     				current.merge(this_ID_0);
                     			
 
                     				newLeafNode(this_ID_0, grammarAccess.getNameIDAccess().getIDTerminalRuleCall_0_0());
                     			
-                    // InternalOCCI.g:3877:4: (this_ID_1= RULE_ID | kw= '-' )*
+                    // InternalOCCI.g:3871:4: (this_ID_1= RULE_ID | kw= '-' )*
                     loop94:
                     do {
                         int alt94=3;
@@ -9423,9 +9419,9 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
                         switch (alt94) {
                     	case 1 :
-                    	    // InternalOCCI.g:3878:5: this_ID_1= RULE_ID
+                    	    // InternalOCCI.g:3872:5: this_ID_1= RULE_ID
                     	    {
-                    	    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_90); 
+                    	    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_86); 
 
                     	    					current.merge(this_ID_1);
                     	    				
@@ -9436,9 +9432,9 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalOCCI.g:3886:5: kw= '-'
+                    	    // InternalOCCI.g:3880:5: kw= '-'
                     	    {
-                    	    kw=(Token)match(input,77,FOLLOW_90); 
+                    	    kw=(Token)match(input,77,FOLLOW_86); 
 
                     	    					current.merge(kw);
                     	    					newLeafNode(kw, grammarAccess.getNameIDAccess().getHyphenMinusKeyword_0_1_1());
@@ -9459,7 +9455,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOCCI.g:3894:3: this_KEYWORD_3= ruleKEYWORD
+                    // InternalOCCI.g:3888:3: this_KEYWORD_3= ruleKEYWORD
                     {
 
                     			newCompositeNode(grammarAccess.getNameIDAccess().getKEYWORDParserRuleCall_1());
@@ -9501,7 +9497,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleKEYWORD"
-    // InternalOCCI.g:3908:1: entryRuleKEYWORD returns [String current=null] : iv_ruleKEYWORD= ruleKEYWORD EOF ;
+    // InternalOCCI.g:3902:1: entryRuleKEYWORD returns [String current=null] : iv_ruleKEYWORD= ruleKEYWORD EOF ;
     public final String entryRuleKEYWORD() throws RecognitionException {
         String current = null;
 
@@ -9509,8 +9505,8 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOCCI.g:3908:47: (iv_ruleKEYWORD= ruleKEYWORD EOF )
-            // InternalOCCI.g:3909:2: iv_ruleKEYWORD= ruleKEYWORD EOF
+            // InternalOCCI.g:3902:47: (iv_ruleKEYWORD= ruleKEYWORD EOF )
+            // InternalOCCI.g:3903:2: iv_ruleKEYWORD= ruleKEYWORD EOF
             {
              newCompositeNode(grammarAccess.getKEYWORDRule()); 
             pushFollow(FOLLOW_1);
@@ -9537,7 +9533,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleKEYWORD"
-    // InternalOCCI.g:3915:1: ruleKEYWORD returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'configuration' | kw= 'description' | kw= 'location' | kw= 'use' | kw= 'resource' | kw= 'title' | kw= 'summary' | kw= 'parts' | kw= 'link' | kw= 'kind' | kw= 'target' | kw= 'mixinBase' | kw= 'attribute' | kw= 'extension' | kw= 'specification' | kw= 'import' | kw= 'as' | kw= 'extends' | kw= 'source' | kw= 'scheme' | kw= 'annotations' | kw= 'mixin' | kw= 'depends' | kw= 'applies' | kw= 'key' | kw= 'value' | kw= 'mutable' | kw= 'required' | kw= 'type' | kw= 'action' | kw= 'constraint' | kw= 'body' | kw= 'FSM' | kw= 'State' | kw= 'initial' | kw= 'final' | kw= 'literal' | kw= 'transitions' | kw= 'to' | kw= 'StringType' | kw= 'pattern' | kw= 'length' | kw= 'minLength' | kw= 'maxLength' | kw= 'documentation' | kw= 'EObjectType' | kw= 'BooleanType' | kw= 'NumericType' | kw= 'totalDigits' | kw= 'minExclusive' | kw= 'maxExclusive' | kw= 'minInclusive' | kw= 'maxInclusive' | kw= 'Byte' | kw= 'Double' | kw= 'Float' | kw= 'Integer' | kw= 'Long' | kw= 'Short' | kw= 'BigDecimal' | kw= 'EnumerationType' | kw= 'literals' | kw= 'RecordType' | kw= 'fields' | kw= 'ArrayType' ) ;
+    // InternalOCCI.g:3909:1: ruleKEYWORD returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'configuration' | kw= 'description' | kw= 'location' | kw= 'use' | kw= 'resource' | kw= 'title' | kw= 'summary' | kw= 'parts' | kw= 'link' | kw= 'kind' | kw= 'target' | kw= 'mixinBase' | kw= 'attribute' | kw= 'extension' | kw= 'specification' | kw= 'import' | kw= 'as' | kw= 'extends' | kw= 'source' | kw= 'scheme' | kw= 'annotations' | kw= 'mixin' | kw= 'depends' | kw= 'applies' | kw= 'key' | kw= 'value' | kw= 'mutable' | kw= 'required' | kw= 'type' | kw= 'action' | kw= 'constraint' | kw= 'body' | kw= 'FSM' | kw= 'State' | kw= 'initial' | kw= 'final' | kw= 'literal' | kw= 'transitions' | kw= 'to' | kw= 'StringType' | kw= 'pattern' | kw= 'length' | kw= 'minLength' | kw= 'maxLength' | kw= 'documentation' | kw= 'EObjectType' | kw= 'BooleanType' | kw= 'NumericType' | kw= 'totalDigits' | kw= 'minExclusive' | kw= 'maxExclusive' | kw= 'minInclusive' | kw= 'maxInclusive' | kw= 'Byte' | kw= 'Double' | kw= 'Float' | kw= 'Integer' | kw= 'Long' | kw= 'Short' | kw= 'BigDecimal' | kw= 'EnumerationType' | kw= 'literals' | kw= 'RecordType' | kw= 'fields' | kw= 'ArrayType' ) ;
     public final AntlrDatatypeRuleToken ruleKEYWORD() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9547,10 +9543,10 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:3921:2: ( (kw= 'configuration' | kw= 'description' | kw= 'location' | kw= 'use' | kw= 'resource' | kw= 'title' | kw= 'summary' | kw= 'parts' | kw= 'link' | kw= 'kind' | kw= 'target' | kw= 'mixinBase' | kw= 'attribute' | kw= 'extension' | kw= 'specification' | kw= 'import' | kw= 'as' | kw= 'extends' | kw= 'source' | kw= 'scheme' | kw= 'annotations' | kw= 'mixin' | kw= 'depends' | kw= 'applies' | kw= 'key' | kw= 'value' | kw= 'mutable' | kw= 'required' | kw= 'type' | kw= 'action' | kw= 'constraint' | kw= 'body' | kw= 'FSM' | kw= 'State' | kw= 'initial' | kw= 'final' | kw= 'literal' | kw= 'transitions' | kw= 'to' | kw= 'StringType' | kw= 'pattern' | kw= 'length' | kw= 'minLength' | kw= 'maxLength' | kw= 'documentation' | kw= 'EObjectType' | kw= 'BooleanType' | kw= 'NumericType' | kw= 'totalDigits' | kw= 'minExclusive' | kw= 'maxExclusive' | kw= 'minInclusive' | kw= 'maxInclusive' | kw= 'Byte' | kw= 'Double' | kw= 'Float' | kw= 'Integer' | kw= 'Long' | kw= 'Short' | kw= 'BigDecimal' | kw= 'EnumerationType' | kw= 'literals' | kw= 'RecordType' | kw= 'fields' | kw= 'ArrayType' ) )
-            // InternalOCCI.g:3922:2: (kw= 'configuration' | kw= 'description' | kw= 'location' | kw= 'use' | kw= 'resource' | kw= 'title' | kw= 'summary' | kw= 'parts' | kw= 'link' | kw= 'kind' | kw= 'target' | kw= 'mixinBase' | kw= 'attribute' | kw= 'extension' | kw= 'specification' | kw= 'import' | kw= 'as' | kw= 'extends' | kw= 'source' | kw= 'scheme' | kw= 'annotations' | kw= 'mixin' | kw= 'depends' | kw= 'applies' | kw= 'key' | kw= 'value' | kw= 'mutable' | kw= 'required' | kw= 'type' | kw= 'action' | kw= 'constraint' | kw= 'body' | kw= 'FSM' | kw= 'State' | kw= 'initial' | kw= 'final' | kw= 'literal' | kw= 'transitions' | kw= 'to' | kw= 'StringType' | kw= 'pattern' | kw= 'length' | kw= 'minLength' | kw= 'maxLength' | kw= 'documentation' | kw= 'EObjectType' | kw= 'BooleanType' | kw= 'NumericType' | kw= 'totalDigits' | kw= 'minExclusive' | kw= 'maxExclusive' | kw= 'minInclusive' | kw= 'maxInclusive' | kw= 'Byte' | kw= 'Double' | kw= 'Float' | kw= 'Integer' | kw= 'Long' | kw= 'Short' | kw= 'BigDecimal' | kw= 'EnumerationType' | kw= 'literals' | kw= 'RecordType' | kw= 'fields' | kw= 'ArrayType' )
+            // InternalOCCI.g:3915:2: ( (kw= 'configuration' | kw= 'description' | kw= 'location' | kw= 'use' | kw= 'resource' | kw= 'title' | kw= 'summary' | kw= 'parts' | kw= 'link' | kw= 'kind' | kw= 'target' | kw= 'mixinBase' | kw= 'attribute' | kw= 'extension' | kw= 'specification' | kw= 'import' | kw= 'as' | kw= 'extends' | kw= 'source' | kw= 'scheme' | kw= 'annotations' | kw= 'mixin' | kw= 'depends' | kw= 'applies' | kw= 'key' | kw= 'value' | kw= 'mutable' | kw= 'required' | kw= 'type' | kw= 'action' | kw= 'constraint' | kw= 'body' | kw= 'FSM' | kw= 'State' | kw= 'initial' | kw= 'final' | kw= 'literal' | kw= 'transitions' | kw= 'to' | kw= 'StringType' | kw= 'pattern' | kw= 'length' | kw= 'minLength' | kw= 'maxLength' | kw= 'documentation' | kw= 'EObjectType' | kw= 'BooleanType' | kw= 'NumericType' | kw= 'totalDigits' | kw= 'minExclusive' | kw= 'maxExclusive' | kw= 'minInclusive' | kw= 'maxInclusive' | kw= 'Byte' | kw= 'Double' | kw= 'Float' | kw= 'Integer' | kw= 'Long' | kw= 'Short' | kw= 'BigDecimal' | kw= 'EnumerationType' | kw= 'literals' | kw= 'RecordType' | kw= 'fields' | kw= 'ArrayType' ) )
+            // InternalOCCI.g:3916:2: (kw= 'configuration' | kw= 'description' | kw= 'location' | kw= 'use' | kw= 'resource' | kw= 'title' | kw= 'summary' | kw= 'parts' | kw= 'link' | kw= 'kind' | kw= 'target' | kw= 'mixinBase' | kw= 'attribute' | kw= 'extension' | kw= 'specification' | kw= 'import' | kw= 'as' | kw= 'extends' | kw= 'source' | kw= 'scheme' | kw= 'annotations' | kw= 'mixin' | kw= 'depends' | kw= 'applies' | kw= 'key' | kw= 'value' | kw= 'mutable' | kw= 'required' | kw= 'type' | kw= 'action' | kw= 'constraint' | kw= 'body' | kw= 'FSM' | kw= 'State' | kw= 'initial' | kw= 'final' | kw= 'literal' | kw= 'transitions' | kw= 'to' | kw= 'StringType' | kw= 'pattern' | kw= 'length' | kw= 'minLength' | kw= 'maxLength' | kw= 'documentation' | kw= 'EObjectType' | kw= 'BooleanType' | kw= 'NumericType' | kw= 'totalDigits' | kw= 'minExclusive' | kw= 'maxExclusive' | kw= 'minInclusive' | kw= 'maxInclusive' | kw= 'Byte' | kw= 'Double' | kw= 'Float' | kw= 'Integer' | kw= 'Long' | kw= 'Short' | kw= 'BigDecimal' | kw= 'EnumerationType' | kw= 'literals' | kw= 'RecordType' | kw= 'fields' | kw= 'ArrayType' )
             {
-            // InternalOCCI.g:3922:2: (kw= 'configuration' | kw= 'description' | kw= 'location' | kw= 'use' | kw= 'resource' | kw= 'title' | kw= 'summary' | kw= 'parts' | kw= 'link' | kw= 'kind' | kw= 'target' | kw= 'mixinBase' | kw= 'attribute' | kw= 'extension' | kw= 'specification' | kw= 'import' | kw= 'as' | kw= 'extends' | kw= 'source' | kw= 'scheme' | kw= 'annotations' | kw= 'mixin' | kw= 'depends' | kw= 'applies' | kw= 'key' | kw= 'value' | kw= 'mutable' | kw= 'required' | kw= 'type' | kw= 'action' | kw= 'constraint' | kw= 'body' | kw= 'FSM' | kw= 'State' | kw= 'initial' | kw= 'final' | kw= 'literal' | kw= 'transitions' | kw= 'to' | kw= 'StringType' | kw= 'pattern' | kw= 'length' | kw= 'minLength' | kw= 'maxLength' | kw= 'documentation' | kw= 'EObjectType' | kw= 'BooleanType' | kw= 'NumericType' | kw= 'totalDigits' | kw= 'minExclusive' | kw= 'maxExclusive' | kw= 'minInclusive' | kw= 'maxInclusive' | kw= 'Byte' | kw= 'Double' | kw= 'Float' | kw= 'Integer' | kw= 'Long' | kw= 'Short' | kw= 'BigDecimal' | kw= 'EnumerationType' | kw= 'literals' | kw= 'RecordType' | kw= 'fields' | kw= 'ArrayType' )
+            // InternalOCCI.g:3916:2: (kw= 'configuration' | kw= 'description' | kw= 'location' | kw= 'use' | kw= 'resource' | kw= 'title' | kw= 'summary' | kw= 'parts' | kw= 'link' | kw= 'kind' | kw= 'target' | kw= 'mixinBase' | kw= 'attribute' | kw= 'extension' | kw= 'specification' | kw= 'import' | kw= 'as' | kw= 'extends' | kw= 'source' | kw= 'scheme' | kw= 'annotations' | kw= 'mixin' | kw= 'depends' | kw= 'applies' | kw= 'key' | kw= 'value' | kw= 'mutable' | kw= 'required' | kw= 'type' | kw= 'action' | kw= 'constraint' | kw= 'body' | kw= 'FSM' | kw= 'State' | kw= 'initial' | kw= 'final' | kw= 'literal' | kw= 'transitions' | kw= 'to' | kw= 'StringType' | kw= 'pattern' | kw= 'length' | kw= 'minLength' | kw= 'maxLength' | kw= 'documentation' | kw= 'EObjectType' | kw= 'BooleanType' | kw= 'NumericType' | kw= 'totalDigits' | kw= 'minExclusive' | kw= 'maxExclusive' | kw= 'minInclusive' | kw= 'maxInclusive' | kw= 'Byte' | kw= 'Double' | kw= 'Float' | kw= 'Integer' | kw= 'Long' | kw= 'Short' | kw= 'BigDecimal' | kw= 'EnumerationType' | kw= 'literals' | kw= 'RecordType' | kw= 'fields' | kw= 'ArrayType' )
             int alt96=65;
             switch ( input.LA(1) ) {
             case 12:
@@ -9887,7 +9883,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             switch (alt96) {
                 case 1 :
-                    // InternalOCCI.g:3923:3: kw= 'configuration'
+                    // InternalOCCI.g:3917:3: kw= 'configuration'
                     {
                     kw=(Token)match(input,12,FOLLOW_2); 
 
@@ -9898,7 +9894,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOCCI.g:3929:3: kw= 'description'
+                    // InternalOCCI.g:3923:3: kw= 'description'
                     {
                     kw=(Token)match(input,13,FOLLOW_2); 
 
@@ -9909,7 +9905,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOCCI.g:3935:3: kw= 'location'
+                    // InternalOCCI.g:3929:3: kw= 'location'
                     {
                     kw=(Token)match(input,14,FOLLOW_2); 
 
@@ -9920,7 +9916,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalOCCI.g:3941:3: kw= 'use'
+                    // InternalOCCI.g:3935:3: kw= 'use'
                     {
                     kw=(Token)match(input,15,FOLLOW_2); 
 
@@ -9931,7 +9927,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalOCCI.g:3947:3: kw= 'resource'
+                    // InternalOCCI.g:3941:3: kw= 'resource'
                     {
                     kw=(Token)match(input,19,FOLLOW_2); 
 
@@ -9942,7 +9938,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalOCCI.g:3953:3: kw= 'title'
+                    // InternalOCCI.g:3947:3: kw= 'title'
                     {
                     kw=(Token)match(input,21,FOLLOW_2); 
 
@@ -9953,7 +9949,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalOCCI.g:3959:3: kw= 'summary'
+                    // InternalOCCI.g:3953:3: kw= 'summary'
                     {
                     kw=(Token)match(input,22,FOLLOW_2); 
 
@@ -9964,7 +9960,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalOCCI.g:3965:3: kw= 'parts'
+                    // InternalOCCI.g:3959:3: kw= 'parts'
                     {
                     kw=(Token)match(input,23,FOLLOW_2); 
 
@@ -9975,7 +9971,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalOCCI.g:3971:3: kw= 'link'
+                    // InternalOCCI.g:3965:3: kw= 'link'
                     {
                     kw=(Token)match(input,26,FOLLOW_2); 
 
@@ -9986,7 +9982,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalOCCI.g:3977:3: kw= 'kind'
+                    // InternalOCCI.g:3971:3: kw= 'kind'
                     {
                     kw=(Token)match(input,35,FOLLOW_2); 
 
@@ -9997,7 +9993,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalOCCI.g:3983:3: kw= 'target'
+                    // InternalOCCI.g:3977:3: kw= 'target'
                     {
                     kw=(Token)match(input,27,FOLLOW_2); 
 
@@ -10008,7 +10004,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // InternalOCCI.g:3989:3: kw= 'mixinBase'
+                    // InternalOCCI.g:3983:3: kw= 'mixinBase'
                     {
                     kw=(Token)match(input,28,FOLLOW_2); 
 
@@ -10019,7 +10015,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // InternalOCCI.g:3995:3: kw= 'attribute'
+                    // InternalOCCI.g:3989:3: kw= 'attribute'
                     {
                     kw=(Token)match(input,29,FOLLOW_2); 
 
@@ -10030,7 +10026,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // InternalOCCI.g:4001:3: kw= 'extension'
+                    // InternalOCCI.g:3995:3: kw= 'extension'
                     {
                     kw=(Token)match(input,31,FOLLOW_2); 
 
@@ -10041,7 +10037,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // InternalOCCI.g:4007:3: kw= 'specification'
+                    // InternalOCCI.g:4001:3: kw= 'specification'
                     {
                     kw=(Token)match(input,32,FOLLOW_2); 
 
@@ -10052,7 +10048,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // InternalOCCI.g:4013:3: kw= 'import'
+                    // InternalOCCI.g:4007:3: kw= 'import'
                     {
                     kw=(Token)match(input,33,FOLLOW_2); 
 
@@ -10063,7 +10059,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // InternalOCCI.g:4019:3: kw= 'as'
+                    // InternalOCCI.g:4013:3: kw= 'as'
                     {
                     kw=(Token)match(input,34,FOLLOW_2); 
 
@@ -10074,7 +10070,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // InternalOCCI.g:4025:3: kw= 'extends'
+                    // InternalOCCI.g:4019:3: kw= 'extends'
                     {
                     kw=(Token)match(input,36,FOLLOW_2); 
 
@@ -10085,7 +10081,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 19 :
-                    // InternalOCCI.g:4031:3: kw= 'source'
+                    // InternalOCCI.g:4025:3: kw= 'source'
                     {
                     kw=(Token)match(input,37,FOLLOW_2); 
 
@@ -10096,7 +10092,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 20 :
-                    // InternalOCCI.g:4037:3: kw= 'scheme'
+                    // InternalOCCI.g:4031:3: kw= 'scheme'
                     {
                     kw=(Token)match(input,38,FOLLOW_2); 
 
@@ -10107,7 +10103,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 21 :
-                    // InternalOCCI.g:4043:3: kw= 'annotations'
+                    // InternalOCCI.g:4037:3: kw= 'annotations'
                     {
                     kw=(Token)match(input,39,FOLLOW_2); 
 
@@ -10118,7 +10114,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 22 :
-                    // InternalOCCI.g:4049:3: kw= 'mixin'
+                    // InternalOCCI.g:4043:3: kw= 'mixin'
                     {
                     kw=(Token)match(input,40,FOLLOW_2); 
 
@@ -10129,7 +10125,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 23 :
-                    // InternalOCCI.g:4055:3: kw= 'depends'
+                    // InternalOCCI.g:4049:3: kw= 'depends'
                     {
                     kw=(Token)match(input,41,FOLLOW_2); 
 
@@ -10140,7 +10136,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 24 :
-                    // InternalOCCI.g:4061:3: kw= 'applies'
+                    // InternalOCCI.g:4055:3: kw= 'applies'
                     {
                     kw=(Token)match(input,42,FOLLOW_2); 
 
@@ -10151,7 +10147,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 25 :
-                    // InternalOCCI.g:4067:3: kw= 'key'
+                    // InternalOCCI.g:4061:3: kw= 'key'
                     {
                     kw=(Token)match(input,43,FOLLOW_2); 
 
@@ -10162,7 +10158,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 26 :
-                    // InternalOCCI.g:4073:3: kw= 'value'
+                    // InternalOCCI.g:4067:3: kw= 'value'
                     {
                     kw=(Token)match(input,44,FOLLOW_2); 
 
@@ -10173,7 +10169,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 27 :
-                    // InternalOCCI.g:4079:3: kw= 'mutable'
+                    // InternalOCCI.g:4073:3: kw= 'mutable'
                     {
                     kw=(Token)match(input,45,FOLLOW_2); 
 
@@ -10184,7 +10180,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 28 :
-                    // InternalOCCI.g:4085:3: kw= 'required'
+                    // InternalOCCI.g:4079:3: kw= 'required'
                     {
                     kw=(Token)match(input,46,FOLLOW_2); 
 
@@ -10195,7 +10191,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 29 :
-                    // InternalOCCI.g:4091:3: kw= 'type'
+                    // InternalOCCI.g:4085:3: kw= 'type'
                     {
                     kw=(Token)match(input,47,FOLLOW_2); 
 
@@ -10206,7 +10202,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 30 :
-                    // InternalOCCI.g:4097:3: kw= 'action'
+                    // InternalOCCI.g:4091:3: kw= 'action'
                     {
                     kw=(Token)match(input,48,FOLLOW_2); 
 
@@ -10217,7 +10213,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 31 :
-                    // InternalOCCI.g:4103:3: kw= 'constraint'
+                    // InternalOCCI.g:4097:3: kw= 'constraint'
                     {
                     kw=(Token)match(input,49,FOLLOW_2); 
 
@@ -10228,7 +10224,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 32 :
-                    // InternalOCCI.g:4109:3: kw= 'body'
+                    // InternalOCCI.g:4103:3: kw= 'body'
                     {
                     kw=(Token)match(input,50,FOLLOW_2); 
 
@@ -10239,7 +10235,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 33 :
-                    // InternalOCCI.g:4115:3: kw= 'FSM'
+                    // InternalOCCI.g:4109:3: kw= 'FSM'
                     {
                     kw=(Token)match(input,51,FOLLOW_2); 
 
@@ -10250,7 +10246,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 34 :
-                    // InternalOCCI.g:4121:3: kw= 'State'
+                    // InternalOCCI.g:4115:3: kw= 'State'
                     {
                     kw=(Token)match(input,52,FOLLOW_2); 
 
@@ -10261,7 +10257,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 35 :
-                    // InternalOCCI.g:4127:3: kw= 'initial'
+                    // InternalOCCI.g:4121:3: kw= 'initial'
                     {
                     kw=(Token)match(input,53,FOLLOW_2); 
 
@@ -10272,7 +10268,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 36 :
-                    // InternalOCCI.g:4133:3: kw= 'final'
+                    // InternalOCCI.g:4127:3: kw= 'final'
                     {
                     kw=(Token)match(input,54,FOLLOW_2); 
 
@@ -10283,7 +10279,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 37 :
-                    // InternalOCCI.g:4139:3: kw= 'literal'
+                    // InternalOCCI.g:4133:3: kw= 'literal'
                     {
                     kw=(Token)match(input,55,FOLLOW_2); 
 
@@ -10294,7 +10290,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 38 :
-                    // InternalOCCI.g:4145:3: kw= 'transitions'
+                    // InternalOCCI.g:4139:3: kw= 'transitions'
                     {
                     kw=(Token)match(input,56,FOLLOW_2); 
 
@@ -10305,7 +10301,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 39 :
-                    // InternalOCCI.g:4151:3: kw= 'to'
+                    // InternalOCCI.g:4145:3: kw= 'to'
                     {
                     kw=(Token)match(input,57,FOLLOW_2); 
 
@@ -10316,7 +10312,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 40 :
-                    // InternalOCCI.g:4157:3: kw= 'StringType'
+                    // InternalOCCI.g:4151:3: kw= 'StringType'
                     {
                     kw=(Token)match(input,58,FOLLOW_2); 
 
@@ -10327,7 +10323,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 41 :
-                    // InternalOCCI.g:4163:3: kw= 'pattern'
+                    // InternalOCCI.g:4157:3: kw= 'pattern'
                     {
                     kw=(Token)match(input,59,FOLLOW_2); 
 
@@ -10338,7 +10334,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 42 :
-                    // InternalOCCI.g:4169:3: kw= 'length'
+                    // InternalOCCI.g:4163:3: kw= 'length'
                     {
                     kw=(Token)match(input,60,FOLLOW_2); 
 
@@ -10349,7 +10345,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 43 :
-                    // InternalOCCI.g:4175:3: kw= 'minLength'
+                    // InternalOCCI.g:4169:3: kw= 'minLength'
                     {
                     kw=(Token)match(input,61,FOLLOW_2); 
 
@@ -10360,7 +10356,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 44 :
-                    // InternalOCCI.g:4181:3: kw= 'maxLength'
+                    // InternalOCCI.g:4175:3: kw= 'maxLength'
                     {
                     kw=(Token)match(input,62,FOLLOW_2); 
 
@@ -10371,7 +10367,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 45 :
-                    // InternalOCCI.g:4187:3: kw= 'documentation'
+                    // InternalOCCI.g:4181:3: kw= 'documentation'
                     {
                     kw=(Token)match(input,63,FOLLOW_2); 
 
@@ -10382,7 +10378,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 46 :
-                    // InternalOCCI.g:4193:3: kw= 'EObjectType'
+                    // InternalOCCI.g:4187:3: kw= 'EObjectType'
                     {
                     kw=(Token)match(input,64,FOLLOW_2); 
 
@@ -10393,7 +10389,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 47 :
-                    // InternalOCCI.g:4199:3: kw= 'BooleanType'
+                    // InternalOCCI.g:4193:3: kw= 'BooleanType'
                     {
                     kw=(Token)match(input,65,FOLLOW_2); 
 
@@ -10404,7 +10400,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 48 :
-                    // InternalOCCI.g:4205:3: kw= 'NumericType'
+                    // InternalOCCI.g:4199:3: kw= 'NumericType'
                     {
                     kw=(Token)match(input,66,FOLLOW_2); 
 
@@ -10415,7 +10411,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 49 :
-                    // InternalOCCI.g:4211:3: kw= 'totalDigits'
+                    // InternalOCCI.g:4205:3: kw= 'totalDigits'
                     {
                     kw=(Token)match(input,67,FOLLOW_2); 
 
@@ -10426,7 +10422,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 50 :
-                    // InternalOCCI.g:4217:3: kw= 'minExclusive'
+                    // InternalOCCI.g:4211:3: kw= 'minExclusive'
                     {
                     kw=(Token)match(input,68,FOLLOW_2); 
 
@@ -10437,7 +10433,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 51 :
-                    // InternalOCCI.g:4223:3: kw= 'maxExclusive'
+                    // InternalOCCI.g:4217:3: kw= 'maxExclusive'
                     {
                     kw=(Token)match(input,69,FOLLOW_2); 
 
@@ -10448,7 +10444,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 52 :
-                    // InternalOCCI.g:4229:3: kw= 'minInclusive'
+                    // InternalOCCI.g:4223:3: kw= 'minInclusive'
                     {
                     kw=(Token)match(input,70,FOLLOW_2); 
 
@@ -10459,7 +10455,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 53 :
-                    // InternalOCCI.g:4235:3: kw= 'maxInclusive'
+                    // InternalOCCI.g:4229:3: kw= 'maxInclusive'
                     {
                     kw=(Token)match(input,71,FOLLOW_2); 
 
@@ -10470,7 +10466,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 54 :
-                    // InternalOCCI.g:4241:3: kw= 'Byte'
+                    // InternalOCCI.g:4235:3: kw= 'Byte'
                     {
                     kw=(Token)match(input,78,FOLLOW_2); 
 
@@ -10481,7 +10477,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 55 :
-                    // InternalOCCI.g:4247:3: kw= 'Double'
+                    // InternalOCCI.g:4241:3: kw= 'Double'
                     {
                     kw=(Token)match(input,79,FOLLOW_2); 
 
@@ -10492,7 +10488,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 56 :
-                    // InternalOCCI.g:4253:3: kw= 'Float'
+                    // InternalOCCI.g:4247:3: kw= 'Float'
                     {
                     kw=(Token)match(input,80,FOLLOW_2); 
 
@@ -10503,7 +10499,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 57 :
-                    // InternalOCCI.g:4259:3: kw= 'Integer'
+                    // InternalOCCI.g:4253:3: kw= 'Integer'
                     {
                     kw=(Token)match(input,81,FOLLOW_2); 
 
@@ -10514,7 +10510,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 58 :
-                    // InternalOCCI.g:4265:3: kw= 'Long'
+                    // InternalOCCI.g:4259:3: kw= 'Long'
                     {
                     kw=(Token)match(input,82,FOLLOW_2); 
 
@@ -10525,7 +10521,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 59 :
-                    // InternalOCCI.g:4271:3: kw= 'Short'
+                    // InternalOCCI.g:4265:3: kw= 'Short'
                     {
                     kw=(Token)match(input,83,FOLLOW_2); 
 
@@ -10536,7 +10532,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 60 :
-                    // InternalOCCI.g:4277:3: kw= 'BigDecimal'
+                    // InternalOCCI.g:4271:3: kw= 'BigDecimal'
                     {
                     kw=(Token)match(input,84,FOLLOW_2); 
 
@@ -10547,7 +10543,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 61 :
-                    // InternalOCCI.g:4283:3: kw= 'EnumerationType'
+                    // InternalOCCI.g:4277:3: kw= 'EnumerationType'
                     {
                     kw=(Token)match(input,72,FOLLOW_2); 
 
@@ -10558,7 +10554,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 62 :
-                    // InternalOCCI.g:4289:3: kw= 'literals'
+                    // InternalOCCI.g:4283:3: kw= 'literals'
                     {
                     kw=(Token)match(input,73,FOLLOW_2); 
 
@@ -10569,7 +10565,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 63 :
-                    // InternalOCCI.g:4295:3: kw= 'RecordType'
+                    // InternalOCCI.g:4289:3: kw= 'RecordType'
                     {
                     kw=(Token)match(input,74,FOLLOW_2); 
 
@@ -10580,7 +10576,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 64 :
-                    // InternalOCCI.g:4301:3: kw= 'fields'
+                    // InternalOCCI.g:4295:3: kw= 'fields'
                     {
                     kw=(Token)match(input,75,FOLLOW_2); 
 
@@ -10591,7 +10587,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 65 :
-                    // InternalOCCI.g:4307:3: kw= 'ArrayType'
+                    // InternalOCCI.g:4301:3: kw= 'ArrayType'
                     {
                     kw=(Token)match(input,76,FOLLOW_2); 
 
@@ -10624,7 +10620,7 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumericTypeEnum"
-    // InternalOCCI.g:4316:1: ruleNumericTypeEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'Byte' ) | (enumLiteral_1= 'Double' ) | (enumLiteral_2= 'Float' ) | (enumLiteral_3= 'Integer' ) | (enumLiteral_4= 'Long' ) | (enumLiteral_5= 'Short' ) | (enumLiteral_6= 'BigDecimal' ) ) ;
+    // InternalOCCI.g:4310:1: ruleNumericTypeEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'Byte' ) | (enumLiteral_1= 'Double' ) | (enumLiteral_2= 'Float' ) | (enumLiteral_3= 'Integer' ) | (enumLiteral_4= 'Long' ) | (enumLiteral_5= 'Short' ) | (enumLiteral_6= 'BigDecimal' ) ) ;
     public final Enumerator ruleNumericTypeEnum() throws RecognitionException {
         Enumerator current = null;
 
@@ -10640,10 +10636,10 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOCCI.g:4322:2: ( ( (enumLiteral_0= 'Byte' ) | (enumLiteral_1= 'Double' ) | (enumLiteral_2= 'Float' ) | (enumLiteral_3= 'Integer' ) | (enumLiteral_4= 'Long' ) | (enumLiteral_5= 'Short' ) | (enumLiteral_6= 'BigDecimal' ) ) )
-            // InternalOCCI.g:4323:2: ( (enumLiteral_0= 'Byte' ) | (enumLiteral_1= 'Double' ) | (enumLiteral_2= 'Float' ) | (enumLiteral_3= 'Integer' ) | (enumLiteral_4= 'Long' ) | (enumLiteral_5= 'Short' ) | (enumLiteral_6= 'BigDecimal' ) )
+            // InternalOCCI.g:4316:2: ( ( (enumLiteral_0= 'Byte' ) | (enumLiteral_1= 'Double' ) | (enumLiteral_2= 'Float' ) | (enumLiteral_3= 'Integer' ) | (enumLiteral_4= 'Long' ) | (enumLiteral_5= 'Short' ) | (enumLiteral_6= 'BigDecimal' ) ) )
+            // InternalOCCI.g:4317:2: ( (enumLiteral_0= 'Byte' ) | (enumLiteral_1= 'Double' ) | (enumLiteral_2= 'Float' ) | (enumLiteral_3= 'Integer' ) | (enumLiteral_4= 'Long' ) | (enumLiteral_5= 'Short' ) | (enumLiteral_6= 'BigDecimal' ) )
             {
-            // InternalOCCI.g:4323:2: ( (enumLiteral_0= 'Byte' ) | (enumLiteral_1= 'Double' ) | (enumLiteral_2= 'Float' ) | (enumLiteral_3= 'Integer' ) | (enumLiteral_4= 'Long' ) | (enumLiteral_5= 'Short' ) | (enumLiteral_6= 'BigDecimal' ) )
+            // InternalOCCI.g:4317:2: ( (enumLiteral_0= 'Byte' ) | (enumLiteral_1= 'Double' ) | (enumLiteral_2= 'Float' ) | (enumLiteral_3= 'Integer' ) | (enumLiteral_4= 'Long' ) | (enumLiteral_5= 'Short' ) | (enumLiteral_6= 'BigDecimal' ) )
             int alt97=7;
             switch ( input.LA(1) ) {
             case 78:
@@ -10690,10 +10686,10 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
 
             switch (alt97) {
                 case 1 :
-                    // InternalOCCI.g:4324:3: (enumLiteral_0= 'Byte' )
+                    // InternalOCCI.g:4318:3: (enumLiteral_0= 'Byte' )
                     {
-                    // InternalOCCI.g:4324:3: (enumLiteral_0= 'Byte' )
-                    // InternalOCCI.g:4325:4: enumLiteral_0= 'Byte'
+                    // InternalOCCI.g:4318:3: (enumLiteral_0= 'Byte' )
+                    // InternalOCCI.g:4319:4: enumLiteral_0= 'Byte'
                     {
                     enumLiteral_0=(Token)match(input,78,FOLLOW_2); 
 
@@ -10707,10 +10703,10 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOCCI.g:4332:3: (enumLiteral_1= 'Double' )
+                    // InternalOCCI.g:4326:3: (enumLiteral_1= 'Double' )
                     {
-                    // InternalOCCI.g:4332:3: (enumLiteral_1= 'Double' )
-                    // InternalOCCI.g:4333:4: enumLiteral_1= 'Double'
+                    // InternalOCCI.g:4326:3: (enumLiteral_1= 'Double' )
+                    // InternalOCCI.g:4327:4: enumLiteral_1= 'Double'
                     {
                     enumLiteral_1=(Token)match(input,79,FOLLOW_2); 
 
@@ -10724,10 +10720,10 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOCCI.g:4340:3: (enumLiteral_2= 'Float' )
+                    // InternalOCCI.g:4334:3: (enumLiteral_2= 'Float' )
                     {
-                    // InternalOCCI.g:4340:3: (enumLiteral_2= 'Float' )
-                    // InternalOCCI.g:4341:4: enumLiteral_2= 'Float'
+                    // InternalOCCI.g:4334:3: (enumLiteral_2= 'Float' )
+                    // InternalOCCI.g:4335:4: enumLiteral_2= 'Float'
                     {
                     enumLiteral_2=(Token)match(input,80,FOLLOW_2); 
 
@@ -10741,10 +10737,10 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalOCCI.g:4348:3: (enumLiteral_3= 'Integer' )
+                    // InternalOCCI.g:4342:3: (enumLiteral_3= 'Integer' )
                     {
-                    // InternalOCCI.g:4348:3: (enumLiteral_3= 'Integer' )
-                    // InternalOCCI.g:4349:4: enumLiteral_3= 'Integer'
+                    // InternalOCCI.g:4342:3: (enumLiteral_3= 'Integer' )
+                    // InternalOCCI.g:4343:4: enumLiteral_3= 'Integer'
                     {
                     enumLiteral_3=(Token)match(input,81,FOLLOW_2); 
 
@@ -10758,10 +10754,10 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalOCCI.g:4356:3: (enumLiteral_4= 'Long' )
+                    // InternalOCCI.g:4350:3: (enumLiteral_4= 'Long' )
                     {
-                    // InternalOCCI.g:4356:3: (enumLiteral_4= 'Long' )
-                    // InternalOCCI.g:4357:4: enumLiteral_4= 'Long'
+                    // InternalOCCI.g:4350:3: (enumLiteral_4= 'Long' )
+                    // InternalOCCI.g:4351:4: enumLiteral_4= 'Long'
                     {
                     enumLiteral_4=(Token)match(input,82,FOLLOW_2); 
 
@@ -10775,10 +10771,10 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalOCCI.g:4364:3: (enumLiteral_5= 'Short' )
+                    // InternalOCCI.g:4358:3: (enumLiteral_5= 'Short' )
                     {
-                    // InternalOCCI.g:4364:3: (enumLiteral_5= 'Short' )
-                    // InternalOCCI.g:4365:4: enumLiteral_5= 'Short'
+                    // InternalOCCI.g:4358:3: (enumLiteral_5= 'Short' )
+                    // InternalOCCI.g:4359:4: enumLiteral_5= 'Short'
                     {
                     enumLiteral_5=(Token)match(input,83,FOLLOW_2); 
 
@@ -10792,10 +10788,10 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalOCCI.g:4372:3: (enumLiteral_6= 'BigDecimal' )
+                    // InternalOCCI.g:4366:3: (enumLiteral_6= 'BigDecimal' )
                     {
-                    // InternalOCCI.g:4372:3: (enumLiteral_6= 'BigDecimal' )
-                    // InternalOCCI.g:4373:4: enumLiteral_6= 'BigDecimal'
+                    // InternalOCCI.g:4366:3: (enumLiteral_6= 'BigDecimal' )
+                    // InternalOCCI.g:4367:4: enumLiteral_6= 'BigDecimal'
                     {
                     enumLiteral_6=(Token)match(input,84,FOLLOW_2); 
 
@@ -10868,11 +10864,11 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0400010E00000002L,0x0000000000001507L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0400010800000002L,0x0000000000001507L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000007008200000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000006008200000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000004008200000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000004000200000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000007008000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000006008000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000004008000000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0008008000210002L});
     public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0008008000010002L});
     public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0003000020000000L});
     public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0003000020040000L});
@@ -10888,41 +10884,37 @@ public class InternalOCCIParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000808040002002L});
     public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000008040002002L});
     public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000008000002002L});
-    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000008001010002L});
-    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000008001000002L});
-    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000040000002L});
-    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0004000000002000L});
-    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0010000000000000L});
-    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x00E0000000000000L});
-    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x00C0000000000000L});
-    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0100000000000002L});
-    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0201000000000000L});
-    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0xF800000000000002L});
-    public static final BitSet FOLLOW_72 = new BitSet(new long[]{0xF000000000000002L});
-    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000000040L,0x0000000000002000L});
-    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0xE000000000000002L});
-    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0xC000000000000002L});
-    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x8000000000000002L});
-    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x8000800000000002L});
-    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x0000000000000000L,0x00000000001FC000L});
-    public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x8000000000000002L,0x00000000000000F8L});
-    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x8000000000000002L,0x00000000000000F0L});
-    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x8000000000000002L,0x00000000000000E0L});
-    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x8000000000000002L,0x00000000000000C0L});
-    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x8000000000000002L,0x0000000000000080L});
-    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x8000000000000000L});
-    public static final BitSet FOLLOW_88 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_90 = new BitSet(new long[]{0x0000000000000022L,0x0000000000002000L});
+    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000004000010000L});
+    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000008000200002L});
+    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000040000002L});
+    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0004000000002000L});
+    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000001000002L});
+    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0010000000000000L});
+    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x00E0000000000000L});
+    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x00C0000000000000L});
+    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0080000000000000L});
+    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0100000000000002L});
+    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0201000000000000L});
+    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0xF800000000000002L});
+    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0xF000000000000002L});
+    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000000040L,0x0000000000002000L});
+    public static final BitSet FOLLOW_72 = new BitSet(new long[]{0xE000000000000002L});
+    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0xC000000000000002L});
+    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x8000000000000002L});
+    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x8000800000000002L});
+    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000000000000000L,0x00000000001FC000L});
+    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x8000000000000002L,0x00000000000000F8L});
+    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x8000000000000002L,0x00000000000000F0L});
+    public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x8000000000000002L,0x00000000000000E0L});
+    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x8000000000000002L,0x00000000000000C0L});
+    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x8000000000000002L,0x0000000000000080L});
+    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000000000000022L,0x0000000000002000L});
 
 }
