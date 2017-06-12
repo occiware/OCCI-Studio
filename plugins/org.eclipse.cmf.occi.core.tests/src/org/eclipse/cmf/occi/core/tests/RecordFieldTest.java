@@ -25,6 +25,7 @@ import org.eclipse.cmf.occi.core.RecordField;
  * The following operations are tested:
  * <ul>
  *   <li>{@link org.eclipse.cmf.occi.core.RecordField#TypeDifferentContainer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Type Different Container</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.RecordField#ContainerMustBeRecordType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Container Must Be Record Type</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -91,6 +92,19 @@ public class RecordFieldTest extends AttributeTest {
 	 * @generated NOT
 	 */
 	public void testTypeDifferentContainer__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		//fail();
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.RecordField#ContainerMustBeRecordType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Container Must Be Record Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.RecordField#ContainerMustBeRecordType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testContainerMustBeRecordType__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		//fail();

@@ -151,6 +151,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR_Mixin_c_c_AttributesNameNotAlreadyDefinedInDepends = "Mixin::AttributesNameNotAlreadyDefinedInDepends";
 	public static final /*@NonInvalid*/ java.lang.String STR_Mixin_c_c_CorrectScheme = "Mixin::CorrectScheme";
 	public static final /*@NonInvalid*/ java.lang.String STR_Mixin_c_c_NoCyclicInheritance = "Mixin::NoCyclicInheritance";
+	public static final /*@NonInvalid*/ java.lang.String STR_RecordField_c_c_ContainerMustBeRecordType = "RecordField::ContainerMustBeRecordType";
 	public static final /*@NonInvalid*/ java.lang.String STR_RecordField_c_c_TypeDifferentContainer = "RecordField::TypeDifferentContainer";
 	public static final /*@NonInvalid*/ java.lang.String STR_Resource_c_c_ResourceKindIsInParent = "Resource::ResourceKindIsInParent";
 	public static final /*@NonInvalid*/ java.lang.String STR_State_c_c_StateLiteralAlreadyDefinedInFSMAttributeType = "State::StateLiteralAlreadyDefinedInFSMAttributeType";

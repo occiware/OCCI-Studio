@@ -1853,6 +1853,15 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getRecordField__ContainerMustBeRecordType__DiagnosticChain_Map() {
+		return recordFieldEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getArrayType() {
 		return arrayTypeEClass;
 	}
@@ -2172,6 +2181,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 
 		recordFieldEClass = createEClass(RECORD_FIELD);
 		createEOperation(recordFieldEClass, RECORD_FIELD___TYPE_DIFFERENT_CONTAINER__DIAGNOSTICCHAIN_MAP);
+		createEOperation(recordFieldEClass, RECORD_FIELD___CONTAINER_MUST_BE_RECORD_TYPE__DIAGNOSTICCHAIN_MAP);
 
 		arrayTypeEClass = createEClass(ARRAY_TYPE);
 		createEReference(arrayTypeEClass, ARRAY_TYPE__TYPE);
@@ -2763,6 +2773,15 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = initEOperation(getRecordField__ContainerMustBeRecordType__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "ContainerMustBeRecordType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(arrayTypeEClass, ArrayType.class, "ArrayType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getArrayType_Type(), this.getDataType(), null, "type", null, 1, 1, ArrayType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2900,7 +2919,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		  (recordFieldEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "TypeDifferentContainer"
+			 "constraints", "ContainerMustBeRecordType"
 		   });	
 		addAnnotation
 		  (arrayTypeEClass, 

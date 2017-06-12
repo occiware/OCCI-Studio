@@ -2906,13 +2906,22 @@ public interface OCCIPackage extends EPackage {
 	int RECORD_FIELD___TYPE_DIFFERENT_CONTAINER__DIAGNOSTICCHAIN_MAP = ATTRIBUTE_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Container Must Be Record Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_FIELD___CONTAINER_MUST_BE_RECORD_TYPE__DIAGNOSTICCHAIN_MAP = ATTRIBUTE_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>Record Field</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECORD_FIELD_OPERATION_COUNT = ATTRIBUTE_OPERATION_COUNT + 1;
+	int RECORD_FIELD_OPERATION_COUNT = ATTRIBUTE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.ArrayTypeImpl <em>Array Type</em>}' class.
@@ -4754,6 +4763,16 @@ public interface OCCIPackage extends EPackage {
 	EOperation getRecordField__TypeDifferentContainer__DiagnosticChain_Map();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.RecordField#ContainerMustBeRecordType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Container Must Be Record Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Container Must Be Record Type</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.RecordField#ContainerMustBeRecordType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getRecordField__ContainerMustBeRecordType__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.ArrayType <em>Array Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6245,6 +6264,14 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation RECORD_FIELD___TYPE_DIFFERENT_CONTAINER__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRecordField__TypeDifferentContainer__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Container Must Be Record Type</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation RECORD_FIELD___CONTAINER_MUST_BE_RECORD_TYPE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRecordField__ContainerMustBeRecordType__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.ArrayTypeImpl <em>Array Type</em>}' class.

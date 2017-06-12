@@ -88,7 +88,7 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected AttributeStateImpl() {
 		super();

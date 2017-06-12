@@ -21,9 +21,12 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.ocl.pivot.evaluation.Executor;
+import org.eclipse.ocl.pivot.ids.IdResolver;
 import org.eclipse.ocl.pivot.ids.TypeId;
 import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
+import org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsTypeOfOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
 import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
 import org.eclipse.ocl.pivot.utilities.ValueUtil;
 import org.eclipse.ocl.pivot.values.IntegerValue;
@@ -76,7 +79,7 @@ public class RecordFieldImpl extends AttributeImpl implements RecordField {
 		 *     endif
 		 */
 		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
-		final /*@NonInvalid*/ IntegerValue severity_0 = ValueUtil.integerValueOf(4);//CGStringGetSeverityOperation.INSTANCE.evaluate(executor, OCCITables.STR_RecordField_c_c_TypeDifferentContainer);
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, OCCITables.STR_RecordField_c_c_TypeDifferentContainer);
 		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
 		/*@NonInvalid*/ boolean symbol_0;
 		if (le) {
@@ -97,12 +100,60 @@ public class RecordFieldImpl extends AttributeImpl implements RecordField {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean ContainerMustBeRecordType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv ContainerMustBeRecordType:
+		 *   let
+		 *     severity : Integer[1] = 'RecordField::ContainerMustBeRecordType'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : Boolean[1] = self.oclContainer.oclIsTypeOf(RecordType)
+		 *       in
+		 *         'RecordField::ContainerMustBeRecordType'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+		final /*@NonInvalid*/ IntegerValue severity_0 = ValueUtil.integerValueOf(4);//CGStringGetSeverityOperation.INSTANCE.evaluate(executor, OCCITables.STR_RecordField_c_c_ContainerMustBeRecordType);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
+		/*@NonInvalid*/ boolean symbol_0;
+		if (le) {
+			symbol_0 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			/*@Caught*/ /*@NonNull*/ Object CAUGHT_result;
+			try {
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_RecordType = idResolver.getClass(OCCITables.CLSSid_RecordType, null);
+				final /*@NonInvalid*/ Object oclContainer = this.eContainer();
+				final /*@Thrown*/ boolean result = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, oclContainer, TYP_occi_c_c_RecordType).booleanValue();
+				CAUGHT_result = result;
+			}
+			catch (Exception e) {
+				CAUGHT_result = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_RecordField_c_c_ContainerMustBeRecordType, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, OCCITables.INT_0).booleanValue();
+			symbol_0 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_0;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case OCCIPackage.RECORD_FIELD___TYPE_DIFFERENT_CONTAINER__DIAGNOSTICCHAIN_MAP:
 				return TypeDifferentContainer((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case OCCIPackage.RECORD_FIELD___CONTAINER_MUST_BE_RECORD_TYPE__DIAGNOSTICCHAIN_MAP:
+				return ContainerMustBeRecordType((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

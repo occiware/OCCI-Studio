@@ -13,17 +13,10 @@ package org.eclipse.cmf.occi.core.util;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.Writer;
 import java.util.Map;
-
-import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.eclipse.emf.ecore.xmi.XMLSave;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMLSaveImpl;
 
 /**
  * <!-- begin-user-doc -->
