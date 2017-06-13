@@ -12,7 +12,7 @@ Configuration returns Configuration:
 	'configuration'
 	('description' description=STRING)?
 	('location' location=STRING)?
-	('use' '(' use+=[Extension|STRING] ("," use+=[Extension|STRING])* ')')?
+	('use' use+=[Extension|STRING])*
 	resources+=Resource*
 	mixins+=Mixin*;
 
@@ -21,28 +21,35 @@ Resource returns Resource:
 	id=STRING
 	':'
 	kind=[Kind|QualifiedID]
-	('title' title=STRING)?
+	('(' 'title' title=STRING ')')?
 	('location' location=STRING)?
 	('summary' summary=STRING)?
-	('parts' '{' parts+=MixinBase ("," parts+=MixinBase)* '}')?
-	attributes+=AttributeState*
-	links+=Link*;
+	('{' 
+		parts+=MixinBase* 
+		attributes+=AttributeState*
+		links+=Link*
+	'}');
 
 Link returns Link:
 	'link'
 	id=STRING
 	':'
 	kind=[Kind|QualifiedID]
-	('title' title=STRING)?
+	('(' 'title' title=STRING ')')?
 	('location' location=STRING)?
 	'target' target=[Resource|STRING]
+	('{' 
 	attributes+=AttributeState*
-	parts+=MixinBase*;
+	parts+=MixinBase*
+	'}'
+	);
 
 MixinBase returns MixinBase:
-	'mixinBase'
+	'mixin'
 	mixin=[Mixin|QualifiedID]
-	attributes+=AttributeState*;
+	'{'
+	attributes+=AttributeState*
+	'}';
 
 AttributeState returns AttributeState:
 	'attribute'
@@ -65,13 +72,13 @@ Kind returns Kind:
 	('extends' parent=[Kind|QualifiedID])?
 	('source' source=[Kind|QualifiedID])?
 	('target' target=[Kind|QualifiedID])?
+	('(' 'title' title=STRING ')')?
 	'scheme' scheme=STRING
-	('title' title=STRING)?
-	('('
+	('{'
 	(attributes+=Attribute
 	| actions+=Action
 	| constraints+=Constraint)+
-	')')?
+	'}')?
 	(fsm=FSM)?
 	('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?;
 
@@ -80,13 +87,13 @@ Mixin returns Mixin:
 	name=NameID
 	('depends' '(' depends+=[Mixin|QualifiedID] ("," depends+=[Mixin|QualifiedID])* ')')?
 	('applies' '(' applies+=[Kind|QualifiedID] ("," applies+=[Kind|QualifiedID])* ')')?
+	('(' 'title' title=STRING ')')?
 	'scheme' scheme=STRING
-	('title' title=STRING)?
-	('('
+	('{'
 	(attributes+=Attribute
 	| actions+=Action
 	| constraints+=Constraint)+
-	')')?
+	'}')?
 	('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?;
 
 Annotation returns Annotation:
@@ -100,8 +107,7 @@ Attribute returns Attribute:
 	(mutable?='mutable')?
 	(required?='required')?
 	name=QualifiedID
-	':'
-	('type' type=[DataType|QualifiedID])?
+	(':' type=[DataType|QualifiedID])?
 	('=' default=STRING)?
 	('description' description=STRING)?
 	('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?;
@@ -111,7 +117,7 @@ Action returns Action:
 	name=NameID
 	('(' attributes+=ParameterDecl ("," attributes+=ParameterDecl)* ')')?
 	'scheme' scheme=STRING
-	('title' title=STRING)?
+	('(' 'title' title=STRING ')')?
 	('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?;
 
 ParameterDecl returns Attribute:
@@ -131,10 +137,10 @@ FSM returns FSM:
 	('{' ownedState+=State ("," ownedState+=State)* '}')?;
 
 State returns State:
-	'State'
+	'state'
 	(initial?='initial')?
 	(final?='final')?
-	('literal' literal=[EnumerationLiteral|QualifiedID])
+	(literal=[EnumerationLiteral|QualifiedID])
 	//		('incomingTransition' '(' incomingTransition+=[Transition|EString] ( "," incomingTransition+=[Transition|EString])* ')' )?
 	('transitions' '(' (outgoingTransition+=Transition) ("," outgoingTransition+=Transition)* ')')?;
 
@@ -191,23 +197,23 @@ EnumerationLiteral returns EnumerationLiteral:
 	('documentation' documentation=STRING)?;
 
 RecordType returns RecordType:
-	'RecordType'
+	'record'
 	name=TypeID
-	'fields' '(' recordFields+=RecordField ("," recordFields+=RecordField)* ')'
+	'{' recordFields+=RecordField ("," recordFields+=RecordField)* '}'
 	('documentation' documentation=STRING)?;
 
 RecordField returns RecordField:
 	(mutable?='mutable')?
 	(required?='required')?
 	name=QualifiedID
-	('type' type=[DataType|QualifiedID])
+	(':' type=[DataType|QualifiedID])
 	('=' default=STRING)?
 	('description' description=STRING)?
 	('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?;
 
 ArrayType returns ArrayType:
-	'ArrayType'
-	name=TypeID 'type' type=[DataType|QualifiedID]
+	'array'
+	name=TypeID ':' type=[DataType|QualifiedID]
 	('documentation' documentation=STRING)?;
 
 EIntegerObject returns ecore::EIntegerObject:
@@ -237,7 +243,7 @@ KEYWORD:
 	'link' | 'kind' | 'target' | // 'title'| 'location'|
 	
 	// MixinBase
-	'mixinBase' | 
+	'mixin' | 
 	
 	// AttributeState
 	'attribute' | 
@@ -249,13 +255,13 @@ KEYWORD:
 	'extends' | 'source' | 'scheme' | 'annotations' | // 'kind' |'target' | 'title'|
 	
 	// Mixin
-	'mixin' | 'depends' | 'applies' | // 'scheme' | 'title'| 'annotations' |
+	'depends' | 'applies' | // 'mixin' | 'scheme' | 'title'| 'annotations' |
 	
 	// Annotation
 	'key' | 'value' | 
 	
 	// Attribute
-	'mutable' | 'required' | 'type' | // 'attribute' |'description'| 'annotations' |
+	'mutable' | 'required' | // 'attribute' |'description'| 'annotations' |
 	
 	// Action
 	'action' | // 'scheme' | 'title'| 'annotations' |
@@ -269,7 +275,7 @@ KEYWORD:
 	'FSM' | // 'attribute'|
 	
 	// State
-	'State' | 'initial' | 'final' | 'literal' |'transitions' | 
+	'state' | 'initial' | 'final' | 'transitions' | 
 	
 	// Transition
 	'to' | // 'action'|
@@ -298,11 +304,11 @@ KEYWORD:
 	// 'documentation' | 
 
 	// RecordType
-	'RecordType' | 'fields' | // 'documentation' | 
+	'record' | // 'documentation' | 
 	
 	// RecordField
-	// 'mutable’| 'required' | 'type’| 'description'| 'annotations'
+	// 'mutable'| 'required' | 'description'| 'annotations'
 	
 	// ArrayType
-	'ArrayType' // 'type'| 'documentation' | 
+	'array' // 'documentation' | 
 	;
