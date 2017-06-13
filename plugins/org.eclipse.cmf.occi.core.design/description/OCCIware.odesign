@@ -919,7 +919,7 @@
             <initialOperation/>
           </ownedTools>
         </toolSections>
-        <toolSections name="Entity" label="Category">
+        <toolSections name="Entity">
           <ownedTools xsi:type="tool:ContainerCreationDescription" name="Resource" containerMappings="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
@@ -946,7 +946,18 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Mixin" containerMappings="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Mixin" containerMappings="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']/@subContainerMappings[name='ResourceMixinBase'] //@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@subContainerMappings[name='LinkMixinBase']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="occi.MixinBase" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Category">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="UserMixin" label="User Mixin" containerMappings="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -954,15 +965,6 @@
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="occi.Mixin" referenceName="mixins">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['mixin' + container.oclAsType(Configuration).mixins->size().toString()/]"/>
                 </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="MixinBase" containerMappings="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']/@subContainerMappings[name='ResourceMixinBase'] //@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@subContainerMappings[name='LinkMixinBase']">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="occi.MixinBase" referenceName="parts"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -981,42 +983,6 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="occi.AttributeState" referenceName="attributes"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-        </toolSections>
-        <toolSections name="Feature">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Attribute" nodeMappings="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="occi.Attribute" referenceName="attributes">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['attribute' + container.oclAsType(Type).attributes->size().toString()/]"/>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Action" nodeMappings="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAction']">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="occi.Action" referenceName="actions">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['action' + container.oclAsType(Type).actions->size().toString()/]"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="scheme" valueExpression="service:initialActionScheme"/>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Constraint" nodeMappings="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinConstraint']">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="occi.Constraint" referenceName="constraints">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['constraint' + container.oclAsType(Type).actions->size().toString()/]"/>
-                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
