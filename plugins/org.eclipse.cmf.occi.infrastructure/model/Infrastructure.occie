@@ -9,7 +9,7 @@
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <actions name="Up" scheme="http://schemas.ogf.org/occi/infrastructure/network/action#"/>
-    <actions name="Down" scheme="http://schemas.ogf.org/occi/infrastructure/network/action#" title=""/>
+    <actions name="Down" scheme="http://schemas.ogf.org/occi/infrastructure/network/action#"/>
     <constraints name="UniqueVlan" description="chaque network a un vlan différent" body="Network.allInstances()->isUnique(occi.network.vlan)"/>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
     <fsm attribute="//@kinds[term='network']/@attributes.2">
