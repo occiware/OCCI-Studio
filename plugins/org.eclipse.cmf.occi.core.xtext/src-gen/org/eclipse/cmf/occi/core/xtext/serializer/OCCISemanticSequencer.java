@@ -250,7 +250,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Configuration returns Configuration
 	 *
 	 * Constraint:
-	 *     (description=STRING? location=STRING? (use+=[Extension|STRING] use+=[Extension|STRING]*)? resources+=Resource* mixins+=Mixin*)
+	 *     (description=STRING? location=STRING? use+=[Extension|STRING]* resources+=Resource* mixins+=Mixin*)
 	 */
 	protected void sequence_Configuration(ISerializationContext context, Configuration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -349,8 +349,8 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         parent=[Kind|QualifiedID]? 
 	 *         source=[Kind|QualifiedID]? 
 	 *         target=[Kind|QualifiedID]? 
-	 *         scheme=STRING 
 	 *         title=STRING? 
+	 *         scheme=STRING 
 	 *         (attributes+=Attribute | actions+=Action | constraints+=Constraint)* 
 	 *         fsm=FSM? 
 	 *         (annotations+=Annotation annotations+=Annotation*)?
@@ -402,8 +402,8 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         name=NameID 
 	 *         (depends+=[Mixin|QualifiedID] depends+=[Mixin|QualifiedID]*)? 
 	 *         (applies+=[Kind|QualifiedID] applies+=[Kind|QualifiedID]*)? 
-	 *         scheme=STRING 
 	 *         title=STRING? 
+	 *         scheme=STRING 
 	 *         (attributes+=Attribute | actions+=Action | constraints+=Constraint)* 
 	 *         (annotations+=Annotation annotations+=Annotation*)?
 	 *     )
@@ -491,7 +491,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         title=STRING? 
 	 *         location=STRING? 
 	 *         summary=STRING? 
-	 *         (parts+=MixinBase parts+=MixinBase*)? 
+	 *         parts+=MixinBase* 
 	 *         attributes+=AttributeState* 
 	 *         links+=Link*
 	 *     )
