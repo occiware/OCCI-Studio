@@ -143,7 +143,6 @@
     <attributes name="occi.network.address" mutable="true" description="Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7)" type="//@types.16"/>
     <attributes name="occi.network.gateway" mutable="true" description="Internet Protocol (IP) network address (e.g., 192.168.0.1, fc00::)" type="//@types.9"/>
     <attributes name="occi.network.allocation" mutable="true" description="Address allocation mechanism: dynamic e.g., uses the dynamic host configuration protocol, static e.g., uses user supplied static network configurations" type="//@types.10"/>
-    <constraints name="test" description="true" body="true"/>
     <applies href="http://schemas.ogf.org/occi/core#//@kinds[term='entity']"/>
     <applies href="#//@kinds[term='network']"/>
   </mixins>
