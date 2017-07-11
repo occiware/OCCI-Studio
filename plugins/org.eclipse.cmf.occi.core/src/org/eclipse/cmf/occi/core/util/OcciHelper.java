@@ -26,6 +26,7 @@ import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.Mixin;
+import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.OCCIFactory;
 import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.emf.common.util.Diagnostic;
@@ -168,7 +169,15 @@ public final class OcciHelper
 			throw new IllegalArgumentException(entity.toString() + " is not a resource or link!");
 		}
 	}
-
+	
+	public static Configuration getConfiguration(final MixinBase mixinBase) {
+		if(mixinBase instanceof MixinBase) {
+			return (Configuration)mixinBase.eContainer();
+		} else {
+			throw new IllegalArgumentException(mixinBase.toString() + " is not a resource or link!");
+		}
+	}
+	
 	// ----------------------------------------------------------------------
 	//
 	// Related to Kind.
@@ -189,6 +198,19 @@ public final class OcciHelper
 			// If this kind has the same term that those searched then return this kind.
 			if(kind.getTerm().equals(kindTerm)) {
 				return kind;
+			}
+		}
+		// Kind not found.
+		throw new IllegalArgumentException("term '" + kindTerm + "' is not found into extension '" + extension.getScheme() + "'!");
+	}
+	
+	public static Mixin getMixinByTerm(final Extension extension, final String kindTerm)
+	{
+		// Iterate over all kinds of the given extension.
+		for(Mixin mixin : extension.getMixins()) {
+			// If this kind has the same term that those searched then return this kind.
+			if(mixin.getTerm().equals(kindTerm)) {
+				return mixin;
 			}
 		}
 		// Kind not found.
