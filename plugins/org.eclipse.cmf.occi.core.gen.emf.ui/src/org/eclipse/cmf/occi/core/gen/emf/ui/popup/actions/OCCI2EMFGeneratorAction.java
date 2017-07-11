@@ -200,7 +200,7 @@ public class OCCI2EMFGeneratorAction implements IObjectActionDelegate {
 		GenPackage coreGenPackage = (GenPackage) OcciHelper.getRootElement(resourceSet, CORE_GEN_PACKAGE_URI)
 				.eContents().get(1);
 		usedPackages.add(coreGenPackage);
-		GenUtils.createGenModel(ePackage,
+		OCCI2EMFGeneratorUtils.createGenModel(ePackage,
 				occieFile.getLocation().removeFileExtension().addFileExtension("ecore").toString(), basePackage,
 				usedPackages);
 	}
