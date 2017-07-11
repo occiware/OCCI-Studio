@@ -20,8 +20,7 @@
       <!-- @generated sla -->
       <package
             uri="http://schemas.ogf.org/occi/sla/ecore"
-            class="org.eclipse.cmf.occi.sla.SlaPackage"
-            genModel="model/sla.genmodel"/>
+            class="org.eclipse.cmf.occi.sla.SlaPackage"/>
    </extension>
    <!-- Register the parser for .sla files. -->
    <extension point="org.eclipse.emf.ecore.extension_parser">
