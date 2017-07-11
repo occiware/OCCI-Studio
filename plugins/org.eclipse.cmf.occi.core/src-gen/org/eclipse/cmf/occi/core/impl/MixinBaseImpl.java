@@ -18,7 +18,7 @@ import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Mixin;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.OCCIPackage;
-
+import org.eclipse.cmf.occi.core.util.OcciKindResolver;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -33,6 +33,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,6 +60,7 @@ public class MixinBaseImpl extends MinimalEObjectImpl.Container implements Mixin
 	 * @generated
 	 * @ordered
 	 */
+	private static Logger LOGGER = LoggerFactory.getLogger(EntityImpl.class);
 	protected Mixin mixin;
 
 	/**
@@ -77,6 +80,17 @@ public class MixinBaseImpl extends MinimalEObjectImpl.Container implements Mixin
 	 */
 	protected MixinBaseImpl() {
 		super();
+		if(this instanceof MixinBaseImpl && this.getClass() != MixinBaseImpl.class) {
+		 //   System.out.println("ccccc");
+			if (mixin == null) {
+				try {
+					// Try to resolve it automatically.
+					mixin = OcciKindResolver.resolveMixin(this);
+				} catch (Exception exc) {
+					LOGGER.warn("SHOULD NEVER HAPPEN!", exc);
+				}
+			}
+		}
 	}
 
 	/**
