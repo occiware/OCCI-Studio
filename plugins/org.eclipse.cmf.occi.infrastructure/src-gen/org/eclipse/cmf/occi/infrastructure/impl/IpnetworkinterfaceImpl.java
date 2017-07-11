@@ -283,38 +283,31 @@ public class IpnetworkinterfaceImpl extends MixinBaseImpl implements Ipnetworkin
 			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			/*@Caught*/ /*@NonNull*/ Object CAUGHT_result;
-			try {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_infrastructure_c_c_Ipnetworkinterface = idResolver.getClass(InfrastructureTables.CLSSid_Ipnetworkinterface, null);
-				final /*@NonInvalid*/ SetValue allInstances = ClassifierAllInstancesOperation.INSTANCE.evaluate(executor, InfrastructureTables.SET_CLSSid_Ipnetworkinterface, TYP_infrastructure_c_c_Ipnetworkinterface);
-				/*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(InfrastructureTables.SET_CLSSid_Ipnetworkinterface);
-				/*@NonNull*/ Iterator<Object> ITERATOR__1 = allInstances.iterator();
-				/*@Thrown*/ boolean result;
-				while (true) {
-					if (!ITERATOR__1.hasNext()) {
-						result = ValueUtil.TRUE_VALUE;
-						break;
-					}
-					/*@NonInvalid*/ Ipnetworkinterface _1 = (Ipnetworkinterface)ITERATOR__1.next();
-					/**
-					 * occiNetworkinterfaceAddress
-					 */
-					final /*@NonInvalid*/ String occiNetworkinterfaceAddress = _1.getOcciNetworkinterfaceAddress();
-					//
-					if (accumulator.includes(occiNetworkinterfaceAddress) == ValueUtil.TRUE_VALUE) {
-						result = ValueUtil.FALSE_VALUE;			// Abort after second find
-						break;
-					}
-					else {
-						accumulator.add(occiNetworkinterfaceAddress);
-					}
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_infrastructure_c_c_Ipnetworkinterface = idResolver.getClass(InfrastructureTables.CLSSid_Ipnetworkinterface, null);
+			final /*@NonInvalid*/ SetValue allInstances = ClassifierAllInstancesOperation.INSTANCE.evaluate(executor, InfrastructureTables.SET_CLSSid_Ipnetworkinterface, TYP_infrastructure_c_c_Ipnetworkinterface);
+			/*@Thrown*/ SetValue.Accumulator accumulator = ValueUtil.createSetAccumulatorValue(InfrastructureTables.SET_CLSSid_Ipnetworkinterface);
+			/*@NonNull*/ Iterator<Object> ITERATOR__1 = allInstances.iterator();
+			/*@NonInvalid*/ boolean result;
+			while (true) {
+				if (!ITERATOR__1.hasNext()) {
+					result = ValueUtil.TRUE_VALUE;
+					break;
 				}
-				CAUGHT_result = result;
+				/*@NonInvalid*/ Ipnetworkinterface _1 = (Ipnetworkinterface)ITERATOR__1.next();
+				/**
+				 * occiNetworkinterfaceAddress
+				 */
+				final /*@NonInvalid*/ String occiNetworkinterfaceAddress = _1.getOcciNetworkinterfaceAddress();
+				//
+				if (accumulator.includes(occiNetworkinterfaceAddress) == ValueUtil.TRUE_VALUE) {
+					result = ValueUtil.FALSE_VALUE;			// Abort after second find
+					break;
+				}
+				else {
+					accumulator.add(occiNetworkinterfaceAddress);
+				}
 			}
-			catch (Exception e) {
-				CAUGHT_result = ValueUtil.createInvalidValue(e);
-			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, InfrastructureTables.STR_Ipnetworkinterface_c_c_IPAdressesMustBeUnique, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, InfrastructureTables.INT_0).booleanValue();
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, InfrastructureTables.STR_Ipnetworkinterface_c_c_IPAdressesMustBeUnique, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, InfrastructureTables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_0;

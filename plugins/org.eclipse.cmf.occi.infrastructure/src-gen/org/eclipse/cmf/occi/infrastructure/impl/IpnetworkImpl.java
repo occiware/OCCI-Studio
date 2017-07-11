@@ -223,9 +223,7 @@ public class IpnetworkImpl extends MixinBaseImpl implements Ipnetwork {
 		 *     if severity <= 0
 		 *     then true
 		 *     else
-		 *       let
-		 *         result : occi::Boolean[?] = self.entity.oclIsKindOf(Network) or
-		 *         self.entity.oclIsKindOf(occi::Entity)
+		 *       let result : occi::Boolean[1] = self.entity.oclIsKindOf(Network)
 		 *       in
 		 *         'Ipnetwork::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
@@ -240,33 +238,12 @@ public class IpnetworkImpl extends MixinBaseImpl implements Ipnetwork {
 		}
 		else {
 			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_infrastructure_c_c_Network_0 = idResolver.getClass(InfrastructureTables.CLSSid_Network, null);
-			final /*@NonInvalid*/ Entity entity_0 = this.getEntity();
-			final /*@NonInvalid*/ boolean oclIsKindOf = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_0, TYP_infrastructure_c_c_Network_0).booleanValue();
-			/*@NonInvalid*/ boolean result;
-			if (oclIsKindOf) {
-				result = ValueUtil.TRUE_VALUE;
-			}
-			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Entity = idResolver.getClass(InfrastructureTables.CLSSid_Entity, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_0 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_0, TYP_occi_c_c_Entity).booleanValue();
-				result = oclIsKindOf_0;
-			}
+			final /*@NonInvalid*/ Entity entity = this.getEntity();
+			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity, TYP_infrastructure_c_c_Network_0).booleanValue();
 			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, InfrastructureTables.STR_Ipnetwork_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, InfrastructureTables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_0;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean test(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		/**
-		 * inv test: true
-		 */
-		return ValueUtil.TRUE_VALUE;
 	}
 
 	/**
@@ -358,8 +335,6 @@ public class IpnetworkImpl extends MixinBaseImpl implements Ipnetwork {
 		switch (operationID) {
 			case InfrastructurePackage.IPNETWORK___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
 				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case InfrastructurePackage.IPNETWORK___TEST__DIAGNOSTICCHAIN_MAP:
-				return test((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -750,15 +750,6 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIpnetwork__Test__DiagnosticChain_Map() {
-		return ipnetworkEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getIpnetworkinterface() {
 		return ipnetworkinterfaceEClass;
 	}
@@ -1155,7 +1146,6 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		createEAttribute(ipnetworkEClass, IPNETWORK__OCCI_NETWORK_GATEWAY);
 		createEAttribute(ipnetworkEClass, IPNETWORK__OCCI_NETWORK_ALLOCATION);
 		createEOperation(ipnetworkEClass, IPNETWORK___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
-		createEOperation(ipnetworkEClass, IPNETWORK___TEST__DIAGNOSTICCHAIN_MAP);
 
 		ipnetworkinterfaceEClass = createEClass(IPNETWORKINTERFACE);
 		createEAttribute(ipnetworkinterfaceEClass, IPNETWORKINTERFACE__OCCI_NETWORKINTERFACE_ADDRESS);
@@ -1279,17 +1269,17 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		initEOperation(getCompute__Start(), null, "start", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getCompute__Stop__StopMethod(), null, "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getStopMethod(), "method", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getStopMethod(), "method", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getCompute__Restart__RestartMethod(), null, "restart", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getRestartMethod(), "method", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getRestartMethod(), "method", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getCompute__Suspend__SuspendMethod(), null, "suspend", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getSuspendMethod(), "method", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getSuspendMethod(), "method", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getCompute__Save__SaveMethod_String(), null, "save", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getSaveMethod(), "method", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theOCCIPackage.getString(), "name", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getSaveMethod(), "method", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theOCCIPackage.getString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(storageEClass, Storage.class, "Storage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStorage_OcciStorageSize(), this.getGiB(), "occiStorageSize", null, 1, 1, Storage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1327,15 +1317,6 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		initEAttribute(getIpnetwork_OcciNetworkAllocation(), this.getAllocation(), "occiNetworkAllocation", null, 0, 1, Ipnetwork.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getIpnetwork__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getIpnetwork__Test__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "test", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1516,7 +1497,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		  (ipnetworkEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "test"
+			 "constraints", "appliesConstraint"
 		   });	
 		addAnnotation
 		  (ipnetworkinterfaceEClass, 

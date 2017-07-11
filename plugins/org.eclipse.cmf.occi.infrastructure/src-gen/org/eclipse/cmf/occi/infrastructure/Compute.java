@@ -274,8 +274,7 @@ public interface Compute extends Resource {
 	 * Stop the system (graceful, acpioff or poweroff)
 	 * @param method 
 	 * <!-- end-model-doc -->
-	 * @model methodRequired="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/infrastructure/ecore!Compute!stop(http://schemas.ogf.org/occi/infrastructure/ecore!StopMethod)'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/infrastructure/ecore!Compute!stop(http://schemas.ogf.org/occi/infrastructure/ecore!StopMethod)'"
 	 * @generated
 	 */
 	void stop(StopMethod method);
@@ -287,8 +286,7 @@ public interface Compute extends Resource {
 	 * Restart the system (graceful, warm or cold)
 	 * @param method 
 	 * <!-- end-model-doc -->
-	 * @model methodRequired="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/infrastructure/ecore!Compute!restart(http://schemas.ogf.org/occi/infrastructure/ecore!RestartMethod)'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/infrastructure/ecore!Compute!restart(http://schemas.ogf.org/occi/infrastructure/ecore!RestartMethod)'"
 	 * @generated
 	 */
 	void restart(RestartMethod method);
@@ -300,8 +298,7 @@ public interface Compute extends Resource {
 	 * Suspend the system (hibernate or in RAM)
 	 * @param method 
 	 * <!-- end-model-doc -->
-	 * @model methodRequired="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/infrastructure/ecore!Compute!suspend(http://schemas.ogf.org/occi/infrastructure/ecore!SuspendMethod)'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/infrastructure/ecore!Compute!suspend(http://schemas.ogf.org/occi/infrastructure/ecore!SuspendMethod)'"
 	 * @generated
 	 */
 	void suspend(SuspendMethod method);
@@ -314,7 +311,7 @@ public interface Compute extends Resource {
 	 * @param method 
 	 * @param name 
 	 * <!-- end-model-doc -->
-	 * @model methodRequired="true" nameDataType="org.eclipse.cmf.occi.core.String" nameRequired="true"
+	 * @model nameDataType="org.eclipse.cmf.occi.core.String"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/infrastructure/ecore!Compute!save(http://schemas.ogf.org/occi/infrastructure/ecore!SaveMethod,String)'"
 	 * @generated
 	 */

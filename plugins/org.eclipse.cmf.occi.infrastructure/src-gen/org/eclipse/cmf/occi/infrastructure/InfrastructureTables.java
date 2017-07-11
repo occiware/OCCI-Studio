@@ -931,11 +931,11 @@ public class InfrastructureTables
 		};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Compute__Compute = {
-			InfrastructureTables.Operations._Compute__restart /* restart(RestartMethod[1]) */,
-			InfrastructureTables.Operations._Compute__save /* save(SaveMethod[1],String[1]) */,
+			InfrastructureTables.Operations._Compute__restart /* restart(RestartMethod[?]) */,
+			InfrastructureTables.Operations._Compute__save /* save(SaveMethod[?],String[?]) */,
 			InfrastructureTables.Operations._Compute__start /* start() */,
-			InfrastructureTables.Operations._Compute__stop /* stop(StopMethod[1]) */,
-			InfrastructureTables.Operations._Compute__suspend /* suspend(SuspendMethod[1]) */
+			InfrastructureTables.Operations._Compute__stop /* stop(StopMethod[?]) */,
+			InfrastructureTables.Operations._Compute__suspend /* suspend(SuspendMethod[?]) */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Compute__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,

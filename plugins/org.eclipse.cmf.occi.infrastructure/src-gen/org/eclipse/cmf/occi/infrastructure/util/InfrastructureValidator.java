@@ -76,20 +76,12 @@ public class InfrastructureValidator extends EObjectValidator {
 	public static final int IPNETWORK__APPLIES_CONSTRAINT = 3;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Test' of 'Ipnetwork'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int IPNETWORK__TEST = 4;
-
-	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Ipnetworkinterface'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IPNETWORKINTERFACE__APPLIES_CONSTRAINT = 5;
+	public static final int IPNETWORKINTERFACE__APPLIES_CONSTRAINT = 4;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'IP Adresses Must Be Unique' of 'Ipnetworkinterface'.
@@ -97,7 +89,7 @@ public class InfrastructureValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int IPNETWORKINTERFACE__IP_ADRESSES_MUST_BE_UNIQUE = 6;
+	public static final int IPNETWORKINTERFACE__IP_ADRESSES_MUST_BE_UNIQUE = 5;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Os tpl'.
@@ -105,7 +97,7 @@ public class InfrastructureValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int OS_TPL__APPLIES_CONSTRAINT = 7;
+	public static final int OS_TPL__APPLIES_CONSTRAINT = 6;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Resource tpl'.
@@ -113,7 +105,7 @@ public class InfrastructureValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESOURCE_TPL__APPLIES_CONSTRAINT = 8;
+	public static final int RESOURCE_TPL__APPLIES_CONSTRAINT = 7;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Ssh key'.
@@ -121,7 +113,7 @@ public class InfrastructureValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SSH_KEY__APPLIES_CONSTRAINT = 9;
+	public static final int SSH_KEY__APPLIES_CONSTRAINT = 8;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'User data'.
@@ -129,7 +121,7 @@ public class InfrastructureValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int USER_DATA__APPLIES_CONSTRAINT = 10;
+	public static final int USER_DATA__APPLIES_CONSTRAINT = 9;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -137,7 +129,7 @@ public class InfrastructureValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 10;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 9;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -404,19 +396,8 @@ public class InfrastructureValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(ipnetwork, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ipnetwork, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(ipnetwork, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIpnetwork_test(ipnetwork, diagnostics, context);
 		if (result || diagnostics != null) result &= validateIpnetwork_appliesConstraint(ipnetwork, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * Validates the test constraint of '<em>Ipnetwork</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateIpnetwork_test(Ipnetwork ipnetwork, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ipnetwork.test(diagnostics, context);
 	}
 
 	/**

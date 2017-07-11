@@ -1211,22 +1211,13 @@ public interface InfrastructurePackage extends EPackage {
 	int IPNETWORK___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Test</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IPNETWORK___TEST__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
 	 * The number of operations of the '<em>Ipnetwork</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IPNETWORK_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int IPNETWORK_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.infrastructure.impl.IpnetworkinterfaceImpl <em>Ipnetworkinterface</em>}' class.
@@ -2270,16 +2261,6 @@ public interface InfrastructurePackage extends EPackage {
 	EOperation getIpnetwork__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.infrastructure.Ipnetwork#test(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Test</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Test</em>' operation.
-	 * @see org.eclipse.cmf.occi.infrastructure.Ipnetwork#test(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getIpnetwork__Test__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface <em>Ipnetworkinterface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3044,14 +3025,6 @@ public interface InfrastructurePackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IPNETWORK___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getIpnetwork__AppliesConstraint__DiagnosticChain_Map();
-
-		/**
-		 * The meta object literal for the '<em><b>Test</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation IPNETWORK___TEST__DIAGNOSTICCHAIN_MAP = eINSTANCE.getIpnetwork__Test__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.infrastructure.impl.IpnetworkinterfaceImpl <em>Ipnetworkinterface</em>}' class.

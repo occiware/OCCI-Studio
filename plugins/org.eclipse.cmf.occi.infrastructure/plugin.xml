@@ -20,8 +20,7 @@
       <!-- @generated Infrastructure -->
       <package
             uri="http://schemas.ogf.org/occi/infrastructure/ecore"
-            class="org.eclipse.cmf.occi.infrastructure.InfrastructurePackage"
-            genModel="model/Infrastructure.genmodel"/>
+            class="org.eclipse.cmf.occi.infrastructure.InfrastructurePackage"/>
    </extension>
    <!-- Register the parser for .infrastructure files. -->
    <extension point="org.eclipse.emf.ecore.extension_parser">
@@ -39,5 +38,25 @@
    <!-- Register the OCCI Infrastructure extension. -->
    <extension point="org.eclipse.cmf.occi.core.occie">
       <occie scheme="http://schemas.ogf.org/occi/infrastructure#" file="model/Infrastructure.occie"/>
+   </extension>
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="infrastructure.contribution"
+            nameFilter="*.infrastructure"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="org.eclipse.cmf.occi.core.occi-studio.ui.menu"
+               label="OCCI Studio"
+               path="additionsOCCIStudio">
+            <separator name="group"/>
+         </menu>
+         <action
+               class="org.eclipse.cmf.occi.core.ui.popup.actions.ExtensionConfiguration2OCCICAction"
+               enablesFor="1"
+               id="infrastructure.ecore2occi"
+               label="Convert to an OCCI Configuration File"
+               menubarPath="org.eclipse.cmf.occi.core.occi-studio.ui.menu/group">
+         </action>
+      </objectContribution>
    </extension>
 </plugin>
