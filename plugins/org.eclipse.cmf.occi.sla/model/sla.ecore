@@ -113,5 +113,29 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="appliesConstraint" value="self.entity.oclIsKindOf(sla::Agreement)"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiAgreementTermType"
+        lowerBound="1" eType="#//AgreementTermType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The type of the term that is being defined."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiAgreementTermState"
+        lowerBound="1" eType="#//AgreementTermStatus">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The state of fulfillment of the specific term."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiAgreementTermDesc"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The description of the agreement term defined with this mixin."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiAgreementTermRemedy"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The remedy value (e.g., price penalty) or action e.g., command) when an SLO term is being violated."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
 </ecore:EPackage>

@@ -72,6 +72,8 @@ public class SlaTables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Entity = org.eclipse.cmf.occi.sla.SlaTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Entity", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_DateTime = org.eclipse.cmf.occi.sla.SlaTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_sla_s_ecore.getDataTypeId("DateTime", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_AgreementStatus = org.eclipse.cmf.occi.sla.SlaTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_sla_s_ecore.getEnumerationId("AgreementStatus");
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_AgreementTermStatus = org.eclipse.cmf.occi.sla.SlaTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_sla_s_ecore.getEnumerationId("AgreementTermStatus");
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_AgreementTermType = org.eclipse.cmf.occi.sla.SlaTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_sla_s_ecore.getEnumerationId("AgreementTermType");
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
 	public static final /*@NonInvalid*/ java.lang.String STR_Agreement_term_c_c_appliesConstraint = "Agreement_term::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Agreement_tpl_c_c_appliesConstraint = "Agreement_tpl::appliesConstraint";
@@ -275,6 +277,11 @@ public class SlaTables
 		public static final /*@NonNull*/ ExecutorProperty _Agreement__occiAgreementEffectiveFrom = new EcoreExecutorProperty(SlaPackage.Literals.AGREEMENT__OCCI_AGREEMENT_EFFECTIVE_FROM, Types._Agreement, 1);
 		public static final /*@NonNull*/ ExecutorProperty _Agreement__occiAgreementEffectiveUntil = new EcoreExecutorProperty(SlaPackage.Literals.AGREEMENT__OCCI_AGREEMENT_EFFECTIVE_UNTIL, Types._Agreement, 2);
 		public static final /*@NonNull*/ ExecutorProperty _Agreement__occiAgreementState = new EcoreExecutorProperty(SlaPackage.Literals.AGREEMENT__OCCI_AGREEMENT_STATE, Types._Agreement, 3);
+
+		public static final /*@NonNull*/ ExecutorProperty _Agreement_term__occiAgreementTermDesc = new EcoreExecutorProperty(SlaPackage.Literals.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_DESC, Types._Agreement_term, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Agreement_term__occiAgreementTermRemedy = new EcoreExecutorProperty(SlaPackage.Literals.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_REMEDY, Types._Agreement_term, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Agreement_term__occiAgreementTermState = new EcoreExecutorProperty(SlaPackage.Literals.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_STATE, Types._Agreement_term, 2);
+		public static final /*@NonNull*/ ExecutorProperty _Agreement_term__occiAgreementTermType = new EcoreExecutorProperty(SlaPackage.Literals.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_TYPE, Types._Agreement_term, 3);
 		static {
 			Init.initEnd();
 		}
@@ -735,7 +742,12 @@ public class SlaTables
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Agreement_link = {};
 
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Agreement_term = {};
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Agreement_term = {
+			SlaTables.Properties._Agreement_term__occiAgreementTermDesc,
+			SlaTables.Properties._Agreement_term__occiAgreementTermRemedy,
+			SlaTables.Properties._Agreement_term__occiAgreementTermState,
+			SlaTables.Properties._Agreement_term__occiAgreementTermType
+		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Agreement_tpl = {};
 

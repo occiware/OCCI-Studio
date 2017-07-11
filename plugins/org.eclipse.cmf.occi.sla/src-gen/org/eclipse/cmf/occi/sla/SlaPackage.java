@@ -552,13 +552,49 @@ public interface SlaPackage extends EPackage {
 	int AGREEMENT_TERM__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
 
 	/**
+	 * The feature id for the '<em><b>Occi Agreement Term Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGREEMENT_TERM__OCCI_AGREEMENT_TERM_TYPE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Occi Agreement Term State</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGREEMENT_TERM__OCCI_AGREEMENT_TERM_STATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Occi Agreement Term Desc</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGREEMENT_TERM__OCCI_AGREEMENT_TERM_DESC = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Occi Agreement Term Remedy</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGREEMENT_TERM__OCCI_AGREEMENT_TERM_REMEDY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Agreement term</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGREEMENT_TERM_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int AGREEMENT_TERM_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Applies Constraint</em>' operation.
@@ -764,6 +800,50 @@ public interface SlaPackage extends EPackage {
 	EClass getAgreement_term();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.sla.Agreement_term#getOcciAgreementTermType <em>Occi Agreement Term Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Occi Agreement Term Type</em>'.
+	 * @see org.eclipse.cmf.occi.sla.Agreement_term#getOcciAgreementTermType()
+	 * @see #getAgreement_term()
+	 * @generated
+	 */
+	EAttribute getAgreement_term_OcciAgreementTermType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.sla.Agreement_term#getOcciAgreementTermState <em>Occi Agreement Term State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Occi Agreement Term State</em>'.
+	 * @see org.eclipse.cmf.occi.sla.Agreement_term#getOcciAgreementTermState()
+	 * @see #getAgreement_term()
+	 * @generated
+	 */
+	EAttribute getAgreement_term_OcciAgreementTermState();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.sla.Agreement_term#getOcciAgreementTermDesc <em>Occi Agreement Term Desc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Occi Agreement Term Desc</em>'.
+	 * @see org.eclipse.cmf.occi.sla.Agreement_term#getOcciAgreementTermDesc()
+	 * @see #getAgreement_term()
+	 * @generated
+	 */
+	EAttribute getAgreement_term_OcciAgreementTermDesc();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.sla.Agreement_term#getOcciAgreementTermRemedy <em>Occi Agreement Term Remedy</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Occi Agreement Term Remedy</em>'.
+	 * @see org.eclipse.cmf.occi.sla.Agreement_term#getOcciAgreementTermRemedy()
+	 * @see #getAgreement_term()
+	 * @generated
+	 */
+	EAttribute getAgreement_term_OcciAgreementTermRemedy();
+
+	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.sla.Agreement_term#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -957,6 +1037,38 @@ public interface SlaPackage extends EPackage {
 		 * @generated
 		 */
 		EClass AGREEMENT_TERM = eINSTANCE.getAgreement_term();
+
+		/**
+		 * The meta object literal for the '<em><b>Occi Agreement Term Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AGREEMENT_TERM__OCCI_AGREEMENT_TERM_TYPE = eINSTANCE.getAgreement_term_OcciAgreementTermType();
+
+		/**
+		 * The meta object literal for the '<em><b>Occi Agreement Term State</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AGREEMENT_TERM__OCCI_AGREEMENT_TERM_STATE = eINSTANCE.getAgreement_term_OcciAgreementTermState();
+
+		/**
+		 * The meta object literal for the '<em><b>Occi Agreement Term Desc</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AGREEMENT_TERM__OCCI_AGREEMENT_TERM_DESC = eINSTANCE.getAgreement_term_OcciAgreementTermDesc();
+
+		/**
+		 * The meta object literal for the '<em><b>Occi Agreement Term Remedy</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AGREEMENT_TERM__OCCI_AGREEMENT_TERM_REMEDY = eINSTANCE.getAgreement_term_OcciAgreementTermRemedy();
 
 		/**
 		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.

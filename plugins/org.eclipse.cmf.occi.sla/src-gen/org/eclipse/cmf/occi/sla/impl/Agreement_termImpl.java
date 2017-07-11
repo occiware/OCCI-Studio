@@ -20,15 +20,19 @@ import org.eclipse.cmf.occi.core.Entity;
 
 import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
 
+import org.eclipse.cmf.occi.sla.AgreementTermStatus;
+import org.eclipse.cmf.occi.sla.AgreementTermType;
 import org.eclipse.cmf.occi.sla.Agreement_term;
 import org.eclipse.cmf.occi.sla.SlaPackage;
 import org.eclipse.cmf.occi.sla.SlaTables;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.ocl.pivot.evaluation.Executor;
 
 import org.eclipse.ocl.pivot.ids.IdResolver;
@@ -50,10 +54,92 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Agreement term</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.cmf.occi.sla.impl.Agreement_termImpl#getOcciAgreementTermType <em>Occi Agreement Term Type</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.sla.impl.Agreement_termImpl#getOcciAgreementTermState <em>Occi Agreement Term State</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.sla.impl.Agreement_termImpl#getOcciAgreementTermDesc <em>Occi Agreement Term Desc</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.sla.impl.Agreement_termImpl#getOcciAgreementTermRemedy <em>Occi Agreement Term Remedy</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class Agreement_termImpl extends MixinBaseImpl implements Agreement_term {
+	/**
+	 * The default value of the '{@link #getOcciAgreementTermType() <em>Occi Agreement Term Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOcciAgreementTermType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final AgreementTermType OCCI_AGREEMENT_TERM_TYPE_EDEFAULT = AgreementTermType.SERVICE;
+	/**
+	 * The cached value of the '{@link #getOcciAgreementTermType() <em>Occi Agreement Term Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOcciAgreementTermType()
+	 * @generated
+	 * @ordered
+	 */
+	protected AgreementTermType occiAgreementTermType = OCCI_AGREEMENT_TERM_TYPE_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getOcciAgreementTermState() <em>Occi Agreement Term State</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOcciAgreementTermState()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final AgreementTermStatus OCCI_AGREEMENT_TERM_STATE_EDEFAULT = AgreementTermStatus.UNDEFINED;
+	/**
+	 * The cached value of the '{@link #getOcciAgreementTermState() <em>Occi Agreement Term State</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOcciAgreementTermState()
+	 * @generated
+	 * @ordered
+	 */
+	protected AgreementTermStatus occiAgreementTermState = OCCI_AGREEMENT_TERM_STATE_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getOcciAgreementTermDesc() <em>Occi Agreement Term Desc</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOcciAgreementTermDesc()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String OCCI_AGREEMENT_TERM_DESC_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getOcciAgreementTermDesc() <em>Occi Agreement Term Desc</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOcciAgreementTermDesc()
+	 * @generated
+	 * @ordered
+	 */
+	protected String occiAgreementTermDesc = OCCI_AGREEMENT_TERM_DESC_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getOcciAgreementTermRemedy() <em>Occi Agreement Term Remedy</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOcciAgreementTermRemedy()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String OCCI_AGREEMENT_TERM_REMEDY_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getOcciAgreementTermRemedy() <em>Occi Agreement Term Remedy</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOcciAgreementTermRemedy()
+	 * @generated
+	 * @ordered
+	 */
+	protected String occiAgreementTermRemedy = OCCI_AGREEMENT_TERM_REMEDY_EDEFAULT;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -71,6 +157,90 @@ public class Agreement_termImpl extends MixinBaseImpl implements Agreement_term 
 	@Override
 	protected EClass eStaticClass() {
 		return SlaPackage.Literals.AGREEMENT_TERM;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AgreementTermType getOcciAgreementTermType() {
+		return occiAgreementTermType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOcciAgreementTermType(AgreementTermType newOcciAgreementTermType) {
+		AgreementTermType oldOcciAgreementTermType = occiAgreementTermType;
+		occiAgreementTermType = newOcciAgreementTermType == null ? OCCI_AGREEMENT_TERM_TYPE_EDEFAULT : newOcciAgreementTermType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SlaPackage.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_TYPE, oldOcciAgreementTermType, occiAgreementTermType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AgreementTermStatus getOcciAgreementTermState() {
+		return occiAgreementTermState;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOcciAgreementTermState(AgreementTermStatus newOcciAgreementTermState) {
+		AgreementTermStatus oldOcciAgreementTermState = occiAgreementTermState;
+		occiAgreementTermState = newOcciAgreementTermState == null ? OCCI_AGREEMENT_TERM_STATE_EDEFAULT : newOcciAgreementTermState;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SlaPackage.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_STATE, oldOcciAgreementTermState, occiAgreementTermState));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getOcciAgreementTermDesc() {
+		return occiAgreementTermDesc;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOcciAgreementTermDesc(String newOcciAgreementTermDesc) {
+		String oldOcciAgreementTermDesc = occiAgreementTermDesc;
+		occiAgreementTermDesc = newOcciAgreementTermDesc;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SlaPackage.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_DESC, oldOcciAgreementTermDesc, occiAgreementTermDesc));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getOcciAgreementTermRemedy() {
+		return occiAgreementTermRemedy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOcciAgreementTermRemedy(String newOcciAgreementTermRemedy) {
+		String oldOcciAgreementTermRemedy = occiAgreementTermRemedy;
+		occiAgreementTermRemedy = newOcciAgreementTermRemedy;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SlaPackage.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_REMEDY, oldOcciAgreementTermRemedy, occiAgreementTermRemedy));
 	}
 
 	/**
@@ -118,6 +288,94 @@ public class Agreement_termImpl extends MixinBaseImpl implements Agreement_term 
 	 * @generated
 	 */
 	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case SlaPackage.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_TYPE:
+				return getOcciAgreementTermType();
+			case SlaPackage.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_STATE:
+				return getOcciAgreementTermState();
+			case SlaPackage.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_DESC:
+				return getOcciAgreementTermDesc();
+			case SlaPackage.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_REMEDY:
+				return getOcciAgreementTermRemedy();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case SlaPackage.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_TYPE:
+				setOcciAgreementTermType((AgreementTermType)newValue);
+				return;
+			case SlaPackage.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_STATE:
+				setOcciAgreementTermState((AgreementTermStatus)newValue);
+				return;
+			case SlaPackage.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_DESC:
+				setOcciAgreementTermDesc((String)newValue);
+				return;
+			case SlaPackage.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_REMEDY:
+				setOcciAgreementTermRemedy((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case SlaPackage.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_TYPE:
+				setOcciAgreementTermType(OCCI_AGREEMENT_TERM_TYPE_EDEFAULT);
+				return;
+			case SlaPackage.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_STATE:
+				setOcciAgreementTermState(OCCI_AGREEMENT_TERM_STATE_EDEFAULT);
+				return;
+			case SlaPackage.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_DESC:
+				setOcciAgreementTermDesc(OCCI_AGREEMENT_TERM_DESC_EDEFAULT);
+				return;
+			case SlaPackage.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_REMEDY:
+				setOcciAgreementTermRemedy(OCCI_AGREEMENT_TERM_REMEDY_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case SlaPackage.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_TYPE:
+				return occiAgreementTermType != OCCI_AGREEMENT_TERM_TYPE_EDEFAULT;
+			case SlaPackage.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_STATE:
+				return occiAgreementTermState != OCCI_AGREEMENT_TERM_STATE_EDEFAULT;
+			case SlaPackage.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_DESC:
+				return OCCI_AGREEMENT_TERM_DESC_EDEFAULT == null ? occiAgreementTermDesc != null : !OCCI_AGREEMENT_TERM_DESC_EDEFAULT.equals(occiAgreementTermDesc);
+			case SlaPackage.AGREEMENT_TERM__OCCI_AGREEMENT_TERM_REMEDY:
+				return OCCI_AGREEMENT_TERM_REMEDY_EDEFAULT == null ? occiAgreementTermRemedy != null : !OCCI_AGREEMENT_TERM_REMEDY_EDEFAULT.equals(occiAgreementTermRemedy);
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
@@ -125,6 +383,28 @@ public class Agreement_termImpl extends MixinBaseImpl implements Agreement_term 
 				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (occiAgreementTermType: ");
+		result.append(occiAgreementTermType);
+		result.append(", occiAgreementTermState: ");
+		result.append(occiAgreementTermState);
+		result.append(", occiAgreementTermDesc: ");
+		result.append(occiAgreementTermDesc);
+		result.append(", occiAgreementTermRemedy: ");
+		result.append(occiAgreementTermRemedy);
+		result.append(')');
+		return result.toString();
 	}
 
 } //Agreement_termImpl

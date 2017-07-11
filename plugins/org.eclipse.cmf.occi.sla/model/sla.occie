@@ -15,9 +15,30 @@
   </kinds>
   <kinds name="agreement_link" scheme="http://schemas.ogf.org/occi/sla#" title="Link between a SLA and its associated resource">
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
+    <fsm>
+      <ownedState literal="//@types.3/@literals.0" initial="true" final="true">
+        <outgoingTransition target="//@kinds[term='agreement_link']/@fsm/@ownedState.1"/>
+        <outgoingTransition target="//@kinds[term='agreement_link']/@fsm/@ownedState.2"/>
+      </ownedState>
+      <ownedState literal="//@types.3/@literals.1" initial="false" final="true">
+        <outgoingTransition target="//@kinds[term='agreement_link']/@fsm/@ownedState.2"/>
+      </ownedState>
+      <ownedState literal="//@types.3/@literals.2" initial="false" final="true">
+        <outgoingTransition target="//@kinds[term='agreement_link']/@fsm/@ownedState.1"/>
+      </ownedState>
+    </fsm>
   </kinds>
   <mixins name="agreement_tpl" scheme="http://schemas.ogf.org/occi/sla#" title="Mixin defining a SLA template collection" applies="//@kinds[term='agreement']"/>
-  <mixins name="agreement_term" scheme="http://schemas.ogf.org/occi/sla#" title="Mixin defining a Term collection for an agreement" applies="//@kinds[term='agreement']"/>
+  <mixins name="agreement_term" scheme="http://schemas.ogf.org/occi/sla#" title="Mixin defining a Term collection for an agreement" applies="//@kinds[term='agreement']">
+    <attributes name="occi.agreement.term.type" mutable="false" required="true" description="The type of the term that is being defined." type="//@types.2"/>
+    <attributes name="occi.agreement.term.state" mutable="false" required="true" description="The state of fulfillment of the specific term." type="//@types.3"/>
+    <attributes name="occi.agreement.term.desc" mutable="false" description="The description of the agreement term defined with this mixin.">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.agreement.term.remedy" mutable="false" description="The remedy value (e.g., price penalty) or action e.g., command) when an SLO term is being violated.">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+  </mixins>
   <types xsi:type="occi:StringType" name="DateTime" documentation="Data type for ISO8601 date time" pattern="^(\d{4}((-)?(0[1-9]|1[0-2])((-)?(0[1-9]|[1-2][0-9]|3[0-1])(T(24:00(:00(\.[0]+)?)?|(([0-1][0-9]|2[0-3])(:)[0-5][0-9])((:)[0-5][0-9](\.[\d]+)?)?)((\+|-)(14:00|(0[0-9]|1[0-3])(:)[0-5][0-9])|Z))?)?)?)$"/>
   <types xsi:type="occi:EnumerationType" name="AgreementStatus" documentation="Enumeration of Agreement status">
     <literals name="Pending"/>

@@ -86,6 +86,18 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="sla.ecore#//Agreement_term"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="sla.ecore#//Agreement_term/occiAgreementTermType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="sla.ecore#//Agreement_term/occiAgreementTermState"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="sla.ecore#//Agreement_term/occiAgreementTermDesc"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="sla.ecore#//Agreement_term/occiAgreementTermRemedy"/>
+      </genFeatures>
     </genClasses>
   </genPackages>
   <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>

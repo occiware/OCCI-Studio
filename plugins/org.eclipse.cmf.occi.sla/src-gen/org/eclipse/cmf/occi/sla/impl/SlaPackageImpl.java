@@ -304,6 +304,42 @@ public class SlaPackageImpl extends EPackageImpl implements SlaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getAgreement_term_OcciAgreementTermType() {
+		return (EAttribute)agreement_termEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAgreement_term_OcciAgreementTermState() {
+		return (EAttribute)agreement_termEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAgreement_term_OcciAgreementTermDesc() {
+		return (EAttribute)agreement_termEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAgreement_term_OcciAgreementTermRemedy() {
+		return (EAttribute)agreement_termEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getAgreement_term__AppliesConstraint__DiagnosticChain_Map() {
 		return agreement_termEClass.getEOperations().get(0);
 	}
@@ -389,6 +425,10 @@ public class SlaPackageImpl extends EPackageImpl implements SlaPackage {
 		createEOperation(agreement_tplEClass, AGREEMENT_TPL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		agreement_termEClass = createEClass(AGREEMENT_TERM);
+		createEAttribute(agreement_termEClass, AGREEMENT_TERM__OCCI_AGREEMENT_TERM_TYPE);
+		createEAttribute(agreement_termEClass, AGREEMENT_TERM__OCCI_AGREEMENT_TERM_STATE);
+		createEAttribute(agreement_termEClass, AGREEMENT_TERM__OCCI_AGREEMENT_TERM_DESC);
+		createEAttribute(agreement_termEClass, AGREEMENT_TERM__OCCI_AGREEMENT_TERM_REMEDY);
 		createEOperation(agreement_termEClass, AGREEMENT_TERM___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		// Create enums
@@ -467,6 +507,10 @@ public class SlaPackageImpl extends EPackageImpl implements SlaPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(agreement_termEClass, Agreement_term.class, "Agreement_term", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAgreement_term_OcciAgreementTermType(), this.getAgreementTermType(), "occiAgreementTermType", null, 1, 1, Agreement_term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAgreement_term_OcciAgreementTermState(), this.getAgreementTermStatus(), "occiAgreementTermState", null, 1, 1, Agreement_term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAgreement_term_OcciAgreementTermDesc(), theOCCIPackage.getString(), "occiAgreementTermDesc", null, 0, 1, Agreement_term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAgreement_term_OcciAgreementTermRemedy(), theOCCIPackage.getString(), "occiAgreementTermRemedy", null, 0, 1, Agreement_term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getAgreement_term__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
