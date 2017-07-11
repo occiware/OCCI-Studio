@@ -90,14 +90,14 @@ public final class ConverterUtils {
 		Extension extension = ((Extension)occiObject.eContainer());
 		
 		String uri = OcciRegistry.getInstance().getFileURI(extension.getScheme());
-		System.out.println("uri before "+uri);
+		//System.out.println("uri before "+uri);
 		// we must use platform:/plugin URI to enable genmodels
 		uri = uri.replaceAll(".occie", ".ecore");
 		// special case for core
 		uri = uri.replaceAll("model/Core.ecore", "model/OCCI.ecore");
 		EPackage p = (EPackage) occiObject.eResource().getResourceSet().getResource(URI.createURI(uri), true).getContents().get(0);
-		System.out.println("uri after p "+p);
-		System.out.println("uri after "+uri);
+		//System.out.println("uri after p "+p);
+		//System.out.println("uri after "+uri);
 		return p;
 	}
 	

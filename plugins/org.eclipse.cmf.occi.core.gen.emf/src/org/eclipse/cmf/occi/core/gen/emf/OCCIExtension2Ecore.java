@@ -215,17 +215,17 @@ public class OCCIExtension2Ecore {
 
 		// Resolve inheritance between OCCI kinds.
 		for (Kind kind : extension.getKinds()) {
-			System.out.println("kind "+kind);
+			//System.out.println("kind "+kind);
 			// Get the Ecore class of this OCCI kind.
 			EClass mappedEClass = getMappedEClass(kind);
-			System.out.println("getMappedEClass(kind) "+getMappedEClass(kind));
+			//System.out.println("getMappedEClass(kind) "+getMappedEClass(kind));
 			// If kind has a parent kind then
 			if (kind.getParent() != null) {
 				// Get the Ecore class of the OCCI kind's parent.
 				EClass mappedParentEClass = getMappedEClass(kind.getParent());
-				System.out.println("kind.getParent() "+kind.getParent());
-				System.out.println("getMappedEClass(kind.getParent()) "+getMappedEClass(kind.getParent()));
-				System.out.println("--------------------");
+				//System.out.println("kind.getParent() "+kind.getParent());
+				//System.out.println("getMappedEClass(kind.getParent()) "+getMappedEClass(kind.getParent()));
+				//System.out.println("--------------------");
 				if (mappedParentEClass != null) {
 					// The Ecore class of the kind's parent is a super type of
 					// the Ecore class of the OCCI kind.
@@ -240,11 +240,11 @@ public class OCCIExtension2Ecore {
 		
 		// Resolve inheritance between OCCI mixins.
 				for (Mixin mixin : extension.getMixins()) {
-					System.out.println("mixin "+mixin);
+					//System.out.println("mixin "+mixin);
 					// Get the Ecore class of this OCCI kind.
 					//System.out.println("mappedParentEClass " + mixin);
 					EClass mappedEClass = getMappedEClass(mixin);
-					System.out.println("getMappedEClass(mixin) "+getMappedEClass(mixin));
+					//System.out.println("getMappedEClass(mixin) "+getMappedEClass(mixin));
 					//System.out.println("mappedParentEClass " + mappedEClass);
 					
 					// If kind has a parent kind then
@@ -252,8 +252,8 @@ public class OCCIExtension2Ecore {
 						// Get the Ecore class of the OCCI kind's parent.
 						for(Mixin superMixin : mixin.getDepends()){
 						EClass mappedParentEClass = getMappedEClass(superMixin);
-						System.out.println("superMixin "+superMixin);
-						System.out.println("mappedParentEClass "+mappedParentEClass);
+						//System.out.println("superMixin "+superMixin);
+						//System.out.println("mappedParentEClass "+mappedParentEClass);
 						if (mappedParentEClass != null) {
 							// The Ecore class of the kind's parent is a super type of
 							// the Ecore class of the OCCI kind.
@@ -492,7 +492,7 @@ public class OCCIExtension2Ecore {
 	}
 
 	private EClass createArrayType(ArrayType arrayType) {
-		System.out.println("maaaaap " + occiType2emfType);
+		//System.out.println("maaaaap " + occiType2emfType);
 		EClass type = EcoreFactory.eINSTANCE.createEClass();
 		type.setName(arrayType.getName());
 		if (arrayType.getDocumentation() != null) {
@@ -524,7 +524,7 @@ public class OCCIExtension2Ecore {
 	}
 
 	private EClass createRecordType(RecordType recordType) {
-		System.out.println("maaaaap " + occiType2emfType);
+		//System.out.println("maaaaap " + occiType2emfType);
 		EClass type = EcoreFactory.eINSTANCE.createEClass();
 		type.setName(recordType.getName());
 		if (recordType.getDocumentation() != null) {
@@ -685,7 +685,7 @@ public class OCCIExtension2Ecore {
 	}
 
 	public String convertbody(String body, Extension extension) {
-		System.out.println(body);
+		//System.out.println(body);
 		List<EObject> attributesList = Lists.newArrayList(extension.eAllContents()).stream()
 				.filter(eobject -> eobject instanceof Attribute).collect(Collectors.toList());
 		
@@ -705,10 +705,10 @@ public class OCCIExtension2Ecore {
 		        ));
 		ArrayList<String> attributesKeys = new ArrayList<String>(attributesSorted.keySet());
         for(int i=attributesKeys.size()-1; i>=0;i--){
-            System.out.println("bottom "+attributesSorted.get(attributesKeys.get(i)));
+            //System.out.println("bottom "+attributesSorted.get(attributesKeys.get(i)));
             body = body.replace(attributesKeys.get(i), attributesSorted.get(attributesKeys.get(i)));
         }
-		System.out.println(body);
+		//System.out.println(body);
 		
 		
 		/*
@@ -723,8 +723,8 @@ public class OCCIExtension2Ecore {
 		for (EObject category : categoriesList) {
 			categoriesMap.put(((Category) category).getName(),
 					ConverterUtils.toU1Case(ConverterUtils.formatName(((Category) category).getTerm())));
-			System.out.println(((Category) category).getName());
-			System.out.println(ConverterUtils.toU1Case(ConverterUtils.formatName(((Category) category).getTerm())));
+			//System.out.println(((Category) category).getName());
+			//System.out.println(ConverterUtils.toU1Case(ConverterUtils.formatName(((Category) category).getTerm())));
 		}
 		Map<String, String> categoriesSorted = categoriesMap.entrySet().stream()
 		        .sorted(comparingInt(e->e.getKey().length()))
@@ -734,13 +734,13 @@ public class OCCIExtension2Ecore {
 		                (a,b) -> {throw new AssertionError();},
 		                LinkedHashMap::new
 		        )); 
-		System.out.println("sorted "+categoriesSorted);
+		//System.out.println("sorted "+categoriesSorted);
 		ArrayList<String> keys = new ArrayList<String>(categoriesSorted.keySet());
         for(int i=keys.size()-1; i>=0;i--){
             System.out.println("bottom "+categoriesSorted.get(keys.get(i)));
             body = body.replace(keys.get(i), categoriesSorted.get(keys.get(i)));
         }
-		System.out.println(body);
+		//System.out.println(body);
 		
 		return body;
 	}

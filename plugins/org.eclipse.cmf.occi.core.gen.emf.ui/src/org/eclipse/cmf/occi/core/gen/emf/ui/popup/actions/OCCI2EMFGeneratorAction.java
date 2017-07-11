@@ -98,8 +98,8 @@ public class OCCI2EMFGeneratorAction implements IObjectActionDelegate {
 								|| diagnostic.getData().get(0) instanceof State
 								|| diagnostic.getData().get(0) instanceof Transition
 								|| diagnostic.getData().get(0) instanceof Action)) {
-							System.out.println(diagnostic.getSeverity());
-							System.out.println(diagnostic.getData());
+							//System.out.println(diagnostic.getSeverity());
+							//System.out.println(diagnostic.getData());
 							if (message == null) {
 								message = new StringBuilder();
 							} else {
@@ -186,7 +186,7 @@ public class OCCI2EMFGeneratorAction implements IObjectActionDelegate {
 		for (Extension extension : ext.getImport()) {
 			if (!extension.getName().equals("core")) {
 				String extensionFileUri = OcciRegistry.getInstance().getFileURI(extension.getScheme());
-				System.out.println(extensionFileUri);
+				//System.out.println(extensionFileUri);
 				GenModel genModel = (GenModel) resourceSet
 						.getResource(URI.createURI(extensionFileUri.replaceAll(".occie", ".genmodel")), true)
 						.getContents().get(0);
