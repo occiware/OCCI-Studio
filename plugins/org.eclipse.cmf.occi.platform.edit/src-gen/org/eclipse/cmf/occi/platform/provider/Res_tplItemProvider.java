@@ -16,12 +16,7 @@ package org.eclipse.cmf.occi.platform.provider;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.cmf.occi.core.OCCIPackage;
-
-import org.eclipse.cmf.occi.core.provider.LinkItemProvider;
-
-import org.eclipse.cmf.occi.platform.Componentlink;
-import org.eclipse.cmf.occi.platform.PlatformFactory;
+import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -31,19 +26,19 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.cmf.occi.platform.Componentlink} object.
+ * This is the item provider adapter for a {@link org.eclipse.cmf.occi.platform.Res_tpl} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentlinkItemProvider extends LinkItemProvider {
+public class Res_tplItemProvider extends MixinBaseItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentlinkItemProvider(AdapterFactory adapterFactory) {
+	public Res_tplItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -63,14 +58,14 @@ public class ComponentlinkItemProvider extends LinkItemProvider {
 	}
 
 	/**
-	 * This returns Componentlink.gif.
+	 * This returns Res_tpl.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Componentlink"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Res_tpl"));
 	}
 
 	/**
@@ -81,10 +76,7 @@ public class ComponentlinkItemProvider extends LinkItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Componentlink)object).getId();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Componentlink_type") :
-			getString("_UI_Componentlink_type") + " " + label;
+		return getString("_UI_Res_tpl_type");
 	}
 	
 
@@ -111,26 +103,6 @@ public class ComponentlinkItemProvider extends LinkItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 PlatformFactory.eINSTANCE.createApp_tpl()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 PlatformFactory.eINSTANCE.createRes_tpl()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 PlatformFactory.eINSTANCE.createDatabase()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 PlatformFactory.eINSTANCE.createDatabaselink()));
 	}
 
 	/**

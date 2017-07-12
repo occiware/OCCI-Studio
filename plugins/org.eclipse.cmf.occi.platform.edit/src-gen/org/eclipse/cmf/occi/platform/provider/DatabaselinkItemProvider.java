@@ -13,6 +13,7 @@
 package org.eclipse.cmf.occi.platform.provider;
 
 
+import java.net.URI;
 import java.util.Collection;
 import java.util.List;
 
@@ -151,7 +152,8 @@ public class DatabaselinkItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Databaselink)object).getOcciDatabaseUsername();
+		URI labelValue = ((Databaselink)object).getOcciDatabaseUsername();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Databaselink_type") :
 			getString("_UI_Databaselink_type") + " " + label;

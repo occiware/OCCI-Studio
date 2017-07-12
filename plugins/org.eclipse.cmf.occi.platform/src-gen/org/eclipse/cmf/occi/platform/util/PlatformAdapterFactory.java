@@ -99,8 +99,8 @@ public class PlatformAdapterFactory extends AdapterFactoryImpl {
 				return createApp_tplAdapter();
 			}
 			@Override
-			public Adapter caseRestpl(Restpl object) {
-				return createRestplAdapter();
+			public Adapter caseRes_tpl(Res_tpl object) {
+				return createRes_tplAdapter();
 			}
 			@Override
 			public Adapter caseDatabase(Database object) {
@@ -203,16 +203,16 @@ public class PlatformAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.platform.Restpl <em>Restpl</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.platform.Res_tpl <em>Res tpl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.platform.Restpl
+	 * @see org.eclipse.cmf.occi.platform.Res_tpl
 	 * @generated
 	 */
-	public Adapter createRestplAdapter() {
+	public Adapter createRes_tplAdapter() {
 		return null;
 	}
 

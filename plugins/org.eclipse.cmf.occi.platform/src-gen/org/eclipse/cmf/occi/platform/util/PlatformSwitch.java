@@ -112,10 +112,10 @@ public class PlatformSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PlatformPackage.RESTPL: {
-				Restpl restpl = (Restpl)theEObject;
-				T result = caseRestpl(restpl);
-				if (result == null) result = caseMixinBase(restpl);
+			case PlatformPackage.RES_TPL: {
+				Res_tpl res_tpl = (Res_tpl)theEObject;
+				T result = caseRes_tpl(res_tpl);
+				if (result == null) result = caseMixinBase(res_tpl);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -198,17 +198,17 @@ public class PlatformSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Restpl</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Res tpl</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Restpl</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Res tpl</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRestpl(Restpl object) {
+	public T caseRes_tpl(Res_tpl object) {
 		return null;
 	}
 

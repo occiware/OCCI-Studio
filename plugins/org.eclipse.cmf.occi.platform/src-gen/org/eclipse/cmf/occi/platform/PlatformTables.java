@@ -63,9 +63,26 @@ public class PlatformTables
 	/**
 	 *	Constants used by auto-generated code.
 	 */
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.RootPackageId PACKid_$metamodel$ = org.eclipse.ocl.pivot.ids.IdManager.getRootPackageId("$metamodel$");
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/core/ecore", "occi", org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_platform_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/platform/ecore", null, org.eclipse.cmf.occi.platform.PlatformPackage.eINSTANCE);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_App_tpl = org.eclipse.cmf.occi.platform.PlatformTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_platform_s_ecore.getClassId("App_tpl", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Application = org.eclipse.cmf.occi.platform.PlatformTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_platform_s_ecore.getClassId("Application", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Class = org.eclipse.cmf.occi.platform.PlatformTables.PACKid_$metamodel$.getClassId("Class", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Component = org.eclipse.cmf.occi.platform.PlatformTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_platform_s_ecore.getClassId("Component", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Componentlink = org.eclipse.cmf.occi.platform.PlatformTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_platform_s_ecore.getClassId("Componentlink", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Database = org.eclipse.cmf.occi.platform.PlatformTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_platform_s_ecore.getClassId("Database", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Databaselink = org.eclipse.cmf.occi.platform.PlatformTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_platform_s_ecore.getClassId("Databaselink", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Entity = org.eclipse.cmf.occi.platform.PlatformTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Entity", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Res_tpl = org.eclipse.cmf.occi.platform.PlatformTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_platform_s_ecore.getClassId("Res_tpl", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_URI = org.eclipse.cmf.occi.platform.PlatformTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_platform_s_ecore.getDataTypeId("URI", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_URL = org.eclipse.cmf.occi.platform.PlatformTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_platform_s_ecore.getDataTypeId("URL", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_Status = org.eclipse.cmf.occi.platform.PlatformTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_platform_s_ecore.getEnumerationId("Status");
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
+	public static final /*@NonInvalid*/ java.lang.String STR_App_tpl_c_c_appliesConstraint = "App_tpl::appliesConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Database_c_c_appliesConstraint = "Database::appliesConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Databaselink_c_c_appliesConstraint = "Databaselink::appliesConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Res_tpl_c_c_appliesConstraint = "Res_tpl::appliesConstraint";
 
 	/**
 	 *	The type parameters for templated types and operations.
@@ -101,7 +118,7 @@ public class PlatformTables
 		public static final /*@NonNull*/ EcoreExecutorType _Componentlink = new EcoreExecutorType(PlatformPackage.Literals.COMPONENTLINK, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Database = new EcoreExecutorType(PlatformPackage.Literals.DATABASE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Databaselink = new EcoreExecutorType(PlatformPackage.Literals.DATABASELINK, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Restpl = new EcoreExecutorType(PlatformPackage.Literals.RESTPL, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _Res_tpl = new EcoreExecutorType(PlatformPackage.Literals.RES_TPL, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorEnumeration _Status = new EcoreExecutorEnumeration(PlatformPackage.Literals.STATUS, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _URI = new EcoreExecutorType("URI", PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _URL = new EcoreExecutorType("URL", PACKAGE, 0);
@@ -113,7 +130,7 @@ public class PlatformTables
 			_Componentlink,
 			_Database,
 			_Databaselink,
-			_Restpl,
+			_Res_tpl,
 			_Status,
 			_URI,
 			_URL
@@ -175,10 +192,10 @@ public class PlatformTables
 		private static final /*@NonNull*/ ExecutorFragment _Databaselink__OclAny = new ExecutorFragment(Types._Databaselink, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Databaselink__OclElement = new ExecutorFragment(Types._Databaselink, OCLstdlibTables.Types._OclElement);
 
-		private static final /*@NonNull*/ ExecutorFragment _Restpl__MixinBase = new ExecutorFragment(Types._Restpl, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Restpl__OclAny = new ExecutorFragment(Types._Restpl, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Restpl__OclElement = new ExecutorFragment(Types._Restpl, OCLstdlibTables.Types._OclElement);
-		private static final /*@NonNull*/ ExecutorFragment _Restpl__Restpl = new ExecutorFragment(Types._Restpl, PlatformTables.Types._Restpl);
+		private static final /*@NonNull*/ ExecutorFragment _Res_tpl__MixinBase = new ExecutorFragment(Types._Res_tpl, OCCITables.Types._MixinBase);
+		private static final /*@NonNull*/ ExecutorFragment _Res_tpl__OclAny = new ExecutorFragment(Types._Res_tpl, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Res_tpl__OclElement = new ExecutorFragment(Types._Res_tpl, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _Res_tpl__Res_tpl = new ExecutorFragment(Types._Res_tpl, PlatformTables.Types._Res_tpl);
 
 		private static final /*@NonNull*/ ExecutorFragment _Status__OclAny = new ExecutorFragment(Types._Status, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Status__OclElement = new ExecutorFragment(Types._Status, OCLstdlibTables.Types._OclElement);
@@ -368,14 +385,14 @@ public class PlatformTables
 		};
 		private static final int /*@NonNull*/ [] __Databaselink = { 1,1,1,1 };
 
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Restpl =
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Res_tpl =
 		{
-			Fragments._Restpl__OclAny /* 0 */,
-			Fragments._Restpl__OclElement /* 1 */,
-			Fragments._Restpl__MixinBase /* 2 */,
-			Fragments._Restpl__Restpl /* 3 */
+			Fragments._Res_tpl__OclAny /* 0 */,
+			Fragments._Res_tpl__OclElement /* 1 */,
+			Fragments._Res_tpl__MixinBase /* 2 */,
+			Fragments._Res_tpl__Res_tpl /* 3 */
 		};
-		private static final int /*@NonNull*/ [] __Restpl = { 1,1,1,1 };
+		private static final int /*@NonNull*/ [] __Res_tpl = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Status =
 		{
@@ -412,7 +429,7 @@ public class PlatformTables
 			Types._Componentlink.initFragments(_Componentlink, __Componentlink);
 			Types._Database.initFragments(_Database, __Database);
 			Types._Databaselink.initFragments(_Databaselink, __Databaselink);
-			Types._Restpl.initFragments(_Restpl, __Restpl);
+			Types._Res_tpl.initFragments(_Res_tpl, __Res_tpl);
 			Types._Status.initFragments(_Status, __Status);
 			Types._URI.initFragments(_URI, __URI);
 			Types._URL.initFragments(_URL, __URL);
@@ -633,9 +650,9 @@ public class PlatformTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Restpl__Restpl = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Restpl__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Restpl__OclAny = {
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Res_tpl__Res_tpl = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Res_tpl__MixinBase = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Res_tpl__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
@@ -652,7 +669,7 @@ public class PlatformTables
 			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
 		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Restpl__OclElement = {
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Res_tpl__OclElement = {
 			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
 			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
 			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
@@ -780,10 +797,10 @@ public class PlatformTables
 			Fragments._Databaselink__OclAny.initOperations(_Databaselink__OclAny);
 			Fragments._Databaselink__OclElement.initOperations(_Databaselink__OclElement);
 
-			Fragments._Restpl__MixinBase.initOperations(_Restpl__MixinBase);
-			Fragments._Restpl__OclAny.initOperations(_Restpl__OclAny);
-			Fragments._Restpl__OclElement.initOperations(_Restpl__OclElement);
-			Fragments._Restpl__Restpl.initOperations(_Restpl__Restpl);
+			Fragments._Res_tpl__MixinBase.initOperations(_Res_tpl__MixinBase);
+			Fragments._Res_tpl__OclAny.initOperations(_Res_tpl__OclAny);
+			Fragments._Res_tpl__OclElement.initOperations(_Res_tpl__OclElement);
+			Fragments._Res_tpl__Res_tpl.initOperations(_Res_tpl__Res_tpl);
 
 			Fragments._Status__OclAny.initOperations(_Status__OclAny);
 			Fragments._Status__OclElement.initOperations(_Status__OclElement);
@@ -843,7 +860,7 @@ public class PlatformTables
 			PlatformTables.Properties._Databaselink__occiDatabaseUsername
 		};
 
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Restpl = {};
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Res_tpl = {};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Status = {};
 
@@ -861,7 +878,7 @@ public class PlatformTables
 			Fragments._Componentlink__Componentlink.initProperties(_Componentlink);
 			Fragments._Database__Database.initProperties(_Database);
 			Fragments._Databaselink__Databaselink.initProperties(_Databaselink);
-			Fragments._Restpl__Restpl.initProperties(_Restpl);
+			Fragments._Res_tpl__Res_tpl.initProperties(_Res_tpl);
 			Fragments._Status__Status.initProperties(_Status);
 			Fragments._URI__URI.initProperties(_URI);
 			Fragments._URL__URL.initProperties(_URL);

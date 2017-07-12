@@ -22,15 +22,19 @@ import org.eclipse.cmf.occi.platform.Database;
 import org.eclipse.cmf.occi.platform.Databaselink;
 import org.eclipse.cmf.occi.platform.PlatformFactory;
 import org.eclipse.cmf.occi.platform.PlatformPackage;
-import org.eclipse.cmf.occi.platform.Restpl;
+import org.eclipse.cmf.occi.platform.Res_tpl;
 import org.eclipse.cmf.occi.platform.Status;
+
+import org.eclipse.cmf.occi.platform.util.PlatformValidator;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -74,7 +78,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass restplEClass = null;
+	private EClass res_tplEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,6 +169,15 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 
 		// Initialize created meta-data
 		thePlatformPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(thePlatformPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return PlatformValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		thePlatformPackage.freeze();
@@ -315,8 +328,26 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRestpl() {
-		return restplEClass;
+	public EOperation getApp_tpl__AppliesConstraint__DiagnosticChain_Map() {
+		return app_tplEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRes_tpl() {
+		return res_tplEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRes_tpl__AppliesConstraint__DiagnosticChain_Map() {
+		return res_tplEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -335,6 +366,15 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 */
 	public EAttribute getDatabase_OcciDatabaseVersion() {
 		return (EAttribute)databaseEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDatabase__AppliesConstraint__DiagnosticChain_Map() {
+		return databaseEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -371,6 +411,15 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 */
 	public EAttribute getDatabaselink_OcciDatabaseToken() {
 		return (EAttribute)databaselinkEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDatabaselink__AppliesConstraint__DiagnosticChain_Map() {
+		return databaselinkEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -446,16 +495,20 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		componentlinkEClass = createEClass(COMPONENTLINK);
 
 		app_tplEClass = createEClass(APP_TPL);
+		createEOperation(app_tplEClass, APP_TPL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
-		restplEClass = createEClass(RESTPL);
+		res_tplEClass = createEClass(RES_TPL);
+		createEOperation(res_tplEClass, RES_TPL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		databaseEClass = createEClass(DATABASE);
 		createEAttribute(databaseEClass, DATABASE__OCCI_DATABASE_VERSION);
+		createEOperation(databaseEClass, DATABASE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		databaselinkEClass = createEClass(DATABASELINK);
 		createEAttribute(databaselinkEClass, DATABASELINK__OCCI_DATABASE_URI);
 		createEAttribute(databaselinkEClass, DATABASELINK__OCCI_DATABASE_USERNAME);
 		createEAttribute(databaselinkEClass, DATABASELINK__OCCI_DATABASE_TOKEN);
+		createEOperation(databaselinkEClass, DATABASELINK___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		// Create enums
 		statusEEnum = createEEnum(STATUS);
@@ -500,7 +553,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		componentEClass.getESuperTypes().add(theOCCIPackage.getResource());
 		componentlinkEClass.getESuperTypes().add(theOCCIPackage.getLink());
 		app_tplEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		restplEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		res_tplEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		databaseEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		databaselinkEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 
@@ -509,7 +562,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		initEAttribute(getApplication_OcciAppName(), theOCCIPackage.getString(), "occiAppName", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplication_OcciAppContext(), this.getURL(), "occiAppContext", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplication_OcciAppUrl(), this.getURL(), "occiAppUrl", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getApplication_OcciAppState(), this.getStatus(), "occiAppState", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getApplication_OcciAppState(), this.getStatus(), "occiAppState", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplication_OcciAppStateMessage(), theOCCIPackage.getString(), "occiAppStateMessage", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getApplication__Start(), null, "start", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -528,15 +581,51 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 
 		initEClass(app_tplEClass, App_tpl.class, "App_tpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(restplEClass, Restpl.class, "Restpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		EOperation op = initEOperation(getApp_tpl__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(res_tplEClass, Res_tpl.class, "Res_tpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getRes_tpl__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(databaseEClass, Database.class, "Database", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDatabase_OcciDatabaseVersion(), ecorePackage.getEString(), "occiDatabaseVersion", null, 1, 1, Database.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDatabase_OcciDatabaseVersion(), theOCCIPackage.getString(), "occiDatabaseVersion", null, 1, 1, Database.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getDatabase__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(databaselinkEClass, Databaselink.class, "Databaselink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDatabaselink_OcciDatabaseUri(), ecorePackage.getEString(), "occiDatabaseUri", null, 1, 1, Databaselink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDatabaselink_OcciDatabaseUsername(), ecorePackage.getEString(), "occiDatabaseUsername", null, 0, 1, Databaselink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDatabaselink_OcciDatabaseToken(), ecorePackage.getEString(), "occiDatabaseToken", null, 0, 1, Databaselink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDatabaselink_OcciDatabaseUri(), this.getURI(), "occiDatabaseUri", null, 1, 1, Databaselink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDatabaselink_OcciDatabaseUsername(), this.getURI(), "occiDatabaseUsername", null, 0, 1, Databaselink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDatabaselink_OcciDatabaseToken(), this.getURI(), "occiDatabaseToken", null, 0, 1, Databaselink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getDatabaselink__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(statusEEnum, Status.class, "Status");
@@ -568,6 +657,30 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		  (this, 
 		   source, 
 		   new String[] {
+		   });	
+		addAnnotation
+		  (app_tplEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (res_tplEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (databaseEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (databaselinkEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
 		   });
 	}
 

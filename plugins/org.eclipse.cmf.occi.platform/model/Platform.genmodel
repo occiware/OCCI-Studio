@@ -70,7 +70,7 @@
       <ecoreClass href="Platform.ecore#//App_tpl"/>
     </genClasses>
     <genClasses>
-      <ecoreClass href="Platform.ecore#//Restpl"/>
+      <ecoreClass href="Platform.ecore#//Res_tpl"/>
     </genClasses>
     <genClasses>
       <ecoreClass href="Platform.ecore#//Database"/>

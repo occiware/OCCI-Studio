@@ -174,26 +174,26 @@ public class PlatformItemProviderAdapterFactory extends PlatformAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.platform.Restpl} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.platform.Res_tpl} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RestplItemProvider restplItemProvider;
+	protected Res_tplItemProvider res_tplItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.cmf.occi.platform.Restpl}.
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.platform.Res_tpl}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createRestplAdapter() {
-		if (restplItemProvider == null) {
-			restplItemProvider = new RestplItemProvider(this);
+	public Adapter createRes_tplAdapter() {
+		if (res_tplItemProvider == null) {
+			res_tplItemProvider = new Res_tplItemProvider(this);
 		}
 
-		return restplItemProvider;
+		return res_tplItemProvider;
 	}
 
 	/**
@@ -345,7 +345,7 @@ public class PlatformItemProviderAdapterFactory extends PlatformAdapterFactory i
 		if (componentItemProvider != null) componentItemProvider.dispose();
 		if (componentlinkItemProvider != null) componentlinkItemProvider.dispose();
 		if (app_tplItemProvider != null) app_tplItemProvider.dispose();
-		if (restplItemProvider != null) restplItemProvider.dispose();
+		if (res_tplItemProvider != null) res_tplItemProvider.dispose();
 		if (databaseItemProvider != null) databaseItemProvider.dispose();
 		if (databaselinkItemProvider != null) databaselinkItemProvider.dispose();
 	}

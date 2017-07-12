@@ -74,7 +74,7 @@ public class PlatformFactoryImpl extends EFactoryImpl implements PlatformFactory
 			case PlatformPackage.COMPONENT: return createComponent();
 			case PlatformPackage.COMPONENTLINK: return createComponentlink();
 			case PlatformPackage.APP_TPL: return createApp_tpl();
-			case PlatformPackage.RESTPL: return createRestpl();
+			case PlatformPackage.RES_TPL: return createRes_tpl();
 			case PlatformPackage.DATABASE: return createDatabase();
 			case PlatformPackage.DATABASELINK: return createDatabaselink();
 			default:
@@ -165,9 +165,9 @@ public class PlatformFactoryImpl extends EFactoryImpl implements PlatformFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Restpl createRestpl() {
-		RestplImpl restpl = new RestplImpl();
-		return restpl;
+	public Res_tpl createRes_tpl() {
+		Res_tplImpl res_tpl = new Res_tplImpl();
+		return res_tpl;
 	}
 
 	/**

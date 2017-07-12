@@ -669,23 +669,32 @@ public interface PlatformPackage extends EPackage {
 	int APP_TPL_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_TPL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>App tpl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP_TPL_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+	int APP_TPL_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.platform.impl.RestplImpl <em>Restpl</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.platform.impl.Res_tplImpl <em>Res tpl</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.platform.impl.RestplImpl
-	 * @see org.eclipse.cmf.occi.platform.impl.PlatformPackageImpl#getRestpl()
+	 * @see org.eclipse.cmf.occi.platform.impl.Res_tplImpl
+	 * @see org.eclipse.cmf.occi.platform.impl.PlatformPackageImpl#getRes_tpl()
 	 * @generated
 	 */
-	int RESTPL = 4;
+	int RES_TPL = 4;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -694,7 +703,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESTPL__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
+	int RES_TPL__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -703,7 +712,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESTPL__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
+	int RES_TPL__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -712,25 +721,34 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESTPL__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
+	int RES_TPL__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
 
 	/**
-	 * The number of structural features of the '<em>Restpl</em>' class.
+	 * The number of structural features of the '<em>Res tpl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESTPL_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int RES_TPL_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Restpl</em>' class.
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESTPL_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+	int RES_TPL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Res tpl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RES_TPL_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.platform.impl.DatabaseImpl <em>Database</em>}' class.
@@ -788,13 +806,22 @@ public interface PlatformPackage extends EPackage {
 	int DATABASE_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATABASE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Database</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATABASE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+	int DATABASE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.platform.impl.DatabaselinkImpl <em>Databaselink</em>}' class.
@@ -870,13 +897,22 @@ public interface PlatformPackage extends EPackage {
 	int DATABASELINK_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATABASELINK___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Databaselink</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATABASELINK_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+	int DATABASELINK_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.platform.Status <em>Status</em>}' enum.
@@ -1067,14 +1103,34 @@ public interface PlatformPackage extends EPackage {
 	EClass getApp_tpl();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.platform.Restpl <em>Restpl</em>}'.
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.platform.App_tpl#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Restpl</em>'.
-	 * @see org.eclipse.cmf.occi.platform.Restpl
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see org.eclipse.cmf.occi.platform.App_tpl#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EClass getRestpl();
+	EOperation getApp_tpl__AppliesConstraint__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.platform.Res_tpl <em>Res tpl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Res tpl</em>'.
+	 * @see org.eclipse.cmf.occi.platform.Res_tpl
+	 * @generated
+	 */
+	EClass getRes_tpl();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.platform.Res_tpl#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see org.eclipse.cmf.occi.platform.Res_tpl#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getRes_tpl__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.platform.Database <em>Database</em>}'.
@@ -1096,6 +1152,16 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDatabase_OcciDatabaseVersion();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.platform.Database#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see org.eclipse.cmf.occi.platform.Database#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getDatabase__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.platform.Databaselink <em>Databaselink</em>}'.
@@ -1139,6 +1205,16 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDatabaselink_OcciDatabaseToken();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.platform.Databaselink#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see org.eclipse.cmf.occi.platform.Databaselink#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getDatabaselink__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.cmf.occi.platform.Status <em>Status</em>}'.
@@ -1324,14 +1400,30 @@ public interface PlatformPackage extends EPackage {
 		EClass APP_TPL = eINSTANCE.getApp_tpl();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.platform.impl.RestplImpl <em>Restpl</em>}' class.
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.platform.impl.RestplImpl
-		 * @see org.eclipse.cmf.occi.platform.impl.PlatformPackageImpl#getRestpl()
 		 * @generated
 		 */
-		EClass RESTPL = eINSTANCE.getRestpl();
+		EOperation APP_TPL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getApp_tpl__AppliesConstraint__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.platform.impl.Res_tplImpl <em>Res tpl</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.cmf.occi.platform.impl.Res_tplImpl
+		 * @see org.eclipse.cmf.occi.platform.impl.PlatformPackageImpl#getRes_tpl()
+		 * @generated
+		 */
+		EClass RES_TPL = eINSTANCE.getRes_tpl();
+
+		/**
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation RES_TPL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRes_tpl__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.platform.impl.DatabaseImpl <em>Database</em>}' class.
@@ -1350,6 +1442,14 @@ public interface PlatformPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATABASE__OCCI_DATABASE_VERSION = eINSTANCE.getDatabase_OcciDatabaseVersion();
+
+		/**
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATABASE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getDatabase__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.platform.impl.DatabaselinkImpl <em>Databaselink</em>}' class.
@@ -1384,6 +1484,14 @@ public interface PlatformPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATABASELINK__OCCI_DATABASE_TOKEN = eINSTANCE.getDatabaselink_OcciDatabaseToken();
+
+		/**
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATABASELINK___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getDatabaselink__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.platform.Status <em>Status</em>}' enum.

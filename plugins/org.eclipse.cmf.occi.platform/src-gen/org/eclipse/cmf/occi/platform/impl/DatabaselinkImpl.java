@@ -12,16 +12,45 @@
  */
 package org.eclipse.cmf.occi.platform.impl;
 
+import java.lang.reflect.InvocationTargetException;
+
+import java.net.URI;
+
+import java.util.Map;
+
+import org.eclipse.cmf.occi.core.Entity;
+
 import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
 
 import org.eclipse.cmf.occi.platform.Databaselink;
 import org.eclipse.cmf.occi.platform.PlatformPackage;
+import org.eclipse.cmf.occi.platform.PlatformTables;
 
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.ocl.pivot.evaluation.Executor;
+
+import org.eclipse.ocl.pivot.ids.IdResolver;
+import org.eclipse.ocl.pivot.ids.TypeId;
+
+import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
+
+import org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsKindOfOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+
+import org.eclipse.ocl.pivot.values.IntegerValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,7 +76,7 @@ public class DatabaselinkImpl extends MixinBaseImpl implements Databaselink {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String OCCI_DATABASE_URI_EDEFAULT = null;
+	protected static final URI OCCI_DATABASE_URI_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getOcciDatabaseUri() <em>Occi Database Uri</em>}' attribute.
@@ -57,7 +86,7 @@ public class DatabaselinkImpl extends MixinBaseImpl implements Databaselink {
 	 * @generated
 	 * @ordered
 	 */
-	protected String occiDatabaseUri = OCCI_DATABASE_URI_EDEFAULT;
+	protected URI occiDatabaseUri = OCCI_DATABASE_URI_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOcciDatabaseUsername() <em>Occi Database Username</em>}' attribute.
@@ -67,7 +96,7 @@ public class DatabaselinkImpl extends MixinBaseImpl implements Databaselink {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String OCCI_DATABASE_USERNAME_EDEFAULT = null;
+	protected static final URI OCCI_DATABASE_USERNAME_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getOcciDatabaseUsername() <em>Occi Database Username</em>}' attribute.
@@ -77,7 +106,7 @@ public class DatabaselinkImpl extends MixinBaseImpl implements Databaselink {
 	 * @generated
 	 * @ordered
 	 */
-	protected String occiDatabaseUsername = OCCI_DATABASE_USERNAME_EDEFAULT;
+	protected URI occiDatabaseUsername = OCCI_DATABASE_USERNAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOcciDatabaseToken() <em>Occi Database Token</em>}' attribute.
@@ -87,7 +116,7 @@ public class DatabaselinkImpl extends MixinBaseImpl implements Databaselink {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String OCCI_DATABASE_TOKEN_EDEFAULT = null;
+	protected static final URI OCCI_DATABASE_TOKEN_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getOcciDatabaseToken() <em>Occi Database Token</em>}' attribute.
@@ -97,7 +126,7 @@ public class DatabaselinkImpl extends MixinBaseImpl implements Databaselink {
 	 * @generated
 	 * @ordered
 	 */
-	protected String occiDatabaseToken = OCCI_DATABASE_TOKEN_EDEFAULT;
+	protected URI occiDatabaseToken = OCCI_DATABASE_TOKEN_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,7 +152,7 @@ public class DatabaselinkImpl extends MixinBaseImpl implements Databaselink {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getOcciDatabaseUri() {
+	public URI getOcciDatabaseUri() {
 		return occiDatabaseUri;
 	}
 
@@ -132,8 +161,8 @@ public class DatabaselinkImpl extends MixinBaseImpl implements Databaselink {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOcciDatabaseUri(String newOcciDatabaseUri) {
-		String oldOcciDatabaseUri = occiDatabaseUri;
+	public void setOcciDatabaseUri(URI newOcciDatabaseUri) {
+		URI oldOcciDatabaseUri = occiDatabaseUri;
 		occiDatabaseUri = newOcciDatabaseUri;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PlatformPackage.DATABASELINK__OCCI_DATABASE_URI, oldOcciDatabaseUri, occiDatabaseUri));
@@ -144,7 +173,7 @@ public class DatabaselinkImpl extends MixinBaseImpl implements Databaselink {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getOcciDatabaseUsername() {
+	public URI getOcciDatabaseUsername() {
 		return occiDatabaseUsername;
 	}
 
@@ -153,8 +182,8 @@ public class DatabaselinkImpl extends MixinBaseImpl implements Databaselink {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOcciDatabaseUsername(String newOcciDatabaseUsername) {
-		String oldOcciDatabaseUsername = occiDatabaseUsername;
+	public void setOcciDatabaseUsername(URI newOcciDatabaseUsername) {
+		URI oldOcciDatabaseUsername = occiDatabaseUsername;
 		occiDatabaseUsername = newOcciDatabaseUsername;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PlatformPackage.DATABASELINK__OCCI_DATABASE_USERNAME, oldOcciDatabaseUsername, occiDatabaseUsername));
@@ -165,7 +194,7 @@ public class DatabaselinkImpl extends MixinBaseImpl implements Databaselink {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getOcciDatabaseToken() {
+	public URI getOcciDatabaseToken() {
 		return occiDatabaseToken;
 	}
 
@@ -174,11 +203,49 @@ public class DatabaselinkImpl extends MixinBaseImpl implements Databaselink {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOcciDatabaseToken(String newOcciDatabaseToken) {
-		String oldOcciDatabaseToken = occiDatabaseToken;
+	public void setOcciDatabaseToken(URI newOcciDatabaseToken) {
+		URI oldOcciDatabaseToken = occiDatabaseToken;
 		occiDatabaseToken = newOcciDatabaseToken;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PlatformPackage.DATABASELINK__OCCI_DATABASE_TOKEN, oldOcciDatabaseToken, occiDatabaseToken));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean appliesConstraint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv appliesConstraint:
+		 *   let severity : Integer[1] = 'Databaselink::appliesConstraint'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : occi::Boolean[1] = self.entity.oclIsKindOf(Componentlink)
+		 *       in
+		 *         'Databaselink::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, PlatformTables.STR_Databaselink_c_c_appliesConstraint);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, PlatformTables.INT_0).booleanValue();
+		/*@NonInvalid*/ boolean symbol_0;
+		if (le) {
+			symbol_0 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_platform_c_c_Componentlink = idResolver.getClass(PlatformTables.CLSSid_Componentlink, null);
+			final /*@NonInvalid*/ Entity entity = this.getEntity();
+			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity, TYP_platform_c_c_Componentlink).booleanValue();
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, PlatformTables.STR_Databaselink_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, PlatformTables.INT_0).booleanValue();
+			symbol_0 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_0;
 	}
 
 	/**
@@ -208,13 +275,13 @@ public class DatabaselinkImpl extends MixinBaseImpl implements Databaselink {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PlatformPackage.DATABASELINK__OCCI_DATABASE_URI:
-				setOcciDatabaseUri((String)newValue);
+				setOcciDatabaseUri((URI)newValue);
 				return;
 			case PlatformPackage.DATABASELINK__OCCI_DATABASE_USERNAME:
-				setOcciDatabaseUsername((String)newValue);
+				setOcciDatabaseUsername((URI)newValue);
 				return;
 			case PlatformPackage.DATABASELINK__OCCI_DATABASE_TOKEN:
-				setOcciDatabaseToken((String)newValue);
+				setOcciDatabaseToken((URI)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -257,6 +324,21 @@ public class DatabaselinkImpl extends MixinBaseImpl implements Databaselink {
 				return OCCI_DATABASE_TOKEN_EDEFAULT == null ? occiDatabaseToken != null : !OCCI_DATABASE_TOKEN_EDEFAULT.equals(occiDatabaseToken);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case PlatformPackage.DATABASELINK___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
+				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

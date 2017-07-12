@@ -17,23 +17,23 @@ import junit.framework.TestCase;
 import junit.textui.TestRunner;
 
 import org.eclipse.cmf.occi.platform.PlatformFactory;
-import org.eclipse.cmf.occi.platform.Restpl;
+import org.eclipse.cmf.occi.platform.Res_tpl;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Restpl</b></em>'.
+ * A test case for the model object '<em><b>Res tpl</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class RestplTest extends TestCase {
+public class Res_tplTest extends TestCase {
 
 	/**
-	 * The fixture for this Restpl test case.
+	 * The fixture for this Res tpl test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Restpl fixture = null;
+	protected Res_tpl fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -41,36 +41,36 @@ public class RestplTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(RestplTest.class);
+		TestRunner.run(Res_tplTest.class);
 	}
 
 	/**
-	 * Constructs a new Restpl test case with the given name.
+	 * Constructs a new Res tpl test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RestplTest(String name) {
+	public Res_tplTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Restpl test case.
+	 * Sets the fixture for this Res tpl test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Restpl fixture) {
+	protected void setFixture(Res_tpl fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this Restpl test case.
+	 * Returns the fixture for this Res tpl test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Restpl getFixture() {
+	protected Res_tpl getFixture() {
 		return fixture;
 	}
 
@@ -82,7 +82,7 @@ public class RestplTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(PlatformFactory.eINSTANCE.createRestpl());
+		setFixture(PlatformFactory.eINSTANCE.createRes_tpl());
 	}
 
 	/**
@@ -96,4 +96,4 @@ public class RestplTest extends TestCase {
 		setFixture(null);
 	}
 
-} //RestplTest
+} //Res_tplTest

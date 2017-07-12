@@ -131,7 +131,8 @@ public interface Application extends Resource {
 	 * @see org.eclipse.cmf.occi.platform.Status
 	 * @see #setOcciAppState(Status)
 	 * @see org.eclipse.cmf.occi.platform.PlatformPackage#getApplication_OcciAppState()
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/platform/ecore!Application!occiAppState'"
+	 * @model required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/platform/ecore!Application!occiAppState'"
 	 * @generated
 	 */
 	Status getOcciAppState();

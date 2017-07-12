@@ -177,7 +177,7 @@ public class ComponentItemProvider extends ResourceItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 PlatformFactory.eINSTANCE.createRestpl()));
+				 PlatformFactory.eINSTANCE.createRes_tpl()));
 
 		newChildDescriptors.add
 			(createChildParameter

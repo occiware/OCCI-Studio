@@ -68,13 +68,13 @@ public interface PlatformFactory extends EFactory {
 	App_tpl createApp_tpl();
 
 	/**
-	 * Returns a new object of class '<em>Restpl</em>'.
+	 * Returns a new object of class '<em>Res tpl</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Restpl</em>'.
+	 * @return a new object of class '<em>Res tpl</em>'.
 	 * @generated
 	 */
-	Restpl createRestpl();
+	Res_tpl createRes_tpl();
 
 	/**
 	 * Returns a new object of class '<em>Database</em>'.
