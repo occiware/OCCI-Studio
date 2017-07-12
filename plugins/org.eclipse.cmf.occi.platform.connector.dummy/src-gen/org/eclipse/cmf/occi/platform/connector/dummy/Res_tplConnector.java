@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed May 24 09:14:43 CEST 2017 from platform:/plugin/org.eclipse.cmf.occi.platform/model/Platform.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed Jul 12 08:51:23 CEST 2017 from platform:/plugin/org.eclipse.cmf.occi.platform/model/Platform.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.platform.connector.dummy;
 
@@ -20,21 +20,21 @@ import org.slf4j.LoggerFactory;
 /**
  * Connector implementation for the OCCI kind:
  * - scheme: http://schemas.ogf.org/occi/platform#
- * - term: restpl
+ * - term: res_tpl
  * - title: Resource Template
  */
-public class RestplConnector extends org.eclipse.cmf.occi.platform.impl.RestplImpl
+public class Res_tplConnector extends org.eclipse.cmf.occi.platform.impl.Res_tplImpl
 {
 	/**
 	 * Initialize the logger.
 	 */
-	private static Logger LOGGER = LoggerFactory.getLogger(RestplConnector.class);
+	private static Logger LOGGER = LoggerFactory.getLogger(Res_tplConnector.class);
 
-	// Start of user code Restplconnector_constructor
+	// Start of user code Res_tplconnector_constructor
 	/**
-	 * Constructs a restpl connector.
+	 * Constructs a res_tpl connector.
 	 */
-	RestplConnector()
+	Res_tplConnector()
 	{
 		LOGGER.debug("Constructor called on " + this);
 		// TODO: Implement this constructor.
