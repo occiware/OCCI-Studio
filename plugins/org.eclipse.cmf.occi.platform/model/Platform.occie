@@ -7,7 +7,7 @@
     </attributes>
     <attributes name="occi.app.context" mutable="false" required="true" description="URL for contextualizing the app." type="//@types.0"/>
     <attributes name="occi.app.url" mutable="false" required="true" description="DNS entry." type="//@types.0"/>
-    <attributes name="occi.app.state" mutable="false" description="State of the application." type="//@types.2"/>
+    <attributes name="occi.app.state" mutable="false" required="true" description="State of the application." type="//@types.2"/>
     <attributes name="occi.app.state.message" mutable="false" description="Human-readable explanation of the current instance state.">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -49,15 +49,17 @@
   <kinds name="ComponentLink" scheme="http://schemas.ogf.org/occi/platform#" title="ComponentLink">
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
   </kinds>
-  <mixins name="App_Tpl" scheme="http://schemas.ogf.org/occi/platform#" title="Application Template"/>
-  <mixins name="ResTpl" scheme="http://schemas.ogf.org/occi/platform#" title="Resource Template"/>
-  <mixins name="DataBase" scheme="http://schemas.ogf.org/occi/platform#" title="Database Mixin">
-    <attributes name="occi.database.version" mutable="false" required="true" description="Version of the database."/>
+  <mixins name="App_Tpl" scheme="http://schemas.ogf.org/occi/platform#" title="Application Template" applies="//@kinds[term='application']"/>
+  <mixins name="Res_Tpl" scheme="http://schemas.ogf.org/occi/platform#" title="Resource Template" applies="//@kinds[term='application'] //@kinds[term='component']"/>
+  <mixins name="DataBase" scheme="http://schemas.ogf.org/occi/platform#" title="Database Mixin" applies="//@kinds[term='component']">
+    <attributes name="occi.database.version" mutable="false" required="true" description="Version of the database.">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
   </mixins>
-  <mixins name="DataBaseLink" scheme="http://schemas.ogf.org/occi/platform#" title="Database Link">
-    <attributes name="occi.database.uri" mutable="false" required="true" description="Connection URI for the database."/>
-    <attributes name="occi.database.username" mutable="false" description="Username."/>
-    <attributes name="occi.database.token" mutable="false" description="Token."/>
+  <mixins name="DataBaseLink" scheme="http://schemas.ogf.org/occi/platform#" title="Database Link" applies="//@kinds[term='componentlink']">
+    <attributes name="occi.database.uri" mutable="false" required="true" description="Connection URI for the database." type="//@types.1"/>
+    <attributes name="occi.database.username" mutable="false" description="Username." type="//@types.1"/>
+    <attributes name="occi.database.token" mutable="false" description="Token." type="//@types.1"/>
   </mixins>
   <types xsi:type="occi:EObjectType" name="URL" instanceClassName="java.net.URL"/>
   <types xsi:type="occi:EObjectType" name="URI" instanceClassName="java.net.URI"/>
