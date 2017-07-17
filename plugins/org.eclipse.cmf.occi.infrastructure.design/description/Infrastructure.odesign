@@ -1,0 +1,1205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="infrastructure" version="10.0.0.201505222000">
+  <ownedViewpoints name="InfrastructureConfiguration" label="Infrastructure Configuration">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="InfrastructureConfiguration Diagram" domainClass="Configuration">
+      <metamodel href="http://schemas.ogf.org/occi/core/ecore#/"/>
+      <metamodel href="http://schemas.ogf.org/occi/infrastructure/ecore#/"/>
+      <defaultLayer name="Default">
+        <edgeMappings name="NetworkLinksEdge" sourceMapping="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']" targetMapping="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer'] //@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']" targetFinderExpression="feature:links">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ComputeLinksEdge" sourceMapping="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']" targetMapping="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer'] //@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']" targetFinderExpression="feature:links">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="StorageLinksEdge" sourceMapping="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']" targetMapping="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer'] //@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']" targetFinderExpression="feature:links">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="StoragelinkTargetEdge" sourceMapping="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer']" targetMapping="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer'] //@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer'] //@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']" targetFinderExpression="feature:target">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="StoragelinkEdge" sourceMapping="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer'] //@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer'] //@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']" targetMapping="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer'] //@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer'] //@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']" domainClass="Storagelink" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="NetworkinterfaceTargetEdge" sourceMapping="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']" targetMapping="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer'] //@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer'] //@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']" targetFinderExpression="feature:target">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="NetworkinterfaceEdge" sourceMapping="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer'] //@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer'] //@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']" targetMapping="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer'] //@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer'] //@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']" domainClass="Networkinterface" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="NetworkContainer"
+            labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="feature:resources" 
+			domainClass="Network">
+<subContainerMappings name="SubNetworkContainer" semanticCandidatesExpression="[self/]" domainClass="Network" childrenPresentation="List">
+          <subNodeMappings name="NetworkId"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkId']"
+                semanticCandidatesExpression="[self/]" domainClass="Network">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NetworkTitle"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Network">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NetworkLocation"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Network">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NetworkSummary"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkSummary']"
+                semanticCandidatesExpression="[self/]" domainClass="Network">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['summary = ' + self.summary.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NetworkOcciNetworkVlan"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkOcciNetworkVlan']"
+                semanticCandidatesExpression="[self/]" domainClass="Network">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkVlan = ' + self.occiNetworkVlan.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NetworkOcciNetworkLabel"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkOcciNetworkLabel']"
+                semanticCandidatesExpression="[self/]" domainClass="Network">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkLabel = ' + self.occiNetworkLabel.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NetworkOcciNetworkState"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkOcciNetworkState']"
+                semanticCandidatesExpression="[self/]" domainClass="Network">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkState = ' + self.occiNetworkState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NetworkOcciNetworkStateMessage"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkOcciNetworkStateMessage']"
+                semanticCandidatesExpression="[self/]" domainClass="Network">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkStateMessage = ' + self.occiNetworkStateMessage.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+<subContainerMappings name="IpNetworkMixin" semanticCandidatesExpression="feature:parts" domainClass="Ipnetwork" childrenPresentation="List">
+<subNodeMappings name="IpnetworkocciNetworkAddress" semanticCandidatesExpression="[self/]" domainClass="Ipnetwork">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkAddress = ' + self.occiNetworkAddress.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="IpnetworkocciNetworkGateway" semanticCandidatesExpression="[self/]" domainClass="Ipnetwork">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkGateway = ' + self.occiNetworkGateway.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="IpnetworkocciNetworkAllocation" semanticCandidatesExpression="[self/]" domainClass="Ipnetwork">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkAllocation = ' + self.occiNetworkAllocation.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="Resource_TplMixin" semanticCandidatesExpression="feature:parts" domainClass="Resource_tpl" childrenPresentation="List">
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Network'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <containerMappings name="ComputeContainer"
+            labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="feature:resources" 
+			domainClass="Compute">
+<subContainerMappings name="SubComputeContainer" semanticCandidatesExpression="[self/]" domainClass="Compute" childrenPresentation="List">
+          <subNodeMappings name="ComputeId"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditComputeId']"
+                semanticCandidatesExpression="[self/]" domainClass="Compute">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ComputeTitle"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditComputeTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Compute">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ComputeLocation"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditComputeLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Compute">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ComputeSummary"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditComputeSummary']"
+                semanticCandidatesExpression="[self/]" domainClass="Compute">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['summary = ' + self.summary.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ComputeOcciComputeArchitecture"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditComputeOcciComputeArchitecture']"
+                semanticCandidatesExpression="[self/]" domainClass="Compute">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiComputeArchitecture = ' + self.occiComputeArchitecture.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ComputeOcciComputeCores"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditComputeOcciComputeCores']"
+                semanticCandidatesExpression="[self/]" domainClass="Compute">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiComputeCores = ' + self.occiComputeCores.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ComputeOcciComputeHostname"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditComputeOcciComputeHostname']"
+                semanticCandidatesExpression="[self/]" domainClass="Compute">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiComputeHostname = ' + self.occiComputeHostname.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ComputeOcciComputeShare"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditComputeOcciComputeShare']"
+                semanticCandidatesExpression="[self/]" domainClass="Compute">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiComputeShare = ' + self.occiComputeShare.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ComputeOcciComputeSpeed"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditComputeOcciComputeSpeed']"
+                semanticCandidatesExpression="[self/]" domainClass="Compute">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiComputeSpeed = ' + self.occiComputeSpeed.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ComputeOcciComputeMemory"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditComputeOcciComputeMemory']"
+                semanticCandidatesExpression="[self/]" domainClass="Compute">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiComputeMemory = ' + self.occiComputeMemory.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ComputeOcciComputeState"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditComputeOcciComputeState']"
+                semanticCandidatesExpression="[self/]" domainClass="Compute">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiComputeState = ' + self.occiComputeState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ComputeOcciComputeStateMessage"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditComputeOcciComputeStateMessage']"
+                semanticCandidatesExpression="[self/]" domainClass="Compute">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiComputeStateMessage = ' + self.occiComputeStateMessage.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+<subContainerMappings name="Os_TplMixin" semanticCandidatesExpression="feature:parts" domainClass="Os_tpl" childrenPresentation="List">
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="SSH_keyMixin" semanticCandidatesExpression="feature:parts" domainClass="Ssh_key" childrenPresentation="List">
+<subNodeMappings name="Ssh_keyocciCredentialsSshPublickey" semanticCandidatesExpression="[self/]" domainClass="Ssh_key">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiCredentialsSshPublickey = ' + self.occiCredentialsSshPublickey.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="User_DataMixin" semanticCandidatesExpression="feature:parts" domainClass="User_data" childrenPresentation="List">
+<subNodeMappings name="User_dataocciComputeUserdata" semanticCandidatesExpression="[self/]" domainClass="User_data">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiComputeUserdata = ' + self.occiComputeUserdata.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="Resource_TplMixin" semanticCandidatesExpression="feature:parts" domainClass="Resource_tpl" childrenPresentation="List">
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Compute'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <containerMappings name="StorageContainer"
+            labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="feature:resources" 
+			domainClass="Storage">
+<subContainerMappings name="SubStorageContainer" semanticCandidatesExpression="[self/]" domainClass="Storage" childrenPresentation="List">
+          <subNodeMappings name="StorageId"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStorageId']"
+                semanticCandidatesExpression="[self/]" domainClass="Storage">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StorageTitle"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStorageTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Storage">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StorageLocation"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStorageLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Storage">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StorageSummary"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStorageSummary']"
+                semanticCandidatesExpression="[self/]" domainClass="Storage">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['summary = ' + self.summary.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StorageOcciStorageSize"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStorageOcciStorageSize']"
+                semanticCandidatesExpression="[self/]" domainClass="Storage">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiStorageSize = ' + self.occiStorageSize.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StorageOcciStorageState"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStorageOcciStorageState']"
+                semanticCandidatesExpression="[self/]" domainClass="Storage">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiStorageState = ' + self.occiStorageState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StorageOcciStorageStateMessage"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStorageOcciStorageStateMessage']"
+                semanticCandidatesExpression="[self/]" domainClass="Storage">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiStorageStateMessage = ' + self.occiStorageStateMessage.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+<subContainerMappings name="Resource_TplMixin" semanticCandidatesExpression="feature:parts" domainClass="Resource_tpl" childrenPresentation="List">
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Storage'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <containerMappings name="StoragelinkContainer"
+            labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="[resources.links->filter(Storagelink)/]" 
+			domainClass="Storagelink">
+<subContainerMappings name="SubStoragelinkContainer" semanticCandidatesExpression="[self/]" domainClass="Storagelink" childrenPresentation="List">
+          <subNodeMappings name="StoragelinkId"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragelinkId']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagelink">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StoragelinkTitle"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragelinkTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagelink">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StoragelinkLocation"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragelinkLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagelink">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StoragelinkOcciStoragelinkDeviceid"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragelinkOcciStoragelinkDeviceid']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagelink">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiStoragelinkDeviceid = ' + self.occiStoragelinkDeviceid.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StoragelinkOcciStoragelinkMountpoint"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragelinkOcciStoragelinkMountpoint']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagelink">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiStoragelinkMountpoint = ' + self.occiStoragelinkMountpoint.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StoragelinkOcciStoragelinkState"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragelinkOcciStoragelinkState']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagelink">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiStoragelinkState = ' + self.occiStoragelinkState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StoragelinkOcciStoragelinkStateMessage"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragelinkOcciStoragelinkStateMessage']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagelink">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiStoragelinkStateMessage = ' + self.occiStoragelinkStateMessage.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Storagelink'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <containerMappings name="NetworkinterfaceContainer"
+            labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="[resources.links->filter(Networkinterface)/]" 
+			domainClass="Networkinterface">
+<subContainerMappings name="SubNetworkinterfaceContainer" semanticCandidatesExpression="[self/]" domainClass="Networkinterface" childrenPresentation="List">
+          <subNodeMappings name="NetworkinterfaceId"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkinterfaceId']"
+                semanticCandidatesExpression="[self/]" domainClass="Networkinterface">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NetworkinterfaceTitle"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkinterfaceTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Networkinterface">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NetworkinterfaceLocation"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkinterfaceLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Networkinterface">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NetworkinterfaceOcciNetworkinterfaceInterface"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkinterfaceOcciNetworkinterfaceInterface']"
+                semanticCandidatesExpression="[self/]" domainClass="Networkinterface">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkinterfaceInterface = ' + self.occiNetworkinterfaceInterface.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NetworkinterfaceOcciNetworkinterfaceMac"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkinterfaceOcciNetworkinterfaceMac']"
+                semanticCandidatesExpression="[self/]" domainClass="Networkinterface">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkinterfaceMac = ' + self.occiNetworkinterfaceMac.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NetworkinterfaceOcciNetworkinterfaceState"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkinterfaceOcciNetworkinterfaceState']"
+                semanticCandidatesExpression="[self/]" domainClass="Networkinterface">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkinterfaceState = ' + self.occiNetworkinterfaceState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NetworkinterfaceOcciNetworkinterfaceStateMessage"
+                labelDirectEdit="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkinterfaceOcciNetworkinterfaceStateMessage']"
+                semanticCandidatesExpression="[self/]" domainClass="Networkinterface">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkinterfaceStateMessage = ' + self.occiNetworkinterfaceStateMessage.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+<subContainerMappings name="IpNetworkInterfaceMixin" semanticCandidatesExpression="feature:parts" domainClass="Ipnetworkinterface" childrenPresentation="List">
+<subNodeMappings name="IpnetworkinterfaceocciNetworkinterfaceAddress" semanticCandidatesExpression="[self/]" domainClass="Ipnetworkinterface">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkinterfaceAddress = ' + self.occiNetworkinterfaceAddress.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="IpnetworkinterfaceocciNetworkinterfaceGateway" semanticCandidatesExpression="[self/]" domainClass="Ipnetworkinterface">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkinterfaceGateway = ' + self.occiNetworkinterfaceGateway.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="IpnetworkinterfaceocciNetworkinterfaceAllocation" semanticCandidatesExpression="[self/]" domainClass="Ipnetworkinterface">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkinterfaceAllocation = ' + self.occiNetworkinterfaceAllocation.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Networkinterface'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <toolSections name="Infrastructure resources">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" 
+			name="Create Network resources"
+			containerMappings="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']"> 
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Network" referenceName="resources">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="['network' + container.oclAsType(Configuration).resources->size().toString()/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" 
+			name="Create Compute resources"
+			containerMappings="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']"> 
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Compute" referenceName="resources">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="['compute' + container.oclAsType(Configuration).resources->size().toString()/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" 
+			name="Create Storage resources"
+			containerMappings="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']"> 
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Storage" referenceName="resources">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="['storage' + container.oclAsType(Configuration).resources->size().toString()/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+</toolSections>
+ <toolSections name="Infrastructure links">
+          <ownedTools xsi:type="tool:EdgeCreationDescription"
+			name="Create Storagelink"
+			edgeMappings="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='StoragelinkEdge']"> 
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Storagelink" referenceName="links" variableName="link">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription"
+			name="Create Networkinterface"
+			edgeMappings="//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='NetworkinterfaceEdge']"> 
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Networkinterface" referenceName="links" variableName="link">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+   </toolSections>   
+ <toolSections name="Infrastructure mixins">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create IpNetwork" containerMappings="
+//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='IpNetworkMixin']
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Ipnetwork" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create IpNetworkInterface" containerMappings="
+//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='IpNetworkInterfaceMixin']
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Ipnetworkinterface" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Os_Tpl" containerMappings="
+//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='Os_TplMixin']
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Os_tpl" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Resource_Tpl" containerMappings="
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Resource_tpl" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create SSH_key" containerMappings="
+//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SSH_keyMixin']
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Ssh_key" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create User_Data" containerMappings="
+//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='User_DataMixin']
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="User_data" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+   </toolSections>    
+        <toolSections name="Tools">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditEntityTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkSummary" inputLabelExpression="feature:summary">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="summary" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkOcciNetworkVlan" inputLabelExpression="feature:occiNetworkVlan">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkVlan" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkOcciNetworkLabel" inputLabelExpression="feature:occiNetworkLabel">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkLabel" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkOcciNetworkState" inputLabelExpression="feature:occiNetworkState">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkState" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkOcciNetworkStateMessage" inputLabelExpression="feature:occiNetworkStateMessage">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkStateMessage" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="NetworkUpAction" label="Up" precondition="[self.oclIsKindOf(Network)/]">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Network).up()/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="NetworkDownAction" label="Down" precondition="[self.oclIsKindOf(Network)/]">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Network).down()/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditComputeId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditComputeTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditComputeLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditComputeSummary" inputLabelExpression="feature:summary">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="summary" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditComputeOcciComputeArchitecture" inputLabelExpression="feature:occiComputeArchitecture">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiComputeArchitecture" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditComputeOcciComputeCores" inputLabelExpression="feature:occiComputeCores">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiComputeCores" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditComputeOcciComputeHostname" inputLabelExpression="feature:occiComputeHostname">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiComputeHostname" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditComputeOcciComputeShare" inputLabelExpression="feature:occiComputeShare">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiComputeShare" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditComputeOcciComputeSpeed" inputLabelExpression="feature:occiComputeSpeed">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiComputeSpeed" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditComputeOcciComputeMemory" inputLabelExpression="feature:occiComputeMemory">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiComputeMemory" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditComputeOcciComputeState" inputLabelExpression="feature:occiComputeState">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiComputeState" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditComputeOcciComputeStateMessage" inputLabelExpression="feature:occiComputeStateMessage">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiComputeStateMessage" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="ComputeStartAction" label="Start" precondition="[self.oclIsKindOf(Compute)/]">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Compute).start()/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="ComputeStopAction" label="Stop" precondition="[self.oclIsKindOf(Compute)/]">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="StopMethodGraceful" label="Graceful">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Compute).stop(StopMethod::graceful)/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="StopMethodAcpioff" label="Acpioff">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Compute).stop(StopMethod::acpioff)/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="StopMethodPoweroff" label="Poweroff">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Compute).stop(StopMethod::poweroff)/]"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="ComputeRestartAction" label="Restart" precondition="[self.oclIsKindOf(Compute)/]">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="RestartMethodGraceful" label="Graceful">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Compute).restart(RestartMethod::graceful)/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="RestartMethodWarm" label="Warm">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Compute).restart(RestartMethod::warm)/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="RestartMethodCold" label="Cold">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Compute).restart(RestartMethod::cold)/]"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="ComputeSuspendAction" label="Suspend" precondition="[self.oclIsKindOf(Compute)/]">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="SuspendMethodHibernate" label="Hibernate">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Compute).suspend(SuspendMethod::hibernate)/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="SuspendMethodSuspend" label="Suspend">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Compute).suspend(SuspendMethod::suspend)/]"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStorageId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStorageTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStorageLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStorageSummary" inputLabelExpression="feature:summary">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="summary" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStorageOcciStorageSize" inputLabelExpression="feature:occiStorageSize">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiStorageSize" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStorageOcciStorageState" inputLabelExpression="feature:occiStorageState">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiStorageState" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStorageOcciStorageStateMessage" inputLabelExpression="feature:occiStorageStateMessage">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiStorageStateMessage" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="StorageOnlineAction" label="Online" precondition="[self.oclIsKindOf(Storage)/]">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Storage).online()/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="StorageOfflineAction" label="Offline" precondition="[self.oclIsKindOf(Storage)/]">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Storage).offline()/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragelinkId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragelinkTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragelinkLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragelinkOcciStoragelinkDeviceid" inputLabelExpression="feature:occiStoragelinkDeviceid">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiStoragelinkDeviceid" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragelinkOcciStoragelinkMountpoint" inputLabelExpression="feature:occiStoragelinkMountpoint">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiStoragelinkMountpoint" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragelinkOcciStoragelinkState" inputLabelExpression="feature:occiStoragelinkState">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiStoragelinkState" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragelinkOcciStoragelinkStateMessage" inputLabelExpression="feature:occiStoragelinkStateMessage">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiStoragelinkStateMessage" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkinterfaceId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkinterfaceTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkinterfaceLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkinterfaceOcciNetworkinterfaceInterface" inputLabelExpression="feature:occiNetworkinterfaceInterface">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkinterfaceInterface" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkinterfaceOcciNetworkinterfaceMac" inputLabelExpression="feature:occiNetworkinterfaceMac">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkinterfaceMac" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkinterfaceOcciNetworkinterfaceState" inputLabelExpression="feature:occiNetworkinterfaceState">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkinterfaceState" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkinterfaceOcciNetworkinterfaceStateMessage" inputLabelExpression="feature:occiNetworkinterfaceStateMessage">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkinterfaceStateMessage" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditIpnetworkOcciNetworkAddress" inputLabelExpression="feature:occiNetworkAddress">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkAddress" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditIpnetworkOcciNetworkGateway" inputLabelExpression="feature:occiNetworkGateway">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkGateway" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditIpnetworkOcciNetworkAllocation" inputLabelExpression="feature:occiNetworkAllocation">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkAllocation" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditIpnetworkinterfaceOcciNetworkinterfaceAddress" inputLabelExpression="feature:occiNetworkinterfaceAddress">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkinterfaceAddress" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditIpnetworkinterfaceOcciNetworkinterfaceGateway" inputLabelExpression="feature:occiNetworkinterfaceGateway">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkinterfaceGateway" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditIpnetworkinterfaceOcciNetworkinterfaceAllocation" inputLabelExpression="feature:occiNetworkinterfaceAllocation">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkinterfaceAllocation" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditSsh_keyOcciCredentialsSshPublickey" inputLabelExpression="feature:occiCredentialsSshPublickey">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiCredentialsSshPublickey" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditUser_dataOcciComputeUserdata" inputLabelExpression="feature:occiComputeUserdata">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiComputeUserdata" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="CRUD operations" precondition="[self.oclIsKindOf(Entity)/]">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Create">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiCreate()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Retrieve">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiRetrieve()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Update">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiUpdate()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Delete">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiDelete()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+<!--
+    <ownedJavaExtensions qualifiedClassName="org.occiware.clouddesigner.occi.design.services.DesignServices"/>
+-->
+  </ownedViewpoints>
+</description:Group>
