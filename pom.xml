@@ -109,11 +109,6 @@
 
   <repositories>
     <!-- configure p2 repository to resolve against -->
-    <repository>
-      <id>neon</id>
-      <layout>p2</layout>
-      <url>http://download.eclipse.org/releases/neon</url>
-    </repository>
 	<repository>
       <id>oxygen</id>
       <layout>p2</layout>
