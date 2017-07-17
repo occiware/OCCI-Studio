@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="monitoring" version="10.0.0.201505222000">
+  <ownedViewpoints name="MonitoringConfiguration" label="Monitoring Configuration">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="MonitoringConfiguration Diagram" domainClass="Configuration">
+      <metamodel href="http://schemas.ogf.org/occi/core/ecore#/"/>
+      <metamodel href="http://schemas.ogf.org/occi/monitoring/ecore#/"/>
+      <defaultLayer name="Default">
+        <edgeMappings name="SensorLinksEdge" sourceMapping="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='SensorContainer']" targetMapping="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CollectorContainer']" targetFinderExpression="feature:links">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="CollectorTargetEdge" sourceMapping="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CollectorContainer']" targetMapping="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='SensorContainer']" targetFinderExpression="feature:target">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="CollectorEdge" sourceMapping="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='SensorContainer']" targetMapping="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='SensorContainer']" domainClass="Collector" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="SensorContainer"
+            labelDirectEdit="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="feature:resources" 
+			domainClass="Sensor">
+<subContainerMappings name="SubSensorContainer" semanticCandidatesExpression="[self/]" domainClass="Sensor" childrenPresentation="List">
+          <subNodeMappings name="SensorId"
+                labelDirectEdit="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditSensorId']"
+                semanticCandidatesExpression="[self/]" domainClass="Sensor">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="SensorTitle"
+                labelDirectEdit="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditSensorTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Sensor">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="SensorLocation"
+                labelDirectEdit="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditSensorLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Sensor">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="SensorSummary"
+                labelDirectEdit="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditSensorSummary']"
+                semanticCandidatesExpression="[self/]" domainClass="Sensor">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['summary = ' + self.summary.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="SensorOcciSensorTimebase"
+                labelDirectEdit="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditSensorOcciSensorTimebase']"
+                semanticCandidatesExpression="[self/]" domainClass="Sensor">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiSensorTimebase = ' + self.occiSensorTimebase.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="SensorOcciSensorTimestart"
+                labelDirectEdit="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditSensorOcciSensorTimestart']"
+                semanticCandidatesExpression="[self/]" domainClass="Sensor">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiSensorTimestart = ' + self.occiSensorTimestart.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="SensorOcciSensorTimestop"
+                labelDirectEdit="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditSensorOcciSensorTimestop']"
+                semanticCandidatesExpression="[self/]" domainClass="Sensor">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiSensorTimestop = ' + self.occiSensorTimestop.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="SensorOcciSensorPeriod"
+                labelDirectEdit="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditSensorOcciSensorPeriod']"
+                semanticCandidatesExpression="[self/]" domainClass="Sensor">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiSensorPeriod = ' + self.occiSensorPeriod.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="SensorOcciSensorGranularity"
+                labelDirectEdit="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditSensorOcciSensorGranularity']"
+                semanticCandidatesExpression="[self/]" domainClass="Sensor">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiSensorGranularity = ' + self.occiSensorGranularity.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="SensorOcciSensorAccuracy"
+                labelDirectEdit="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditSensorOcciSensorAccuracy']"
+                semanticCandidatesExpression="[self/]" domainClass="Sensor">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiSensorAccuracy = ' + self.occiSensorAccuracy.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+<subContainerMappings name="AggregatorMixin" semanticCandidatesExpression="feature:parts" domainClass="Aggregator" childrenPresentation="List">
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="PublisherMixin" semanticCandidatesExpression="feature:parts" domainClass="Publisher" childrenPresentation="List">
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Sensor'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <containerMappings name="CollectorContainer"
+            labelDirectEdit="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="[resources.links->filter(Collector)/]" 
+			domainClass="Collector">
+<subContainerMappings name="SubCollectorContainer" semanticCandidatesExpression="[self/]" domainClass="Collector" childrenPresentation="List">
+          <subNodeMappings name="CollectorId"
+                labelDirectEdit="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditCollectorId']"
+                semanticCandidatesExpression="[self/]" domainClass="Collector">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="CollectorTitle"
+                labelDirectEdit="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditCollectorTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Collector">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="CollectorLocation"
+                labelDirectEdit="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditCollectorLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Collector">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="CollectorOcciCollectorPeriod"
+                labelDirectEdit="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditCollectorOcciCollectorPeriod']"
+                semanticCandidatesExpression="[self/]" domainClass="Collector">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiCollectorPeriod = ' + self.occiCollectorPeriod.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="CollectorOcciSensorAccuracy"
+                labelDirectEdit="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditCollectorOcciSensorAccuracy']"
+                semanticCandidatesExpression="[self/]" domainClass="Collector">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiSensorAccuracy = ' + self.occiSensorAccuracy.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="CollectorOcciSensorGranularity"
+                labelDirectEdit="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditCollectorOcciSensorGranularity']"
+                semanticCandidatesExpression="[self/]" domainClass="Collector">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiSensorGranularity = ' + self.occiSensorGranularity.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+<subContainerMappings name="MetricMixin" semanticCandidatesExpression="feature:parts" domainClass="Metric" childrenPresentation="List">
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Collector'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <toolSections name="Monitoring resources">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" 
+			name="Create Sensor resources"
+			containerMappings="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='SensorContainer']"> 
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Sensor" referenceName="resources">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="['sensor' + container.oclAsType(Configuration).resources->size().toString()/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+</toolSections>
+ <toolSections name="Monitoring links">
+          <ownedTools xsi:type="tool:EdgeCreationDescription"
+			name="Create Collector"
+			edgeMappings="//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='CollectorEdge']"> 
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Collector" referenceName="links" variableName="link">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+   </toolSections>   
+ <toolSections name="Monitoring mixins">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Metric" containerMappings="
+//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CollectorContainer']/@subContainerMappings[name='MetricMixin']
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Metric" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Aggregator" containerMappings="
+//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='SensorContainer']/@subContainerMappings[name='AggregatorMixin']
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Aggregator" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Publisher" containerMappings="
+//@ownedViewpoints[name='MonitoringConfiguration']/@ownedRepresentations[name='MonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='SensorContainer']/@subContainerMappings[name='PublisherMixin']
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Publisher" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+   </toolSections>    
+        <toolSections name="Tools">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditEntityTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditSensorId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditSensorTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditSensorLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditSensorSummary" inputLabelExpression="feature:summary">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="summary" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditSensorOcciSensorTimebase" inputLabelExpression="feature:occiSensorTimebase">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorTimebase" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditSensorOcciSensorTimestart" inputLabelExpression="feature:occiSensorTimestart">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorTimestart" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditSensorOcciSensorTimestop" inputLabelExpression="feature:occiSensorTimestop">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorTimestop" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditSensorOcciSensorPeriod" inputLabelExpression="feature:occiSensorPeriod">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorPeriod" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditSensorOcciSensorGranularity" inputLabelExpression="feature:occiSensorGranularity">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorGranularity" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditSensorOcciSensorAccuracy" inputLabelExpression="feature:occiSensorAccuracy">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorAccuracy" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditCollectorId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditCollectorTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditCollectorLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditCollectorOcciCollectorPeriod" inputLabelExpression="feature:occiCollectorPeriod">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiCollectorPeriod" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditCollectorOcciSensorAccuracy" inputLabelExpression="feature:occiSensorAccuracy">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorAccuracy" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditCollectorOcciSensorGranularity" inputLabelExpression="feature:occiSensorGranularity">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorGranularity" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="CRUD operations" precondition="[self.oclIsKindOf(Entity)/]">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Create">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiCreate()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Retrieve">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiRetrieve()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Update">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiUpdate()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Delete">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiDelete()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+<!--
+    <ownedJavaExtensions qualifiedClassName="org.occiware.clouddesigner.occi.design.services.DesignServices"/>
+-->
+  </ownedViewpoints>
+</description:Group>
