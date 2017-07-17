@@ -36,6 +36,10 @@
     <module>plugins/org.eclipse.cmf.occi.core.gen.emf</module>
     <module>plugins/org.eclipse.cmf.occi.core.gen.emf.ui</module>
 
+    <!-- OCCI Designer Generator -->
+    <module>plugins/org.eclipse.cmf.occi.core.gen.design</module>
+    <module>plugins/org.eclipse.cmf.occi.core.gen.design.ui</module>
+    
     <!-- Connector Generator -->
     <module>plugins/org.eclipse.cmf.occi.core.gen.connector</module>
     <module>plugins/org.eclipse.cmf.occi.core.gen.connector.ui</module>
@@ -48,6 +52,7 @@
     <module>plugins/org.eclipse.cmf.occi.infrastructure.edit</module>
     <module>plugins/org.eclipse.cmf.occi.infrastructure.editor</module>
     <module>plugins/org.eclipse.cmf.occi.infrastructure.tests</module>
+    <module>plugins/org.eclipse.cmf.occi.infrastructure.design</module>
     <module>plugins/org.eclipse.cmf.occi.infrastructure.connector.dummy</module>
 
     <!-- OCCI crtp extension -->
@@ -55,6 +60,7 @@
     <module>plugins/org.eclipse.cmf.occi.crtp.edit</module>
     <module>plugins/org.eclipse.cmf.occi.crtp.editor</module>
     <module>plugins/org.eclipse.cmf.occi.crtp.tests</module>
+    <module>plugins/org.eclipse.cmf.occi.crtp.design</module>
     <module>plugins/org.eclipse.cmf.occi.crtp.connector.dummy</module>        
     
     <!-- OCCI platform extension -->
@@ -62,6 +68,7 @@
     <module>plugins/org.eclipse.cmf.occi.platform.edit</module>
     <module>plugins/org.eclipse.cmf.occi.platform.editor</module>
     <module>plugins/org.eclipse.cmf.occi.platform.tests</module>
+    <module>plugins/org.eclipse.cmf.occi.platform.design</module>
     <module>plugins/org.eclipse.cmf.occi.platform.connector.dummy</module>        
 
     <!-- OCCI sla extension -->
@@ -69,6 +76,7 @@
     <module>plugins/org.eclipse.cmf.occi.sla.edit</module>
     <module>plugins/org.eclipse.cmf.occi.sla.editor</module>
     <module>plugins/org.eclipse.cmf.occi.sla.tests</module>
+    <module>plugins/org.eclipse.cmf.occi.sla.design</module>
     <module>plugins/org.eclipse.cmf.occi.sla.connector.dummy</module>      
     
     <!-- OCCI monitoring extension -->
@@ -76,6 +84,7 @@
     <module>plugins/org.eclipse.cmf.occi.monitoring.edit</module>
     <module>plugins/org.eclipse.cmf.occi.monitoring.editor</module>
     <module>plugins/org.eclipse.cmf.occi.monitoring.tests</module>
+    <module>plugins/org.eclipse.cmf.occi.monitoring.design</module>
     <module>plugins/org.eclipse.cmf.occi.monitoring.connector.dummy</module>    
              
     <!-- Releng -->
@@ -105,7 +114,12 @@
       <layout>p2</layout>
       <url>http://download.eclipse.org/releases/neon</url>
     </repository>
-
+	<repository>
+      <id>oxygen</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/releases/oxygen</url>
+    </repository>
+	
     <!-- TODO: remove when OCL 6.3.0 integrated into an official Eclipse distribution (i.e., Neon or Oxygen). -->
     <repository>
       <id>OCL-6.3</id>

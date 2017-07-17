@@ -300,6 +300,19 @@ litigation.
          version="0.0.0"
          unpack="false"/>
    <plugin
+         id="org.eclipse.cmf.occi.core.gen.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.cmf.occi.core.gen.design.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
          id="org.eclipse.cmf.occi.core.gen.connector"
          download-size="0"
          install-size="0"
@@ -336,6 +349,12 @@ litigation.
          version="0.0.0"
          unpack="false"/>
    <plugin
+         id="org.eclipse.cmf.occi.infrastructure.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
          id="org.eclipse.cmf.occi.infrastructure.connector.dummy"
          download-size="0"
          install-size="0"
@@ -366,6 +385,12 @@ litigation.
          version="0.0.0"
          unpack="false"/>
    <plugin
+         id="org.eclipse.cmf.occi.crtp.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
          id="org.eclipse.cmf.occi.crtp.connector.dummy"
          download-size="0"
          install-size="0"
@@ -391,6 +416,12 @@ litigation.
          unpack="false"/>
    <plugin
          id="org.eclipse.cmf.occi.monitoring.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
+         id="org.eclipse.cmf.occi.monitoring.design"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -432,6 +463,12 @@ litigation.
          version="0.0.0"
          unpack="false"/>
    <plugin
+         id="org.eclipse.cmf.occi.platform.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
          id="org.eclipse.cmf.occi.sla"
          download-size="0"
          install-size="0"
@@ -451,6 +488,12 @@ litigation.
          unpack="false"/>
    <plugin
          id="org.eclipse.cmf.occi.sla.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
+         id="org.eclipse.cmf.occi.sla.design"
          download-size="0"
          install-size="0"
          version="0.0.0"
