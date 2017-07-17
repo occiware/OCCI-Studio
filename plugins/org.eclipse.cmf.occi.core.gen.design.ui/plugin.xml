@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <!-- Popup menu for generating Sirius Designer. -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="org.eclipse.cmf.occi.core.gen.design.ui.contribution"
+            nameFilter="*.ecore"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="org.eclipse.cmf.occi.core.occi-studio.ui.menu"
+               label="OCCI Studio"
+               path="additionsOCCIStudio">
+            <separator
+                  name="group"/>
+         </menu>
+         <action
+               class="org.eclipse.cmf.occi.core.gen.design.ui.DesignerGeneratorAction"
+               enablesFor="1"
+               id="org.eclipse.cmf.occi.core.gen.design.generateSiriusDesigner"
+               label="Generate Sirius Design"
+               menubarPath="org.eclipse.cmf.occi.core.occi-studio.ui.menu/group">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>
