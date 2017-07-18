@@ -20,7 +20,8 @@
       <!-- @generated Platform -->
       <package
             uri="http://schemas.ogf.org/occi/platform/ecore"
-            class="org.eclipse.cmf.occi.platform.PlatformPackage"/>
+            class="org.eclipse.cmf.occi.platform.PlatformPackage"
+            genModel="model/Platform.genmodel"/>
    </extension>
    <!-- Register the parser for .platform files. -->
    <extension point="org.eclipse.emf.ecore.extension_parser">
