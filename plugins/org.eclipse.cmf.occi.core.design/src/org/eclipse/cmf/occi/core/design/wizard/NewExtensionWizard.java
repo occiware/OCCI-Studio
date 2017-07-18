@@ -338,6 +338,7 @@ public class NewExtensionWizard extends BasicNewProjectResourceWizard {
 				+ " which accompanies this distribution, and is available at\n"
 				+ " http://www.eclipse.org/legal/epl-v10.html\n" + "\n" + " Contributors:\n"
 				+ " - William Piers <william.piers@obeo.fr>\n" + " - Philippe Merle <philippe.merle@inria.fr>\n"
+				+ " - Faiez Zalila <faiez.zalila@inria.fr>\n"
 				+ "-->\n" + "<plugin>\n" + "\n" + "   <!-- Register the " + extensionName + " extension. -->\n"
 				+ "   <extension point=\"org.eclipse.cmf.occi.core.occie\">\n" + "      <occie scheme=\""
 				+ extensionScheme + "\" file=\"model/" + extensionName + ".occie\"/>\n" + "   </extension>\n" + "\n"
