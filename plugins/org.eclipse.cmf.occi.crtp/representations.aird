@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_CCwLgE31EeeMG6ctq96PWw" selectedViews="_EE5pcE31EeeMG6ctq96PWw" version="11.1.0.201608251200">
-    <semanticResources>model/crtp.ecore</semanticResources>
+  <viewpoint:DAnalysis xmi:id="_CCwLgE31EeeMG6ctq96PWw" selectedViews="_EE5pcE31EeeMG6ctq96PWw" version="12.0.0.201704271200">
     <semanticResources>platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore</semanticResources>
-    <semanticResources>platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
-    <semanticResources>model/crtp.genmodel</semanticResources>
-    <semanticResources>platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel</semanticResources>
     <semanticResources>platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel</semanticResources>
     <semanticResources>model/crtp.occie</semanticResources>
     <semanticResources>http://schemas.ogf.org/occi/core</semanticResources>
     <semanticResources>http://schemas.ogf.org/occi/infrastructure</semanticResources>
+    <semanticResources>platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore</semanticResources>
+    <semanticResources>platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel</semanticResources>
+    <semanticResources>model/crtp.ecore</semanticResources>
+    <semanticResources>model/crtp.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_EE5pcE31EeeMG6ctq96PWw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_IqBacE31EeeMG6ctq96PWw" name="crtp" representation="_IqCBgE31EeeMG6ctq96PWw">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_IqBacE31EeeMG6ctq96PWw" name="crtp" repPath="#_IqCBgE31EeeMG6ctq96PWw">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']"/>
         <target xmi:type="occi:Extension" href="model/crtp.occie#/"/>
       </ownedRepresentationDescriptors>

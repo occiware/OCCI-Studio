@@ -133,6 +133,7 @@ public class CrtpPackageImpl extends EPackageImpl implements CrtpPackage {
 
 		// Initialize simple dependencies
 		InfrastructurePackage.eINSTANCE.eClass();
+		OCCIPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theCrtpPackage.createPackageContents();

@@ -79,6 +79,6 @@
       </genFeatures>
     </genClasses>
   </genPackages>
-  <usedGenPackages href="platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel#//infrastructure"/>
+  <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel#//infrastructure"/>
   <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>
 </genmodel:GenModel>
