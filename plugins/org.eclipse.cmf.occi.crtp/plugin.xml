@@ -32,7 +32,7 @@
    <!-- Define URI mapping. -->
    <extension point="org.eclipse.emf.ecore.uri_mapping" >
       <mapping
-            source="http://schemas.ogf.org/occi/infrastructure/compute/template/1.1#"
+            source="http://schemas.ogf.org/occi/infrastructure/compute/template/1.1"
             target="platform:/plugin/org.eclipse.cmf.occi.crtp/model/crtp.occie"/>
    </extension>
    
