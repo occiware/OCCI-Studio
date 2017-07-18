@@ -20,7 +20,8 @@
       <!-- @generated Infrastructure -->
       <package
             uri="http://schemas.ogf.org/occi/infrastructure/ecore"
-            class="org.eclipse.cmf.occi.infrastructure.InfrastructurePackage"/>
+            class="org.eclipse.cmf.occi.infrastructure.InfrastructurePackage"
+            genModel="model/Infrastructure.genmodel"/>
    </extension>
    <!-- Register the parser for .infrastructure files. -->
    <extension point="org.eclipse.emf.ecore.extension_parser">
