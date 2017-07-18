@@ -28,6 +28,7 @@ import org.eclipse.cmf.occi.infrastructure.Network;
  * <ul>
  *   <li>{@link org.eclipse.cmf.occi.infrastructure.Network#up() <em>Up</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.infrastructure.Network#down() <em>Down</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.infrastructure.Network#UniqueVlan(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Unique Vlan</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -127,6 +128,19 @@ public class NetworkTest extends TestCase {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.infrastructure.Network#UniqueVlan(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Unique Vlan</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.infrastructure.Network#UniqueVlan(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testUniqueVlan__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		//fail();
 	}
 
 } //NetworkTest

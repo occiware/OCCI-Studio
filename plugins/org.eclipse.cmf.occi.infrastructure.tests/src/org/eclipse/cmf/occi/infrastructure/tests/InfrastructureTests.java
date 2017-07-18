@@ -46,6 +46,12 @@ public class InfrastructureTests extends TestSuite {
 		suite.addTestSuite(StorageTest.class);
 		suite.addTestSuite(StoragelinkTest.class);
 		suite.addTestSuite(NetworkinterfaceTest.class);
+		suite.addTestSuite(IpnetworkTest.class);
+		suite.addTestSuite(IpnetworkinterfaceTest.class);
+		suite.addTestSuite(Os_tplTest.class);
+		suite.addTestSuite(Resource_tplTest.class);
+		suite.addTestSuite(Ssh_keyTest.class);
+		suite.addTestSuite(User_dataTest.class);
 		return suite;
 	}
 

@@ -23,6 +23,13 @@ import org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Ipnetworkinterface</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface#IPAdressesMustBeUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>IP Adresses Must Be Unique</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class IpnetworkinterfaceTest extends TestCase {
@@ -94,6 +101,32 @@ public class IpnetworkinterfaceTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testAppliesConstraint__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		//fail();
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface#IPAdressesMustBeUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>IP Adresses Must Be Unique</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface#IPAdressesMustBeUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testIPAdressesMustBeUnique__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		//fail();
 	}
 
 } //IpnetworkinterfaceTest
