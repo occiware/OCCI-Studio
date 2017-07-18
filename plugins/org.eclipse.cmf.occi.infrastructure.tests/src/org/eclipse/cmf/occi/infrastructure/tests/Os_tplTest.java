@@ -23,6 +23,12 @@ import org.eclipse.cmf.occi.infrastructure.Os_tpl;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Os tpl</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link org.eclipse.cmf.occi.infrastructure.Os_tpl#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class Os_tplTest extends TestCase {
@@ -94,6 +100,19 @@ public class Os_tplTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.infrastructure.Os_tpl#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.infrastructure.Os_tpl#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testAppliesConstraint__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		//fail();
 	}
 
 } //Os_tplTest
