@@ -107,12 +107,12 @@ public class NetworkinterfaceTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.infrastructure.Networkinterface#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testTargetConstraint__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
-		//fail();
+		// fail();
 	}
 
 } //NetworkinterfaceTest
