@@ -43,6 +43,8 @@ public class SlaTests extends TestSuite {
 		TestSuite suite = new SlaTests("sla Tests");
 		suite.addTestSuite(AgreementTest.class);
 		suite.addTestSuite(Agreement_linkTest.class);
+		suite.addTestSuite(Agreement_tplTest.class);
+		suite.addTestSuite(Agreement_termTest.class);
 		return suite;
 	}
 
