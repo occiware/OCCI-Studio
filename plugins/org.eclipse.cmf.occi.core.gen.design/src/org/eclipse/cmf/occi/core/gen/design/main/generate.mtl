@@ -64,7 +64,7 @@
         <toolSections name="[ePackage.name.toUpperFirst()/] resources">
 [for (resourceClass : EClass | ePackage.getAllResourceClasses())]
           <ownedTools xsi:type="tool:ContainerCreationDescription" 
-			name="Create [resourceClass.name/] resources"
+			name="Create [resourceClass.name/]"
 			containerMappings="//@ownedViewpoints['['/]name='[ePackage.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[ePackage.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resourceClass.name/]Container'[']'/]"> 
             <variable name="container"/>
             <viewVariable name="containerView"/>
