@@ -43,6 +43,9 @@ public class MonitoringTests extends TestSuite {
 		TestSuite suite = new MonitoringTests("monitoring Tests");
 		suite.addTestSuite(SensorTest.class);
 		suite.addTestSuite(CollectorTest.class);
+		suite.addTestSuite(MetricTest.class);
+		suite.addTestSuite(AggregatorTest.class);
+		suite.addTestSuite(PublisherTest.class);
 		return suite;
 	}
 
