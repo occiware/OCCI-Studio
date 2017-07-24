@@ -41,6 +41,7 @@ public class CrtpAllTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new CrtpAllTests("Crtp Tests");
+		suite.addTest(CrtpTests.suite());
 		return suite;
 	}
 

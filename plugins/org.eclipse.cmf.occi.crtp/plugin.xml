@@ -20,7 +20,7 @@
       <!-- @generated crtp -->
       <package
             uri="http://schemas.ogf.org/occi/infrastructure/compute/template/1.1/ecore"
-            class="org.eclipse.cmf.occi.crtp.CrtpPackage"          
+            class="org.eclipse.cmf.occi.crtp.CrtpPackage"
             genModel="model/crtp.genmodel"/>
    </extension>
    <!-- Register the parser for .crtp files. -->
