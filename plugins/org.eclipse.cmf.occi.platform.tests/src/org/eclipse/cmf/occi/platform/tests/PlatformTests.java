@@ -44,6 +44,10 @@ public class PlatformTests extends TestSuite {
 		suite.addTestSuite(ApplicationTest.class);
 		suite.addTestSuite(ComponentTest.class);
 		suite.addTestSuite(ComponentlinkTest.class);
+		suite.addTestSuite(App_tplTest.class);
+		suite.addTestSuite(Res_tplTest.class);
+		suite.addTestSuite(DatabaseTest.class);
+		suite.addTestSuite(DatabaselinkTest.class);
 		return suite;
 	}
 
