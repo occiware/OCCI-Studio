@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="sla" version="10.0.0.201505222000">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="sla" version="12.0.0.2017041100">
   <ownedViewpoints name="SlaConfiguration" label="Sla Configuration">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SlaConfiguration Diagram" domainClass="Configuration">
       <metamodel href="http://schemas.ogf.org/occi/core/ecore#/"/>
@@ -29,128 +29,109 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="AgreementContainer"
-            labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
-			semanticCandidatesExpression="feature:resources" 
-			domainClass="Agreement">
-<subContainerMappings name="SubAgreementContainer" semanticCandidatesExpression="[self/]" domainClass="Agreement" childrenPresentation="List">
-          <subNodeMappings name="AgreementId"
-                labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreementId']"
-                semanticCandidatesExpression="[self/]" domainClass="Agreement">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="AgreementTitle"
-                labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreementTitle']"
-                semanticCandidatesExpression="[self/]" domainClass="Agreement">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="AgreementLocation"
-                labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreementLocation']"
-                semanticCandidatesExpression="[self/]" domainClass="Agreement">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="AgreementSummary"
-                labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreementSummary']"
-                semanticCandidatesExpression="[self/]" domainClass="Agreement">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['summary = ' + self.summary.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="AgreementOcciAgreementState"
-                labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreementOcciAgreementState']"
-                semanticCandidatesExpression="[self/]" domainClass="Agreement">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiAgreementState = ' + self.occiAgreementState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="AgreementOcciAgreementAgreedAt"
-                labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreementOcciAgreementAgreedAt']"
-                semanticCandidatesExpression="[self/]" domainClass="Agreement">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiAgreementAgreedAt = ' + self.occiAgreementAgreedAt.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="AgreementOcciAgreementEffectiveFrom"
-                labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreementOcciAgreementEffectiveFrom']"
-                semanticCandidatesExpression="[self/]" domainClass="Agreement">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiAgreementEffectiveFrom = ' + self.occiAgreementEffectiveFrom.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="AgreementOcciAgreementEffectiveUntil"
-                labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreementOcciAgreementEffectiveUntil']"
-                semanticCandidatesExpression="[self/]" domainClass="Agreement">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiAgreementEffectiveUntil = ' + self.occiAgreementEffectiveUntil.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
-            </style>
-</subContainerMappings>
-<subContainerMappings name="agreement_tplMixin" semanticCandidatesExpression="feature:parts" domainClass="Agreement_tpl" childrenPresentation="List">
-<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+        <containerMappings name="AgreementContainer" labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']" semanticCandidatesExpression="feature:resources" domainClass="Agreement">
+          <subContainerMappings name="SubAgreementContainer" semanticCandidatesExpression="[self/]" domainClass="Agreement" childrenPresentation="List">
+            <subNodeMappings name="AgreementId" labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreementId']" semanticCandidatesExpression="[self/]" domainClass="Agreement">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="AgreementTitle" labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreementTitle']" semanticCandidatesExpression="[self/]" domainClass="Agreement">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="AgreementLocation" labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreementLocation']" semanticCandidatesExpression="[self/]" domainClass="Agreement">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="AgreementSummary" labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreementSummary']" semanticCandidatesExpression="[self/]" domainClass="Agreement">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['summary = ' + self.summary.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="AgreementOcciAgreementState" labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreementOcciAgreementState']" semanticCandidatesExpression="[self/]" domainClass="Agreement">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiAgreementState = ' + self.occiAgreementState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="AgreementOcciAgreementAgreedAt" labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreementOcciAgreementAgreedAt']" semanticCandidatesExpression="[self/]" domainClass="Agreement">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiAgreementAgreedAt = ' + self.occiAgreementAgreedAt.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="AgreementOcciAgreementEffectiveFrom" labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreementOcciAgreementEffectiveFrom']" semanticCandidatesExpression="[self/]" domainClass="Agreement">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiAgreementEffectiveFrom = ' + self.occiAgreementEffectiveFrom.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="AgreementOcciAgreementEffectiveUntil" labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreementOcciAgreementEffectiveUntil']" semanticCandidatesExpression="[self/]" domainClass="Agreement">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiAgreementEffectiveUntil = ' + self.occiAgreementEffectiveUntil.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
           </subContainerMappings>
-<subContainerMappings name="agreement_termMixin" semanticCandidatesExpression="feature:parts" domainClass="Agreement_term" childrenPresentation="List">
-<subNodeMappings name="Agreement_termocciAgreementTermType" semanticCandidatesExpression="[self/]" domainClass="Agreement_term">
+          <subContainerMappings name="agreement_tplMixin" semanticCandidatesExpression="feature:parts" domainClass="Agreement_tpl" childrenPresentation="List">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="agreement_termMixin" semanticCandidatesExpression="feature:parts" domainClass="Agreement_term" childrenPresentation="List">
+            <subNodeMappings name="Agreement_termocciAgreementTermType" semanticCandidatesExpression="[self/]" domainClass="Agreement_term">
               <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiAgreementTermType = ' + self.occiAgreementTermType.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               </style>
             </subNodeMappings>
-<subNodeMappings name="Agreement_termocciAgreementTermState" semanticCandidatesExpression="[self/]" domainClass="Agreement_term">
+            <subNodeMappings name="Agreement_termocciAgreementTermState" semanticCandidatesExpression="[self/]" domainClass="Agreement_term">
               <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiAgreementTermState = ' + self.occiAgreementTermState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               </style>
             </subNodeMappings>
-<subNodeMappings name="Agreement_termocciAgreementTermDesc" semanticCandidatesExpression="[self/]" domainClass="Agreement_term">
+            <subNodeMappings name="Agreement_termocciAgreementTermDesc" semanticCandidatesExpression="[self/]" domainClass="Agreement_term">
               <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiAgreementTermDesc = ' + self.occiAgreementTermDesc.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               </style>
             </subNodeMappings>
-<subNodeMappings name="Agreement_termocciAgreementTermRemedy" semanticCandidatesExpression="[self/]" domainClass="Agreement_term">
+            <subNodeMappings name="Agreement_termocciAgreementTermRemedy" semanticCandidatesExpression="[self/]" domainClass="Agreement_term">
               <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiAgreementTermRemedy = ' + self.occiAgreementTermRemedy.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               </style>
             </subNodeMappings>
-<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -162,60 +143,47 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
-          </style> 
-
+          </style>
         </containerMappings>
-        <containerMappings name="Agreement_linkContainer"
-            labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
-			semanticCandidatesExpression="[resources.links->filter(Agreement_link)/]" 
-			domainClass="Agreement_link">
-<subContainerMappings name="SubAgreement_linkContainer" semanticCandidatesExpression="[self/]" domainClass="Agreement_link" childrenPresentation="List">
-          <subNodeMappings name="Agreement_linkId"
-                labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreement_linkId']"
-                semanticCandidatesExpression="[self/]" domainClass="Agreement_link">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="Agreement_linkTitle"
-                labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreement_linkTitle']"
-                semanticCandidatesExpression="[self/]" domainClass="Agreement_link">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="Agreement_linkLocation"
-                labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreement_linkLocation']"
-                semanticCandidatesExpression="[self/]" domainClass="Agreement_link">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+        <containerMappings name="Agreement_linkContainer" labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']" semanticCandidatesExpression="[resources.links->filter(Agreement_link)/]" domainClass="Agreement_link">
+          <subContainerMappings name="SubAgreement_linkContainer" semanticCandidatesExpression="[self/]" domainClass="Agreement_link" childrenPresentation="List">
+            <subNodeMappings name="Agreement_linkId" labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreement_linkId']" semanticCandidatesExpression="[self/]" domainClass="Agreement_link">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Agreement_linkTitle" labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreement_linkTitle']" semanticCandidatesExpression="[self/]" domainClass="Agreement_link">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Agreement_linkLocation" labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditAgreement_linkLocation']" semanticCandidatesExpression="[self/]" domainClass="Agreement_link">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
-</subContainerMappings>
+          </subContainerMappings>
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Agreement_link'/]" roundedCorner="true">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
-          </style> 
-
+          </style>
         </containerMappings>
         <toolSections name="Sla resources">
-          <ownedTools xsi:type="tool:ContainerCreationDescription" 
-			name="Create Agreement resources"
-			containerMappings="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']"> 
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Agreement" containerMappings="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -224,11 +192,9 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-</toolSections>
- <toolSections name="Sla links">
-          <ownedTools xsi:type="tool:EdgeCreationDescription"
-			name="Create Agreement_link"
-			edgeMappings="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='Agreement_linkEdge']"> 
+        </toolSections>
+        <toolSections name="Sla links">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Create Agreement_link" edgeMappings="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='Agreement_linkEdge']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -241,11 +207,9 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-   </toolSections>   
- <toolSections name="Sla mixins">
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create agreement_tpl" containerMappings="
-//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='agreement_tplMixin']
-">
+        </toolSections>
+        <toolSections name="Sla mixins">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create agreement_tpl" containerMappings="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='agreement_tplMixin']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -254,9 +218,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create agreement_term" containerMappings="
-//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='agreement_termMixin']
-">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create agreement_term" containerMappings="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='agreement_termMixin']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -265,7 +227,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-   </toolSections>    
+        </toolSections>
         <toolSections name="Tools">
           <ownedTools xsi:type="tool:DirectEditLabel" name="EditEntityTitle" inputLabelExpression="feature:title">
             <mask mask="{0}"/>
@@ -422,8 +384,5 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-<!--
-    <ownedJavaExtensions qualifiedClassName="org.occiware.clouddesigner.occi.design.services.DesignServices"/>
--->
   </ownedViewpoints>
 </description:Group>
