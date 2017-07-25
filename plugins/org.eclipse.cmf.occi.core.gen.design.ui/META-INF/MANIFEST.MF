@@ -18,4 +18,5 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.cmf.occi.core.design,
  org.eclipse.cmf.occi.core.gen.emf,
  org.eclipse.sirius.ui,
- org.eclipse.pde.core
+ org.eclipse.pde.core,
+ org.slf4j.api_1.7.2

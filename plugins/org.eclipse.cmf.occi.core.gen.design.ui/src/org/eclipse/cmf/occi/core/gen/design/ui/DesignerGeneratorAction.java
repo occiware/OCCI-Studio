@@ -4,10 +4,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.OCCIFactory;
 import org.eclipse.cmf.occi.core.design.utils.WizardUtils;
 import org.eclipse.cmf.occi.core.gen.emf.ConverterUtils;
 import org.eclipse.cmf.occi.core.util.Occi2Ecore;
+import org.eclipse.cmf.occi.core.util.OcciRegistry;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
@@ -36,9 +38,15 @@ import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.WorkbenchException;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class DesignerGeneratorAction implements IObjectActionDelegate {
+
+	/**
+	 * Initialize the logger.
+	 */
+	private static Logger LOGGER = LoggerFactory.getLogger(DesignerGeneratorAction.class);
 
 	private static final String ECORE_PLATFORM_URI = "platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore";
 
@@ -73,6 +81,7 @@ public class DesignerGeneratorAction implements IObjectActionDelegate {
 		try {
 			String designName = ecoreFile.getName().replace(".ecore", ".odesign");
 			String designProjectName = ecoreFile.getProject().getName() + ".design";
+			registerExtension(ecoreFile);
 			IProject project = generateDesignProject(ecoreFile.getLocation().toString(), designName, designProjectName,
 					new NullProgressMonitor());// TODO fix monitor
 
@@ -88,6 +97,20 @@ public class DesignerGeneratorAction implements IObjectActionDelegate {
 		}
 	}
 
+	private void registerExtension(IFile ecoreFile) {
+		String extensionPath = ecoreFile.getFullPath().toString().replace(".ecore", ".occie");
+		URI uri = URI.createPlatformResourceURI(extensionPath, true);
+
+		ResourceSet rs = new ResourceSetImpl();
+		Resource r = rs.getResource(uri, true);
+
+		Extension extension = (Extension) r.getContents().get(0);
+		if (!OcciRegistry.getInstance().getRegisteredExtensions().contains(extension.getScheme())) {
+			OcciRegistry.getInstance().registerExtension(extension.getScheme(), uri.toString());
+			LOGGER.debug("Registered OCCI extension " + extension.getScheme());
+		}
+	}
+
 	/**
 	 * @see IActionDelegate#selectionChanged(IAction, ISelection)
 	 */
@@ -100,31 +123,32 @@ public class DesignerGeneratorAction implements IObjectActionDelegate {
 			final IProgressMonitor monitor) throws CoreException, IOException {
 
 		// Load the ecore file.
-		
+
 		URI ecoreURI = URI.createFileURI(ecoreLocation);
 		// Create a new resource set.
-		 ResourceSet resourceSet = new ResourceSetImpl();
+		ResourceSet resourceSet = new ResourceSetImpl();
 		// Load the OCCI resource.
 		org.eclipse.emf.ecore.resource.Resource resource = resourceSet.getResource(ecoreURI, true);
 		// Return the first element.
-		EPackage ePackage = (EPackage)resource.getContents().get(0);
+		EPackage ePackage = (EPackage) resource.getContents().get(0);
 
 		String extensionScheme = Occi2Ecore.convertEcoreNamespace2OcciScheme(ePackage.getNsURI());
 
-		// Register the ePackage to avoid an error when trying to open the generated .odesign file,
+		// Register the ePackage to avoid an error when trying to open the generated
+		// .odesign file,
 		EPackage.Registry.INSTANCE.put(ePackage.getNsURI(), ePackage);
 
 		/*
 		 * Create design project
 		 */
-		IProject project = DesignerGeneratorUtils.genDesignProject(designProjectName, designName, extensionScheme, new ProgressMonitorDialog(shell));
+		IProject project = DesignerGeneratorUtils.genDesignProject(designProjectName, designName, extensionScheme,
+				new ProgressMonitorDialog(shell));
 
 		/*
 		 * Create design model
 		 */
 		org.eclipse.cmf.occi.core.gen.design.main.Generate generator = new org.eclipse.cmf.occi.core.gen.design.main.Generate(
-				ecoreURI, project.getFolder("description").getLocation().toFile(),
-				new ArrayList<String>());
+				ecoreURI, project.getFolder("description").getLocation().toFile(), new ArrayList<String>());
 		generator.doGenerate(BasicMonitor.toMonitor(monitor));
 		project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 		return project;
@@ -149,7 +173,7 @@ public class DesignerGeneratorAction implements IObjectActionDelegate {
 		PlatformUI.getWorkbench().showPerspective("org.eclipse.sirius.ui.tools.perspective.modeling",
 				PlatformUI.getWorkbench().getActiveWorkbenchWindow());
 
-		final Session session = ModelingProject.asModelingProject(testProject).get().getSession(); 
+		final Session session = ModelingProject.asModelingProject(testProject).get().getSession();
 		session.getTransactionalEditingDomain().getCommandStack()
 				.execute(new RecordingCommand(session.getTransactionalEditingDomain()) {
 					@Override
