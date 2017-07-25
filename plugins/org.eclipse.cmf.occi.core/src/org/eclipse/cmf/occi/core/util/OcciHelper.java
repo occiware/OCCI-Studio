@@ -226,6 +226,15 @@ public final class OcciHelper
 		return res;
 	}
 	
+	public static Collection<Attribute> getAllAttributes(Mixin mixin) {
+		List<Attribute> res = new ArrayList<Attribute>();
+		res.addAll(mixin.getAttributes());
+		for (Mixin m : mixin.getDepends()) {
+			res.addAll(getAllAttributes(m));
+		}
+		return res;
+	}
+	
 	// ----------------------------------------------------------------------
 	//
 	// Related to Entity.
@@ -251,6 +260,23 @@ public final class OcciHelper
 		}	
 		return attributes;
 	}
+
+	/**
+	 * Get all the attributes of an Entity instance.
+	 * @param mixinBase the given Entity instance.
+	 * @return all the attributes of the given instance.
+	 */
+	public static Collection<Attribute> getAllAttributes(final MixinBase mixinBase)
+	{
+		List<Attribute> attributes = new ArrayList<Attribute>();
+		Mixin entityKind = mixinBase.getMixin();
+		if(entityKind != null) {
+			addAllAttributes(attributes, entityKind);
+		}
+		return attributes;
+	}
+	
+	
 
 	/**
 	 * Add all the attributes of a given Kind instance and all its parent kinds.
@@ -367,6 +393,48 @@ public final class OcciHelper
 	}
 
 	/**
+	 * Set an attribute of an OCCI entity.
+	 * @param mixinBase the given entity.
+	 * @param attributeName the attribute name.
+	 * @param attributeValue the attribute value.
+	 * @throws java.lang.IllegalArgumentException Thrown when the attribute name is unknown or the attribute value is invalid.
+	 */
+	public static void setAttribute(MixinBase mixinBase, String attributeName, String attributeValue)
+	{
+		// Check that attribute name exists from this entity.
+		getAttribute(mixinBase, attributeName);
+
+		// Search the Ecore structural feature associated to the OCCI attribute.
+		String eAttributeName = Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attributeName);
+		final EStructuralFeature eStructuralFeature = mixinBase.eClass().getEStructuralFeature(eAttributeName);
+
+		if (eStructuralFeature == null) {
+            // Create the attribute state and update it, if none, create it.
+            AttributeState attrState = getAttributeStateObject(mixinBase, attributeName);
+            if (attrState == null) {
+                // Create the attribute.
+                attrState = createAttributeState(attributeName, attributeValue);
+                mixinBase.getAttributes().add(attrState);
+            } 
+            
+            return;
+			// throw new IllegalArgumentException("Ecore structural feature '" + eAttributeName + "' not found!");
+		}
+		if(!(eStructuralFeature instanceof EAttribute)) {
+			throw new IllegalArgumentException("Ecore structural feature '" + eAttributeName + "' is not an Ecore attribute!");
+		}
+
+		// Obtain the attribute type.
+		EDataType eAttributeType = ((EAttribute)eStructuralFeature).getEAttributeType();
+
+		// Convert the attribute value according to the attribute type.
+		Object eAttributeValue = eAttributeType.getEPackage().getEFactoryInstance().createFromString(eAttributeType, attributeValue);
+
+		// Set the Ecore attribute.
+		mixinBase.eSet(eStructuralFeature, eAttributeValue);
+	}
+	
+	/**
 	 * Get an attribute of an OCCI entity.
 	 * @param entity the given entity.
 	 * @param attributeName the attribute name.
@@ -381,6 +449,24 @@ public final class OcciHelper
 		}
 		throw new IllegalArgumentException("attribute '" + attributeName + "' is not found in " + entity + "!");
 	}
+	
+	/**
+	 * Get an attribute of an OCCI entity.
+	 * @param entity the given entity.
+	 * @param attributeName the attribute name.
+	 * @throws java.lang.IllegalArgumentException Thrown when the attribute name is unknown.
+	 */
+	public static Attribute getAttribute(MixinBase mixinBase, String attributeName)
+	{
+		for(Attribute attribute : getAllAttributes(mixinBase)) {
+			if(attribute.getName().equals(attributeName)) {
+				return attribute;
+			}
+		}
+		throw new IllegalArgumentException("attribute '" + attributeName + "' is not found in " + mixinBase + "!");
+	}
+
+	
 
 	/**
 	 * Execute an action on an OCCI entity.
@@ -476,6 +562,22 @@ public final class OcciHelper
 		}
 		// Load the corresponding attribute state.
 		for (AttributeState attrState : entity.getAttributes()) {
+			if (attrState.getName().equals(key)) {
+				attr = attrState;
+				break;
+			}
+		}
+
+		return attr;
+	}
+
+	private static AttributeState getAttributeStateObject(MixinBase mixinBase, final String key) {
+		AttributeState attr = null;
+		if (key == null) {
+			return attr;
+		}
+		// Load the corresponding attribute state.
+		for (AttributeState attrState : mixinBase.getAttributes()) {
 			if (attrState.getName().equals(key)) {
 				attr = attrState;
 				break;
