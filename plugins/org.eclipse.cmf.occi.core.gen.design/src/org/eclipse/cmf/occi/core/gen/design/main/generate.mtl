@@ -219,9 +219,9 @@
 </subContainerMappings>
 [for (mixin : Mixin| eClass.getKind().getMixins())]
 <subContainerMappings name="[mixin.name/]Mixin" semanticCandidatesExpression="feature:parts" domainClass="[mixin.getEClassName()/]" childrenPresentation="List">
-[for (attribute : Attribute | mixin.attributes)]
-<subNodeMappings name="[mixin.getEClassName()/][attribute.getEAttributeName()/]" semanticCandidatesExpression="['['/]self/[']'/]" domainClass="[mixin.getEClassName()/]">
-              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['['/]'[attribute.getEAttributeName()/] = ' + self.[attribute.getEAttributeName()/].toString()/[']'/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+[for (attribute : EAttribute | ePackage.eClassifiers->select(eclass|mixin.getEClassName().equalsIgnoreCase(eclass.name))->first().oclAsType(EClass).eAllAttributes  )]
+<subNodeMappings name="[mixin.getEClassName()/][attribute.name/]" semanticCandidatesExpression="['['/]self/[']'/]" domainClass="[mixin.getEClassName()/]">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['['/]'[attribute.name/] = ' + self.[attribute.name/].toString()/[']'/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='white'[']'/]"/>
