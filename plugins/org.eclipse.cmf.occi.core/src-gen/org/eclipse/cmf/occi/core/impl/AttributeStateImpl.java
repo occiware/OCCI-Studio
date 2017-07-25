@@ -13,6 +13,7 @@ package org.eclipse.cmf.occi.core.impl;
 
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Entity;
+import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.cmf.occi.core.util.OcciHelper;
 import org.eclipse.emf.common.notify.Notification;
@@ -25,30 +26,31 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Attribute State</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Attribute State</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.core.impl.AttributeStateImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.core.impl.AttributeStateImpl#getValue <em>Value</em>}</li>
+ * <li>{@link org.eclipse.cmf.occi.core.impl.AttributeStateImpl#getName
+ * <em>Name</em>}</li>
+ * <li>{@link org.eclipse.cmf.occi.core.impl.AttributeStateImpl#getValue
+ * <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AttributeStateImpl extends MinimalEObjectImpl.Container implements AttributeState {
-	
+
 	/**
 	 * Initialize the logger.
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(EntityImpl.class);
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -56,9 +58,9 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -66,9 +68,9 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -76,9 +78,9 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 	protected static final String VALUE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -86,8 +88,8 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 	protected String value = VALUE_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	protected AttributeStateImpl() {
@@ -96,8 +98,8 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -106,8 +108,8 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
@@ -115,8 +117,8 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -127,8 +129,8 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getValue() {
@@ -136,8 +138,8 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public void setValue(String newValue) {
@@ -145,94 +147,99 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.ATTRIBUTE_STATE__VALUE, oldValue, value));
-		
+
 		// Propagate to the associated Ecore attribute.
-				if(eContainer() != null) {
-					try {
-						OcciHelper.setAttribute((Entity)eContainer(), name, value);
-					} catch (Exception e) {
-						// FIXME: Don't understand why an exception is thrown!!!
-						LOGGER.warn("Exception when set the value of the attribute state '" + name + "': " + e.getMessage() + "!!!");
-					}
-				}
+		if (eContainer() != null) {
+			try {
+				if (eContainer() instanceof Entity)
+					OcciHelper.setAttribute((Entity) eContainer(), name, value);
+				else
+					OcciHelper.setAttribute((MixinBase) eContainer(), name, value);
+			} catch (Exception e) {
+				// FIXME: Don't understand why an exception is thrown!!!
+				LOGGER.warn("Exception when set the value of the attribute state '" + name + "': " + e.getMessage()
+						+ "!!!");
+			}
+		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OCCIPackage.ATTRIBUTE_STATE__NAME:
-				return getName();
-			case OCCIPackage.ATTRIBUTE_STATE__VALUE:
-				return getValue();
+		case OCCIPackage.ATTRIBUTE_STATE__NAME:
+			return getName();
+		case OCCIPackage.ATTRIBUTE_STATE__VALUE:
+			return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OCCIPackage.ATTRIBUTE_STATE__NAME:
-				setName((String)newValue);
-				return;
-			case OCCIPackage.ATTRIBUTE_STATE__VALUE:
-				setValue((String)newValue);
-				return;
+		case OCCIPackage.ATTRIBUTE_STATE__NAME:
+			setName((String) newValue);
+			return;
+		case OCCIPackage.ATTRIBUTE_STATE__VALUE:
+			setValue((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OCCIPackage.ATTRIBUTE_STATE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case OCCIPackage.ATTRIBUTE_STATE__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
+		case OCCIPackage.ATTRIBUTE_STATE__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case OCCIPackage.ATTRIBUTE_STATE__VALUE:
+			setValue(VALUE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OCCIPackage.ATTRIBUTE_STATE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case OCCIPackage.ATTRIBUTE_STATE__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+		case OCCIPackage.ATTRIBUTE_STATE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case OCCIPackage.ATTRIBUTE_STATE__VALUE:
+			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -243,4 +250,4 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 		return result.toString();
 	}
 
-} //AttributeStateImpl
+} // AttributeStateImpl
