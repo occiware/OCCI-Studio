@@ -115,13 +115,6 @@
       <url>http://download.eclipse.org/releases/oxygen</url>
     </repository>
 	
-    <!-- TODO: remove when OCL 6.3.0 integrated into an official Eclipse distribution (i.e., Neon or Oxygen). -->
-    <repository>
-      <id>OCL-6.3</id>
-      <layout>p2</layout>
-      <url>http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/6.3.0</url>
-    </repository>
-
     <repository>
       <id>mvnrepository</id>
       <url>http://repo1.maven.org/maven2</url>
