@@ -115,6 +115,13 @@
       <url>http://download.eclipse.org/releases/oxygen</url>
     </repository>
 	
+	<!-- TODO Verify with Philippe if it is the best to way to do it like that -->
+    <repository>
+      <id>Xtext</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/latest/</url>
+    </repository>
+ 
     <repository>
       <id>mvnrepository</id>
       <url>http://repo1.maven.org/maven2</url>
