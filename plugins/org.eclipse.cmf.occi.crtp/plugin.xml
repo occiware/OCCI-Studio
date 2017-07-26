@@ -40,5 +40,25 @@
    <extension point="org.eclipse.cmf.occi.core.occie">
       <occie scheme="http://schemas.ogf.org/occi/infrastructure/compute/template/1.1#" file="model/crtp.occie"/>
    </extension>
-
+   <!-- Popup menu for converting to an OCCI Configuration file. -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="crtp.contribution"
+            nameFilter="*.crtp"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="org.eclipse.cmf.occi.core.occi-studio.ui.menu"
+               label="OCCI Studio"
+               path="additionsOCCIStudio">
+            <separator name="group"/>
+         </menu>
+         <action
+               class="org.eclipse.cmf.occi.core.ui.popup.actions.ExtensionConfiguration2OCCICAction"
+               enablesFor="1"
+               id="crtp.ecore2occi"
+               label="Convert to an OCCI Configuration File"
+               menubarPath="org.eclipse.cmf.occi.core.occi-studio.ui.menu/group">
+         </action>
+      </objectContribution>
+   </extension>
 </plugin>

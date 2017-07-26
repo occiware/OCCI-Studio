@@ -36,8 +36,29 @@
             target="platform:/plugin/org.eclipse.cmf.occi.monitoring/model/monitoring.occie"/>
    </extension>
    
-   <!-- Register the OCCI Infrastructure extension. -->
+   <!-- Register the OCCI monitoring extension. -->
    <extension point="org.eclipse.cmf.occi.core.occie">
       <occie scheme="http://schemas.ogf.org/occi/monitoring#" file="model/monitoring.occie"/>
+   </extension>
+   <!-- Popup menu for converting to an OCCI Configuration file. -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="monitoring.contribution"
+            nameFilter="*.monitoring"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="org.eclipse.cmf.occi.core.occi-studio.ui.menu"
+               label="OCCI Studio"
+               path="additionsOCCIStudio">
+            <separator name="group"/>
+         </menu>
+         <action
+               class="org.eclipse.cmf.occi.core.ui.popup.actions.ExtensionConfiguration2OCCICAction"
+               enablesFor="1"
+               id="monitoring.ecore2occi"
+               label="Convert to an OCCI Configuration File"
+               menubarPath="org.eclipse.cmf.occi.core.occi-studio.ui.menu/group">
+         </action>
+      </objectContribution>
    </extension>
 </plugin>
