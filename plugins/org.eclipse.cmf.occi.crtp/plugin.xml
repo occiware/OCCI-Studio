@@ -36,7 +36,7 @@
             target="platform:/plugin/org.eclipse.cmf.occi.crtp/model/crtp.occie"/>
    </extension>
    
-   <!-- Register the OCCI Infrastructure extension. -->
+   <!-- Register the OCCI crtp extension. -->
    <extension point="org.eclipse.cmf.occi.core.occie">
       <occie scheme="http://schemas.ogf.org/occi/infrastructure/compute/template/1.1#" file="model/crtp.occie"/>
    </extension>
