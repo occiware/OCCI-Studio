@@ -327,7 +327,8 @@ public class NewExtensionWizard extends BasicNewProjectResourceWizard {
 				// generate plugin.properties
 				"Bundle-RequiredExecutionEnvironment: JavaSE-1.7\n" + "Bundle-ActivationPolicy: lazy\n"
 				+ "Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,\n"
-				+ " org.eclipse.cmf.occi.core;visibility:=reexport,\n" + " org.eclipse.cmf.occi.core.gen.emf.ui\n";
+				+ " org.eclipse.cmf.occi.core;visibility:=reexport,\n" + " org.eclipse.cmf.occi.core.ui,\n"
+				+ " org.eclipse.cmf.occi.core.gen.emf.ui\n";
 		manifest.setContents(new ByteArrayInputStream(manifestContent.getBytes()), true, false, monitor);
 
 		IFile pluginXML = PDEProject.getPluginXml(project);
@@ -370,6 +371,7 @@ public class NewExtensionWizard extends BasicNewProjectResourceWizard {
 				+ "# which accompanies this distribution, and is available at\n"
 				+ "# http://www.eclipse.org/legal/epl-v10.html\n" + "#\n" + "# Contributors:\n"
 				+ "# - William Piers <william.piers@obeo.fr>\n" + "# - Philippe Merle <philippe.merle@inria.fr>\n"
+				+ "# - Faiez Zalila <faiez.zalila@inria.fr>\n"
 				+ "\n" + "source.. = src-gen/\n" + "jars.compile.order = .\n" + "output.. = bin/\n"
 				+ "bin.includes = .,\\\n" + "				model/,\\\n" + "				META-INF/,\\\n"
 				+ "				plugin.xml,\\\n" + "				plugin.properties\n";
