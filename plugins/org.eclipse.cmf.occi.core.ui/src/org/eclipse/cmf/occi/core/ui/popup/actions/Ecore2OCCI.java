@@ -23,9 +23,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.cmf.occi.core.Attribute;
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Configuration;
+import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.OCCIFactory;
 import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.cmf.occi.core.util.OcciRegistry;
@@ -83,6 +85,9 @@ public class Ecore2OCCI {
 				}
 			}
 		}
+		for (MixinBase sourceMixinBase: sourceResource.getParts()) {
+			convertMixinBase(sourceResource, targetResource, sourceMixinBase);
+		}
 		mappedResources.put(sourceResource, targetResource);
 		return targetResource;
 	}
@@ -111,9 +116,34 @@ public class Ecore2OCCI {
 				}
 			}
 		}
+		for (MixinBase sourceMixinBase: sourceLink.getParts()) {
+			convertMixinBase(sourceLink, targetLink, sourceMixinBase);
+		}
 		return targetLink;
 	}
-
+	
+	private void convertMixinBase(Entity sourceEntity, Entity targetEntity, MixinBase sourceMixinBase) {
+		Set<EAttribute> setAttributes = new HashSet<EAttribute>();
+		MixinBase mixinBase = OCCIFactory.eINSTANCE.createMixinBase();
+		targetEntity.getParts().add(mixinBase);
+		mixinBase.setMixin(sourceMixinBase.getMixin());
+		for (Attribute attribute : OcciHelper.getAllAttributes(sourceMixinBase.getMixin())) {
+			String convertedAttributeName = Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName());
+			EAttribute eAttribute = (EAttribute) sourceMixinBase.eClass().getEStructuralFeature(convertedAttributeName);
+			// an attr cannot be set twice
+			if (eAttribute != null && !setAttributes.contains(eAttribute)) {
+				Object value = sourceMixinBase.eGet(eAttribute);
+				if (value != null && !value.equals(eAttribute.getDefaultValue())) {
+					AttributeState attributeState = OCCIFactory.eINSTANCE.createAttributeState();
+					attributeState.setName(attribute.getName());
+					attributeState.setValue(String.valueOf(value));
+					mixinBase.getAttributes().add(attributeState);
+					setAttributes.add(eAttribute);
+				}
+			}
+		}
+	}
+	
 	private Kind getKind(EObject element) {
 		String term = element.eClass().getName();
 		String scheme = Occi2Ecore.convertEcoreNamespace2OcciScheme(element.eClass().getEPackage().getNsURI());
@@ -129,4 +159,5 @@ public class Ecore2OCCI {
 		}
 		return null;
 	}
+	
 }
