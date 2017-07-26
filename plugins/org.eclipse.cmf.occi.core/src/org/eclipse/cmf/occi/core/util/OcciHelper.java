@@ -9,6 +9,8 @@
  * Contributors:
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
+ * - Christophe Gourdin <christophe.gourdin@inria.fr>
+ * 
  */
 package org.eclipse.cmf.occi.core.util;
 
@@ -312,8 +314,51 @@ public final class OcciHelper
 	 * @param kind The kind of the entity to create.
 	 * @return The created entity, else null.
 	 */
-	public static Entity createEntity(Kind kind)
-	{
+	public static MixinBase createMixinBase(Entity entity, Mixin mixin) {
+		MixinBase createdMixinBase = null;
+
+		// Get the name space of the Ecore package for this mixin.
+		String epackageNS = Occi2Ecore.convertOcciScheme2EcoreNamespace(mixin.getScheme());
+		// Get the Ecore package associated to the mixin.
+		EPackage epackage = EPackage.Registry.INSTANCE.getEPackage(epackageNS);
+		if(epackage == null) {
+			LOGGER.warn("EPackage " + epackageNS + " not found!");
+		} else {
+			String classname = Occi2Ecore.convertOcciCategoryTerm2EcoreClassName(mixin.getTerm());
+			// Get the Ecore class associated to the mixin.
+			EClass eclass = (EClass) epackage.getEClassifier(classname);
+			if(eclass == null) {
+				LOGGER.warn("EClass " + classname + " not found!");
+			} else {
+				// Get the Ecore factory associated to the mixinbase.
+				EFactory efactory = EPackage.Registry.INSTANCE.getEFactory(epackageNS);
+				if(efactory == null) {
+					LOGGER.warn("EFactory " + epackageNS + " not found!");
+				} else {
+					// Create the EObject for this kind.
+					createdMixinBase = (MixinBase)efactory.create(eclass);
+				}
+			}
+		}
+		if(createdMixinBase == null) {
+			LOGGER.warn("Couldnt create mixin base for mixin : " + mixin.getScheme() + mixin.getTerm());
+			createdMixinBase = OCCIFactory.eINSTANCE.createMixinBase();
+		}
+		createdMixinBase.setMixin(mixin);
+		createdMixinBase.setEntity(entity);
+		entity.getParts().add(createdMixinBase);
+
+		LOGGER.debug("created MixinBase=" + createdMixinBase);
+		// Return the new entity.
+		return createdMixinBase;
+	}
+	
+	/**
+	 * Create an entity of a given kind.
+	 * @param kind The kind of the entity to create.
+	 * @return The created entity, else null.
+	 */
+	public static Entity createEntity(Kind kind) {
 		Entity createdEntity = null;
 
 		// Get the name space of the Ecore package for this kind.
