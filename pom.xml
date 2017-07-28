@@ -116,11 +116,11 @@
     </repository>
 	
 	<!-- TODO Verify with Philippe if it is the best to way to do it like that -->
-    <repository>
+  <!--   <repository>
       <id>Xtext</id>
       <layout>p2</layout>
       <url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/latest/</url>
-    </repository>
+    </repository> -->
  
     <repository>
       <id>mvnrepository</id>
