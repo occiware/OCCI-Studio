@@ -26,11 +26,11 @@
     <module>plugins/org.eclipse.cmf.occi.core.editor</module>
     <module>plugins/org.eclipse.cmf.occi.core.tests</module>
     <module>plugins/org.eclipse.cmf.occi.core.design</module>
-  <!--   <module>plugins/org.eclipse.cmf.occi.core.xtext</module>
+    <module>plugins/org.eclipse.cmf.occi.core.xtext</module>
     <module>plugins/org.eclipse.cmf.occi.core.xtext.ide</module>
     <module>plugins/org.eclipse.cmf.occi.core.xtext.tests</module>
     <module>plugins/org.eclipse.cmf.occi.core.xtext.ui</module>
-    <module>plugins/org.eclipse.cmf.occi.core.xtext.ui.tests</module> -->
+    <module>plugins/org.eclipse.cmf.occi.core.xtext.ui.tests</module>
 
     <!-- OCCI EMF Generator -->
     <module>plugins/org.eclipse.cmf.occi.core.gen.emf</module>
@@ -114,13 +114,6 @@
       <layout>p2</layout>
       <url>http://download.eclipse.org/releases/oxygen</url>
     </repository>
-	
-	<!-- TODO Verify with Philippe if it is the best to way to do it like that -->
-  <!--   <repository>
-      <id>Xtext</id>
-      <layout>p2</layout>
-      <url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/latest/</url>
-    </repository> -->
  
     <repository>
       <id>mvnrepository</id>
