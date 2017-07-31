@@ -56,18 +56,26 @@ public class OCCIFormatter extends AbstractFormatter2 {
       it.setNewLines(1);
     };
     document.append(kkind, _function);
-    final ISemanticRegion kattribute = this.textRegionExtensions.regionFor(resource).assignment(this._oCCIGrammarAccess.getResourceAccess().getAttributesAssignment_8());
+    final ISemanticRegion kattribute = this.textRegionExtensions.regionFor(resource).feature(OCCIPackage.Literals.ENTITY__LOCATION);
     final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
-      it.setNewLines(2);
+      it.setNewLines(1);
     };
     document.append(kattribute, _function_1);
+    final ISemanticRegion ksummary = this.textRegionExtensions.regionFor(resource).feature(OCCIPackage.Literals.RESOURCE__SUMMARY);
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.setNewLines(1);
+    };
+    document.append(ksummary, _function_2);
     EList<MixinBase> _parts = resource.getParts();
     for (final MixinBase mixinBase : _parts) {
       document.<MixinBase>format(mixinBase);
     }
     EList<AttributeState> _attributes = resource.getAttributes();
-    for (final AttributeState attributeState : _attributes) {
-      document.<AttributeState>format(attributeState);
+    for (final AttributeState attribute : _attributes) {
+      final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+        it.setNewLines(1, 1, 2);
+      };
+      document.<AttributeState>append(attribute, _function_3);
     }
     EList<Link> _links = resource.getLinks();
     for (final Link link : _links) {
@@ -75,28 +83,68 @@ public class OCCIFormatter extends AbstractFormatter2 {
     }
   }
   
-  public void format(final Object resource, final IFormattableDocument document) {
-    if (resource instanceof XtextResource) {
-      _format((XtextResource)resource, document);
+  protected void _format(final Link link, @Extension final IFormattableDocument document) {
+    final ISemanticRegion kkind = this.textRegionExtensions.regionFor(link).feature(OCCIPackage.Literals.ENTITY__TITLE);
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.setNewLines(1);
+    };
+    document.append(kkind, _function);
+    final ISemanticRegion kattribute = this.textRegionExtensions.regionFor(link).feature(OCCIPackage.Literals.ENTITY__LOCATION);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.setNewLines(1);
+    };
+    document.append(kattribute, _function_1);
+    final ISemanticRegion ktarget = this.textRegionExtensions.regionFor(link).feature(OCCIPackage.Literals.LINK__TARGET);
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.setNewLines(1);
+    };
+    document.append(ktarget, _function_2);
+    EList<MixinBase> _parts = link.getParts();
+    for (final MixinBase mixinBase : _parts) {
+      document.<MixinBase>format(mixinBase);
+    }
+    EList<AttributeState> _attributes = link.getAttributes();
+    for (final AttributeState attributeState : _attributes) {
+      document.<AttributeState>format(attributeState);
+    }
+  }
+  
+  protected void _format(final AttributeState attributeState, @Extension final IFormattableDocument document) {
+    final ISemanticRegion kvalue = this.textRegionExtensions.regionFor(attributeState).feature(OCCIPackage.Literals.ATTRIBUTE_STATE__VALUE);
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.setNewLines(1);
+    };
+    document.append(kvalue, _function);
+  }
+  
+  public void format(final Object link, final IFormattableDocument document) {
+    if (link instanceof XtextResource) {
+      _format((XtextResource)link, document);
       return;
-    } else if (resource instanceof Resource) {
-      _format((Resource)resource, document);
+    } else if (link instanceof Link) {
+      _format((Link)link, document);
       return;
-    } else if (resource instanceof Configuration) {
-      _format((Configuration)resource, document);
+    } else if (link instanceof Resource) {
+      _format((Resource)link, document);
       return;
-    } else if (resource instanceof EObject) {
-      _format((EObject)resource, document);
+    } else if (link instanceof AttributeState) {
+      _format((AttributeState)link, document);
       return;
-    } else if (resource == null) {
+    } else if (link instanceof Configuration) {
+      _format((Configuration)link, document);
+      return;
+    } else if (link instanceof EObject) {
+      _format((EObject)link, document);
+      return;
+    } else if (link == null) {
       _format((Void)null, document);
       return;
-    } else if (resource != null) {
-      _format(resource, document);
+    } else if (link != null) {
+      _format(link, document);
       return;
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(resource, document).toString());
+        Arrays.<Object>asList(link, document).toString());
     }
   }
 }
