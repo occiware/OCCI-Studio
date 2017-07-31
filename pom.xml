@@ -26,6 +26,11 @@
     <module>plugins/org.eclipse.cmf.occi.core.editor</module>
     <module>plugins/org.eclipse.cmf.occi.core.tests</module>
     <module>plugins/org.eclipse.cmf.occi.core.design</module>
+    
+    <!-- OCCI Utilities -->
+    <module>plugins/org.eclipse.cmf.occi.core.ui</module>
+    
+    <!-- OCCI Xtext -->
     <module>plugins/org.eclipse.cmf.occi.core.xtext</module>
     <module>plugins/org.eclipse.cmf.occi.core.xtext.ide</module>
     <module>plugins/org.eclipse.cmf.occi.core.xtext.tests</module>
@@ -43,9 +48,6 @@
     <!-- Connector Generator -->
     <module>plugins/org.eclipse.cmf.occi.core.gen.connector</module>
     <module>plugins/org.eclipse.cmf.occi.core.gen.connector.ui</module>
-    
-    <!-- OCCI Utilities -->
-    <module>plugins/org.eclipse.cmf.occi.core.ui</module>
     
     <!-- OCCI Infrastructure extension -->
     <module>plugins/org.eclipse.cmf.occi.infrastructure</module>
