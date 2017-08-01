@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.occie"
+            id="org.eclipse.cmf.occi.core.gen.textile.ui.popupMenus.contribution.IFile">
+         <menu id="org.eclipse.cmf.occi.core.occi-studio.ui.menu" label="OCCI Studio" path="additionsOCCIStudio">
+               <groupMarker name="acceleo"/> 
+         </menu>
+         <action
+               class="org.eclipse.cmf.occi.core.gen.textile.ui.popupMenus.AcceleoGenerateTextileAction"
+               enablesFor="+"
+               id="org.eclipse.cmf.occi.core.gen.textile.ui.popupMenus.acceleoGenerateTextileAction"
+               icon="icons/default.gif"
+               label="Generate Textile documentation"
+               menubarPath="org.eclipse.cmf.occi.core.occi-studio.ui.menu/group"/>
+      </objectContribution>
+   </extension>
+</plugin>

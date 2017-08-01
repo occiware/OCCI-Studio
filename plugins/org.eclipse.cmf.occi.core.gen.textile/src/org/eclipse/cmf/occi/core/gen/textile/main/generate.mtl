@@ -1,0 +1,240 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('http://www.eclipse.org/emf/2002/Ecore', 'http://schemas.ogf.org/occi/core/ecore')]
+
+
+[**
+ * The documentation of the template main.
+ * @param anEClass
+ */]
+[template public main(extension : Extension)]
+[comment @main/]
+[extension.generateExtension()/]
+[extension.import.generateExtension()/]
+[/template]
+
+[template public generateExtension(extension : Extension)]
+[file ('textile/'+extension.name+'.textile', false, 'UTF-8')]
+h1. [extension.description/]
+
+| *Name* | [extension.name/] |
+| *Scheme* | [extension.scheme/] |
+[if extension.import->size() <> 0]
+
+Imported OCCI Extensions:
+
+| *Name* | *Scheme* |
+[for (imported : Extension | extension.import)]
+| <a href="[imported.name/].textile">[imported.name/]</a> | [imported.scheme/] |
+[/for]
+[/if]
+[if (extension.kinds->size() <> 0)]
+
+h1. Kinds
+[extension.kinds.generateKind()/]
+[/if]
+[if (extension.mixins->size() <> 0)]
+
+h1. Mixins
+[extension.mixins.generateMixin()/]
+[/if]
+
+[if (extension.types->size() <> 0)]
+h1. Types
+[extension.types.generateType()/]
+[/if]
+Generated at [getNow()/] from [getFilePath(extension)/] by org.eclipse.cmf.occi.core.gen.textile
+[/file]
+[/template]
+
+[template public generateKind (kind : Kind) ]
+
+h2. Kind [kind.term/]
+
+| *Term* | [kind.term/] |
+| *Scheme* | [kind.scheme/] |
+| *Title* | [kind.title/] |
+| *Parent* | [if kind.parent <> null][kind.parent.generateAnchor('kind')/][/if] |
+[if kind.attributes->size() <> 0]
+[kind.generateAttributes()/]
+[/if]
+[if kind.actions->size() <> 0]
+[generateActions(kind, kind.actions)/]
+[/if]
+[/template]
+
+[template public generateMixin (mixin : Mixin) ]
+
+h2. Mixin [mixin.term/]
+
+| *Term* | [mixin.term/] |
+| *Scheme* | [mixin.scheme/] |
+| *Title* | [mixin.title/] |
+[if mixin.depends->size() <> 0]
+Depends on:
+[for (md : Mixin | mixin.depends)]
+* [md.generateAnchor ('mixin')/]
+[/for]
+[/if]
+[if mixin.applies->size() <> 0]
+Applies to:
+[for (ad : Kind | mixin.applies)]
+* [ad.generateAnchor ('kind')/]
+[/for]
+[/if]
+[if mixin.attributes->size() <> 0]
+[mixin.generateAttributes()/]
+[/if]
+[if mixin.actions->size() <> 0]
+[generateActions(mixin, mixin.actions)/]
+[/if]
+[/template]
+
+[template public generateAttributes (category : Category) ]
+
+Attributes of [category.term/] are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+[for (attribute : Attribute | category.attributes)]
+| [attribute.name/] | [if attribute.type <> null][attribute.type.generateAnchor()/][/if] | [attribute.required/] | [attribute.mutable/] | [attribute.default/] | [attribute.description/] |
+[/for]
+[/template]
+
+[template public generateActions (category : Category, actions : Set(Action)) ]
+Actions of [category.term/] are:
+
+| *Term* | *Scheme* | *Attributes* | *Title* |
+[for (action : Action | actions)]
+| [action.term/] | [action.scheme/] | [if action.attributes->size() <> 0][for (attribute : Attribute | action.attributes) separator(', ')][attribute.name/][if attribute.type <> null]=[attribute.type.generateAnchor()/][/if][/for][/if] | [action.title/] |
+[/for]
+[/template]
+
+[template public generateType (type : DataType)]
+[/template]
+
+[template public generateType (type : StringType) ]
+
+h2. StringType [type.name/]
+
+[if not type.documentation.oclIsUndefined()] [type.documentation/]. [/if]
+
+[if not type.pattern.oclIsUndefined()] 
+* pattern = ==[type.pattern/]==
+[/if]
+[if not type.length.oclIsUndefined()] 
+* length = [type.length/]
+[/if]
+[if not type.minLength.oclIsUndefined()] 
+* minLength = [type.minLength/]
+[/if]
+[if not type.length.oclIsUndefined()] 
+* maxLength = [type.maxLength/]
+[/if]
+
+[/template]
+
+[template public generateType (type : BooleanType) ]
+
+h2. BooleanType [type.name/]
+
+[if not type.documentation.oclIsUndefined()] [type.documentation/]. [/if]
+
+
+[/template]
+
+[template public generateType (type : NumericType) ]
+
+h2. NumericType [type.name/] : [type.type/]
+
+[if not type.documentation.oclIsUndefined()] [type.documentation/]. [/if]
+
+[if not type.totalDigits.oclIsUndefined()] 
+* totalDigits = [type.totalDigits/]
+[/if]
+[if not type.minExclusive.oclIsUndefined()] 
+* minExclusive = [type.minExclusive/]
+[/if]
+[if not type.maxExclusive.oclIsUndefined()] 
+* maxExclusive = [type.maxExclusive/]
+[/if]
+[if not type.minInclusive.oclIsUndefined()] 
+* minInclusive = [type.minInclusive/]
+[/if]
+[if not type.maxInclusive.oclIsUndefined()] 
+* maxInclusive = [type.maxInclusive/]
+[/if]
+[/template]
+
+[template public generateType (type : EObjectType) ]
+
+h2. EObjectType [type.name/]
+
+[if not type.documentation.oclIsUndefined()] [type.documentation/]. [/if]
+
+**instanceClassName**: [type.instanceClassName/]
+
+[/template]
+
+[template public generateType (type : ArrayType) ]
+
+h2.  ArrayType [type.name/]
+
+[if not type.documentation.oclIsUndefined()] [type.documentation/]. [/if]
+
+Array of [type.type.generateAnchor()/]
+
+[/template]
+
+[template public generateType (type : RecordType) ]
+
+h2. RecordType [type.name/]
+
+[if not type.documentation.oclIsUndefined()] [type.documentation/]. [/if]
+
+**Fields**:
+[for (field : RecordField | type.recordFields)]
+* [field.name/] : [field.type.generateAnchor()/]
+[/for]
+[/template]
+
+[template public generateType (type : EnumerationType) ]
+
+h2. EnumerationType [type.name/]
+
+[if not type.documentation.oclIsUndefined()] [type.documentation/]. [/if]
+
+**Literals**:
+[for (literal : EnumerationLiteral | type.literals)]
+* [literal.name/]  
+[/for]
+
+[/template]
+
+[template public generateAnchor (category : Category, prefix : String) post (trim())]
+<a href="[category.eContainer().oclAsType(Extension).name/].textile#[prefix/]-[category.term/]">[category.scheme/][category.term/]</a>
+[/template]
+
+[template public generateAnchor (type : DataType) post (trim())]
+[let container : EObject = type.eContainer()]
+[if container.oclIsKindOf(Extension)]
+<a href="[container.oclAsType(Extension).name/].textile#[if type.oclIsTypeOf(DataType)]datatype[/if][if type.oclIsTypeOf(EEnum)]enum[/if]-[type.name.toLowerCase()/]">[type.name/]</a>
+[else]
+[type.name/]
+[/if]
+[/let]
+[/template]
+
+[query public getNow() : String
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.textile.services.GenUtils', 
+	'getNow()', 
+	Sequence{})/]
+
+[query public getFilePath(extension : Extension) : String
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.textile.services.GenUtils', 
+	'getFilePath(org.eclipse.cmf.occi.core.Extension)', 
+	Sequence{extension})/]
+
