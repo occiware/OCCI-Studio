@@ -1,0 +1,114 @@
+h1. OCCI Service Level Agreements API allows for the creation and management of resources related with the realization of agreements between an OCCI-enabled cloud service provider and potential consumers of the provider's resources.
+
+| *Name* | sla |
+| *Scheme* | http://schemas.ogf.org/occi/sla# |
+
+Imported OCCI Extensions:
+
+| *Name* | *Scheme* |
+| <a href="core.textile">core</a> | http://schemas.ogf.org/occi/core# |
+
+h1. Kinds
+
+h2. Kind agreement
+
+| *Term* | agreement |
+| *Scheme* | http://schemas.ogf.org/occi/sla# |
+| *Title* | A Service Level Agreement |
+| *Parent* | <a href="core.textile#kind-resource">http://schemas.ogf.org/occi/core#resource</a> |
+
+Attributes of agreement are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.agreement.state | <a href="sla.textile#-agreementstatus">AgreementStatus</a> | true | false |  | Current state of the instance |
+| occi.agreement.agreedAt | <a href="sla.textile#-datetime">DateTime</a> | false | false |  | The point in time when the agreement was made |
+| occi.agreement.effectiveFrom | <a href="sla.textile#-datetime">DateTime</a> | false | true |  | The point in time when the agreement’s effectiveness begins |
+| occi.agreement.effectiveUntil | <a href="sla.textile#-datetime">DateTime</a> | false | true |  | The point in time when the agreement’s effectiveness ends |
+
+Actions of agreement are:
+
+| *Term* | *Scheme* | *Attributes* | *Title* |
+| accept | http://schemas.ogf.org/occi/sla/agreement/action# |  |  |
+| reject | http://schemas.ogf.org/occi/sla/agreement/action# |  |  |
+| suspend | http://schemas.ogf.org/occi/sla/agreement/action# |  |  |
+| resume | http://schemas.ogf.org/occi/sla/agreement/action# |  |  |
+| terminate | http://schemas.ogf.org/occi/sla/agreement/action# |  |  |
+
+
+h2. Kind agreement_link
+
+| *Term* | agreement_link |
+| *Scheme* | http://schemas.ogf.org/occi/sla# |
+| *Title* | Link between a SLA and its associated resource |
+| *Parent* | <a href="core.textile#kind-link">http://schemas.ogf.org/occi/core#link</a> |
+
+
+h1. Mixins
+
+h2. Mixin agreement_tpl
+
+| *Term* | agreement_tpl |
+| *Scheme* | http://schemas.ogf.org/occi/sla# |
+| *Title* | Mixin defining a SLA template collection |
+Applies to:
+* <a href="sla.textile#kind-agreement">http://schemas.ogf.org/occi/sla#agreement</a>
+
+h2. Mixin agreement_term
+
+| *Term* | agreement_term |
+| *Scheme* | http://schemas.ogf.org/occi/sla# |
+| *Title* | Mixin defining a Term collection for an agreement |
+Applies to:
+* <a href="sla.textile#kind-agreement">http://schemas.ogf.org/occi/sla#agreement</a>
+
+Attributes of agreement_term are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.agreement.term.type | <a href="sla.textile#-agreementtermtype">AgreementTermType</a> | true | false |  | The type of the term that is being defined. |
+| occi.agreement.term.state | <a href="sla.textile#-agreementtermstatus">AgreementTermStatus</a> | true | false |  | The state of fulfillment of the specific term. |
+| occi.agreement.term.desc | <a href="core.textile#-string">String</a> | false | false |  | The description of the agreement term defined with this mixin. |
+| occi.agreement.term.remedy | <a href="core.textile#-string">String</a> | false | false |  | The remedy value (e.g., price penalty) or action e.g., command) when an SLO term is being violated. |
+
+
+
+h1. Types
+
+h2. StringType DateTime
+
+ Data type for ISO8601 date time. 
+
+* pattern = ==^(\d{4}((-)?(0[1-9]|1[0-2])((-)?(0[1-9]|[1-2][0-9]|3[0-1])(T(24:00(:00(\.[0]+)?)?|(([0-1][0-9]|2[0-3])(:)[0-5][0-9])((:)[0-5][0-9](\.[\d]+)?)?)((\+|-)(14:00|(0[0-9]|1[0-3])(:)[0-5][0-9])|Z))?)?)?)$==
+
+
+h2. EnumerationType AgreementStatus
+
+ Enumeration of Agreement status. 
+
+**Literals**:
+* Pending  
+* Accepted  
+* Rejected  
+* Suspended  
+* Terminated  
+
+
+h2. EnumerationType AgreementTermType
+
+ Enumeration of AgreementTerm types. 
+
+**Literals**:
+* SERVICE  
+* SLO  
+
+
+h2. EnumerationType AgreementTermStatus
+
+ Enumeration of AgreementTerm status. 
+
+**Literals**:
+* Undefined  
+* Fulfilled  
+* Violated  
+
+
+Generated at Tue Aug 01 14:11:47 CEST 2017 from  by org.eclipse.cmf.occi.core.gen.textile
