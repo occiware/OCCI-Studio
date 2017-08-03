@@ -118,8 +118,10 @@ Actions of [category.term/] are:
 
 h2. StringType [type.name/]
 
-[if not type.documentation.oclIsUndefined()] [type.documentation/]. [/if]
+[if not type.documentation.oclIsUndefined()] 
+[type.documentation/]. 
 
+[/if]
 [if not type.pattern.oclIsUndefined()] 
 * pattern = ==[type.pattern/]==
 [/if]
@@ -132,24 +134,26 @@ h2. StringType [type.name/]
 [if not type.length.oclIsUndefined()] 
 * maxLength = [type.maxLength/]
 [/if]
-
 [/template]
 
 [template public generateType (type : BooleanType) ]
 
 h2. BooleanType [type.name/]
+[if not type.documentation.oclIsUndefined()]
+ 
+[type.documentation/]. 
 
-[if not type.documentation.oclIsUndefined()] [type.documentation/]. [/if]
-
-
+[/if]
 [/template]
 
 [template public generateType (type : NumericType) ]
 
 h2. NumericType [type.name/] : [type.type/]
 
-[if not type.documentation.oclIsUndefined()] [type.documentation/]. [/if]
+[if not type.documentation.oclIsUndefined()] 
+[type.documentation/]. 
 
+[/if]
 [if not type.totalDigits.oclIsUndefined()] 
 * totalDigits = [type.totalDigits/]
 [/if]
@@ -171,9 +175,13 @@ h2. NumericType [type.name/] : [type.type/]
 
 h2. EObjectType [type.name/]
 
-[if not type.documentation.oclIsUndefined()] [type.documentation/]. [/if]
+[if not type.documentation.oclIsUndefined()] 
+[type.documentation/]. 
 
-**instanceClassName**: [type.instanceClassName/]
+[/if]
+**instanceClassName**: [type.instanceClassName
+
+/]
 
 [/template]
 
@@ -181,17 +189,20 @@ h2. EObjectType [type.name/]
 
 h2.  ArrayType [type.name/]
 
-[if not type.documentation.oclIsUndefined()] [type.documentation/]. [/if]
+[if not type.documentation.oclIsUndefined()] 
+[type.documentation/]. 
 
+[/if]
 Array of [type.type.generateAnchor()/]
-
 [/template]
 
 [template public generateType (type : RecordType) ]
 
 h2. RecordType [type.name/]
 
-[if not type.documentation.oclIsUndefined()] [type.documentation/]. [/if]
+[if not type.documentation.oclIsUndefined()] 
+[type.documentation/]. 
+[/if]
 
 **Fields**:
 [for (field : RecordField | type.recordFields)]
@@ -203,13 +214,14 @@ h2. RecordType [type.name/]
 
 h2. EnumerationType [type.name/]
 
-[if not type.documentation.oclIsUndefined()] [type.documentation/]. [/if]
+[if not type.documentation.oclIsUndefined()] 
+[type.documentation/]. 
 
+[/if]
 **Literals**:
 [for (literal : EnumerationLiteral | type.literals)]
 * [literal.name/]  
 [/for]
-
 [/template]
 
 [template public generateAnchor (category : Category, prefix : String) post (trim())]
