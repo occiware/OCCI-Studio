@@ -75,14 +75,13 @@ h1. Types
 
 h2. StringType DateTime
 
- Data type for ISO8601 date time. 
+Data type for ISO8601 date time. 
 
 * pattern = ==^(\d{4}((-)?(0[1-9]|1[0-2])((-)?(0[1-9]|[1-2][0-9]|3[0-1])(T(24:00(:00(\.[0]+)?)?|(([0-1][0-9]|2[0-3])(:)[0-5][0-9])((:)[0-5][0-9](\.[\d]+)?)?)((\+|-)(14:00|(0[0-9]|1[0-3])(:)[0-5][0-9])|Z))?)?)?)$==
 
-
 h2. EnumerationType AgreementStatus
 
- Enumeration of Agreement status. 
+Enumeration of Agreement status. 
 
 **Literals**:
 * Pending  
@@ -91,24 +90,21 @@ h2. EnumerationType AgreementStatus
 * Suspended  
 * Terminated  
 
-
 h2. EnumerationType AgreementTermType
 
- Enumeration of AgreementTerm types. 
+Enumeration of AgreementTerm types. 
 
 **Literals**:
 * SERVICE  
 * SLO  
 
-
 h2. EnumerationType AgreementTermStatus
 
- Enumeration of AgreementTerm status. 
+Enumeration of AgreementTerm status. 
 
 **Literals**:
 * Undefined  
 * Fulfilled  
 * Violated  
 
-
-Generated at Tue Aug 01 14:11:47 CEST 2017 from  by org.eclipse.cmf.occi.core.gen.textile
+Generated at Thu Aug 03 14:39:18 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.sla/model/sla.occie by org.eclipse.cmf.occi.core.gen.textile
