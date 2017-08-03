@@ -44,18 +44,17 @@ h1. Types
 
 h2. StringType String
 
- Data type for strings. 
-
+Data type for strings. 
 
 
 h2. BooleanType Boolean
-
- Data type for booleans. 
+ 
+Data type for booleans. 
 
 
 h2. NumericType Integer : Integer
 
- Data type for integers. 
+Data type for integers. 
 
 
-Generated at Tue Aug 01 14:09:28 CEST 2017 from  by org.eclipse.cmf.occi.core.gen.textile
+Generated at Thu Aug 03 14:07:18 CEST 2017 from http://schemas.ogf.org/occi/core by org.eclipse.cmf.occi.core.gen.textile

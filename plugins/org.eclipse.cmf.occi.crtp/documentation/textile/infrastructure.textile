@@ -198,16 +198,11 @@ h1. Types
 
 h2. EnumerationType SuspendMethod
 
-
-
 **Literals**:
 * hibernate  
 * suspend  
 
-
 h2. NumericType Vlan : Integer
-
-
 
 * minInclusive = 0
 * maxInclusive = 4095
@@ -215,22 +210,14 @@ h2. NumericType Vlan : Integer
 h2. StringType Token
 
 
-
-
-
 h2. EnumerationType NetworkStatus
-
-
 
 **Literals**:
 * active  
 * inactive  
 * error  
 
-
 h2. EnumerationType ComputeStatus
-
-
 
 **Literals**:
 * active  
@@ -238,124 +225,82 @@ h2. EnumerationType ComputeStatus
 * suspended  
 * error  
 
-
 h2. EnumerationType NetworkInterfaceStatus
-
-
 
 **Literals**:
 * active  
 * inactive  
 * error  
 
-
 h2. EnumerationType Architecture
-
-
 
 **Literals**:
 * x86  
 * x64  
 
-
 h2. EnumerationType StopMethod
-
-
 
 **Literals**:
 * graceful  
 * acpioff  
 * poweroff  
 
-
 h2. EnumerationType RestartMethod
-
-
 
 **Literals**:
 * graceful  
 * warm  
 * cold  
 
-
 h2. StringType IpAddress
 
 
-
-
-
 h2. EnumerationType Allocation
-
-
 
 **Literals**:
 * dynamic  
 * static  
 
-
 h2. EnumerationType StorageStatus
-
-
 
 **Literals**:
 * online  
 * offline  
 * error  
 
-
 h2. EnumerationType StorageLinkStatus
-
-
 
 **Literals**:
 * active  
 * inactive  
 * error  
 
-
 h2. NumericType Core : Integer
-
-
 
 * minExclusive = 0
 
 h2. NumericType GHz : Float
 
-
-
 * minExclusive = 0
 
 h2. NumericType GiB : Float
-
-
 
 * minExclusive = 0
 
 h2. StringType IpAddressRange
 
 
-
-
-
 h2. StringType Mac
 
 
-
-
-
 h2. NumericType Share : Integer
-
-
 
 * minInclusive = 0
 
 h2. EnumerationType SaveMethod
 
-
-
 **Literals**:
 * hot  
 * deferred  
 
-
-Generated at Tue Aug 01 14:09:28 CEST 2017 from  by org.eclipse.cmf.occi.core.gen.textile
+Generated at Thu Aug 03 14:07:18 CEST 2017 from http://schemas.ogf.org/occi/infrastructure by org.eclipse.cmf.occi.core.gen.textile
