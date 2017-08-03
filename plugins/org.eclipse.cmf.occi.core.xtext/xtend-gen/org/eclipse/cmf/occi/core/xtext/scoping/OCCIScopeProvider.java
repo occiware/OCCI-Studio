@@ -205,8 +205,8 @@ public class OCCIScopeProvider extends AbstractOCCIScopeProvider {
     EObject _eContainer_1 = s.eContainer();
     FSM fsm = ((FSM) _eContainer_1);
     EObject _eContainer_2 = fsm.eContainer();
-    Kind k = ((Kind) _eContainer_2);
-    EList<Action> _actions = k.getActions();
+    Type t = ((Kind) _eContainer_2);
+    EList<Action> _actions = t.getActions();
     for (final Action action : _actions) {
       res.add(EObjectDescription.create(QualifiedName.create(action.getName()), action));
     }
@@ -244,8 +244,8 @@ public class OCCIScopeProvider extends AbstractOCCIScopeProvider {
       EObject _eContainer = state.eContainer();
       FSM fsm = ((FSM) _eContainer);
       EObject _eContainer_1 = fsm.eContainer();
-      Kind kind = ((Kind) _eContainer_1);
-      EObject _eContainer_2 = kind.eContainer();
+      Type typee = ((Kind) _eContainer_1);
+      EObject _eContainer_2 = typee.eContainer();
       Extension ext = ((Extension) _eContainer_2);
       final Function1<DataType, Boolean> _function = (DataType t) -> {
         return Boolean.valueOf((t instanceof EnumerationType));
@@ -267,8 +267,8 @@ public class OCCIScopeProvider extends AbstractOCCIScopeProvider {
     {
       ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>();
       EObject _eContainer = fsm.eContainer();
-      Kind kind = ((Kind) _eContainer);
-      EList<Attribute> _attributes = kind.getAttributes();
+      Type type = ((Kind) _eContainer);
+      EList<Attribute> _attributes = type.getAttributes();
       for (final Attribute attribute : _attributes) {
         res.add(EObjectDescription.create(QualifiedName.create(attribute.getName().split("\\.")), attribute));
       }

@@ -168,8 +168,8 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 		var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
 		var State s = transition.eContainer as State
 		var FSM fsm = s.eContainer as FSM
-		var Kind k = fsm.eContainer as Kind
-		for (action : k.actions) {
+		var Type t = fsm.eContainer as Kind
+		for (action : t.actions) {
 			res.add(EObjectDescription.create(QualifiedName.create(action.name), action))
 		}
 		return new SimpleScope(IScope.NULLSCOPE, res)
@@ -193,8 +193,8 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 		def scope_State_literal(State state, EReference reference) {
 			var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
 			var FSM fsm = state.eContainer as FSM
-			var Kind kind = fsm.eContainer as Kind
-			var Extension ext = kind.eContainer as Extension
+			var Type typee = fsm.eContainer as Kind
+			var Extension ext = typee.eContainer as Extension
 			for (type : ext.types.filter[t|t instanceof EnumerationType]) {
 				for (literal : (type as EnumerationType).literals) {
 					res.add(EObjectDescription.create(QualifiedName.create(type.name, literal.name), literal));
@@ -206,8 +206,8 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 
 		def scope_FSM_attribute(FSM fsm, EReference reference) {
 			var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
-			var Kind kind = fsm.eContainer as Kind
-			for (attribute : kind.attributes) {
+			var Type type = fsm.eContainer as Kind
+			for (attribute : type.attributes) {
 				res.add(EObjectDescription.create(QualifiedName.create(attribute.name.split("\\.")), attribute));
 			}
 			new SimpleScope(IScope.NULLSCOPE, res);
