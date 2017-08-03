@@ -602,6 +602,15 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getType_Fsm() {
+		return (EReference)typeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getType__ActionTermUnicity__DiagnosticChain_Map() {
 		return typeEClass.getEOperations().get(0);
 	}
@@ -863,7 +872,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getKind_Fsm() {
+	public EReference getKind_Source() {
 		return (EReference)kindEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -872,17 +881,8 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getKind_Source() {
-		return (EReference)kindEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getKind_Target() {
-		return (EReference)kindEClass.getEStructuralFeatures().get(4);
+		return (EReference)kindEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2018,6 +2018,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		typeEClass = createEClass(TYPE);
 		createEReference(typeEClass, TYPE__ACTIONS);
 		createEReference(typeEClass, TYPE__CONSTRAINTS);
+		createEReference(typeEClass, TYPE__FSM);
 		createEOperation(typeEClass, TYPE___ACTION_TERM_UNICITY__DIAGNOSTICCHAIN_MAP);
 		createEOperation(typeEClass, TYPE___CONSTRAINT_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP);
 
@@ -2052,7 +2053,6 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		kindEClass = createEClass(KIND);
 		createEReference(kindEClass, KIND__PARENT);
 		createEReference(kindEClass, KIND__ENTITIES);
-		createEReference(kindEClass, KIND__FSM);
 		createEReference(kindEClass, KIND__SOURCE);
 		createEReference(kindEClass, KIND__TARGET);
 		createEOperation(kindEClass, KIND___OCCI_IS_KIND_OF__KIND);
@@ -2297,6 +2297,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEClass(typeEClass, Type.class, "Type", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getType_Actions(), this.getAction(), null, "actions", null, 0, -1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getType_Constraints(), this.getConstraint(), null, "constraints", null, 0, -1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getType_Fsm(), this.getFSM(), null, "fsm", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getType__ActionTermUnicity__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "ActionTermUnicity", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -2379,7 +2380,6 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEClass(kindEClass, Kind.class, "Kind", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getKind_Parent(), this.getKind(), null, "parent", null, 0, 1, Kind.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getKind_Entities(), this.getEntity(), null, "entities", null, 0, -1, Kind.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getKind_Fsm(), this.getFSM(), null, "fsm", null, 0, 1, Kind.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getKind_Source(), this.getKind(), null, "source", null, 0, 1, Kind.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getKind_Target(), this.getKind(), null, "target", null, 0, 1, Kind.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

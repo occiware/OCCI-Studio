@@ -848,19 +848,18 @@ public class OCCITables
 
 		public static final /*@NonNull*/ ExecutorProperty _FSM__attribute = new EcoreExecutorProperty(OCCIPackage.Literals.FSM__ATTRIBUTE, Types._FSM, 0);
 		public static final /*@NonNull*/ ExecutorProperty _FSM__ownedState = new EcoreExecutorProperty(OCCIPackage.Literals.FSM__OWNED_STATE, Types._FSM, 1);
-		public static final /*@NonNull*/ ExecutorProperty _FSM__Kind__fsm = new ExecutorPropertyWithImplementation("Kind", Types._FSM, 2, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.KIND__FSM));
+		public static final /*@NonNull*/ ExecutorProperty _FSM__Type__fsm = new ExecutorPropertyWithImplementation("Type", Types._FSM, 2, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.TYPE__FSM));
 
 		public static final /*@NonNull*/ ExecutorProperty _Kind__entities = new EcoreExecutorProperty(OCCIPackage.Literals.KIND__ENTITIES, Types._Kind, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Kind__fsm = new EcoreExecutorProperty(OCCIPackage.Literals.KIND__FSM, Types._Kind, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Kind__parent = new EcoreExecutorProperty(OCCIPackage.Literals.KIND__PARENT, Types._Kind, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Kind__source = new EcoreExecutorProperty(OCCIPackage.Literals.KIND__SOURCE, Types._Kind, 3);
-		public static final /*@NonNull*/ ExecutorProperty _Kind__target = new EcoreExecutorProperty(OCCIPackage.Literals.KIND__TARGET, Types._Kind, 4);
-		public static final /*@NonNull*/ ExecutorProperty _Kind__Entity__kind = new ExecutorPropertyWithImplementation("Entity", Types._Kind, 5, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.ENTITY__KIND));
-		public static final /*@NonNull*/ ExecutorProperty _Kind__Extension__kinds = new ExecutorPropertyWithImplementation("Extension", Types._Kind, 6, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.EXTENSION__KINDS));
-		public static final /*@NonNull*/ ExecutorProperty _Kind__Kind__parent = new ExecutorPropertyWithImplementation("Kind", Types._Kind, 7, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.KIND__PARENT));
-		public static final /*@NonNull*/ ExecutorProperty _Kind__Kind__source = new ExecutorPropertyWithImplementation("Kind", Types._Kind, 8, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.KIND__SOURCE));
-		public static final /*@NonNull*/ ExecutorProperty _Kind__Kind__target = new ExecutorPropertyWithImplementation("Kind", Types._Kind, 9, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.KIND__TARGET));
-		public static final /*@NonNull*/ ExecutorProperty _Kind__Mixin__applies = new ExecutorPropertyWithImplementation("Mixin", Types._Kind, 10, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.MIXIN__APPLIES));
+		public static final /*@NonNull*/ ExecutorProperty _Kind__parent = new EcoreExecutorProperty(OCCIPackage.Literals.KIND__PARENT, Types._Kind, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Kind__source = new EcoreExecutorProperty(OCCIPackage.Literals.KIND__SOURCE, Types._Kind, 2);
+		public static final /*@NonNull*/ ExecutorProperty _Kind__target = new EcoreExecutorProperty(OCCIPackage.Literals.KIND__TARGET, Types._Kind, 3);
+		public static final /*@NonNull*/ ExecutorProperty _Kind__Entity__kind = new ExecutorPropertyWithImplementation("Entity", Types._Kind, 4, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.ENTITY__KIND));
+		public static final /*@NonNull*/ ExecutorProperty _Kind__Extension__kinds = new ExecutorPropertyWithImplementation("Extension", Types._Kind, 5, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.EXTENSION__KINDS));
+		public static final /*@NonNull*/ ExecutorProperty _Kind__Kind__parent = new ExecutorPropertyWithImplementation("Kind", Types._Kind, 6, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.KIND__PARENT));
+		public static final /*@NonNull*/ ExecutorProperty _Kind__Kind__source = new ExecutorPropertyWithImplementation("Kind", Types._Kind, 7, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.KIND__SOURCE));
+		public static final /*@NonNull*/ ExecutorProperty _Kind__Kind__target = new ExecutorPropertyWithImplementation("Kind", Types._Kind, 8, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.KIND__TARGET));
+		public static final /*@NonNull*/ ExecutorProperty _Kind__Mixin__applies = new ExecutorPropertyWithImplementation("Mixin", Types._Kind, 9, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.MIXIN__APPLIES));
 
 		public static final /*@NonNull*/ ExecutorProperty _Link__source = new EcoreExecutorProperty(OCCIPackage.Literals.LINK__SOURCE, Types._Link, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Link__target = new EcoreExecutorProperty(OCCIPackage.Literals.LINK__TARGET, Types._Link, 1);
@@ -912,6 +911,7 @@ public class OCCITables
 
 		public static final /*@NonNull*/ ExecutorProperty _Type__actions = new EcoreExecutorProperty(OCCIPackage.Literals.TYPE__ACTIONS, Types._Type, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Type__constraints = new EcoreExecutorProperty(OCCIPackage.Literals.TYPE__CONSTRAINTS, Types._Type, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Type__fsm = new EcoreExecutorProperty(OCCIPackage.Literals.TYPE__FSM, Types._Type, 2);
 		static {
 			Init.initEnd();
 		}
@@ -2845,7 +2845,7 @@ public class OCCITables
 			OCCITables.Properties._Category__attributes,
 			OCCITables.Properties._Type__constraints,
 			OCCITables.Properties._Kind__entities,
-			OCCITables.Properties._Kind__fsm,
+			OCCITables.Properties._Type__fsm,
 			OCCITables.Properties._Category__name,
 			OCCITables.Properties._Kind__parent,
 			OCCITables.Properties._Category__scheme,
@@ -2875,6 +2875,7 @@ public class OCCITables
 			OCCITables.Properties._Type__constraints,
 			OCCITables.Properties._Mixin__depends,
 			OCCITables.Properties._Mixin__entities,
+			OCCITables.Properties._Type__fsm,
 			OCCITables.Properties._Category__name,
 			OCCITables.Properties._Category__scheme,
 			OCCITables.Properties._Category__term,
@@ -2965,6 +2966,7 @@ public class OCCITables
 			OCCITables.Properties._AnnotatedElement__annotations,
 			OCCITables.Properties._Category__attributes,
 			OCCITables.Properties._Type__constraints,
+			OCCITables.Properties._Type__fsm,
 			OCCITables.Properties._Category__name,
 			OCCITables.Properties._Category__scheme,
 			OCCITables.Properties._Category__term,

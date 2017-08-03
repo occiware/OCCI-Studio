@@ -118,7 +118,7 @@ public class RecordFieldImpl extends AttributeImpl implements RecordField {
 		 */
 		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
 		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ IntegerValue severity_0 = ValueUtil.integerValueOf(4);//CGStringGetSeverityOperation.INSTANCE.evaluate(executor, OCCITables.STR_RecordField_c_c_ContainerMustBeRecordType);
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, OCCITables.STR_RecordField_c_c_ContainerMustBeRecordType);
 		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
 		/*@NonInvalid*/ boolean symbol_0;
 		if (le) {

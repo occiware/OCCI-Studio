@@ -19,10 +19,12 @@ import java.util.List;
 import java.util.Map;
 import org.eclipse.cmf.occi.core.Action;
 import org.eclipse.cmf.occi.core.Constraint;
+import org.eclipse.cmf.occi.core.FSM;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.cmf.occi.core.Type;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
@@ -31,6 +33,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -62,6 +65,7 @@ import org.eclipse.ocl.pivot.values.SetValue;
  * <ul>
  *   <li>{@link org.eclipse.cmf.occi.core.impl.TypeImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.impl.TypeImpl#getConstraints <em>Constraints</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.impl.TypeImpl#getFsm <em>Fsm</em>}</li>
  * </ul>
  *
  * @generated
@@ -86,6 +90,16 @@ public abstract class TypeImpl extends CategoryImpl implements Type {
 	 * @ordered
 	 */
 	protected EList<Constraint> constraints;
+
+	/**
+	 * The cached value of the '{@link #getFsm() <em>Fsm</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFsm()
+	 * @generated
+	 * @ordered
+	 */
+	protected FSM fsm;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,6 +142,49 @@ public abstract class TypeImpl extends CategoryImpl implements Type {
 			constraints = new EObjectContainmentEList<Constraint>(Constraint.class, this, OCCIPackage.TYPE__CONSTRAINTS);
 		}
 		return constraints;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FSM getFsm() {
+		return fsm;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetFsm(FSM newFsm, NotificationChain msgs) {
+		FSM oldFsm = fsm;
+		fsm = newFsm;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, OCCIPackage.TYPE__FSM, oldFsm, newFsm);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFsm(FSM newFsm) {
+		if (newFsm != fsm) {
+			NotificationChain msgs = null;
+			if (fsm != null)
+				msgs = ((InternalEObject)fsm).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - OCCIPackage.TYPE__FSM, null, msgs);
+			if (newFsm != null)
+				msgs = ((InternalEObject)newFsm).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - OCCIPackage.TYPE__FSM, null, msgs);
+			msgs = basicSetFsm(newFsm, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.TYPE__FSM, newFsm, newFsm));
 	}
 
 	/**
@@ -258,6 +315,8 @@ public abstract class TypeImpl extends CategoryImpl implements Type {
 				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
 			case OCCIPackage.TYPE__CONSTRAINTS:
 				return ((InternalEList<?>)getConstraints()).basicRemove(otherEnd, msgs);
+			case OCCIPackage.TYPE__FSM:
+				return basicSetFsm(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -274,6 +333,8 @@ public abstract class TypeImpl extends CategoryImpl implements Type {
 				return getActions();
 			case OCCIPackage.TYPE__CONSTRAINTS:
 				return getConstraints();
+			case OCCIPackage.TYPE__FSM:
+				return getFsm();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -295,6 +356,9 @@ public abstract class TypeImpl extends CategoryImpl implements Type {
 				getConstraints().clear();
 				getConstraints().addAll((Collection<? extends Constraint>)newValue);
 				return;
+			case OCCIPackage.TYPE__FSM:
+				setFsm((FSM)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -313,6 +377,9 @@ public abstract class TypeImpl extends CategoryImpl implements Type {
 			case OCCIPackage.TYPE__CONSTRAINTS:
 				getConstraints().clear();
 				return;
+			case OCCIPackage.TYPE__FSM:
+				setFsm((FSM)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -329,6 +396,8 @@ public abstract class TypeImpl extends CategoryImpl implements Type {
 				return actions != null && !actions.isEmpty();
 			case OCCIPackage.TYPE__CONSTRAINTS:
 				return constraints != null && !constraints.isEmpty();
+			case OCCIPackage.TYPE__FSM:
+				return fsm != null;
 		}
 		return super.eIsSet(featureID);
 	}

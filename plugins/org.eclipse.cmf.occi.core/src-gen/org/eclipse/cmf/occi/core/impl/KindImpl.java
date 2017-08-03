@@ -19,13 +19,10 @@ import java.util.Map;
 import org.eclipse.cmf.occi.core.Attribute;
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Extension;
-import org.eclipse.cmf.occi.core.FSM;
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
@@ -90,7 +87,6 @@ import org.eclipse.ocl.pivot.values.TupleValue;
  * <ul>
  *   <li>{@link org.eclipse.cmf.occi.core.impl.KindImpl#getParent <em>Parent</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.impl.KindImpl#getEntities <em>Entities</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.core.impl.KindImpl#getFsm <em>Fsm</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.impl.KindImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.impl.KindImpl#getTarget <em>Target</em>}</li>
  * </ul>
@@ -107,16 +103,6 @@ public class KindImpl extends TypeImpl implements Kind {
 	 * @ordered
 	 */
 	protected Kind parent;
-
-	/**
-	 * The cached value of the '{@link #getFsm() <em>Fsm</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFsm()
-	 * @generated
-	 * @ordered
-	 */
-	protected FSM fsm;
 
 	/**
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
@@ -229,49 +215,6 @@ public class KindImpl extends TypeImpl implements Kind {
 		}
 		final /*@NonInvalid*/ List<Entity> ECORE_select = ((IdResolver.IdResolverExtension)idResolver).ecoreValueOfAll(Entity.class, select);
 		return (EList<Entity>)ECORE_select;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FSM getFsm() {
-		return fsm;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetFsm(FSM newFsm, NotificationChain msgs) {
-		FSM oldFsm = fsm;
-		fsm = newFsm;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, OCCIPackage.KIND__FSM, oldFsm, newFsm);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setFsm(FSM newFsm) {
-		if (newFsm != fsm) {
-			NotificationChain msgs = null;
-			if (fsm != null)
-				msgs = ((InternalEObject)fsm).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - OCCIPackage.KIND__FSM, null, msgs);
-			if (newFsm != null)
-				msgs = ((InternalEObject)newFsm).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - OCCIPackage.KIND__FSM, null, msgs);
-			msgs = basicSetFsm(newFsm, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.KIND__FSM, newFsm, newFsm));
 	}
 
 	/**
@@ -1382,20 +1325,6 @@ public class KindImpl extends TypeImpl implements Kind {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case OCCIPackage.KIND__FSM:
-				return basicSetFsm(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case OCCIPackage.KIND__PARENT:
@@ -1403,8 +1332,6 @@ public class KindImpl extends TypeImpl implements Kind {
 				return basicGetParent();
 			case OCCIPackage.KIND__ENTITIES:
 				return getEntities();
-			case OCCIPackage.KIND__FSM:
-				return getFsm();
 			case OCCIPackage.KIND__SOURCE:
 				if (resolve) return getSource();
 				return basicGetSource();
@@ -1426,9 +1353,6 @@ public class KindImpl extends TypeImpl implements Kind {
 			case OCCIPackage.KIND__PARENT:
 				setParent((Kind)newValue);
 				return;
-			case OCCIPackage.KIND__FSM:
-				setFsm((FSM)newValue);
-				return;
 			case OCCIPackage.KIND__SOURCE:
 				setSource((Kind)newValue);
 				return;
@@ -1449,9 +1373,6 @@ public class KindImpl extends TypeImpl implements Kind {
 		switch (featureID) {
 			case OCCIPackage.KIND__PARENT:
 				setParent((Kind)null);
-				return;
-			case OCCIPackage.KIND__FSM:
-				setFsm((FSM)null);
 				return;
 			case OCCIPackage.KIND__SOURCE:
 				setSource((Kind)null);
@@ -1475,8 +1396,6 @@ public class KindImpl extends TypeImpl implements Kind {
 				return parent != null;
 			case OCCIPackage.KIND__ENTITIES:
 				return !getEntities().isEmpty();
-			case OCCIPackage.KIND__FSM:
-				return fsm != null;
 			case OCCIPackage.KIND__SOURCE:
 				return source != null;
 			case OCCIPackage.KIND__TARGET:

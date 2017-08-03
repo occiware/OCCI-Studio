@@ -32,10 +32,8 @@ import org.slf4j.LoggerFactory;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.cmf.occi.core.impl.AttributeStateImpl#getName
- * <em>Name</em>}</li>
- * <li>{@link org.eclipse.cmf.occi.core.impl.AttributeStateImpl#getValue
- * <em>Value</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.impl.AttributeStateImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.impl.AttributeStateImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -99,7 +97,6 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -109,7 +106,6 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getName() {
@@ -118,7 +114,6 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -130,7 +125,6 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getValue() {
@@ -165,81 +159,75 @@ public class AttributeStateImpl extends MinimalEObjectImpl.Container implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case OCCIPackage.ATTRIBUTE_STATE__NAME:
-			return getName();
-		case OCCIPackage.ATTRIBUTE_STATE__VALUE:
-			return getValue();
+			case OCCIPackage.ATTRIBUTE_STATE__NAME:
+				return getName();
+			case OCCIPackage.ATTRIBUTE_STATE__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case OCCIPackage.ATTRIBUTE_STATE__NAME:
-			setName((String) newValue);
-			return;
-		case OCCIPackage.ATTRIBUTE_STATE__VALUE:
-			setValue((String) newValue);
-			return;
+			case OCCIPackage.ATTRIBUTE_STATE__NAME:
+				setName((String)newValue);
+				return;
+			case OCCIPackage.ATTRIBUTE_STATE__VALUE:
+				setValue((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case OCCIPackage.ATTRIBUTE_STATE__NAME:
-			setName(NAME_EDEFAULT);
-			return;
-		case OCCIPackage.ATTRIBUTE_STATE__VALUE:
-			setValue(VALUE_EDEFAULT);
-			return;
+			case OCCIPackage.ATTRIBUTE_STATE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case OCCIPackage.ATTRIBUTE_STATE__VALUE:
+				setValue(VALUE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case OCCIPackage.ATTRIBUTE_STATE__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case OCCIPackage.ATTRIBUTE_STATE__VALUE:
-			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+			case OCCIPackage.ATTRIBUTE_STATE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case OCCIPackage.ATTRIBUTE_STATE__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
