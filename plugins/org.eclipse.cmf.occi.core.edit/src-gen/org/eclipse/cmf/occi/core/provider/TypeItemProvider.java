@@ -73,6 +73,7 @@ public class TypeItemProvider extends CategoryItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(OCCIPackage.Literals.TYPE__ACTIONS);
 			childrenFeatures.add(OCCIPackage.Literals.TYPE__CONSTRAINTS);
+			childrenFeatures.add(OCCIPackage.Literals.TYPE__FSM);
 		}
 		return childrenFeatures;
 	}
@@ -119,6 +120,7 @@ public class TypeItemProvider extends CategoryItemProvider {
 		switch (notification.getFeatureID(Type.class)) {
 			case OCCIPackage.TYPE__ACTIONS:
 			case OCCIPackage.TYPE__CONSTRAINTS:
+			case OCCIPackage.TYPE__FSM:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -145,6 +147,11 @@ public class TypeItemProvider extends CategoryItemProvider {
 			(createChildParameter
 				(OCCIPackage.Literals.TYPE__CONSTRAINTS,
 				 OCCIFactory.eINSTANCE.createConstraint()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.TYPE__FSM,
+				 OCCIFactory.eINSTANCE.createFSM()));
 	}
 
 }
