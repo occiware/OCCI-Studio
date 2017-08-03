@@ -75,15 +75,10 @@ h1. Types
 
 h2. NumericType Second : Integer
 
-
-
 * minInclusive = 0
 
 h2. StringType DateTime
 
-
-
 * pattern = ==^(\d{4}((-)?(0[1-9]|1[0-2])((-)?(0[1-9]|[1-2][0-9]|3[0-1])(T(24:00(:00(\.[0]+)?)?|(([0-1][0-9]|2[0-3])(:)[0-5][0-9])((:)[0-5][0-9](\.[\d]+)?)?)((\+|-)(14:00|(0[0-9]|1[0-3])(:)[0-5][0-9])|Z))?)?)?)$==
 
-
-Generated at Tue Aug 01 14:11:01 CEST 2017 from  by org.eclipse.cmf.occi.core.gen.textile
+Generated at Thu Aug 03 14:08:37 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.monitoring/model/monitoring.occie by org.eclipse.cmf.occi.core.gen.textile
