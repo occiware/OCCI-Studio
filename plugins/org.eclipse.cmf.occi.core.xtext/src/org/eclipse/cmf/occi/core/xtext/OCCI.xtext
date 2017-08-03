@@ -94,6 +94,7 @@ Mixin returns Mixin:
 	| actions+=Action
 	| constraints+=Constraint)+
 	'}')?
+	(fsm=FSM)?
 	('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?;
 
 Annotation returns Annotation:
