@@ -56,6 +56,7 @@
         eType="#//Action" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" upperBound="-1"
         eType="#//Constraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fsm" eType="#//FSM" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FSM">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -158,7 +159,6 @@
         <details key="derivation" value="Entity.allInstances()->select(kind = self)"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fsm" eType="#//FSM" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Kind"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Kind"/>
   </eClassifiers>
