@@ -115,24 +115,17 @@ h1. Types
 
 h2. EObjectType URL
 
-
-
 **instanceClassName**: java.net.URL
 
 h2. EObjectType URI
 
-
-
 **instanceClassName**: java.net.URI
 
 h2. EnumerationType Status
-
-
 
 **Literals**:
 * active  
 * inactive  
 * error  
 
-
-Generated at Tue Aug 01 14:11:28 CEST 2017 from  by org.eclipse.cmf.occi.core.gen.textile
+Generated at Thu Aug 03 14:26:22 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.platform/model/Platform.occie by org.eclipse.cmf.occi.core.gen.textile
