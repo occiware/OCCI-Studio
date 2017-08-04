@@ -343,6 +343,9 @@ public class Generate extends AbstractAcceleoGenerator {
         if (!isInWorkspace(org.eclipse.emf.ecore.EcorePackage.class)) {
             resourceSet.getPackageRegistry().put(org.eclipse.emf.ecore.EcorePackage.eINSTANCE.getNsURI(), org.eclipse.emf.ecore.EcorePackage.eINSTANCE);
         }
+        if (!isInWorkspace(org.eclipse.cmf.occi.core.OCCIPackage.class)) {
+            resourceSet.getPackageRegistry().put(org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE.getNsURI(), org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
+        }
         
         /*
          * If you want to change the content of this method, do NOT forget to change the "@generated"
