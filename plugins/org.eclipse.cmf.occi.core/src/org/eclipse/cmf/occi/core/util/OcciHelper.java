@@ -524,7 +524,7 @@ public final class OcciHelper
 	public static void executeAction(Entity entity, String actionName, String... parameters) throws InvocationTargetException
 	{
 		// TODO: Check that actionName is an OCCI action.
-
+		
 		// Search the Ecore operation.
 		EOperation eOperation = null;
 		for(EOperation tmp : entity.eClass().getEAllOperations()) {
@@ -533,6 +533,26 @@ public final class OcciHelper
 				break;
 			}
 		}
+		boolean onMixin = false;
+		MixinBase mixinBase = null;
+		if (eOperation == null) {
+			EList<MixinBase> mixins = entity.getParts();
+			for (MixinBase mixin : mixins) {
+				for (EOperation tmp : mixin.eClass().getEAllOperations()) {
+					if (tmp.getName().equals(actionName)) {
+						onMixin = true;
+						eOperation = tmp;
+						mixinBase = mixin;
+						break;
+					}
+				}
+				if (eOperation != null) {
+					break;
+				}
+			}
+		}
+		
+		
 		// Exception if operation not found.
 		if(eOperation == null) {
 			throw new IllegalArgumentException("Ecore operation '" + actionName + "' not found!");
@@ -549,14 +569,14 @@ public final class OcciHelper
         Object[] eParameters = new Object[nbParameters];
         Class<?>[] parameterClasses = new Class[nbParameters];
         for(int i=0; i<nbParameters; i++) {
-        	EParameter eParameter = eOperationParameters.get(i);
-        	EDataType parameterType = (EDataType)eParameter.getEType();
-        	try {
-        		eParameters[i] = parameterType.getEPackage().getEFactoryInstance().createFromString(parameterType, parameters[i]);
-        	} catch(IllegalArgumentException e) {
-        		throw new IllegalArgumentException("Bad value for '" + eParameter.getName() + "' parameter!", e);
-        	}
-        	parameterClasses[i] = parameterType.getInstanceClass();
+        		EParameter eParameter = eOperationParameters.get(i);
+        		EDataType parameterType = (EDataType)eParameter.getEType();
+        		try {
+        			eParameters[i] = parameterType.getEPackage().getEFactoryInstance().createFromString(parameterType, parameters[i]);
+        		} catch(IllegalArgumentException e) {
+        			throw new IllegalArgumentException("Bad value for '" + eParameter.getName() + "' parameter!", e);
+        		}
+        		parameterClasses[i] = parameterType.getInstanceClass();
         }
 
         // Execute the Ecore operation.
@@ -565,8 +585,13 @@ public final class OcciHelper
 
 // FIXME: Then use Java reflection invocation.
 		try {
-			Method method = entity.getClass().getMethod(actionName, parameterClasses);
-			method.invoke(entity, eParameters);
+			if (!onMixin) {
+				Method method = entity.getClass().getMethod(actionName, parameterClasses);
+				method.invoke(entity, eParameters);
+			} else {
+				Method method = mixinBase.getClass().getMethod(actionName, parameterClasses);
+				method.invoke(mixinBase, eParameters);
+			}
 		} catch (NoSuchMethodException e) {
 			throw new IllegalArgumentException("Method '" + actionName + "' not found!", e);
 		} catch (SecurityException e) {
