@@ -168,7 +168,7 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 		var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
 		var State s = transition.eContainer as State
 		var FSM fsm = s.eContainer as FSM
-		var Type t = fsm.eContainer as Kind
+		var Type t = fsm.eContainer as Type
 		for (action : t.actions) {
 			res.add(EObjectDescription.create(QualifiedName.create(action.name), action))
 		}
@@ -193,7 +193,7 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 		def scope_State_literal(State state, EReference reference) {
 			var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
 			var FSM fsm = state.eContainer as FSM
-			var Type typee = fsm.eContainer as Kind
+			var Type typee = fsm.eContainer as Type
 			var Extension ext = typee.eContainer as Extension
 			for (type : ext.types.filter[t|t instanceof EnumerationType]) {
 				for (literal : (type as EnumerationType).literals) {
@@ -206,7 +206,7 @@ class OCCIScopeProvider extends AbstractOCCIScopeProvider {
 
 		def scope_FSM_attribute(FSM fsm, EReference reference) {
 			var ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>
-			var Type type = fsm.eContainer as Kind
+			var Type type = fsm.eContainer as Type
 			for (attribute : type.attributes) {
 				res.add(EObjectDescription.create(QualifiedName.create(attribute.name.split("\\.")), attribute));
 			}

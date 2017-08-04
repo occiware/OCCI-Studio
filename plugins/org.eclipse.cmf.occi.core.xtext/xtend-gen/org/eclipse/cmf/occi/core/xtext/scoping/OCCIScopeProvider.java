@@ -205,7 +205,7 @@ public class OCCIScopeProvider extends AbstractOCCIScopeProvider {
     EObject _eContainer_1 = s.eContainer();
     FSM fsm = ((FSM) _eContainer_1);
     EObject _eContainer_2 = fsm.eContainer();
-    Type t = ((Kind) _eContainer_2);
+    Type t = ((Type) _eContainer_2);
     EList<Action> _actions = t.getActions();
     for (final Action action : _actions) {
       res.add(EObjectDescription.create(QualifiedName.create(action.getName()), action));
@@ -244,7 +244,7 @@ public class OCCIScopeProvider extends AbstractOCCIScopeProvider {
       EObject _eContainer = state.eContainer();
       FSM fsm = ((FSM) _eContainer);
       EObject _eContainer_1 = fsm.eContainer();
-      Type typee = ((Kind) _eContainer_1);
+      Type typee = ((Type) _eContainer_1);
       EObject _eContainer_2 = typee.eContainer();
       Extension ext = ((Extension) _eContainer_2);
       final Function1<DataType, Boolean> _function = (DataType t) -> {
@@ -267,7 +267,7 @@ public class OCCIScopeProvider extends AbstractOCCIScopeProvider {
     {
       ArrayList<IEObjectDescription> res = new ArrayList<IEObjectDescription>();
       EObject _eContainer = fsm.eContainer();
-      Type type = ((Kind) _eContainer);
+      Type type = ((Type) _eContainer);
       EList<Attribute> _attributes = type.getAttributes();
       for (final Attribute attribute : _attributes) {
         res.add(EObjectDescription.create(QualifiedName.create(attribute.getName().split("\\.")), attribute));
