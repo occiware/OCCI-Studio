@@ -186,7 +186,7 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 [/template]
 
 
-[template public generateActionMethod(action : Action, kind : Type, extendedPackageName : String)]
+[template public generateActionMethod(action : Action, type : Type, extendedPackageName : String)]
 	/**
 	 * Implement OCCI action:
      * - scheme: [action.scheme/]
@@ -198,11 +198,11 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 	{
 		LOGGER.debug("Action [action.term/]([if (action.attributes->size() > 0)]"[for (parameter : Attribute | action.attributes)] + "[parameter.name/]=" + [parameter.name/][/for] + "[/if]) called on " + this);
 
-[if (getStateAttribute(kind).oclIsUndefined())]
-		// TODO: Implement how to [action.term/] this [kind.term/].
+[if (getStateAttribute(type).oclIsUndefined())]
+		// TODO: Implement how to [action.term/] this [type.term/].
 [else]
-[let stateAttribute : Attribute = getStateAttribute(kind)]
-		// [kind.term.toUpperFirst()/] State Machine.
+[let stateAttribute : Attribute = getStateAttribute(type)]
+		// [type.term.toUpperFirst()/] State Machine.
 		switch(get[getJavaAttributeName(stateAttribute).toString().toU1Case()/]().getValue()) {
 [for (eEnumLiteral : EnumerationLiteral | getSourceStatesFromAnAction(action)->collect(state|state.oclAsType(State).literal))]
 
@@ -241,8 +241,8 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 [comment the following query returns a set of states which are target of transitions containing the action "action"/]
 [query public getTargetStatesFromAnAction(action : Action) : Set(State) = getSourceStatesFromAnAction(action)->collect(sourceState|sourceState.oclAsType(State).outgoingTransition)->flatten()->select(tr|tr.oclAsType(Transition).action=action)->flatten()->collect(tr|tr.oclAsType(Transition).target)->asSet() /]
 [comment the following query returns a set of states which are source of transitions containing the action "action"/]
-[query public getSourceStatesFromAnAction(action : Action) : Set(State) = if (not action.eContainer().oclAsType(Kind).fsm.oclIsUndefined()) then 
-																				action.eContainer().oclAsType(Kind).fsm.ownedState->collect(ow|ow.oclAsType(State).outgoingTransition)->flatten()
+[query public getSourceStatesFromAnAction(action : Action) : Set(State) = if (not action.eContainer().oclAsType(Type).fsm.oclIsUndefined()) then 
+																				action.eContainer().oclAsType(Type).fsm.ownedState->collect(ow|ow.oclAsType(State).outgoingTransition)->flatten()
 																				->select(tr| tr.action=action)->collect(tr|tr.oclAsType(Transition).source)->flatten()->asSet() else Set{} endif /]
 
 [query public getStateAttribute(kind : Type) : Attribute = kind.attributes->any(attribute : Attribute | attribute.name.endsWith('state') and attribute.type.oclIsTypeOf(EnumerationType)) /]

@@ -806,7 +806,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" this "/>
         <body xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <source xsi:type="ocl.ecore:VariableExp" name="kind" referredVariable="/0/generateActionMethod/kind">
+          <source xsi:type="ocl.ecore:VariableExp" name="type" referredVariable="/0/generateActionMethod/type">
             <eType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Type"/>
           </source>
           <referredProperty xsi:type="ecore:EAttribute" href="http://schemas.ogf.org/occi/core/ecore#//Category/term"/>
@@ -816,7 +816,7 @@
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
           <source xsi:type="mtl:QueryInvocation" definition="/0/getStateAttribute">
             <eType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Attribute"/>
-            <argument xsi:type="ocl.ecore:VariableExp" name="kind" referredVariable="/0/generateActionMethod/kind">
+            <argument xsi:type="ocl.ecore:VariableExp" name="type" referredVariable="/0/generateActionMethod/type">
               <eType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Type"/>
             </argument>
           </source>
@@ -829,7 +829,7 @@
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <source xsi:type="ocl.ecore:VariableExp" name="kind" referredVariable="/0/generateActionMethod/kind">
+                <source xsi:type="ocl.ecore:VariableExp" name="type" referredVariable="/0/generateActionMethod/type">
                   <eType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Type"/>
                 </source>
                 <referredProperty xsi:type="ecore:EAttribute" href="http://schemas.ogf.org/occi/core/ecore#//Category/term"/>
@@ -1140,7 +1140,7 @@
               <eType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Attribute"/>
               <initExpression xsi:type="mtl:QueryInvocation" definition="/0/getStateAttribute">
                 <eType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Attribute"/>
-                <argument xsi:type="ocl.ecore:VariableExp" name="kind" referredVariable="/0/generateActionMethod/kind">
+                <argument xsi:type="ocl.ecore:VariableExp" name="type" referredVariable="/0/generateActionMethod/type">
                   <eType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Type"/>
                 </argument>
               </initExpression>
@@ -1152,7 +1152,7 @@
       <parameter name="action">
         <eType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Action"/>
       </parameter>
-      <parameter name="kind">
+      <parameter name="type">
         <eType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Type"/>
       </parameter>
       <parameter name="extendedPackageName">
@@ -1259,7 +1259,7 @@
             <source xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//FSM"/>
               <source xsi:type="ocl.ecore:OperationCallExp">
-                <eType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Kind"/>
+                <eType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Type"/>
                 <source xsi:type="ocl.ecore:OperationCallExp">
                   <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
                   <source xsi:type="ocl.ecore:VariableExp" name="action" referredVariable="/0/getSourceStatesFromAnAction/action">
@@ -1267,8 +1267,8 @@
                   </source>
                   <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eContainer"/>
                 </source>
-                <argument xsi:type="ocl.ecore:TypeExp" eType="/69/Kind">
-                  <referredType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Kind"/>
+                <argument xsi:type="ocl.ecore:TypeExp" eType="/69/Type">
+                  <referredType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Type"/>
                 </argument>
                 <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
               </source>
@@ -1288,7 +1288,7 @@
                       <source xsi:type="ocl.ecore:PropertyCallExp">
                         <eType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//FSM"/>
                         <source xsi:type="ocl.ecore:OperationCallExp">
-                          <eType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Kind"/>
+                          <eType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Type"/>
                           <source xsi:type="ocl.ecore:OperationCallExp">
                             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
                             <source xsi:type="ocl.ecore:VariableExp" name="action" referredVariable="/0/getSourceStatesFromAnAction/action">
@@ -1296,8 +1296,8 @@
                             </source>
                             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eContainer"/>
                           </source>
-                          <argument xsi:type="ocl.ecore:TypeExp" eType="/69/Kind">
-                            <referredType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Kind"/>
+                          <argument xsi:type="ocl.ecore:TypeExp" eType="/69/Type">
+                            <referredType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Type"/>
                           </argument>
                           <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
                         </source>
@@ -1708,7 +1708,7 @@
         <eParameters name="action">
           <eType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Action"/>
         </eParameters>
-        <eParameters name="kind">
+        <eParameters name="type">
           <eType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Type"/>
         </eParameters>
         <eParameters name="extendedPackageName">
@@ -2130,6 +2130,9 @@
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:TypeType" name="Transition">
       <referredType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Transition"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="Type">
+      <referredType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Type"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:TypeType" name="EnumerationType">
       <referredType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//EnumerationType"/>
@@ -4066,7 +4069,7 @@
       <details key="end" value="6459"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.317" references="/0/generateActionMethod/%.15/%.3/kind">
+    <eAnnotations source="positions.317" references="/0/generateActionMethod/%.15/%.3/type">
       <details key="start" value="6450"/>
       <details key="end" value="6454"/>
       <details key="line" value="0"/>
@@ -4086,7 +4089,7 @@
       <details key="end" value="6381"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.321" references="/0/generateActionMethod/%.15/%.5/%/kind">
+    <eAnnotations source="positions.321" references="/0/generateActionMethod/%.15/%.5/%/type">
       <details key="start" value="6376"/>
       <details key="end" value="6380"/>
       <details key="line" value="0"/>
@@ -4116,7 +4119,7 @@
       <details key="end" value="6544"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.327" references="/0/generateActionMethod/%.15/%.6/%/%.1/%/kind">
+    <eAnnotations source="positions.327" references="/0/generateActionMethod/%.15/%.6/%/%.1/%/type">
       <details key="start" value="6535"/>
       <details key="end" value="6539"/>
       <details key="line" value="0"/>
@@ -4686,7 +4689,7 @@
       <details key="end" value="6528"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.441" references="/0/generateActionMethod/%.15/%.6/%/stateAttribute/%/kind">
+    <eAnnotations source="positions.441" references="/0/generateActionMethod/%.15/%.6/%/stateAttribute/%/type">
       <details key="start" value="6523"/>
       <details key="end" value="6527"/>
       <details key="line" value="0"/>
@@ -4701,7 +4704,7 @@
       <details key="end" value="5800"/>
       <details key="line" value="189"/>
     </eAnnotations>
-    <eAnnotations source="positions.444" references="/0/generateActionMethod/kind">
+    <eAnnotations source="positions.444" references="/0/generateActionMethod/type">
       <details key="start" value="5802"/>
       <details key="end" value="5813"/>
       <details key="line" value="189"/>
