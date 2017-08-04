@@ -11,22 +11,23 @@
     <actions name="Suspend" scheme="http://schemas.ogf.org/occi/sla/agreement/action#"/>
     <actions name="Resume" scheme="http://schemas.ogf.org/occi/sla/agreement/action#"/>
     <actions name="Terminate" scheme="http://schemas.ogf.org/occi/sla/agreement/action#"/>
+    <fsm attribute="//@kinds[term='agreement']/@attributes.0">
+      <ownedState literal="//@types.1/@literals.0" initial="true" final="false">
+        <outgoingTransition target="//@kinds[term='agreement']/@fsm/@ownedState.1" action="//@kinds[term='agreement']/@actions.1"/>
+        <outgoingTransition target="//@kinds[term='agreement']/@fsm/@ownedState.2" action="//@kinds[term='agreement']/@actions.0"/>
+      </ownedState>
+      <ownedState literal="//@types.1/@literals.2" initial="false" final="true"/>
+      <ownedState literal="//@types.1/@literals.1" initial="false" final="true">
+        <outgoingTransition target="//@kinds[term='agreement']/@fsm/@ownedState.3" action="//@kinds[term='agreement']/@actions.2"/>
+      </ownedState>
+      <ownedState literal="//@types.1/@literals.3" initial="false" final="true">
+        <outgoingTransition target="//@kinds[term='agreement']/@fsm/@ownedState.2" action="//@kinds[term='agreement']/@actions.3"/>
+      </ownedState>
+    </fsm>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
   <kinds name="agreement_link" scheme="http://schemas.ogf.org/occi/sla#" title="Link between a SLA and its associated resource">
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
-    <fsm>
-      <ownedState literal="//@types.3/@literals.0" initial="true" final="true">
-        <outgoingTransition target="//@kinds[term='agreement_link']/@fsm/@ownedState.1"/>
-        <outgoingTransition target="//@kinds[term='agreement_link']/@fsm/@ownedState.2"/>
-      </ownedState>
-      <ownedState literal="//@types.3/@literals.1" initial="false" final="true">
-        <outgoingTransition target="//@kinds[term='agreement_link']/@fsm/@ownedState.2"/>
-      </ownedState>
-      <ownedState literal="//@types.3/@literals.2" initial="false" final="true">
-        <outgoingTransition target="//@kinds[term='agreement_link']/@fsm/@ownedState.1"/>
-      </ownedState>
-    </fsm>
   </kinds>
   <mixins name="agreement_tpl" scheme="http://schemas.ogf.org/occi/sla#" title="Mixin defining a SLA template collection" applies="//@kinds[term='agreement']"/>
   <mixins name="agreement_term" scheme="http://schemas.ogf.org/occi/sla#" title="Mixin defining a Term collection for an agreement" applies="//@kinds[term='agreement']">
@@ -38,6 +39,18 @@
     <attributes name="occi.agreement.term.remedy" mutable="false" description="The remedy value (e.g., price penalty) or action e.g., command) when an SLO term is being violated.">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
+    <fsm attribute="//@mixins[term='agreement_term']/@attributes.1">
+      <ownedState literal="//@types.3/@literals.0" initial="true" final="true">
+        <outgoingTransition target="//@mixins[term='agreement_term']/@fsm/@ownedState.1"/>
+        <outgoingTransition target="//@mixins[term='agreement_term']/@fsm/@ownedState.2"/>
+      </ownedState>
+      <ownedState literal="//@types.3/@literals.1" initial="false" final="true">
+        <outgoingTransition target="//@mixins[term='agreement_term']/@fsm/@ownedState.2"/>
+      </ownedState>
+      <ownedState literal="//@types.3/@literals.2" initial="false" final="true">
+        <outgoingTransition target="//@mixins[term='agreement_term']/@fsm/@ownedState.1"/>
+      </ownedState>
+    </fsm>
   </mixins>
   <types xsi:type="occi:StringType" name="DateTime" documentation="Data type for ISO8601 date time" pattern="^(\d{4}((-)?(0[1-9]|1[0-2])((-)?(0[1-9]|[1-2][0-9]|3[0-1])(T(24:00(:00(\.[0]+)?)?|(([0-1][0-9]|2[0-3])(:)[0-5][0-9])((:)[0-5][0-9](\.[\d]+)?)?)((\+|-)(14:00|(0[0-9]|1[0-3])(:)[0-5][0-9])|Z))?)?)?)$"/>
   <types xsi:type="occi:EnumerationType" name="AgreementStatus" documentation="Enumeration of Agreement status">
