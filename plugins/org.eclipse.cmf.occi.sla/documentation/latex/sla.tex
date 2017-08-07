@@ -1,0 +1,206 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{tabularx}
+\geometry{hmargin=2cm,vmargin=2cm}
+\title{OCCI Sla Extension} % Title
+\author{\textsc{Spirals}} % Author name
+
+\date{\today} % Date for the report
+
+\begin{document} 
+
+\maketitle % Insert the title, author and date
+\newpage
+\section{OCCI sla extension}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & sla \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/sla\# \\
+  \hline
+\end{tabular}
+\end{center}
+\subsection{Imported OCCI extensions}
+
+\begin{center} 
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & core \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/core\# \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsection{Description}
+OCCI Service Level Agreements API allows for the creation and management of resources related with the realization of agreements between an OCCI-enabled cloud service provider and potential consumers of the provider's resources.
+\section{Kinds}
+\subsection{agreement kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & agreement \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/sla\# \\
+  \hline
+  \textbf{Title} & A Service Level Agreement \\
+  \hline
+  \textbf{Parent} & Resource (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\subsubsection{agreement attributes}
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.agreement.state & AgreementStatus & true & false &  & Current state of the instance \\
+  \hline
+  occi.agreement.agreedAt & DateTime & false & false &  & The point in time when the agreement was made \\
+  \hline
+  occi.agreement.effectiveFrom & DateTime & false & true &  & The point in time when the agreement’s effectiveness begins \\
+  \hline
+  occi.agreement.effectiveUntil & DateTime & false & true &  & The point in time when the agreement’s effectiveness ends \\
+  \hline
+\end{tabularx}
+
+\subsubsection{agreement actions}
+\begin{itemize}
+	\item \textbf{Scheme}: http://schemas.ogf.org/occi/sla/agreement/action\#
+\end{itemize}
+\begin{tabularx}{\textwidth}{|l|l|X|}
+  \hline
+  \textbf{Term}  & \textbf{Attributes} & \textbf{Title} \\
+  \hline  
+  accept & &  \\
+  \hline
+  reject & &  \\
+  \hline
+  suspend & &  \\
+  \hline
+  resume & &  \\
+  \hline
+  terminate & &  \\
+  \hline
+\end{tabularx}
+
+\subsection{agreement\_link kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & agreement\_link \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/sla\# \\
+  \hline
+  \textbf{Title} & Link between a SLA and its associated resource \\
+  \hline
+  \textbf{Parent} & Link (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+\section{Mixins}
+\subsection{agreement\_tpl mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & agreement\_tpl \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/sla\# \\
+  \hline
+  \textbf{Title} & Mixin defining a SLA template collection \\
+  \hline
+\end{tabular}
+\end{center}
+\textbf{Applies to}:
+\begin{itemize}
+	\item agreement (http://schemas.ogf.org/occi/sla\#)
+\end{itemize}
+
+
+
+\subsection{agreement\_term mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & agreement\_term \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/sla\# \\
+  \hline
+  \textbf{Title} & Mixin defining a Term collection for an agreement \\
+  \hline
+\end{tabular}
+\end{center}
+\textbf{Applies to}:
+\begin{itemize}
+	\item agreement (http://schemas.ogf.org/occi/sla\#)
+\end{itemize}
+
+\subsubsection{agreement\_term attributes}
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.agreement.term.type & AgreementTermType & true & false &  & The type of the term that is being defined. \\
+  \hline
+  occi.agreement.term.state & AgreementTermStatus & true & false &  & The state of fulfillment of the specific term. \\
+  \hline
+  occi.agreement.term.desc & String & false & false &  & The description of the agreement term defined with this mixin. \\
+  \hline
+  occi.agreement.term.remedy & String & false & false &  & The remedy value (e.g., price penalty) or action e.g., command) when an SLO term is being violated. \\
+  \hline
+\end{tabularx}
+
+
+\section{Types}
+\subsection{DateTime type}
+Data type for ISO8601 date time
+\begin{itemize}
+\item \textbf{Basic type:} String
+	\item \textbf{pattern:} \begin{verbatim}^(\d{4}((-)?(0[1-9]|1[0-2])((-)?(0[1-9]|[1-2][0-9]|3[0-1])(T(24:00(:00(\.[0]+)?)?|(([0-1][0-9]|2[0-3])(:)[0-5][0-9])((:)[0-5][0-9](\.[\d]+)?)?)((\+|-)(14:00|(0[0-9]|1[0-3])(:)[0-5][0-9])|Z))?)?)?)$\end{verbatim}
+\end{itemize}
+\subsection{AgreementStatus type}
+Enumeration of Agreement status
+\textbf{Literals}
+\begin{itemize}
+\item \textbf{Pending} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{Accepted} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{Rejected} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{Suspended} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{Terminated} 
+\end{itemize}
+
+\subsection{AgreementTermType type}
+Enumeration of AgreementTerm types
+\textbf{Literals}
+\begin{itemize}
+\item \textbf{SERVICE} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{SLO} 
+\end{itemize}
+
+\subsection{AgreementTermStatus type}
+Enumeration of AgreementTerm status
+\textbf{Literals}
+\begin{itemize}
+\item \textbf{Undefined} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{Fulfilled} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{Violated} 
+\end{itemize}
+
+\end{document}
