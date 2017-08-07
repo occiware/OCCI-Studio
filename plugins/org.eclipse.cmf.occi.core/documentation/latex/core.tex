@@ -1,20 +1,112 @@
 \documentclass{article}
+\usepackage{geometry}
+\usepackage{tabularx}
+\geometry{hmargin=2cm,vmargin=2cm}
 \title{OCCI Core Extension} % Title
-
-\author{John \textsc{Smith}} % Author name
+\author{\textsc{}} % Author name
 
 \date{\today} % Date for the report
 
-\begin{document}
+\begin{document} 
 
 \maketitle % Insert the title, author and date
 \newpage
-\section{Objective}
-\subsection{Definitions}
-\label{definitions} 
-\section{Experimental Data}
-\section{Sample Calculation}
-\section{Results and Conclusions}
-\section{Discussion of Experimental Uncertainty}
-\section{Answers to Definitions}
+\section{OCCI core extension}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & core \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/core\# \\
+  \hline
+\end{tabular}
+\end{center}
+\subsection{Imported OCCI extensions}
+
+
+\subsection{Description}
+OCCI Core Model
+\subsection{Specification}
+https://www.ogf.org/documents/GFD.221.pdf
+\section{Kinds}
+\subsection{Entity kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Entity \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/core\# \\
+  \hline
+  \textbf{Title} & Entity type \\
+  \hline
+\end{tabular}
+\end{center}
+\subsubsection{Entity attributes}
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.core.id & String & true & false &  & The unique identity of the instance. \\
+  \hline
+  occi.core.title & String & false & true &  & The display name of the instance. \\
+  \hline
+\end{tabularx}
+
+
+\subsection{Resource kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Resource \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/core\# \\
+  \hline
+  \textbf{Title} & Resource type \\
+  \hline
+  \textbf{Parent} & Entity (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\subsubsection{Resource attributes}
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.core.summary & String & false & true &  & A summarizing description of the Resource instance. \\
+  \hline
+\end{tabularx}
+
+
+\subsection{Link kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Link \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/core\# \\
+  \hline
+  \textbf{Title} & Link type \\
+  \hline
+  \textbf{Parent} & Entity (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+\section{Types}
+\subsection{String type}
+Data type for strings
+\begin{itemize}
+\item \textbf{Basic type:} String
+\end{itemize}
+\subsection{Boolean type}
+Data type for booleans
+\begin{itemize}
+\item \textbf{Basic type:} Boolean
+\end{itemize}
+\subsection{Integer type}
+Data type for integers
+\begin{itemize}
+\item \textbf{Basic type:} Integer
+\end{itemize}
 \end{document}
