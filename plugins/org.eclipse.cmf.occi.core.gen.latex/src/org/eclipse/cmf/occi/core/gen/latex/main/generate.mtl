@@ -1,0 +1,261 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('http://schemas.ogf.org/occi/core/ecore')]
+
+
+[**
+ * The documentation of the template generateElement.
+ * @param anEClass
+ */]
+[template public main(extension : Extension)]
+[comment @main/]
+[extension.generateExtension()/]
+[/template] 
+
+[template public generateExtension(extension : Extension)]
+[file ('latex/'+extension.name+'.tex', false, 'UTF-8')]
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{tabularx}
+\geometry{hmargin=2cm,vmargin=2cm}
+\title{OCCI [extension.name.toUpperFirst()/] Extension} % Title
+\author{\textsc{[getUserName(extension)/]}} % Author name
+
+\date{\today} % Date for the report
+
+\begin{document} 
+
+\maketitle % Insert the title, author and date
+\newpage
+\section{OCCI [extension.name.cutomize()/] extension}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & [extension.name.cutomize()/] \\
+  \hline  
+  \textbf{Scheme} & [extension.scheme.cutomize()/] \\
+  \hline
+\end{tabular}
+\end{center}
+\subsection{Imported OCCI extensions}
+
+[for (importedExtension: Extension| extension.import)]
+\begin{center} 
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & [importedExtension.name.cutomize()/] \\
+  \hline  
+  \textbf{Scheme} & [importedExtension.scheme.cutomize()/] \\
+  \hline
+\end{tabular}
+\end{center}
+[/for] 
+
+[if not extension.description.oclIsUndefined()]
+[if extension.description.trim() <> '']
+\subsection{Description}
+[extension.description.cutomize()/]
+[/if]
+[/if]
+[if not extension.specification.oclIsUndefined()]
+[if extension.specification.trim() <> '']
+\subsection{Specification}
+[extension.specification.cutomize()/]
+[/if]
+[/if]
+[if extension.kinds->size() >0]
+\section{Kinds}
+[for (kind: Kind|extension.kinds)]
+\subsection{[kind.name.cutomize()/] kind}
+[kind.getType()/]
+[kind.getAttributes()/]
+[kind.getActions()/]
+[/for]
+[/if]
+[if extension.mixins->size() >0]
+\section{Mixins}
+[for (mixin: Mixin|extension.mixins)]
+\subsection{[mixin.name.cutomize()/] mixin}
+[mixin.getType()/]
+[mixin.applies()/]
+[mixin.depends()/]
+[mixin.getAttributes()/]
+[mixin.getActions()/]
+[/for]
+[/if]
+[if extension.types->size() >0]
+\section{Types}
+[for (type: DataType|extension.types)]
+\subsection{[type.name.cutomize()/] type}
+[type.documentation.cutomize()/]
+[type.getType()/]
+[/for]
+[/if]
+\end{document}
+[/file]
+[/template]
+[template public getAttributes(type : Type)]
+[if type.attributes->size() >0]
+\subsubsection{[type.name.cutomize()/] attributes}
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+[for (attribute: Attribute|type.attributes)]
+  [attribute.name.cutomize()/] & [attribute.type.name.cutomize()/] & [attribute.required/] & [attribute.mutable/] & [attribute.default.cutomize()/] & [attribute.description.cutomize()/] \\
+  \hline
+[/for]
+\end{tabularx}
+[/if]
+[/template]
+[template public getActions(type : Type)]
+[if type.actions->size() >0]
+\subsubsection{[type.name.cutomize()/] actions}
+\begin{itemize}
+	\item \textbf{Scheme}: [type.actions->first().scheme.cutomize()/]
+\end{itemize}
+\begin{tabularx}{\textwidth}{|l|l|X|}
+  \hline
+  \textbf{Term}  & \textbf{Attributes} & \textbf{Title} \\
+  \hline  
+[for (action: Action|type.actions)]
+  [action.term.cutomize()/] & [for (attribute : Attribute | action.attributes)separator(',')] [attribute.name/] [attribute.type.name/] [/for]& [action.title/] \\
+  \hline
+[/for]
+\end{tabularx}
+[/if]
+[/template]
+[template public getType(type : Type)]
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & [type.name.cutomize()/] \\
+  \hline  
+  \textbf{Scheme} & [type.scheme.cutomize()/] \\
+  \hline
+  \textbf{Title} & [type.title.cutomize()/] \\
+  \hline
+[if (type.oclIsTypeOf(Kind)) ] 
+[if (not type.oclAsType(Kind).parent.oclIsUndefined()) ] 
+  \textbf{Parent} & [type.oclAsType(Kind).parent.name.cutomize()/] ([type.oclAsType(Kind).parent.scheme.cutomize()/]) \\
+  \hline
+[/if]
+[/if]
+\end{tabular}
+\end{center}
+[/template]
+[template public applies(mixin : Mixin)]
+[if (mixin.applies->size() > 0)]
+\textbf{Applies to}:
+\begin{itemize}
+[for (kind : Kind | mixin.applies)]
+	\item [kind.name.cutomize()/] ([kind.scheme.cutomize()/])
+[/for]
+\end{itemize}[/if]
+[/template]
+[template public depends(mixin : Mixin)]
+[if (mixin.depends->size() > 0)]
+\textbf{Depends on}:
+\begin{itemize}
+[for (mixindep : Mixin | mixin.depends)]
+	\item [mixindep.name.cutomize()/] ([mixindep.scheme.cutomize()/])
+[/for]
+\end{itemize}
+[/if]
+[/template]
+[template public getType(datatype : DataType)]
+[/template]
+[template public getType(datatype : StringType)]
+\begin{itemize}
+\item \textbf{Basic type:} String
+[if (not datatype.pattern.oclIsUndefined())]
+[if (datatype.pattern.trim() <> '')]
+	\item \textbf{pattern:} \begin{verbatim}[datatype.pattern/]\end{verbatim}
+[/if]
+[/if]
+[if (not datatype.length.oclIsUndefined())]
+	\item \textbf{length:} [datatype.length/]
+[/if]
+[if (not datatype.minLength.oclIsUndefined())]
+	\item \textbf{minLength:} [datatype.minLength/]
+[/if]
+[if (not datatype.maxLength.oclIsUndefined())]
+	\item \textbf{maxLength:} [datatype.maxLength/]
+[/if]
+\end{itemize}
+[/template]
+[template public getType(datatype : BooleanType)]
+\begin{itemize}
+\item \textbf{Basic type:} Boolean
+\end{itemize}
+[/template]
+[template public getType(datatype : NumericType)]
+\begin{itemize}
+\item \textbf{Basic type:} [datatype.type.toString().cutomize()/]
+[if (not datatype.totalDigits.oclIsUndefined())]
+	\item \textbf{totalDigits:} [datatype.totalDigits/]
+[/if]
+[if (not datatype.minExclusive.oclIsUndefined())]
+[if (datatype.minExclusive.trim() <> '')]
+	\item \textbf{minExclusive:} [datatype.minExclusive.cutomize()/]
+[/if]
+[/if]
+[if (not datatype.maxExclusive.oclIsUndefined())]
+[if (datatype.maxExclusive.trim() <> '')]
+	\item \textbf{maxExclusive:} [datatype.maxExclusive.cutomize()/]
+[/if]
+[/if]
+[if (not datatype.minInclusive.oclIsUndefined())]
+[if (datatype.minInclusive.trim() <> '')]
+	\item \textbf{minInclusive:} [datatype.minInclusive.cutomize()/]
+[/if]
+[/if]
+[if (not datatype.maxInclusive.oclIsUndefined())]
+[if (datatype.maxInclusive.trim() <> '')]
+	\item \textbf{maxInclusive:} [datatype.maxInclusive.cutomize()/]
+[/if]
+[/if]
+\end{itemize}
+[/template]
+[template public getType(datatype : EObjectType)]
+\begin{itemize}
+\item \textbf{Basic type:} [datatype.instanceClassName.cutomize()/]
+\end{itemize}
+[/template]
+[template public getType(datatype : RecordType)]
+\textbf{Fields}
+[for (field: RecordField | datatype.recordFields)]
+\begin{itemize}
+\item [field.name.cutomize()/]: [if (not field.description.oclIsUndefined())] [if (field.description.trim() <> '')] : [field.description.cutomize()/][/if][/if]
+\end{itemize}
+[/for]
+[/template]
+[template public getType(datatype : ArrayType)]
+\begin{itemize}
+\item \textbf{Basic type:} [datatype.type.name.cutomize()/]
+\end{itemize}
+[/template]
+[template public getType(datatype : EnumerationType)]
+\textbf{Literals}
+[for (literal: EnumerationLiteral | datatype.literals)]
+\begin{itemize}
+\item \textbf{[literal.name.cutomize()/]} [if (not literal.documentation.oclIsUndefined())] [if (literal.documentation.trim() <> '')] : [literal.documentation.cutomize()/][/if][/if]
+\end{itemize}
+[/for]
+[/template]
+[query public cutomize(text : String) : String
+	= if (text <> null) then text.replaceHash().replaceUnderscore() else null endif /]
+
+[query public replaceUnderscore(text : String) : String
+	= text.replace('_', '\\\\_')/]
+
+[query public replaceHash(text : String) : String 
+	= text.replace('#', '\\\\#')/]
+
+[query public getUserName(extension : Extension) : String
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.latex.services.GenUtils', 
+	'getUserName(org.eclipse.cmf.occi.core.Extension)', 
+	Sequence{extension})/]
