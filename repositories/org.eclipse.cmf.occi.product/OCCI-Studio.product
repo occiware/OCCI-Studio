@@ -32,11 +32,9 @@
       </win>
    </launcher>
 
-
    <vm>
       <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</windows>
    </vm>
-
 
    <plugins>
    </plugins>
@@ -60,8 +58,8 @@
    </configurations>
 
    <repositories>
-      <repository location="http://download.eclipse.org/releases/neon" enabled="true" />
       <repository location="http://www.obeo.fr/download/occiware/repository" enabled="true" />
+      <repository location="http://download.eclipse.org/releases/oxygen" enabled="true" />
    </repositories>
 
    <preferencesInfo>
