@@ -52,7 +52,11 @@
     <!-- Textile documentation Generator -->
     <module>plugins/org.eclipse.cmf.occi.core.gen.textile</module>
     <module>plugins/org.eclipse.cmf.occi.core.gen.textile.ui</module>
-    
+
+    <!-- Latex documentation Generator -->
+    <module>plugins/org.eclipse.cmf.occi.core.gen.latex</module>
+    <module>plugins/org.eclipse.cmf.occi.core.gen.latex.ui</module>
+        
     <!-- OCCI Infrastructure extension -->
     <module>plugins/org.eclipse.cmf.occi.infrastructure</module>
     <module>plugins/org.eclipse.cmf.occi.infrastructure.edit</module>
