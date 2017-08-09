@@ -1,0 +1,75 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('http://www.eclipse.org/emf/2002/Ecore', 'http://schemas.ogf.org/occi/core/ecore')]
+
+[template public main(configuration : Configuration)]
+[comment @main/]
+
+[file ('curl/' + configurationFileName(configuration) + '.sh', false, 'UTF-8')]
+#! /bin/sh
+#
+# Generated at [getNow()/] from [getFilePath(configuration)/] by org.eclipse.cmf.occi.core.gen.curl
+#
+
+OCCI_SERVER_URL=$1
+CURL_OPTS="-s -v -i"
+
+[for (resource : Resource | configuration.resources)]
+[resource.generateCurl()/]
+[/for]
+
+[for (resource : Resource | configuration.resources)]
+[for (link : Link | resource.links)]
+[link.generateCurl()/] -H [delimiter1()/]X-OCCI-Attribute: occi.core.source=[delimiter2()/][generateUrl(link.source)/][delimiter2()/], occi.core.target=[delimiter2()/][generateUrl(link.target)/][delimiter2()/][delimiter1()/]
+[/for]
+[/for]
+
+[/file]
+
+[/template]
+
+[template public generateCurl(entity: Entity) post (trim())]
+curl $CURL_OPTS -X PUT $OCCI_SERVER_URL[entity.generateUrl()/] -H [delimiter1()/]Content-Type: text/occi[delimiter1()/] -H [delimiter1()/]Category: [entity.kind.term/]; scheme=[delimiter2()/][entity.kind.scheme/][delimiter2()/]; class=[delimiter2()/]kind[delimiter2()/]
+[for (mixin : Mixin | entity.mixins)], [mixin.term/]; scheme=[delimiter2()/][mixin.scheme/][delimiter2()/]; class=[delimiter2()/]mixin[delimiter2()/][/for];[delimiter1()/][for (attribute : AttributeState | entity.attributes)] [generateAttribute(attribute, entity.kind)/][/for]
+[/template]
+
+[template public generateUrl(entity : Entity) post (trim())]
+/[entity.kind.term/]/[entity.id/]
+[/template]
+
+[template public generateAttribute(attribute : AttributeState, kind : Kind) post (trim())]
+[comment]Acceleo Bug:  kind->closure(parent) must include kind, i.e. ->including(kind) must not be required?[/comment]
+[let type : Bag(DataType) = kind->closure(parent)->including(kind).attributes->select(name = attribute.name).type]
+-H [delimiter1()/]X-OCCI-Attribute: [attribute.name/]=[if type->exists(o: DataType | o.oclIsTypeOf(NumericType))][attribute.value/][else][delimiter2()/][attribute.value/][delimiter2()/][/if][delimiter1()/]
+[/let]
+[/template]
+[template public delimiter1()]
+[if (getOs().contains('win'))]"[else]'[/if]
+[/template]
+[template public delimiter2()]
+[if (getOs().contains('win'))]\"[else]"[/if]
+[/template]
+[query public getNow() : String
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.curl.services.GenUtils', 
+	'getNow()', 
+	Sequence{})/]
+
+[query public getOs() : String
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.curl.services.GenUtils', 
+	'getOs()', 
+	Sequence{})/]
+[query public getFilePath(configuration : Configuration) : String
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.curl.services.GenUtils', 
+	'getFilePath(org.eclipse.cmf.occi.core.Configuration)', 
+	Sequence{configuration})/]
+
+[query public configurationFileName(configuration : Configuration) : String
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.curl.services.GenUtils', 
+	'configurationFileName(org.eclipse.cmf.occi.core.Configuration)', 
+	Sequence{configuration})/]
