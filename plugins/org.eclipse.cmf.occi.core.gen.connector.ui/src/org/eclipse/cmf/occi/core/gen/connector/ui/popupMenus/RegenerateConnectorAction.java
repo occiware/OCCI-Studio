@@ -267,9 +267,9 @@ public class RegenerateConnectorAction implements IObjectActionDelegate {
 
 			// Added to get the extension and thus convert the extension name to
 			// epackage name
-			ResourceSet resSet = new ResourceSetImpl();
-			Resource resource = resSet.getResource(modelURI, true);
-			Extension extension = (Extension) resource.getContents().get(0);
+			//ResourceSet resSet = new ResourceSetImpl();
+			//Resource resource = resSet.getResource(modelURI, true);
+			//Extension extension = (Extension) resource.getContents().get(0);
 
 			// Generate Java code for the connector.
 			IContainer target = connectorProject.getFolder("src-gen");
