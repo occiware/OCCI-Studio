@@ -60,7 +60,11 @@
     <!-- URIs Generator -->
     <module>plugins/org.eclipse.cmf.occi.core.gen.uris</module>
     <module>plugins/org.eclipse.cmf.occi.core.gen.uris.ui</module>
-            
+
+    <!-- cURL Generator -->
+    <module>plugins/org.eclipse.cmf.occi.core.gen.curl</module>
+    <module>plugins/org.eclipse.cmf.occi.core.gen.curl.ui</module>
+                
     <!-- OCCI Infrastructure extension -->
     <module>plugins/org.eclipse.cmf.occi.infrastructure</module>
     <module>plugins/org.eclipse.cmf.occi.infrastructure.edit</module>
