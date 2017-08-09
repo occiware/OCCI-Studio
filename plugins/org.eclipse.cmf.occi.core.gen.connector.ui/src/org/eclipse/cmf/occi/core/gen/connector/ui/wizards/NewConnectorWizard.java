@@ -166,8 +166,8 @@ public class NewConnectorWizard extends BasicNewProjectResourceWizard {
 		String[] args = extensionFile.split("\\/");
 		
 		//Added to get the extension and thus convert the extension name to epackage name
-		if(EPackage.Registry.INSTANCE.getEPackage(Occi2Ecore.convertOcciScheme2EcoreNamespace(extensionScheme))==null)
-			throw new InterruptedException("The metamodel of the OCCI " +getExtension(extensionFile).getName() +" extension is not registered");
+		//if(EPackage.Registry.INSTANCE.getEPackage(Occi2Ecore.convertOcciScheme2EcoreNamespace(extensionScheme))==null)
+		//	throw new InterruptedException("The metamodel of the OCCI " +getExtension(extensionFile).getName() +" extension is not registered");
 		// Get the file containing the OCCI extension.
 
 		// This connector project will require the bundle containing the OCCI extension.

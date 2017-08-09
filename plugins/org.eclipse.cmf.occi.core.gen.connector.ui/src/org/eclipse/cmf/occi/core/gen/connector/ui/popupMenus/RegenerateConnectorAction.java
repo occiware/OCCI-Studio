@@ -285,8 +285,8 @@ public class RegenerateConnectorAction implements IObjectActionDelegate {
 			//arguments.add(OCCIExtension2Ecore.formatExtensionName(extension));
 			arguments.add(args[args.length-3]);
 			
-			if(EPackage.Registry.INSTANCE.getEPackage(getExtensionMetamodelURI(pluginXML))==null)
-				throw new InterruptedException("The metamodel of the OCCI "+OCCIExtension2Ecore.formatExtensionName(extension) +" extension is not registered");
+//			if(EPackage.Registry.INSTANCE.getEPackage(getExtensionMetamodelURI(pluginXML))==null)
+//				throw new InterruptedException("The metamodel of the OCCI "+OCCIExtension2Ecore.formatExtensionName(extension) +" extension is not registered");
 			
 			// Call the generator.
 			GenerateAll generator = new GenerateAll(modelURI, target, arguments);
