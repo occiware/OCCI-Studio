@@ -1,0 +1,122 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('http://www.eclipse.org/emf/2002/Ecore', 'http://schemas.ogf.org/occi/core/ecore')]
+
+
+[**
+ * The documentation of the template generateElement.
+ * @param anExtension
+ */]
+
+[template public generate(e : Extension)]
+[comment @main/]
+[extension(e)/]
+[for (imported : Extension | e.import)]
+[extension(imported)/]
+[/for]
+[/template]
+
+[template public extension(e : Extension)]
+[file ('erocci/'+e.name+'.xml', false, 'UTF-8')]
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated at [getNow()/] from [getFilePath(e)/] by org.eclipse.cmf.occi.core.gen.xml -->
+<occi:extension xmlns:occi="http://schemas.ogf.org/occi"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://schemas.ogf.org/occi occi.xsd"
+    name="[e.name/]"
+    scheme="[e.scheme/]"
+    version="1"
+    status="stable">
+[for (k: Kind | e.kinds)]
+[kind(k)/]
+[/for]
+[for (m: Mixin | e.mixins)]
+[mixin(m)/]
+[/for]
+
+</occi:extension>
+[/file]
+[/template]
+
+[template public kind(k: Kind)]
+
+  <!-- Kind: [k.title /] -->
+  <occi:kind term="[k.term/]" scheme="[k.scheme/]" title="[toEscapedXmlString(k.title)/]">
+[if k.parent <> null]
+    <occi:parent term="[k.parent.term/]" scheme="[k.parent.scheme/]"/>
+[/if]
+[for (a: Attribute | k.attributes)]
+    [attribute(a)/]
+[/for]
+[for (a: Action | k.actions)]
+[action(a)/]
+[/for]
+  </occi:kind>
+[/template]
+
+[template public mixin(m: Mixin)]
+
+  <!-- Mixin: [m.title/] -->
+  <occi:mixin term="[m.term/]" scheme="[m.scheme/]" title="[toEscapedXmlString(m.title)/]">
+[for (md: Mixin | m.depends)]
+    <occi:depends term="[md.term/]" scheme="[md.scheme/]"/>
+[/for]
+[for (k: Kind | m.applies)]
+[if k.term = 'resource']
+<!-- Commented as erocci throws an error!
+[/if]
+    <occi:applies term="[k.term/]" scheme="[k.scheme/]"/>
+[if k.term = 'resource']
+-->
+[/if]
+[/for]
+[for (a: Attribute | m.attributes)]
+    [attribute(a)/]
+[/for]
+[for (a: Action | m.actions)]
+[action(a)/]
+[/for]
+  </occi:mixin>
+[/template]
+
+[template public attribute(a: Attribute)]
+<occi:attribute name="[a.name/]"[if (a.mutable = false)] immutable="true"[/if] use="[if (a.required)]required[else]optional[/if]"[if (a.default <> null)] default="[toEscapedXmlString(a.default)/]"[/if] type="[a.type.toXmlSchemaType()/]" title="[toEscapedXmlString(a.description)/]"/>
+[/template]
+
+[template public action(a: Action)]
+    <occi:action term="[a.term/]" scheme="[a.scheme/]" title="[toEscapedXmlString(a.title)/]">
+[for (at: Attribute | a.attributes)]
+      [attribute(at)/]
+[/for]
+    </occi:action>
+[/template]
+
+[query public getNow() : String
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.xml.services.GenUtils', 
+	'getNow()', 
+	Sequence{})/]
+
+[query public getFilePath(extension : Extension) : String
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.xml.services.GenUtils', 
+	'getFilePath(org.eclipse.cmf.occi.core.Extension)', 
+	Sequence{extension})/]
+
+[comment @TODO Change the type /]
+[comment @FIXME /]
+[query public toXmlSchemaType(datatype : DataType) : String
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.xml.services.GenUtils', 
+	'toXmlSchemaType(org.eclipse.cmf.occi.core.DataType)', 
+	Sequence{datatype})/]
+
+[query public toEscapedXmlString(string : String) : String
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.xml.services.GenUtils', 
+	'toEscapedXmlString(java.lang.String)', 
+	Sequence{string})/]
+
