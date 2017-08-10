@@ -1,4 +1,5 @@
-sudo: false
+# Don't use the Travis Container-Based Infrastructure
+sudo: true
 
 language: java
 
