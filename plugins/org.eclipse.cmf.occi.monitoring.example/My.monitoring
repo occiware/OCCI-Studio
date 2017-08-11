@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ASCII"?>
+<occi:Configuration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:monitoring="http://schemas.ogf.org/occi/monitoring/ecore" xmlns:occi="http://schemas.ogf.org/occi/core/ecore">
+  <use href="http://schemas.ogf.org/occi/core#/"/>
+  <use href="http://schemas.ogf.org/occi/monitoring#/"/>
+  <resources xsi:type="monitoring:Sensor" id="urn:uuid:cea58568-293e-4a60-bac0-7eb67aaf0ca6" title="sensor1" rlinks="//@resources.0/@links.0">
+    <kind href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='sensor']"/>
+    <parts xsi:type="monitoring:Aggregator">
+      <mixin href="http://schemas.ogf.org/occi/monitoring#//@mixins[term='aggregator']"/>
+    </parts>
+    <parts xsi:type="monitoring:Publisher">
+      <mixin href="http://schemas.ogf.org/occi/monitoring#//@mixins[term='publisher']"/>
+    </parts>
+    <links xsi:type="monitoring:Collector" id="urn:uuid:2000d80b-85a0-49b1-ac03-9fae91297e00" target="//@resources.0">
+      <kind href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='collector']"/>
+      <parts xsi:type="monitoring:Metric">
+        <mixin href="http://schemas.ogf.org/occi/monitoring#//@mixins[term='metric']"/>
+      </parts>
+    </links>
+  </resources>
+</occi:Configuration>
