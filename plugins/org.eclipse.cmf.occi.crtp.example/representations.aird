@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description">
+  <viewpoint:DAnalysis xmi:id="_EjrY0HrnEeeKUY3DWY6_8g" selectedViews="_HC2J8HrnEeeKUY3DWY6_8g" version="12.0.0.201704271200">
+    <semanticResources>My.crtp</semanticResources>
+    <semanticResources>http://schemas.ogf.org/occi/core</semanticResources>
+    <semanticResources>http://schemas.ogf.org/occi/infrastructure/compute/template/1.1</semanticResources>
+    <semanticResources>http://schemas.ogf.org/occi/infrastructure</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_HC2J8HrnEeeKUY3DWY6_8g">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.cmf.occi.crtp.design/description/crtp.odesign#//@ownedViewpoints[name='CrtpConfiguration']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_HDx-EHrnEeeKUY3DWY6_8g" name="My" repPath="#_HDuTsHrnEeeKUY3DWY6_8g">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.cmf.occi.crtp.design/description/crtp.odesign#//@ownedViewpoints[name='CrtpConfiguration']/@ownedRepresentations[name='CrtpConfiguration%20Diagram']"/>
+        <target xmi:type="occi:Configuration" href="My.crtp#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram xmi:id="_HDuTsHrnEeeKUY3DWY6_8g" name="My">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_HDuTsXrnEeeKUY3DWY6_8g" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_HDuTsnrnEeeKUY3DWY6_8g"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_HEE5AHrnEeeKUY3DWY6_8g" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_HEE5AXrnEeeKUY3DWY6_8g" type="Sirius" element="_HDuTsHrnEeeKUY3DWY6_8g" measurementUnit="Pixel">
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_HEE5AnrnEeeKUY3DWY6_8g"/>
+      </data>
+    </ownedAnnotationEntries>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.cmf.occi.crtp.design/description/crtp.odesign#//@ownedViewpoints[name='CrtpConfiguration']/@ownedRepresentations[name='CrtpConfiguration%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_HDuTtHrnEeeKUY3DWY6_8g"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.cmf.occi.crtp.design/description/crtp.odesign#//@ownedViewpoints[name='CrtpConfiguration']/@ownedRepresentations[name='CrtpConfiguration%20Diagram']/@defaultLayer"/>
+    <target xmi:type="occi:Configuration" href="My.crtp#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

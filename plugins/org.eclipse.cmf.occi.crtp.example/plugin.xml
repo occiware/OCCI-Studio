@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.cmf.examples.example">
+      <example
+            aird="representations.aird"
+            description="A sample OCCI CRTP project."
+            name="OCCI CRTP Example"
+            projectName="CRTPExample"
+            screenshot="My.jpg"
+            semantic="My.crtp">
+      </example>
+   </extension>
+
+</plugin>
