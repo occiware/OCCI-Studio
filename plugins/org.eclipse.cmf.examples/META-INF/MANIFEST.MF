@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Examples
+Bundle-SymbolicName: org.eclipse.cmf.examples;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.cmf.examples.Activator
+Require-Bundle: org.eclipse.ui.workbench,
+ org.eclipse.jface,
+ org.eclipse.core.resources,
+ org.eclipse.core.runtime,
+ org.eclipse.sirius,
+ org.eclipse.sirius.ui,
+ org.eclipse.sirius.ext.base,
+ org.eclipse.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
