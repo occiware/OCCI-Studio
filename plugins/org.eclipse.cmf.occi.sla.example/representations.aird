@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" xmlns:sla="http://schemas.ogf.org/occi/sla/ecore" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis xmi:id="_u5S9wHrrEeeKUY3DWY6_8g" selectedViews="_7QzF8HrrEeeKUY3DWY6_8g" version="12.0.0.201704271200">
+    <semanticResources>My.sla</semanticResources>
+    <semanticResources>http://schemas.ogf.org/occi/core</semanticResources>
+    <semanticResources>http://schemas.ogf.org/occi/sla</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_7QzF8HrrEeeKUY3DWY6_8g">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_7RKSUHrrEeeKUY3DWY6_8g" name="My" repPath="#_7RJrQHrrEeeKUY3DWY6_8g">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']"/>
+        <target xmi:type="occi:Configuration" href="My.sla#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram xmi:id="_7RJrQHrrEeeKUY3DWY6_8g" name="My">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_7RJrQXrrEeeKUY3DWY6_8g" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_7RJrQnrrEeeKUY3DWY6_8g"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_7RLgcHrrEeeKUY3DWY6_8g" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_7RLgcXrrEeeKUY3DWY6_8g" type="Sirius" element="_7RJrQHrrEeeKUY3DWY6_8g" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_73LwgHrrEeeKUY3DWY6_8g" type="2002" element="_72YfQHrrEeeKUY3DWY6_8g">
+          <children xmi:type="notation:Node" xmi:id="_73MXkHrrEeeKUY3DWY6_8g" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_73MXkXrrEeeKUY3DWY6_8g" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_73MXlHrrEeeKUY3DWY6_8g" type="3009" element="_72lTkHrrEeeKUY3DWY6_8g">
+              <children xmi:type="notation:Node" xmi:id="_73MXl3rrEeeKUY3DWY6_8g" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_73M-oHrrEeeKUY3DWY6_8g" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_73M-o3rrEeeKUY3DWY6_8g" type="3010" element="_72raMHrrEeeKUY3DWY6_8g">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_73M-pHrrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_73M-pXrrEeeKUY3DWY6_8g"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_73M-pnrrEeeKUY3DWY6_8g" type="3010" element="_72vEknrrEeeKUY3DWY6_8g">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_73M-p3rrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_73M-qHrrEeeKUY3DWY6_8g"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_73M-qXrrEeeKUY3DWY6_8g" type="3010" element="_72zWAXrrEeeKUY3DWY6_8g">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_73M-qnrrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_73M-q3rrEeeKUY3DWY6_8g"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_73M-rHrrEeeKUY3DWY6_8g" type="3010" element="_723ncXrrEeeKUY3DWY6_8g">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_73NlsHrrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_73NlsXrrEeeKUY3DWY6_8g"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_73NlsnrrEeeKUY3DWY6_8g" type="3010" element="_72744XrrEeeKUY3DWY6_8g">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_73Nls3rrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_73NltHrrEeeKUY3DWY6_8g"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_73NltXrrEeeKUY3DWY6_8g" type="3010" element="_72_jQnrrEeeKUY3DWY6_8g">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_73NltnrrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_73Nlt3rrEeeKUY3DWY6_8g"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_73NluHrrEeeKUY3DWY6_8g" type="3010" element="_73DNoXrrEeeKUY3DWY6_8g">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_73NluXrrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_73NlunrrEeeKUY3DWY6_8g"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_73Nlu3rrEeeKUY3DWY6_8g" type="3010" element="_73G4AXrrEeeKUY3DWY6_8g">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_73NlvHrrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_73NlvXrrEeeKUY3DWY6_8g"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_73M-oXrrEeeKUY3DWY6_8g"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_73M-onrrEeeKUY3DWY6_8g"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_73MXlXrrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_73MXlnrrEeeKUY3DWY6_8g" x="13" y="30"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_-D6GwHrrEeeKUY3DWY6_8g" type="3009" element="_-C4MAHrrEeeKUY3DWY6_8g">
+              <children xmi:type="notation:Node" xmi:id="_-D6t0HrrEeeKUY3DWY6_8g" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_-D6t0XrrEeeKUY3DWY6_8g" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_-D6t0nrrEeeKUY3DWY6_8g"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_-D6t03rrEeeKUY3DWY6_8g"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_-D6GwXrrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-D6GwnrrEeeKUY3DWY6_8g" x="39" y="192" width="264"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_-mAHMHrrEeeKUY3DWY6_8g" type="3009" element="_-krRgHrrEeeKUY3DWY6_8g">
+              <children xmi:type="notation:Node" xmi:id="_-mAuQHrrEeeKUY3DWY6_8g" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_-mAuQXrrEeeKUY3DWY6_8g" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_-mAuRHrrEeeKUY3DWY6_8g" type="3010" element="_-ljbQHrrEeeKUY3DWY6_8g">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_-mAuRXrrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_-mAuRnrrEeeKUY3DWY6_8g"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_-mBVUHrrEeeKUY3DWY6_8g" type="3010" element="_-lnFoXrrEeeKUY3DWY6_8g">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_-mBVUXrrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_-mBVUnrrEeeKUY3DWY6_8g"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_-mBVU3rrEeeKUY3DWY6_8g" type="3010" element="_-lqI8nrrEeeKUY3DWY6_8g">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_-mBVVHrrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_-mBVVXrrEeeKUY3DWY6_8g"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_-mBVVnrrEeeKUY3DWY6_8g" type="3010" element="_-ltzUHrrEeeKUY3DWY6_8g">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_-mBVV3rrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_-mBVWHrrEeeKUY3DWY6_8g"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_-mAuQnrrEeeKUY3DWY6_8g"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_-mAuQ3rrEeeKUY3DWY6_8g"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_-mAHMXrrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-mAHMnrrEeeKUY3DWY6_8g" x="62" y="246"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_73MXknrrEeeKUY3DWY6_8g"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_73MXk3rrEeeKUY3DWY6_8g"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_73LwgXrrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_73LwgnrrEeeKUY3DWY6_8g" x="18" y="27" height="372"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_81xfsHrrEeeKUY3DWY6_8g" type="2002" element="_81YeIHrrEeeKUY3DWY6_8g">
+          <children xmi:type="notation:Node" xmi:id="_81yGwHrrEeeKUY3DWY6_8g" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_81yGwXrrEeeKUY3DWY6_8g" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_81yGxHrrEeeKUY3DWY6_8g" type="3009" element="_81d9sHrrEeeKUY3DWY6_8g">
+              <children xmi:type="notation:Node" xmi:id="_81yGx3rrEeeKUY3DWY6_8g" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_81yGyHrrEeeKUY3DWY6_8g" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_81yt0HrrEeeKUY3DWY6_8g" type="3010" element="_81kEUHrrEeeKUY3DWY6_8g">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_81yt0XrrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_81yt0nrrEeeKUY3DWY6_8g"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_81yt03rrEeeKUY3DWY6_8g" type="3010" element="_81nusXrrEeeKUY3DWY6_8g">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_81yt1HrrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_81yt1XrrEeeKUY3DWY6_8g"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_81yt1nrrEeeKUY3DWY6_8g" type="3010" element="_81rZEnrrEeeKUY3DWY6_8g">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_81yt13rrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_81yt2HrrEeeKUY3DWY6_8g"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_81yGyXrrEeeKUY3DWY6_8g"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_81yGynrrEeeKUY3DWY6_8g"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_81yGxXrrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_81yGxnrrEeeKUY3DWY6_8g" x="31" y="30"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_81yGwnrrEeeKUY3DWY6_8g"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_81yGw3rrEeeKUY3DWY6_8g"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_81xfsXrrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_81xfsnrrEeeKUY3DWY6_8g" x="432" y="180"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_7RLgcnrrEeeKUY3DWY6_8g"/>
+        <edges xmi:type="notation:Edge" xmi:id="_81zU4HrrEeeKUY3DWY6_8g" type="4001" element="_81vDcHrrEeeKUY3DWY6_8g" source="_73LwgHrrEeeKUY3DWY6_8g" target="_81xfsHrrEeeKUY3DWY6_8g">
+          <children xmi:type="notation:Node" xmi:id="_81zU5HrrEeeKUY3DWY6_8g" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_81zU5XrrEeeKUY3DWY6_8g" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_81zU5nrrEeeKUY3DWY6_8g" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_81zU53rrEeeKUY3DWY6_8g" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_81zU6HrrEeeKUY3DWY6_8g" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_81zU6XrrEeeKUY3DWY6_8g" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_81zU4XrrEeeKUY3DWY6_8g"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_81zU4nrrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_81zU43rrEeeKUY3DWY6_8g" points="[5, 6, -83, 0]$[80, 6, -8, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_81zU6nrrEeeKUY3DWY6_8g" id="(0.9853372434017595,0.6586021505376344)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_81zU63rrEeeKUY3DWY6_8g" id="(0.025495750708215296,0.7967479674796748)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_81zU7HrrEeeKUY3DWY6_8g" type="4001" element="_81vDc3rrEeeKUY3DWY6_8g" source="_81xfsHrrEeeKUY3DWY6_8g" target="_73LwgHrrEeeKUY3DWY6_8g">
+          <children xmi:type="notation:Node" xmi:id="_81z78HrrEeeKUY3DWY6_8g" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_81z78XrrEeeKUY3DWY6_8g" x="5" y="-5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_81z78nrrEeeKUY3DWY6_8g" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_81z783rrEeeKUY3DWY6_8g" x="-1" y="4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_81z79HrrEeeKUY3DWY6_8g" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_81z79XrrEeeKUY3DWY6_8g" x="-2" y="4"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_81zU7XrrEeeKUY3DWY6_8g"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_81zU7nrrEeeKUY3DWY6_8g" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_81zU73rrEeeKUY3DWY6_8g" points="[-17, -7, 78, 0]$[-92, -7, 3, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_81z79nrrEeeKUY3DWY6_8g" id="(0.05099150141643059,0.21138211382113822)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_81z793rrEeeKUY3DWY6_8g" id="(0.9912023460410557,0.46236559139784944)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_72YfQHrrEeeKUY3DWY6_8g" name="agreement1: Agreement" outgoingEdges="_81vDcHrrEeeKUY3DWY6_8g" incomingEdges="_81vDc3rrEeeKUY3DWY6_8g">
+      <target xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+      <semanticElements xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_72cJoHrrEeeKUY3DWY6_8g" labelSize="10" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_72lTkHrrEeeKUY3DWY6_8g" name="http://schemas.ogf.org/occi/sla#agreement">
+        <target xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+        <semanticElements xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_72oW4HrrEeeKUY3DWY6_8g" borderSize="1" borderSizeComputationExpression="1">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='SubAgreementContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='SubAgreementContainer']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_72raMHrrEeeKUY3DWY6_8g" name="id = urn:uuid:2415e054-56dc-486d-b338-7ff0ade0c58b">
+          <target xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+          <semanticElements xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_72vEkXrrEeeKUY3DWY6_8g"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_72vEkHrrEeeKUY3DWY6_8g" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='SubAgreementContainer']/@subNodeMappings[name='AgreementId']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='SubAgreementContainer']/@subNodeMappings[name='AgreementId']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_72vEknrrEeeKUY3DWY6_8g" name="title = agreement1">
+          <target xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+          <semanticElements xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_72zWAHrrEeeKUY3DWY6_8g"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_72yu8HrrEeeKUY3DWY6_8g" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='SubAgreementContainer']/@subNodeMappings[name='AgreementTitle']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='SubAgreementContainer']/@subNodeMappings[name='AgreementTitle']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_72zWAXrrEeeKUY3DWY6_8g" name="location = null">
+          <target xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+          <semanticElements xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_723ncHrrEeeKUY3DWY6_8g"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_723AYHrrEeeKUY3DWY6_8g" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='SubAgreementContainer']/@subNodeMappings[name='AgreementLocation']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='SubAgreementContainer']/@subNodeMappings[name='AgreementLocation']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_723ncXrrEeeKUY3DWY6_8g" name="summary = null">
+          <target xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+          <semanticElements xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_72744HrrEeeKUY3DWY6_8g"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_727R0HrrEeeKUY3DWY6_8g" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='SubAgreementContainer']/@subNodeMappings[name='AgreementSummary']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='SubAgreementContainer']/@subNodeMappings[name='AgreementSummary']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_72744XrrEeeKUY3DWY6_8g" name="occiAgreementState = Pending">
+          <target xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+          <semanticElements xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_72_jQXrrEeeKUY3DWY6_8g"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_72_jQHrrEeeKUY3DWY6_8g" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='SubAgreementContainer']/@subNodeMappings[name='AgreementOcciAgreementState']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='SubAgreementContainer']/@subNodeMappings[name='AgreementOcciAgreementState']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_72_jQnrrEeeKUY3DWY6_8g" name="occiAgreementAgreedAt = null">
+          <target xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+          <semanticElements xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_73DNoHrrEeeKUY3DWY6_8g"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_73CmkHrrEeeKUY3DWY6_8g" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='SubAgreementContainer']/@subNodeMappings[name='AgreementOcciAgreementAgreedAt']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='SubAgreementContainer']/@subNodeMappings[name='AgreementOcciAgreementAgreedAt']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_73DNoXrrEeeKUY3DWY6_8g" name="occiAgreementEffectiveFrom = null">
+          <target xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+          <semanticElements xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_73G4AHrrEeeKUY3DWY6_8g"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_73GQ8HrrEeeKUY3DWY6_8g" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='SubAgreementContainer']/@subNodeMappings[name='AgreementOcciAgreementEffectiveFrom']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='SubAgreementContainer']/@subNodeMappings[name='AgreementOcciAgreementEffectiveFrom']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_73G4AXrrEeeKUY3DWY6_8g" name="occiAgreementEffectiveUntil = null">
+          <target xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+          <semanticElements xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_73KiYHrrEeeKUY3DWY6_8g"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_73J7UHrrEeeKUY3DWY6_8g" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='SubAgreementContainer']/@subNodeMappings[name='AgreementOcciAgreementEffectiveUntil']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='SubAgreementContainer']/@subNodeMappings[name='AgreementOcciAgreementEffectiveUntil']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_-C4MAHrrEeeKUY3DWY6_8g" name="http://schemas.ogf.org/occi/sla#agreement_tpl">
+        <target xmi:type="sla:Agreement_tpl" href="My.sla#//@resources.0/@parts.0"/>
+        <semanticElements xmi:type="sla:Agreement_tpl" href="My.sla#//@resources.0/@parts.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_-C72YHrrEeeKUY3DWY6_8g" borderSize="1" borderSizeComputationExpression="1">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='agreement_tplMixin']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='agreement_tplMixin']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_-krRgHrrEeeKUY3DWY6_8g" name="http://schemas.ogf.org/occi/sla#agreement_term">
+        <target xmi:type="sla:Agreement_term" href="My.sla#//@resources.0/@parts.1"/>
+        <semanticElements xmi:type="sla:Agreement_term" href="My.sla#//@resources.0/@parts.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_-kuU0HrrEeeKUY3DWY6_8g" borderSize="1" borderSizeComputationExpression="1">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='agreement_termMixin']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='agreement_termMixin']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_-ljbQHrrEeeKUY3DWY6_8g" name="occiAgreementTermType = SERVICE">
+          <target xmi:type="sla:Agreement_term" href="My.sla#//@resources.0/@parts.1"/>
+          <semanticElements xmi:type="sla:Agreement_term" href="My.sla#//@resources.0/@parts.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_-lnFoHrrEeeKUY3DWY6_8g"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_-lmekHrrEeeKUY3DWY6_8g" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='agreement_termMixin']/@subNodeMappings[name='Agreement_termocciAgreementTermType']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='agreement_termMixin']/@subNodeMappings[name='Agreement_termocciAgreementTermType']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_-lnFoXrrEeeKUY3DWY6_8g" name="occiAgreementTermState = Undefined">
+          <target xmi:type="sla:Agreement_term" href="My.sla#//@resources.0/@parts.1"/>
+          <semanticElements xmi:type="sla:Agreement_term" href="My.sla#//@resources.0/@parts.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_-lqI8XrrEeeKUY3DWY6_8g"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_-lqI8HrrEeeKUY3DWY6_8g" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='agreement_termMixin']/@subNodeMappings[name='Agreement_termocciAgreementTermState']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='agreement_termMixin']/@subNodeMappings[name='Agreement_termocciAgreementTermState']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_-lqI8nrrEeeKUY3DWY6_8g" name="occiAgreementTermDesc = null">
+          <target xmi:type="sla:Agreement_term" href="My.sla#//@resources.0/@parts.1"/>
+          <semanticElements xmi:type="sla:Agreement_term" href="My.sla#//@resources.0/@parts.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_-ltMQXrrEeeKUY3DWY6_8g"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_-ltMQHrrEeeKUY3DWY6_8g" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='agreement_termMixin']/@subNodeMappings[name='Agreement_termocciAgreementTermDesc']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='agreement_termMixin']/@subNodeMappings[name='Agreement_termocciAgreementTermDesc']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_-ltzUHrrEeeKUY3DWY6_8g" name="occiAgreementTermRemedy = null">
+          <target xmi:type="sla:Agreement_term" href="My.sla#//@resources.0/@parts.1"/>
+          <semanticElements xmi:type="sla:Agreement_term" href="My.sla#//@resources.0/@parts.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_-lwPkXrrEeeKUY3DWY6_8g"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_-lwPkHrrEeeKUY3DWY6_8g" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='agreement_termMixin']/@subNodeMappings[name='Agreement_termocciAgreementTermRemedy']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='AgreementContainer']/@subContainerMappings[name='agreement_termMixin']/@subNodeMappings[name='Agreement_termocciAgreementTermRemedy']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_81YeIHrrEeeKUY3DWY6_8g" name=": Agreement_link" outgoingEdges="_81vDc3rrEeeKUY3DWY6_8g" incomingEdges="_81vDcHrrEeeKUY3DWY6_8g">
+      <target xmi:type="sla:Agreement_link" href="My.sla#//@resources.0/@links.0"/>
+      <semanticElements xmi:type="sla:Agreement_link" href="My.sla#//@resources.0/@links.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_81bhcHrrEeeKUY3DWY6_8g" labelSize="10" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='Agreement_linkContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='Agreement_linkContainer']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_81d9sHrrEeeKUY3DWY6_8g" name="http://schemas.ogf.org/occi/sla#agreement_link">
+        <target xmi:type="sla:Agreement_link" href="My.sla#//@resources.0/@links.0"/>
+        <semanticElements xmi:type="sla:Agreement_link" href="My.sla#//@resources.0/@links.0"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_81hBAHrrEeeKUY3DWY6_8g" borderSize="1" borderSizeComputationExpression="1">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='Agreement_linkContainer']/@subContainerMappings[name='SubAgreement_linkContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='Agreement_linkContainer']/@subContainerMappings[name='SubAgreement_linkContainer']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_81kEUHrrEeeKUY3DWY6_8g" name="id = urn:uuid:80c3ffb3-01f8-4040-88f5-47ba01886fd8">
+          <target xmi:type="sla:Agreement_link" href="My.sla#//@resources.0/@links.0"/>
+          <semanticElements xmi:type="sla:Agreement_link" href="My.sla#//@resources.0/@links.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_81nusHrrEeeKUY3DWY6_8g"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_81nHoHrrEeeKUY3DWY6_8g" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='Agreement_linkContainer']/@subContainerMappings[name='SubAgreement_linkContainer']/@subNodeMappings[name='Agreement_linkId']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='Agreement_linkContainer']/@subContainerMappings[name='SubAgreement_linkContainer']/@subNodeMappings[name='Agreement_linkId']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_81nusXrrEeeKUY3DWY6_8g" name="title = null">
+          <target xmi:type="sla:Agreement_link" href="My.sla#//@resources.0/@links.0"/>
+          <semanticElements xmi:type="sla:Agreement_link" href="My.sla#//@resources.0/@links.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_81rZEXrrEeeKUY3DWY6_8g"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_81rZEHrrEeeKUY3DWY6_8g" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='Agreement_linkContainer']/@subContainerMappings[name='SubAgreement_linkContainer']/@subNodeMappings[name='Agreement_linkTitle']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='Agreement_linkContainer']/@subContainerMappings[name='SubAgreement_linkContainer']/@subNodeMappings[name='Agreement_linkTitle']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_81rZEnrrEeeKUY3DWY6_8g" name="location = null">
+          <target xmi:type="sla:Agreement_link" href="My.sla#//@resources.0/@links.0"/>
+          <semanticElements xmi:type="sla:Agreement_link" href="My.sla#//@resources.0/@links.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_81ucYXrrEeeKUY3DWY6_8g"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_81ucYHrrEeeKUY3DWY6_8g" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='Agreement_linkContainer']/@subContainerMappings[name='SubAgreement_linkContainer']/@subNodeMappings[name='Agreement_linkLocation']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='Agreement_linkContainer']/@subContainerMappings[name='SubAgreement_linkContainer']/@subNodeMappings[name='Agreement_linkLocation']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_81vDcHrrEeeKUY3DWY6_8g" sourceNode="_72YfQHrrEeeKUY3DWY6_8g" targetNode="_81YeIHrrEeeKUY3DWY6_8g">
+      <target xmi:type="sla:Agreement" href="My.sla#//@resources.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_81vDcXrrEeeKUY3DWY6_8g" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='AgreementLinksEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_81vDcnrrEeeKUY3DWY6_8g"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='AgreementLinksEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_81vDc3rrEeeKUY3DWY6_8g" sourceNode="_81YeIHrrEeeKUY3DWY6_8g" targetNode="_72YfQHrrEeeKUY3DWY6_8g">
+      <target xmi:type="sla:Agreement_link" href="My.sla#//@resources.0/@links.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_81vDdHrrEeeKUY3DWY6_8g" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='Agreement_linkTargetEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_81vDdXrrEeeKUY3DWY6_8g"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='Agreement_linkTargetEdge']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_7RJrRHrrEeeKUY3DWY6_8g"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/org.eclipse.cmf.occi.sla.design/description/sla.odesign#//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer"/>
+    <target xmi:type="occi:Configuration" href="My.sla#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

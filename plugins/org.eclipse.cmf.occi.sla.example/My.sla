@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<occi:Configuration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" xmlns:sla="http://schemas.ogf.org/occi/sla/ecore">
+  <use href="http://schemas.ogf.org/occi/core#/"/>
+  <use href="http://schemas.ogf.org/occi/sla#/"/>
+  <resources xsi:type="sla:Agreement" id="urn:uuid:2415e054-56dc-486d-b338-7ff0ade0c58b" title="agreement1" rlinks="//@resources.0/@links.0">
+    <kind href="http://schemas.ogf.org/occi/sla#//@kinds[term='agreement']"/>
+    <parts xsi:type="sla:Agreement_tpl">
+      <mixin href="http://schemas.ogf.org/occi/sla#//@mixins[term='agreement_tpl']"/>
+    </parts>
+    <parts xsi:type="sla:Agreement_term">
+      <mixin href="http://schemas.ogf.org/occi/sla#//@mixins[term='agreement_term']"/>
+    </parts>
+    <links xsi:type="sla:Agreement_link" id="urn:uuid:80c3ffb3-01f8-4040-88f5-47ba01886fd8" target="//@resources.0">
+      <kind href="http://schemas.ogf.org/occi/sla#//@kinds[term='agreement_link']"/>
+    </links>
+  </resources>
+</occi:Configuration>
