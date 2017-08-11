@@ -11,6 +11,7 @@ Require-Bundle: org.eclipse.ui.workbench,
  org.eclipse.sirius,
  org.eclipse.sirius.ui,
  org.eclipse.sirius.ext.base,
- org.eclipse.ui
+ org.eclipse.ui,
+ org.eclipse.ui.ide
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
