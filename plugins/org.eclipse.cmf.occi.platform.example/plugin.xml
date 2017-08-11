@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.cmf.examples.example">
+      <example
+            aird="representations.aird"
+            description="A sample OCCI Platform project."
+            name="OCCI Platform Example"
+            projectName="PlatformExample"
+            screenshot="My.jpg"
+            semantic="My.Platform">
+      </example>
+   </extension>
+
+</plugin>

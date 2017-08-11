@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ASCII"?>
+<occi:Configuration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" xmlns:platform="http://schemas.ogf.org/occi/platform/ecore">
+  <use href="http://schemas.ogf.org/occi/core#/"/>
+  <use href="http://schemas.ogf.org/occi/platform#/"/>
+  <resources xsi:type="platform:Application" id="urn:uuid:70f4acb9-2a1f-4564-8cb0-3c90a021bd73" title="application1" rlinks="//@resources.1/@links.0">
+    <kind href="http://schemas.ogf.org/occi/platform#//@kinds[term='application']"/>
+    <parts xsi:type="platform:App_tpl">
+      <mixin href="http://schemas.ogf.org/occi/platform#//@mixins[term='app_tpl']"/>
+    </parts>
+    <parts xsi:type="platform:Res_tpl">
+      <mixin href="http://schemas.ogf.org/occi/platform#//@mixins[term='res_tpl']"/>
+    </parts>
+  </resources>
+  <resources xsi:type="platform:Component" id="urn:uuid:340a8347-7d2e-450d-9983-0278dbfe9ad0" title="component2">
+    <kind href="http://schemas.ogf.org/occi/platform#//@kinds[term='component']"/>
+    <parts xsi:type="platform:Database">
+      <mixin href="http://schemas.ogf.org/occi/platform#//@mixins[term='database']"/>
+    </parts>
+    <links xsi:type="platform:Componentlink" id="urn:uuid:4a20364c-990a-424d-8955-0bdde758ef46" target="//@resources.0">
+      <kind href="http://schemas.ogf.org/occi/platform#//@kinds[term='componentlink']"/>
+      <parts xsi:type="platform:Databaselink">
+        <mixin href="http://schemas.ogf.org/occi/platform#//@mixins[term='databaselink']"/>
+      </parts>
+    </links>
+  </resources>
+</occi:Configuration>
