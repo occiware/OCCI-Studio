@@ -30,6 +30,9 @@
     <!-- OCCI Utilities -->
     <module>plugins/org.eclipse.cmf.occi.core.ui</module>
     
+    <!-- Example -->
+    <module>plugins/org.eclipse.cmf.examples</module>
+    
     <!-- OCCI Xtext -->
     <module>plugins/org.eclipse.cmf.occi.core.xtext</module>
     <module>plugins/org.eclipse.cmf.occi.core.xtext.ide</module>
@@ -76,14 +79,16 @@
     <module>plugins/org.eclipse.cmf.occi.infrastructure.tests</module>
     <module>plugins/org.eclipse.cmf.occi.infrastructure.design</module>
     <module>plugins/org.eclipse.cmf.occi.infrastructure.connector.dummy</module>
-
+	<module>plugins/org.eclipse.cmf.occi.infrastructure.example</module>
+	
     <!-- OCCI crtp extension -->
     <module>plugins/org.eclipse.cmf.occi.crtp</module>
     <module>plugins/org.eclipse.cmf.occi.crtp.edit</module>
     <module>plugins/org.eclipse.cmf.occi.crtp.editor</module>
     <module>plugins/org.eclipse.cmf.occi.crtp.tests</module>
     <module>plugins/org.eclipse.cmf.occi.crtp.design</module>
-    <module>plugins/org.eclipse.cmf.occi.crtp.connector.dummy</module>        
+    <module>plugins/org.eclipse.cmf.occi.crtp.connector.dummy</module>   
+    <module>plugins/org.eclipse.cmf.occi.crtp.example</module>     
     
     <!-- OCCI platform extension -->
     <module>plugins/org.eclipse.cmf.occi.platform</module>
@@ -92,6 +97,7 @@
     <module>plugins/org.eclipse.cmf.occi.platform.tests</module>
     <module>plugins/org.eclipse.cmf.occi.platform.design</module>
     <module>plugins/org.eclipse.cmf.occi.platform.connector.dummy</module>        
+    <module>plugins/org.eclipse.cmf.occi.platform.example</module>  
 
     <!-- OCCI sla extension -->
     <module>plugins/org.eclipse.cmf.occi.sla</module>
@@ -99,7 +105,8 @@
     <module>plugins/org.eclipse.cmf.occi.sla.editor</module>
     <module>plugins/org.eclipse.cmf.occi.sla.tests</module>
     <module>plugins/org.eclipse.cmf.occi.sla.design</module>
-    <module>plugins/org.eclipse.cmf.occi.sla.connector.dummy</module>      
+    <module>plugins/org.eclipse.cmf.occi.sla.connector.dummy</module>     
+    <module>plugins/org.eclipse.cmf.occi.sla.example</module>  
     
     <!-- OCCI monitoring extension -->
     <module>plugins/org.eclipse.cmf.occi.monitoring</module>
@@ -107,7 +114,8 @@
     <module>plugins/org.eclipse.cmf.occi.monitoring.editor</module>
     <module>plugins/org.eclipse.cmf.occi.monitoring.tests</module>
     <module>plugins/org.eclipse.cmf.occi.monitoring.design</module>
-    <module>plugins/org.eclipse.cmf.occi.monitoring.connector.dummy</module>    
+    <module>plugins/org.eclipse.cmf.occi.monitoring.connector.dummy</module> 
+    <module>plugins/org.eclipse.cmf.occi.monitoring.example</module>    
              
     <!-- Releng -->
     <module>features/org.eclipse.cmf.occi</module>
