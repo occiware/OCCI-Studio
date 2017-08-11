@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ASCII"?>
+<occi:Configuration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:infrastructure="http://schemas.ogf.org/occi/infrastructure/ecore" xmlns:occi="http://schemas.ogf.org/occi/core/ecore">
+  <use href="http://schemas.ogf.org/occi/core#/"/>
+  <use href="http://schemas.ogf.org/occi/infrastructure#/"/>
+  <resources xsi:type="infrastructure:Network" id="urn:uuid:ace29b72-1dcb-4297-98d4-7820faaa66cf" title="network1" rlinks="//@resources.1/@links.1">
+    <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='network']"/>
+    <attributes name="occi.core.id" value="urn:uuid:ace29b72-1dcb-4297-98d4-7820faaa66cf"/>
+    <attributes name="occi.core.title" value="network1"/>
+    <parts xsi:type="infrastructure:Ipnetwork">
+      <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ipnetwork']"/>
+    </parts>
+  </resources>
+  <resources xsi:type="infrastructure:Compute" id="urn:uuid:6806edf5-5651-4be9-92ad-cab64ac932e1" title="compute2">
+    <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+    <attributes name="occi.core.id" value="urn:uuid:6806edf5-5651-4be9-92ad-cab64ac932e1"/>
+    <attributes name="occi.core.title" value="compute2"/>
+    <parts xsi:type="infrastructure:Ssh_key">
+      <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ssh_key']"/>
+    </parts>
+    <parts xsi:type="infrastructure:Os_tpl">
+      <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='os_tpl']"/>
+    </parts>
+    <links xsi:type="infrastructure:Storagelink" id="urn:uuid:284d9159-f53f-4bbe-a70a-0e83444b8a1e" target="//@resources.2">
+      <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='storagelink']"/>
+    </links>
+    <links xsi:type="infrastructure:Networkinterface" id="urn:uuid:aba91596-9bec-4aaf-b1f7-22f376a87ed8" target="//@resources.0">
+      <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='networkinterface']"/>
+      <parts xsi:type="infrastructure:Ipnetworkinterface">
+        <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ipnetworkinterface']"/>
+      </parts>
+    </links>
+  </resources>
+  <resources xsi:type="infrastructure:Storage" id="urn:uuid:8a68fe2c-86f4-4ed7-9305-4032b8a2b771" title="storage3" rlinks="//@resources.1/@links.0">
+    <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='storage']"/>
+    <attributes name="occi.core.id" value="urn:uuid:8a68fe2c-86f4-4ed7-9305-4032b8a2b771"/>
+    <attributes name="occi.core.title" value="storage3"/>
+  </resources>
+</occi:Configuration>

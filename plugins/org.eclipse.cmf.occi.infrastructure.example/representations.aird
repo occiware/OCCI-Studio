@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:infrastructure="http://schemas.ogf.org/occi/infrastructure/ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis xmi:id="__ZIOQHrgEeeq14MK89BqSQ" selectedViews="_I_QbAHrhEeeq14MK89BqSQ" version="12.0.0.201704271200">
+    <semanticResources>My.Infrastructure</semanticResources>
+    <semanticResources>http://schemas.ogf.org/occi/core</semanticResources>
+    <semanticResources>http://schemas.ogf.org/occi/infrastructure</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_I_QbAHrhEeeq14MK89BqSQ">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_JBkIIHrhEeeq14MK89BqSQ" name="My" repPath="#_JBgdwHrhEeeq14MK89BqSQ">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']"/>
+        <target xmi:type="occi:Configuration" href="My.Infrastructure#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram xmi:id="_JBgdwHrhEeeq14MK89BqSQ" name="My">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_JBgdwXrhEeeq14MK89BqSQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_JBgdwnrhEeeq14MK89BqSQ"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_JB0m0HrhEeeq14MK89BqSQ" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_JB0m0XrhEeeq14MK89BqSQ" type="Sirius" element="_JBgdwHrhEeeq14MK89BqSQ" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_MtZgsHrhEeeq14MK89BqSQ" type="2002" element="_Mr2okHrhEeeq14MK89BqSQ">
+          <children xmi:type="notation:Node" xmi:id="_MtdyIHrhEeeq14MK89BqSQ" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_MteZMHrhEeeq14MK89BqSQ" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_MtgOYHrhEeeq14MK89BqSQ" type="3009" element="_MsWX0HrhEeeq14MK89BqSQ">
+              <children xmi:type="notation:Node" xmi:id="_MtgOY3rhEeeq14MK89BqSQ" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_Mtg1cHrhEeeq14MK89BqSQ" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_MtiDkHrhEeeq14MK89BqSQ" type="3010" element="_Msgv4HrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_MtiDkXrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_MtiDknrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_MtiqoHrhEeeq14MK89BqSQ" type="3010" element="_MsoEoXrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_MtiqoXrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_MtiqonrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_MtjRsHrhEeeq14MK89BqSQ" type="3010" element="_MsxOkXrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_MtjRsXrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_MtjRsnrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_MtjRs3rhEeeq14MK89BqSQ" type="3010" element="_Ms2uInrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_MtjRtHrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_MtjRtXrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_Mtj4wHrhEeeq14MK89BqSQ" type="3010" element="_Ms9b0HrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_Mtj4wXrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_Mtj4wnrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_Mtj4w3rhEeeq14MK89BqSQ" type="3010" element="_MtC7YXrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_Mtj4xHrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_Mtj4xXrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_Mtj4xnrhEeeq14MK89BqSQ" type="3010" element="_MtIa8XrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_Mtj4x3rhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_Mtj4yHrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_Mtkf0HrhEeeq14MK89BqSQ" type="3010" element="_MtN6gXrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_Mtkf0XrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_Mtkf0nrhEeeq14MK89BqSQ"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_Mtg1cXrhEeeq14MK89BqSQ"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_Mtg1cnrhEeeq14MK89BqSQ"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_MtgOYXrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MtgOYnrhEeeq14MK89BqSQ" x="4" y="30"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Qml4cHrkEeeoQcRKWrsNhw" type="3009" element="_QgzZgHrkEeeoQcRKWrsNhw">
+              <children xmi:type="notation:Node" xmi:id="_QmtNMHrkEeeoQcRKWrsNhw" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_Qmt0QHrkEeeoQcRKWrsNhw" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_QmvpcHrkEeeoQcRKWrsNhw" type="3010" element="_Qi9VoHrkEeeoQcRKWrsNhw">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_QmvpcXrkEeeoQcRKWrsNhw" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_QmvpcnrkEeeoQcRKWrsNhw"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_QmwQgHrkEeeoQcRKWrsNhw" type="3010" element="_QjDcQXrkEeeoQcRKWrsNhw">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_QmwQgXrkEeeoQcRKWrsNhw" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_QmwQgnrkEeeoQcRKWrsNhw"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_Qmw3kHrkEeeoQcRKWrsNhw" type="3010" element="_QjI70XrkEeeoQcRKWrsNhw">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_Qmw3kXrkEeeoQcRKWrsNhw" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_Qmw3knrkEeeoQcRKWrsNhw"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_Qmt0QXrkEeeoQcRKWrsNhw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_Qmt0QnrkEeeoQcRKWrsNhw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_Qml4cXrkEeeoQcRKWrsNhw" fontName=".SF NS Text" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Qml4cnrkEeeoQcRKWrsNhw" x="4" y="210" width="312"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_MteZMXrhEeeq14MK89BqSQ"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_MteZMnrhEeeq14MK89BqSQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_MtZgsXrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MtZgsnrhEeeq14MK89BqSQ" x="18" y="27" height="444"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_OgiSQHrhEeeq14MK89BqSQ" type="2002" element="_OdwEAHrhEeeq14MK89BqSQ">
+          <children xmi:type="notation:Node" xmi:id="_OgiSQ3rhEeeq14MK89BqSQ" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_Ogi5UHrhEeeq14MK89BqSQ" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_Ogi5U3rhEeeq14MK89BqSQ" type="3009" element="_OfV_cHrhEeeq14MK89BqSQ">
+              <children xmi:type="notation:Node" xmi:id="_Ogi5VnrhEeeq14MK89BqSQ" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_OhFE0HrhEeeq14MK89BqSQ" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_OhFr4HrhEeeq14MK89BqSQ" type="3010" element="_OffwcHrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_OhFr4XrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_OhFr4nrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_OhGS8HrhEeeq14MK89BqSQ" type="3010" element="_Ofko8XrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_OhGS8XrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_OhGS8nrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_OhGS83rhEeeq14MK89BqSQ" type="3010" element="_OfqIgXrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_OhGS9HrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_OhGS9XrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_OhG6AHrhEeeq14MK89BqSQ" type="3010" element="_OfvoEXrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_OhG6AXrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_OhG6AnrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_OhG6A3rhEeeq14MK89BqSQ" type="3010" element="_Of0gkXrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_OhG6BHrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_OhG6BXrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_OhHhEHrhEeeq14MK89BqSQ" type="3010" element="_Of6AIHrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_OhHhEXrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_OhHhEnrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_OhHhE3rhEeeq14MK89BqSQ" type="3010" element="_Of-4oXrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_OhHhFHrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_OhHhFXrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_OhIIIHrhEeeq14MK89BqSQ" type="3010" element="_OgEYMHrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_OhIIIXrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_OhIIInrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_OhIvMHrhEeeq14MK89BqSQ" type="3010" element="_OgJQsXrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_OhIvMXrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_OhIvMnrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_OhIvM3rhEeeq14MK89BqSQ" type="3010" element="_OgOJMXrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_OhIvNHrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_OhIvNXrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_OhJWQHrhEeeq14MK89BqSQ" type="3010" element="_OgTowHrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_OhJWQXrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_OhJWQnrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_OhJWQ3rhEeeq14MK89BqSQ" type="3010" element="_OgYhQHrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_OhJWRHrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_OhJWRXrhEeeq14MK89BqSQ"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_OhFE0XrhEeeq14MK89BqSQ"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_OhFE0nrhEeeq14MK89BqSQ"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_Ogi5VHrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ogi5VXrhEeeq14MK89BqSQ" x="4" y="21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_X0wvUHrkEeeoQcRKWrsNhw" type="3009" element="_Xvz94HrkEeeoQcRKWrsNhw">
+              <children xmi:type="notation:Node" xmi:id="_X0xWYHrkEeeoQcRKWrsNhw" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_X0xWYXrkEeeoQcRKWrsNhw" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_X0x9cHrkEeeoQcRKWrsNhw" type="3010" element="_Xyp2gHrkEeeoQcRKWrsNhw">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_X0x9cXrkEeeoQcRKWrsNhw" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_X0x9cnrkEeeoQcRKWrsNhw"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_X0xWYnrkEeeoQcRKWrsNhw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_X0xWY3rkEeeoQcRKWrsNhw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_X0wvUXrkEeeoQcRKWrsNhw" fontName=".SF NS Text" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X0wvUnrkEeeoQcRKWrsNhw" x="4" y="282" width="308"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_xOAPgHrkEeeoQcRKWrsNhw" type="3009" element="_xJx20HrkEeeoQcRKWrsNhw">
+              <children xmi:type="notation:Node" xmi:id="_xOAPg3rkEeeoQcRKWrsNhw" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_xOA2kHrkEeeoQcRKWrsNhw" type="7003">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_xOA2kXrkEeeoQcRKWrsNhw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_xOA2knrkEeeoQcRKWrsNhw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_xOAPgXrkEeeoQcRKWrsNhw" fontName=".SF NS Text" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xOAPgnrkEeeoQcRKWrsNhw" x="33" y="354" width="257"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_Ogi5UXrhEeeq14MK89BqSQ"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_Ogi5UnrhEeeq14MK89BqSQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_OgiSQXrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OgiSQnrhEeeq14MK89BqSQ" x="1134" y="18" height="445"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_S0TNgHrhEeeq14MK89BqSQ" type="2002" element="_Sxg_QHrhEeeq14MK89BqSQ">
+          <children xmi:type="notation:Node" xmi:id="_S0TNg3rhEeeq14MK89BqSQ" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_S0T0kHrhEeeq14MK89BqSQ" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_S0T0k3rhEeeq14MK89BqSQ" type="3009" element="_SzpGMHrhEeeq14MK89BqSQ">
+              <children xmi:type="notation:Node" xmi:id="_S0T0lnrhEeeq14MK89BqSQ" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_S0UboHrhEeeq14MK89BqSQ" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_S0Ubo3rhEeeq14MK89BqSQ" type="3010" element="_Szwa8HrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_S0UbpHrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_S0UbpXrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_S0UbpnrhEeeq14MK89BqSQ" type="3010" element="_Sz0sYnrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_S0Ubp3rhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_S0UbqHrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_S0UbqXrhEeeq14MK89BqSQ" type="3010" element="_Sz4WwnrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_S0UbqnrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_S0Ubq3rhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_S0VCsHrhEeeq14MK89BqSQ" type="3010" element="_Sz8oMHrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_S0VCsXrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_S0VCsnrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_S0VCs3rhEeeq14MK89BqSQ" type="3010" element="_S0ASkXrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_S0VCtHrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_S0VCtXrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_S0VCtnrhEeeq14MK89BqSQ" type="3010" element="_S0FyIXrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_S0VCt3rhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_S0VCuHrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_S0VCuXrhEeeq14MK89BqSQ" type="3010" element="_S0KDkXrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_S0VCunrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_S0VCu3rhEeeq14MK89BqSQ"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_S0UboXrhEeeq14MK89BqSQ"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_S0UbonrhEeeq14MK89BqSQ"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_S0T0lHrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S0T0lXrhEeeq14MK89BqSQ" x="13" y="21" width="353"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_S0T0kXrhEeeq14MK89BqSQ"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_S0T0knrhEeeq14MK89BqSQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_S0TNgXrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S0TNgnrhEeeq14MK89BqSQ" x="531" y="468" width="379"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_VA_ukHrhEeeq14MK89BqSQ" type="2002" element="_U_ddgHrhEeeq14MK89BqSQ">
+          <children xmi:type="notation:Node" xmi:id="_VBAVoHrhEeeq14MK89BqSQ" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_VBAVoXrhEeeq14MK89BqSQ" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_VBA8sHrhEeeq14MK89BqSQ" type="3009" element="_U_kyQHrhEeeq14MK89BqSQ">
+              <children xmi:type="notation:Node" xmi:id="_VBA8s3rhEeeq14MK89BqSQ" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_VBA8tHrhEeeq14MK89BqSQ" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_VBA8t3rhEeeq14MK89BqSQ" type="3010" element="_U_sHAHrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_VBA8uHrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_VBA8uXrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_VBBjwHrhEeeq14MK89BqSQ" type="3010" element="_U_wYcXrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_VBBjwXrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_VBBjwnrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_VBBjw3rhEeeq14MK89BqSQ" type="3010" element="_U_1Q8XrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_VBBjxHrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_VBBjxXrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_VBBjxnrhEeeq14MK89BqSQ" type="3010" element="_U_5iYHrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_VBBjx3rhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_VBBjyHrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_VBCK0HrhEeeq14MK89BqSQ" type="3010" element="_U_9MwXrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_VBCK0XrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_VBCK0nrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_VBCK03rhEeeq14MK89BqSQ" type="3010" element="_VABeMHrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_VBCK1HrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_VBCK1XrhEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_VBCK1nrhEeeq14MK89BqSQ" type="3010" element="_VAFvoHrhEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_VBCK13rhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_VBCK2HrhEeeq14MK89BqSQ"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_VBA8tXrhEeeq14MK89BqSQ"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_VBA8tnrhEeeq14MK89BqSQ"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_VBA8sXrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VBA8snrhEeeq14MK89BqSQ" x="31" y="30"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_VBAVonrhEeeq14MK89BqSQ"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_VBAVo3rhEeeq14MK89BqSQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_VA_ukXrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VA_uknrhEeeq14MK89BqSQ" x="1121" y="531"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_xnO5wHriEeeq14MK89BqSQ" type="2002" element="_xmer0HriEeeq14MK89BqSQ">
+          <children xmi:type="notation:Node" xmi:id="_xnO5w3riEeeq14MK89BqSQ" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_xnO5xHriEeeq14MK89BqSQ" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_xnPg0HriEeeq14MK89BqSQ" type="3009" element="_xmlZgHriEeeq14MK89BqSQ">
+              <children xmi:type="notation:Node" xmi:id="_xnPg03riEeeq14MK89BqSQ" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_xnQH4HriEeeq14MK89BqSQ" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_xnQH43riEeeq14MK89BqSQ" type="3010" element="_xmsHMHriEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_xnQH5HriEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_xnQH5XriEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_xnQH5nriEeeq14MK89BqSQ" type="3010" element="_xmvxkHriEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_xnQH53riEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_xnQH6HriEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_xnQH6XriEeeq14MK89BqSQ" type="3010" element="_xmzb8HriEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_xnQH6nriEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_xnQH63riEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_xnQu8HriEeeq14MK89BqSQ" type="3010" element="_xm3GUXriEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_xnQu8XriEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_xnQu8nriEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_xnQu83riEeeq14MK89BqSQ" type="3010" element="_xm6wsXriEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_xnQu9HriEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_xnQu9XriEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_xnQu9nriEeeq14MK89BqSQ" type="3010" element="_xm-bEHriEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_xnQu93riEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_xnQu-HriEeeq14MK89BqSQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_xnQu-XriEeeq14MK89BqSQ" type="3010" element="_xnCFcHriEeeq14MK89BqSQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_xnQu-nriEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_xnQu-3riEeeq14MK89BqSQ"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_xnQH4XriEeeq14MK89BqSQ"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_xnQH4nriEeeq14MK89BqSQ"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_xnPg0XriEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xnPg0nriEeeq14MK89BqSQ" x="33" y="39"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_RgpF4HrkEeeoQcRKWrsNhw" type="3009" element="_Rb6W4HrkEeeoQcRKWrsNhw">
+              <children xmi:type="notation:Node" xmi:id="_RgpF43rkEeeoQcRKWrsNhw" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_RgpF5HrkEeeoQcRKWrsNhw" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_Rgps8HrkEeeoQcRKWrsNhw" type="3010" element="_RgUVwHrkEeeoQcRKWrsNhw">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_Rgps8XrkEeeoQcRKWrsNhw" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_Rgps8nrkEeeoQcRKWrsNhw"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_Rgps83rkEeeoQcRKWrsNhw" type="3010" element="_RgYnMXrkEeeoQcRKWrsNhw">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_Rgps9HrkEeeoQcRKWrsNhw" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_Rgps9XrkEeeoQcRKWrsNhw"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_RgqUAHrkEeeoQcRKWrsNhw" type="3010" element="_Rgc4oHrkEeeoQcRKWrsNhw">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_RgqUAXrkEeeoQcRKWrsNhw" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_RgqUAnrkEeeoQcRKWrsNhw"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_RgpF5XrkEeeoQcRKWrsNhw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_RgpF5nrkEeeoQcRKWrsNhw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_RgpF4XrkEeeoQcRKWrsNhw" fontName=".SF NS Text" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RgpF4nrkEeeoQcRKWrsNhw" x="4" y="201" width="380"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_xnO5xXriEeeq14MK89BqSQ"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_xnO5xnriEeeq14MK89BqSQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_xnO5wXriEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xnO5wnriEeeq14MK89BqSQ" x="510" y="81" width="408" height="309"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_JB0m0nrhEeeq14MK89BqSQ"/>
+        <edges xmi:type="notation:Edge" xmi:id="_VBFOIHrhEeeq14MK89BqSQ" type="4001" element="_VA3LsHrhEeeq14MK89BqSQ" source="_OgiSQHrhEeeq14MK89BqSQ" target="_VA_ukHrhEeeq14MK89BqSQ">
+          <children xmi:type="notation:Node" xmi:id="_VBGcQHrhEeeq14MK89BqSQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VBGcQXrhEeeq14MK89BqSQ" x="-146" y="4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_VBHDUHrhEeeq14MK89BqSQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VBHDUXrhEeeq14MK89BqSQ" x="118" y="-1"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_VBHDUnrhEeeq14MK89BqSQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VBHDU3rhEeeq14MK89BqSQ" x="126" y="-1"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_VBFOIXrhEeeq14MK89BqSQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_VBFOInrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_VBFOI3rhEeeq14MK89BqSQ" points="[9, 129, 1, -81]$[8, 199, 0, -11]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VBIRcHrhEeeq14MK89BqSQ" id="(0.5,0.7100285229320875)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VBIRcXrhEeeq14MK89BqSQ" id="(0.5251396648044693,0.06417112299465241)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_VBI4gHrhEeeq14MK89BqSQ" type="4001" element="_VA4Z0HrhEeeq14MK89BqSQ" source="_VA_ukHrhEeeq14MK89BqSQ" target="_S0TNgHrhEeeq14MK89BqSQ">
+          <children xmi:type="notation:Node" xmi:id="_VBI4hHrhEeeq14MK89BqSQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VBI4hXrhEeeq14MK89BqSQ" x="-145"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_VBI4hnrhEeeq14MK89BqSQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VBI4h3rhEeeq14MK89BqSQ" x="-18" y="3"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_VBI4iHrhEeeq14MK89BqSQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VBI4iXrhEeeq14MK89BqSQ" x="-192" y="1"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_VBI4gXrhEeeq14MK89BqSQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_VBI4gnrhEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_VBI4g3rhEeeq14MK89BqSQ" points="[0, 1, 215, 0]$[-214, 1, 1, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VBJfkHrhEeeq14MK89BqSQ" id="(0.002793296089385475,0.40106951871657753)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VBJfkXrhEeeq14MK89BqSQ" id="(0.9973634111565145,0.7865168539325843)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_xnR9EHriEeeq14MK89BqSQ" type="4001" element="_xnFv0HriEeeq14MK89BqSQ" source="_OgiSQHrhEeeq14MK89BqSQ" target="_xnO5wHriEeeq14MK89BqSQ">
+          <children xmi:type="notation:Node" xmi:id="_xnR9FHriEeeq14MK89BqSQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xnR9FXriEeeq14MK89BqSQ" x="111" y="-3"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_xnSkIHriEeeq14MK89BqSQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xnSkIXriEeeq14MK89BqSQ" x="-263" y="7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_xnSkInriEeeq14MK89BqSQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xnSkI3riEeeq14MK89BqSQ" x="-427" y="7"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_xnR9EXriEeeq14MK89BqSQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_xnR9EnriEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xnR9E3riEeeq14MK89BqSQ" points="[-7, 4, 242, 0]$[-225, 4, 24, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xnSkJHriEeeq14MK89BqSQ" id="(0.024096385542168676,0.45393258426966293)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xnSkJXriEeeq14MK89BqSQ" id="(0.9408866995073891,0.46438815693519375)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_xnSkJnriEeeq14MK89BqSQ" type="4001" element="_xnG98HriEeeq14MK89BqSQ" source="_xnO5wHriEeeq14MK89BqSQ" target="_MtZgsHrhEeeq14MK89BqSQ">
+          <children xmi:type="notation:Node" xmi:id="_xnTLMHriEeeq14MK89BqSQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xnTLMXriEeeq14MK89BqSQ" y="4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_xnTLMnriEeeq14MK89BqSQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xnTLM3riEeeq14MK89BqSQ" x="1" y="-4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_xnTLNHriEeeq14MK89BqSQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xnTLNXriEeeq14MK89BqSQ" x="1" y="-4"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_xnSkJ3riEeeq14MK89BqSQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_xnSkKHriEeeq14MK89BqSQ" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xnSkKXriEeeq14MK89BqSQ" points="[0, 10, 168, -2]$[-165, 10, 3, -2]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xnTLNnriEeeq14MK89BqSQ" id="(0.0,0.4316088151465798)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xnTLN3riEeeq14MK89BqSQ" id="(0.9908814589665653,0.44819819819819817)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_Mr2okHrhEeeq14MK89BqSQ" name="network1: Network" incomingEdges="_xnG98HriEeeq14MK89BqSQ">
+      <target xmi:type="infrastructure:Network" href="My.Infrastructure#//@resources.0"/>
+      <semanticElements xmi:type="infrastructure:Network" href="My.Infrastructure#//@resources.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Mr8vMHrhEeeq14MK89BqSQ" labelSize="10" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_MsWX0HrhEeeq14MK89BqSQ" name="http://schemas.ogf.org/occi/infrastructure#network">
+        <target xmi:type="infrastructure:Network" href="My.Infrastructure#//@resources.0"/>
+        <semanticElements xmi:type="infrastructure:Network" href="My.Infrastructure#//@resources.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Msb3YHrhEeeq14MK89BqSQ" borderSize="1" borderSizeComputationExpression="1">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Msgv4HrhEeeq14MK89BqSQ" name="id = urn:uuid:ace29b72-1dcb-4297-98d4-7820faaa66cf">
+          <target xmi:type="infrastructure:Network" href="My.Infrastructure#//@resources.0"/>
+          <semanticElements xmi:type="infrastructure:Network" href="My.Infrastructure#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_MsoEoHrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_MsmPcHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkId']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkId']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_MsoEoXrhEeeq14MK89BqSQ" name="title = network1">
+          <target xmi:type="infrastructure:Network" href="My.Infrastructure#//@resources.0"/>
+          <semanticElements xmi:type="infrastructure:Network" href="My.Infrastructure#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_MsxOkHrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_MswngHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkTitle']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkTitle']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_MsxOkXrhEeeq14MK89BqSQ" name="location = null">
+          <target xmi:type="infrastructure:Network" href="My.Infrastructure#//@resources.0"/>
+          <semanticElements xmi:type="infrastructure:Network" href="My.Infrastructure#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_Ms2uIXrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_Ms2uIHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkLocation']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkLocation']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Ms2uInrhEeeq14MK89BqSQ" name="summary = null">
+          <target xmi:type="infrastructure:Network" href="My.Infrastructure#//@resources.0"/>
+          <semanticElements xmi:type="infrastructure:Network" href="My.Infrastructure#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_Ms80wHrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_Ms8NsHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkSummary']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkSummary']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Ms9b0HrhEeeq14MK89BqSQ" name="occiNetworkVlan = null">
+          <target xmi:type="infrastructure:Network" href="My.Infrastructure#//@resources.0"/>
+          <semanticElements xmi:type="infrastructure:Network" href="My.Infrastructure#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_MtC7YHrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_MtCUUHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkOcciNetworkVlan']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkOcciNetworkVlan']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_MtC7YXrhEeeq14MK89BqSQ" name="occiNetworkLabel = null">
+          <target xmi:type="infrastructure:Network" href="My.Infrastructure#//@resources.0"/>
+          <semanticElements xmi:type="infrastructure:Network" href="My.Infrastructure#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_MtIa8HrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_MtHz4HrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkOcciNetworkLabel']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkOcciNetworkLabel']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_MtIa8XrhEeeq14MK89BqSQ" name="occiNetworkState = inactive">
+          <target xmi:type="infrastructure:Network" href="My.Infrastructure#//@resources.0"/>
+          <semanticElements xmi:type="infrastructure:Network" href="My.Infrastructure#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_MtN6gHrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_MtNTcHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkOcciNetworkState']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkOcciNetworkState']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_MtN6gXrhEeeq14MK89BqSQ" name="occiNetworkStateMessage = null">
+          <target xmi:type="infrastructure:Network" href="My.Infrastructure#//@resources.0"/>
+          <semanticElements xmi:type="infrastructure:Network" href="My.Infrastructure#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_MtTaEHrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_MtSzAHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkOcciNetworkStateMessage']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkOcciNetworkStateMessage']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_QgzZgHrkEeeoQcRKWrsNhw" name="http://schemas.ogf.org/occi/infrastructure/network#ipnetwork">
+        <target xmi:type="infrastructure:Ipnetwork" href="My.Infrastructure#//@resources.0/@parts.0"/>
+        <semanticElements xmi:type="infrastructure:Ipnetwork" href="My.Infrastructure#//@resources.0/@parts.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Qg6HMHrkEeeoQcRKWrsNhw" borderSize="1" borderSizeComputationExpression="1">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='IpNetworkMixin']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='IpNetworkMixin']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Qi9VoHrkEeeoQcRKWrsNhw" name="occiNetworkAddress = null">
+          <target xmi:type="infrastructure:Ipnetwork" href="My.Infrastructure#//@resources.0/@parts.0"/>
+          <semanticElements xmi:type="infrastructure:Ipnetwork" href="My.Infrastructure#//@resources.0/@parts.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_QjDcQHrkEeeoQcRKWrsNhw"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_QjC1MHrkEeeoQcRKWrsNhw" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='IpNetworkMixin']/@subNodeMappings[name='IpnetworkocciNetworkAddress']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='IpNetworkMixin']/@subNodeMappings[name='IpnetworkocciNetworkAddress']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_QjDcQXrkEeeoQcRKWrsNhw" name="occiNetworkGateway = null">
+          <target xmi:type="infrastructure:Ipnetwork" href="My.Infrastructure#//@resources.0/@parts.0"/>
+          <semanticElements xmi:type="infrastructure:Ipnetwork" href="My.Infrastructure#//@resources.0/@parts.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_QjI70HrkEeeoQcRKWrsNhw"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_QjIUwHrkEeeoQcRKWrsNhw" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='IpNetworkMixin']/@subNodeMappings[name='IpnetworkocciNetworkGateway']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='IpNetworkMixin']/@subNodeMappings[name='IpnetworkocciNetworkGateway']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_QjI70XrkEeeoQcRKWrsNhw" name="occiNetworkAllocation = dynamic">
+          <target xmi:type="infrastructure:Ipnetwork" href="My.Infrastructure#//@resources.0/@parts.0"/>
+          <semanticElements xmi:type="infrastructure:Ipnetwork" href="My.Infrastructure#//@resources.0/@parts.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_QjObYXrkEeeoQcRKWrsNhw"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_QjObYHrkEeeoQcRKWrsNhw" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='IpNetworkMixin']/@subNodeMappings[name='IpnetworkocciNetworkAllocation']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='IpNetworkMixin']/@subNodeMappings[name='IpnetworkocciNetworkAllocation']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_OdwEAHrhEeeq14MK89BqSQ" name="compute2: Compute" outgoingEdges="_VA3LsHrhEeeq14MK89BqSQ _xnFv0HriEeeq14MK89BqSQ">
+      <target xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+      <semanticElements xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Od08gHrhEeeq14MK89BqSQ" labelSize="10" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_OfV_cHrhEeeq14MK89BqSQ" name="http://schemas.ogf.org/occi/infrastructure#compute">
+        <target xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+        <semanticElements xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Ofa38HrhEeeq14MK89BqSQ" borderSize="1" borderSizeComputationExpression="1">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_OffwcHrhEeeq14MK89BqSQ" name="id = urn:uuid:6806edf5-5651-4be9-92ad-cab64ac932e1">
+          <target xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_Ofko8HrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_OfkB4HrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeId']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeId']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Ofko8XrhEeeq14MK89BqSQ" name="title = compute2">
+          <target xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_OfqIgHrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_OfphcHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeTitle']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeTitle']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_OfqIgXrhEeeq14MK89BqSQ" name="location = null">
+          <target xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_OfvoEHrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_OfvBAHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeLocation']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeLocation']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_OfvoEXrhEeeq14MK89BqSQ" name="summary = null">
+          <target xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_Of0gkHrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_Ofz5gHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeSummary']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeSummary']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Of0gkXrhEeeq14MK89BqSQ" name="occiComputeArchitecture = x86">
+          <target xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_Of5ZEXrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_Of5ZEHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeArchitecture']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeArchitecture']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Of6AIHrhEeeq14MK89BqSQ" name="occiComputeCores = null">
+          <target xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_Of-4oHrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_Of-RkHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeCores']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeCores']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Of-4oXrhEeeq14MK89BqSQ" name="occiComputeHostname = null">
+          <target xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_OgDxIHrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_OgDKEHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeHostname']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeHostname']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_OgEYMHrhEeeq14MK89BqSQ" name="occiComputeShare = null">
+          <target xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_OgJQsHrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_OgIpoHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeShare']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeShare']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_OgJQsXrhEeeq14MK89BqSQ" name="occiComputeSpeed = null">
+          <target xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_OgOJMHrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_OgNiIHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeSpeed']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeSpeed']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_OgOJMXrhEeeq14MK89BqSQ" name="occiComputeMemory = null">
+          <target xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_OgTBsXrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_OgTBsHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeMemory']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeMemory']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_OgTowHrhEeeq14MK89BqSQ" name="occiComputeState = inactive">
+          <target xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_OgX6MXrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_OgX6MHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeState']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeState']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_OgYhQHrhEeeq14MK89BqSQ" name="occiComputeStateMessage = null">
+          <target xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_OgcysXrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_OgcysHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeStateMessage']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeStateMessage']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_Xvz94HrkEeeoQcRKWrsNhw" name="http://schemas.ogf.org/occi/infrastructure/credentials#ssh_key">
+        <target xmi:type="infrastructure:Ssh_key" href="My.Infrastructure#//@resources.1/@parts.0"/>
+        <semanticElements xmi:type="infrastructure:Ssh_key" href="My.Infrastructure#//@resources.1/@parts.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Xv4PUHrkEeeoQcRKWrsNhw" borderSize="1" borderSizeComputationExpression="1">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SSH_keyMixin']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SSH_keyMixin']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Xyp2gHrkEeeoQcRKWrsNhw" name="occiCredentialsSshPublickey = null">
+          <target xmi:type="infrastructure:Ssh_key" href="My.Infrastructure#//@resources.1/@parts.0"/>
+          <semanticElements xmi:type="infrastructure:Ssh_key" href="My.Infrastructure#//@resources.1/@parts.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_XyuvAHrkEeeoQcRKWrsNhw"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_XyuH8HrkEeeoQcRKWrsNhw" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SSH_keyMixin']/@subNodeMappings[name='Ssh_keyocciCredentialsSshPublickey']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SSH_keyMixin']/@subNodeMappings[name='Ssh_keyocciCredentialsSshPublickey']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_xJx20HrkEeeoQcRKWrsNhw" name="http://schemas.ogf.org/occi/infrastructure#os_tpl">
+        <target xmi:type="infrastructure:Os_tpl" href="My.Infrastructure#//@resources.1/@parts.1"/>
+        <semanticElements xmi:type="infrastructure:Os_tpl" href="My.Infrastructure#//@resources.1/@parts.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_xJ2vUHrkEeeoQcRKWrsNhw" borderSize="1" borderSizeComputationExpression="1">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='Os_TplMixin']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='Os_TplMixin']"/>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_Sxg_QHrhEeeq14MK89BqSQ" name="storage3: Storage" incomingEdges="_VA4Z0HrhEeeq14MK89BqSQ">
+      <target xmi:type="infrastructure:Storage" href="My.Infrastructure#//@resources.2"/>
+      <semanticElements xmi:type="infrastructure:Storage" href="My.Infrastructure#//@resources.2"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_SxlQsHrhEeeq14MK89BqSQ" labelSize="10" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_SzpGMHrhEeeq14MK89BqSQ" name="http://schemas.ogf.org/occi/infrastructure#storage">
+        <target xmi:type="infrastructure:Storage" href="My.Infrastructure#//@resources.2"/>
+        <semanticElements xmi:type="infrastructure:Storage" href="My.Infrastructure#//@resources.2"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_SzswkHrhEeeq14MK89BqSQ" borderSize="1" borderSizeComputationExpression="1">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='SubStorageContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='SubStorageContainer']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Szwa8HrhEeeq14MK89BqSQ" name="id = urn:uuid:8a68fe2c-86f4-4ed7-9305-4032b8a2b771">
+          <target xmi:type="infrastructure:Storage" href="My.Infrastructure#//@resources.2"/>
+          <semanticElements xmi:type="infrastructure:Storage" href="My.Infrastructure#//@resources.2"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_Sz0sYXrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_Sz0sYHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='SubStorageContainer']/@subNodeMappings[name='StorageId']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='SubStorageContainer']/@subNodeMappings[name='StorageId']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Sz0sYnrhEeeq14MK89BqSQ" name="title = storage3">
+          <target xmi:type="infrastructure:Storage" href="My.Infrastructure#//@resources.2"/>
+          <semanticElements xmi:type="infrastructure:Storage" href="My.Infrastructure#//@resources.2"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_Sz4WwXrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_Sz4WwHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='SubStorageContainer']/@subNodeMappings[name='StorageTitle']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='SubStorageContainer']/@subNodeMappings[name='StorageTitle']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Sz4WwnrhEeeq14MK89BqSQ" name="location = null">
+          <target xmi:type="infrastructure:Storage" href="My.Infrastructure#//@resources.2"/>
+          <semanticElements xmi:type="infrastructure:Storage" href="My.Infrastructure#//@resources.2"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_Sz8BIXrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_Sz8BIHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='SubStorageContainer']/@subNodeMappings[name='StorageLocation']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='SubStorageContainer']/@subNodeMappings[name='StorageLocation']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Sz8oMHrhEeeq14MK89BqSQ" name="summary = null">
+          <target xmi:type="infrastructure:Storage" href="My.Infrastructure#//@resources.2"/>
+          <semanticElements xmi:type="infrastructure:Storage" href="My.Infrastructure#//@resources.2"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_S0ASkHrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_Sz_rgHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='SubStorageContainer']/@subNodeMappings[name='StorageSummary']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='SubStorageContainer']/@subNodeMappings[name='StorageSummary']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_S0ASkXrhEeeq14MK89BqSQ" name="occiStorageSize = null">
+          <target xmi:type="infrastructure:Storage" href="My.Infrastructure#//@resources.2"/>
+          <semanticElements xmi:type="infrastructure:Storage" href="My.Infrastructure#//@resources.2"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_S0FyIHrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_S0FLEHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='SubStorageContainer']/@subNodeMappings[name='StorageOcciStorageSize']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='SubStorageContainer']/@subNodeMappings[name='StorageOcciStorageSize']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_S0FyIXrhEeeq14MK89BqSQ" name="occiStorageState = online">
+          <target xmi:type="infrastructure:Storage" href="My.Infrastructure#//@resources.2"/>
+          <semanticElements xmi:type="infrastructure:Storage" href="My.Infrastructure#//@resources.2"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_S0KDkHrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_S0JcgHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='SubStorageContainer']/@subNodeMappings[name='StorageOcciStorageState']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='SubStorageContainer']/@subNodeMappings[name='StorageOcciStorageState']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_S0KDkXrhEeeq14MK89BqSQ" name="occiStorageStateMessage = null">
+          <target xmi:type="infrastructure:Storage" href="My.Infrastructure#//@resources.2"/>
+          <semanticElements xmi:type="infrastructure:Storage" href="My.Infrastructure#//@resources.2"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_S0Nt8XrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_S0Nt8HrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='SubStorageContainer']/@subNodeMappings[name='StorageOcciStorageStateMessage']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='SubStorageContainer']/@subNodeMappings[name='StorageOcciStorageStateMessage']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_U_ddgHrhEeeq14MK89BqSQ" name=": Storagelink" outgoingEdges="_VA4Z0HrhEeeq14MK89BqSQ" incomingEdges="_VA3LsHrhEeeq14MK89BqSQ">
+      <target xmi:type="infrastructure:Storagelink" href="My.Infrastructure#//@resources.1/@links.0"/>
+      <semanticElements xmi:type="infrastructure:Storagelink" href="My.Infrastructure#//@resources.1/@links.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_U_hH4HrhEeeq14MK89BqSQ" labelSize="10" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_U_kyQHrhEeeq14MK89BqSQ" name="http://schemas.ogf.org/occi/infrastructure#storagelink">
+        <target xmi:type="infrastructure:Storagelink" href="My.Infrastructure#//@resources.1/@links.0"/>
+        <semanticElements xmi:type="infrastructure:Storagelink" href="My.Infrastructure#//@resources.1/@links.0"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_U_ocoHrhEeeq14MK89BqSQ" borderSize="1" borderSizeComputationExpression="1">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer']/@subContainerMappings[name='SubStoragelinkContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer']/@subContainerMappings[name='SubStoragelinkContainer']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_U_sHAHrhEeeq14MK89BqSQ" name="id = urn:uuid:284d9159-f53f-4bbe-a70a-0e83444b8a1e">
+          <target xmi:type="infrastructure:Storagelink" href="My.Infrastructure#//@resources.1/@links.0"/>
+          <semanticElements xmi:type="infrastructure:Storagelink" href="My.Infrastructure#//@resources.1/@links.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_U_wYcHrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_U_vxYHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer']/@subContainerMappings[name='SubStoragelinkContainer']/@subNodeMappings[name='StoragelinkId']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer']/@subContainerMappings[name='SubStoragelinkContainer']/@subNodeMappings[name='StoragelinkId']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_U_wYcXrhEeeq14MK89BqSQ" name="title = null">
+          <target xmi:type="infrastructure:Storagelink" href="My.Infrastructure#//@resources.1/@links.0"/>
+          <semanticElements xmi:type="infrastructure:Storagelink" href="My.Infrastructure#//@resources.1/@links.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_U_1Q8HrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_U_0p4HrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer']/@subContainerMappings[name='SubStoragelinkContainer']/@subNodeMappings[name='StoragelinkTitle']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer']/@subContainerMappings[name='SubStoragelinkContainer']/@subNodeMappings[name='StoragelinkTitle']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_U_1Q8XrhEeeq14MK89BqSQ" name="location = null">
+          <target xmi:type="infrastructure:Storagelink" href="My.Infrastructure#//@resources.1/@links.0"/>
+          <semanticElements xmi:type="infrastructure:Storagelink" href="My.Infrastructure#//@resources.1/@links.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_U_47UXrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_U_47UHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer']/@subContainerMappings[name='SubStoragelinkContainer']/@subNodeMappings[name='StoragelinkLocation']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer']/@subContainerMappings[name='SubStoragelinkContainer']/@subNodeMappings[name='StoragelinkLocation']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_U_5iYHrhEeeq14MK89BqSQ" name="occiStoragelinkDeviceid = null">
+          <target xmi:type="infrastructure:Storagelink" href="My.Infrastructure#//@resources.1/@links.0"/>
+          <semanticElements xmi:type="infrastructure:Storagelink" href="My.Infrastructure#//@resources.1/@links.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_U_9MwHrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_U_8lsHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer']/@subContainerMappings[name='SubStoragelinkContainer']/@subNodeMappings[name='StoragelinkOcciStoragelinkDeviceid']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer']/@subContainerMappings[name='SubStoragelinkContainer']/@subNodeMappings[name='StoragelinkOcciStoragelinkDeviceid']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_U_9MwXrhEeeq14MK89BqSQ" name="occiStoragelinkMountpoint = null">
+          <target xmi:type="infrastructure:Storagelink" href="My.Infrastructure#//@resources.1/@links.0"/>
+          <semanticElements xmi:type="infrastructure:Storagelink" href="My.Infrastructure#//@resources.1/@links.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_VAA3IXrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_VAA3IHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer']/@subContainerMappings[name='SubStoragelinkContainer']/@subNodeMappings[name='StoragelinkOcciStoragelinkMountpoint']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer']/@subContainerMappings[name='SubStoragelinkContainer']/@subNodeMappings[name='StoragelinkOcciStoragelinkMountpoint']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_VABeMHrhEeeq14MK89BqSQ" name="occiStoragelinkState = active">
+          <target xmi:type="infrastructure:Storagelink" href="My.Infrastructure#//@resources.1/@links.0"/>
+          <semanticElements xmi:type="infrastructure:Storagelink" href="My.Infrastructure#//@resources.1/@links.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_VAFIkXrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_VAFIkHrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer']/@subContainerMappings[name='SubStoragelinkContainer']/@subNodeMappings[name='StoragelinkOcciStoragelinkState']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer']/@subContainerMappings[name='SubStoragelinkContainer']/@subNodeMappings[name='StoragelinkOcciStoragelinkState']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_VAFvoHrhEeeq14MK89BqSQ" name="occiStoragelinkStateMessage = null">
+          <target xmi:type="infrastructure:Storagelink" href="My.Infrastructure#//@resources.1/@links.0"/>
+          <semanticElements xmi:type="infrastructure:Storagelink" href="My.Infrastructure#//@resources.1/@links.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_VAJaAHrhEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_VAIy8HrhEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer']/@subContainerMappings[name='SubStoragelinkContainer']/@subNodeMappings[name='StoragelinkOcciStoragelinkStateMessage']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkContainer']/@subContainerMappings[name='SubStoragelinkContainer']/@subNodeMappings[name='StoragelinkOcciStoragelinkStateMessage']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_VA3LsHrhEeeq14MK89BqSQ" sourceNode="_OdwEAHrhEeeq14MK89BqSQ" targetNode="_U_ddgHrhEeeq14MK89BqSQ">
+      <target xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_VA3ywHrhEeeq14MK89BqSQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='ComputeLinksEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_VA3ywXrhEeeq14MK89BqSQ"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='ComputeLinksEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_VA4Z0HrhEeeq14MK89BqSQ" sourceNode="_U_ddgHrhEeeq14MK89BqSQ" targetNode="_Sxg_QHrhEeeq14MK89BqSQ">
+      <target xmi:type="infrastructure:Storagelink" href="My.Infrastructure#//@resources.1/@links.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_VA4Z0XrhEeeq14MK89BqSQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='StoragelinkTargetEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_VA4Z0nrhEeeq14MK89BqSQ"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='StoragelinkTargetEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_xmer0HriEeeq14MK89BqSQ" name=": Networkinterface" outgoingEdges="_xnG98HriEeeq14MK89BqSQ" incomingEdges="_xnFv0HriEeeq14MK89BqSQ">
+      <target xmi:type="infrastructure:Networkinterface" href="My.Infrastructure#//@resources.1/@links.1"/>
+      <semanticElements xmi:type="infrastructure:Networkinterface" href="My.Infrastructure#//@resources.1/@links.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_xmhvIHriEeeq14MK89BqSQ" labelSize="10" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_xmlZgHriEeeq14MK89BqSQ" name="http://schemas.ogf.org/occi/infrastructure#networkinterface">
+        <target xmi:type="infrastructure:Networkinterface" href="My.Infrastructure#//@resources.1/@links.1"/>
+        <semanticElements xmi:type="infrastructure:Networkinterface" href="My.Infrastructure#//@resources.1/@links.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_xmoc0HriEeeq14MK89BqSQ" borderSize="1" borderSizeComputationExpression="1">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='SubNetworkinterfaceContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='SubNetworkinterfaceContainer']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_xmsHMHriEeeq14MK89BqSQ" name="id = urn:uuid:aba91596-9bec-4aaf-b1f7-22f376a87ed8">
+          <target xmi:type="infrastructure:Networkinterface" href="My.Infrastructure#//@resources.1/@links.1"/>
+          <semanticElements xmi:type="infrastructure:Networkinterface" href="My.Infrastructure#//@resources.1/@links.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_xmvKgXriEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_xmvKgHriEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='SubNetworkinterfaceContainer']/@subNodeMappings[name='NetworkinterfaceId']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='SubNetworkinterfaceContainer']/@subNodeMappings[name='NetworkinterfaceId']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_xmvxkHriEeeq14MK89BqSQ" name="title = null">
+          <target xmi:type="infrastructure:Networkinterface" href="My.Infrastructure#//@resources.1/@links.1"/>
+          <semanticElements xmi:type="infrastructure:Networkinterface" href="My.Infrastructure#//@resources.1/@links.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_xmy04XriEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_xmy04HriEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='SubNetworkinterfaceContainer']/@subNodeMappings[name='NetworkinterfaceTitle']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='SubNetworkinterfaceContainer']/@subNodeMappings[name='NetworkinterfaceTitle']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_xmzb8HriEeeq14MK89BqSQ" name="location = null">
+          <target xmi:type="infrastructure:Networkinterface" href="My.Infrastructure#//@resources.1/@links.1"/>
+          <semanticElements xmi:type="infrastructure:Networkinterface" href="My.Infrastructure#//@resources.1/@links.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_xm3GUHriEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_xm2fQHriEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='SubNetworkinterfaceContainer']/@subNodeMappings[name='NetworkinterfaceLocation']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='SubNetworkinterfaceContainer']/@subNodeMappings[name='NetworkinterfaceLocation']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_xm3GUXriEeeq14MK89BqSQ" name="occiNetworkinterfaceInterface = null">
+          <target xmi:type="infrastructure:Networkinterface" href="My.Infrastructure#//@resources.1/@links.1"/>
+          <semanticElements xmi:type="infrastructure:Networkinterface" href="My.Infrastructure#//@resources.1/@links.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_xm6wsHriEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_xm6JoHriEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='SubNetworkinterfaceContainer']/@subNodeMappings[name='NetworkinterfaceOcciNetworkinterfaceInterface']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='SubNetworkinterfaceContainer']/@subNodeMappings[name='NetworkinterfaceOcciNetworkinterfaceInterface']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_xm6wsXriEeeq14MK89BqSQ" name="occiNetworkinterfaceMac = null">
+          <target xmi:type="infrastructure:Networkinterface" href="My.Infrastructure#//@resources.1/@links.1"/>
+          <semanticElements xmi:type="infrastructure:Networkinterface" href="My.Infrastructure#//@resources.1/@links.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_xm90AXriEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_xm90AHriEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='SubNetworkinterfaceContainer']/@subNodeMappings[name='NetworkinterfaceOcciNetworkinterfaceMac']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='SubNetworkinterfaceContainer']/@subNodeMappings[name='NetworkinterfaceOcciNetworkinterfaceMac']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_xm-bEHriEeeq14MK89BqSQ" name="occiNetworkinterfaceState = active">
+          <target xmi:type="infrastructure:Networkinterface" href="My.Infrastructure#//@resources.1/@links.1"/>
+          <semanticElements xmi:type="infrastructure:Networkinterface" href="My.Infrastructure#//@resources.1/@links.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_xnBeYXriEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_xnBeYHriEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='SubNetworkinterfaceContainer']/@subNodeMappings[name='NetworkinterfaceOcciNetworkinterfaceState']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='SubNetworkinterfaceContainer']/@subNodeMappings[name='NetworkinterfaceOcciNetworkinterfaceState']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_xnCFcHriEeeq14MK89BqSQ" name="occiNetworkinterfaceStateMessage = null">
+          <target xmi:type="infrastructure:Networkinterface" href="My.Infrastructure#//@resources.1/@links.1"/>
+          <semanticElements xmi:type="infrastructure:Networkinterface" href="My.Infrastructure#//@resources.1/@links.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_xnFIwXriEeeq14MK89BqSQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_xnFIwHriEeeq14MK89BqSQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='SubNetworkinterfaceContainer']/@subNodeMappings[name='NetworkinterfaceOcciNetworkinterfaceStateMessage']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='SubNetworkinterfaceContainer']/@subNodeMappings[name='NetworkinterfaceOcciNetworkinterfaceStateMessage']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_Rb6W4HrkEeeoQcRKWrsNhw" name="http://schemas.ogf.org/occi/infrastructure/networkinterface#ipnetworkinterface">
+        <target xmi:type="infrastructure:Ipnetworkinterface" href="My.Infrastructure#//@resources.1/@links.1/@parts.0"/>
+        <semanticElements xmi:type="infrastructure:Ipnetworkinterface" href="My.Infrastructure#//@resources.1/@links.1/@parts.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_RcAdgHrkEeeoQcRKWrsNhw" borderSize="1" borderSizeComputationExpression="1">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='IpNetworkInterfaceMixin']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='IpNetworkInterfaceMixin']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_RgUVwHrkEeeoQcRKWrsNhw" name="occiNetworkinterfaceAddress = null">
+          <target xmi:type="infrastructure:Ipnetworkinterface" href="My.Infrastructure#//@resources.1/@links.1/@parts.0"/>
+          <semanticElements xmi:type="infrastructure:Ipnetworkinterface" href="My.Infrastructure#//@resources.1/@links.1/@parts.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_RgYnMHrkEeeoQcRKWrsNhw"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_RgYAIHrkEeeoQcRKWrsNhw" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='IpNetworkInterfaceMixin']/@subNodeMappings[name='IpnetworkinterfaceocciNetworkinterfaceAddress']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='IpNetworkInterfaceMixin']/@subNodeMappings[name='IpnetworkinterfaceocciNetworkinterfaceAddress']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_RgYnMXrkEeeoQcRKWrsNhw" name="occiNetworkinterfaceGateway = null">
+          <target xmi:type="infrastructure:Ipnetworkinterface" href="My.Infrastructure#//@resources.1/@links.1/@parts.0"/>
+          <semanticElements xmi:type="infrastructure:Ipnetworkinterface" href="My.Infrastructure#//@resources.1/@links.1/@parts.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_RgcRkXrkEeeoQcRKWrsNhw"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_RgcRkHrkEeeoQcRKWrsNhw" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='IpNetworkInterfaceMixin']/@subNodeMappings[name='IpnetworkinterfaceocciNetworkinterfaceGateway']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='IpNetworkInterfaceMixin']/@subNodeMappings[name='IpnetworkinterfaceocciNetworkinterfaceGateway']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Rgc4oHrkEeeoQcRKWrsNhw" name="occiNetworkinterfaceAllocation = dynamic">
+          <target xmi:type="infrastructure:Ipnetworkinterface" href="My.Infrastructure#//@resources.1/@links.1/@parts.0"/>
+          <semanticElements xmi:type="infrastructure:Ipnetworkinterface" href="My.Infrastructure#//@resources.1/@links.1/@parts.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_RggjAXrkEeeoQcRKWrsNhw"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_RggjAHrkEeeoQcRKWrsNhw" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='IpNetworkInterfaceMixin']/@subNodeMappings[name='IpnetworkinterfaceocciNetworkinterfaceAllocation']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkinterfaceContainer']/@subContainerMappings[name='IpNetworkInterfaceMixin']/@subNodeMappings[name='IpnetworkinterfaceocciNetworkinterfaceAllocation']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_xnFv0HriEeeq14MK89BqSQ" sourceNode="_OdwEAHrhEeeq14MK89BqSQ" targetNode="_xmer0HriEeeq14MK89BqSQ">
+      <target xmi:type="infrastructure:Compute" href="My.Infrastructure#//@resources.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_xnGW4HriEeeq14MK89BqSQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='ComputeLinksEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_xnGW4XriEeeq14MK89BqSQ"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='ComputeLinksEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_xnG98HriEeeq14MK89BqSQ" sourceNode="_xmer0HriEeeq14MK89BqSQ" targetNode="_Mr2okHrhEeeq14MK89BqSQ">
+      <target xmi:type="infrastructure:Networkinterface" href="My.Infrastructure#//@resources.1/@links.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_xnHlAHriEeeq14MK89BqSQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='NetworkinterfaceTargetEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_xnHlAXriEeeq14MK89BqSQ"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='NetworkinterfaceTargetEdge']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_JBgdxHrhEeeq14MK89BqSQ"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/org.eclipse.cmf.occi.infrastructure.design/description/Infrastructure.odesign#//@ownedViewpoints[name='InfrastructureConfiguration']/@ownedRepresentations[name='InfrastructureConfiguration%20Diagram']/@defaultLayer"/>
+    <target xmi:type="occi:Configuration" href="My.Infrastructure#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>
