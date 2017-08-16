@@ -1,8 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: OCCI-Designer
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.cmf.occi.core.design;singleton:=true
 Bundle-Version: 1.0.0.qualifier
+Bundle-Localization: plugin
 Bundle-ClassPath: .
 Bundle-Activator: org.eclipse.cmf.occi.core.design.Activator
 Require-Bundle: org.eclipse.ui,
@@ -26,3 +27,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.eclipse.cmf.occi.core.design.dialog,
  org.eclipse.cmf.occi.core.design.services,
  org.eclipse.cmf.occi.core.design.utils
+Bundle-Vendor: %providerName
