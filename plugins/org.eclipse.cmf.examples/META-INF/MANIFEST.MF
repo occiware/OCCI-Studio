@@ -1,8 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Examples
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.cmf.examples;singleton:=true
 Bundle-Version: 1.0.0.qualifier
+Bundle-Localization: plugin
 Bundle-Activator: org.eclipse.cmf.examples.Activator
 Require-Bundle: org.eclipse.ui.workbench,
  org.eclipse.jface,
@@ -15,3 +16,4 @@ Require-Bundle: org.eclipse.ui.workbench,
  org.eclipse.ui.ide
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
+Bundle-Vendor: %providerName
