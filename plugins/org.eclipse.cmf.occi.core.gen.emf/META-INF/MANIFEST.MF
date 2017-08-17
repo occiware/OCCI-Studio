@@ -1,6 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: OCCI 2 EMF Converter
+Bundle-Localization: plugin
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.cmf.occi.core.gen.emf
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
@@ -10,3 +11,4 @@ Require-Bundle: org.eclipse.emf.common,
  org.eclipse.emf.ecore.xmi;bundle-version="2.12.0",
  org.eclipse.cmf.occi.core;bundle-version="1.0.0"
 Export-Package: org.eclipse.cmf.occi.core.gen.emf
+Bundle-Vendor: %providerName
