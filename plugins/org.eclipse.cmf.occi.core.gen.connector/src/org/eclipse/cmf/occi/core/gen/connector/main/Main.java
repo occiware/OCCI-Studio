@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Inria
+ * Copyright (c) 2016-2017 Inria
  *  
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  * 
  * Contributors:
  * - Philippe Merle <philippe.merle@inria.fr>
+ * - Faiez Zalila <faiez.zalila@inria.fr>
  */
 package org.eclipse.cmf.occi.core.gen.connector.main;
 
@@ -341,9 +342,6 @@ public class Main extends AbstractAcceleoGenerator {
     @Override
     public void registerPackages(ResourceSet resourceSet) {
         super.registerPackages(resourceSet);
-        if (!isInWorkspace(org.eclipse.cmf.occi.core.OCCIPackage.class)) {
-            resourceSet.getPackageRegistry().put(org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE.getNsURI(), org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
-        }
         
         /*
          * If you want to change the content of this method, do NOT forget to change the "@generated"

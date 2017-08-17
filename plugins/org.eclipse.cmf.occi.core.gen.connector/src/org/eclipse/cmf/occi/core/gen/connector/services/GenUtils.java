@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Inria
+ * Copyright (c) 2016-2017 Inria
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *   - Philippe Merle <philippe.merle@inria.fr>
+ *   - Faiez Zalila <faiez.zalila@inria.fr>
  *******************************************************************************/
 package org.eclipse.cmf.occi.core.gen.connector.services;
 

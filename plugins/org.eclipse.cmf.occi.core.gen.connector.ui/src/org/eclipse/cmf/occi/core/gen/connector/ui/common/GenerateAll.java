@@ -8,6 +8,7 @@
  * 
  * Contributors:
  * - Philippe Merle <philippe.merle@inria.fr>
+ * - Faiez Zalila <faiez.zalila@inria.fr>
  */
 package org.eclipse.cmf.occi.core.gen.connector.ui.common;
 
