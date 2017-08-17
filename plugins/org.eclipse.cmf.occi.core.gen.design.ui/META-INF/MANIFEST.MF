@@ -1,6 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Ui
+Bundle-Localization: plugin
+Bundle-Name: %pluginName
+Bundle-Vendor: %providerName
 Bundle-SymbolicName: org.eclipse.cmf.occi.core.gen.design.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
