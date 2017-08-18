@@ -1,31 +1,26 @@
-OCCI,Monitoring,{provider_specific_path}/sensor/,GET,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/sensor/,POST,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/sensor/,DELETE,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/sensor/{sensor_id},GET,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/sensor/{sensor_id},POST,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/sensor/{sensor_id},PUT,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/sensor/{sensor_id},DELETE,Monitoring.occie
-
-OCCI,Monitoring,{provider_specific_path}/collector/,GET,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/collector/,POST,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/collector/,DELETE,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/collector/{collector_id},GET,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/collector/{collector_id},POST,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/collector/{collector_id},PUT,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/collector/{collector_id},DELETE,Monitoring.occie
-
-OCCI,Monitoring,{provider_specific_path}/metric/,GET,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/metric/,POST,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/metric/,PUT,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/metric/,DELETE,Monitoring.occie
-
-OCCI,Monitoring,{provider_specific_path}/aggregator/,GET,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/aggregator/,POST,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/aggregator/,PUT,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/aggregator/,DELETE,Monitoring.occie
-
-OCCI,Monitoring,{provider_specific_path}/publisher/,GET,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/publisher/,POST,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/publisher/,PUT,Monitoring.occie
-OCCI,Monitoring,{provider_specific_path}/publisher/,DELETE,Monitoring.occie
-
+"OCCI","Monitoring","http://occi.provider.com/sensor/","GET","https://redmine.ogf.org/attachments/182/monitoring.pdf","Retrieves all sensor instances."
+"OCCI","Monitoring","http://occi.provider.com/sensor/","POST","https://redmine.ogf.org/attachments/182/monitoring.pdf","Creates a new sensor instance."
+"OCCI","Monitoring","http://occi.provider.com/sensor/","DELETE","https://redmine.ogf.org/attachments/182/monitoring.pdf","Removes all sensor instances."
+"OCCI","Monitoring","http://occi.provider.com/sensor/{sensor_id}","GET","https://redmine.ogf.org/attachments/182/monitoring.pdf","Retrieves this sensor instance."
+"OCCI","Monitoring","http://occi.provider.com/sensor/{sensor_id}","POST","https://redmine.ogf.org/attachments/182/monitoring.pdf","Updates partially this sensor instance."
+"OCCI","Monitoring","http://occi.provider.com/sensor/{sensor_id}","PUT","https://redmine.ogf.org/attachments/182/monitoring.pdf","Creates/Updates a sensor instance."
+"OCCI","Monitoring","http://occi.provider.com/sensor/{sensor_id}","DELETE","https://redmine.ogf.org/attachments/182/monitoring.pdf","Deletes this sensor instance."
+"OCCI","Monitoring","http://occi.provider.com/collector/","GET","https://redmine.ogf.org/attachments/182/monitoring.pdf","Retrieves all collector instances."
+"OCCI","Monitoring","http://occi.provider.com/collector/","POST","https://redmine.ogf.org/attachments/182/monitoring.pdf","Creates a new collector instance."
+"OCCI","Monitoring","http://occi.provider.com/collector/","DELETE","https://redmine.ogf.org/attachments/182/monitoring.pdf","Removes all collector instances."
+"OCCI","Monitoring","http://occi.provider.com/collector/{collector_id}","GET","https://redmine.ogf.org/attachments/182/monitoring.pdf","Retrieves this collector instance."
+"OCCI","Monitoring","http://occi.provider.com/collector/{collector_id}","POST","https://redmine.ogf.org/attachments/182/monitoring.pdf","Updates partially this collector instance."
+"OCCI","Monitoring","http://occi.provider.com/collector/{collector_id}","PUT","https://redmine.ogf.org/attachments/182/monitoring.pdf","Creates/Updates a collector instance."
+"OCCI","Monitoring","http://occi.provider.com/collector/{collector_id}","DELETE","https://redmine.ogf.org/attachments/182/monitoring.pdf","Deletes this collector instance."
+"OCCI","Monitoring","http://occi.provider.com/metric/","GET","https://redmine.ogf.org/attachments/182/monitoring.pdf","Retrieves all instances having this metric mixin."
+"OCCI","Monitoring","http://occi.provider.com/metric/","POST","https://redmine.ogf.org/attachments/182/monitoring.pdf","Adds an instance to this metric mixin collection."
+"OCCI","Monitoring","http://occi.provider.com/metric/","PUT","https://redmine.ogf.org/attachments/182/monitoring.pdf","Updates this metric mixin collection."
+"OCCI","Monitoring","http://occi.provider.com/metric/","DELETE","https://redmine.ogf.org/attachments/182/monitoring.pdf","Removes all instances of this metric mixin collection."
+"OCCI","Monitoring","http://occi.provider.com/aggregator/","GET","https://redmine.ogf.org/attachments/182/monitoring.pdf","Retrieves all instances having this aggregator mixin."
+"OCCI","Monitoring","http://occi.provider.com/aggregator/","POST","https://redmine.ogf.org/attachments/182/monitoring.pdf","Adds an instance to this aggregator mixin collection."
+"OCCI","Monitoring","http://occi.provider.com/aggregator/","PUT","https://redmine.ogf.org/attachments/182/monitoring.pdf","Updates this aggregator mixin collection."
+"OCCI","Monitoring","http://occi.provider.com/aggregator/","DELETE","https://redmine.ogf.org/attachments/182/monitoring.pdf","Removes all instances of this aggregator mixin collection."
+"OCCI","Monitoring","http://occi.provider.com/publisher/","GET","https://redmine.ogf.org/attachments/182/monitoring.pdf","Retrieves all instances having this publisher mixin."
+"OCCI","Monitoring","http://occi.provider.com/publisher/","POST","https://redmine.ogf.org/attachments/182/monitoring.pdf","Adds an instance to this publisher mixin collection."
+"OCCI","Monitoring","http://occi.provider.com/publisher/","PUT","https://redmine.ogf.org/attachments/182/monitoring.pdf","Updates this publisher mixin collection."
+"OCCI","Monitoring","http://occi.provider.com/publisher/","DELETE","https://redmine.ogf.org/attachments/182/monitoring.pdf","Removes all instances of this publisher mixin collection."
