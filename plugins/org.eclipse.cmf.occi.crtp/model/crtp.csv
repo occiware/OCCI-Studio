@@ -1,30 +1,24 @@
-OCCI,Crtp,{provider_specific_path}/small/,GET,Crtp.occie
-OCCI,Crtp,{provider_specific_path}/small/,POST,Crtp.occie
-OCCI,Crtp,{provider_specific_path}/small/,PUT,Crtp.occie
-OCCI,Crtp,{provider_specific_path}/small/,DELETE,Crtp.occie
-
-OCCI,Crtp,{provider_specific_path}/medium/,GET,Crtp.occie
-OCCI,Crtp,{provider_specific_path}/medium/,POST,Crtp.occie
-OCCI,Crtp,{provider_specific_path}/medium/,PUT,Crtp.occie
-OCCI,Crtp,{provider_specific_path}/medium/,DELETE,Crtp.occie
-
-OCCI,Crtp,{provider_specific_path}/large/,GET,Crtp.occie
-OCCI,Crtp,{provider_specific_path}/large/,POST,Crtp.occie
-OCCI,Crtp,{provider_specific_path}/large/,PUT,Crtp.occie
-OCCI,Crtp,{provider_specific_path}/large/,DELETE,Crtp.occie
-
-OCCI,Crtp,{provider_specific_path}/mem_small/,GET,Crtp.occie
-OCCI,Crtp,{provider_specific_path}/mem_small/,POST,Crtp.occie
-OCCI,Crtp,{provider_specific_path}/mem_small/,PUT,Crtp.occie
-OCCI,Crtp,{provider_specific_path}/mem_small/,DELETE,Crtp.occie
-
-OCCI,Crtp,{provider_specific_path}/mem_medium/,GET,Crtp.occie
-OCCI,Crtp,{provider_specific_path}/mem_medium/,POST,Crtp.occie
-OCCI,Crtp,{provider_specific_path}/mem_medium/,PUT,Crtp.occie
-OCCI,Crtp,{provider_specific_path}/mem_medium/,DELETE,Crtp.occie
-
-OCCI,Crtp,{provider_specific_path}/mem_large/,GET,Crtp.occie
-OCCI,Crtp,{provider_specific_path}/mem_large/,POST,Crtp.occie
-OCCI,Crtp,{provider_specific_path}/mem_large/,PUT,Crtp.occie
-OCCI,Crtp,{provider_specific_path}/mem_large/,DELETE,Crtp.occie
-
+"OCCI","Crtp","http://occi.provider.com/small/","GET","https://www.ogf.org/documents/GFD.222.pdf","Retrieves all instances having this small mixin."
+"OCCI","Crtp","http://occi.provider.com/small/","POST","https://www.ogf.org/documents/GFD.222.pdf","Adds an instance to this small mixin collection."
+"OCCI","Crtp","http://occi.provider.com/small/","PUT","https://www.ogf.org/documents/GFD.222.pdf","Updates this small mixin collection."
+"OCCI","Crtp","http://occi.provider.com/small/","DELETE","https://www.ogf.org/documents/GFD.222.pdf","Removes all instances of this small mixin collection."
+"OCCI","Crtp","http://occi.provider.com/medium/","GET","https://www.ogf.org/documents/GFD.222.pdf","Retrieves all instances having this medium mixin."
+"OCCI","Crtp","http://occi.provider.com/medium/","POST","https://www.ogf.org/documents/GFD.222.pdf","Adds an instance to this medium mixin collection."
+"OCCI","Crtp","http://occi.provider.com/medium/","PUT","https://www.ogf.org/documents/GFD.222.pdf","Updates this medium mixin collection."
+"OCCI","Crtp","http://occi.provider.com/medium/","DELETE","https://www.ogf.org/documents/GFD.222.pdf","Removes all instances of this medium mixin collection."
+"OCCI","Crtp","http://occi.provider.com/large/","GET","https://www.ogf.org/documents/GFD.222.pdf","Retrieves all instances having this large mixin."
+"OCCI","Crtp","http://occi.provider.com/large/","POST","https://www.ogf.org/documents/GFD.222.pdf","Adds an instance to this large mixin collection."
+"OCCI","Crtp","http://occi.provider.com/large/","PUT","https://www.ogf.org/documents/GFD.222.pdf","Updates this large mixin collection."
+"OCCI","Crtp","http://occi.provider.com/large/","DELETE","https://www.ogf.org/documents/GFD.222.pdf","Removes all instances of this large mixin collection."
+"OCCI","Crtp","http://occi.provider.com/mem_small/","GET","https://www.ogf.org/documents/GFD.222.pdf","Retrieves all instances having this mem_small mixin."
+"OCCI","Crtp","http://occi.provider.com/mem_small/","POST","https://www.ogf.org/documents/GFD.222.pdf","Adds an instance to this mem_small mixin collection."
+"OCCI","Crtp","http://occi.provider.com/mem_small/","PUT","https://www.ogf.org/documents/GFD.222.pdf","Updates this mem_small mixin collection."
+"OCCI","Crtp","http://occi.provider.com/mem_small/","DELETE","https://www.ogf.org/documents/GFD.222.pdf","Removes all instances of this mem_small mixin collection."
+"OCCI","Crtp","http://occi.provider.com/mem_medium/","GET","https://www.ogf.org/documents/GFD.222.pdf","Retrieves all instances having this mem_medium mixin."
+"OCCI","Crtp","http://occi.provider.com/mem_medium/","POST","https://www.ogf.org/documents/GFD.222.pdf","Adds an instance to this mem_medium mixin collection."
+"OCCI","Crtp","http://occi.provider.com/mem_medium/","PUT","https://www.ogf.org/documents/GFD.222.pdf","Updates this mem_medium mixin collection."
+"OCCI","Crtp","http://occi.provider.com/mem_medium/","DELETE","https://www.ogf.org/documents/GFD.222.pdf","Removes all instances of this mem_medium mixin collection."
+"OCCI","Crtp","http://occi.provider.com/mem_large/","GET","https://www.ogf.org/documents/GFD.222.pdf","Retrieves all instances having this mem_large mixin."
+"OCCI","Crtp","http://occi.provider.com/mem_large/","POST","https://www.ogf.org/documents/GFD.222.pdf","Adds an instance to this mem_large mixin collection."
+"OCCI","Crtp","http://occi.provider.com/mem_large/","PUT","https://www.ogf.org/documents/GFD.222.pdf","Updates this mem_large mixin collection."
+"OCCI","Crtp","http://occi.provider.com/mem_large/","DELETE","https://www.ogf.org/documents/GFD.222.pdf","Removes all instances of this mem_large mixin collection."
