@@ -1,52 +1,45 @@
-OCCI,Platform,{provider_specific_path}/application/,GET,Platform.occie
-OCCI,Platform,{provider_specific_path}/application/,POST,Platform.occie
-OCCI,Platform,{provider_specific_path}/application/,DELETE,Platform.occie
-OCCI,Platform,{provider_specific_path}/application/?action=start,POST,Platform.occie
-OCCI,Platform,{provider_specific_path}/application/?action=stop,POST,Platform.occie
-OCCI,Platform,{provider_specific_path}/application/{application_id},GET,Platform.occie
-OCCI,Platform,{provider_specific_path}/application/{application_id},POST,Platform.occie
-OCCI,Platform,{provider_specific_path}/application/{application_id},PUT,Platform.occie
-OCCI,Platform,{provider_specific_path}/application/{application_id},DELETE,Platform.occie
-OCCI,Platform,{provider_specific_path}/application/{application_id}?action=start,POST,Platform.occie
-OCCI,Platform,{provider_specific_path}/application/{application_id}?action=stop,POST,Platform.occie
-
-OCCI,Platform,{provider_specific_path}/component/,GET,Platform.occie
-OCCI,Platform,{provider_specific_path}/component/,POST,Platform.occie
-OCCI,Platform,{provider_specific_path}/component/,DELETE,Platform.occie
-OCCI,Platform,{provider_specific_path}/component/?action=start,POST,Platform.occie
-OCCI,Platform,{provider_specific_path}/component/?action=stop,POST,Platform.occie
-OCCI,Platform,{provider_specific_path}/component/{component_id},GET,Platform.occie
-OCCI,Platform,{provider_specific_path}/component/{component_id},POST,Platform.occie
-OCCI,Platform,{provider_specific_path}/component/{component_id},PUT,Platform.occie
-OCCI,Platform,{provider_specific_path}/component/{component_id},DELETE,Platform.occie
-OCCI,Platform,{provider_specific_path}/component/{component_id}?action=start,POST,Platform.occie
-OCCI,Platform,{provider_specific_path}/component/{component_id}?action=stop,POST,Platform.occie
-
-OCCI,Platform,{provider_specific_path}/componentlink/,GET,Platform.occie
-OCCI,Platform,{provider_specific_path}/componentlink/,POST,Platform.occie
-OCCI,Platform,{provider_specific_path}/componentlink/,DELETE,Platform.occie
-OCCI,Platform,{provider_specific_path}/componentlink/{componentlink_id},GET,Platform.occie
-OCCI,Platform,{provider_specific_path}/componentlink/{componentlink_id},POST,Platform.occie
-OCCI,Platform,{provider_specific_path}/componentlink/{componentlink_id},PUT,Platform.occie
-OCCI,Platform,{provider_specific_path}/componentlink/{componentlink_id},DELETE,Platform.occie
-
-OCCI,Platform,{provider_specific_path}/app_tpl/,GET,Platform.occie
-OCCI,Platform,{provider_specific_path}/app_tpl/,POST,Platform.occie
-OCCI,Platform,{provider_specific_path}/app_tpl/,PUT,Platform.occie
-OCCI,Platform,{provider_specific_path}/app_tpl/,DELETE,Platform.occie
-
-OCCI,Platform,{provider_specific_path}/res_tpl/,GET,Platform.occie
-OCCI,Platform,{provider_specific_path}/res_tpl/,POST,Platform.occie
-OCCI,Platform,{provider_specific_path}/res_tpl/,PUT,Platform.occie
-OCCI,Platform,{provider_specific_path}/res_tpl/,DELETE,Platform.occie
-
-OCCI,Platform,{provider_specific_path}/database/,GET,Platform.occie
-OCCI,Platform,{provider_specific_path}/database/,POST,Platform.occie
-OCCI,Platform,{provider_specific_path}/database/,PUT,Platform.occie
-OCCI,Platform,{provider_specific_path}/database/,DELETE,Platform.occie
-
-OCCI,Platform,{provider_specific_path}/databaselink/,GET,Platform.occie
-OCCI,Platform,{provider_specific_path}/databaselink/,POST,Platform.occie
-OCCI,Platform,{provider_specific_path}/databaselink/,PUT,Platform.occie
-OCCI,Platform,{provider_specific_path}/databaselink/,DELETE,Platform.occie
-
+"OCCI","Platform","http://occi.provider.com/application/","GET","https://www.ogf.org/documents/GFD.227.pdf","Retrieves all application instances."
+"OCCI","Platform","http://occi.provider.com/application/","POST","https://www.ogf.org/documents/GFD.227.pdf","Creates a new application instance."
+"OCCI","Platform","http://occi.provider.com/application/","DELETE","https://www.ogf.org/documents/GFD.227.pdf","Removes all application instances."
+"OCCI","Platform","http://occi.provider.com/application/?action=start","POST","https://www.ogf.org/documents/GFD.227.pdf","Performs the start action on all instances of this application collection."
+"OCCI","Platform","http://occi.provider.com/application/?action=stop","POST","https://www.ogf.org/documents/GFD.227.pdf","Performs the stop action on all instances of this application collection."
+"OCCI","Platform","http://occi.provider.com/application/{application_id}","GET","https://www.ogf.org/documents/GFD.227.pdf","Retrieves this application instance."
+"OCCI","Platform","http://occi.provider.com/application/{application_id}","POST","https://www.ogf.org/documents/GFD.227.pdf","Updates partially this application instance."
+"OCCI","Platform","http://occi.provider.com/application/{application_id}","PUT","https://www.ogf.org/documents/GFD.227.pdf","Creates/Updates a application instance."
+"OCCI","Platform","http://occi.provider.com/application/{application_id}","DELETE","https://www.ogf.org/documents/GFD.227.pdf","Deletes this application instance."
+"OCCI","Platform","http://occi.provider.com/application/{application_id}?action=start","POST","https://www.ogf.org/documents/GFD.227.pdf","Start the application."
+"OCCI","Platform","http://occi.provider.com/application/{application_id}?action=stop","POST","https://www.ogf.org/documents/GFD.227.pdf","Stop the application."
+"OCCI","Platform","http://occi.provider.com/component/","GET","https://www.ogf.org/documents/GFD.227.pdf","Retrieves all component instances."
+"OCCI","Platform","http://occi.provider.com/component/","POST","https://www.ogf.org/documents/GFD.227.pdf","Creates a new component instance."
+"OCCI","Platform","http://occi.provider.com/component/","DELETE","https://www.ogf.org/documents/GFD.227.pdf","Removes all component instances."
+"OCCI","Platform","http://occi.provider.com/component/?action=start","POST","https://www.ogf.org/documents/GFD.227.pdf","Performs the start action on all instances of this component collection."
+"OCCI","Platform","http://occi.provider.com/component/?action=stop","POST","https://www.ogf.org/documents/GFD.227.pdf","Performs the stop action on all instances of this component collection."
+"OCCI","Platform","http://occi.provider.com/component/{component_id}","GET","https://www.ogf.org/documents/GFD.227.pdf","Retrieves this component instance."
+"OCCI","Platform","http://occi.provider.com/component/{component_id}","POST","https://www.ogf.org/documents/GFD.227.pdf","Updates partially this component instance."
+"OCCI","Platform","http://occi.provider.com/component/{component_id}","PUT","https://www.ogf.org/documents/GFD.227.pdf","Creates/Updates a component instance."
+"OCCI","Platform","http://occi.provider.com/component/{component_id}","DELETE","https://www.ogf.org/documents/GFD.227.pdf","Deletes this component instance."
+"OCCI","Platform","http://occi.provider.com/component/{component_id}?action=start","POST","https://www.ogf.org/documents/GFD.227.pdf","Start the application."
+"OCCI","Platform","http://occi.provider.com/component/{component_id}?action=stop","POST","https://www.ogf.org/documents/GFD.227.pdf","Stop the application."
+"OCCI","Platform","http://occi.provider.com/componentlink/","GET","https://www.ogf.org/documents/GFD.227.pdf","Retrieves all componentlink instances."
+"OCCI","Platform","http://occi.provider.com/componentlink/","POST","https://www.ogf.org/documents/GFD.227.pdf","Creates a new componentlink instance."
+"OCCI","Platform","http://occi.provider.com/componentlink/","DELETE","https://www.ogf.org/documents/GFD.227.pdf","Removes all componentlink instances."
+"OCCI","Platform","http://occi.provider.com/componentlink/{componentlink_id}","GET","https://www.ogf.org/documents/GFD.227.pdf","Retrieves this componentlink instance."
+"OCCI","Platform","http://occi.provider.com/componentlink/{componentlink_id}","POST","https://www.ogf.org/documents/GFD.227.pdf","Updates partially this componentlink instance."
+"OCCI","Platform","http://occi.provider.com/componentlink/{componentlink_id}","PUT","https://www.ogf.org/documents/GFD.227.pdf","Creates/Updates a componentlink instance."
+"OCCI","Platform","http://occi.provider.com/componentlink/{componentlink_id}","DELETE","https://www.ogf.org/documents/GFD.227.pdf","Deletes this componentlink instance."
+"OCCI","Platform","http://occi.provider.com/app_tpl/","GET","https://www.ogf.org/documents/GFD.227.pdf","Retrieves all instances having this app_tpl mixin."
+"OCCI","Platform","http://occi.provider.com/app_tpl/","POST","https://www.ogf.org/documents/GFD.227.pdf","Adds an instance to this app_tpl mixin collection."
+"OCCI","Platform","http://occi.provider.com/app_tpl/","PUT","https://www.ogf.org/documents/GFD.227.pdf","Updates this app_tpl mixin collection."
+"OCCI","Platform","http://occi.provider.com/app_tpl/","DELETE","https://www.ogf.org/documents/GFD.227.pdf","Removes all instances of this app_tpl mixin collection."
+"OCCI","Platform","http://occi.provider.com/res_tpl/","GET","https://www.ogf.org/documents/GFD.227.pdf","Retrieves all instances having this res_tpl mixin."
+"OCCI","Platform","http://occi.provider.com/res_tpl/","POST","https://www.ogf.org/documents/GFD.227.pdf","Adds an instance to this res_tpl mixin collection."
+"OCCI","Platform","http://occi.provider.com/res_tpl/","PUT","https://www.ogf.org/documents/GFD.227.pdf","Updates this res_tpl mixin collection."
+"OCCI","Platform","http://occi.provider.com/res_tpl/","DELETE","https://www.ogf.org/documents/GFD.227.pdf","Removes all instances of this res_tpl mixin collection."
+"OCCI","Platform","http://occi.provider.com/database/","GET","https://www.ogf.org/documents/GFD.227.pdf","Retrieves all instances having this database mixin."
+"OCCI","Platform","http://occi.provider.com/database/","POST","https://www.ogf.org/documents/GFD.227.pdf","Adds an instance to this database mixin collection."
+"OCCI","Platform","http://occi.provider.com/database/","PUT","https://www.ogf.org/documents/GFD.227.pdf","Updates this database mixin collection."
+"OCCI","Platform","http://occi.provider.com/database/","DELETE","https://www.ogf.org/documents/GFD.227.pdf","Removes all instances of this database mixin collection."
+"OCCI","Platform","http://occi.provider.com/databaselink/","GET","https://www.ogf.org/documents/GFD.227.pdf","Retrieves all instances having this databaselink mixin."
+"OCCI","Platform","http://occi.provider.com/databaselink/","POST","https://www.ogf.org/documents/GFD.227.pdf","Adds an instance to this databaselink mixin collection."
+"OCCI","Platform","http://occi.provider.com/databaselink/","PUT","https://www.ogf.org/documents/GFD.227.pdf","Updates this databaselink mixin collection."
+"OCCI","Platform","http://occi.provider.com/databaselink/","DELETE","https://www.ogf.org/documents/GFD.227.pdf","Removes all instances of this databaselink mixin collection."
