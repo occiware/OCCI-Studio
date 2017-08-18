@@ -654,7 +654,8 @@ public class OCCIExtension2Ecore {
 	}
 
 	private String createTargetContraintBody(Kind kind) {
-		return "self.target.oclIsKindOf("+getMappedEClass(kind.getTarget()).getName()+")";
+		String epackage_name = ((EPackage)(getMappedEClass(kind.getTarget()).eContainer())).getName();
+		return "self.target.oclIsKindOf("+epackage_name+"::"+getMappedEClass(kind.getTarget()).getName()+")";
 	}
 
 	protected void convertConstraints(EClass eClass, Type type) {
