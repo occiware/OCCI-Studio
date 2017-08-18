@@ -2,37 +2,37 @@
 <occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" name="infrastructure" scheme="http://schemas.ogf.org/occi/infrastructure#" description="OCCI Infrastructure Model" specification="https://www.ogf.org/documents/GFD.224.pdf">
   <import href="http://schemas.ogf.org/occi/core#/"/>
   <kinds name="Network" scheme="http://schemas.ogf.org/occi/infrastructure#" title="Network Resource">
-    <attributes name="occi.network.vlan" mutable="true" description="802.1q VLAN Identifier (e.g., 343)" type="//@types.1"/>
-    <attributes name="occi.network.label" mutable="true" description="Tag based VLANs (e.g., external-dmz)" type="//@types.2"/>
+    <attributes name="occi.network.vlan" description="802.1q VLAN Identifier (e.g., 343)" type="//@types.1"/>
+    <attributes name="occi.network.label" description="Tag based VLANs (e.g., external-dmz)" type="//@types.2"/>
     <attributes name="occi.network.state" mutable="false" required="true" default="inactive" description="Current state of the instance" type="//@types.3"/>
     <attributes name="occi.network.state.message" mutable="false" description="Human-readable explanation of the current instance state">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <actions name="Up" scheme="http://schemas.ogf.org/occi/infrastructure/network/action#"/>
-    <actions name="Down" scheme="http://schemas.ogf.org/occi/infrastructure/network/action#"/>
+    <actions name="Up" scheme="http://schemas.ogf.org/occi/infrastructure/network/action#" title="Up a network."/>
+    <actions name="Down" scheme="http://schemas.ogf.org/occi/infrastructure/network/action#" title="Down a network."/>
     <constraints name="UniqueVlan" description="chaque network a un vlan différent" body="Network.allInstances()->isUnique(occi.network.vlan)"/>
-    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
     <fsm attribute="//@kinds[term='network']/@attributes.2">
       <ownedState literal="//@types.3/@literals.1" initial="true" final="true">
         <outgoingTransition target="//@kinds[term='network']/@fsm/@ownedState.1" action="//@kinds[term='network']/@actions.0"/>
         <outgoingTransition target="//@kinds[term='network']/@fsm/@ownedState.2" action="//@kinds[term='network']/@actions.0"/>
       </ownedState>
-      <ownedState literal="//@types.3/@literals.0" initial="false" final="false">
+      <ownedState literal="//@types.3/@literals.0">
         <outgoingTransition target="//@kinds[term='network']/@fsm/@ownedState.0" action="//@kinds[term='network']/@actions.1"/>
         <outgoingTransition target="//@kinds[term='network']/@fsm/@ownedState.2" action="//@kinds[term='network']/@actions.1"/>
       </ownedState>
-      <ownedState literal="//@types.3/@literals.2" initial="false" final="false"/>
+      <ownedState literal="//@types.3/@literals.2"/>
     </fsm>
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
   <kinds name="Compute" scheme="http://schemas.ogf.org/occi/infrastructure#" title="Compute Resource">
-    <attributes name="occi.compute.architecture" mutable="true" description="CPU Architecture of the instance" type="//@types.6"/>
-    <attributes name="occi.compute.cores" mutable="true" description="Number of CPU cores assigned to the instance" type="//@types.13"/>
-    <attributes name="occi.compute.hostname" mutable="true" description="Fully Qualified DNS hostname for the instance">
+    <attributes name="occi.compute.architecture" description="CPU Architecture of the instance" type="//@types.6"/>
+    <attributes name="occi.compute.cores" description="Number of CPU cores assigned to the instance" type="//@types.13"/>
+    <attributes name="occi.compute.hostname" description="Fully Qualified DNS hostname for the instance">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="occi.compute.share" mutable="true" description="Relative number of CPU shares for the instance" type="//@types.18"/>
-    <attributes name="occi.compute.speed" mutable="true" description="CPU Clock frequency (speed) in gigahertz" type="//@types.14"/>
-    <attributes name="occi.compute.memory" mutable="true" description="Maximum RAM in gigabytes allocated to the instance" type="//@types.15"/>
+    <attributes name="occi.compute.share" description="Relative number of CPU shares for the instance" type="//@types.18"/>
+    <attributes name="occi.compute.speed" description="CPU Clock frequency (speed) in gigahertz" type="//@types.14"/>
+    <attributes name="occi.compute.memory" description="Maximum RAM in gigabytes allocated to the instance" type="//@types.15"/>
     <attributes name="occi.compute.state" mutable="false" required="true" default="inactive" description="Current state of the instance" type="//@types.4"/>
     <attributes name="occi.compute.state.message" mutable="false" description="Human-readable explanation of the current instance state">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
@@ -53,101 +53,101 @@
         <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
       </attributes>
     </actions>
-    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
     <fsm attribute="//@kinds[term='compute']/@attributes.6">
       <ownedState literal="//@types.4/@literals.1" initial="true" final="true">
         <outgoingTransition target="//@kinds[term='compute']/@fsm/@ownedState.1" action="//@kinds[term='compute']/@actions.0"/>
         <outgoingTransition target="//@kinds[term='compute']/@fsm/@ownedState.3" action="//@kinds[term='compute']/@actions.0"/>
       </ownedState>
-      <ownedState literal="//@types.4/@literals.0" initial="false" final="false">
+      <ownedState literal="//@types.4/@literals.0">
         <outgoingTransition target="//@kinds[term='compute']/@fsm/@ownedState.0" action="//@kinds[term='compute']/@actions.1"/>
         <outgoingTransition target="//@kinds[term='compute']/@fsm/@ownedState.2" action="//@kinds[term='compute']/@actions.3"/>
         <outgoingTransition target="//@kinds[term='compute']/@fsm/@ownedState.3" action="//@kinds[term='compute']/@actions.1"/>
         <outgoingTransition target="//@kinds[term='compute']/@fsm/@ownedState.3" action="//@kinds[term='compute']/@actions.3"/>
       </ownedState>
-      <ownedState literal="//@types.4/@literals.2" initial="false" final="false">
+      <ownedState literal="//@types.4/@literals.2">
         <outgoingTransition target="//@kinds[term='compute']/@fsm/@ownedState.3" action="//@kinds[term='compute']/@actions.0"/>
         <outgoingTransition target="//@kinds[term='compute']/@fsm/@ownedState.1" action="//@kinds[term='compute']/@actions.0"/>
       </ownedState>
-      <ownedState literal="//@types.4/@literals.3" initial="false" final="false"/>
+      <ownedState literal="//@types.4/@literals.3"/>
     </fsm>
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
   <kinds name="Storage" scheme="http://schemas.ogf.org/occi/infrastructure#" title="Storage Resource">
-    <attributes name="occi.storage.size" mutable="true" required="true" description="Storage size of the instance in gigabytes" type="//@types.15"/>
+    <attributes name="occi.storage.size" required="true" description="Storage size of the instance in gigabytes" type="//@types.15"/>
     <attributes name="occi.storage.state" mutable="false" required="true" description="Current status of the instance" type="//@types.11"/>
     <attributes name="occi.storage.state.message" mutable="false" description="Human-readable explanation of the current instance state">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <actions name="Online" scheme="http://schemas.ogf.org/occi/infrastructure/storage/action#" title="Set storage online"/>
     <actions name="Offline" scheme="http://schemas.ogf.org/occi/infrastructure/storage/action#" title="Set storage offline"/>
-    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
     <fsm attribute="//@kinds[term='storage']/@attributes.1">
       <ownedState literal="//@types.11/@literals.1" initial="true" final="true">
         <outgoingTransition target="//@kinds[term='storage']/@fsm/@ownedState.1" action="//@kinds[term='storage']/@actions.0"/>
         <outgoingTransition target="//@kinds[term='storage']/@fsm/@ownedState.2" action="//@kinds[term='storage']/@actions.0"/>
       </ownedState>
-      <ownedState literal="//@types.11/@literals.0" initial="false" final="false">
+      <ownedState literal="//@types.11/@literals.0">
         <outgoingTransition target="//@kinds[term='storage']/@fsm/@ownedState.0" action="//@kinds[term='storage']/@actions.1"/>
         <outgoingTransition target="//@kinds[term='storage']/@fsm/@ownedState.2" action="//@kinds[term='storage']/@actions.1"/>
       </ownedState>
-      <ownedState literal="//@types.11/@literals.2" initial="false" final="false"/>
+      <ownedState literal="//@types.11/@literals.2"/>
     </fsm>
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
   <kinds name="StorageLink" scheme="http://schemas.ogf.org/occi/infrastructure#" title="StorageLink Link">
-    <attributes name="occi.storagelink.deviceid" mutable="true" required="true" description="Device identifier as defined by the OCCI service provider">
+    <attributes name="occi.storagelink.deviceid" required="true" description="Device identifier as defined by the OCCI service provider">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="occi.storagelink.mountpoint" mutable="true" description="Point to where the storage is mounted in the guest OS">
+    <attributes name="occi.storagelink.mountpoint" description="Point to where the storage is mounted in the guest OS">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <attributes name="occi.storagelink.state" mutable="false" required="true" description="Current status of the instance" type="//@types.12"/>
     <attributes name="occi.storagelink.state.message" mutable="false" description="Human-readable explanation of the current instance state">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
     <fsm attribute="//@kinds[term='storagelink']/@attributes.2">
       <ownedState literal="//@types.12/@literals.1" initial="true" final="true">
         <outgoingTransition target="//@kinds[term='storagelink']/@fsm/@ownedState.1"/>
         <outgoingTransition target="//@kinds[term='storagelink']/@fsm/@ownedState.2"/>
       </ownedState>
-      <ownedState literal="//@types.12/@literals.0" initial="false" final="false">
+      <ownedState literal="//@types.12/@literals.0">
         <outgoingTransition target="//@kinds[term='storagelink']/@fsm/@ownedState.0"/>
         <outgoingTransition target="//@kinds[term='storagelink']/@fsm/@ownedState.2"/>
       </ownedState>
-      <ownedState literal="//@types.12/@literals.2" initial="false" final="false"/>
+      <ownedState literal="//@types.12/@literals.2"/>
     </fsm>
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
   </kinds>
   <kinds name="NetworkInterface" scheme="http://schemas.ogf.org/occi/infrastructure#" title="NetworkInterface Link" target="//@kinds[term='network']">
     <attributes name="occi.networkinterface.interface" mutable="false" required="true" description="Identifier that relates the link to the link's device interface">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="occi.networkinterface.mac" mutable="true" required="true" description="MAC address associated with the link's device interface" type="//@types.17"/>
+    <attributes name="occi.networkinterface.mac" required="true" description="MAC address associated with the link's device interface" type="//@types.17"/>
     <attributes name="occi.networkinterface.state" mutable="false" required="true" description="Current status of the instance" type="//@types.5"/>
     <attributes name="occi.networkinterface.state.message" mutable="false" description="Human-readable explanation of the current instance state">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
     <fsm attribute="//@kinds[term='networkinterface']/@attributes.2">
       <ownedState literal="//@types.5/@literals.1" initial="true" final="true">
         <outgoingTransition target="//@kinds[term='networkinterface']/@fsm/@ownedState.1"/>
         <outgoingTransition target="//@kinds[term='networkinterface']/@fsm/@ownedState.2"/>
       </ownedState>
-      <ownedState literal="//@types.5/@literals.0" initial="false" final="false">
+      <ownedState literal="//@types.5/@literals.0">
         <outgoingTransition target="//@kinds[term='networkinterface']/@fsm/@ownedState.0"/>
         <outgoingTransition target="//@kinds[term='networkinterface']/@fsm/@ownedState.2"/>
       </ownedState>
-      <ownedState literal="//@types.5/@literals.2" initial="false" final="false"/>
+      <ownedState literal="//@types.5/@literals.2"/>
     </fsm>
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
   </kinds>
   <mixins name="IpNetwork" scheme="http://schemas.ogf.org/occi/infrastructure/network#" title="An IP Networking Mixin" applies="//@kinds[term='network']">
-    <attributes name="occi.network.address" mutable="true" description="Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7)" type="//@types.16"/>
-    <attributes name="occi.network.gateway" mutable="true" description="Internet Protocol (IP) network address (e.g., 192.168.0.1, fc00::)" type="//@types.9"/>
-    <attributes name="occi.network.allocation" mutable="true" description="Address allocation mechanism: dynamic e.g., uses the dynamic host configuration protocol, static e.g., uses user supplied static network configurations" type="//@types.10"/>
+    <attributes name="occi.network.address" description="Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7)" type="//@types.16"/>
+    <attributes name="occi.network.gateway" description="Internet Protocol (IP) network address (e.g., 192.168.0.1, fc00::)" type="//@types.9"/>
+    <attributes name="occi.network.allocation" description="Address allocation mechanism: dynamic e.g., uses the dynamic host configuration protocol, static e.g., uses user supplied static network configurations" type="//@types.10"/>
   </mixins>
   <mixins name="IpNetworkInterface" scheme="http://schemas.ogf.org/occi/infrastructure/networkinterface#" title="IP NetworkInterface Mixin" applies="//@kinds[term='networkinterface']">
-    <attributes name="occi.networkinterface.address" mutable="true" required="true" description="Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7) of the link" type="//@types.9"/>
-    <attributes name="occi.networkinterface.gateway" mutable="true" description="Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7)" type="//@types.9"/>
-    <attributes name="occi.networkinterface.allocation" mutable="true" required="true" description="Address mechanism: dynamic e.g., uses the dynamic host configuration protocol, static e.g., uses user supplied static network configurations" type="//@types.10"/>
+    <attributes name="occi.networkinterface.address" required="true" description="Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7) of the link" type="//@types.9"/>
+    <attributes name="occi.networkinterface.gateway" description="Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7)" type="//@types.9"/>
+    <attributes name="occi.networkinterface.allocation" required="true" description="Address mechanism: dynamic e.g., uses the dynamic host configuration protocol, static e.g., uses user supplied static network configurations" type="//@types.10"/>
     <constraints name="IPAdressesMustBeUnique" description="les adresses IP des networkinterface doivent être différentes" body="IpNetworkInterface.allInstances()->isUnique(occi.networkinterface.address)"/>
   </mixins>
   <mixins name="Os_Tpl" scheme="http://schemas.ogf.org/occi/infrastructure#" title="OS Template" applies="//@kinds[term='compute']"/>
@@ -155,7 +155,7 @@
     <applies href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </mixins>
   <mixins name="SSH_key" scheme="http://schemas.ogf.org/occi/infrastructure/credentials#" title="Credentials Mixin" applies="//@kinds[term='compute']">
-    <attributes name="occi.credentials.ssh.publickey" mutable="true" required="true" description="The contents of the public key file to be injected into the Compute Resource">
+    <attributes name="occi.credentials.ssh.publickey" required="true" description="The contents of the public key file to be injected into the Compute Resource">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
   </mixins>
