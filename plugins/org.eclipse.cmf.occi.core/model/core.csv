@@ -1,24 +1,21 @@
-OCCI,Core,{provider_specific_path}/entity/,GET,Core.occie
-OCCI,Core,{provider_specific_path}/entity/,POST,Core.occie
-OCCI,Core,{provider_specific_path}/entity/,DELETE,Core.occie
-OCCI,Core,{provider_specific_path}/entity/{entity_id},GET,Core.occie
-OCCI,Core,{provider_specific_path}/entity/{entity_id},POST,Core.occie
-OCCI,Core,{provider_specific_path}/entity/{entity_id},PUT,Core.occie
-OCCI,Core,{provider_specific_path}/entity/{entity_id},DELETE,Core.occie
-
-OCCI,Core,{provider_specific_path}/resource/,GET,Core.occie
-OCCI,Core,{provider_specific_path}/resource/,POST,Core.occie
-OCCI,Core,{provider_specific_path}/resource/,DELETE,Core.occie
-OCCI,Core,{provider_specific_path}/resource/{resource_id},GET,Core.occie
-OCCI,Core,{provider_specific_path}/resource/{resource_id},POST,Core.occie
-OCCI,Core,{provider_specific_path}/resource/{resource_id},PUT,Core.occie
-OCCI,Core,{provider_specific_path}/resource/{resource_id},DELETE,Core.occie
-
-OCCI,Core,{provider_specific_path}/link/,GET,Core.occie
-OCCI,Core,{provider_specific_path}/link/,POST,Core.occie
-OCCI,Core,{provider_specific_path}/link/,DELETE,Core.occie
-OCCI,Core,{provider_specific_path}/link/{link_id},GET,Core.occie
-OCCI,Core,{provider_specific_path}/link/{link_id},POST,Core.occie
-OCCI,Core,{provider_specific_path}/link/{link_id},PUT,Core.occie
-OCCI,Core,{provider_specific_path}/link/{link_id},DELETE,Core.occie
-
+"OCCI","Core","http://occi.provider.com/entity/","GET","https://www.ogf.org/documents/GFD.221.pdf","Retrieves all entity instances."
+"OCCI","Core","http://occi.provider.com/entity/","POST","https://www.ogf.org/documents/GFD.221.pdf","Creates a new entity instance."
+"OCCI","Core","http://occi.provider.com/entity/","DELETE","https://www.ogf.org/documents/GFD.221.pdf","Removes all entity instances."
+"OCCI","Core","http://occi.provider.com/entity/{entity_id}","GET","https://www.ogf.org/documents/GFD.221.pdf","Retrieves this entity instance."
+"OCCI","Core","http://occi.provider.com/entity/{entity_id}","POST","https://www.ogf.org/documents/GFD.221.pdf","Updates partially this entity instance."
+"OCCI","Core","http://occi.provider.com/entity/{entity_id}","PUT","https://www.ogf.org/documents/GFD.221.pdf","Creates/Updates a entity instance."
+"OCCI","Core","http://occi.provider.com/entity/{entity_id}","DELETE","https://www.ogf.org/documents/GFD.221.pdf","Deletes this entity instance."
+"OCCI","Core","http://occi.provider.com/resource/","GET","https://www.ogf.org/documents/GFD.221.pdf","Retrieves all resource instances."
+"OCCI","Core","http://occi.provider.com/resource/","POST","https://www.ogf.org/documents/GFD.221.pdf","Creates a new resource instance."
+"OCCI","Core","http://occi.provider.com/resource/","DELETE","https://www.ogf.org/documents/GFD.221.pdf","Removes all resource instances."
+"OCCI","Core","http://occi.provider.com/resource/{resource_id}","GET","https://www.ogf.org/documents/GFD.221.pdf","Retrieves this resource instance."
+"OCCI","Core","http://occi.provider.com/resource/{resource_id}","POST","https://www.ogf.org/documents/GFD.221.pdf","Updates partially this resource instance."
+"OCCI","Core","http://occi.provider.com/resource/{resource_id}","PUT","https://www.ogf.org/documents/GFD.221.pdf","Creates/Updates a resource instance."
+"OCCI","Core","http://occi.provider.com/resource/{resource_id}","DELETE","https://www.ogf.org/documents/GFD.221.pdf","Deletes this resource instance."
+"OCCI","Core","http://occi.provider.com/link/","GET","https://www.ogf.org/documents/GFD.221.pdf","Retrieves all link instances."
+"OCCI","Core","http://occi.provider.com/link/","POST","https://www.ogf.org/documents/GFD.221.pdf","Creates a new link instance."
+"OCCI","Core","http://occi.provider.com/link/","DELETE","https://www.ogf.org/documents/GFD.221.pdf","Removes all link instances."
+"OCCI","Core","http://occi.provider.com/link/{link_id}","GET","https://www.ogf.org/documents/GFD.221.pdf","Retrieves this link instance."
+"OCCI","Core","http://occi.provider.com/link/{link_id}","POST","https://www.ogf.org/documents/GFD.221.pdf","Updates partially this link instance."
+"OCCI","Core","http://occi.provider.com/link/{link_id}","PUT","https://www.ogf.org/documents/GFD.221.pdf","Creates/Updates a link instance."
+"OCCI","Core","http://occi.provider.com/link/{link_id}","DELETE","https://www.ogf.org/documents/GFD.221.pdf","Deletes this link instance."
