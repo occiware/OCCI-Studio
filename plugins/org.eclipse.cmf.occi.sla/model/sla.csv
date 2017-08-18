@@ -1,36 +1,32 @@
-OCCI,Sla,{provider_specific_path}/agreement/,GET,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement/,POST,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement/,DELETE,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement/?action=accept,POST,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement/?action=reject,POST,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement/?action=suspend,POST,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement/?action=resume,POST,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement/?action=terminate,POST,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement/{agreement_id},GET,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement/{agreement_id},POST,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement/{agreement_id},PUT,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement/{agreement_id},DELETE,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement/{agreement_id}?action=accept,POST,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement/{agreement_id}?action=reject,POST,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement/{agreement_id}?action=suspend,POST,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement/{agreement_id}?action=resume,POST,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement/{agreement_id}?action=terminate,POST,Sla.occie
-
-OCCI,Sla,{provider_specific_path}/agreement_link/,GET,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement_link/,POST,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement_link/,DELETE,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement_link/{agreement_link_id},GET,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement_link/{agreement_link_id},POST,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement_link/{agreement_link_id},PUT,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement_link/{agreement_link_id},DELETE,Sla.occie
-
-OCCI,Sla,{provider_specific_path}/agreement_tpl/,GET,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement_tpl/,POST,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement_tpl/,PUT,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement_tpl/,DELETE,Sla.occie
-
-OCCI,Sla,{provider_specific_path}/agreement_term/,GET,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement_term/,POST,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement_term/,PUT,Sla.occie
-OCCI,Sla,{provider_specific_path}/agreement_term/,DELETE,Sla.occie
-
+"OCCI","Sla","http://occi.provider.com/agreement/","GET","https://www.ogf.org/documents/GFD.228.pdf","Retrieves all agreement instances."
+"OCCI","Sla","http://occi.provider.com/agreement/","POST","https://www.ogf.org/documents/GFD.228.pdf","Creates a new agreement instance."
+"OCCI","Sla","http://occi.provider.com/agreement/","DELETE","https://www.ogf.org/documents/GFD.228.pdf","Removes all agreement instances."
+"OCCI","Sla","http://occi.provider.com/agreement/?action=accept","POST","https://www.ogf.org/documents/GFD.228.pdf","Performs the accept action on all instances of this agreement collection."
+"OCCI","Sla","http://occi.provider.com/agreement/?action=reject","POST","https://www.ogf.org/documents/GFD.228.pdf","Performs the reject action on all instances of this agreement collection."
+"OCCI","Sla","http://occi.provider.com/agreement/?action=suspend","POST","https://www.ogf.org/documents/GFD.228.pdf","Performs the suspend action on all instances of this agreement collection."
+"OCCI","Sla","http://occi.provider.com/agreement/?action=resume","POST","https://www.ogf.org/documents/GFD.228.pdf","Performs the resume action on all instances of this agreement collection."
+"OCCI","Sla","http://occi.provider.com/agreement/?action=terminate","POST","https://www.ogf.org/documents/GFD.228.pdf","Performs the terminate action on all instances of this agreement collection."
+"OCCI","Sla","http://occi.provider.com/agreement/{agreement_id}","GET","https://www.ogf.org/documents/GFD.228.pdf","Retrieves this agreement instance."
+"OCCI","Sla","http://occi.provider.com/agreement/{agreement_id}","POST","https://www.ogf.org/documents/GFD.228.pdf","Updates partially this agreement instance."
+"OCCI","Sla","http://occi.provider.com/agreement/{agreement_id}","PUT","https://www.ogf.org/documents/GFD.228.pdf","Creates/Updates a agreement instance."
+"OCCI","Sla","http://occi.provider.com/agreement/{agreement_id}","DELETE","https://www.ogf.org/documents/GFD.228.pdf","Deletes this agreement instance."
+"OCCI","Sla","http://occi.provider.com/agreement/{agreement_id}?action=accept","POST","https://www.ogf.org/documents/GFD.228.pdf","Accept an agreement."
+"OCCI","Sla","http://occi.provider.com/agreement/{agreement_id}?action=reject","POST","https://www.ogf.org/documents/GFD.228.pdf","Reject an agreement."
+"OCCI","Sla","http://occi.provider.com/agreement/{agreement_id}?action=suspend","POST","https://www.ogf.org/documents/GFD.228.pdf","Suspend an agreement."
+"OCCI","Sla","http://occi.provider.com/agreement/{agreement_id}?action=resume","POST","https://www.ogf.org/documents/GFD.228.pdf","Resume an agreement."
+"OCCI","Sla","http://occi.provider.com/agreement/{agreement_id}?action=terminate","POST","https://www.ogf.org/documents/GFD.228.pdf","Terminate an agreement."
+"OCCI","Sla","http://occi.provider.com/agreement_link/","GET","https://www.ogf.org/documents/GFD.228.pdf","Retrieves all agreement_link instances."
+"OCCI","Sla","http://occi.provider.com/agreement_link/","POST","https://www.ogf.org/documents/GFD.228.pdf","Creates a new agreement_link instance."
+"OCCI","Sla","http://occi.provider.com/agreement_link/","DELETE","https://www.ogf.org/documents/GFD.228.pdf","Removes all agreement_link instances."
+"OCCI","Sla","http://occi.provider.com/agreement_link/{agreement_link_id}","GET","https://www.ogf.org/documents/GFD.228.pdf","Retrieves this agreement_link instance."
+"OCCI","Sla","http://occi.provider.com/agreement_link/{agreement_link_id}","POST","https://www.ogf.org/documents/GFD.228.pdf","Updates partially this agreement_link instance."
+"OCCI","Sla","http://occi.provider.com/agreement_link/{agreement_link_id}","PUT","https://www.ogf.org/documents/GFD.228.pdf","Creates/Updates a agreement_link instance."
+"OCCI","Sla","http://occi.provider.com/agreement_link/{agreement_link_id}","DELETE","https://www.ogf.org/documents/GFD.228.pdf","Deletes this agreement_link instance."
+"OCCI","Sla","http://occi.provider.com/agreement_tpl/","GET","https://www.ogf.org/documents/GFD.228.pdf","Retrieves all instances having this agreement_tpl mixin."
+"OCCI","Sla","http://occi.provider.com/agreement_tpl/","POST","https://www.ogf.org/documents/GFD.228.pdf","Adds an instance to this agreement_tpl mixin collection."
+"OCCI","Sla","http://occi.provider.com/agreement_tpl/","PUT","https://www.ogf.org/documents/GFD.228.pdf","Updates this agreement_tpl mixin collection."
+"OCCI","Sla","http://occi.provider.com/agreement_tpl/","DELETE","https://www.ogf.org/documents/GFD.228.pdf","Removes all instances of this agreement_tpl mixin collection."
+"OCCI","Sla","http://occi.provider.com/agreement_term/","GET","https://www.ogf.org/documents/GFD.228.pdf","Retrieves all instances having this agreement_term mixin."
+"OCCI","Sla","http://occi.provider.com/agreement_term/","POST","https://www.ogf.org/documents/GFD.228.pdf","Adds an instance to this agreement_term mixin collection."
+"OCCI","Sla","http://occi.provider.com/agreement_term/","PUT","https://www.ogf.org/documents/GFD.228.pdf","Updates this agreement_term mixin collection."
+"OCCI","Sla","http://occi.provider.com/agreement_term/","DELETE","https://www.ogf.org/documents/GFD.228.pdf","Removes all instances of this agreement_term mixin collection."
