@@ -1,88 +1,77 @@
-OCCI,Infrastructure,{provider_specific_path}/network/,GET,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/network/,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/network/,DELETE,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/network/?action=up,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/network/?action=down,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/network/{network_id},GET,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/network/{network_id},POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/network/{network_id},PUT,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/network/{network_id},DELETE,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/network/{network_id}?action=up,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/network/{network_id}?action=down,POST,Infrastructure.occie
-
-OCCI,Infrastructure,{provider_specific_path}/compute/,GET,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/compute/,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/compute/,DELETE,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/compute/?action=start,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/compute/?action=stop,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/compute/?action=restart,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/compute/?action=suspend,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/compute/?action=save,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/compute/{compute_id},GET,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/compute/{compute_id},POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/compute/{compute_id},PUT,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/compute/{compute_id},DELETE,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/compute/{compute_id}?action=start,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/compute/{compute_id}?action=stop,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/compute/{compute_id}?action=restart,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/compute/{compute_id}?action=suspend,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/compute/{compute_id}?action=save,POST,Infrastructure.occie
-
-OCCI,Infrastructure,{provider_specific_path}/storage/,GET,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/storage/,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/storage/,DELETE,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/storage/?action=online,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/storage/?action=offline,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/storage/{storage_id},GET,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/storage/{storage_id},POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/storage/{storage_id},PUT,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/storage/{storage_id},DELETE,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/storage/{storage_id}?action=online,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/storage/{storage_id}?action=offline,POST,Infrastructure.occie
-
-OCCI,Infrastructure,{provider_specific_path}/storagelink/,GET,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/storagelink/,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/storagelink/,DELETE,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/storagelink/{storagelink_id},GET,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/storagelink/{storagelink_id},POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/storagelink/{storagelink_id},PUT,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/storagelink/{storagelink_id},DELETE,Infrastructure.occie
-
-OCCI,Infrastructure,{provider_specific_path}/networkinterface/,GET,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/networkinterface/,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/networkinterface/,DELETE,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/networkinterface/{networkinterface_id},GET,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/networkinterface/{networkinterface_id},POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/networkinterface/{networkinterface_id},PUT,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/networkinterface/{networkinterface_id},DELETE,Infrastructure.occie
-
-OCCI,Infrastructure,{provider_specific_path}/ipnetwork/,GET,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/ipnetwork/,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/ipnetwork/,PUT,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/ipnetwork/,DELETE,Infrastructure.occie
-
-OCCI,Infrastructure,{provider_specific_path}/ipnetworkinterface/,GET,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/ipnetworkinterface/,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/ipnetworkinterface/,PUT,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/ipnetworkinterface/,DELETE,Infrastructure.occie
-
-OCCI,Infrastructure,{provider_specific_path}/os_tpl/,GET,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/os_tpl/,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/os_tpl/,PUT,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/os_tpl/,DELETE,Infrastructure.occie
-
-OCCI,Infrastructure,{provider_specific_path}/resource_tpl/,GET,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/resource_tpl/,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/resource_tpl/,PUT,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/resource_tpl/,DELETE,Infrastructure.occie
-
-OCCI,Infrastructure,{provider_specific_path}/ssh_key/,GET,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/ssh_key/,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/ssh_key/,PUT,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/ssh_key/,DELETE,Infrastructure.occie
-
-OCCI,Infrastructure,{provider_specific_path}/user_data/,GET,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/user_data/,POST,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/user_data/,PUT,Infrastructure.occie
-OCCI,Infrastructure,{provider_specific_path}/user_data/,DELETE,Infrastructure.occie
-
+"OCCI","Infrastructure","http://occi.provider.com/network/","GET","https://www.ogf.org/documents/GFD.224.pdf","Retrieves all network instances."
+"OCCI","Infrastructure","http://occi.provider.com/network/","POST","https://www.ogf.org/documents/GFD.224.pdf","Creates a new network instance."
+"OCCI","Infrastructure","http://occi.provider.com/network/","DELETE","https://www.ogf.org/documents/GFD.224.pdf","Removes all network instances."
+"OCCI","Infrastructure","http://occi.provider.com/network/?action=up","POST","https://www.ogf.org/documents/GFD.224.pdf","Performs the up action on all instances of this network collection."
+"OCCI","Infrastructure","http://occi.provider.com/network/?action=down","POST","https://www.ogf.org/documents/GFD.224.pdf","Performs the down action on all instances of this network collection."
+"OCCI","Infrastructure","http://occi.provider.com/network/{network_id}","GET","https://www.ogf.org/documents/GFD.224.pdf","Retrieves this network instance."
+"OCCI","Infrastructure","http://occi.provider.com/network/{network_id}","POST","https://www.ogf.org/documents/GFD.224.pdf","Updates partially this network instance."
+"OCCI","Infrastructure","http://occi.provider.com/network/{network_id}","PUT","https://www.ogf.org/documents/GFD.224.pdf","Creates/Updates a network instance."
+"OCCI","Infrastructure","http://occi.provider.com/network/{network_id}","DELETE","https://www.ogf.org/documents/GFD.224.pdf","Deletes this network instance."
+"OCCI","Infrastructure","http://occi.provider.com/network/{network_id}?action=up","POST","https://www.ogf.org/documents/GFD.224.pdf","Up a network."
+"OCCI","Infrastructure","http://occi.provider.com/network/{network_id}?action=down","POST","https://www.ogf.org/documents/GFD.224.pdf","Down a network."
+"OCCI","Infrastructure","http://occi.provider.com/compute/","GET","https://www.ogf.org/documents/GFD.224.pdf","Retrieves all compute instances."
+"OCCI","Infrastructure","http://occi.provider.com/compute/","POST","https://www.ogf.org/documents/GFD.224.pdf","Creates a new compute instance."
+"OCCI","Infrastructure","http://occi.provider.com/compute/","DELETE","https://www.ogf.org/documents/GFD.224.pdf","Removes all compute instances."
+"OCCI","Infrastructure","http://occi.provider.com/compute/?action=start","POST","https://www.ogf.org/documents/GFD.224.pdf","Performs the start action on all instances of this compute collection."
+"OCCI","Infrastructure","http://occi.provider.com/compute/?action=stop","POST","https://www.ogf.org/documents/GFD.224.pdf","Performs the stop action on all instances of this compute collection."
+"OCCI","Infrastructure","http://occi.provider.com/compute/?action=restart","POST","https://www.ogf.org/documents/GFD.224.pdf","Performs the restart action on all instances of this compute collection."
+"OCCI","Infrastructure","http://occi.provider.com/compute/?action=suspend","POST","https://www.ogf.org/documents/GFD.224.pdf","Performs the suspend action on all instances of this compute collection."
+"OCCI","Infrastructure","http://occi.provider.com/compute/?action=save","POST","https://www.ogf.org/documents/GFD.224.pdf","Performs the save action on all instances of this compute collection."
+"OCCI","Infrastructure","http://occi.provider.com/compute/{compute_id}","GET","https://www.ogf.org/documents/GFD.224.pdf","Retrieves this compute instance."
+"OCCI","Infrastructure","http://occi.provider.com/compute/{compute_id}","POST","https://www.ogf.org/documents/GFD.224.pdf","Updates partially this compute instance."
+"OCCI","Infrastructure","http://occi.provider.com/compute/{compute_id}","PUT","https://www.ogf.org/documents/GFD.224.pdf","Creates/Updates a compute instance."
+"OCCI","Infrastructure","http://occi.provider.com/compute/{compute_id}","DELETE","https://www.ogf.org/documents/GFD.224.pdf","Deletes this compute instance."
+"OCCI","Infrastructure","http://occi.provider.com/compute/{compute_id}?action=start","POST","https://www.ogf.org/documents/GFD.224.pdf","Start the system"
+"OCCI","Infrastructure","http://occi.provider.com/compute/{compute_id}?action=stop","POST","https://www.ogf.org/documents/GFD.224.pdf","Stop the system (graceful, acpioff or poweroff)"
+"OCCI","Infrastructure","http://occi.provider.com/compute/{compute_id}?action=restart","POST","https://www.ogf.org/documents/GFD.224.pdf","Restart the system (graceful, warm or cold)"
+"OCCI","Infrastructure","http://occi.provider.com/compute/{compute_id}?action=suspend","POST","https://www.ogf.org/documents/GFD.224.pdf","Suspend the system (hibernate or in RAM)"
+"OCCI","Infrastructure","http://occi.provider.com/compute/{compute_id}?action=save","POST","https://www.ogf.org/documents/GFD.224.pdf","Save the system (hot, deferred)"
+"OCCI","Infrastructure","http://occi.provider.com/storage/","GET","https://www.ogf.org/documents/GFD.224.pdf","Retrieves all storage instances."
+"OCCI","Infrastructure","http://occi.provider.com/storage/","POST","https://www.ogf.org/documents/GFD.224.pdf","Creates a new storage instance."
+"OCCI","Infrastructure","http://occi.provider.com/storage/","DELETE","https://www.ogf.org/documents/GFD.224.pdf","Removes all storage instances."
+"OCCI","Infrastructure","http://occi.provider.com/storage/?action=online","POST","https://www.ogf.org/documents/GFD.224.pdf","Performs the online action on all instances of this storage collection."
+"OCCI","Infrastructure","http://occi.provider.com/storage/?action=offline","POST","https://www.ogf.org/documents/GFD.224.pdf","Performs the offline action on all instances of this storage collection."
+"OCCI","Infrastructure","http://occi.provider.com/storage/{storage_id}","GET","https://www.ogf.org/documents/GFD.224.pdf","Retrieves this storage instance."
+"OCCI","Infrastructure","http://occi.provider.com/storage/{storage_id}","POST","https://www.ogf.org/documents/GFD.224.pdf","Updates partially this storage instance."
+"OCCI","Infrastructure","http://occi.provider.com/storage/{storage_id}","PUT","https://www.ogf.org/documents/GFD.224.pdf","Creates/Updates a storage instance."
+"OCCI","Infrastructure","http://occi.provider.com/storage/{storage_id}","DELETE","https://www.ogf.org/documents/GFD.224.pdf","Deletes this storage instance."
+"OCCI","Infrastructure","http://occi.provider.com/storage/{storage_id}?action=online","POST","https://www.ogf.org/documents/GFD.224.pdf","Set storage online"
+"OCCI","Infrastructure","http://occi.provider.com/storage/{storage_id}?action=offline","POST","https://www.ogf.org/documents/GFD.224.pdf","Set storage offline"
+"OCCI","Infrastructure","http://occi.provider.com/storagelink/","GET","https://www.ogf.org/documents/GFD.224.pdf","Retrieves all storagelink instances."
+"OCCI","Infrastructure","http://occi.provider.com/storagelink/","POST","https://www.ogf.org/documents/GFD.224.pdf","Creates a new storagelink instance."
+"OCCI","Infrastructure","http://occi.provider.com/storagelink/","DELETE","https://www.ogf.org/documents/GFD.224.pdf","Removes all storagelink instances."
+"OCCI","Infrastructure","http://occi.provider.com/storagelink/{storagelink_id}","GET","https://www.ogf.org/documents/GFD.224.pdf","Retrieves this storagelink instance."
+"OCCI","Infrastructure","http://occi.provider.com/storagelink/{storagelink_id}","POST","https://www.ogf.org/documents/GFD.224.pdf","Updates partially this storagelink instance."
+"OCCI","Infrastructure","http://occi.provider.com/storagelink/{storagelink_id}","PUT","https://www.ogf.org/documents/GFD.224.pdf","Creates/Updates a storagelink instance."
+"OCCI","Infrastructure","http://occi.provider.com/storagelink/{storagelink_id}","DELETE","https://www.ogf.org/documents/GFD.224.pdf","Deletes this storagelink instance."
+"OCCI","Infrastructure","http://occi.provider.com/networkinterface/","GET","https://www.ogf.org/documents/GFD.224.pdf","Retrieves all networkinterface instances."
+"OCCI","Infrastructure","http://occi.provider.com/networkinterface/","POST","https://www.ogf.org/documents/GFD.224.pdf","Creates a new networkinterface instance."
+"OCCI","Infrastructure","http://occi.provider.com/networkinterface/","DELETE","https://www.ogf.org/documents/GFD.224.pdf","Removes all networkinterface instances."
+"OCCI","Infrastructure","http://occi.provider.com/networkinterface/{networkinterface_id}","GET","https://www.ogf.org/documents/GFD.224.pdf","Retrieves this networkinterface instance."
+"OCCI","Infrastructure","http://occi.provider.com/networkinterface/{networkinterface_id}","POST","https://www.ogf.org/documents/GFD.224.pdf","Updates partially this networkinterface instance."
+"OCCI","Infrastructure","http://occi.provider.com/networkinterface/{networkinterface_id}","PUT","https://www.ogf.org/documents/GFD.224.pdf","Creates/Updates a networkinterface instance."
+"OCCI","Infrastructure","http://occi.provider.com/networkinterface/{networkinterface_id}","DELETE","https://www.ogf.org/documents/GFD.224.pdf","Deletes this networkinterface instance."
+"OCCI","Infrastructure","http://occi.provider.com/ipnetwork/","GET","https://www.ogf.org/documents/GFD.224.pdf","Retrieves all instances having this ipnetwork mixin."
+"OCCI","Infrastructure","http://occi.provider.com/ipnetwork/","POST","https://www.ogf.org/documents/GFD.224.pdf","Adds an instance to this ipnetwork mixin collection."
+"OCCI","Infrastructure","http://occi.provider.com/ipnetwork/","PUT","https://www.ogf.org/documents/GFD.224.pdf","Updates this ipnetwork mixin collection."
+"OCCI","Infrastructure","http://occi.provider.com/ipnetwork/","DELETE","https://www.ogf.org/documents/GFD.224.pdf","Removes all instances of this ipnetwork mixin collection."
+"OCCI","Infrastructure","http://occi.provider.com/ipnetworkinterface/","GET","https://www.ogf.org/documents/GFD.224.pdf","Retrieves all instances having this ipnetworkinterface mixin."
+"OCCI","Infrastructure","http://occi.provider.com/ipnetworkinterface/","POST","https://www.ogf.org/documents/GFD.224.pdf","Adds an instance to this ipnetworkinterface mixin collection."
+"OCCI","Infrastructure","http://occi.provider.com/ipnetworkinterface/","PUT","https://www.ogf.org/documents/GFD.224.pdf","Updates this ipnetworkinterface mixin collection."
+"OCCI","Infrastructure","http://occi.provider.com/ipnetworkinterface/","DELETE","https://www.ogf.org/documents/GFD.224.pdf","Removes all instances of this ipnetworkinterface mixin collection."
+"OCCI","Infrastructure","http://occi.provider.com/os_tpl/","GET","https://www.ogf.org/documents/GFD.224.pdf","Retrieves all instances having this os_tpl mixin."
+"OCCI","Infrastructure","http://occi.provider.com/os_tpl/","POST","https://www.ogf.org/documents/GFD.224.pdf","Adds an instance to this os_tpl mixin collection."
+"OCCI","Infrastructure","http://occi.provider.com/os_tpl/","PUT","https://www.ogf.org/documents/GFD.224.pdf","Updates this os_tpl mixin collection."
+"OCCI","Infrastructure","http://occi.provider.com/os_tpl/","DELETE","https://www.ogf.org/documents/GFD.224.pdf","Removes all instances of this os_tpl mixin collection."
+"OCCI","Infrastructure","http://occi.provider.com/resource_tpl/","GET","https://www.ogf.org/documents/GFD.224.pdf","Retrieves all instances having this resource_tpl mixin."
+"OCCI","Infrastructure","http://occi.provider.com/resource_tpl/","POST","https://www.ogf.org/documents/GFD.224.pdf","Adds an instance to this resource_tpl mixin collection."
+"OCCI","Infrastructure","http://occi.provider.com/resource_tpl/","PUT","https://www.ogf.org/documents/GFD.224.pdf","Updates this resource_tpl mixin collection."
+"OCCI","Infrastructure","http://occi.provider.com/resource_tpl/","DELETE","https://www.ogf.org/documents/GFD.224.pdf","Removes all instances of this resource_tpl mixin collection."
+"OCCI","Infrastructure","http://occi.provider.com/ssh_key/","GET","https://www.ogf.org/documents/GFD.224.pdf","Retrieves all instances having this ssh_key mixin."
+"OCCI","Infrastructure","http://occi.provider.com/ssh_key/","POST","https://www.ogf.org/documents/GFD.224.pdf","Adds an instance to this ssh_key mixin collection."
+"OCCI","Infrastructure","http://occi.provider.com/ssh_key/","PUT","https://www.ogf.org/documents/GFD.224.pdf","Updates this ssh_key mixin collection."
+"OCCI","Infrastructure","http://occi.provider.com/ssh_key/","DELETE","https://www.ogf.org/documents/GFD.224.pdf","Removes all instances of this ssh_key mixin collection."
+"OCCI","Infrastructure","http://occi.provider.com/user_data/","GET","https://www.ogf.org/documents/GFD.224.pdf","Retrieves all instances having this user_data mixin."
+"OCCI","Infrastructure","http://occi.provider.com/user_data/","POST","https://www.ogf.org/documents/GFD.224.pdf","Adds an instance to this user_data mixin collection."
+"OCCI","Infrastructure","http://occi.provider.com/user_data/","PUT","https://www.ogf.org/documents/GFD.224.pdf","Updates this user_data mixin collection."
+"OCCI","Infrastructure","http://occi.provider.com/user_data/","DELETE","https://www.ogf.org/documents/GFD.224.pdf","Removes all instances of this user_data mixin collection."
