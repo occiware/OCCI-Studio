@@ -47,7 +47,7 @@
 [/template]
 
 [template public generateURI(uri : String, verb : String, extension : Extension, description: String)]
-"OCCI","[extension.name.toUpperFirst()/]","[uri/]","[verb/]","[extension.name.toUpperFirst()/].occie","[description/]"
+"OCCI","[extension.name.toUpperFirst()/]","[uri/]","[verb/]","[extension.specification/]","[description/]"
 [/template]
 
 [query public getCollectionPath(category : Category) : String = 'http://occi.provider.com/' + category.term + '/' /]

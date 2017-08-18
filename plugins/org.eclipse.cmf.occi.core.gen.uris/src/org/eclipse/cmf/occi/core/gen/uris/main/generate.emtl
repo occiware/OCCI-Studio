@@ -708,17 +708,14 @@
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;,&quot;"/>
-      <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
+      <body xsi:type="ocl.ecore:PropertyCallExp">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <source xsi:type="ocl.ecore:PropertyCallExp">
-          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <source xsi:type="ocl.ecore:VariableExp" name="extension" referredVariable="/0/generateURI/extension">
-            <eType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Extension"/>
-          </source>
-          <referredProperty xsi:type="ecore:EAttribute" href="http://schemas.ogf.org/occi/core/ecore#//Extension/name"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="extension" referredVariable="/0/generateURI/extension">
+          <eType xsi:type="ecore:EClass" href="http://schemas.ogf.org/occi/core/ecore#//Extension"/>
         </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="http://schemas.ogf.org/occi/core/ecore#//Extension/specification"/>
       </body>
-      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".occie&quot;,&quot;"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;,&quot;"/>
       <body xsi:type="ocl.ecore:VariableExp" name="description" referredVariable="/0/generateURI/description.1">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
       </body>
@@ -2316,7 +2313,7 @@
     </eAnnotations>
     <eAnnotations source="positions.232" references="/0/generateURI">
       <details key="start" value="2558"/>
-      <details key="end" value="2791"/>
+      <details key="end" value="2779"/>
       <details key="line" value="49"/>
     </eAnnotations>
     <eAnnotations source="positions.233" references="/0/generateURI/%">
@@ -2366,147 +2363,142 @@
     </eAnnotations>
     <eAnnotations source="positions.242" references="/0/generateURI/%.5">
       <details key="start" value="2724"/>
-      <details key="end" value="2753"/>
+      <details key="end" value="2747"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.243" references="/0/generateURI/%.5/%">
-      <details key="start" value="2724"/>
-      <details key="end" value="2738"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.244" references="/0/generateURI/%.5/%/extension">
+    <eAnnotations source="positions.243" references="/0/generateURI/%.5/extension">
       <details key="start" value="2724"/>
       <details key="end" value="2733"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.245" references="/0/generateURI/%.6">
-      <details key="start" value="2755"/>
-      <details key="end" value="2764"/>
+    <eAnnotations source="positions.244" references="/0/generateURI/%.6">
+      <details key="start" value="2749"/>
+      <details key="end" value="2752"/>
       <details key="line" value="50"/>
     </eAnnotations>
-    <eAnnotations source="positions.246" references="/0/generateURI/description">
-      <details key="start" value="2765"/>
-      <details key="end" value="2776"/>
+    <eAnnotations source="positions.245" references="/0/generateURI/description">
+      <details key="start" value="2753"/>
+      <details key="end" value="2764"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.247" references="/0/generateURI/%.7">
-      <details key="start" value="2778"/>
-      <details key="end" value="2779"/>
+    <eAnnotations source="positions.246" references="/0/generateURI/%.7">
+      <details key="start" value="2766"/>
+      <details key="end" value="2767"/>
       <details key="line" value="50"/>
     </eAnnotations>
-    <eAnnotations source="positions.248" references="/0/generateURI/uri.1">
+    <eAnnotations source="positions.247" references="/0/generateURI/uri.1">
       <details key="start" value="2587"/>
       <details key="end" value="2599"/>
       <details key="line" value="49"/>
     </eAnnotations>
-    <eAnnotations source="positions.249" references="/0/generateURI/verb.1">
+    <eAnnotations source="positions.248" references="/0/generateURI/verb.1">
       <details key="start" value="2601"/>
       <details key="end" value="2614"/>
       <details key="line" value="49"/>
     </eAnnotations>
-    <eAnnotations source="positions.250" references="/0/generateURI/extension">
+    <eAnnotations source="positions.249" references="/0/generateURI/extension">
       <details key="start" value="2616"/>
       <details key="end" value="2637"/>
       <details key="line" value="49"/>
     </eAnnotations>
-    <eAnnotations source="positions.251" references="/0/generateURI/description.1">
+    <eAnnotations source="positions.250" references="/0/generateURI/description.1">
       <details key="start" value="2639"/>
       <details key="end" value="2658"/>
       <details key="line" value="49"/>
     </eAnnotations>
-    <eAnnotations source="positions.252" references="/0/getCollectionPath">
-      <details key="start" value="2793"/>
-      <details key="end" value="2909"/>
+    <eAnnotations source="positions.251" references="/0/getCollectionPath">
+      <details key="start" value="2781"/>
+      <details key="end" value="2897"/>
       <details key="line" value="53"/>
     </eAnnotations>
-    <eAnnotations source="positions.253" references="/0/getCollectionPath/category">
-      <details key="start" value="2825"/>
-      <details key="end" value="2844"/>
+    <eAnnotations source="positions.252" references="/0/getCollectionPath/category">
+      <details key="start" value="2813"/>
+      <details key="end" value="2832"/>
       <details key="line" value="53"/>
     </eAnnotations>
-    <eAnnotations source="positions.254" references="/0/getCollectionPath/%">
-      <details key="start" value="2857"/>
-      <details key="end" value="2906"/>
+    <eAnnotations source="positions.253" references="/0/getCollectionPath/%">
+      <details key="start" value="2845"/>
+      <details key="end" value="2894"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.255" references="/0/getCollectionPath/%/%">
-      <details key="start" value="2857"/>
-      <details key="end" value="2900"/>
+    <eAnnotations source="positions.254" references="/0/getCollectionPath/%/%">
+      <details key="start" value="2845"/>
+      <details key="end" value="2888"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.256" references="/0/getCollectionPath/%/%/%">
-      <details key="start" value="2857"/>
-      <details key="end" value="2884"/>
+    <eAnnotations source="positions.255" references="/0/getCollectionPath/%/%/%">
+      <details key="start" value="2845"/>
+      <details key="end" value="2872"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.257" references="/0/getCollectionPath/%/%/%.1">
-      <details key="start" value="2887"/>
-      <details key="end" value="2900"/>
+    <eAnnotations source="positions.256" references="/0/getCollectionPath/%/%/%.1">
+      <details key="start" value="2875"/>
+      <details key="end" value="2888"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.258" references="/0/getCollectionPath/%/%/%.1/category">
-      <details key="start" value="2887"/>
-      <details key="end" value="2895"/>
+    <eAnnotations source="positions.257" references="/0/getCollectionPath/%/%/%.1/category">
+      <details key="start" value="2875"/>
+      <details key="end" value="2883"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.259" references="/0/getCollectionPath/%/%.1">
-      <details key="start" value="2903"/>
-      <details key="end" value="2906"/>
+    <eAnnotations source="positions.258" references="/0/getCollectionPath/%/%.1">
+      <details key="start" value="2891"/>
+      <details key="end" value="2894"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.260" references="/0/getEntityPath">
-      <details key="start" value="2910"/>
-      <details key="end" value="3032"/>
+    <eAnnotations source="positions.259" references="/0/getEntityPath">
+      <details key="start" value="2898"/>
+      <details key="end" value="3020"/>
       <details key="line" value="54"/>
     </eAnnotations>
-    <eAnnotations source="positions.261" references="/0/getEntityPath/category">
-      <details key="start" value="2938"/>
-      <details key="end" value="2957"/>
+    <eAnnotations source="positions.260" references="/0/getEntityPath/category">
+      <details key="start" value="2926"/>
+      <details key="end" value="2945"/>
       <details key="line" value="54"/>
     </eAnnotations>
-    <eAnnotations source="positions.262" references="/0/getEntityPath/%">
-      <details key="start" value="2970"/>
-      <details key="end" value="3029"/>
+    <eAnnotations source="positions.261" references="/0/getEntityPath/%">
+      <details key="start" value="2958"/>
+      <details key="end" value="3017"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.263" references="/0/getEntityPath/%/%">
-      <details key="start" value="2970"/>
-      <details key="end" value="3020"/>
+    <eAnnotations source="positions.262" references="/0/getEntityPath/%/%">
+      <details key="start" value="2958"/>
+      <details key="end" value="3008"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.264" references="/0/getEntityPath/%/%/%">
-      <details key="start" value="2970"/>
-      <details key="end" value="3004"/>
+    <eAnnotations source="positions.263" references="/0/getEntityPath/%/%/%">
+      <details key="start" value="2958"/>
+      <details key="end" value="2992"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.265" references="/0/getEntityPath/%/%/%/%">
-      <details key="start" value="2970"/>
-      <details key="end" value="2998"/>
+    <eAnnotations source="positions.264" references="/0/getEntityPath/%/%/%/%">
+      <details key="start" value="2958"/>
+      <details key="end" value="2986"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.266" references="/0/getEntityPath/%/%/%/%/category">
-      <details key="start" value="2970"/>
-      <details key="end" value="2978"/>
+    <eAnnotations source="positions.265" references="/0/getEntityPath/%/%/%/%/category">
+      <details key="start" value="2958"/>
+      <details key="end" value="2966"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.267" references="/0/getEntityPath/%/%/%/%.1">
-      <details key="start" value="3001"/>
-      <details key="end" value="3004"/>
+    <eAnnotations source="positions.266" references="/0/getEntityPath/%/%/%/%.1">
+      <details key="start" value="2989"/>
+      <details key="end" value="2992"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.268" references="/0/getEntityPath/%/%/%.1">
-      <details key="start" value="3007"/>
-      <details key="end" value="3020"/>
+    <eAnnotations source="positions.267" references="/0/getEntityPath/%/%/%.1">
+      <details key="start" value="2995"/>
+      <details key="end" value="3008"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.269" references="/0/getEntityPath/%/%/%.1/category">
-      <details key="start" value="3007"/>
-      <details key="end" value="3015"/>
+    <eAnnotations source="positions.268" references="/0/getEntityPath/%/%/%.1/category">
+      <details key="start" value="2995"/>
+      <details key="end" value="3003"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.270" references="/0/getEntityPath/%/%.1">
-      <details key="start" value="3023"/>
-      <details key="end" value="3029"/>
+    <eAnnotations source="positions.269" references="/0/getEntityPath/%/%.1">
+      <details key="start" value="3011"/>
+      <details key="end" value="3017"/>
       <details key="line" value="0"/>
     </eAnnotations>
   </ecore:EAnnotation>
