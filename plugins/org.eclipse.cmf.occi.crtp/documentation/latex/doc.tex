@@ -1,0 +1,268 @@
+\section{OCCI crtp extension}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & crtp \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure/compute/template/1.1\# \\
+  \hline
+  \textbf{Specification} & https://www.ogf.org/documents/GFD.222.pdf \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsection{Description}
+This profile specification describes a well-defined number of instances of the OCCI compute resource type defined in the Open Cloud Computing Interface (OCCI) family of specifications.
+\subsection{Imported OCCI extensions}
+
+\begin{center} 
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & core \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/core\# \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{center} 
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & infrastructure \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Specification}
+The specification of OCCI Crtp extension is available here: https://www.ogf.org/documents/GFD.222.pdf.
+\subsection{Mixins}
+\subsubsection{\texttt{Small} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Small \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure/compute/template/1.1\# \\
+  \hline
+  \textbf{Title} & A small Compute instance \\
+  \hline
+\end{tabular}
+\end{center}
+\textbf{Applies to}:
+\begin{itemize}
+	\item Compute (http://schemas.ogf.org/occi/infrastructure\#)
+\end{itemize}
+\textbf{Depends on}:
+\begin{itemize}
+	\item Resource\_Tpl (http://schemas.ogf.org/occi/infrastructure\#)
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{Small} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.compute.cores & Core & false & true & 1 & Number of CPU cores assigned to the instance \\
+  \hline
+  occi.compute.memory & GiB & false & true & 1.0 & Maximum RAM in gigabytes allocated to the instance \\
+  \hline
+  occi.compute.ephemeral.storage.size & GiB & true & false & 10.0 & Ephemeral storage provisioned for the associated Compute instance \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+\subsubsection{\texttt{Medium} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Medium \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure/compute/template/1.1\# \\
+  \hline
+  \textbf{Title} & A medium Compute instance \\
+  \hline
+\end{tabular}
+\end{center}
+\textbf{Applies to}:
+\begin{itemize}
+	\item Compute (http://schemas.ogf.org/occi/infrastructure\#)
+\end{itemize}
+\textbf{Depends on}:
+\begin{itemize}
+	\item Resource\_Tpl (http://schemas.ogf.org/occi/infrastructure\#)
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{Medium} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.compute.cores & Core & false & true & 2 & Number of CPU cores assigned to the instance \\
+  \hline
+  occi.compute.memory & GiB & false & true & 2.0 & Maximum RAM in gigabytes allocated to the instance \\
+  \hline
+  occi.compute.ephemeral.storage.size & GiB & true & false & 20.0 & Ephemeral storage provisioned for the associated Compute instance \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+\subsubsection{\texttt{Large} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Large \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure/compute/template/1.1\# \\
+  \hline
+  \textbf{Title} & A large Compute instance \\
+  \hline
+\end{tabular}
+\end{center}
+\textbf{Applies to}:
+\begin{itemize}
+	\item Compute (http://schemas.ogf.org/occi/infrastructure\#)
+\end{itemize}
+\textbf{Depends on}:
+\begin{itemize}
+	\item Resource\_Tpl (http://schemas.ogf.org/occi/infrastructure\#)
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{Large} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.compute.cores & Core & false & true & 4 & Number of CPU cores assigned to the instance \\
+  \hline
+  occi.compute.memory & GiB & false & true & 4.0 & Maximum RAM in gigabytes allocated to the instance \\
+  \hline
+  occi.compute.ephemeral.storage.size & GiB & true & false & 40.0 & Ephemeral storage provisioned for the associated Compute instance \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+\subsubsection{\texttt{Mem\_Small} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Mem\_Small \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure/compute/template/1.1\# \\
+  \hline
+  \textbf{Title} & A small Compute instance for memory-intensive applications \\
+  \hline
+\end{tabular}
+\end{center}
+\textbf{Applies to}:
+\begin{itemize}
+	\item Compute (http://schemas.ogf.org/occi/infrastructure\#)
+\end{itemize}
+\textbf{Depends on}:
+\begin{itemize}
+	\item Resource\_Tpl (http://schemas.ogf.org/occi/infrastructure\#)
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{Mem\_Small} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.compute.cores & Core & false & true & 1 & Number of CPU cores assigned to the instance \\
+  \hline
+  occi.compute.memory & GiB & false & true & 4.0 & Maximum RAM in gigabytes allocated to the instance \\
+  \hline
+  occi.compute.ephemeral.storage.size & GiB & true & false & 10.0 & Ephemeral storage provisioned for the associated Compute instance \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+\subsubsection{\texttt{Mem\_Medium} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Mem\_Medium \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure/compute/template/1.1\# \\
+  \hline
+  \textbf{Title} & A medium Compute instance for memory-intensive applications \\
+  \hline
+\end{tabular}
+\end{center}
+\textbf{Applies to}:
+\begin{itemize}
+	\item Compute (http://schemas.ogf.org/occi/infrastructure\#)
+\end{itemize}
+\textbf{Depends on}:
+\begin{itemize}
+	\item Resource\_Tpl (http://schemas.ogf.org/occi/infrastructure\#)
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{Mem\_Medium} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.compute.cores & Core & false & true & 2 & Number of CPU cores assigned to the instance \\
+  \hline
+  occi.compute.memory & GiB & false & true & 8.0 & Maximum RAM in gigabytes allocated to the instance \\
+  \hline
+  occi.compute.ephemeral.storage.size & GiB & true & false & 20.0 & Ephemeral storage provisioned for the associated Compute instance \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+\subsubsection{\texttt{Mem\_Large} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Mem\_Large \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure/compute/template/1.1\# \\
+  \hline
+  \textbf{Title} & A large Compute instance for memory-intensive applications \\
+  \hline
+\end{tabular}
+\end{center}
+\textbf{Applies to}:
+\begin{itemize}
+	\item Compute (http://schemas.ogf.org/occi/infrastructure\#)
+\end{itemize}
+\textbf{Depends on}:
+\begin{itemize}
+	\item Resource\_Tpl (http://schemas.ogf.org/occi/infrastructure\#)
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{Mem\_Large} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.compute.cores & Core & false & true & 4 & Number of CPU cores assigned to the instance \\
+  \hline
+  occi.compute.memory & GiB & false & true & 16.0 & Maximum RAM in gigabytes allocated to the instance \\
+  \hline
+  occi.compute.ephemeral.storage.size & GiB & true & false & 40.0 & Ephemeral storage provisioned for the associated Compute instance \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
