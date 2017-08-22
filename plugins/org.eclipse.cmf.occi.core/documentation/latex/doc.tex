@@ -1,0 +1,106 @@
+\section{OCCI core extension}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & core \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/core\# \\
+  \hline
+  \textbf{Specification} & https://www.ogf.org/documents/GFD.221.pdf \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsection{Description}
+OCCI Core Model
+
+
+\subsection{Specification}
+The specification of OCCI Core extension is available here: https://www.ogf.org/documents/GFD.221.pdf.
+\subsection{Kinds}
+\subsubsection{\texttt{Entity} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Entity \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/core\# \\
+  \hline
+  \textbf{Title} & Entity type \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Entity} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.core.id & String & true & false &  & The unique identity of the instance. \\
+  \hline
+  occi.core.title & String & false & true &  & The display name of the instance. \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+\subsubsection{\texttt{Resource} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Resource \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/core\# \\
+  \hline
+  \textbf{Title} & Resource type \\
+  \hline
+  \textbf{Parent} & Entity (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Resource} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.core.summary & String & false & true &  & A summarizing description of the Resource instance. \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+\subsubsection{\texttt{Link} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Link \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/core\# \\
+  \hline
+  \textbf{Title} & Link type \\
+  \hline
+  \textbf{Parent} & Entity (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Types}
+\subsubsection{\texttt{String} type}
+Data type for strings
+\begin{itemize}
+\item \textbf{Basic type:} String
+\end{itemize}
+\subsubsection{\texttt{Boolean} type}
+Data type for booleans
+\begin{itemize}
+\item \textbf{Basic type:} Boolean
+\end{itemize}
+\subsubsection{\texttt{Integer} type}
+Data type for integers
+\begin{itemize}
+\item \textbf{Basic type:} Integer
+\end{itemize}
