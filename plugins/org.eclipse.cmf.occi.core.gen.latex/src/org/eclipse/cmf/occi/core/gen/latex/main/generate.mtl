@@ -16,7 +16,7 @@
 [/template] 
 
 [template public generateLatexDoc(extension : Extension)]
-[file ('latex/'+extension.name+'_main.tex', false, 'UTF-8')]
+[file ('latex/'+extension.name+'.tex', false, 'UTF-8')]
 \documentclass{article}
 \usepackage{geometry}
 \usepackage{tabularx}
@@ -30,14 +30,14 @@
 
 \maketitle % Insert the title, author and date
 \newpage
-\input{[extension.name/]}
+\input{doc}
 \end{document}
 [/file]
 [/template]
 
 
 [template public generateExtension(extension : Extension)]
-[file ('latex/'+extension.name+'.tex', false, 'UTF-8')]
+[file ('latex/doc.tex', false, 'UTF-8')]
 \section{OCCI [extension.name.cutomize()/] extension}
 \begin{center}
 \begin{tabular}{|l|l|}
