@@ -1,0 +1,170 @@
+\section{OCCI monitoring extension}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & monitoring \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/monitoring\# \\
+  \hline
+  \textbf{Specification} & https://redmine.ogf.org/attachments/182/monitoring.pdf \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsection{Description}
+OCCI Monitoring Extension allows the user to create a monitoring infrastructure for a cloud provision.
+\subsection{Imported OCCI extensions}
+
+\begin{center} 
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & core \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/core\# \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Specification}
+The specification of OCCI Monitoring extension is available here: https://redmine.ogf.org/attachments/182/monitoring.pdf.
+\subsection{Kinds}
+\subsubsection{\texttt{Sensor} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Sensor \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/monitoring\# \\
+  \hline
+  \textbf{Title} & Sensor Resource \\
+  \hline
+  \textbf{Parent} & Resource (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Sensor} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.sensor.timebase & DateTime & false & true &  & Base time reference (ISO8601) \\
+  \hline
+  occi.sensor.timestart & Second & false & true &  & Start time offset (seconds) \\
+  \hline
+  occi.sensor.timestop & Second & false & true &  & Stop time offset (seconds) \\
+  \hline
+  occi.sensor.period & Second & true & true &  & Time between two following measurements (seconds) \\
+  \hline
+  occi.sensor.granularity & Second & false & true &  & Granularity of time measument (seconds) \\
+  \hline
+  occi.sensor.accuracy & Second & false & true &  & Accuracy of time measument (seconds) \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+\subsubsection{\texttt{Collector} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Collector \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/monitoring\# \\
+  \hline
+  \textbf{Title} & Collector Link \\
+  \hline
+  \textbf{Parent} & Link (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Collector} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.collector.period & Second & true & true &  & Time between two following measurements (seconds) \\
+  \hline
+  occi.sensor.accuracy & Second & false & true &  & Accuracy of time measument (seconds) \\
+  \hline
+  occi.sensor.granularity & Second & false & true &  & Granularity of time measument (seconds) \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+\subsection{Mixins}
+\subsubsection{\texttt{Metric} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Metric \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/monitoring\# \\
+  \hline
+  \textbf{Title} & Metric Mixin \\
+  \hline
+\end{tabular}
+\end{center}
+\textbf{Applies to}:
+\begin{itemize}
+	\item Collector (http://schemas.ogf.org/occi/monitoring\#)
+\end{itemize}
+
+
+
+\subsubsection{\texttt{Aggregator} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Aggregator \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/monitoring\# \\
+  \hline
+  \textbf{Title} & Aggregator Mixin \\
+  \hline
+\end{tabular}
+\end{center}
+\textbf{Applies to}:
+\begin{itemize}
+	\item Sensor (http://schemas.ogf.org/occi/monitoring\#)
+\end{itemize}
+
+
+
+\subsubsection{\texttt{Publisher} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Publisher \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/monitoring\# \\
+  \hline
+  \textbf{Title} & Published Mixin \\
+  \hline
+\end{tabular}
+\end{center}
+\textbf{Applies to}:
+\begin{itemize}
+	\item Sensor (http://schemas.ogf.org/occi/monitoring\#)
+\end{itemize}
+
+
+
+\subsection{Types}
+\subsubsection{\texttt{Second} type}
+
+\begin{itemize}
+\item \textbf{Basic type:} Integer
+	\item \textbf{minInclusive:} 0
+\end{itemize}
+\subsubsection{\texttt{DateTime} type}
+
+\begin{itemize}
+\item \textbf{Basic type:} String
+	\item \textbf{pattern:} \begin{verbatim}^(\d{4}((-)?(0[1-9]|1[0-2])((-)?(0[1-9]|[1-2][0-9]|3[0-1])(T(24:00(:00(\.[0]+)?)?|(([0-1][0-9]|2[0-3])(:)[0-5][0-9])((:)[0-5][0-9](\.[\d]+)?)?)((\+|-)(14:00|(0[0-9]|1[0-3])(:)[0-5][0-9])|Z))?)?)?)$\end{verbatim}
+\end{itemize}
