@@ -1,0 +1,271 @@
+\section{OCCI platform extension}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & platform \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/platform\# \\
+  \hline
+  \textbf{Specification} & https://www.ogf.org/documents/GFD.227.pdf \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsection{Description}
+OCCI Platform Extension, version 1.2.
+\subsection{Imported OCCI extensions}
+
+\begin{center} 
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & core \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/core\# \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Specification}
+The specification of OCCI Platform extension is available here: https://www.ogf.org/documents/GFD.227.pdf.
+\subsection{Kinds}
+\subsubsection{\texttt{Application} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Application \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/platform\# \\
+  \hline
+  \textbf{Title} & Application \\
+  \hline
+  \textbf{Parent} & Resource (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Application} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.app.name & String & true & true &  & Name of the application. \\
+  \hline
+  occi.app.context & URL & true & false &  & URL for contextualizing the app. \\
+  \hline
+  occi.app.url & URL & true & false &  & DNS entry. \\
+  \hline
+  occi.app.state & Status & true & false &  & State of the application. \\
+  \hline
+  occi.app.state.message & String & false & false &  & Human-readable explanation of the current instance state. \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{Application} actions}
+
+\begin{itemize}
+	\item \textbf{Scheme}: http://schemas.ogf.org/occi/platform/application/action\#
+\end{itemize}
+\begin{tabularx}{\textwidth}{|l|l|X|}
+  \hline
+  \textbf{Term}  & \textbf{Attributes} & \textbf{Title} \\
+  \hline  
+  start & & Start the application. \\
+  \hline
+  stop & & Stop the application. \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+\subsubsection{\texttt{Component} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Component \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/platform\# \\
+  \hline
+  \textbf{Title} & Component \\
+  \hline
+  \textbf{Parent} & Resource (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Component} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.component.state & Status & true & false &  & State of the component. \\
+  \hline
+  occi.component.state.message & String & false & false &  & Human-readable explanation of the current instance state. \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{Component} actions}
+
+\begin{itemize}
+	\item \textbf{Scheme}: http://schemas.ogf.org/occi/platform/component/action\#
+\end{itemize}
+\begin{tabularx}{\textwidth}{|l|l|X|}
+  \hline
+  \textbf{Term}  & \textbf{Attributes} & \textbf{Title} \\
+  \hline  
+  start & & Start the application. \\
+  \hline
+  stop & & Stop the application. \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+\subsubsection{\texttt{ComponentLink} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & ComponentLink \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/platform\# \\
+  \hline
+  \textbf{Title} & ComponentLink \\
+  \hline
+  \textbf{Parent} & Link (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Mixins}
+\subsubsection{\texttt{App\_Tpl} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & App\_Tpl \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/platform\# \\
+  \hline
+  \textbf{Title} & Application Template \\
+  \hline
+\end{tabular}
+\end{center}
+\textbf{Applies to}:
+\begin{itemize}
+	\item Application (http://schemas.ogf.org/occi/platform\#)
+\end{itemize}
+
+
+
+\subsubsection{\texttt{Res\_Tpl} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Res\_Tpl \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/platform\# \\
+  \hline
+  \textbf{Title} & Resource Template \\
+  \hline
+\end{tabular}
+\end{center}
+\textbf{Applies to}:
+\begin{itemize}
+	\item Application (http://schemas.ogf.org/occi/platform\#)
+	\item Component (http://schemas.ogf.org/occi/platform\#)
+\end{itemize}
+
+
+
+\subsubsection{\texttt{DataBase} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & DataBase \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/platform\# \\
+  \hline
+  \textbf{Title} & Database Mixin \\
+  \hline
+\end{tabular}
+\end{center}
+\textbf{Applies to}:
+\begin{itemize}
+	\item Component (http://schemas.ogf.org/occi/platform\#)
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{DataBase} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.database.version & String & true & false &  & Version of the database. \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+\subsubsection{\texttt{DataBaseLink} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & DataBaseLink \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/platform\# \\
+  \hline
+  \textbf{Title} & Database Link \\
+  \hline
+\end{tabular}
+\end{center}
+\textbf{Applies to}:
+\begin{itemize}
+	\item ComponentLink (http://schemas.ogf.org/occi/platform\#)
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{DataBaseLink} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.database.uri & URI & true & false &  & Connection URI for the database. \\
+  \hline
+  occi.database.username & URI & false & false &  & Username. \\
+  \hline
+  occi.database.token & URI & false & false &  & Token. \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+\subsection{Types}
+\subsubsection{\texttt{URL} type}
+
+\begin{itemize}
+\item \textbf{Basic type:} java.net.URL
+\end{itemize}
+\subsubsection{\texttt{URI} type}
+
+\begin{itemize}
+\item \textbf{Basic type:} java.net.URI
+\end{itemize}
+\subsubsection{\texttt{Status} type}
+
+\textbf{Literals}
+\begin{itemize}
+\item \textbf{active} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{inactive} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{error} 
+\end{itemize}
+
