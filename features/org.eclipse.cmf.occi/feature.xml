@@ -836,11 +836,13 @@ litigation.
       <import feature="org.eclipse.sirius.specifier" version="5.0.0.201706130938"/>
       <import feature="org.eclipse.xtend.sdk" version="2.12.0.v20170519-1412"/>
       <import feature="org.eclipse.xtext.sdk" version="2.12.0.v20170519-1412"/>
-      <import plugin="org.eclipse.jdt.annotation" version="2.1.0"/>
- <!--     <import plugin="org.eclipse.epsilon.emc.emf" version="1.4.0"/>
+ <!--      <import plugin="org.eclipse.jdt.annotation" version="2.1.0"/>
+     <import plugin="org.eclipse.epsilon.emc.emf" version="1.4.0"/>
       <import plugin="org.eclipse.epsilon.emc.emf.dt" version="1.4.0"/>
       <import plugin="org.eclipse.epsilon.emf.dt" version="1.4.0"/> -->
-
+      
+      <import feature="org.eclipse.pde" version="3.13.0.v20170612-0950"/>
+      <import feature="org.eclipse.sdk" version="4.7.0.v20170612-1255"/>
 
       <import feature="org.eclipse.ocl.all.sdk" version="5.3.0.v20170607-1133"/>
       <import feature="org.eclipse.ocl.examples" version="6.3.0.v20170613-1432"/>
