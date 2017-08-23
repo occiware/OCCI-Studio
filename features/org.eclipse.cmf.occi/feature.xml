@@ -841,10 +841,9 @@ litigation.
       <import plugin="org.eclipse.epsilon.emc.emf.dt" version="1.4.0"/>
       <import plugin="org.eclipse.epsilon.emf.dt" version="1.4.0"/> -->
 
-<!-- Previously required OCL features. 
-      <import feature="org.eclipse.ocl.all.sdk" version="5.1.0.v20150608-1714"/>
-      <import feature="org.eclipse.ocl.examples" version="6.0.0.v20150608-1714"/>
--->
+
+      <import feature="org.eclipse.ocl.all.sdk" version="5.3.0.v20170607-1133"/>
+      <import feature="org.eclipse.ocl.examples" version="6.3.0.v20170613-1432"/>
 <!--
 OCL features installed in the Faiez’s Eclipse:
 org.eclipse.ocl (3.7.0.v20170219-1911) "OCL for Ecore"                     -> REQUIRED for compiling EMF generated code.
@@ -859,9 +858,9 @@ org.eclipse.ocl.tests (5.1.0.v20150609-0403) "OCL Test Support"            -> NO
 org.eclipse.ocl.ui (2.2.0.v20170120-1018) "OCL User Interface"             -> USELESS for compiling EMF generated code.
 org.eclipse.ocl.uml (5.3.0.v20170219-1911) "OCL for UML"                   -> USELESS for compiling EMF generated code. 
 -->
-
+<!--
     <import feature="org.eclipse.ocl" version="3.7.0.v20170219-1911"/>
-
+ -->
 <!-- TODO: remove previous list of required features
       <import feature="org.eclipse.emf.compare.ide.ui" version="3.1.0.201506080833"/>
       <import feature="org.eclipse.pde" version="3.11.0.v20150603-2000"/>
