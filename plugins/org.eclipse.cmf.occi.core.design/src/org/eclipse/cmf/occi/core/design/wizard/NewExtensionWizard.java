@@ -69,6 +69,8 @@ import com.google.common.base.Strings;
  *         <a href="mailto:william.piers@obeo.fr">william.piers@obeo.fr</a>
  * @author Philippe Merle
  *         <a href="mailto:philippe.merle@inria.fr">philippe.merle@inria.fr</a>
+ * @author Faiez Zalila
+ *         <a href="mailto:faiez.zalila@inria.fr">faiez.zalila@inria.fr</a>
  */
 public class NewExtensionWizard extends BasicNewProjectResourceWizard {
 
@@ -326,7 +328,7 @@ public class NewExtensionWizard extends BasicNewProjectResourceWizard {
 				+ "Bundle-Version: 1.0.0.qualifier\n" + "Bundle-ClassPath: .\n" + "Bundle-Vendor: OCCIware\n" +
 				// "Bundle-Localization: plugin\n" + // FIXME: require to
 				// generate plugin.properties
-				"Bundle-RequiredExecutionEnvironment: JavaSE-1.7\n" + "Bundle-ActivationPolicy: lazy\n"
+				"Bundle-RequiredExecutionEnvironment: JavaSE-1.8\n" + "Bundle-ActivationPolicy: lazy\n"
 				+ "Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,\n"
 				+ " org.eclipse.cmf.occi.core;visibility:=reexport,\n" + " org.eclipse.cmf.occi.core.ui,\n"
 				+ " org.eclipse.cmf.occi.core.gen.emf.ui\n";
@@ -334,7 +336,7 @@ public class NewExtensionWizard extends BasicNewProjectResourceWizard {
 
 		IFile pluginXML = PDEProject.getPluginXml(project);
 		String pluginContent = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + "<?eclipse version=\"3.0\"?>\n"
-				+ "<!--\n" + " Copyright (c) 2015-2016 Obeo, Inria\n"
+				+ "<!--\n" + " Copyright (c) 2015-2017 Obeo, Inria\n"
 				+ " All rights reserved. This program and the accompanying materials\n"
 				+ " are made available under the terms of the Eclipse Public License v1.0\n"
 				+ " which accompanies this distribution, and is available at\n"
@@ -366,7 +368,7 @@ public class NewExtensionWizard extends BasicNewProjectResourceWizard {
 		pluginXML.create(new ByteArrayInputStream(pluginContent.getBytes()), true, monitor);
 
 		IFile build = PDEProject.getBuildProperties(project);
-		String buildContent = "# Copyright (c) 2015-2016 Obeo, Inria\n"
+		String buildContent = "# Copyright (c) 2015-2017 Obeo, Inria\n"
 				+ "# All rights reserved. This program and the accompanying materials\n"
 				+ "# are made available under the terms of the Eclipse Public License v1.0\n"
 				+ "# which accompanies this distribution, and is available at\n"
