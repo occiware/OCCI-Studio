@@ -17,10 +17,16 @@
 
 [template public generateExtension(extension : Extension)]
 [file ('textile/'+extension.name+'.textile', false, 'UTF-8')]
-h1. [extension.description/]
+h1. OCCI [extension.name/] extension
+
+[extension.description/]
 
 | *Name* | [extension.name/] |
 | *Scheme* | [extension.scheme/] |
+[if (not extension.specification.oclIsUndefined())]
+[if extension.specification.trim() <> '']
+| *Specification* | [extension.specification/] |[/if][/if]
+
 [if extension.import->size() <> 0]
 
 Imported OCCI Extensions:
