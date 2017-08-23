@@ -1,7 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: org.eclipse.cmf.occi.core.xtext.ui.tests
-Bundle-Vendor: My Company
+Bundle-Localization: plugin
+Bundle-Name: %pluginName
+Bundle-Vendor: %providerName
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.eclipse.cmf.occi.core.xtext.ui.tests; singleton:=true
 Bundle-ActivationPolicy: lazy
