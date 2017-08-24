@@ -14,7 +14,9 @@ Require-Bundle: org.eclipse.cmf.occi.core;bundle-version="1.0.0",
  org.antlr.runtime,
  org.eclipse.xtext.util,
  org.eclipse.xtend.lib,
- org.eclipse.xtext.generator
+ org.eclipse.xtext.generator,
+ org.eclipse.emf.mwe2.launch,
+ org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.eclipse.cmf.occi.core.xtext.parser.antlr,
  org.eclipse.cmf.occi.core.xtext,
