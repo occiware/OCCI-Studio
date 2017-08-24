@@ -14,6 +14,8 @@ package org.eclipse.cmf.occi.core.xtext.services;
 
 import com.google.common.base.Objects;
 import org.eclipse.cmf.occi.core.Action;
+import org.eclipse.cmf.occi.core.Kind;
+import org.eclipse.cmf.occi.core.Mixin;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -47,6 +49,12 @@ public class OCCITransientValueService extends DefaultTransientValueService {
     if (_equals_3) {
       EObject _eContainer_1 = owner.eContainer();
       if ((_eContainer_1 instanceof Action)) {
+        return true;
+      }
+    }
+    boolean _equals_4 = Objects.equal(feature, OCCIPackage.Literals.CATEGORY__SCHEME);
+    if (_equals_4) {
+      if ((((owner instanceof Action) || (owner instanceof Kind)) || (owner instanceof Mixin))) {
         return true;
       }
     }

@@ -143,13 +143,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Action returns Action
 	 *
 	 * Constraint:
-	 *     (
-	 *         name=NameID 
-	 *         (attributes+=ParameterDecl attributes+=ParameterDecl*)? 
-	 *         scheme=STRING 
-	 *         title=STRING? 
-	 *         (annotations+=Annotation annotations+=Annotation*)?
-	 *     )
+	 *     (name=NameID (attributes+=ParameterDecl attributes+=ParameterDecl*)? title=STRING? (annotations+=Annotation annotations+=Annotation*)?)
 	 */
 	protected void sequence_Action(ISerializationContext context, org.eclipse.cmf.occi.core.Action semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -350,7 +344,6 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         source=[Kind|QualifiedID]? 
 	 *         target=[Kind|QualifiedID]? 
 	 *         title=STRING? 
-	 *         scheme=STRING 
 	 *         (attributes+=Attribute | actions+=Action | constraints+=Constraint)* 
 	 *         fsm=FSM? 
 	 *         (annotations+=Annotation annotations+=Annotation*)?
@@ -403,7 +396,6 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         (depends+=[Mixin|QualifiedID] depends+=[Mixin|QualifiedID]*)? 
 	 *         (applies+=[Kind|QualifiedID] applies+=[Kind|QualifiedID]*)? 
 	 *         title=STRING? 
-	 *         scheme=STRING 
 	 *         (attributes+=Attribute | actions+=Action | constraints+=Constraint)* 
 	 *         fsm=FSM? 
 	 *         (annotations+=Annotation annotations+=Annotation*)?

@@ -13,8 +13,13 @@
 package org.eclipse.cmf.occi.core.xtext.services;
 
 import com.google.common.base.Objects;
+import org.eclipse.cmf.occi.core.Action;
+import org.eclipse.cmf.occi.core.Category;
 import org.eclipse.cmf.occi.core.Configuration;
+import org.eclipse.cmf.occi.core.Extension;
+import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.core.Mixin;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.emf.common.util.EList;
@@ -27,6 +32,8 @@ import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.resource.DerivedStateAwareResource;
 import org.eclipse.xtext.resource.IDerivedStateComputer;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
 @SuppressWarnings("all")
 public class OCCIDerivedStateComputer implements IDerivedStateComputer {
@@ -91,6 +98,45 @@ public class OCCIDerivedStateComputer implements IDerivedStateComputer {
         }
       }
     }
+    final Procedure1<EObject> _function = (EObject r) -> {
+      if ((r instanceof Kind)) {
+        final Kind kind = ((Kind) r);
+        String _scheme = kind.getScheme();
+        boolean _tripleEquals = (_scheme == null);
+        if (_tripleEquals) {
+          EObject _eContainer = kind.eContainer();
+          kind.setScheme(((Extension) _eContainer).getScheme());
+        }
+      }
+      if ((r instanceof Mixin)) {
+        final Mixin mixin = ((Mixin) r);
+        String _scheme_1 = mixin.getScheme();
+        boolean _tripleEquals_1 = (_scheme_1 == null);
+        if (_tripleEquals_1) {
+          EObject _eContainer_1 = mixin.eContainer();
+          mixin.setScheme(((Extension) _eContainer_1).getScheme());
+        }
+      }
+      if ((r instanceof Action)) {
+        final Action action = ((Action) r);
+        String _scheme_2 = action.getScheme();
+        boolean _tripleEquals_2 = (_scheme_2 == null);
+        if (_tripleEquals_2) {
+          EObject _eContainer_2 = action.eContainer();
+          final Category ownerCategory = ((Category) _eContainer_2);
+          String _scheme_3 = ownerCategory.getScheme();
+          int _length = ownerCategory.getScheme().length();
+          int _minus = (_length - 1);
+          String _substring = _scheme_3.substring(0, _minus);
+          String _plus = (_substring + "/");
+          String _term = ownerCategory.getTerm();
+          String _plus_1 = (_plus + _term);
+          String _plus_2 = (_plus_1 + "/action#");
+          action.setScheme(_plus_2);
+        }
+      }
+    };
+    IteratorExtensions.<EObject>forEach(resource.getAllContents(), _function);
   }
   
   public EObject getEObjectfromEProxy(final EObject model, final EObject target) {

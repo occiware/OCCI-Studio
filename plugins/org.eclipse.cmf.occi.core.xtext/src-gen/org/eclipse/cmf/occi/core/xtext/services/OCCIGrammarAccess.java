@@ -650,37 +650,33 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTitleAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
 		private final RuleCall cTitleSTRINGTerminalRuleCall_5_2_0 = (RuleCall)cTitleAssignment_5_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
-		private final Keyword cSchemeKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cSchemeAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cSchemeSTRINGTerminalRuleCall_7_0 = (RuleCall)cSchemeAssignment_7.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cLeftCurlyBracketKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Alternatives cAlternatives_6_1 = (Alternatives)cGroup_6.eContents().get(1);
+		private final Assignment cAttributesAssignment_6_1_0 = (Assignment)cAlternatives_6_1.eContents().get(0);
+		private final RuleCall cAttributesAttributeParserRuleCall_6_1_0_0 = (RuleCall)cAttributesAssignment_6_1_0.eContents().get(0);
+		private final Assignment cActionsAssignment_6_1_1 = (Assignment)cAlternatives_6_1.eContents().get(1);
+		private final RuleCall cActionsActionParserRuleCall_6_1_1_0 = (RuleCall)cActionsAssignment_6_1_1.eContents().get(0);
+		private final Assignment cConstraintsAssignment_6_1_2 = (Assignment)cAlternatives_6_1.eContents().get(2);
+		private final RuleCall cConstraintsConstraintParserRuleCall_6_1_2_0 = (RuleCall)cConstraintsAssignment_6_1_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
+		private final Assignment cFsmAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cFsmFSMParserRuleCall_7_0 = (RuleCall)cFsmAssignment_7.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cLeftCurlyBracketKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Alternatives cAlternatives_8_1 = (Alternatives)cGroup_8.eContents().get(1);
-		private final Assignment cAttributesAssignment_8_1_0 = (Assignment)cAlternatives_8_1.eContents().get(0);
-		private final RuleCall cAttributesAttributeParserRuleCall_8_1_0_0 = (RuleCall)cAttributesAssignment_8_1_0.eContents().get(0);
-		private final Assignment cActionsAssignment_8_1_1 = (Assignment)cAlternatives_8_1.eContents().get(1);
-		private final RuleCall cActionsActionParserRuleCall_8_1_1_0 = (RuleCall)cActionsAssignment_8_1_1.eContents().get(0);
-		private final Assignment cConstraintsAssignment_8_1_2 = (Assignment)cAlternatives_8_1.eContents().get(2);
-		private final RuleCall cConstraintsConstraintParserRuleCall_8_1_2_0 = (RuleCall)cConstraintsAssignment_8_1_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_8_2 = (Keyword)cGroup_8.eContents().get(2);
-		private final Assignment cFsmAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cFsmFSMParserRuleCall_9_0 = (RuleCall)cFsmAssignment_9.eContents().get(0);
-		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
-		private final Keyword cAnnotationsKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
-		private final Assignment cAnnotationsAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
-		private final RuleCall cAnnotationsAnnotationParserRuleCall_10_2_0 = (RuleCall)cAnnotationsAssignment_10_2.eContents().get(0);
-		private final Group cGroup_10_3 = (Group)cGroup_10.eContents().get(3);
-		private final Keyword cCommaKeyword_10_3_0 = (Keyword)cGroup_10_3.eContents().get(0);
-		private final Assignment cAnnotationsAssignment_10_3_1 = (Assignment)cGroup_10_3.eContents().get(1);
-		private final RuleCall cAnnotationsAnnotationParserRuleCall_10_3_1_0 = (RuleCall)cAnnotationsAssignment_10_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_10_4 = (Keyword)cGroup_10.eContents().get(4);
+		private final Keyword cAnnotationsKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Assignment cAnnotationsAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cAnnotationsAnnotationParserRuleCall_8_2_0 = (RuleCall)cAnnotationsAssignment_8_2.eContents().get(0);
+		private final Group cGroup_8_3 = (Group)cGroup_8.eContents().get(3);
+		private final Keyword cCommaKeyword_8_3_0 = (Keyword)cGroup_8_3.eContents().get(0);
+		private final Assignment cAnnotationsAssignment_8_3_1 = (Assignment)cGroup_8_3.eContents().get(1);
+		private final RuleCall cAnnotationsAnnotationParserRuleCall_8_3_1_0 = (RuleCall)cAnnotationsAssignment_8_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8_4 = (Keyword)cGroup_8.eContents().get(4);
 		
 		//Kind:
 		//	'kind'
 		//	name=NameID ('extends' parent=[Kind|QualifiedID])? ('source' source=[Kind|QualifiedID])? ('target'
-		//	target=[Kind|QualifiedID])? ('(' 'title' title=STRING ')')?
-		//	'scheme' scheme=STRING ('{' (attributes+=Attribute
+		//	target=[Kind|QualifiedID])? ('(' 'title' title=STRING ')')? ('{' (attributes+=Attribute
 		//	| actions+=Action
 		//	| constraints+=Constraint)+
 		//	'}')?
@@ -688,9 +684,9 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'kind' name=NameID ('extends' parent=[Kind|QualifiedID])? ('source' source=[Kind|QualifiedID])? ('target'
-		//target=[Kind|QualifiedID])? ('(' 'title' title=STRING ')')? 'scheme' scheme=STRING ('{' (attributes+=Attribute |
-		//actions+=Action | constraints+=Constraint)+ '}')? fsm=FSM? ('annotations' '{' annotations+=Annotation (","
-		//annotations+=Annotation)* '}')?
+		//target=[Kind|QualifiedID])? ('(' 'title' title=STRING ')')? ('{' (attributes+=Attribute | actions+=Action |
+		//constraints+=Constraint)+ '}')? fsm=FSM? ('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)*
+		//'}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'kind'
@@ -765,80 +761,71 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//')'
 		public Keyword getRightParenthesisKeyword_5_3() { return cRightParenthesisKeyword_5_3; }
 		
-		//'scheme'
-		public Keyword getSchemeKeyword_6() { return cSchemeKeyword_6; }
-		
-		//scheme=STRING
-		public Assignment getSchemeAssignment_7() { return cSchemeAssignment_7; }
-		
-		//STRING
-		public RuleCall getSchemeSTRINGTerminalRuleCall_7_0() { return cSchemeSTRINGTerminalRuleCall_7_0; }
-		
 		//('{' (attributes+=Attribute | actions+=Action | constraints+=Constraint)+ '}')?
-		public Group getGroup_8() { return cGroup_8; }
+		public Group getGroup_6() { return cGroup_6; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_8_0() { return cLeftCurlyBracketKeyword_8_0; }
+		public Keyword getLeftCurlyBracketKeyword_6_0() { return cLeftCurlyBracketKeyword_6_0; }
 		
 		//(attributes+=Attribute | actions+=Action | constraints+=Constraint)+
-		public Alternatives getAlternatives_8_1() { return cAlternatives_8_1; }
+		public Alternatives getAlternatives_6_1() { return cAlternatives_6_1; }
 		
 		//attributes+=Attribute
-		public Assignment getAttributesAssignment_8_1_0() { return cAttributesAssignment_8_1_0; }
+		public Assignment getAttributesAssignment_6_1_0() { return cAttributesAssignment_6_1_0; }
 		
 		//Attribute
-		public RuleCall getAttributesAttributeParserRuleCall_8_1_0_0() { return cAttributesAttributeParserRuleCall_8_1_0_0; }
+		public RuleCall getAttributesAttributeParserRuleCall_6_1_0_0() { return cAttributesAttributeParserRuleCall_6_1_0_0; }
 		
 		//actions+=Action
-		public Assignment getActionsAssignment_8_1_1() { return cActionsAssignment_8_1_1; }
+		public Assignment getActionsAssignment_6_1_1() { return cActionsAssignment_6_1_1; }
 		
 		//Action
-		public RuleCall getActionsActionParserRuleCall_8_1_1_0() { return cActionsActionParserRuleCall_8_1_1_0; }
+		public RuleCall getActionsActionParserRuleCall_6_1_1_0() { return cActionsActionParserRuleCall_6_1_1_0; }
 		
 		//constraints+=Constraint
-		public Assignment getConstraintsAssignment_8_1_2() { return cConstraintsAssignment_8_1_2; }
+		public Assignment getConstraintsAssignment_6_1_2() { return cConstraintsAssignment_6_1_2; }
 		
 		//Constraint
-		public RuleCall getConstraintsConstraintParserRuleCall_8_1_2_0() { return cConstraintsConstraintParserRuleCall_8_1_2_0; }
+		public RuleCall getConstraintsConstraintParserRuleCall_6_1_2_0() { return cConstraintsConstraintParserRuleCall_6_1_2_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_8_2() { return cRightCurlyBracketKeyword_8_2; }
+		public Keyword getRightCurlyBracketKeyword_6_2() { return cRightCurlyBracketKeyword_6_2; }
 		
 		//fsm=FSM?
-		public Assignment getFsmAssignment_9() { return cFsmAssignment_9; }
+		public Assignment getFsmAssignment_7() { return cFsmAssignment_7; }
 		
 		//FSM
-		public RuleCall getFsmFSMParserRuleCall_9_0() { return cFsmFSMParserRuleCall_9_0; }
+		public RuleCall getFsmFSMParserRuleCall_7_0() { return cFsmFSMParserRuleCall_7_0; }
 		
 		//('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?
-		public Group getGroup_10() { return cGroup_10; }
+		public Group getGroup_8() { return cGroup_8; }
 		
 		//'annotations'
-		public Keyword getAnnotationsKeyword_10_0() { return cAnnotationsKeyword_10_0; }
+		public Keyword getAnnotationsKeyword_8_0() { return cAnnotationsKeyword_8_0; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_10_1() { return cLeftCurlyBracketKeyword_10_1; }
+		public Keyword getLeftCurlyBracketKeyword_8_1() { return cLeftCurlyBracketKeyword_8_1; }
 		
 		//annotations+=Annotation
-		public Assignment getAnnotationsAssignment_10_2() { return cAnnotationsAssignment_10_2; }
+		public Assignment getAnnotationsAssignment_8_2() { return cAnnotationsAssignment_8_2; }
 		
 		//Annotation
-		public RuleCall getAnnotationsAnnotationParserRuleCall_10_2_0() { return cAnnotationsAnnotationParserRuleCall_10_2_0; }
+		public RuleCall getAnnotationsAnnotationParserRuleCall_8_2_0() { return cAnnotationsAnnotationParserRuleCall_8_2_0; }
 		
 		//("," annotations+=Annotation)*
-		public Group getGroup_10_3() { return cGroup_10_3; }
+		public Group getGroup_8_3() { return cGroup_8_3; }
 		
 		//","
-		public Keyword getCommaKeyword_10_3_0() { return cCommaKeyword_10_3_0; }
+		public Keyword getCommaKeyword_8_3_0() { return cCommaKeyword_8_3_0; }
 		
 		//annotations+=Annotation
-		public Assignment getAnnotationsAssignment_10_3_1() { return cAnnotationsAssignment_10_3_1; }
+		public Assignment getAnnotationsAssignment_8_3_1() { return cAnnotationsAssignment_8_3_1; }
 		
 		//Annotation
-		public RuleCall getAnnotationsAnnotationParserRuleCall_10_3_1_0() { return cAnnotationsAnnotationParserRuleCall_10_3_1_0; }
+		public RuleCall getAnnotationsAnnotationParserRuleCall_8_3_1_0() { return cAnnotationsAnnotationParserRuleCall_8_3_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_10_4() { return cRightCurlyBracketKeyword_10_4; }
+		public Keyword getRightCurlyBracketKeyword_8_4() { return cRightCurlyBracketKeyword_8_4; }
 	}
 	public class MixinElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.Mixin");
@@ -876,37 +863,34 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTitleAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
 		private final RuleCall cTitleSTRINGTerminalRuleCall_4_2_0 = (RuleCall)cTitleAssignment_4_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_4_3 = (Keyword)cGroup_4.eContents().get(3);
-		private final Keyword cSchemeKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cSchemeAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cSchemeSTRINGTerminalRuleCall_6_0 = (RuleCall)cSchemeAssignment_6.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cLeftCurlyBracketKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Alternatives cAlternatives_5_1 = (Alternatives)cGroup_5.eContents().get(1);
+		private final Assignment cAttributesAssignment_5_1_0 = (Assignment)cAlternatives_5_1.eContents().get(0);
+		private final RuleCall cAttributesAttributeParserRuleCall_5_1_0_0 = (RuleCall)cAttributesAssignment_5_1_0.eContents().get(0);
+		private final Assignment cActionsAssignment_5_1_1 = (Assignment)cAlternatives_5_1.eContents().get(1);
+		private final RuleCall cActionsActionParserRuleCall_5_1_1_0 = (RuleCall)cActionsAssignment_5_1_1.eContents().get(0);
+		private final Assignment cConstraintsAssignment_5_1_2 = (Assignment)cAlternatives_5_1.eContents().get(2);
+		private final RuleCall cConstraintsConstraintParserRuleCall_5_1_2_0 = (RuleCall)cConstraintsAssignment_5_1_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
+		private final Assignment cFsmAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cFsmFSMParserRuleCall_6_0 = (RuleCall)cFsmAssignment_6.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cLeftCurlyBracketKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Alternatives cAlternatives_7_1 = (Alternatives)cGroup_7.eContents().get(1);
-		private final Assignment cAttributesAssignment_7_1_0 = (Assignment)cAlternatives_7_1.eContents().get(0);
-		private final RuleCall cAttributesAttributeParserRuleCall_7_1_0_0 = (RuleCall)cAttributesAssignment_7_1_0.eContents().get(0);
-		private final Assignment cActionsAssignment_7_1_1 = (Assignment)cAlternatives_7_1.eContents().get(1);
-		private final RuleCall cActionsActionParserRuleCall_7_1_1_0 = (RuleCall)cActionsAssignment_7_1_1.eContents().get(0);
-		private final Assignment cConstraintsAssignment_7_1_2 = (Assignment)cAlternatives_7_1.eContents().get(2);
-		private final RuleCall cConstraintsConstraintParserRuleCall_7_1_2_0 = (RuleCall)cConstraintsAssignment_7_1_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7_2 = (Keyword)cGroup_7.eContents().get(2);
-		private final Assignment cFsmAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cFsmFSMParserRuleCall_8_0 = (RuleCall)cFsmAssignment_8.eContents().get(0);
-		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cAnnotationsKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
-		private final Assignment cAnnotationsAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
-		private final RuleCall cAnnotationsAnnotationParserRuleCall_9_2_0 = (RuleCall)cAnnotationsAssignment_9_2.eContents().get(0);
-		private final Group cGroup_9_3 = (Group)cGroup_9.eContents().get(3);
-		private final Keyword cCommaKeyword_9_3_0 = (Keyword)cGroup_9_3.eContents().get(0);
-		private final Assignment cAnnotationsAssignment_9_3_1 = (Assignment)cGroup_9_3.eContents().get(1);
-		private final RuleCall cAnnotationsAnnotationParserRuleCall_9_3_1_0 = (RuleCall)cAnnotationsAssignment_9_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_9_4 = (Keyword)cGroup_9.eContents().get(4);
+		private final Keyword cAnnotationsKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Assignment cAnnotationsAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cAnnotationsAnnotationParserRuleCall_7_2_0 = (RuleCall)cAnnotationsAssignment_7_2.eContents().get(0);
+		private final Group cGroup_7_3 = (Group)cGroup_7.eContents().get(3);
+		private final Keyword cCommaKeyword_7_3_0 = (Keyword)cGroup_7_3.eContents().get(0);
+		private final Assignment cAnnotationsAssignment_7_3_1 = (Assignment)cGroup_7_3.eContents().get(1);
+		private final RuleCall cAnnotationsAnnotationParserRuleCall_7_3_1_0 = (RuleCall)cAnnotationsAssignment_7_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7_4 = (Keyword)cGroup_7.eContents().get(4);
 		
 		//Mixin:
 		//	'mixin'
 		//	name=NameID ('depends' '(' depends+=[Mixin|QualifiedID] ("," depends+=[Mixin|QualifiedID])* ')')? ('applies' '('
-		//	applies+=[Kind|QualifiedID] ("," applies+=[Kind|QualifiedID])* ')')? ('(' 'title' title=STRING ')')?
-		//	'scheme' scheme=STRING ('{' (attributes+=Attribute
+		//	applies+=[Kind|QualifiedID] ("," applies+=[Kind|QualifiedID])* ')')? ('(' 'title' title=STRING ')')? ('{'
+		//	(attributes+=Attribute
 		//	| actions+=Action
 		//	| constraints+=Constraint)+
 		//	'}')?
@@ -914,9 +898,9 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'mixin' name=NameID ('depends' '(' depends+=[Mixin|QualifiedID] ("," depends+=[Mixin|QualifiedID])* ')')? ('applies' '('
-		//applies+=[Kind|QualifiedID] ("," applies+=[Kind|QualifiedID])* ')')? ('(' 'title' title=STRING ')')? 'scheme'
-		//scheme=STRING ('{' (attributes+=Attribute | actions+=Action | constraints+=Constraint)+ '}')? fsm=FSM? ('annotations'
-		//'{' annotations+=Annotation ("," annotations+=Annotation)* '}')?
+		//applies+=[Kind|QualifiedID] ("," applies+=[Kind|QualifiedID])* ')')? ('(' 'title' title=STRING ')')? ('{'
+		//(attributes+=Attribute | actions+=Action | constraints+=Constraint)+ '}')? fsm=FSM? ('annotations' '{'
+		//annotations+=Annotation ("," annotations+=Annotation)* '}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'mixin'
@@ -1018,80 +1002,71 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//')'
 		public Keyword getRightParenthesisKeyword_4_3() { return cRightParenthesisKeyword_4_3; }
 		
-		//'scheme'
-		public Keyword getSchemeKeyword_5() { return cSchemeKeyword_5; }
-		
-		//scheme=STRING
-		public Assignment getSchemeAssignment_6() { return cSchemeAssignment_6; }
-		
-		//STRING
-		public RuleCall getSchemeSTRINGTerminalRuleCall_6_0() { return cSchemeSTRINGTerminalRuleCall_6_0; }
-		
 		//('{' (attributes+=Attribute | actions+=Action | constraints+=Constraint)+ '}')?
-		public Group getGroup_7() { return cGroup_7; }
+		public Group getGroup_5() { return cGroup_5; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_7_0() { return cLeftCurlyBracketKeyword_7_0; }
+		public Keyword getLeftCurlyBracketKeyword_5_0() { return cLeftCurlyBracketKeyword_5_0; }
 		
 		//(attributes+=Attribute | actions+=Action | constraints+=Constraint)+
-		public Alternatives getAlternatives_7_1() { return cAlternatives_7_1; }
+		public Alternatives getAlternatives_5_1() { return cAlternatives_5_1; }
 		
 		//attributes+=Attribute
-		public Assignment getAttributesAssignment_7_1_0() { return cAttributesAssignment_7_1_0; }
+		public Assignment getAttributesAssignment_5_1_0() { return cAttributesAssignment_5_1_0; }
 		
 		//Attribute
-		public RuleCall getAttributesAttributeParserRuleCall_7_1_0_0() { return cAttributesAttributeParserRuleCall_7_1_0_0; }
+		public RuleCall getAttributesAttributeParserRuleCall_5_1_0_0() { return cAttributesAttributeParserRuleCall_5_1_0_0; }
 		
 		//actions+=Action
-		public Assignment getActionsAssignment_7_1_1() { return cActionsAssignment_7_1_1; }
+		public Assignment getActionsAssignment_5_1_1() { return cActionsAssignment_5_1_1; }
 		
 		//Action
-		public RuleCall getActionsActionParserRuleCall_7_1_1_0() { return cActionsActionParserRuleCall_7_1_1_0; }
+		public RuleCall getActionsActionParserRuleCall_5_1_1_0() { return cActionsActionParserRuleCall_5_1_1_0; }
 		
 		//constraints+=Constraint
-		public Assignment getConstraintsAssignment_7_1_2() { return cConstraintsAssignment_7_1_2; }
+		public Assignment getConstraintsAssignment_5_1_2() { return cConstraintsAssignment_5_1_2; }
 		
 		//Constraint
-		public RuleCall getConstraintsConstraintParserRuleCall_7_1_2_0() { return cConstraintsConstraintParserRuleCall_7_1_2_0; }
+		public RuleCall getConstraintsConstraintParserRuleCall_5_1_2_0() { return cConstraintsConstraintParserRuleCall_5_1_2_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_7_2() { return cRightCurlyBracketKeyword_7_2; }
+		public Keyword getRightCurlyBracketKeyword_5_2() { return cRightCurlyBracketKeyword_5_2; }
 		
 		//fsm=FSM?
-		public Assignment getFsmAssignment_8() { return cFsmAssignment_8; }
+		public Assignment getFsmAssignment_6() { return cFsmAssignment_6; }
 		
 		//FSM
-		public RuleCall getFsmFSMParserRuleCall_8_0() { return cFsmFSMParserRuleCall_8_0; }
+		public RuleCall getFsmFSMParserRuleCall_6_0() { return cFsmFSMParserRuleCall_6_0; }
 		
 		//('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?
-		public Group getGroup_9() { return cGroup_9; }
+		public Group getGroup_7() { return cGroup_7; }
 		
 		//'annotations'
-		public Keyword getAnnotationsKeyword_9_0() { return cAnnotationsKeyword_9_0; }
+		public Keyword getAnnotationsKeyword_7_0() { return cAnnotationsKeyword_7_0; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_9_1() { return cLeftCurlyBracketKeyword_9_1; }
+		public Keyword getLeftCurlyBracketKeyword_7_1() { return cLeftCurlyBracketKeyword_7_1; }
 		
 		//annotations+=Annotation
-		public Assignment getAnnotationsAssignment_9_2() { return cAnnotationsAssignment_9_2; }
+		public Assignment getAnnotationsAssignment_7_2() { return cAnnotationsAssignment_7_2; }
 		
 		//Annotation
-		public RuleCall getAnnotationsAnnotationParserRuleCall_9_2_0() { return cAnnotationsAnnotationParserRuleCall_9_2_0; }
+		public RuleCall getAnnotationsAnnotationParserRuleCall_7_2_0() { return cAnnotationsAnnotationParserRuleCall_7_2_0; }
 		
 		//("," annotations+=Annotation)*
-		public Group getGroup_9_3() { return cGroup_9_3; }
+		public Group getGroup_7_3() { return cGroup_7_3; }
 		
 		//","
-		public Keyword getCommaKeyword_9_3_0() { return cCommaKeyword_9_3_0; }
+		public Keyword getCommaKeyword_7_3_0() { return cCommaKeyword_7_3_0; }
 		
 		//annotations+=Annotation
-		public Assignment getAnnotationsAssignment_9_3_1() { return cAnnotationsAssignment_9_3_1; }
+		public Assignment getAnnotationsAssignment_7_3_1() { return cAnnotationsAssignment_7_3_1; }
 		
 		//Annotation
-		public RuleCall getAnnotationsAnnotationParserRuleCall_9_3_1_0() { return cAnnotationsAnnotationParserRuleCall_9_3_1_0; }
+		public RuleCall getAnnotationsAnnotationParserRuleCall_7_3_1_0() { return cAnnotationsAnnotationParserRuleCall_7_3_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_9_4() { return cRightCurlyBracketKeyword_9_4; }
+		public Keyword getRightCurlyBracketKeyword_7_4() { return cRightCurlyBracketKeyword_7_4; }
 	}
 	public class AnnotationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.Annotation");
@@ -1291,35 +1266,31 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cAttributesAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
 		private final RuleCall cAttributesParameterDeclParserRuleCall_2_2_1_0 = (RuleCall)cAttributesAssignment_2_2_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
-		private final Keyword cSchemeKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cSchemeAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cSchemeSTRINGTerminalRuleCall_4_0 = (RuleCall)cSchemeAssignment_4.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cLeftParenthesisKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cTitleKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cTitleAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cTitleSTRINGTerminalRuleCall_5_2_0 = (RuleCall)cTitleAssignment_5_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cAnnotationsKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cAnnotationsAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cAnnotationsAnnotationParserRuleCall_6_2_0 = (RuleCall)cAnnotationsAssignment_6_2.eContents().get(0);
-		private final Group cGroup_6_3 = (Group)cGroup_6.eContents().get(3);
-		private final Keyword cCommaKeyword_6_3_0 = (Keyword)cGroup_6_3.eContents().get(0);
-		private final Assignment cAnnotationsAssignment_6_3_1 = (Assignment)cGroup_6_3.eContents().get(1);
-		private final RuleCall cAnnotationsAnnotationParserRuleCall_6_3_1_0 = (RuleCall)cAnnotationsAssignment_6_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6_4 = (Keyword)cGroup_6.eContents().get(4);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cLeftParenthesisKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cTitleKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cTitleAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cTitleSTRINGTerminalRuleCall_3_2_0 = (RuleCall)cTitleAssignment_3_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cAnnotationsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cAnnotationsAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cAnnotationsAnnotationParserRuleCall_4_2_0 = (RuleCall)cAnnotationsAssignment_4_2.eContents().get(0);
+		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
+		private final Keyword cCommaKeyword_4_3_0 = (Keyword)cGroup_4_3.eContents().get(0);
+		private final Assignment cAnnotationsAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
+		private final RuleCall cAnnotationsAnnotationParserRuleCall_4_3_1_0 = (RuleCall)cAnnotationsAssignment_4_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
 		
 		//Action:
 		//	'action'
-		//	name=NameID ('(' attributes+=ParameterDecl ("," attributes+=ParameterDecl)* ')')?
-		//	'scheme' scheme=STRING ('(' 'title' title=STRING ')')? ('annotations' '{' annotations+=Annotation (","
-		//	annotations+=Annotation)* '}')?;
+		//	name=NameID ('(' attributes+=ParameterDecl ("," attributes+=ParameterDecl)* ')')? ('(' 'title' title=STRING ')')?
+		//	('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'action' name=NameID ('(' attributes+=ParameterDecl ("," attributes+=ParameterDecl)* ')')? 'scheme' scheme=STRING ('('
-		//'title' title=STRING ')')? ('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?
+		//'action' name=NameID ('(' attributes+=ParameterDecl ("," attributes+=ParameterDecl)* ')')? ('(' 'title' title=STRING
+		//')')? ('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'action'
@@ -1358,62 +1329,53 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//')'
 		public Keyword getRightParenthesisKeyword_2_3() { return cRightParenthesisKeyword_2_3; }
 		
-		//'scheme'
-		public Keyword getSchemeKeyword_3() { return cSchemeKeyword_3; }
-		
-		//scheme=STRING
-		public Assignment getSchemeAssignment_4() { return cSchemeAssignment_4; }
-		
-		//STRING
-		public RuleCall getSchemeSTRINGTerminalRuleCall_4_0() { return cSchemeSTRINGTerminalRuleCall_4_0; }
-		
 		//('(' 'title' title=STRING ')')?
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_3() { return cGroup_3; }
 		
 		//'('
-		public Keyword getLeftParenthesisKeyword_5_0() { return cLeftParenthesisKeyword_5_0; }
+		public Keyword getLeftParenthesisKeyword_3_0() { return cLeftParenthesisKeyword_3_0; }
 		
 		//'title'
-		public Keyword getTitleKeyword_5_1() { return cTitleKeyword_5_1; }
+		public Keyword getTitleKeyword_3_1() { return cTitleKeyword_3_1; }
 		
 		//title=STRING
-		public Assignment getTitleAssignment_5_2() { return cTitleAssignment_5_2; }
+		public Assignment getTitleAssignment_3_2() { return cTitleAssignment_3_2; }
 		
 		//STRING
-		public RuleCall getTitleSTRINGTerminalRuleCall_5_2_0() { return cTitleSTRINGTerminalRuleCall_5_2_0; }
+		public RuleCall getTitleSTRINGTerminalRuleCall_3_2_0() { return cTitleSTRINGTerminalRuleCall_3_2_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_5_3() { return cRightParenthesisKeyword_5_3; }
+		public Keyword getRightParenthesisKeyword_3_3() { return cRightParenthesisKeyword_3_3; }
 		
 		//('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?
-		public Group getGroup_6() { return cGroup_6; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//'annotations'
-		public Keyword getAnnotationsKeyword_6_0() { return cAnnotationsKeyword_6_0; }
+		public Keyword getAnnotationsKeyword_4_0() { return cAnnotationsKeyword_4_0; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_6_1() { return cLeftCurlyBracketKeyword_6_1; }
+		public Keyword getLeftCurlyBracketKeyword_4_1() { return cLeftCurlyBracketKeyword_4_1; }
 		
 		//annotations+=Annotation
-		public Assignment getAnnotationsAssignment_6_2() { return cAnnotationsAssignment_6_2; }
+		public Assignment getAnnotationsAssignment_4_2() { return cAnnotationsAssignment_4_2; }
 		
 		//Annotation
-		public RuleCall getAnnotationsAnnotationParserRuleCall_6_2_0() { return cAnnotationsAnnotationParserRuleCall_6_2_0; }
+		public RuleCall getAnnotationsAnnotationParserRuleCall_4_2_0() { return cAnnotationsAnnotationParserRuleCall_4_2_0; }
 		
 		//("," annotations+=Annotation)*
-		public Group getGroup_6_3() { return cGroup_6_3; }
+		public Group getGroup_4_3() { return cGroup_4_3; }
 		
 		//","
-		public Keyword getCommaKeyword_6_3_0() { return cCommaKeyword_6_3_0; }
+		public Keyword getCommaKeyword_4_3_0() { return cCommaKeyword_4_3_0; }
 		
 		//annotations+=Annotation
-		public Assignment getAnnotationsAssignment_6_3_1() { return cAnnotationsAssignment_6_3_1; }
+		public Assignment getAnnotationsAssignment_4_3_1() { return cAnnotationsAssignment_4_3_1; }
 		
 		//Annotation
-		public RuleCall getAnnotationsAnnotationParserRuleCall_6_3_1_0() { return cAnnotationsAnnotationParserRuleCall_6_3_1_0; }
+		public RuleCall getAnnotationsAnnotationParserRuleCall_4_3_1_0() { return cAnnotationsAnnotationParserRuleCall_4_3_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6_4() { return cRightCurlyBracketKeyword_6_4; }
+		public Keyword getRightCurlyBracketKeyword_4_4() { return cRightCurlyBracketKeyword_4_4; }
 	}
 	public class ParameterDeclElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.ParameterDecl");
@@ -3236,8 +3198,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	//Kind:
 	//	'kind'
 	//	name=NameID ('extends' parent=[Kind|QualifiedID])? ('source' source=[Kind|QualifiedID])? ('target'
-	//	target=[Kind|QualifiedID])? ('(' 'title' title=STRING ')')?
-	//	'scheme' scheme=STRING ('{' (attributes+=Attribute
+	//	target=[Kind|QualifiedID])? ('(' 'title' title=STRING ')')? ('{' (attributes+=Attribute
 	//	| actions+=Action
 	//	| constraints+=Constraint)+
 	//	'}')?
@@ -3253,8 +3214,8 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	//Mixin:
 	//	'mixin'
 	//	name=NameID ('depends' '(' depends+=[Mixin|QualifiedID] ("," depends+=[Mixin|QualifiedID])* ')')? ('applies' '('
-	//	applies+=[Kind|QualifiedID] ("," applies+=[Kind|QualifiedID])* ')')? ('(' 'title' title=STRING ')')?
-	//	'scheme' scheme=STRING ('{' (attributes+=Attribute
+	//	applies+=[Kind|QualifiedID] ("," applies+=[Kind|QualifiedID])* ')')? ('(' 'title' title=STRING ')')? ('{'
+	//	(attributes+=Attribute
 	//	| actions+=Action
 	//	| constraints+=Constraint)+
 	//	'}')?
@@ -3296,9 +3257,8 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Action:
 	//	'action'
-	//	name=NameID ('(' attributes+=ParameterDecl ("," attributes+=ParameterDecl)* ')')?
-	//	'scheme' scheme=STRING ('(' 'title' title=STRING ')')? ('annotations' '{' annotations+=Annotation (","
-	//	annotations+=Annotation)* '}')?;
+	//	name=NameID ('(' attributes+=ParameterDecl ("," attributes+=ParameterDecl)* ')')? ('(' 'title' title=STRING ')')?
+	//	('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?;
 	public ActionElements getActionAccess() {
 		return pAction;
 	}
