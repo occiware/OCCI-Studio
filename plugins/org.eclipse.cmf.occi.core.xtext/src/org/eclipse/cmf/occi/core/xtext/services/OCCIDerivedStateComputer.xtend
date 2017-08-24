@@ -23,6 +23,11 @@ import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.emf.ecore.InternalEObject
 import org.eclipse.cmf.occi.core.Link
 import org.eclipse.emf.common.util.URI
+import org.eclipse.cmf.occi.core.Kind
+import org.eclipse.cmf.occi.core.Mixin
+import org.eclipse.cmf.occi.core.Action
+import org.eclipse.cmf.occi.core.Category
+import org.eclipse.cmf.occi.core.Extension
 
 class OCCIDerivedStateComputer implements IDerivedStateComputer {
 
@@ -61,6 +66,30 @@ class OCCIDerivedStateComputer implements IDerivedStateComputer {
 				}
 			}
 		}
+	resource.allContents.forEach [ r |
+      if(r instanceof Kind) {
+      	val kind = r as Kind
+      	if(kind.scheme === null) {
+      		// Set the scheme of a Kind instance to the scheme of its owning Extension instance.
+      		kind.scheme = (kind.eContainer as Extension).scheme
+      	}
+      }
+      if(r instanceof Mixin) {
+      	val mixin = r as Mixin
+      	if(mixin.scheme === null) {
+      		// Set the scheme of a Mixin instance to the scheme of its owning Extension instance.
+      		mixin.scheme = (mixin.eContainer as Extension).scheme
+      	}
+      }
+      if(r instanceof Action) {
+      	val action = r as Action
+      	if(action.scheme === null) {
+      		val ownerCategory = (action.eContainer as Category)
+      		// Set the scheme of an Action instance related to the scheme of its owning Category instance.
+      		action.scheme = ownerCategory.scheme.substring(0, ownerCategory.scheme.length-1) + '/' + ownerCategory.term + "/action#"
+      	}
+      }
+    ]
 	}
 def EObject getEObjectfromEProxy(EObject model, EObject target) {
 		if (target.eIsProxy()) {

@@ -24,6 +24,8 @@ import org.eclipse.emf.common.util.EList
 import org.eclipse.cmf.occi.core.Transition
 import org.eclipse.cmf.occi.core.Action
 import org.eclipse.cmf.occi.core.Attribute
+import org.eclipse.cmf.occi.core.Kind
+import org.eclipse.cmf.occi.core.Mixin
 
 class OCCITransientValueService extends DefaultTransientValueService {
 
@@ -85,6 +87,13 @@ class OCCITransientValueService extends DefaultTransientValueService {
 //		if (feature == OCCIPackage.Literals.TRANSITION__SOURCE) {
 //			 return true
 //		}
+	if (feature == OCCIPackage.Literals.CATEGORY__SCHEME) {
+			if (owner instanceof Action|| owner instanceof Kind || owner instanceof Mixin){
+			return true
+			
+		}
+		
+		}
 		return super.isTransient(owner, feature, index)
 
 	}
