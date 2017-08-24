@@ -84,7 +84,7 @@ Kind returns Kind:
 	('source' source=[Kind|QualifiedID])?
 	('target' target=[Kind|QualifiedID])?
 	('(' 'title' title=STRING ')')?
-	'scheme' scheme=STRING
+//	'scheme' scheme=STRING
 	('{'
 	(attributes+=Attribute
 	| actions+=Action
@@ -99,7 +99,7 @@ Mixin returns Mixin:
 	('depends' '(' depends+=[Mixin|QualifiedID] ("," depends+=[Mixin|QualifiedID])* ')')?
 	('applies' '(' applies+=[Kind|QualifiedID] ("," applies+=[Kind|QualifiedID])* ')')?
 	('(' 'title' title=STRING ')')?
-	'scheme' scheme=STRING
+//	'scheme' scheme=STRING
 	('{'
 	(attributes+=Attribute
 	| actions+=Action
@@ -128,7 +128,7 @@ Action returns Action:
 	'action'
 	name=NameID
 	('(' attributes+=ParameterDecl ("," attributes+=ParameterDecl)* ')')?
-	'scheme' scheme=STRING
+//	'scheme' scheme=STRING
 	('(' 'title' title=STRING ')')?
 	('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?;
 
