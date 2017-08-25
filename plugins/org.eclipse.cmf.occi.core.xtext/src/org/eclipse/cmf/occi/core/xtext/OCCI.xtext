@@ -32,7 +32,7 @@ Resource returns Resource:
 	id=STRING
 	':'
 	kind=[Kind|QualifiedID]
-	('(' 'title' title=STRING ')')?
+	( 'title' title=STRING )?
 	('location' location=STRING)?
 	('summary' summary=STRING)?
 	('{' 
@@ -46,7 +46,7 @@ Link returns Link:
 	id=STRING
 	':'
 	kind=[Kind|QualifiedID]
-	('(' 'title' title=STRING ')')?
+	( 'title' title=STRING )?
 	('location' location=STRING)?
 	'target' target=[Resource|STRING]
 	('{' 
@@ -83,7 +83,7 @@ Kind returns Kind:
 	('extends' parent=[Kind|QualifiedID])?
 	('source' source=[Kind|QualifiedID])?
 	('target' target=[Kind|QualifiedID])?
-	('(' 'title' title=STRING ')')?
+	( 'title' title=STRING )?
 //	'scheme' scheme=STRING
 	('{'
 	(attributes+=Attribute
@@ -98,7 +98,7 @@ Mixin returns Mixin:
 	name=NameID
 	('depends' '(' depends+=[Mixin|QualifiedID] ("," depends+=[Mixin|QualifiedID])* ')')?
 	('applies' '(' applies+=[Kind|QualifiedID] ("," applies+=[Kind|QualifiedID])* ')')?
-	('(' 'title' title=STRING ')')?
+	( 'title' title=STRING )?
 //	'scheme' scheme=STRING
 	('{'
 	(attributes+=Attribute
@@ -129,7 +129,7 @@ Action returns Action:
 	name=NameID
 	('(' attributes+=ParameterDecl ("," attributes+=ParameterDecl)* ')')?
 //	'scheme' scheme=STRING
-	('(' 'title' title=STRING ')')?
+	( 'title' title=STRING )?
 	('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?;
 
 ParameterDecl returns Attribute:
