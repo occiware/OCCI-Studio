@@ -165,33 +165,33 @@ DataType returns DataType:
 
 StringType returns StringType:
 	'StringType'
-	name=TypeID
+	name=TypeID (':' documentation=STRING)?
 	('pattern' pattern=STRING)?
 	('length' length=EIntegerObject)?
 	('minLength' minLength=EIntegerObject)?
 	('maxLength' maxLength=EIntegerObject)?
-	('documentation' documentation=STRING)?;
+	;
 
 EObjectType returns EObjectType:
 	'EObjectType'
-	name=TypeID
+	name=TypeID (':' documentation=STRING)?
 	('type' instanceClassName=STRING)?
-	('documentation' documentation=STRING)?;
+	;
 
 BooleanType returns BooleanType:
 	'BooleanType'
-	name=TypeID
-	('documentation' documentation=STRING)?;
+	name=TypeID (':' documentation=STRING)?
+	;
 
 NumericType returns NumericType:
 	'NumericType'
-	name=TypeID 'type' type=NumericTypeEnum
+	name=TypeID 'type' type=NumericTypeEnum (':' documentation=STRING)?
 	('totalDigits' totalDigits=EIntegerObject)?
 	('minExclusive' minExclusive=STRING)?
 	('maxExclusive' maxExclusive=STRING)?
 	('minInclusive' minInclusive=STRING)?
 	('maxInclusive' maxInclusive=STRING)?
-	('documentation' documentation=STRING)?
+	
 	;
 
 enum NumericTypeEnum returns NumericTypeEnum:
@@ -200,19 +200,19 @@ enum NumericTypeEnum returns NumericTypeEnum:
 
 EnumerationType returns EnumerationType:
 	'EnumerationType'
-	name=TypeID
+	name=TypeID (':' documentation=STRING)?
 	'literals' '(' literals+=EnumerationLiteral ("," literals+=EnumerationLiteral)* ')'
-	('documentation' documentation=STRING)?;
+	;
 
 EnumerationLiteral returns EnumerationLiteral:
 	name=TypeID
-	('documentation' documentation=STRING)?;
+	(':' documentation=STRING)?;
 
 RecordType returns RecordType:
 	'record'
-	name=TypeID
+	name=TypeID (':' documentation=STRING)?
 	'{' recordFields+=RecordField ("," recordFields+=RecordField)* '}'
-	('documentation' documentation=STRING)?;
+	;
 
 RecordField returns RecordField:
 	(mutable?='mutable')?
@@ -226,7 +226,7 @@ RecordField returns RecordField:
 ArrayType returns ArrayType:
 	'array'
 	name=TypeID ':' type=[DataType|QualifiedID]
-	('documentation' documentation=STRING)?;
+	(':' documentation=STRING)?;
 
 EIntegerObject returns ecore::EIntegerObject:
 	'-'? INT;
@@ -295,32 +295,32 @@ KEYWORD:
 	// DataType
 	
 	// StringType
-	'StringType' | 'pattern' | 'length' | 'minLength' | 'maxLength' | 'documentation' | 
+	'StringType' | 'pattern' | 'length' | 'minLength' | 'maxLength' |  
 	
 	// EObjectType
-	'EObjectType' | // 'type' | 'documentation' | 
+	'EObjectType' | // 'type' | 
 	
 	// BooleanType
-	'BooleanType' | // 'documentation' | 
+	'BooleanType' | 
 	
 	// NumericType
-	'NumericType' | 'totalDigits' | 'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' |  // 'type' | 'documentation' | 
+	'NumericType' | 'totalDigits' | 'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' |  // 'type' | 
 	
 	// NumericTypeEnum
 	'Byte' | 'Double' | 'Float' | 'Integer' | 'Long' | 'Short' | 'BigDecimal' | 
 	
 	// EnumerationType
-	'EnumerationType' | 'literals' | // 'documentation' | 
+	'EnumerationType' | 'literals' |  
 	
 	//EnumerationLiteral
-	// 'documentation' | 
+	//  
 
 	// RecordType
-	'record' | // 'documentation' | 
+	'record' |  
 	
 	// RecordField
 	// 'mutable'| 'required' | 'description'| 'annotations'
 	
 	// ArrayType
-	'array' // 'documentation' | 
+	'array'  
 	;
