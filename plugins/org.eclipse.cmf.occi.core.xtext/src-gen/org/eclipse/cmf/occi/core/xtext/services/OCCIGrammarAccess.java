@@ -1692,34 +1692,34 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameTypeIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cPatternKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cPatternAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cPatternSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cPatternAssignment_2_1.eContents().get(0);
+		private final Keyword cColonKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cDocumentationAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cDocumentationSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cDocumentationAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cLengthKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cLengthAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cLengthEIntegerObjectParserRuleCall_3_1_0 = (RuleCall)cLengthAssignment_3_1.eContents().get(0);
+		private final Keyword cPatternKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cPatternAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cPatternSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cPatternAssignment_3_1.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cMinLengthKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cMinLengthAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cMinLengthEIntegerObjectParserRuleCall_4_1_0 = (RuleCall)cMinLengthAssignment_4_1.eContents().get(0);
+		private final Keyword cLengthKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cLengthAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cLengthEIntegerObjectParserRuleCall_4_1_0 = (RuleCall)cLengthAssignment_4_1.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cMaxLengthKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cMaxLengthAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cMaxLengthEIntegerObjectParserRuleCall_5_1_0 = (RuleCall)cMaxLengthAssignment_5_1.eContents().get(0);
+		private final Keyword cMinLengthKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cMinLengthAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cMinLengthEIntegerObjectParserRuleCall_5_1_0 = (RuleCall)cMinLengthAssignment_5_1.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cDocumentationKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cDocumentationAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cDocumentationSTRINGTerminalRuleCall_6_1_0 = (RuleCall)cDocumentationAssignment_6_1.eContents().get(0);
+		private final Keyword cMaxLengthKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cMaxLengthAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cMaxLengthEIntegerObjectParserRuleCall_6_1_0 = (RuleCall)cMaxLengthAssignment_6_1.eContents().get(0);
 		
 		//StringType:
 		//	'StringType'
-		//	name=TypeID ('pattern' pattern=STRING)? ('length' length=EIntegerObject)? ('minLength' minLength=EIntegerObject)?
-		//	('maxLength' maxLength=EIntegerObject)? ('documentation' documentation=STRING)?;
+		//	name=TypeID (':' documentation=STRING)? ('pattern' pattern=STRING)? ('length' length=EIntegerObject)? ('minLength'
+		//	minLength=EIntegerObject)? ('maxLength' maxLength=EIntegerObject)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'StringType' name=TypeID ('pattern' pattern=STRING)? ('length' length=EIntegerObject)? ('minLength'
-		//minLength=EIntegerObject)? ('maxLength' maxLength=EIntegerObject)? ('documentation' documentation=STRING)?
+		//'StringType' name=TypeID (':' documentation=STRING)? ('pattern' pattern=STRING)? ('length' length=EIntegerObject)?
+		//('minLength' minLength=EIntegerObject)? ('maxLength' maxLength=EIntegerObject)?
 		public Group getGroup() { return cGroup; }
 		
 		//'StringType'
@@ -1731,65 +1731,65 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//TypeID
 		public RuleCall getNameTypeIDParserRuleCall_1_0() { return cNameTypeIDParserRuleCall_1_0; }
 		
-		//('pattern' pattern=STRING)?
+		//(':' documentation=STRING)?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//'pattern'
-		public Keyword getPatternKeyword_2_0() { return cPatternKeyword_2_0; }
-		
-		//pattern=STRING
-		public Assignment getPatternAssignment_2_1() { return cPatternAssignment_2_1; }
-		
-		//STRING
-		public RuleCall getPatternSTRINGTerminalRuleCall_2_1_0() { return cPatternSTRINGTerminalRuleCall_2_1_0; }
-		
-		//('length' length=EIntegerObject)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'length'
-		public Keyword getLengthKeyword_3_0() { return cLengthKeyword_3_0; }
-		
-		//length=EIntegerObject
-		public Assignment getLengthAssignment_3_1() { return cLengthAssignment_3_1; }
-		
-		//EIntegerObject
-		public RuleCall getLengthEIntegerObjectParserRuleCall_3_1_0() { return cLengthEIntegerObjectParserRuleCall_3_1_0; }
-		
-		//('minLength' minLength=EIntegerObject)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'minLength'
-		public Keyword getMinLengthKeyword_4_0() { return cMinLengthKeyword_4_0; }
-		
-		//minLength=EIntegerObject
-		public Assignment getMinLengthAssignment_4_1() { return cMinLengthAssignment_4_1; }
-		
-		//EIntegerObject
-		public RuleCall getMinLengthEIntegerObjectParserRuleCall_4_1_0() { return cMinLengthEIntegerObjectParserRuleCall_4_1_0; }
-		
-		//('maxLength' maxLength=EIntegerObject)?
-		public Group getGroup_5() { return cGroup_5; }
-		
-		//'maxLength'
-		public Keyword getMaxLengthKeyword_5_0() { return cMaxLengthKeyword_5_0; }
-		
-		//maxLength=EIntegerObject
-		public Assignment getMaxLengthAssignment_5_1() { return cMaxLengthAssignment_5_1; }
-		
-		//EIntegerObject
-		public RuleCall getMaxLengthEIntegerObjectParserRuleCall_5_1_0() { return cMaxLengthEIntegerObjectParserRuleCall_5_1_0; }
-		
-		//('documentation' documentation=STRING)?
-		public Group getGroup_6() { return cGroup_6; }
-		
-		//'documentation'
-		public Keyword getDocumentationKeyword_6_0() { return cDocumentationKeyword_6_0; }
+		//':'
+		public Keyword getColonKeyword_2_0() { return cColonKeyword_2_0; }
 		
 		//documentation=STRING
-		public Assignment getDocumentationAssignment_6_1() { return cDocumentationAssignment_6_1; }
+		public Assignment getDocumentationAssignment_2_1() { return cDocumentationAssignment_2_1; }
 		
 		//STRING
-		public RuleCall getDocumentationSTRINGTerminalRuleCall_6_1_0() { return cDocumentationSTRINGTerminalRuleCall_6_1_0; }
+		public RuleCall getDocumentationSTRINGTerminalRuleCall_2_1_0() { return cDocumentationSTRINGTerminalRuleCall_2_1_0; }
+		
+		//('pattern' pattern=STRING)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'pattern'
+		public Keyword getPatternKeyword_3_0() { return cPatternKeyword_3_0; }
+		
+		//pattern=STRING
+		public Assignment getPatternAssignment_3_1() { return cPatternAssignment_3_1; }
+		
+		//STRING
+		public RuleCall getPatternSTRINGTerminalRuleCall_3_1_0() { return cPatternSTRINGTerminalRuleCall_3_1_0; }
+		
+		//('length' length=EIntegerObject)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'length'
+		public Keyword getLengthKeyword_4_0() { return cLengthKeyword_4_0; }
+		
+		//length=EIntegerObject
+		public Assignment getLengthAssignment_4_1() { return cLengthAssignment_4_1; }
+		
+		//EIntegerObject
+		public RuleCall getLengthEIntegerObjectParserRuleCall_4_1_0() { return cLengthEIntegerObjectParserRuleCall_4_1_0; }
+		
+		//('minLength' minLength=EIntegerObject)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'minLength'
+		public Keyword getMinLengthKeyword_5_0() { return cMinLengthKeyword_5_0; }
+		
+		//minLength=EIntegerObject
+		public Assignment getMinLengthAssignment_5_1() { return cMinLengthAssignment_5_1; }
+		
+		//EIntegerObject
+		public RuleCall getMinLengthEIntegerObjectParserRuleCall_5_1_0() { return cMinLengthEIntegerObjectParserRuleCall_5_1_0; }
+		
+		//('maxLength' maxLength=EIntegerObject)?
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//'maxLength'
+		public Keyword getMaxLengthKeyword_6_0() { return cMaxLengthKeyword_6_0; }
+		
+		//maxLength=EIntegerObject
+		public Assignment getMaxLengthAssignment_6_1() { return cMaxLengthAssignment_6_1; }
+		
+		//EIntegerObject
+		public RuleCall getMaxLengthEIntegerObjectParserRuleCall_6_1_0() { return cMaxLengthEIntegerObjectParserRuleCall_6_1_0; }
 	}
 	public class EObjectTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.EObjectType");
@@ -1798,20 +1798,20 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameTypeIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cTypeKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cInstanceClassNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cInstanceClassNameSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cInstanceClassNameAssignment_2_1.eContents().get(0);
+		private final Keyword cColonKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cDocumentationAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cDocumentationSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cDocumentationAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cDocumentationKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cDocumentationAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cDocumentationSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cDocumentationAssignment_3_1.eContents().get(0);
+		private final Keyword cTypeKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cInstanceClassNameAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cInstanceClassNameSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cInstanceClassNameAssignment_3_1.eContents().get(0);
 		
 		//EObjectType:
 		//	'EObjectType'
-		//	name=TypeID ('type' instanceClassName=STRING)? ('documentation' documentation=STRING)?;
+		//	name=TypeID (':' documentation=STRING)? ('type' instanceClassName=STRING)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'EObjectType' name=TypeID ('type' instanceClassName=STRING)? ('documentation' documentation=STRING)?
+		//'EObjectType' name=TypeID (':' documentation=STRING)? ('type' instanceClassName=STRING)?
 		public Group getGroup() { return cGroup; }
 		
 		//'EObjectType'
@@ -1823,29 +1823,29 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//TypeID
 		public RuleCall getNameTypeIDParserRuleCall_1_0() { return cNameTypeIDParserRuleCall_1_0; }
 		
-		//('type' instanceClassName=STRING)?
+		//(':' documentation=STRING)?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//'type'
-		public Keyword getTypeKeyword_2_0() { return cTypeKeyword_2_0; }
-		
-		//instanceClassName=STRING
-		public Assignment getInstanceClassNameAssignment_2_1() { return cInstanceClassNameAssignment_2_1; }
-		
-		//STRING
-		public RuleCall getInstanceClassNameSTRINGTerminalRuleCall_2_1_0() { return cInstanceClassNameSTRINGTerminalRuleCall_2_1_0; }
-		
-		//('documentation' documentation=STRING)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'documentation'
-		public Keyword getDocumentationKeyword_3_0() { return cDocumentationKeyword_3_0; }
+		//':'
+		public Keyword getColonKeyword_2_0() { return cColonKeyword_2_0; }
 		
 		//documentation=STRING
-		public Assignment getDocumentationAssignment_3_1() { return cDocumentationAssignment_3_1; }
+		public Assignment getDocumentationAssignment_2_1() { return cDocumentationAssignment_2_1; }
 		
 		//STRING
-		public RuleCall getDocumentationSTRINGTerminalRuleCall_3_1_0() { return cDocumentationSTRINGTerminalRuleCall_3_1_0; }
+		public RuleCall getDocumentationSTRINGTerminalRuleCall_2_1_0() { return cDocumentationSTRINGTerminalRuleCall_2_1_0; }
+		
+		//('type' instanceClassName=STRING)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'type'
+		public Keyword getTypeKeyword_3_0() { return cTypeKeyword_3_0; }
+		
+		//instanceClassName=STRING
+		public Assignment getInstanceClassNameAssignment_3_1() { return cInstanceClassNameAssignment_3_1; }
+		
+		//STRING
+		public RuleCall getInstanceClassNameSTRINGTerminalRuleCall_3_1_0() { return cInstanceClassNameSTRINGTerminalRuleCall_3_1_0; }
 	}
 	public class BooleanTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.BooleanType");
@@ -1854,16 +1854,16 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameTypeIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cDocumentationKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cColonKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cDocumentationAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cDocumentationSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cDocumentationAssignment_2_1.eContents().get(0);
 		
 		//BooleanType:
 		//	'BooleanType'
-		//	name=TypeID ('documentation' documentation=STRING)?;
+		//	name=TypeID (':' documentation=STRING)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'BooleanType' name=TypeID ('documentation' documentation=STRING)?
+		//'BooleanType' name=TypeID (':' documentation=STRING)?
 		public Group getGroup() { return cGroup; }
 		
 		//'BooleanType'
@@ -1875,11 +1875,11 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//TypeID
 		public RuleCall getNameTypeIDParserRuleCall_1_0() { return cNameTypeIDParserRuleCall_1_0; }
 		
-		//('documentation' documentation=STRING)?
+		//(':' documentation=STRING)?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//'documentation'
-		public Keyword getDocumentationKeyword_2_0() { return cDocumentationKeyword_2_0; }
+		//':'
+		public Keyword getColonKeyword_2_0() { return cColonKeyword_2_0; }
 		
 		//documentation=STRING
 		public Assignment getDocumentationAssignment_2_1() { return cDocumentationAssignment_2_1; }
@@ -1897,40 +1897,40 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cTypeNumericTypeEnumEnumRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cTotalDigitsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cTotalDigitsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cTotalDigitsEIntegerObjectParserRuleCall_4_1_0 = (RuleCall)cTotalDigitsAssignment_4_1.eContents().get(0);
+		private final Keyword cColonKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cDocumentationAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cDocumentationSTRINGTerminalRuleCall_4_1_0 = (RuleCall)cDocumentationAssignment_4_1.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cMinExclusiveKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cMinExclusiveAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cMinExclusiveSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cMinExclusiveAssignment_5_1.eContents().get(0);
+		private final Keyword cTotalDigitsKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cTotalDigitsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cTotalDigitsEIntegerObjectParserRuleCall_5_1_0 = (RuleCall)cTotalDigitsAssignment_5_1.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cMaxExclusiveKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cMaxExclusiveAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cMaxExclusiveSTRINGTerminalRuleCall_6_1_0 = (RuleCall)cMaxExclusiveAssignment_6_1.eContents().get(0);
+		private final Keyword cMinExclusiveKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cMinExclusiveAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cMinExclusiveSTRINGTerminalRuleCall_6_1_0 = (RuleCall)cMinExclusiveAssignment_6_1.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cMinInclusiveKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cMinInclusiveAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cMinInclusiveSTRINGTerminalRuleCall_7_1_0 = (RuleCall)cMinInclusiveAssignment_7_1.eContents().get(0);
+		private final Keyword cMaxExclusiveKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cMaxExclusiveAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cMaxExclusiveSTRINGTerminalRuleCall_7_1_0 = (RuleCall)cMaxExclusiveAssignment_7_1.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cMaxInclusiveKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Assignment cMaxInclusiveAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
-		private final RuleCall cMaxInclusiveSTRINGTerminalRuleCall_8_1_0 = (RuleCall)cMaxInclusiveAssignment_8_1.eContents().get(0);
+		private final Keyword cMinInclusiveKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cMinInclusiveAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cMinInclusiveSTRINGTerminalRuleCall_8_1_0 = (RuleCall)cMinInclusiveAssignment_8_1.eContents().get(0);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cDocumentationKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final Assignment cDocumentationAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
-		private final RuleCall cDocumentationSTRINGTerminalRuleCall_9_1_0 = (RuleCall)cDocumentationAssignment_9_1.eContents().get(0);
+		private final Keyword cMaxInclusiveKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Assignment cMaxInclusiveAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final RuleCall cMaxInclusiveSTRINGTerminalRuleCall_9_1_0 = (RuleCall)cMaxInclusiveAssignment_9_1.eContents().get(0);
 		
 		//NumericType:
 		//	'NumericType'
-		//	name=TypeID 'type' type=NumericTypeEnum ('totalDigits' totalDigits=EIntegerObject)? ('minExclusive'
-		//	minExclusive=STRING)? ('maxExclusive' maxExclusive=STRING)? ('minInclusive' minInclusive=STRING)? ('maxInclusive'
-		//	maxInclusive=STRING)? ('documentation' documentation=STRING)?;
+		//	name=TypeID 'type' type=NumericTypeEnum (':' documentation=STRING)? ('totalDigits' totalDigits=EIntegerObject)?
+		//	('minExclusive' minExclusive=STRING)? ('maxExclusive' maxExclusive=STRING)? ('minInclusive' minInclusive=STRING)?
+		//	('maxInclusive' maxInclusive=STRING)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'NumericType' name=TypeID 'type' type=NumericTypeEnum ('totalDigits' totalDigits=EIntegerObject)? ('minExclusive'
-		//minExclusive=STRING)? ('maxExclusive' maxExclusive=STRING)? ('minInclusive' minInclusive=STRING)? ('maxInclusive'
-		//maxInclusive=STRING)? ('documentation' documentation=STRING)?
+		//'NumericType' name=TypeID 'type' type=NumericTypeEnum (':' documentation=STRING)? ('totalDigits'
+		//totalDigits=EIntegerObject)? ('minExclusive' minExclusive=STRING)? ('maxExclusive' maxExclusive=STRING)?
+		//('minInclusive' minInclusive=STRING)? ('maxInclusive' maxInclusive=STRING)?
 		public Group getGroup() { return cGroup; }
 		
 		//'NumericType'
@@ -1951,77 +1951,77 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//NumericTypeEnum
 		public RuleCall getTypeNumericTypeEnumEnumRuleCall_3_0() { return cTypeNumericTypeEnumEnumRuleCall_3_0; }
 		
-		//('totalDigits' totalDigits=EIntegerObject)?
+		//(':' documentation=STRING)?
 		public Group getGroup_4() { return cGroup_4; }
 		
-		//'totalDigits'
-		public Keyword getTotalDigitsKeyword_4_0() { return cTotalDigitsKeyword_4_0; }
-		
-		//totalDigits=EIntegerObject
-		public Assignment getTotalDigitsAssignment_4_1() { return cTotalDigitsAssignment_4_1; }
-		
-		//EIntegerObject
-		public RuleCall getTotalDigitsEIntegerObjectParserRuleCall_4_1_0() { return cTotalDigitsEIntegerObjectParserRuleCall_4_1_0; }
-		
-		//('minExclusive' minExclusive=STRING)?
-		public Group getGroup_5() { return cGroup_5; }
-		
-		//'minExclusive'
-		public Keyword getMinExclusiveKeyword_5_0() { return cMinExclusiveKeyword_5_0; }
-		
-		//minExclusive=STRING
-		public Assignment getMinExclusiveAssignment_5_1() { return cMinExclusiveAssignment_5_1; }
-		
-		//STRING
-		public RuleCall getMinExclusiveSTRINGTerminalRuleCall_5_1_0() { return cMinExclusiveSTRINGTerminalRuleCall_5_1_0; }
-		
-		//('maxExclusive' maxExclusive=STRING)?
-		public Group getGroup_6() { return cGroup_6; }
-		
-		//'maxExclusive'
-		public Keyword getMaxExclusiveKeyword_6_0() { return cMaxExclusiveKeyword_6_0; }
-		
-		//maxExclusive=STRING
-		public Assignment getMaxExclusiveAssignment_6_1() { return cMaxExclusiveAssignment_6_1; }
-		
-		//STRING
-		public RuleCall getMaxExclusiveSTRINGTerminalRuleCall_6_1_0() { return cMaxExclusiveSTRINGTerminalRuleCall_6_1_0; }
-		
-		//('minInclusive' minInclusive=STRING)?
-		public Group getGroup_7() { return cGroup_7; }
-		
-		//'minInclusive'
-		public Keyword getMinInclusiveKeyword_7_0() { return cMinInclusiveKeyword_7_0; }
-		
-		//minInclusive=STRING
-		public Assignment getMinInclusiveAssignment_7_1() { return cMinInclusiveAssignment_7_1; }
-		
-		//STRING
-		public RuleCall getMinInclusiveSTRINGTerminalRuleCall_7_1_0() { return cMinInclusiveSTRINGTerminalRuleCall_7_1_0; }
-		
-		//('maxInclusive' maxInclusive=STRING)?
-		public Group getGroup_8() { return cGroup_8; }
-		
-		//'maxInclusive'
-		public Keyword getMaxInclusiveKeyword_8_0() { return cMaxInclusiveKeyword_8_0; }
-		
-		//maxInclusive=STRING
-		public Assignment getMaxInclusiveAssignment_8_1() { return cMaxInclusiveAssignment_8_1; }
-		
-		//STRING
-		public RuleCall getMaxInclusiveSTRINGTerminalRuleCall_8_1_0() { return cMaxInclusiveSTRINGTerminalRuleCall_8_1_0; }
-		
-		//('documentation' documentation=STRING)?
-		public Group getGroup_9() { return cGroup_9; }
-		
-		//'documentation'
-		public Keyword getDocumentationKeyword_9_0() { return cDocumentationKeyword_9_0; }
+		//':'
+		public Keyword getColonKeyword_4_0() { return cColonKeyword_4_0; }
 		
 		//documentation=STRING
-		public Assignment getDocumentationAssignment_9_1() { return cDocumentationAssignment_9_1; }
+		public Assignment getDocumentationAssignment_4_1() { return cDocumentationAssignment_4_1; }
 		
 		//STRING
-		public RuleCall getDocumentationSTRINGTerminalRuleCall_9_1_0() { return cDocumentationSTRINGTerminalRuleCall_9_1_0; }
+		public RuleCall getDocumentationSTRINGTerminalRuleCall_4_1_0() { return cDocumentationSTRINGTerminalRuleCall_4_1_0; }
+		
+		//('totalDigits' totalDigits=EIntegerObject)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'totalDigits'
+		public Keyword getTotalDigitsKeyword_5_0() { return cTotalDigitsKeyword_5_0; }
+		
+		//totalDigits=EIntegerObject
+		public Assignment getTotalDigitsAssignment_5_1() { return cTotalDigitsAssignment_5_1; }
+		
+		//EIntegerObject
+		public RuleCall getTotalDigitsEIntegerObjectParserRuleCall_5_1_0() { return cTotalDigitsEIntegerObjectParserRuleCall_5_1_0; }
+		
+		//('minExclusive' minExclusive=STRING)?
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//'minExclusive'
+		public Keyword getMinExclusiveKeyword_6_0() { return cMinExclusiveKeyword_6_0; }
+		
+		//minExclusive=STRING
+		public Assignment getMinExclusiveAssignment_6_1() { return cMinExclusiveAssignment_6_1; }
+		
+		//STRING
+		public RuleCall getMinExclusiveSTRINGTerminalRuleCall_6_1_0() { return cMinExclusiveSTRINGTerminalRuleCall_6_1_0; }
+		
+		//('maxExclusive' maxExclusive=STRING)?
+		public Group getGroup_7() { return cGroup_7; }
+		
+		//'maxExclusive'
+		public Keyword getMaxExclusiveKeyword_7_0() { return cMaxExclusiveKeyword_7_0; }
+		
+		//maxExclusive=STRING
+		public Assignment getMaxExclusiveAssignment_7_1() { return cMaxExclusiveAssignment_7_1; }
+		
+		//STRING
+		public RuleCall getMaxExclusiveSTRINGTerminalRuleCall_7_1_0() { return cMaxExclusiveSTRINGTerminalRuleCall_7_1_0; }
+		
+		//('minInclusive' minInclusive=STRING)?
+		public Group getGroup_8() { return cGroup_8; }
+		
+		//'minInclusive'
+		public Keyword getMinInclusiveKeyword_8_0() { return cMinInclusiveKeyword_8_0; }
+		
+		//minInclusive=STRING
+		public Assignment getMinInclusiveAssignment_8_1() { return cMinInclusiveAssignment_8_1; }
+		
+		//STRING
+		public RuleCall getMinInclusiveSTRINGTerminalRuleCall_8_1_0() { return cMinInclusiveSTRINGTerminalRuleCall_8_1_0; }
+		
+		//('maxInclusive' maxInclusive=STRING)?
+		public Group getGroup_9() { return cGroup_9; }
+		
+		//'maxInclusive'
+		public Keyword getMaxInclusiveKeyword_9_0() { return cMaxInclusiveKeyword_9_0; }
+		
+		//maxInclusive=STRING
+		public Assignment getMaxInclusiveAssignment_9_1() { return cMaxInclusiveAssignment_9_1; }
+		
+		//STRING
+		public RuleCall getMaxInclusiveSTRINGTerminalRuleCall_9_1_0() { return cMaxInclusiveSTRINGTerminalRuleCall_9_1_0; }
 	}
 	public class EnumerationTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.EnumerationType");
@@ -2029,29 +2029,28 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEnumerationTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameTypeIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLiteralsKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cLiteralsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cLiteralsEnumerationLiteralParserRuleCall_4_0 = (RuleCall)cLiteralsAssignment_4.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cLiteralsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cLiteralsEnumerationLiteralParserRuleCall_5_1_0 = (RuleCall)cLiteralsAssignment_5_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cDocumentationKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cDocumentationAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cDocumentationSTRINGTerminalRuleCall_7_1_0 = (RuleCall)cDocumentationAssignment_7_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cDocumentationAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cDocumentationSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cDocumentationAssignment_2_1.eContents().get(0);
+		private final Keyword cLiteralsKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cLeftParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cLiteralsAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cLiteralsEnumerationLiteralParserRuleCall_5_0 = (RuleCall)cLiteralsAssignment_5.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cLiteralsAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cLiteralsEnumerationLiteralParserRuleCall_6_1_0 = (RuleCall)cLiteralsAssignment_6_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//EnumerationType:
 		//	'EnumerationType'
-		//	name=TypeID
-		//	'literals' '(' literals+=EnumerationLiteral ("," literals+=EnumerationLiteral)* ')' ('documentation'
-		//	documentation=STRING)?;
+		//	name=TypeID (':' documentation=STRING)?
+		//	'literals' '(' literals+=EnumerationLiteral ("," literals+=EnumerationLiteral)* ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'EnumerationType' name=TypeID 'literals' '(' literals+=EnumerationLiteral ("," literals+=EnumerationLiteral)* ')'
-		//('documentation' documentation=STRING)?
+		//'EnumerationType' name=TypeID (':' documentation=STRING)? 'literals' '(' literals+=EnumerationLiteral (","
+		//literals+=EnumerationLiteral)* ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'EnumerationType'
@@ -2063,44 +2062,44 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//TypeID
 		public RuleCall getNameTypeIDParserRuleCall_1_0() { return cNameTypeIDParserRuleCall_1_0; }
 		
-		//'literals'
-		public Keyword getLiteralsKeyword_2() { return cLiteralsKeyword_2; }
+		//(':' documentation=STRING)?
+		public Group getGroup_2() { return cGroup_2; }
 		
-		//'('
-		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
-		
-		//literals+=EnumerationLiteral
-		public Assignment getLiteralsAssignment_4() { return cLiteralsAssignment_4; }
-		
-		//EnumerationLiteral
-		public RuleCall getLiteralsEnumerationLiteralParserRuleCall_4_0() { return cLiteralsEnumerationLiteralParserRuleCall_4_0; }
-		
-		//("," literals+=EnumerationLiteral)*
-		public Group getGroup_5() { return cGroup_5; }
-		
-		//","
-		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
-		
-		//literals+=EnumerationLiteral
-		public Assignment getLiteralsAssignment_5_1() { return cLiteralsAssignment_5_1; }
-		
-		//EnumerationLiteral
-		public RuleCall getLiteralsEnumerationLiteralParserRuleCall_5_1_0() { return cLiteralsEnumerationLiteralParserRuleCall_5_1_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
-		
-		//('documentation' documentation=STRING)?
-		public Group getGroup_7() { return cGroup_7; }
-		
-		//'documentation'
-		public Keyword getDocumentationKeyword_7_0() { return cDocumentationKeyword_7_0; }
+		//':'
+		public Keyword getColonKeyword_2_0() { return cColonKeyword_2_0; }
 		
 		//documentation=STRING
-		public Assignment getDocumentationAssignment_7_1() { return cDocumentationAssignment_7_1; }
+		public Assignment getDocumentationAssignment_2_1() { return cDocumentationAssignment_2_1; }
 		
 		//STRING
-		public RuleCall getDocumentationSTRINGTerminalRuleCall_7_1_0() { return cDocumentationSTRINGTerminalRuleCall_7_1_0; }
+		public RuleCall getDocumentationSTRINGTerminalRuleCall_2_1_0() { return cDocumentationSTRINGTerminalRuleCall_2_1_0; }
+		
+		//'literals'
+		public Keyword getLiteralsKeyword_3() { return cLiteralsKeyword_3; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_4() { return cLeftParenthesisKeyword_4; }
+		
+		//literals+=EnumerationLiteral
+		public Assignment getLiteralsAssignment_5() { return cLiteralsAssignment_5; }
+		
+		//EnumerationLiteral
+		public RuleCall getLiteralsEnumerationLiteralParserRuleCall_5_0() { return cLiteralsEnumerationLiteralParserRuleCall_5_0; }
+		
+		//("," literals+=EnumerationLiteral)*
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//","
+		public Keyword getCommaKeyword_6_0() { return cCommaKeyword_6_0; }
+		
+		//literals+=EnumerationLiteral
+		public Assignment getLiteralsAssignment_6_1() { return cLiteralsAssignment_6_1; }
+		
+		//EnumerationLiteral
+		public RuleCall getLiteralsEnumerationLiteralParserRuleCall_6_1_0() { return cLiteralsEnumerationLiteralParserRuleCall_6_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
 	public class EnumerationLiteralElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.EnumerationLiteral");
@@ -2108,15 +2107,15 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameTypeIDParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cDocumentationKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cColonKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cDocumentationAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cDocumentationSTRINGTerminalRuleCall_1_1_0 = (RuleCall)cDocumentationAssignment_1_1.eContents().get(0);
 		
 		//EnumerationLiteral:
-		//	name=TypeID ('documentation' documentation=STRING)?;
+		//	name=TypeID (':' documentation=STRING)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=TypeID ('documentation' documentation=STRING)?
+		//name=TypeID (':' documentation=STRING)?
 		public Group getGroup() { return cGroup; }
 		
 		//name=TypeID
@@ -2125,11 +2124,11 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//TypeID
 		public RuleCall getNameTypeIDParserRuleCall_0_0() { return cNameTypeIDParserRuleCall_0_0; }
 		
-		//('documentation' documentation=STRING)?
+		//(':' documentation=STRING)?
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//'documentation'
-		public Keyword getDocumentationKeyword_1_0() { return cDocumentationKeyword_1_0; }
+		//':'
+		public Keyword getColonKeyword_1_0() { return cColonKeyword_1_0; }
 		
 		//documentation=STRING
 		public Assignment getDocumentationAssignment_1_1() { return cDocumentationAssignment_1_1; }
@@ -2143,27 +2142,26 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRecordKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameTypeIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cRecordFieldsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cRecordFieldsRecordFieldParserRuleCall_3_0 = (RuleCall)cRecordFieldsAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cRecordFieldsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cRecordFieldsRecordFieldParserRuleCall_4_1_0 = (RuleCall)cRecordFieldsAssignment_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cDocumentationKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cDocumentationAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cDocumentationSTRINGTerminalRuleCall_6_1_0 = (RuleCall)cDocumentationAssignment_6_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cDocumentationAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cDocumentationSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cDocumentationAssignment_2_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cRecordFieldsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cRecordFieldsRecordFieldParserRuleCall_4_0 = (RuleCall)cRecordFieldsAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cRecordFieldsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cRecordFieldsRecordFieldParserRuleCall_5_1_0 = (RuleCall)cRecordFieldsAssignment_5_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//RecordType:
 		//	'record'
-		//	name=TypeID
-		//	'{' recordFields+=RecordField ("," recordFields+=RecordField)* '}' ('documentation' documentation=STRING)?;
+		//	name=TypeID (':' documentation=STRING)?
+		//	'{' recordFields+=RecordField ("," recordFields+=RecordField)* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'record' name=TypeID '{' recordFields+=RecordField ("," recordFields+=RecordField)* '}' ('documentation'
-		//documentation=STRING)?
+		//'record' name=TypeID (':' documentation=STRING)? '{' recordFields+=RecordField ("," recordFields+=RecordField)* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'record'
@@ -2175,41 +2173,41 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//TypeID
 		public RuleCall getNameTypeIDParserRuleCall_1_0() { return cNameTypeIDParserRuleCall_1_0; }
 		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		//(':' documentation=STRING)?
+		public Group getGroup_2() { return cGroup_2; }
 		
-		//recordFields+=RecordField
-		public Assignment getRecordFieldsAssignment_3() { return cRecordFieldsAssignment_3; }
-		
-		//RecordField
-		public RuleCall getRecordFieldsRecordFieldParserRuleCall_3_0() { return cRecordFieldsRecordFieldParserRuleCall_3_0; }
-		
-		//("," recordFields+=RecordField)*
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//","
-		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
-		
-		//recordFields+=RecordField
-		public Assignment getRecordFieldsAssignment_4_1() { return cRecordFieldsAssignment_4_1; }
-		
-		//RecordField
-		public RuleCall getRecordFieldsRecordFieldParserRuleCall_4_1_0() { return cRecordFieldsRecordFieldParserRuleCall_4_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-		
-		//('documentation' documentation=STRING)?
-		public Group getGroup_6() { return cGroup_6; }
-		
-		//'documentation'
-		public Keyword getDocumentationKeyword_6_0() { return cDocumentationKeyword_6_0; }
+		//':'
+		public Keyword getColonKeyword_2_0() { return cColonKeyword_2_0; }
 		
 		//documentation=STRING
-		public Assignment getDocumentationAssignment_6_1() { return cDocumentationAssignment_6_1; }
+		public Assignment getDocumentationAssignment_2_1() { return cDocumentationAssignment_2_1; }
 		
 		//STRING
-		public RuleCall getDocumentationSTRINGTerminalRuleCall_6_1_0() { return cDocumentationSTRINGTerminalRuleCall_6_1_0; }
+		public RuleCall getDocumentationSTRINGTerminalRuleCall_2_1_0() { return cDocumentationSTRINGTerminalRuleCall_2_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		
+		//recordFields+=RecordField
+		public Assignment getRecordFieldsAssignment_4() { return cRecordFieldsAssignment_4; }
+		
+		//RecordField
+		public RuleCall getRecordFieldsRecordFieldParserRuleCall_4_0() { return cRecordFieldsRecordFieldParserRuleCall_4_0; }
+		
+		//("," recordFields+=RecordField)*
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//","
+		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
+		
+		//recordFields+=RecordField
+		public Assignment getRecordFieldsAssignment_5_1() { return cRecordFieldsAssignment_5_1; }
+		
+		//RecordField
+		public RuleCall getRecordFieldsRecordFieldParserRuleCall_5_1_0() { return cRecordFieldsRecordFieldParserRuleCall_5_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class RecordFieldElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.RecordField");
@@ -2353,16 +2351,16 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cTypeDataTypeCrossReference_3_0 = (CrossReference)cTypeAssignment_3.eContents().get(0);
 		private final RuleCall cTypeDataTypeQualifiedIDParserRuleCall_3_0_1 = (RuleCall)cTypeDataTypeCrossReference_3_0.eContents().get(1);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cDocumentationKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cColonKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cDocumentationAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
 		private final RuleCall cDocumentationSTRINGTerminalRuleCall_4_1_0 = (RuleCall)cDocumentationAssignment_4_1.eContents().get(0);
 		
 		//ArrayType:
 		//	'array'
-		//	name=TypeID ':' type=[DataType|QualifiedID] ('documentation' documentation=STRING)?;
+		//	name=TypeID ':' type=[DataType|QualifiedID] (':' documentation=STRING)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'array' name=TypeID ':' type=[DataType|QualifiedID] ('documentation' documentation=STRING)?
+		//'array' name=TypeID ':' type=[DataType|QualifiedID] (':' documentation=STRING)?
 		public Group getGroup() { return cGroup; }
 		
 		//'array'
@@ -2386,11 +2384,11 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedID
 		public RuleCall getTypeDataTypeQualifiedIDParserRuleCall_3_0_1() { return cTypeDataTypeQualifiedIDParserRuleCall_3_0_1; }
 		
-		//('documentation' documentation=STRING)?
+		//(':' documentation=STRING)?
 		public Group getGroup_4() { return cGroup_4; }
 		
-		//'documentation'
-		public Keyword getDocumentationKeyword_4_0() { return cDocumentationKeyword_4_0; }
+		//':'
+		public Keyword getColonKeyword_4_0() { return cColonKeyword_4_0; }
 		
 		//documentation=STRING
 		public Assignment getDocumentationAssignment_4_1() { return cDocumentationAssignment_4_1; }
@@ -2538,26 +2536,25 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLengthKeyword_38 = (Keyword)cAlternatives.eContents().get(38);
 		private final Keyword cMinLengthKeyword_39 = (Keyword)cAlternatives.eContents().get(39);
 		private final Keyword cMaxLengthKeyword_40 = (Keyword)cAlternatives.eContents().get(40);
-		private final Keyword cDocumentationKeyword_41 = (Keyword)cAlternatives.eContents().get(41);
-		private final Keyword cEObjectTypeKeyword_42 = (Keyword)cAlternatives.eContents().get(42);
-		private final Keyword cBooleanTypeKeyword_43 = (Keyword)cAlternatives.eContents().get(43);
-		private final Keyword cNumericTypeKeyword_44 = (Keyword)cAlternatives.eContents().get(44);
-		private final Keyword cTotalDigitsKeyword_45 = (Keyword)cAlternatives.eContents().get(45);
-		private final Keyword cMinExclusiveKeyword_46 = (Keyword)cAlternatives.eContents().get(46);
-		private final Keyword cMaxExclusiveKeyword_47 = (Keyword)cAlternatives.eContents().get(47);
-		private final Keyword cMinInclusiveKeyword_48 = (Keyword)cAlternatives.eContents().get(48);
-		private final Keyword cMaxInclusiveKeyword_49 = (Keyword)cAlternatives.eContents().get(49);
-		private final Keyword cByteKeyword_50 = (Keyword)cAlternatives.eContents().get(50);
-		private final Keyword cDoubleKeyword_51 = (Keyword)cAlternatives.eContents().get(51);
-		private final Keyword cFloatKeyword_52 = (Keyword)cAlternatives.eContents().get(52);
-		private final Keyword cIntegerKeyword_53 = (Keyword)cAlternatives.eContents().get(53);
-		private final Keyword cLongKeyword_54 = (Keyword)cAlternatives.eContents().get(54);
-		private final Keyword cShortKeyword_55 = (Keyword)cAlternatives.eContents().get(55);
-		private final Keyword cBigDecimalKeyword_56 = (Keyword)cAlternatives.eContents().get(56);
-		private final Keyword cEnumerationTypeKeyword_57 = (Keyword)cAlternatives.eContents().get(57);
-		private final Keyword cLiteralsKeyword_58 = (Keyword)cAlternatives.eContents().get(58);
-		private final Keyword cRecordKeyword_59 = (Keyword)cAlternatives.eContents().get(59);
-		private final Keyword cArrayKeyword_60 = (Keyword)cAlternatives.eContents().get(60);
+		private final Keyword cEObjectTypeKeyword_41 = (Keyword)cAlternatives.eContents().get(41);
+		private final Keyword cBooleanTypeKeyword_42 = (Keyword)cAlternatives.eContents().get(42);
+		private final Keyword cNumericTypeKeyword_43 = (Keyword)cAlternatives.eContents().get(43);
+		private final Keyword cTotalDigitsKeyword_44 = (Keyword)cAlternatives.eContents().get(44);
+		private final Keyword cMinExclusiveKeyword_45 = (Keyword)cAlternatives.eContents().get(45);
+		private final Keyword cMaxExclusiveKeyword_46 = (Keyword)cAlternatives.eContents().get(46);
+		private final Keyword cMinInclusiveKeyword_47 = (Keyword)cAlternatives.eContents().get(47);
+		private final Keyword cMaxInclusiveKeyword_48 = (Keyword)cAlternatives.eContents().get(48);
+		private final Keyword cByteKeyword_49 = (Keyword)cAlternatives.eContents().get(49);
+		private final Keyword cDoubleKeyword_50 = (Keyword)cAlternatives.eContents().get(50);
+		private final Keyword cFloatKeyword_51 = (Keyword)cAlternatives.eContents().get(51);
+		private final Keyword cIntegerKeyword_52 = (Keyword)cAlternatives.eContents().get(52);
+		private final Keyword cLongKeyword_53 = (Keyword)cAlternatives.eContents().get(53);
+		private final Keyword cShortKeyword_54 = (Keyword)cAlternatives.eContents().get(54);
+		private final Keyword cBigDecimalKeyword_55 = (Keyword)cAlternatives.eContents().get(55);
+		private final Keyword cEnumerationTypeKeyword_56 = (Keyword)cAlternatives.eContents().get(56);
+		private final Keyword cLiteralsKeyword_57 = (Keyword)cAlternatives.eContents().get(57);
+		private final Keyword cRecordKeyword_58 = (Keyword)cAlternatives.eContents().get(58);
+		private final Keyword cArrayKeyword_59 = (Keyword)cAlternatives.eContents().get(59);
 		
 		//KEYWORD: // Configuration
 		//	'configuration' | 'description' | 'location' | 'use' | // Resource
@@ -2587,24 +2584,20 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//	'to' | // 'action'|
 		//	// DataType
 		//	// StringType
-		//	'StringType' | 'pattern' | 'length' | 'minLength' | 'maxLength' | 'documentation' | // EObjectType
-		//	'EObjectType' | // 'type' | 'documentation' | 
+		//	'StringType' | 'pattern' | 'length' | 'minLength' | 'maxLength' | // EObjectType
+		//	'EObjectType' | // 'type' | 
 		//	// BooleanType
-		//	'BooleanType' | // 'documentation' | 
-		//	// NumericType
-		//	'NumericType' | 'totalDigits' | 'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' | // 'type' | 'documentation' | 
+		//	'BooleanType' | // NumericType
+		//	'NumericType' | 'totalDigits' | 'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' | // 'type' | 
 		//	// NumericTypeEnum
 		//	'Byte' | 'Double' | 'Float' | 'Integer' | 'Long' | 'Short' | 'BigDecimal' | // EnumerationType
-		//	'EnumerationType' | 'literals' | // 'documentation' | 
-		//	//EnumerationLiteral
-		//	// 'documentation' | 
+		//	'EnumerationType' | 'literals' | //EnumerationLiteral
+		//	//  
 		//	// RecordType
-		//	'record' | // 'documentation' | 
-		//	// RecordField
+		//	'record' | // RecordField
 		//	// 'mutable'| 'required' | 'description'| 'annotations'
 		//	// ArrayType
-		//	'array' // 'documentation' | 
-		//;
+		//	'array';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//// Configuration
@@ -2635,20 +2628,17 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//'to' | // 'action'|
 		//// DataType
 		//// StringType
-		//'StringType' | 'pattern' | 'length' | 'minLength' | 'maxLength' | 'documentation' | // EObjectType
-		//'EObjectType' | // 'type' | 'documentation' | 
+		//'StringType' | 'pattern' | 'length' | 'minLength' | 'maxLength' | // EObjectType
+		//'EObjectType' | // 'type' | 
 		//// BooleanType
-		//'BooleanType' | // 'documentation' | 
-		//// NumericType
-		//'NumericType' | 'totalDigits' | 'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' | // 'type' | 'documentation' | 
+		//'BooleanType' | // NumericType
+		//'NumericType' | 'totalDigits' | 'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' | // 'type' | 
 		//// NumericTypeEnum
 		//'Byte' | 'Double' | 'Float' | 'Integer' | 'Long' | 'Short' | 'BigDecimal' | // EnumerationType
-		//'EnumerationType' | 'literals' | // 'documentation' | 
-		////EnumerationLiteral
-		//// 'documentation' | 
+		//'EnumerationType' | 'literals' | //EnumerationLiteral
+		////  
 		//// RecordType
-		//'record' | // 'documentation' | 
-		//// RecordField
+		//'record' | // RecordField
 		//// 'mutable'| 'required' | 'description'| 'annotations'
 		//// ArrayType
 		//'array'
@@ -2805,81 +2795,75 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//'maxLength'
 		public Keyword getMaxLengthKeyword_40() { return cMaxLengthKeyword_40; }
 		
-		//'documentation'
-		public Keyword getDocumentationKeyword_41() { return cDocumentationKeyword_41; }
-		
 		//// EObjectType
 		//'EObjectType'
-		public Keyword getEObjectTypeKeyword_42() { return cEObjectTypeKeyword_42; }
+		public Keyword getEObjectTypeKeyword_41() { return cEObjectTypeKeyword_41; }
 		
-		//// 'type' | 'documentation' | 
+		//// 'type' | 
 		//// BooleanType
 		//'BooleanType'
-		public Keyword getBooleanTypeKeyword_43() { return cBooleanTypeKeyword_43; }
+		public Keyword getBooleanTypeKeyword_42() { return cBooleanTypeKeyword_42; }
 		
-		//// 'documentation' | 
 		//// NumericType
 		//'NumericType'
-		public Keyword getNumericTypeKeyword_44() { return cNumericTypeKeyword_44; }
+		public Keyword getNumericTypeKeyword_43() { return cNumericTypeKeyword_43; }
 		
 		//'totalDigits'
-		public Keyword getTotalDigitsKeyword_45() { return cTotalDigitsKeyword_45; }
+		public Keyword getTotalDigitsKeyword_44() { return cTotalDigitsKeyword_44; }
 		
 		//'minExclusive'
-		public Keyword getMinExclusiveKeyword_46() { return cMinExclusiveKeyword_46; }
+		public Keyword getMinExclusiveKeyword_45() { return cMinExclusiveKeyword_45; }
 		
 		//'maxExclusive'
-		public Keyword getMaxExclusiveKeyword_47() { return cMaxExclusiveKeyword_47; }
+		public Keyword getMaxExclusiveKeyword_46() { return cMaxExclusiveKeyword_46; }
 		
 		//'minInclusive'
-		public Keyword getMinInclusiveKeyword_48() { return cMinInclusiveKeyword_48; }
+		public Keyword getMinInclusiveKeyword_47() { return cMinInclusiveKeyword_47; }
 		
 		//'maxInclusive'
-		public Keyword getMaxInclusiveKeyword_49() { return cMaxInclusiveKeyword_49; }
+		public Keyword getMaxInclusiveKeyword_48() { return cMaxInclusiveKeyword_48; }
 		
-		//// 'type' | 'documentation' | 
+		//// 'type' | 
 		//// NumericTypeEnum
 		//'Byte'
-		public Keyword getByteKeyword_50() { return cByteKeyword_50; }
+		public Keyword getByteKeyword_49() { return cByteKeyword_49; }
 		
 		//'Double'
-		public Keyword getDoubleKeyword_51() { return cDoubleKeyword_51; }
+		public Keyword getDoubleKeyword_50() { return cDoubleKeyword_50; }
 		
 		//'Float'
-		public Keyword getFloatKeyword_52() { return cFloatKeyword_52; }
+		public Keyword getFloatKeyword_51() { return cFloatKeyword_51; }
 		
 		//'Integer'
-		public Keyword getIntegerKeyword_53() { return cIntegerKeyword_53; }
+		public Keyword getIntegerKeyword_52() { return cIntegerKeyword_52; }
 		
 		//'Long'
-		public Keyword getLongKeyword_54() { return cLongKeyword_54; }
+		public Keyword getLongKeyword_53() { return cLongKeyword_53; }
 		
 		//'Short'
-		public Keyword getShortKeyword_55() { return cShortKeyword_55; }
+		public Keyword getShortKeyword_54() { return cShortKeyword_54; }
 		
 		//'BigDecimal'
-		public Keyword getBigDecimalKeyword_56() { return cBigDecimalKeyword_56; }
+		public Keyword getBigDecimalKeyword_55() { return cBigDecimalKeyword_55; }
 		
 		//// EnumerationType
 		//'EnumerationType'
-		public Keyword getEnumerationTypeKeyword_57() { return cEnumerationTypeKeyword_57; }
+		public Keyword getEnumerationTypeKeyword_56() { return cEnumerationTypeKeyword_56; }
 		
 		//'literals'
-		public Keyword getLiteralsKeyword_58() { return cLiteralsKeyword_58; }
+		public Keyword getLiteralsKeyword_57() { return cLiteralsKeyword_57; }
 		
-		//// 'documentation' | 
 		////EnumerationLiteral
-		//// 'documentation' | 
+		////  
 		//// RecordType
 		//'record'
-		public Keyword getRecordKeyword_59() { return cRecordKeyword_59; }
+		public Keyword getRecordKeyword_58() { return cRecordKeyword_58; }
 		
-		//// 'documentation' | 
 		//// RecordField
 		//// 'mutable'| 'required' | 'description'| 'annotations'
 		//// ArrayType
 		//'array'
-		public Keyword getArrayKeyword_60() { return cArrayKeyword_60; }
+		public Keyword getArrayKeyword_59() { return cArrayKeyword_59; }
 	}
 	
 	public class NumericTypeEnumElements extends AbstractEnumRuleElementFinder {
@@ -3298,8 +3282,8 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//StringType:
 	//	'StringType'
-	//	name=TypeID ('pattern' pattern=STRING)? ('length' length=EIntegerObject)? ('minLength' minLength=EIntegerObject)?
-	//	('maxLength' maxLength=EIntegerObject)? ('documentation' documentation=STRING)?;
+	//	name=TypeID (':' documentation=STRING)? ('pattern' pattern=STRING)? ('length' length=EIntegerObject)? ('minLength'
+	//	minLength=EIntegerObject)? ('maxLength' maxLength=EIntegerObject)?;
 	public StringTypeElements getStringTypeAccess() {
 		return pStringType;
 	}
@@ -3310,7 +3294,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//EObjectType:
 	//	'EObjectType'
-	//	name=TypeID ('type' instanceClassName=STRING)? ('documentation' documentation=STRING)?;
+	//	name=TypeID (':' documentation=STRING)? ('type' instanceClassName=STRING)?;
 	public EObjectTypeElements getEObjectTypeAccess() {
 		return pEObjectType;
 	}
@@ -3321,7 +3305,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//BooleanType:
 	//	'BooleanType'
-	//	name=TypeID ('documentation' documentation=STRING)?;
+	//	name=TypeID (':' documentation=STRING)?;
 	public BooleanTypeElements getBooleanTypeAccess() {
 		return pBooleanType;
 	}
@@ -3332,9 +3316,9 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//NumericType:
 	//	'NumericType'
-	//	name=TypeID 'type' type=NumericTypeEnum ('totalDigits' totalDigits=EIntegerObject)? ('minExclusive'
-	//	minExclusive=STRING)? ('maxExclusive' maxExclusive=STRING)? ('minInclusive' minInclusive=STRING)? ('maxInclusive'
-	//	maxInclusive=STRING)? ('documentation' documentation=STRING)?;
+	//	name=TypeID 'type' type=NumericTypeEnum (':' documentation=STRING)? ('totalDigits' totalDigits=EIntegerObject)?
+	//	('minExclusive' minExclusive=STRING)? ('maxExclusive' maxExclusive=STRING)? ('minInclusive' minInclusive=STRING)?
+	//	('maxInclusive' maxInclusive=STRING)?;
 	public NumericTypeElements getNumericTypeAccess() {
 		return pNumericType;
 	}
@@ -3356,9 +3340,8 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//EnumerationType:
 	//	'EnumerationType'
-	//	name=TypeID
-	//	'literals' '(' literals+=EnumerationLiteral ("," literals+=EnumerationLiteral)* ')' ('documentation'
-	//	documentation=STRING)?;
+	//	name=TypeID (':' documentation=STRING)?
+	//	'literals' '(' literals+=EnumerationLiteral ("," literals+=EnumerationLiteral)* ')';
 	public EnumerationTypeElements getEnumerationTypeAccess() {
 		return pEnumerationType;
 	}
@@ -3368,7 +3351,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//EnumerationLiteral:
-	//	name=TypeID ('documentation' documentation=STRING)?;
+	//	name=TypeID (':' documentation=STRING)?;
 	public EnumerationLiteralElements getEnumerationLiteralAccess() {
 		return pEnumerationLiteral;
 	}
@@ -3379,8 +3362,8 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//RecordType:
 	//	'record'
-	//	name=TypeID
-	//	'{' recordFields+=RecordField ("," recordFields+=RecordField)* '}' ('documentation' documentation=STRING)?;
+	//	name=TypeID (':' documentation=STRING)?
+	//	'{' recordFields+=RecordField ("," recordFields+=RecordField)* '}';
 	public RecordTypeElements getRecordTypeAccess() {
 		return pRecordType;
 	}
@@ -3404,7 +3387,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ArrayType:
 	//	'array'
-	//	name=TypeID ':' type=[DataType|QualifiedID] ('documentation' documentation=STRING)?;
+	//	name=TypeID ':' type=[DataType|QualifiedID] (':' documentation=STRING)?;
 	public ArrayTypeElements getArrayTypeAccess() {
 		return pArrayType;
 	}
@@ -3488,24 +3471,20 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	//	'to' | // 'action'|
 	//	// DataType
 	//	// StringType
-	//	'StringType' | 'pattern' | 'length' | 'minLength' | 'maxLength' | 'documentation' | // EObjectType
-	//	'EObjectType' | // 'type' | 'documentation' | 
+	//	'StringType' | 'pattern' | 'length' | 'minLength' | 'maxLength' | // EObjectType
+	//	'EObjectType' | // 'type' | 
 	//	// BooleanType
-	//	'BooleanType' | // 'documentation' | 
-	//	// NumericType
-	//	'NumericType' | 'totalDigits' | 'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' | // 'type' | 'documentation' | 
+	//	'BooleanType' | // NumericType
+	//	'NumericType' | 'totalDigits' | 'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' | // 'type' | 
 	//	// NumericTypeEnum
 	//	'Byte' | 'Double' | 'Float' | 'Integer' | 'Long' | 'Short' | 'BigDecimal' | // EnumerationType
-	//	'EnumerationType' | 'literals' | // 'documentation' | 
-	//	//EnumerationLiteral
-	//	// 'documentation' | 
+	//	'EnumerationType' | 'literals' | //EnumerationLiteral
+	//	//  
 	//	// RecordType
-	//	'record' | // 'documentation' | 
-	//	// RecordField
+	//	'record' | // RecordField
 	//	// 'mutable'| 'required' | 'description'| 'annotations'
 	//	// ArrayType
-	//	'array' // 'documentation' | 
-	//;
+	//	'array';
 	public KEYWORDElements getKEYWORDAccess() {
 		return pKEYWORD;
 	}

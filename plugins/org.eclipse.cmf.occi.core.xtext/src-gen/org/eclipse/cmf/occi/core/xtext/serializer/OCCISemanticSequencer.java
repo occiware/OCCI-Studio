@@ -269,7 +269,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     EObjectType returns EObjectType
 	 *
 	 * Constraint:
-	 *     (name=TypeID instanceClassName=STRING? documentation=STRING?)
+	 *     (name=TypeID documentation=STRING? instanceClassName=STRING?)
 	 */
 	protected void sequence_EObjectType(ISerializationContext context, EObjectType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -294,7 +294,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     EnumerationType returns EnumerationType
 	 *
 	 * Constraint:
-	 *     (name=TypeID literals+=EnumerationLiteral literals+=EnumerationLiteral* documentation=STRING?)
+	 *     (name=TypeID documentation=STRING? literals+=EnumerationLiteral literals+=EnumerationLiteral*)
 	 */
 	protected void sequence_EnumerationType(ISerializationContext context, EnumerationType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -415,12 +415,12 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (
 	 *         name=TypeID 
 	 *         type=NumericTypeEnum 
+	 *         documentation=STRING? 
 	 *         totalDigits=EIntegerObject? 
 	 *         minExclusive=STRING? 
 	 *         maxExclusive=STRING? 
 	 *         minInclusive=STRING? 
-	 *         maxInclusive=STRING? 
-	 *         documentation=STRING?
+	 *         maxInclusive=STRING?
 	 *     )
 	 */
 	protected void sequence_NumericType(ISerializationContext context, NumericType semanticObject) {
@@ -466,7 +466,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     RecordType returns RecordType
 	 *
 	 * Constraint:
-	 *     (name=TypeID recordFields+=RecordField recordFields+=RecordField* documentation=STRING?)
+	 *     (name=TypeID documentation=STRING? recordFields+=RecordField recordFields+=RecordField*)
 	 */
 	protected void sequence_RecordType(ISerializationContext context, RecordType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -514,11 +514,11 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         name=TypeID 
+	 *         documentation=STRING? 
 	 *         pattern=STRING? 
 	 *         length=EIntegerObject? 
 	 *         minLength=EIntegerObject? 
-	 *         maxLength=EIntegerObject? 
-	 *         documentation=STRING?
+	 *         maxLength=EIntegerObject?
 	 *     )
 	 */
 	protected void sequence_StringType(ISerializationContext context, StringType semanticObject) {
