@@ -147,7 +147,7 @@ public class OCCIParser extends AbstractContentAssistParser {
 					put(grammarAccess.getConfigurationAccess().getMixinsAssignment_6(), "rule__Configuration__MixinsAssignment_6");
 					put(grammarAccess.getResourceAccess().getIdAssignment_1(), "rule__Resource__IdAssignment_1");
 					put(grammarAccess.getResourceAccess().getKindAssignment_3(), "rule__Resource__KindAssignment_3");
-					put(grammarAccess.getResourceAccess().getTitleAssignment_4_2(), "rule__Resource__TitleAssignment_4_2");
+					put(grammarAccess.getResourceAccess().getTitleAssignment_4_1(), "rule__Resource__TitleAssignment_4_1");
 					put(grammarAccess.getResourceAccess().getLocationAssignment_5_1(), "rule__Resource__LocationAssignment_5_1");
 					put(grammarAccess.getResourceAccess().getSummaryAssignment_6_1(), "rule__Resource__SummaryAssignment_6_1");
 					put(grammarAccess.getResourceAccess().getPartsAssignment_7_1(), "rule__Resource__PartsAssignment_7_1");
@@ -155,7 +155,7 @@ public class OCCIParser extends AbstractContentAssistParser {
 					put(grammarAccess.getResourceAccess().getLinksAssignment_7_3(), "rule__Resource__LinksAssignment_7_3");
 					put(grammarAccess.getLinkAccess().getIdAssignment_1(), "rule__Link__IdAssignment_1");
 					put(grammarAccess.getLinkAccess().getKindAssignment_3(), "rule__Link__KindAssignment_3");
-					put(grammarAccess.getLinkAccess().getTitleAssignment_4_2(), "rule__Link__TitleAssignment_4_2");
+					put(grammarAccess.getLinkAccess().getTitleAssignment_4_1(), "rule__Link__TitleAssignment_4_1");
 					put(grammarAccess.getLinkAccess().getLocationAssignment_5_1(), "rule__Link__LocationAssignment_5_1");
 					put(grammarAccess.getLinkAccess().getTargetAssignment_7(), "rule__Link__TargetAssignment_7");
 					put(grammarAccess.getLinkAccess().getAttributesAssignment_8_1(), "rule__Link__AttributesAssignment_8_1");
@@ -176,7 +176,7 @@ public class OCCIParser extends AbstractContentAssistParser {
 					put(grammarAccess.getKindAccess().getParentAssignment_2_1(), "rule__Kind__ParentAssignment_2_1");
 					put(grammarAccess.getKindAccess().getSourceAssignment_3_1(), "rule__Kind__SourceAssignment_3_1");
 					put(grammarAccess.getKindAccess().getTargetAssignment_4_1(), "rule__Kind__TargetAssignment_4_1");
-					put(grammarAccess.getKindAccess().getTitleAssignment_5_2(), "rule__Kind__TitleAssignment_5_2");
+					put(grammarAccess.getKindAccess().getTitleAssignment_5_1(), "rule__Kind__TitleAssignment_5_1");
 					put(grammarAccess.getKindAccess().getAttributesAssignment_6_1_0(), "rule__Kind__AttributesAssignment_6_1_0");
 					put(grammarAccess.getKindAccess().getActionsAssignment_6_1_1(), "rule__Kind__ActionsAssignment_6_1_1");
 					put(grammarAccess.getKindAccess().getConstraintsAssignment_6_1_2(), "rule__Kind__ConstraintsAssignment_6_1_2");
@@ -188,7 +188,7 @@ public class OCCIParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMixinAccess().getDependsAssignment_2_3_1(), "rule__Mixin__DependsAssignment_2_3_1");
 					put(grammarAccess.getMixinAccess().getAppliesAssignment_3_2(), "rule__Mixin__AppliesAssignment_3_2");
 					put(grammarAccess.getMixinAccess().getAppliesAssignment_3_3_1(), "rule__Mixin__AppliesAssignment_3_3_1");
-					put(grammarAccess.getMixinAccess().getTitleAssignment_4_2(), "rule__Mixin__TitleAssignment_4_2");
+					put(grammarAccess.getMixinAccess().getTitleAssignment_4_1(), "rule__Mixin__TitleAssignment_4_1");
 					put(grammarAccess.getMixinAccess().getAttributesAssignment_5_1_0(), "rule__Mixin__AttributesAssignment_5_1_0");
 					put(grammarAccess.getMixinAccess().getActionsAssignment_5_1_1(), "rule__Mixin__ActionsAssignment_5_1_1");
 					put(grammarAccess.getMixinAccess().getConstraintsAssignment_5_1_2(), "rule__Mixin__ConstraintsAssignment_5_1_2");
@@ -208,7 +208,7 @@ public class OCCIParser extends AbstractContentAssistParser {
 					put(grammarAccess.getActionAccess().getNameAssignment_1(), "rule__Action__NameAssignment_1");
 					put(grammarAccess.getActionAccess().getAttributesAssignment_2_1(), "rule__Action__AttributesAssignment_2_1");
 					put(grammarAccess.getActionAccess().getAttributesAssignment_2_2_1(), "rule__Action__AttributesAssignment_2_2_1");
-					put(grammarAccess.getActionAccess().getTitleAssignment_3_2(), "rule__Action__TitleAssignment_3_2");
+					put(grammarAccess.getActionAccess().getTitleAssignment_3_1(), "rule__Action__TitleAssignment_3_1");
 					put(grammarAccess.getActionAccess().getAnnotationsAssignment_4_2(), "rule__Action__AnnotationsAssignment_4_2");
 					put(grammarAccess.getActionAccess().getAnnotationsAssignment_4_3_1(), "rule__Action__AnnotationsAssignment_4_3_1");
 					put(grammarAccess.getParameterDeclAccess().getNameAssignment_0(), "rule__ParameterDecl__NameAssignment_0");
