@@ -26,7 +26,7 @@ import org.eclipse.cmf.occi.core.Transition;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.core.Transition#containedActionMustBeDeclaredInTheAppropriateKind(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Contained Action Must Be Declared In The Appropriate Kind</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.Transition#containedActionMustBeDeclaredInTheAppropriateType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Contained Action Must Be Declared In The Appropriate Type</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -100,6 +100,19 @@ public class TransitionTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.Transition#containedActionMustBeDeclaredInTheAppropriateType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Contained Action Must Be Declared In The Appropriate Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.Transition#containedActionMustBeDeclaredInTheAppropriateType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testContainedActionMustBeDeclaredInTheAppropriateType__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 	/**

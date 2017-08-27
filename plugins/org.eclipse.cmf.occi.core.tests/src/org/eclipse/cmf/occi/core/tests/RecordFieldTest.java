@@ -102,7 +102,7 @@ public class RecordFieldTest extends AttributeTest {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.RecordField#ContainerMustBeRecordType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testContainerMustBeRecordType__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
