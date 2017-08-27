@@ -773,7 +773,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getTransition__ContainedActionMustBeDeclaredInTheAppropriateKind__DiagnosticChain_Map() {
+	public EOperation getTransition__ContainedActionMustBeDeclaredInTheAppropriateType__DiagnosticChain_Map() {
 		return transitionEClass.getEOperations().get(0);
 	}
 
@@ -2040,7 +2040,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		createEReference(transitionEClass, TRANSITION__SOURCE);
 		createEReference(transitionEClass, TRANSITION__TARGET);
 		createEReference(transitionEClass, TRANSITION__ACTION);
-		createEOperation(transitionEClass, TRANSITION___CONTAINED_ACTION_MUST_BE_DECLARED_IN_THE_APPROPRIATE_KIND__DIAGNOSTICCHAIN_MAP);
+		createEOperation(transitionEClass, TRANSITION___CONTAINED_ACTION_MUST_BE_DECLARED_IN_THE_APPROPRIATE_TYPE__DIAGNOSTICCHAIN_MAP);
 
 		attributeEClass = createEClass(ATTRIBUTE);
 		createEAttribute(attributeEClass, ATTRIBUTE__NAME);
@@ -2360,7 +2360,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEReference(getTransition_Target(), this.getState(), null, "target", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_Action(), this.getAction(), null, "action", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getTransition__ContainedActionMustBeDeclaredInTheAppropriateKind__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "containedActionMustBeDeclaredInTheAppropriateKind", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getTransition__ContainedActionMustBeDeclaredInTheAppropriateType__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "containedActionMustBeDeclaredInTheAppropriateType", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -2865,7 +2865,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		  (transitionEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "containedActionMustBeDeclaredInTheAppropriateKind"
+			 "constraints", "containedActionMustBeDeclaredInTheAppropriateType"
 		   });	
 		addAnnotation
 		  (kindEClass, 

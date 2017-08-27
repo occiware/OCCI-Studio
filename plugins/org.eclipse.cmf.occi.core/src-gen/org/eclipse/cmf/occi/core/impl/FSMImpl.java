@@ -19,11 +19,11 @@ import java.util.Map;
 import org.eclipse.cmf.occi.core.Attribute;
 import org.eclipse.cmf.occi.core.DataType;
 import org.eclipse.cmf.occi.core.FSM;
-import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.cmf.occi.core.State;
 
+import org.eclipse.cmf.occi.core.Type;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -229,7 +229,7 @@ public class FSMImpl extends MinimalEObjectImpl.Container implements FSM {
 		 *     else
 		 *       let
 		 *         result : Boolean[1] = self.oclContainer()
-		 *         .oclAsType(Kind)
+		 *         .oclAsType(Type)
 		 *         .attributes->includes(self.attribute)
 		 *       in
 		 *         'FSM::containedAttribute'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
@@ -246,9 +246,9 @@ public class FSMImpl extends MinimalEObjectImpl.Container implements FSM {
 		else {
 			/*@Caught*/ /*@NonNull*/ Object CAUGHT_result;
 			try {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Kind = idResolver.getClass(OCCITables.CLSSid_Kind, null);
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Type = idResolver.getClass(OCCITables.CLSSid_Type, null);
 				final /*@NonInvalid*/ Object oclContainer = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, this);
-				final /*@Thrown*/ Kind oclAsType = ClassUtil.nonNullState((Kind)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer, TYP_occi_c_c_Kind));
+				final /*@Thrown*/ Type oclAsType = ClassUtil.nonNullState((Type)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer, TYP_occi_c_c_Type));
 				final /*@Thrown*/ List<Attribute> attributes = oclAsType.getAttributes();
 				final /*@Thrown*/ OrderedSetValue BOXED_attributes = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Attribute, attributes);
 				final /*@NonInvalid*/ Attribute attribute = this.getAttribute();

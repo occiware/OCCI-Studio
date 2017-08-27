@@ -662,13 +662,13 @@ public interface OCCIPackage extends EPackage {
 	int TRANSITION_FEATURE_COUNT = 3;
 
 	/**
-	 * The operation id for the '<em>Contained Action Must Be Declared In The Appropriate Kind</em>' operation.
+	 * The operation id for the '<em>Contained Action Must Be Declared In The Appropriate Type</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___CONTAINED_ACTION_MUST_BE_DECLARED_IN_THE_APPROPRIATE_KIND__DIAGNOSTICCHAIN_MAP = 0;
+	int TRANSITION___CONTAINED_ACTION_MUST_BE_DECLARED_IN_THE_APPROPRIATE_TYPE__DIAGNOSTICCHAIN_MAP = 0;
 
 	/**
 	 * The number of operations of the '<em>Transition</em>' class.
@@ -3520,14 +3520,14 @@ public interface OCCIPackage extends EPackage {
 	EReference getTransition_Action();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Transition#containedActionMustBeDeclaredInTheAppropriateKind(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Contained Action Must Be Declared In The Appropriate Kind</em>}' operation.
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Transition#containedActionMustBeDeclaredInTheAppropriateType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Contained Action Must Be Declared In The Appropriate Type</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Contained Action Must Be Declared In The Appropriate Kind</em>' operation.
-	 * @see org.eclipse.cmf.occi.core.Transition#containedActionMustBeDeclaredInTheAppropriateKind(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @return the meta object for the '<em>Contained Action Must Be Declared In The Appropriate Type</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Transition#containedActionMustBeDeclaredInTheAppropriateType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getTransition__ContainedActionMustBeDeclaredInTheAppropriateKind__DiagnosticChain_Map();
+	EOperation getTransition__ContainedActionMustBeDeclaredInTheAppropriateType__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Attribute <em>Attribute</em>}'.
@@ -5282,12 +5282,12 @@ public interface OCCIPackage extends EPackage {
 		EReference TRANSITION__ACTION = eINSTANCE.getTransition_Action();
 
 		/**
-		 * The meta object literal for the '<em><b>Contained Action Must Be Declared In The Appropriate Kind</b></em>' operation.
+		 * The meta object literal for the '<em><b>Contained Action Must Be Declared In The Appropriate Type</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation TRANSITION___CONTAINED_ACTION_MUST_BE_DECLARED_IN_THE_APPROPRIATE_KIND__DIAGNOSTICCHAIN_MAP = eINSTANCE.getTransition__ContainedActionMustBeDeclaredInTheAppropriateKind__DiagnosticChain_Map();
+		EOperation TRANSITION___CONTAINED_ACTION_MUST_BE_DECLARED_IN_THE_APPROPRIATE_TYPE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getTransition__ContainedActionMustBeDeclaredInTheAppropriateType__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.AttributeImpl <em>Attribute</em>}' class.

@@ -18,12 +18,12 @@ import java.util.Map;
 import org.eclipse.cmf.occi.core.Action;
 import org.eclipse.cmf.occi.core.EnumerationLiteral;
 import org.eclipse.cmf.occi.core.FSM;
-import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.cmf.occi.core.State;
 import org.eclipse.cmf.occi.core.Transition;
 
+import org.eclipse.cmf.occi.core.Type;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -243,12 +243,12 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean containedActionMustBeDeclaredInTheAppropriateKind(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+	public boolean containedActionMustBeDeclaredInTheAppropriateType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
 		 *
-		 * inv containedActionMustBeDeclaredInTheAppropriateKind:
+		 * inv containedActionMustBeDeclaredInTheAppropriateType:
 		 *   let
-		 *     severity : Integer[1] = 'Transition::containedActionMustBeDeclaredInTheAppropriateKind'.getSeverity()
+		 *     severity : Integer[1] = 'Transition::containedActionMustBeDeclaredInTheAppropriateType'.getSeverity()
 		 *   in
 		 *     if severity <= 0
 		 *     then true
@@ -262,7 +262,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 		 *             .oclContainer()
 		 *             .oclAsType(FSM)
 		 *             .oclContainer()
-		 *             .oclAsType(Kind)
+		 *             .oclAsType(Type)
 		 *             .actions->includes(self.action)
 		 *           else false
 		 *           endif
@@ -274,26 +274,26 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 		 *               status = status, message = if self.action <> null
 		 *               then 'The action ' + self.action.name + ' declared in ' +
 		 *                 self.action.oclContainer()
-		 *                 .oclAsType(Kind).name + ' Kind cannot be used in the FSM of ' +
+		 *                 .oclAsType(Type).name + ' kind/mixin cannot be used in the FSM of ' +
 		 *                 self.oclContainer()
 		 *                 .oclAsType(State)
 		 *                 .oclContainer()
 		 *                 .oclAsType(FSM)
 		 *                 .oclContainer()
-		 *                 .oclAsType(Kind).name + ' Kind.'
+		 *                 .oclAsType(Type).name + ' kind/mixin.'
 		 *               else 'The action of Transition instance coming from the "' + source.literal.name + '" state to the "' + target.literal.name + '" state in the FSM of "' +
 		 *                 source.owningFSM.oclContainer()
-		 *                 .oclAsType(Kind).name + '" kind instance must be a set'
+		 *                 .oclAsType(Type).name + '" kind/mixin instance must be a set'
 		 *               endif, severity = -1
 		 *             }
 		 *           endif
 		 *       in
-		 *         'Transition::containedActionMustBeDeclaredInTheAppropriateKind'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *         'Transition::containedActionMustBeDeclaredInTheAppropriateType'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
 		 */
 		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
 		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, OCCITables.STR_Transition_c_c_containedActionMustBeDeclaredInTheAppropriateKind);
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, OCCITables.STR_Transition_c_c_containedActionMustBeDeclaredInTheAppropriateType);
 		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
 		/*@NonInvalid*/ Object symbol_3;
 		if (le) {
@@ -302,22 +302,22 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 		else {
 			/*@Caught*/ /*@NonNull*/ Object CAUGHT_symbol_2;
 			try {
-				final /*@NonInvalid*/ Action action = this.getAction();
-				final /*@NonInvalid*/ boolean ne = action != null;
+				final /*@NonInvalid*/ Action action_0 = this.getAction();
+				final /*@NonInvalid*/ boolean ne = action_0 != null;
 				/*@Thrown*/ boolean status;
 				if (ne) {
 					final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_FSM = idResolver.getClass(OCCITables.CLSSid_FSM, null);
-					final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Kind_0 = idResolver.getClass(OCCITables.CLSSid_Kind, null);
 					final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_State = idResolver.getClass(OCCITables.CLSSid_State, null);
+					final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Type_0 = idResolver.getClass(OCCITables.CLSSid_Type, null);
 					final /*@NonInvalid*/ Object oclContainer = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, this);
 					final /*@Thrown*/ State oclAsType = ClassUtil.nonNullState((State)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer, TYP_occi_c_c_State));
 					final /*@Thrown*/ Object oclContainer_0 = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, oclAsType);
 					final /*@Thrown*/ FSM oclAsType_0 = ClassUtil.nonNullState((FSM)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_0, TYP_occi_c_c_FSM));
 					final /*@Thrown*/ Object oclContainer_1 = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, oclAsType_0);
-					final /*@Thrown*/ Kind oclAsType_1 = ClassUtil.nonNullState((Kind)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_1, TYP_occi_c_c_Kind_0));
+					final /*@Thrown*/ Type oclAsType_1 = ClassUtil.nonNullState((Type)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_1, TYP_occi_c_c_Type_0));
 					final /*@Thrown*/ List<Action> actions = oclAsType_1.getActions();
 					final /*@Thrown*/ OrderedSetValue BOXED_actions = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Action, actions);
-					final /*@Thrown*/ boolean includes = CollectionIncludesOperation.INSTANCE.evaluate(BOXED_actions, action).booleanValue();
+					final /*@Thrown*/ boolean includes = CollectionIncludesOperation.INSTANCE.evaluate(BOXED_actions, action_0).booleanValue();
 					status = includes;
 				}
 				else {
@@ -328,31 +328,31 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 					symbol_2 = ValueUtil.TRUE_VALUE;
 				}
 				else {
-					final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Kind_3 = idResolver.getClass(OCCITables.CLSSid_Kind, null);
+					final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Type_3 = idResolver.getClass(OCCITables.CLSSid_Type, null);
 					/*@Thrown*/ String symbol_0;
 					if (ne) {
 						final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_FSM_0 = idResolver.getClass(OCCITables.CLSSid_FSM, null);
 						final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_State_0 = idResolver.getClass(OCCITables.CLSSid_State, null);
-						if (action == null) {
+						if (action_0 == null) {
 							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Category::name\'");
 						}
-						final /*@Thrown*/ String name = action.getName();
+						final /*@Thrown*/ String name = action_0.getName();
 						final /*@Thrown*/ String sum = StringConcatOperation.INSTANCE.evaluate(OCCITables.STR_The_32_action_32, name);
 						final /*@Thrown*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, OCCITables.STR__32_declared_32_in_32);
-						final /*@Thrown*/ Object oclContainer_2 = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, action);
-						final /*@Thrown*/ Kind oclAsType_2 = ClassUtil.nonNullState((Kind)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_2, TYP_occi_c_c_Kind_3));
+						final /*@Thrown*/ Object oclContainer_2 = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, action_0);
+						final /*@Thrown*/ Type oclAsType_2 = ClassUtil.nonNullState((Type)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_2, TYP_occi_c_c_Type_3));
 						final /*@Thrown*/ String name_0 = oclAsType_2.getName();
 						final /*@Thrown*/ String sum_1 = StringConcatOperation.INSTANCE.evaluate(sum_0, name_0);
-						final /*@Thrown*/ String sum_2 = StringConcatOperation.INSTANCE.evaluate(sum_1, OCCITables.STR__32_Kind_32_cannot_32_be_32_used_32_in_32_the_32_FSM_32_of_32);
+						final /*@Thrown*/ String sum_2 = StringConcatOperation.INSTANCE.evaluate(sum_1, OCCITables.STR__32_kind_s_mixin_32_cannot_32_be_32_used_32_in_32_the_32_FSM_32_of_32);
 						final /*@NonInvalid*/ Object oclContainer_3 = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, this);
 						final /*@Thrown*/ State oclAsType_3 = ClassUtil.nonNullState((State)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_3, TYP_occi_c_c_State_0));
 						final /*@Thrown*/ Object oclContainer_4 = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, oclAsType_3);
 						final /*@Thrown*/ FSM oclAsType_4 = ClassUtil.nonNullState((FSM)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_4, TYP_occi_c_c_FSM_0));
 						final /*@Thrown*/ Object oclContainer_5 = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, oclAsType_4);
-						final /*@Thrown*/ Kind oclAsType_5 = ClassUtil.nonNullState((Kind)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_5, TYP_occi_c_c_Kind_3));
+						final /*@Thrown*/ Type oclAsType_5 = ClassUtil.nonNullState((Type)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_5, TYP_occi_c_c_Type_3));
 						final /*@Thrown*/ String name_1 = oclAsType_5.getName();
 						final /*@Thrown*/ String sum_3 = StringConcatOperation.INSTANCE.evaluate(sum_2, name_1);
-						final /*@Thrown*/ String sum_4 = StringConcatOperation.INSTANCE.evaluate(sum_3, OCCITables.STR__32_Kind);
+						final /*@Thrown*/ String sum_4 = StringConcatOperation.INSTANCE.evaluate(sum_3, OCCITables.STR__32_kind_s_mixin);
 						symbol_0 = sum_4;
 					}
 					else {
@@ -374,10 +374,10 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 						final /*@Thrown*/ String sum_8 = StringConcatOperation.INSTANCE.evaluate(sum_7, OCCITables.STR__34_32_state_32_in_32_the_32_FSM_32_of_32_34);
 						final /*@NonInvalid*/ FSM owningFSM = source_0.getOwningFSM();
 						final /*@NonInvalid*/ Object oclContainer_6 = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, owningFSM);
-						final /*@Thrown*/ Kind oclAsType_6 = ClassUtil.nonNullState((Kind)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_6, TYP_occi_c_c_Kind_3));
+						final /*@Thrown*/ Type oclAsType_6 = ClassUtil.nonNullState((Type)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_6, TYP_occi_c_c_Type_3));
 						final /*@Thrown*/ String name_4 = oclAsType_6.getName();
 						final /*@Thrown*/ String sum_9 = StringConcatOperation.INSTANCE.evaluate(sum_8, name_4);
-						final /*@Thrown*/ String sum_10 = StringConcatOperation.INSTANCE.evaluate(sum_9, OCCITables.STR__34_32_kind_32_instance_32_must_32_be_32_a_32_set);
+						final /*@Thrown*/ String sum_10 = StringConcatOperation.INSTANCE.evaluate(sum_9, OCCITables.STR__34_32_kind_s_mixin_32_instance_32_must_32_be_32_a_32_set);
 						symbol_0 = sum_10;
 					}
 					final /*@NonInvalid*/ IntegerValue diff = (IntegerValue)NumericNegateOperation.INSTANCE.evaluate(OCCITables.INT_1);
@@ -389,7 +389,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 			catch (Exception e) {
 				CAUGHT_symbol_2 = ValueUtil.createInvalidValue(e);
 			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Transition_c_c_containedActionMustBeDeclaredInTheAppropriateKind, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_2, OCCITables.INT_0).booleanValue();
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Transition_c_c_containedActionMustBeDeclaredInTheAppropriateType, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_2, OCCITables.INT_0).booleanValue();
 			symbol_3 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_3;
@@ -528,8 +528,8 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case OCCIPackage.TRANSITION___CONTAINED_ACTION_MUST_BE_DECLARED_IN_THE_APPROPRIATE_KIND__DIAGNOSTICCHAIN_MAP:
-				return containedActionMustBeDeclaredInTheAppropriateKind((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case OCCIPackage.TRANSITION___CONTAINED_ACTION_MUST_BE_DECLARED_IN_THE_APPROPRIATE_TYPE__DIAGNOSTICCHAIN_MAP:
+				return containedActionMustBeDeclaredInTheAppropriateType((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

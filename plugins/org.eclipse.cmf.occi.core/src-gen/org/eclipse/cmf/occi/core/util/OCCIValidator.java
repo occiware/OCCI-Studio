@@ -115,12 +115,12 @@ public class OCCIValidator extends EObjectValidator {
 	public static final int STATE__STATE_LITERAL_ALREADY_DEFINED_IN_FSM_ATTRIBUTE_TYPE = 8;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Contained Action Must Be Declared In The Appropriate Kind' of 'Transition'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Contained Action Must Be Declared In The Appropriate Type' of 'Transition'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int TRANSITION__CONTAINED_ACTION_MUST_BE_DECLARED_IN_THE_APPROPRIATE_KIND = 9;
+	public static final int TRANSITION__CONTAINED_ACTION_MUST_BE_DECLARED_IN_THE_APPROPRIATE_TYPE = 9;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'No Cyclic Inheritance' of 'Kind'.
@@ -728,18 +728,18 @@ public class OCCIValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(transition, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTransition_containedActionMustBeDeclaredInTheAppropriateKind(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_containedActionMustBeDeclaredInTheAppropriateType(transition, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the containedActionMustBeDeclaredInTheAppropriateKind constraint of '<em>Transition</em>'.
+	 * Validates the containedActionMustBeDeclaredInTheAppropriateType constraint of '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTransition_containedActionMustBeDeclaredInTheAppropriateKind(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return transition.containedActionMustBeDeclaredInTheAppropriateKind(diagnostics, context);
+	public boolean validateTransition_containedActionMustBeDeclaredInTheAppropriateType(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return transition.containedActionMustBeDeclaredInTheAppropriateType(diagnostics, context);
 	}
 
 	/**
