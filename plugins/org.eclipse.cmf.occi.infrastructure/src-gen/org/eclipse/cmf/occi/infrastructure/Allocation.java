@@ -52,9 +52,6 @@ public enum Allocation implements Enumerator {
 	 * The '<em><b>Dynamic</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * 
-	 * <!-- end-model-doc -->
 	 * @see #DYNAMIC
 	 * @model name="dynamic"
 	 * @generated

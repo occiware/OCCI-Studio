@@ -939,8 +939,12 @@ public class InfrastructureTables
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Compute__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Compute__OclAny = {
@@ -1183,8 +1187,12 @@ public class InfrastructureTables
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Network__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Network__OclAny = {
@@ -1286,8 +1294,12 @@ public class InfrastructureTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Networkinterface__Networkinterface = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Networkinterface__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Networkinterface__Link = {};
@@ -1532,8 +1544,12 @@ public class InfrastructureTables
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storage__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storage__OclAny = {
@@ -1635,8 +1651,12 @@ public class InfrastructureTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagelink__Storagelink = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagelink__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagelink__Link = {};
