@@ -10,7 +10,7 @@
     </attributes>
     <actions name="Up" scheme="http://schemas.ogf.org/occi/infrastructure/network/action#" title="Up a network."/>
     <actions name="Down" scheme="http://schemas.ogf.org/occi/infrastructure/network/action#" title="Down a network."/>
-    <constraints name="UniqueVlan" description="chaque network a un vlan différent" body="Network.allInstances()->isUnique(occi.network.vlan)"/>
+    <constraints name="UniqueVlan" description="Each network has a different vlan" body="Network.allInstances()->isUnique(occi.network.vlan)"/>
     <fsm attribute="//@kinds[term='network']/@attributes.2">
       <ownedState literal="//@types.3/@literals.1" initial="true" final="true">
         <outgoingTransition target="//@kinds[term='network']/@fsm/@ownedState.1" action="//@kinds[term='network']/@actions.0"/>
@@ -148,7 +148,7 @@
     <attributes name="occi.networkinterface.address" mutable="true" required="true" description="Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7) of the link" type="//@types.9"/>
     <attributes name="occi.networkinterface.gateway" mutable="true" description="Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7)" type="//@types.9"/>
     <attributes name="occi.networkinterface.allocation" mutable="true" required="true" description="Address mechanism: dynamic e.g., uses the dynamic host configuration protocol, static e.g., uses user supplied static network configurations" type="//@types.10"/>
-    <constraints name="IPAdressesMustBeUnique" description="les adresses IP des networkinterface doivent être différentes" body="IpNetworkInterface.allInstances()->isUnique(occi.networkinterface.address)"/>
+    <constraints name="IPAdressesMustBeUnique" description="IP addresses of NetworkInterface instances must be different." body="IpNetworkInterface.allInstances()->isUnique(occi.networkinterface.address)"/>
   </mixins>
   <mixins name="Os_Tpl" scheme="http://schemas.ogf.org/occi/infrastructure#" title="OS Template" applies="//@kinds[term='compute']"/>
   <mixins name="Resource_Tpl" scheme="http://schemas.ogf.org/occi/infrastructure#" title="Resource template">
@@ -202,7 +202,7 @@
   </types>
   <types xsi:type="occi:StringType" name="IpAddress"/>
   <types xsi:type="occi:EnumerationType" name="Allocation">
-    <literals name="dynamic" documentation=""/>
+    <literals name="dynamic"/>
     <literals name="static"/>
   </types>
   <types xsi:type="occi:EnumerationType" name="StorageStatus">
