@@ -4,23 +4,23 @@
   <kinds name="agreement" scheme="http://schemas.ogf.org/occi/sla#" title="A Service Level Agreement">
     <attributes name="occi.agreement.state" mutable="false" required="true" description="Current state of the instance" type="//@types.1"/>
     <attributes name="occi.agreement.agreedAt" mutable="false" description="The point in time when the agreement was made" type="//@types.0"/>
-    <attributes name="occi.agreement.effectiveFrom" description="The point in time when the agreement’s effectiveness begins" type="//@types.0"/>
-    <attributes name="occi.agreement.effectiveUntil" description="The point in time when the agreement’s effectiveness ends" type="//@types.0"/>
+    <attributes name="occi.agreement.effectiveFrom" mutable="true" description="The point in time when the agreement’s effectiveness begins" type="//@types.0"/>
+    <attributes name="occi.agreement.effectiveUntil" mutable="true" description="The point in time when the agreement’s effectiveness ends" type="//@types.0"/>
     <actions name="Accept" scheme="http://schemas.ogf.org/occi/sla/agreement/action#" title="Accept an agreement."/>
     <actions name="Reject" scheme="http://schemas.ogf.org/occi/sla/agreement/action#" title="Reject an agreement."/>
     <actions name="Suspend" scheme="http://schemas.ogf.org/occi/sla/agreement/action#" title="Suspend an agreement."/>
     <actions name="Resume" scheme="http://schemas.ogf.org/occi/sla/agreement/action#" title="Resume an agreement."/>
     <actions name="Terminate" scheme="http://schemas.ogf.org/occi/sla/agreement/action#" title="Terminate an agreement."/>
     <fsm attribute="//@kinds[term='agreement']/@attributes.0">
-      <ownedState literal="//@types.1/@literals.0" initial="true">
+      <ownedState literal="//@types.1/@literals.0" initial="true" final="false">
         <outgoingTransition target="//@kinds[term='agreement']/@fsm/@ownedState.1" action="//@kinds[term='agreement']/@actions.1"/>
         <outgoingTransition target="//@kinds[term='agreement']/@fsm/@ownedState.2" action="//@kinds[term='agreement']/@actions.0"/>
       </ownedState>
-      <ownedState literal="//@types.1/@literals.2" final="true"/>
-      <ownedState literal="//@types.1/@literals.1" final="true">
+      <ownedState literal="//@types.1/@literals.2" initial="false" final="true"/>
+      <ownedState literal="//@types.1/@literals.1" initial="false" final="true">
         <outgoingTransition target="//@kinds[term='agreement']/@fsm/@ownedState.3" action="//@kinds[term='agreement']/@actions.2"/>
       </ownedState>
-      <ownedState literal="//@types.1/@literals.3" final="true">
+      <ownedState literal="//@types.1/@literals.3" initial="false" final="true">
         <outgoingTransition target="//@kinds[term='agreement']/@fsm/@ownedState.2" action="//@kinds[term='agreement']/@actions.3"/>
       </ownedState>
     </fsm>
@@ -44,10 +44,10 @@
         <outgoingTransition target="//@mixins[term='agreement_term']/@fsm/@ownedState.1"/>
         <outgoingTransition target="//@mixins[term='agreement_term']/@fsm/@ownedState.2"/>
       </ownedState>
-      <ownedState literal="//@types.3/@literals.1" final="true">
+      <ownedState literal="//@types.3/@literals.1" initial="false" final="true">
         <outgoingTransition target="//@mixins[term='agreement_term']/@fsm/@ownedState.2"/>
       </ownedState>
-      <ownedState literal="//@types.3/@literals.2" final="true">
+      <ownedState literal="//@types.3/@literals.2" initial="false" final="true">
         <outgoingTransition target="//@mixins[term='agreement_term']/@fsm/@ownedState.1"/>
       </ownedState>
     </fsm>
