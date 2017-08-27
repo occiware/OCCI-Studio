@@ -67,7 +67,7 @@
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="AttributeTypeMustBeEEnum" value="attribute.type.oclIsTypeOf(EnumerationType)"/>
-      <details key="containedAttribute" value="self.oclContainer().oclAsType(Kind).attributes->includes(self.attribute)"/>
+      <details key="containedAttribute" value="self.oclContainer().oclAsType(Type).attributes->includes(self.attribute)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedState" upperBound="-1"
         eType="#//State" containment="true" eOpposite="#//State/owningFSM">
@@ -108,10 +108,10 @@
       <details key="name" value="State"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="containedActionMustBeDeclaredInTheAppropriateKind"/>
+      <details key="constraints" value="containedActionMustBeDeclaredInTheAppropriateType"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="containedActionMustBeDeclaredInTheAppropriateKind" value="Tuple {&#xA;&#x9;&#x9;&#x9;&#x9;status: Boolean= if (self.action &lt;> null) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; then &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9;self.oclContainer().oclAsType(State).oclContainer().oclAsType(FSM).oclContainer().oclAsType(Kind).actions->includes(self.action)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9;false&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; endif,&#xA;&#x9;&#x9;&#x9;&#x9;message: String =if (self.action &lt;> null)  &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then 'The action '+ self.action.name +' declared in '+self.action.oclContainer().oclAsType(Kind).name+&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9;&#x9;&#x9;' Kind cannot be used in the FSM of '+self.oclContainer().oclAsType(State).oclContainer().oclAsType(FSM).oclContainer().oclAsType(Kind).name+' Kind.'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9;&#x9;'The action of Transition instance coming from the &quot;'+ source.literal.name +'&quot; state to the &quot;' +target.literal.name + '&quot; state in the FSM of &quot;' + source.owningFSM.oclContainer().oclAsType(Kind).name+ '&quot; kind instance must be a set'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9;,&#xA;&#x9;&#x9;&#x9;&#x9;severity :Integer = -1&#xA;&#x9;&#x9;&#x9;&#x9;}.status"/>
+      <details key="containedActionMustBeDeclaredInTheAppropriateType" value="Tuple {&#xA;&#x9;&#x9;&#x9;&#x9;status: Boolean= if (self.action &lt;> null) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; then &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9;self.oclContainer().oclAsType(State).oclContainer().oclAsType(FSM).oclContainer().oclAsType(Type).actions->includes(self.action)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9;false&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; endif,&#xA;&#x9;&#x9;&#x9;&#x9;message: String =if (self.action &lt;> null)  &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then 'The action '+ self.action.name +' declared in '+self.action.oclContainer().oclAsType(Type).name+&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9;&#x9;&#x9;' kind/mixin cannot be used in the FSM of '+self.oclContainer().oclAsType(State).oclContainer().oclAsType(FSM).oclContainer().oclAsType(Type).name+' kind/mixin.'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9;&#x9;'The action of Transition instance coming from the &quot;'+ source.literal.name +'&quot; state to the &quot;' +target.literal.name + '&quot; state in the FSM of &quot;' + source.owningFSM.oclContainer().oclAsType(Type).name+ '&quot; kind/mixin instance must be a set'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9;,&#xA;&#x9;&#x9;&#x9;&#x9;severity :Integer = -1&#xA;&#x9;&#x9;&#x9;&#x9;}.status"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
         eType="#//State" eOpposite="#//State/outgoingTransition"/>
