@@ -2,18 +2,18 @@
 <occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" name="monitoring" scheme="http://schemas.ogf.org/occi/monitoring#" description="OCCI Monitoring Extension allows the user to create a monitoring infrastructure for a cloud provision." specification="https://redmine.ogf.org/attachments/182/monitoring.pdf">
   <import href="http://schemas.ogf.org/occi/core#/"/>
   <kinds name="Sensor" scheme="http://schemas.ogf.org/occi/monitoring#" title="Sensor Resource">
-    <attributes name="occi.sensor.timebase" description="Base time reference (ISO8601)" type="//@types.1"/>
-    <attributes name="occi.sensor.timestart" description="Start time offset (seconds)" type="//@types.0"/>
-    <attributes name="occi.sensor.timestop" description="Stop time offset (seconds)" type="//@types.0"/>
-    <attributes name="occi.sensor.period" required="true" description="Time between two following measurements (seconds)" type="//@types.0"/>
-    <attributes name="occi.sensor.granularity" description="Granularity of time measument (seconds)" type="//@types.0"/>
-    <attributes name="occi.sensor.accuracy" description="Accuracy of time measument (seconds)" type="//@types.0"/>
+    <attributes name="occi.sensor.timebase" mutable="true" description="Base time reference (ISO8601)" type="//@types.1"/>
+    <attributes name="occi.sensor.timestart" mutable="true" description="Start time offset (seconds)" type="//@types.0"/>
+    <attributes name="occi.sensor.timestop" mutable="true" description="Stop time offset (seconds)" type="//@types.0"/>
+    <attributes name="occi.sensor.period" mutable="true" required="true" description="Time between two following measurements (seconds)" type="//@types.0"/>
+    <attributes name="occi.sensor.granularity" mutable="true" description="Granularity of time measument (seconds)" type="//@types.0"/>
+    <attributes name="occi.sensor.accuracy" mutable="true" description="Accuracy of time measument (seconds)" type="//@types.0"/>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
   <kinds name="Collector" scheme="http://schemas.ogf.org/occi/monitoring#" title="Collector Link">
-    <attributes name="occi.collector.period" required="true" description="Time between two following measurements (seconds)" type="//@types.0"/>
-    <attributes name="occi.sensor.accuracy" description="Accuracy of time measument (seconds)" type="//@types.0"/>
-    <attributes name="occi.sensor.granularity" description="Granularity of time measument (seconds)" type="//@types.0"/>
+    <attributes name="occi.collector.period" mutable="true" required="true" description="Time between two following measurements (seconds)" type="//@types.0"/>
+    <attributes name="occi.sensor.accuracy" mutable="true" description="Accuracy of time measument (seconds)" type="//@types.0"/>
+    <attributes name="occi.sensor.granularity" mutable="true" description="Granularity of time measument (seconds)" type="//@types.0"/>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
   </kinds>
   <mixins name="Metric" scheme="http://schemas.ogf.org/occi/monitoring#" title="Metric Mixin" applies="//@kinds[term='collector']"/>
