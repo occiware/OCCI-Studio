@@ -13,7 +13,6 @@
     </attributes>
     <actions name="Start" scheme="http://schemas.ogf.org/occi/platform/application/action#" title="Start the application."/>
     <actions name="Stop" scheme="http://schemas.ogf.org/occi/platform/application/action#" title="Stop the application."/>
-    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
     <fsm attribute="//@kinds[term='application']/@attributes.3">
       <ownedState literal="//@types.2/@literals.0" initial="true" final="true">
         <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.1" action="//@kinds[term='application']/@actions.1"/>
@@ -25,6 +24,7 @@
       </ownedState>
       <ownedState literal="//@types.2/@literals.2" initial="false" final="false"/>
     </fsm>
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
   <kinds name="Component" scheme="http://schemas.ogf.org/occi/platform#" title="Component">
     <attributes name="occi.component.state" mutable="false" required="true" description="State of the component." type="//@types.2"/>
@@ -33,7 +33,6 @@
     </attributes>
     <actions name="Start" scheme="http://schemas.ogf.org/occi/platform/component/action#" title="Start the application."/>
     <actions name="Stop" scheme="http://schemas.ogf.org/occi/platform/component/action#" title="Stop the application."/>
-    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
     <fsm attribute="//@kinds[term='component']/@attributes.0">
       <ownedState literal="//@types.2/@literals.0" initial="true" final="true">
         <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.1" action="//@kinds[term='component']/@actions.1"/>
@@ -45,6 +44,7 @@
       </ownedState>
       <ownedState literal="//@types.2/@literals.2" initial="false" final="false"/>
     </fsm>
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
   <kinds name="ComponentLink" scheme="http://schemas.ogf.org/occi/platform#" title="ComponentLink">
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
