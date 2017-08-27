@@ -28,6 +28,7 @@ import org.eclipse.cmf.occi.core.Transition;
 import org.eclipse.cmf.occi.core.gen.emf.ConverterUtils;
 import org.eclipse.cmf.occi.core.gen.emf.OCCIExtension2Ecore;
 import org.eclipse.cmf.occi.core.gen.emf.ui.Activator;
+import org.eclipse.cmf.occi.core.util.Occi2Ecore;
 import org.eclipse.cmf.occi.core.util.OcciHelper;
 import org.eclipse.cmf.occi.core.util.OcciRegistry;
 import org.eclipse.core.resources.IFile;
@@ -184,6 +185,14 @@ public class OCCI2EMFGeneratorAction implements IObjectActionDelegate {
 		annotation.getDetails().put("validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot");
 		ePackage.getEAnnotations().add(annotation);
 		//
+		
+		//Added annotations due to the generated OCL constraints from OCCI constraints
+		EAnnotation annotation1 = EcoreFactory.eINSTANCE.createEAnnotation();
+		annotation1.setSource("http://www.eclipse.org/OCL/Import");
+		for(Extension importedExt : ext.getImport())
+			annotation1.getDetails().put(importedExt.getName(), Occi2Ecore.convertOcciScheme2EcoreNamespace(importedExt.getScheme()));
+		ePackage.getEAnnotations().add(annotation1);
+				
 		resourceSet.getPackageRegistry().put(ePackage.getNsURI(), ePackage);
 		ConverterUtils.persistMetamodel(resourceSet, ePackage,
 				occieFile.getLocation().removeFileExtension().addFileExtension("ecore").toString());
