@@ -28,6 +28,30 @@ OCCI Platform Extension, version 1.2.
 
 \subsection{Specification}
 The specification of OCCI Platform extension is available here: https://www.ogf.org/documents/GFD.227.pdf.
+\subsection{Types}
+\subsubsection{\texttt{URL} type}
+
+\begin{itemize}
+\item \textbf{Basic type:} java.net.URL
+\end{itemize}
+\subsubsection{\texttt{URI} type}
+
+\begin{itemize}
+\item \textbf{Basic type:} java.net.URI
+\end{itemize}
+\subsubsection{\texttt{Status} type}
+
+\textbf{Literals}
+\begin{itemize}
+\item \textbf{active} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{inactive} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{error} 
+\end{itemize}
+
 \subsection{Kinds}
 \subsubsection{\texttt{Application} kind}
 \begin{center}
@@ -69,7 +93,9 @@ The specification of OCCI Platform extension is available here: https://www.ogf.
 \begin{itemize}
 	\item \textbf{Scheme}: http://schemas.ogf.org/occi/platform/application/action\#
 \end{itemize}
-\begin{tabularx}{\textwidth}{|l|l|X|}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
   \hline
   \textbf{Term}  & \textbf{Attributes} & \textbf{Title} \\
   \hline  
@@ -77,7 +103,34 @@ The specification of OCCI Platform extension is available here: https://www.ogf.
   \hline
   stop & & Stop the application. \\
   \hline
-\end{tabularx}
+\end{tabular}
+\end{center}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{Application} Behavior}
+\begin{itemize}
+\item \textbf{Attribute}: \textbf{\texttt{occi.app.state}}
+\item \textbf{Initial state}: active
+\item \textbf{Final states}:  	active
+\item \textbf{Transitions}:
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Source State} & \textbf{Target State} & \textbf{Action} \\
+  \hline  
+  active & inactive & Stop  \\
+  \hline
+  active & error &   \\
+  \hline
+  inactive & active & Start  \\
+  \hline
+  inactive & error &   \\
+  \hline
+\end{tabular}
+\end{center}
+\end{itemize}
 \end{itemize}
 
 \subsubsection{\texttt{Component} kind}
@@ -114,7 +167,9 @@ The specification of OCCI Platform extension is available here: https://www.ogf.
 \begin{itemize}
 	\item \textbf{Scheme}: http://schemas.ogf.org/occi/platform/component/action\#
 \end{itemize}
-\begin{tabularx}{\textwidth}{|l|l|X|}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
   \hline
   \textbf{Term}  & \textbf{Attributes} & \textbf{Title} \\
   \hline  
@@ -122,7 +177,34 @@ The specification of OCCI Platform extension is available here: https://www.ogf.
   \hline
   stop & & Stop the application. \\
   \hline
-\end{tabularx}
+\end{tabular}
+\end{center}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{Component} Behavior}
+\begin{itemize}
+\item \textbf{Attribute}: \textbf{\texttt{occi.component.state}}
+\item \textbf{Initial state}: active
+\item \textbf{Final states}:  	active
+\item \textbf{Transitions}:
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Source State} & \textbf{Target State} & \textbf{Action} \\
+  \hline  
+  active & inactive & Stop  \\
+  \hline
+  active & error &   \\
+  \hline
+  inactive & active & Start  \\
+  \hline
+  inactive & error &   \\
+  \hline
+\end{tabular}
+\end{center}
+\end{itemize}
 \end{itemize}
 
 \subsubsection{\texttt{ComponentLink} kind}
@@ -141,6 +223,7 @@ The specification of OCCI Platform extension is available here: https://www.ogf.
 \end{center}
 
 
+
 \subsection{Mixins}
 \subsubsection{\texttt{App\_Tpl} mixin}
 \begin{center}
@@ -154,13 +237,16 @@ The specification of OCCI Platform extension is available here: https://www.ogf.
   \hline
 \end{tabular}
 \end{center}
-\textbf{Applies to}:
+\begin{itemize}
+\item \textbf{Applies to}:
 \begin{itemize}
 	\item Application (http://schemas.ogf.org/occi/platform\#)
 \end{itemize}
+\end{itemize} 
 
 
 
+ 
 \subsubsection{\texttt{Res\_Tpl} mixin}
 \begin{center}
 \begin{tabular}{|l|l|}
@@ -173,14 +259,17 @@ The specification of OCCI Platform extension is available here: https://www.ogf.
   \hline
 \end{tabular}
 \end{center}
-\textbf{Applies to}:
+\begin{itemize}
+\item \textbf{Applies to}:
 \begin{itemize}
 	\item Application (http://schemas.ogf.org/occi/platform\#)
 	\item Component (http://schemas.ogf.org/occi/platform\#)
 \end{itemize}
+\end{itemize} 
 
 
 
+ 
 \subsubsection{\texttt{DataBase} mixin}
 \begin{center}
 \begin{tabular}{|l|l|}
@@ -193,10 +282,12 @@ The specification of OCCI Platform extension is available here: https://www.ogf.
   \hline
 \end{tabular}
 \end{center}
-\textbf{Applies to}:
+\begin{itemize}
+\item \textbf{Applies to}:
 \begin{itemize}
 	\item Component (http://schemas.ogf.org/occi/platform\#)
 \end{itemize}
+\end{itemize} 
 
 \begin{itemize}
 \item \textbf{\texttt{DataBase} attributes}
@@ -211,6 +302,7 @@ The specification of OCCI Platform extension is available here: https://www.ogf.
 \end{itemize}
 
 
+ 
 \subsubsection{\texttt{DataBaseLink} mixin}
 \begin{center}
 \begin{tabular}{|l|l|}
@@ -223,10 +315,12 @@ The specification of OCCI Platform extension is available here: https://www.ogf.
   \hline
 \end{tabular}
 \end{center}
-\textbf{Applies to}:
+\begin{itemize}
+\item \textbf{Applies to}:
 \begin{itemize}
 	\item ComponentLink (http://schemas.ogf.org/occi/platform\#)
 \end{itemize}
+\end{itemize} 
 
 \begin{itemize}
 \item \textbf{\texttt{DataBaseLink} attributes}
@@ -245,27 +339,4 @@ The specification of OCCI Platform extension is available here: https://www.ogf.
 \end{itemize}
 
 
-\subsection{Types}
-\subsubsection{\texttt{URL} type}
-
-\begin{itemize}
-\item \textbf{Basic type:} java.net.URL
-\end{itemize}
-\subsubsection{\texttt{URI} type}
-
-\begin{itemize}
-\item \textbf{Basic type:} java.net.URI
-\end{itemize}
-\subsubsection{\texttt{Status} type}
-
-\textbf{Literals}
-\begin{itemize}
-\item \textbf{active} 
-\end{itemize}
-\begin{itemize}
-\item \textbf{inactive} 
-\end{itemize}
-\begin{itemize}
-\item \textbf{error} 
-\end{itemize}
-
+ 
