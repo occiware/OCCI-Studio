@@ -28,399 +28,6 @@ OCCI Infrastructure Model
 
 \subsection{Specification}
 The specification of OCCI Infrastructure extension is available here: https://www.ogf.org/documents/GFD.224.pdf.
-\subsection{Kinds}
-\subsubsection{\texttt{Network} kind}
-\begin{center}
-\begin{tabular}{|l|l|}
-  \hline
-  \textbf{Name} & Network \\
-  \hline  
-  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
-  \hline
-  \textbf{Title} & Network Resource \\
-  \hline
-  \textbf{Parent} & Resource (http://schemas.ogf.org/occi/core\#) \\
-  \hline
-\end{tabular}
-\end{center}
-\begin{itemize}
-\item \textbf{\texttt{Network} attributes}
-
-\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
-  \hline
-  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
-  \hline  
-  occi.network.vlan & Vlan & false & true &  & 802.1q VLAN Identifier (e.g., 343) \\
-  \hline
-  occi.network.label & Token & false & true &  & Tag based VLANs (e.g., external-dmz) \\
-  \hline
-  occi.network.state & NetworkStatus & true & false & inactive & Current state of the instance \\
-  \hline
-  occi.network.state.message & String & false & false &  & Human-readable explanation of the current instance state \\
-  \hline
-\end{tabularx}
-\end{itemize}
-
-\begin{itemize}
-\item \textbf{\texttt{Network} actions}
-
-\begin{itemize}
-	\item \textbf{Scheme}: http://schemas.ogf.org/occi/infrastructure/network/action\#
-\end{itemize}
-\begin{tabularx}{\textwidth}{|l|l|X|}
-  \hline
-  \textbf{Term}  & \textbf{Attributes} & \textbf{Title} \\
-  \hline  
-  up & & Up a network. \\
-  \hline
-  down & & Down a network. \\
-  \hline
-\end{tabularx}
-\end{itemize}
-
-\subsubsection{\texttt{Compute} kind}
-\begin{center}
-\begin{tabular}{|l|l|}
-  \hline
-  \textbf{Name} & Compute \\
-  \hline  
-  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
-  \hline
-  \textbf{Title} & Compute Resource \\
-  \hline
-  \textbf{Parent} & Resource (http://schemas.ogf.org/occi/core\#) \\
-  \hline
-\end{tabular}
-\end{center}
-\begin{itemize}
-\item \textbf{\texttt{Compute} attributes}
-
-\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
-  \hline
-  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
-  \hline  
-  occi.compute.architecture & Architecture & false & true &  & CPU Architecture of the instance \\
-  \hline
-  occi.compute.cores & Core & false & true &  & Number of CPU cores assigned to the instance \\
-  \hline
-  occi.compute.hostname & String & false & true &  & Fully Qualified DNS hostname for the instance \\
-  \hline
-  occi.compute.share & Share & false & true &  & Relative number of CPU shares for the instance \\
-  \hline
-  occi.compute.speed & GHz & false & true &  & CPU Clock frequency (speed) in gigahertz \\
-  \hline
-  occi.compute.memory & GiB & false & true &  & Maximum RAM in gigabytes allocated to the instance \\
-  \hline
-  occi.compute.state & ComputeStatus & true & false & inactive & Current state of the instance \\
-  \hline
-  occi.compute.state.message & String & false & false &  & Human-readable explanation of the current instance state \\
-  \hline
-\end{tabularx}
-\end{itemize}
-
-\begin{itemize}
-\item \textbf{\texttt{Compute} actions}
-
-\begin{itemize}
-	\item \textbf{Scheme}: http://schemas.ogf.org/occi/infrastructure/compute/action\#
-\end{itemize}
-\begin{tabularx}{\textwidth}{|l|l|X|}
-  \hline
-  \textbf{Term}  & \textbf{Attributes} & \textbf{Title} \\
-  \hline  
-  start & & Start the system \\
-  \hline
-  stop &  method StopMethod & Stop the system (graceful, acpioff or poweroff) \\
-  \hline
-  restart &  method RestartMethod & Restart the system (graceful, warm or cold) \\
-  \hline
-  suspend &  method SuspendMethod & Suspend the system (hibernate or in RAM) \\
-  \hline
-  save &  method SaveMethod , name String & Save the system (hot, deferred) \\
-  \hline
-\end{tabularx}
-\end{itemize}
-
-\subsubsection{\texttt{Storage} kind}
-\begin{center}
-\begin{tabular}{|l|l|}
-  \hline
-  \textbf{Name} & Storage \\
-  \hline  
-  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
-  \hline
-  \textbf{Title} & Storage Resource \\
-  \hline
-  \textbf{Parent} & Resource (http://schemas.ogf.org/occi/core\#) \\
-  \hline
-\end{tabular}
-\end{center}
-\begin{itemize}
-\item \textbf{\texttt{Storage} attributes}
-
-\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
-  \hline
-  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
-  \hline  
-  occi.storage.size & GiB & true & true &  & Storage size of the instance in gigabytes \\
-  \hline
-  occi.storage.state & StorageStatus & true & false &  & Current status of the instance \\
-  \hline
-  occi.storage.state.message & String & false & false &  & Human-readable explanation of the current instance state \\
-  \hline
-\end{tabularx}
-\end{itemize}
-
-\begin{itemize}
-\item \textbf{\texttt{Storage} actions}
-
-\begin{itemize}
-	\item \textbf{Scheme}: http://schemas.ogf.org/occi/infrastructure/storage/action\#
-\end{itemize}
-\begin{tabularx}{\textwidth}{|l|l|X|}
-  \hline
-  \textbf{Term}  & \textbf{Attributes} & \textbf{Title} \\
-  \hline  
-  online & & Set storage online \\
-  \hline
-  offline & & Set storage offline \\
-  \hline
-\end{tabularx}
-\end{itemize}
-
-\subsubsection{\texttt{StorageLink} kind}
-\begin{center}
-\begin{tabular}{|l|l|}
-  \hline
-  \textbf{Name} & StorageLink \\
-  \hline  
-  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
-  \hline
-  \textbf{Title} & StorageLink Link \\
-  \hline
-  \textbf{Parent} & Link (http://schemas.ogf.org/occi/core\#) \\
-  \hline
-\end{tabular}
-\end{center}
-\begin{itemize}
-\item \textbf{\texttt{StorageLink} attributes}
-
-\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
-  \hline
-  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
-  \hline  
-  occi.storagelink.deviceid & String & true & true &  & Device identifier as defined by the OCCI service provider \\
-  \hline
-  occi.storagelink.mountpoint & String & false & true &  & Point to where the storage is mounted in the guest OS \\
-  \hline
-  occi.storagelink.state & StorageLinkStatus & true & false &  & Current status of the instance \\
-  \hline
-  occi.storagelink.state.message & String & false & false &  & Human-readable explanation of the current instance state \\
-  \hline
-\end{tabularx}
-\end{itemize}
-
-
-\subsubsection{\texttt{NetworkInterface} kind}
-\begin{center}
-\begin{tabular}{|l|l|}
-  \hline
-  \textbf{Name} & NetworkInterface \\
-  \hline  
-  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
-  \hline
-  \textbf{Title} & NetworkInterface Link \\
-  \hline
-  \textbf{Parent} & Link (http://schemas.ogf.org/occi/core\#) \\
-  \hline
-\end{tabular}
-\end{center}
-\begin{itemize}
-\item \textbf{\texttt{NetworkInterface} attributes}
-
-\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
-  \hline
-  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
-  \hline  
-  occi.networkinterface.interface & String & true & false &  & Identifier that relates the link to the link's device interface \\
-  \hline
-  occi.networkinterface.mac & Mac & true & true &  & MAC address associated with the link's device interface \\
-  \hline
-  occi.networkinterface.state & NetworkInterfaceStatus & true & false &  & Current status of the instance \\
-  \hline
-  occi.networkinterface.state.message & String & false & false &  & Human-readable explanation of the current instance state \\
-  \hline
-\end{tabularx}
-\end{itemize}
-
-
-\subsection{Mixins}
-\subsubsection{\texttt{IpNetwork} mixin}
-\begin{center}
-\begin{tabular}{|l|l|}
-  \hline
-  \textbf{Name} & IpNetwork \\
-  \hline  
-  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure/network\# \\
-  \hline
-  \textbf{Title} & An IP Networking Mixin \\
-  \hline
-\end{tabular}
-\end{center}
-\textbf{Applies to}:
-\begin{itemize}
-	\item Network (http://schemas.ogf.org/occi/infrastructure\#)
-\end{itemize}
-
-\begin{itemize}
-\item \textbf{\texttt{IpNetwork} attributes}
-
-\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
-  \hline
-  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
-  \hline  
-  occi.network.address & IpAddressRange & false & true &  & Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7) \\
-  \hline
-  occi.network.gateway & IpAddress & false & true &  & Internet Protocol (IP) network address (e.g., 192.168.0.1, fc00::) \\
-  \hline
-  occi.network.allocation & Allocation & false & true &  & Address allocation mechanism: dynamic e.g., uses the dynamic host configuration protocol, static e.g., uses user supplied static network configurations \\
-  \hline
-\end{tabularx}
-\end{itemize}
-
-
-\subsubsection{\texttt{IpNetworkInterface} mixin}
-\begin{center}
-\begin{tabular}{|l|l|}
-  \hline
-  \textbf{Name} & IpNetworkInterface \\
-  \hline  
-  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure/networkinterface\# \\
-  \hline
-  \textbf{Title} & IP NetworkInterface Mixin \\
-  \hline
-\end{tabular}
-\end{center}
-\textbf{Applies to}:
-\begin{itemize}
-	\item NetworkInterface (http://schemas.ogf.org/occi/infrastructure\#)
-\end{itemize}
-
-\begin{itemize}
-\item \textbf{\texttt{IpNetworkInterface} attributes}
-
-\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
-  \hline
-  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
-  \hline  
-  occi.networkinterface.address & IpAddress & true & true &  & Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7) of the link \\
-  \hline
-  occi.networkinterface.gateway & IpAddress & false & true &  & Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7) \\
-  \hline
-  occi.networkinterface.allocation & Allocation & true & true &  & Address mechanism: dynamic e.g., uses the dynamic host configuration protocol, static e.g., uses user supplied static network configurations \\
-  \hline
-\end{tabularx}
-\end{itemize}
-
-
-\subsubsection{\texttt{Os\_Tpl} mixin}
-\begin{center}
-\begin{tabular}{|l|l|}
-  \hline
-  \textbf{Name} & Os\_Tpl \\
-  \hline  
-  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
-  \hline
-  \textbf{Title} & OS Template \\
-  \hline
-\end{tabular}
-\end{center}
-\textbf{Applies to}:
-\begin{itemize}
-	\item Compute (http://schemas.ogf.org/occi/infrastructure\#)
-\end{itemize}
-
-
-
-\subsubsection{\texttt{Resource\_Tpl} mixin}
-\begin{center}
-\begin{tabular}{|l|l|}
-  \hline
-  \textbf{Name} & Resource\_Tpl \\
-  \hline  
-  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
-  \hline
-  \textbf{Title} & Resource template \\
-  \hline
-\end{tabular}
-\end{center}
-\textbf{Applies to}:
-\begin{itemize}
-	\item Resource (http://schemas.ogf.org/occi/core\#)
-\end{itemize}
-
-
-
-\subsubsection{\texttt{SSH\_key} mixin}
-\begin{center}
-\begin{tabular}{|l|l|}
-  \hline
-  \textbf{Name} & SSH\_key \\
-  \hline  
-  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure/credentials\# \\
-  \hline
-  \textbf{Title} & Credentials Mixin \\
-  \hline
-\end{tabular}
-\end{center}
-\textbf{Applies to}:
-\begin{itemize}
-	\item Compute (http://schemas.ogf.org/occi/infrastructure\#)
-\end{itemize}
-
-\begin{itemize}
-\item \textbf{\texttt{SSH\_key} attributes}
-
-\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
-  \hline
-  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
-  \hline  
-  occi.credentials.ssh.publickey & String & true & true &  & The contents of the public key file to be injected into the Compute Resource \\
-  \hline
-\end{tabularx}
-\end{itemize}
-
-
-\subsubsection{\texttt{User\_Data} mixin}
-\begin{center}
-\begin{tabular}{|l|l|}
-  \hline
-  \textbf{Name} & User\_Data \\
-  \hline  
-  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure/compute\# \\
-  \hline
-  \textbf{Title} & Contextualization Mixin \\
-  \hline
-\end{tabular}
-\end{center}
-\textbf{Applies to}:
-\begin{itemize}
-	\item Compute (http://schemas.ogf.org/occi/infrastructure\#)
-\end{itemize}
-
-\begin{itemize}
-\item \textbf{\texttt{User\_Data} attributes}
-
-\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
-  \hline
-  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
-  \hline  
-  occi.compute.userdata & String & true & false &  & Contextualization data (e.g., script, executable) that the client supplies once and only once. It cannot be updated \\
-  \hline
-\end{tabularx}
-\end{itemize}
-
-
 \subsection{Types}
 \subsubsection{\texttt{SuspendMethod} type}
 
@@ -531,7 +138,7 @@ The specification of OCCI Infrastructure extension is available here: https://ww
 
 \textbf{Literals}
 \begin{itemize}
-\item \textbf{dynamic}  
+\item \textbf{dynamic} 
 \end{itemize}
 \begin{itemize}
 \item \textbf{static} 
@@ -607,3 +214,561 @@ The specification of OCCI Infrastructure extension is available here: https://ww
 \item \textbf{deferred} 
 \end{itemize}
 
+\subsection{Kinds}
+\subsubsection{\texttt{Network} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Network \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
+  \hline
+  \textbf{Title} & Network Resource \\
+  \hline
+  \textbf{Parent} & Resource (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Network} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.network.vlan & Vlan & false & true &  & 802.1q VLAN Identifier (e.g., 343) \\
+  \hline
+  occi.network.label & Token & false & true &  & Tag based VLANs (e.g., external-dmz) \\
+  \hline
+  occi.network.state & NetworkStatus & true & false & inactive & Current state of the instance \\
+  \hline
+  occi.network.state.message & String & false & false &  & Human-readable explanation of the current instance state \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{Network} actions}
+
+\begin{itemize}
+	\item \textbf{Scheme}: http://schemas.ogf.org/occi/infrastructure/network/action\#
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Term}  & \textbf{Attributes} & \textbf{Title} \\
+  \hline  
+  up & & Up a network. \\
+  \hline
+  down & & Down a network. \\
+  \hline
+\end{tabular}
+\end{center}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{Network} Behavior}
+\begin{itemize}
+\item \textbf{Attribute}: \textbf{\texttt{occi.network.state}}
+\item \textbf{Initial state}: inactive
+\item \textbf{Final states}:  	inactive
+\item \textbf{Transitions}:
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Source State} & \textbf{Target State} & \textbf{Action} \\
+  \hline  
+  inactive & active & Up  \\
+  \hline
+  inactive & error & Up  \\
+  \hline
+  active & inactive & Down  \\
+  \hline
+  active & error & Down  \\
+  \hline
+\end{tabular}
+\end{center}
+\end{itemize}
+\end{itemize}
+
+\subsubsection{\texttt{Compute} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Compute \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
+  \hline
+  \textbf{Title} & Compute Resource \\
+  \hline
+  \textbf{Parent} & Resource (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Compute} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.compute.architecture & Architecture & false & true &  & CPU Architecture of the instance \\
+  \hline
+  occi.compute.cores & Core & false & true &  & Number of CPU cores assigned to the instance \\
+  \hline
+  occi.compute.hostname & String & false & true &  & Fully Qualified DNS hostname for the instance \\
+  \hline
+  occi.compute.share & Share & false & true &  & Relative number of CPU shares for the instance \\
+  \hline
+  occi.compute.speed & GHz & false & true &  & CPU Clock frequency (speed) in gigahertz \\
+  \hline
+  occi.compute.memory & GiB & false & true &  & Maximum RAM in gigabytes allocated to the instance \\
+  \hline
+  occi.compute.state & ComputeStatus & true & false & inactive & Current state of the instance \\
+  \hline
+  occi.compute.state.message & String & false & false &  & Human-readable explanation of the current instance state \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{Compute} actions}
+
+\begin{itemize}
+	\item \textbf{Scheme}: http://schemas.ogf.org/occi/infrastructure/compute/action\#
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Term}  & \textbf{Attributes} & \textbf{Title} \\
+  \hline  
+  start & & Start the system \\
+  \hline
+  stop &  method StopMethod & Stop the system (graceful, acpioff or poweroff) \\
+  \hline
+  restart &  method RestartMethod & Restart the system (graceful, warm or cold) \\
+  \hline
+  suspend &  method SuspendMethod & Suspend the system (hibernate or in RAM) \\
+  \hline
+  save &  method SaveMethod , name String & Save the system (hot, deferred) \\
+  \hline
+\end{tabular}
+\end{center}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{Compute} Behavior}
+\begin{itemize}
+\item \textbf{Attribute}: \textbf{\texttt{occi.compute.state}}
+\item \textbf{Initial state}: inactive
+\item \textbf{Final states}:  	inactive
+\item \textbf{Transitions}:
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Source State} & \textbf{Target State} & \textbf{Action} \\
+  \hline  
+  inactive & active & Start  \\
+  \hline
+  inactive & error & Start  \\
+  \hline
+  active & inactive & Stop  \\
+  \hline
+  active & suspended & Suspend  \\
+  \hline
+  active & error & Stop  \\
+  \hline
+  active & error & Suspend  \\
+  \hline
+  suspended & error & Start  \\
+  \hline
+  suspended & active & Start  \\
+  \hline
+\end{tabular}
+\end{center}
+\end{itemize}
+\end{itemize}
+
+\subsubsection{\texttt{Storage} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Storage \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
+  \hline
+  \textbf{Title} & Storage Resource \\
+  \hline
+  \textbf{Parent} & Resource (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Storage} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.storage.size & GiB & true & true &  & Storage size of the instance in gigabytes \\
+  \hline
+  occi.storage.state & StorageStatus & true & false &  & Current status of the instance \\
+  \hline
+  occi.storage.state.message & String & false & false &  & Human-readable explanation of the current instance state \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{Storage} actions}
+
+\begin{itemize}
+	\item \textbf{Scheme}: http://schemas.ogf.org/occi/infrastructure/storage/action\#
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Term}  & \textbf{Attributes} & \textbf{Title} \\
+  \hline  
+  online & & Set storage online \\
+  \hline
+  offline & & Set storage offline \\
+  \hline
+\end{tabular}
+\end{center}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{Storage} Behavior}
+\begin{itemize}
+\item \textbf{Attribute}: \textbf{\texttt{occi.storage.state}}
+\item \textbf{Initial state}: offline
+\item \textbf{Final states}:  	offline
+\item \textbf{Transitions}:
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Source State} & \textbf{Target State} & \textbf{Action} \\
+  \hline  
+  offline & online & Online  \\
+  \hline
+  offline & error & Online  \\
+  \hline
+  online & offline & Offline  \\
+  \hline
+  online & error & Offline  \\
+  \hline
+\end{tabular}
+\end{center}
+\end{itemize}
+\end{itemize}
+
+\subsubsection{\texttt{StorageLink} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & StorageLink \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
+  \hline
+  \textbf{Title} & StorageLink Link \\
+  \hline
+  \textbf{Parent} & Link (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{StorageLink} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.storagelink.deviceid & String & true & true &  & Device identifier as defined by the OCCI service provider \\
+  \hline
+  occi.storagelink.mountpoint & String & false & true &  & Point to where the storage is mounted in the guest OS \\
+  \hline
+  occi.storagelink.state & StorageLinkStatus & true & false &  & Current status of the instance \\
+  \hline
+  occi.storagelink.state.message & String & false & false &  & Human-readable explanation of the current instance state \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+\begin{itemize}
+\item \textbf{\texttt{StorageLink} Behavior}
+\begin{itemize}
+\item \textbf{Attribute}: \textbf{\texttt{occi.storagelink.state}}
+\item \textbf{Initial state}: inactive
+\item \textbf{Final states}:  	inactive
+\item \textbf{Transitions}:
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Source State} & \textbf{Target State} & \textbf{Action} \\
+  \hline  
+  inactive & active &   \\
+  \hline
+  inactive & error &   \\
+  \hline
+  active & inactive &   \\
+  \hline
+  active & error &   \\
+  \hline
+\end{tabular}
+\end{center}
+\end{itemize}
+\end{itemize}
+
+\subsubsection{\texttt{NetworkInterface} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & NetworkInterface \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
+  \hline
+  \textbf{Title} & NetworkInterface Link \\
+  \hline
+  \textbf{Parent} & Link (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{NetworkInterface} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.networkinterface.interface & String & true & false &  & Identifier that relates the link to the link's device interface \\
+  \hline
+  occi.networkinterface.mac & Mac & true & true &  & MAC address associated with the link's device interface \\
+  \hline
+  occi.networkinterface.state & NetworkInterfaceStatus & true & false &  & Current status of the instance \\
+  \hline
+  occi.networkinterface.state.message & String & false & false &  & Human-readable explanation of the current instance state \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+\begin{itemize}
+\item \textbf{\texttt{NetworkInterface} Behavior}
+\begin{itemize}
+\item \textbf{Attribute}: \textbf{\texttt{occi.networkinterface.state}}
+\item \textbf{Initial state}: inactive
+\item \textbf{Final states}:  	inactive
+\item \textbf{Transitions}:
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Source State} & \textbf{Target State} & \textbf{Action} \\
+  \hline  
+  inactive & active &   \\
+  \hline
+  inactive & error &   \\
+  \hline
+  active & inactive &   \\
+  \hline
+  active & error &   \\
+  \hline
+\end{tabular}
+\end{center}
+\end{itemize}
+\end{itemize}
+
+\subsection{Mixins}
+\subsubsection{\texttt{IpNetwork} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & IpNetwork \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
+  \hline
+  \textbf{Title} & An IP Networking Mixin \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{Applies to}:
+\begin{itemize}
+	\item Network (http://schemas.ogf.org/occi/infrastructure\#)
+\end{itemize}
+\end{itemize} 
+
+\begin{itemize}
+\item \textbf{\texttt{IpNetwork} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.network.address & IpAddressRange & false & true &  & Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7) \\
+  \hline
+  occi.network.gateway & IpAddress & false & true &  & Internet Protocol (IP) network address (e.g., 192.168.0.1, fc00::) \\
+  \hline
+  occi.network.allocation & Allocation & false & true &  & Address allocation mechanism: dynamic e.g., uses the dynamic host configuration protocol, static e.g., uses user supplied static network configurations \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+ 
+\subsubsection{\texttt{IpNetworkInterface} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & IpNetworkInterface \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
+  \hline
+  \textbf{Title} & IP NetworkInterface Mixin \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{Applies to}:
+\begin{itemize}
+	\item NetworkInterface (http://schemas.ogf.org/occi/infrastructure\#)
+\end{itemize}
+\end{itemize} 
+
+\begin{itemize}
+\item \textbf{\texttt{IpNetworkInterface} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.networkinterface.address & IpAddress & true & true &  & Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7) of the link \\
+  \hline
+  occi.networkinterface.gateway & IpAddress & false & true &  & Internet Protocol (IP) network address (e.g., 192.168.0.1/24, fc00::/7) \\
+  \hline
+  occi.networkinterface.allocation & Allocation & true & true &  & Address mechanism: dynamic e.g., uses the dynamic host configuration protocol, static e.g., uses user supplied static network configurations \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+ 
+\subsubsection{\texttt{Os\_Tpl} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Os\_Tpl \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
+  \hline
+  \textbf{Title} & OS Template \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{Applies to}:
+\begin{itemize}
+	\item Compute (http://schemas.ogf.org/occi/infrastructure\#)
+\end{itemize}
+\end{itemize} 
+
+
+
+ 
+\subsubsection{\texttt{Resource\_Tpl} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Resource\_Tpl \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
+  \hline
+  \textbf{Title} & Resource template \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{Applies to}:
+\begin{itemize}
+	\item Resource (http://schemas.ogf.org/occi/core\#)
+\end{itemize}
+\end{itemize} 
+
+
+
+ 
+\subsubsection{\texttt{SSH\_key} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & SSH\_key \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
+  \hline
+  \textbf{Title} & Credentials Mixin \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{Applies to}:
+\begin{itemize}
+	\item Compute (http://schemas.ogf.org/occi/infrastructure\#)
+\end{itemize}
+\end{itemize} 
+
+\begin{itemize}
+\item \textbf{\texttt{SSH\_key} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.credentials.ssh.publickey & String & true & true &  & The contents of the public key file to be injected into the Compute Resource \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+ 
+\subsubsection{\texttt{User\_Data} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & User\_Data \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
+  \hline
+  \textbf{Title} & Contextualization Mixin \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{Applies to}:
+\begin{itemize}
+	\item Compute (http://schemas.ogf.org/occi/infrastructure\#)
+\end{itemize}
+\end{itemize} 
+
+\begin{itemize}
+\item \textbf{\texttt{User\_Data} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.compute.userdata & String & true & false &  & Contextualization data (e.g., script, executable) that the client supplies once and only once. It cannot be updated \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+ 
