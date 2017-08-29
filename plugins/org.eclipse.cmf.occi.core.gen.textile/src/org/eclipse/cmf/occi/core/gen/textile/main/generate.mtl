@@ -25,7 +25,7 @@ h1. OCCI [extension.name/] extension
 | *Scheme* | [extension.scheme/] |
 [if (not extension.specification.oclIsUndefined())]
 [if extension.specification.trim() <> '']
-| *Specification* | [extension.specification/] |[/if][/if]
+| *Specification* | <a href="[extension.specification/]">[extension.specification/]</a> |[/if][/if]
 
 [if extension.import->size() <> 0]
 
