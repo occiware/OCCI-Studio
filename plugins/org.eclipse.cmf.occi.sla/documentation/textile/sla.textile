@@ -1,7 +1,10 @@
-h1. OCCI Service Level Agreements API allows for the creation and management of resources related with the realization of agreements between an OCCI-enabled cloud service provider and potential consumers of the provider's resources.
+h1. OCCI sla extension
+
+OCCI Service Level Agreements API allows for the creation and management of resources related with the realization of agreements between an OCCI-enabled cloud service provider and potential consumers of the provider's resources.
 
 | *Name* | sla |
 | *Scheme* | http://schemas.ogf.org/occi/sla# |
+| *Specification* | <a href="https://www.ogf.org/documents/GFD.228.pdf">https://www.ogf.org/documents/GFD.228.pdf</a> |
 
 Imported OCCI Extensions:
 
@@ -28,11 +31,11 @@ Attributes of agreement are:
 Actions of agreement are:
 
 | *Term* | *Scheme* | *Attributes* | *Title* |
-| accept | http://schemas.ogf.org/occi/sla/agreement/action# |  |  |
-| reject | http://schemas.ogf.org/occi/sla/agreement/action# |  |  |
-| suspend | http://schemas.ogf.org/occi/sla/agreement/action# |  |  |
-| resume | http://schemas.ogf.org/occi/sla/agreement/action# |  |  |
-| terminate | http://schemas.ogf.org/occi/sla/agreement/action# |  |  |
+| accept | http://schemas.ogf.org/occi/sla/agreement/action# |  | Accept an agreement. |
+| reject | http://schemas.ogf.org/occi/sla/agreement/action# |  | Reject an agreement. |
+| suspend | http://schemas.ogf.org/occi/sla/agreement/action# |  | Suspend an agreement. |
+| resume | http://schemas.ogf.org/occi/sla/agreement/action# |  | Resume an agreement. |
+| terminate | http://schemas.ogf.org/occi/sla/agreement/action# |  | Terminate an agreement. |
 
 
 h2. Kind agreement_link
@@ -107,4 +110,4 @@ Enumeration of AgreementTerm status.
 * Fulfilled  
 * Violated  
 
-Generated at Thu Aug 03 14:39:18 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.sla/model/sla.occie by org.eclipse.cmf.occi.core.gen.textile
+Generated at Tue Aug 29 16:01:32 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.sla/model/sla.occie by org.eclipse.cmf.occi.core.gen.textile
