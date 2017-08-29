@@ -1,7 +1,10 @@
-h1. OCCI Infrastructure Model
+h1. OCCI infrastructure extension
+
+OCCI Infrastructure Model
 
 | *Name* | infrastructure |
 | *Scheme* | http://schemas.ogf.org/occi/infrastructure# |
+| *Specification* | <a href="https://www.ogf.org/documents/GFD.224.pdf">https://www.ogf.org/documents/GFD.224.pdf</a> |
 
 Imported OCCI Extensions:
 
@@ -28,8 +31,8 @@ Attributes of network are:
 Actions of network are:
 
 | *Term* | *Scheme* | *Attributes* | *Title* |
-| up | http://schemas.ogf.org/occi/infrastructure/network/action# |  |  |
-| down | http://schemas.ogf.org/occi/infrastructure/network/action# |  |  |
+| up | http://schemas.ogf.org/occi/infrastructure/network/action# |  | Up a network. |
+| down | http://schemas.ogf.org/occi/infrastructure/network/action# |  | Down a network. |
 
 
 h2. Kind compute
@@ -120,7 +123,7 @@ h1. Mixins
 h2. Mixin ipnetwork
 
 | *Term* | ipnetwork |
-| *Scheme* | http://schemas.ogf.org/occi/infrastructure/network# |
+| *Scheme* | http://schemas.ogf.org/occi/infrastructure# |
 | *Title* | An IP Networking Mixin |
 Applies to:
 * <a href="infrastructure.textile#kind-network">http://schemas.ogf.org/occi/infrastructure#network</a>
@@ -136,7 +139,7 @@ Attributes of ipnetwork are:
 h2. Mixin ipnetworkinterface
 
 | *Term* | ipnetworkinterface |
-| *Scheme* | http://schemas.ogf.org/occi/infrastructure/networkinterface# |
+| *Scheme* | http://schemas.ogf.org/occi/infrastructure# |
 | *Title* | IP NetworkInterface Mixin |
 Applies to:
 * <a href="infrastructure.textile#kind-networkinterface">http://schemas.ogf.org/occi/infrastructure#networkinterface</a>
@@ -168,7 +171,7 @@ Applies to:
 h2. Mixin ssh_key
 
 | *Term* | ssh_key |
-| *Scheme* | http://schemas.ogf.org/occi/infrastructure/credentials# |
+| *Scheme* | http://schemas.ogf.org/occi/infrastructure# |
 | *Title* | Credentials Mixin |
 Applies to:
 * <a href="infrastructure.textile#kind-compute">http://schemas.ogf.org/occi/infrastructure#compute</a>
@@ -182,7 +185,7 @@ Attributes of ssh_key are:
 h2. Mixin user_data
 
 | *Term* | user_data |
-| *Scheme* | http://schemas.ogf.org/occi/infrastructure/compute# |
+| *Scheme* | http://schemas.ogf.org/occi/infrastructure# |
 | *Title* | Contextualization Mixin |
 Applies to:
 * <a href="infrastructure.textile#kind-compute">http://schemas.ogf.org/occi/infrastructure#compute</a>
@@ -303,4 +306,4 @@ h2. EnumerationType SaveMethod
 * hot  
 * deferred  
 
-Generated at Thu Aug 03 14:07:18 CEST 2017 from http://schemas.ogf.org/occi/infrastructure by org.eclipse.cmf.occi.core.gen.textile
+Generated at Tue Aug 29 15:58:51 CEST 2017 from http://schemas.ogf.org/occi/infrastructure by org.eclipse.cmf.occi.core.gen.textile

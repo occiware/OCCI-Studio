@@ -1,7 +1,10 @@
-h1. This profile specification describes a well-defined number of instances of the OCCI compute resource type defined in the Open Cloud Computing Interface (OCCI) family of specifications.
+h1. OCCI crtp extension
+
+This profile specification describes a well-defined number of instances of the OCCI compute resource type defined in the Open Cloud Computing Interface (OCCI) family of specifications.
 
 | *Name* | crtp |
 | *Scheme* | http://schemas.ogf.org/occi/infrastructure/compute/template/1.1# |
+| *Specification* | <a href="https://www.ogf.org/documents/GFD.222.pdf">https://www.ogf.org/documents/GFD.222.pdf</a> |
 
 Imported OCCI Extensions:
 
@@ -120,4 +123,4 @@ Attributes of mem_large are:
 
 
 
-Generated at Thu Aug 03 14:07:18 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.crtp/model/crtp.occie by org.eclipse.cmf.occi.core.gen.textile
+Generated at Tue Aug 29 15:58:51 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.crtp/model/crtp.occie by org.eclipse.cmf.occi.core.gen.textile
