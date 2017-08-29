@@ -1,7 +1,10 @@
-h1. OCCI Core Model
+h1. OCCI core extension
+
+OCCI Core Model
 
 | *Name* | core |
 | *Scheme* | http://schemas.ogf.org/occi/core# |
+| *Specification* | <a href="https://www.ogf.org/documents/GFD.221.pdf">https://www.ogf.org/documents/GFD.221.pdf</a> |
 
 h1. Kinds
 
@@ -57,4 +60,4 @@ h2. NumericType Integer : Integer
 Data type for integers. 
 
 
-Generated at Thu Aug 03 14:26:22 CEST 2017 from http://schemas.ogf.org/occi/core by org.eclipse.cmf.occi.core.gen.textile
+Generated at Tue Aug 29 16:01:23 CEST 2017 from http://schemas.ogf.org/occi/core by org.eclipse.cmf.occi.core.gen.textile

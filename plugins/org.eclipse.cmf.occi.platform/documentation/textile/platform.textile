@@ -1,7 +1,10 @@
-h1. OCCI Platform Extension, version 1.2.
+h1. OCCI platform extension
+
+OCCI Platform Extension, version 1.2.
 
 | *Name* | platform |
 | *Scheme* | http://schemas.ogf.org/occi/platform# |
+| *Specification* | <a href="https://www.ogf.org/documents/GFD.227.pdf">https://www.ogf.org/documents/GFD.227.pdf</a> |
 
 Imported OCCI Extensions:
 
@@ -128,4 +131,4 @@ h2. EnumerationType Status
 * inactive  
 * error  
 
-Generated at Thu Aug 03 14:26:22 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.platform/model/Platform.occie by org.eclipse.cmf.occi.core.gen.textile
+Generated at Tue Aug 29 16:01:23 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.platform/model/Platform.occie by org.eclipse.cmf.occi.core.gen.textile
