@@ -1,6 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Example
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.cmf.occi.monitoring.example;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.cmf.examples;bundle-version="1.0.0"
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
