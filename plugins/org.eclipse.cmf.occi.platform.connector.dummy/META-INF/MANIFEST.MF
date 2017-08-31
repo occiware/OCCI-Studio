@@ -1,10 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: org.eclipse.cmf.occi.platform.connector.dummy
+Bundle-Name: %pluginName
+Bundle-Localization: plugin
 Bundle-SymbolicName: org.eclipse.cmf.occi.platform.connector.dummy;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Vendor: OCCIware
+Bundle-Vendor: %providerName
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.slf4j.api,
