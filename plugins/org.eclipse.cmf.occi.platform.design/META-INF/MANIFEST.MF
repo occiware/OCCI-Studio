@@ -1,6 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
+Bundle-Localization: plugin
 Bundle-SymbolicName: org.eclipse.cmf.occi.platform.design;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.eclipse.cmf.occi.platform.design.Activator
