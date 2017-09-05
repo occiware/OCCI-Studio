@@ -239,12 +239,12 @@ QualifiedID:
 
 NameID:
 	(ID (ID | ('-'))*) | KEYWORD;
+	
+terminal QUALIFIED_ID:
+	ID ('.' ID_WITHOUT_CARET)+;
 
 terminal ID_WITHOUT_CARET:
 	('a'..'z' | 'A'..'Z' | '_') ('a'..'z' |'A'..'Z' | '_' | '0'..'9')*;
-	
-terminal QUALIFIED_ID:
-	ID '.' ID_WITHOUT_CARET ('.' ID_WITHOUT_CARET)*;
 
 KEYWORD:
 	// Configuration
