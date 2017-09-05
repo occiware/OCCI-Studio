@@ -12546,7 +12546,9 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-RULE_QUALIFIED_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')* '.' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')* ('.' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*)*;
+fragment RULE_ID_WITHOUT_CARET : ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+
+RULE_QUALIFIED_ID : RULE_ID '.' RULE_ID_WITHOUT_CARET ('.' RULE_ID_WITHOUT_CARET)*;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
