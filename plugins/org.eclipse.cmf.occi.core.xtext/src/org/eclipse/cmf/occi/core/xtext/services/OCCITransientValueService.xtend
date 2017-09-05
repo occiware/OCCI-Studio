@@ -88,7 +88,7 @@ class OCCITransientValueService extends DefaultTransientValueService {
 //			 return true
 //		}
 	if (feature == OCCIPackage.Literals.CATEGORY__SCHEME) {
-			if (owner instanceof Action|| owner instanceof Kind || owner instanceof Mixin){
+			if (owner instanceof Action|| owner instanceof Kind /* || owner instanceof Mixin*/){
 			return true
 			
 		}

@@ -74,13 +74,13 @@ class OCCIDerivedStateComputer implements IDerivedStateComputer {
       		kind.scheme = (kind.eContainer as Extension).scheme
       	}
       }
-      if(r instanceof Mixin) {
-      	val mixin = r as Mixin
-      	if(mixin.scheme === null) {
-      		// Set the scheme of a Mixin instance to the scheme of its owning Extension instance.
-      		mixin.scheme = (mixin.eContainer as Extension).scheme
-      	}
-      }
+//      if(r instanceof Mixin) {
+//      	val mixin = r as Mixin
+//      	if(mixin.scheme === null) {
+//      		// Set the scheme of a Mixin instance to the scheme of its owning Extension instance.
+//      		mixin.scheme = (mixin.eContainer as Extension).scheme
+//      	}
+//      }
       if(r instanceof Action) {
       	val action = r as Action
       	if(action.scheme === null) {
