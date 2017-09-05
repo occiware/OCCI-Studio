@@ -396,6 +396,7 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         (depends+=[Mixin|QualifiedID] depends+=[Mixin|QualifiedID]*)? 
 	 *         (applies+=[Kind|QualifiedID] applies+=[Kind|QualifiedID]*)? 
 	 *         title=STRING? 
+	 *         scheme=STRING 
 	 *         (attributes+=Attribute | actions+=Action | constraints+=Constraint)* 
 	 *         fsm=FSM? 
 	 *         (annotations+=Annotation annotations+=Annotation*)?
