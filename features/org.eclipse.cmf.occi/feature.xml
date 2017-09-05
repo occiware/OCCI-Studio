@@ -846,6 +846,11 @@ litigation.
 
       <import feature="org.eclipse.ocl.all.sdk" version="5.3.0.v20170607-1133"/>
       <import feature="org.eclipse.ocl.examples" version="6.3.0.v20170613-1432"/>
+      <import feature="org.eclipse.epsilon.core.feature" version="1.4.0.201611012202"/>
+      <import feature="org.eclipse.epsilon.core.dt.feature" version="1.4.0.201611012202"/>
+      <import feature="org.eclipse.epsilon.emf.dt.feature" version="1.4.0.201611012202"/>
+      <import feature="org.eclipse.epsilon.emf.feature" version="1.4.0.201611012202"/>
+      
 <!--
 OCL features installed in the Faiez’s Eclipse:
 org.eclipse.ocl (3.7.0.v20170219-1911) "OCL for Ecore"                     -> REQUIRED for compiling EMF generated code.
