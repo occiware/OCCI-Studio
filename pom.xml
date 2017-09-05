@@ -155,6 +155,12 @@
         <enabled>true</enabled>
       </releases>
     </repository>
+    
+    <repository>
+    <id>epsilonrepository</id>  
+     <url>http://download.eclipse.org/epsilon/updates/</url> 
+     <layout>p2</layout>
+    </repository>
   </repositories>
 
   <distributionManagement>
