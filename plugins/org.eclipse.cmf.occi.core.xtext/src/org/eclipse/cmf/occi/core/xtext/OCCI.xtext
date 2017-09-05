@@ -99,7 +99,7 @@ Mixin returns Mixin:
 	('depends' '(' depends+=[Mixin|QualifiedID] ("," depends+=[Mixin|QualifiedID])* ')')?
 	('applies' '(' applies+=[Kind|QualifiedID] ("," applies+=[Kind|QualifiedID])* ')')?
 	( 'title' title=STRING )?
-//	'scheme' scheme=STRING
+	'scheme' scheme=STRING
 	('{'
 	(attributes+=Attribute
 	| actions+=Action
