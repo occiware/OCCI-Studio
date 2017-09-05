@@ -4244,9 +4244,9 @@ ruleNumericTypeEnum returns [Enumerator current=null]
 	)
 ;
 
-fragment RULE_ID_WITHOUT_CARET : ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+RULE_QUALIFIED_ID : RULE_ID ('.' RULE_ID_WITHOUT_CARET)+;
 
-RULE_QUALIFIED_ID : RULE_ID '.' RULE_ID_WITHOUT_CARET ('.' RULE_ID_WITHOUT_CARET)*;
+fragment RULE_ID_WITHOUT_CARET : ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

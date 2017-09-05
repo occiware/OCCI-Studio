@@ -2967,8 +2967,8 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	private final TypeIDElements pTypeID;
 	private final QualifiedIDElements pQualifiedID;
 	private final NameIDElements pNameID;
-	private final TerminalRule tID_WITHOUT_CARET;
 	private final TerminalRule tQUALIFIED_ID;
+	private final TerminalRule tID_WITHOUT_CARET;
 	private final KEYWORDElements pKEYWORD;
 	
 	private final Grammar grammar;
@@ -3012,8 +3012,8 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		this.pTypeID = new TypeIDElements();
 		this.pQualifiedID = new QualifiedIDElements();
 		this.pNameID = new NameIDElements();
-		this.tID_WITHOUT_CARET = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.ID_WITHOUT_CARET");
 		this.tQUALIFIED_ID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.QUALIFIED_ID");
+		this.tID_WITHOUT_CARET = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.cmf.occi.core.xtext.OCCI.ID_WITHOUT_CARET");
 		this.pKEYWORD = new KEYWORDElements();
 	}
 	
@@ -3438,16 +3438,16 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		return getNameIDAccess().getRule();
 	}
 	
+	//terminal QUALIFIED_ID:
+	//	ID ('.' ID_WITHOUT_CARET)+;
+	public TerminalRule getQUALIFIED_IDRule() {
+		return tQUALIFIED_ID;
+	}
+	
 	//terminal ID_WITHOUT_CARET:
 	//	('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
 	public TerminalRule getID_WITHOUT_CARETRule() {
 		return tID_WITHOUT_CARET;
-	}
-	
-	//terminal QUALIFIED_ID:
-	//	ID '.' ID_WITHOUT_CARET ('.' ID_WITHOUT_CARET)*;
-	public TerminalRule getQUALIFIED_IDRule() {
-		return tQUALIFIED_ID;
 	}
 	
 	//KEYWORD: // Configuration

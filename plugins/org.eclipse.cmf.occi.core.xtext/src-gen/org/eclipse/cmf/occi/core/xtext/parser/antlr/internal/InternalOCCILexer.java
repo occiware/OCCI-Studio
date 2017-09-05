@@ -1546,11 +1546,62 @@ public class InternalOCCILexer extends Lexer {
     }
     // $ANTLR end "T__81"
 
+    // $ANTLR start "RULE_QUALIFIED_ID"
+    public final void mRULE_QUALIFIED_ID() throws RecognitionException {
+        try {
+            int _type = RULE_QUALIFIED_ID;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalOCCI.g:4247:19: ( RULE_ID ( '.' RULE_ID_WITHOUT_CARET )+ )
+            // InternalOCCI.g:4247:21: RULE_ID ( '.' RULE_ID_WITHOUT_CARET )+
+            {
+            mRULE_ID(); 
+            // InternalOCCI.g:4247:29: ( '.' RULE_ID_WITHOUT_CARET )+
+            int cnt1=0;
+            loop1:
+            do {
+                int alt1=2;
+                int LA1_0 = input.LA(1);
+
+                if ( (LA1_0=='.') ) {
+                    alt1=1;
+                }
+
+
+                switch (alt1) {
+            	case 1 :
+            	    // InternalOCCI.g:4247:30: '.' RULE_ID_WITHOUT_CARET
+            	    {
+            	    match('.'); 
+            	    mRULE_ID_WITHOUT_CARET(); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt1 >= 1 ) break loop1;
+                        EarlyExitException eee =
+                            new EarlyExitException(1, input);
+                        throw eee;
+                }
+                cnt1++;
+            } while (true);
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_QUALIFIED_ID"
+
     // $ANTLR start "RULE_ID_WITHOUT_CARET"
     public final void mRULE_ID_WITHOUT_CARET() throws RecognitionException {
         try {
-            // InternalOCCI.g:4247:32: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalOCCI.g:4247:34: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalOCCI.g:4249:32: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalOCCI.g:4249:34: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -1561,18 +1612,18 @@ public class InternalOCCILexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalOCCI.g:4247:58: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
-            loop1:
+            // InternalOCCI.g:4249:58: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            loop2:
             do {
-                int alt1=2;
-                int LA1_0 = input.LA(1);
+                int alt2=2;
+                int LA2_0 = input.LA(1);
 
-                if ( ((LA1_0>='0' && LA1_0<='9')||(LA1_0>='A' && LA1_0<='Z')||LA1_0=='_'||(LA1_0>='a' && LA1_0<='z')) ) {
-                    alt1=1;
+                if ( ((LA2_0>='0' && LA2_0<='9')||(LA2_0>='A' && LA2_0<='Z')||LA2_0=='_'||(LA2_0>='a' && LA2_0<='z')) ) {
+                    alt2=1;
                 }
 
 
-                switch (alt1) {
+                switch (alt2) {
             	case 1 :
             	    // InternalOCCI.g:
             	    {
@@ -1590,7 +1641,7 @@ public class InternalOCCILexer extends Lexer {
             	    break;
 
             	default :
-            	    break loop1;
+            	    break loop2;
                 }
             } while (true);
 
@@ -1602,54 +1653,6 @@ public class InternalOCCILexer extends Lexer {
         }
     }
     // $ANTLR end "RULE_ID_WITHOUT_CARET"
-
-    // $ANTLR start "RULE_QUALIFIED_ID"
-    public final void mRULE_QUALIFIED_ID() throws RecognitionException {
-        try {
-            int _type = RULE_QUALIFIED_ID;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalOCCI.g:4249:19: ( RULE_ID '.' RULE_ID_WITHOUT_CARET ( '.' RULE_ID_WITHOUT_CARET )* )
-            // InternalOCCI.g:4249:21: RULE_ID '.' RULE_ID_WITHOUT_CARET ( '.' RULE_ID_WITHOUT_CARET )*
-            {
-            mRULE_ID(); 
-            match('.'); 
-            mRULE_ID_WITHOUT_CARET(); 
-            // InternalOCCI.g:4249:55: ( '.' RULE_ID_WITHOUT_CARET )*
-            loop2:
-            do {
-                int alt2=2;
-                int LA2_0 = input.LA(1);
-
-                if ( (LA2_0=='.') ) {
-                    alt2=1;
-                }
-
-
-                switch (alt2) {
-            	case 1 :
-            	    // InternalOCCI.g:4249:56: '.' RULE_ID_WITHOUT_CARET
-            	    {
-            	    match('.'); 
-            	    mRULE_ID_WITHOUT_CARET(); 
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop2;
-                }
-            } while (true);
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "RULE_QUALIFIED_ID"
 
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
@@ -2711,7 +2714,7 @@ public class InternalOCCILexer extends Lexer {
     static final String DFA14_acceptS =
         "\6\uffff\1\6\2\uffff\1\11\1\12\2\uffff\1\17\3\uffff\1\30\1\32\1\33\11\uffff\1\74\5\uffff\1\110\3\uffff\1\114\1\115\2\uffff\1\107\1\106\6\uffff\1\6\12\uffff\1\11\1\12\11\uffff\1\17\5\uffff\1\30\1\32\1\33\16\uffff\1\74\4\uffff\1\110\1\111\1\112\1\113\1\114\17\uffff\1\51\13\uffff\1\23\43\uffff\1\4\36\uffff\1\35\2\uffff\1\44\24\uffff\1\13\11\uffff\1\60\25\uffff\1\24\1\uffff\1\43\11\uffff\1\77\4\uffff\1\103\12\uffff\1\7\6\uffff\1\45\1\uffff\1\15\13\uffff\1\73\4\uffff\1\36\1\101\1\47\1\uffff\1\104\1\uffff\1\75\15\uffff\1\54\2\uffff\1\72\1\14\4\uffff\1\26\1\76\12\uffff\1\41\2\uffff\1\22\10\uffff\1\100\4\uffff\1\31\6\uffff\1\10\4\uffff\1\37\5\uffff\1\34\1\uffff\1\25\1\46\1\uffff\1\53\5\uffff\1\102\3\uffff\1\3\1\71\1\5\1\40\30\uffff\1\55\2\uffff\1\56\2\uffff\1\16\1\uffff\1\20\7\uffff\1\42\11\uffff\1\52\3\uffff\1\105\2\uffff\1\2\1\50\1\63\5\uffff\1\27\1\57\1\uffff\1\61\1\62\2\uffff\1\64\1\66\1\65\1\67\1\uffff\1\1\1\21\2\uffff\1\70";
     static final String DFA14_specialS =
-        "\1\2\43\uffff\1\0\1\1\u01c1\uffff}>";
+        "\1\0\43\uffff\1\1\1\2\u01c1\uffff}>";
     static final String[] DFA14_transitionS = {
             "\11\50\2\47\2\50\1\47\22\50\1\47\1\50\1\44\4\50\1\45\1\22\1\23\2\50\1\21\1\35\1\50\1\46\12\43\1\6\2\50\1\15\3\50\1\42\1\33\1\42\1\36\1\32\1\26\2\42\1\37\2\42\1\40\1\42\1\34\4\42\1\30\7\42\3\50\1\41\1\42\1\50\1\14\1\25\1\1\1\2\1\16\1\27\2\42\1\17\1\42\1\20\1\3\1\13\2\42\1\31\1\42\1\5\1\10\1\7\1\4\1\24\4\42\1\11\1\50\1\12\uff82\50",
             "\1\54\1\uffff\12\52\7\uffff\32\52\4\uffff\1\52\1\uffff\16\52\1\51\13\52",
@@ -3239,26 +3242,6 @@ public class InternalOCCILexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA14_36 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA14_36>='\u0000' && LA14_36<='\uFFFF')) ) {s = 102;}
-
-                        else s = 40;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA14_37 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA14_37>='\u0000' && LA14_37<='\uFFFF')) ) {s = 102;}
-
-                        else s = 40;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA14_0 = input.LA(1);
 
                         s = -1;
@@ -3341,6 +3324,26 @@ public class InternalOCCILexer extends Lexer {
                         else if ( ((LA14_0>='\t' && LA14_0<='\n')||LA14_0=='\r'||LA14_0==' ') ) {s = 39;}
 
                         else if ( ((LA14_0>='\u0000' && LA14_0<='\b')||(LA14_0>='\u000B' && LA14_0<='\f')||(LA14_0>='\u000E' && LA14_0<='\u001F')||LA14_0=='!'||(LA14_0>='#' && LA14_0<='&')||(LA14_0>='*' && LA14_0<='+')||LA14_0=='.'||(LA14_0>=';' && LA14_0<='<')||(LA14_0>='>' && LA14_0<='@')||(LA14_0>='[' && LA14_0<=']')||LA14_0=='`'||LA14_0=='|'||(LA14_0>='~' && LA14_0<='\uFFFF')) ) {s = 40;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA14_36 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA14_36>='\u0000' && LA14_36<='\uFFFF')) ) {s = 102;}
+
+                        else s = 40;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA14_37 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA14_37>='\u0000' && LA14_37<='\uFFFF')) ) {s = 102;}
+
+                        else s = 40;
 
                         if ( s>=0 ) return s;
                         break;
