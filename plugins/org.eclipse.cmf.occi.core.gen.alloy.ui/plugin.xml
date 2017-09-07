@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.occie"
+            id="org.eclipse.cmf.occi.core.gen.alloy.ui.popupMenus.contribution.IFile">
+         <menu id="org.eclipse.cmf.occi.core.occi-studio.ui.menu" label="OCCI Studio" path="additionsOCCIStudio">
+               <groupMarker name="acceleo"/> 
+         </menu>
+         <action
+               class="org.eclipse.cmf.occi.core.gen.alloy.ui.popupMenus.AcceleoGenerateAlloyAction"
+               enablesFor="+"
+               id="org.eclipse.cmf.occi.core.gen.alloy.ui.popupMenus.acceleoGenerateAlloyAction"
+               icon="icons/default.gif"
+               label="Generate Alloy Specification"
+               menubarPath="org.eclipse.cmf.occi.core.occi-studio.ui.menu/acceleo"/>
+      </objectContribution>
+   </extension>
+</plugin>
