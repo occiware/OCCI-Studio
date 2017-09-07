@@ -1,0 +1,17 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('http://schemas.ogf.org/occi/core/ecore', 'http://www.eclipse.org/emf/2002/Ecore')]
+
+
+[**
+ * The documentation of the template generateElement.
+ * @param aType
+ */]
+[template public generateElement(aExtension : Extension)]
+[comment @main/]
+[file (aExtension.name, false, 'UTF-8')]
+
+[/file]
+[/template]
