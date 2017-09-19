@@ -636,7 +636,7 @@ public class OCCIExtension2Ecore {
 			annotation_emf.getDetails().put("constraints", annotation_emf.getDetails().get("constraints")+ " targetConstraint");
 			
 			EAnnotation annotation_ocl = eClass.getEAnnotation("http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot");
-			annotation_ocl.getDetails().put("targetConstraint", createTargetContraintBody(kind));
+			annotation_ocl.getDetails().put("targetConstraint", createTargetConstraintBody(kind));
 		} else {
 			// EMF Annotation
 			EAnnotation annotation_emf = EcoreFactory.eINSTANCE.createEAnnotation();
@@ -645,7 +645,7 @@ public class OCCIExtension2Ecore {
 			EAnnotation annotation_ocl = EcoreFactory.eINSTANCE.createEAnnotation();
 			annotation_ocl.setSource("http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot");
 
-			annotation_ocl.getDetails().put("targetConstraint", createTargetContraintBody(kind));
+			annotation_ocl.getDetails().put("targetConstraint", createTargetConstraintBody(kind));
 			annotation_emf.getDetails().put("constraints", "targetConstraint");
 			eClass.getEAnnotations().add(annotation_emf);
 			eClass.getEAnnotations().add(annotation_ocl);
@@ -653,9 +653,9 @@ public class OCCIExtension2Ecore {
 	
 	}
 
-	private String createTargetContraintBody(Kind kind) {
-		String epackage_name = ((EPackage)(getMappedEClass(kind.getTarget()).eContainer())).getName();
-		return "self.target.oclIsKindOf("+epackage_name+"::"+getMappedEClass(kind.getTarget()).getName()+")";
+	private String createTargetConstraintBody(Kind kind) {
+		String epackage_name = formatExtensionName((Extension)kind.eContainer());
+		return "self.target.oclIsKindOf("+epackage_name+"::"+ConverterUtils.toU1Case(ConverterUtils.formatName(kind.getTarget().getTerm()))+")";
 	}
 
 	protected void convertConstraints(EClass eClass, Type type) {
