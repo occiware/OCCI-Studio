@@ -18,16 +18,13 @@
 
     "version": {
         "name": "current-release",
-        "desc": "Current release",
-        "released": "2017-09-20",
-        "vcs_tag": "current",
-        "attributes": [],
-        "gpgSign": false
     },
 
     "files":
         [
-        {"includePattern": "repositories/org.eclipse.cmf.occi.repository/target/repository/(.*)", "uploadPattern": "update-site/$1", "matrixParams": {"override": 1} }
+        {"includePattern": "repositories/org.eclipse.cmf.occi.repository/target/repository/(.*)", "uploadPattern": "$1", "matrixParams": {"override": 1} },
+        {"includePattern": "repositories/org.eclipse.cmf.occi.repository/target/repository/features/(.*)", "uploadPattern": "features/$1", "matrixParams": {"override": 1} },
+        {"includePattern": "repositories/org.eclipse.cmf.occi.repository/target/repository/plugins/(.*)", "uploadPattern": "plugins/$1", "matrixParams": {"override": 1} }
         ],
     "publish": true
 }
