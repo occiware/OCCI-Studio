@@ -58,7 +58,7 @@
    </configurations>
 
    <repositories>
-      <repository location="http://www.obeo.fr/download/occiware/repository" enabled="true" />
+      <repository location="https://dl.bintray.com/occiware/OCCI-Studio/update-site/current-release" enabled="true" />
       <repository location="http://download.eclipse.org/releases/oxygen" enabled="true" />
    </repositories>
 
