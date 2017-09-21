@@ -28,15 +28,15 @@
     "files": [
         {
             "includePattern": "repositories/org.eclipse.cmf.occi.repository/target/repository/(.*)",
-            "uploadPattern": "/$1",
+            "uploadPattern": "/update-site/current-release/$1",
             "matrixParams": {"override": 1}
         }, {
             "includePattern": "repositories/org.eclipse.cmf.occi.repository/target/repository/features/(.*)",
-            "uploadPattern": "/features/$1",
+            "uploadPattern": "/update-site/current-release/features/$1",
             "matrixParams": {"override": 1}
         }, {
             "includePattern": "repositories/org.eclipse.cmf.occi.repository/target/repository/plugins/(.*)",
-            "uploadPattern": "/plugins/$1",
+            "uploadPattern": "/update-site/current-release/plugins/$1",
             "matrixParams": {"override": 1}
         }
     ],
