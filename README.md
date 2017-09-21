@@ -6,6 +6,6 @@ OCCI-Studio is a set of Eclipse plugins implementing the [current Open Cloud Com
 
 You can refer to the following materials in order to familiarize with OCCI-Studio:
 
-* The OCCI-Studio tutorial available <a href="https://drive.google.com/drive/u/0/folders/0B-sPFDvrFZo8NE52Rmp6MjlacWs">here</a>.
+* The OCCI-Studio tutorial available <a href="https://drive.google.com/open?id=0B7zqdAuZr708VWZCYVZRZzY3YVE">here</a>.
 * The necessary materials, <a href="https://drive.google.com/open?id=0B7zqdAuZr708ZFdoVEtvaUJ1V2c">here</a>, to ensure the hands-on experience with OCCI-Studio.
 
