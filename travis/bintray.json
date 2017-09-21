@@ -28,7 +28,7 @@
     "files": [
         {
             "includePattern": "repositories/org.eclipse.cmf.occi.repository/target/repository/(.*)",
-            "uploadPattern": "/update-site/current-release/$1",
+            "uploadPattern": "/$1",
             "matrixParams": {"override": 1}
         }, {
             "includePattern": "repositories/org.eclipse.cmf.occi.repository/target/repository/features/(.*)",
