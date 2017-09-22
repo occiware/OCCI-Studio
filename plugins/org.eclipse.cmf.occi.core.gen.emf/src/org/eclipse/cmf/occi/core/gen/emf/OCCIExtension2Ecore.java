@@ -654,7 +654,7 @@ public class OCCIExtension2Ecore {
 	}
 
 	private String createTargetConstraintBody(Kind kind) {
-		String epackage_name = formatExtensionName((Extension)kind.eContainer());
+		String epackage_name = formatExtensionName((Extension)kind.getTarget().eContainer());
 		return "self.target.oclIsKindOf("+epackage_name+"::"+ConverterUtils.toU1Case(ConverterUtils.formatName(kind.getTarget().getTerm()))+")";
 	}
 
