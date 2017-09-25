@@ -6,7 +6,6 @@ Bundle-SymbolicName: org.eclipse.cmf.occi.infrastructure.tests;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
-Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.eclipse.cmf.occi.infrastructure.tests
 Require-Bundle: org.eclipse.core.runtime,
