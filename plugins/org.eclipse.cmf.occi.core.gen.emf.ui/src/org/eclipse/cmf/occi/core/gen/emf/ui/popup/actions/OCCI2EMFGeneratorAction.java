@@ -33,7 +33,9 @@ import org.eclipse.cmf.occi.core.util.OcciHelper;
 import org.eclipse.cmf.occi.core.util.OcciRegistry;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
@@ -95,6 +97,8 @@ public class OCCI2EMFGeneratorAction implements IObjectActionDelegate {
 	public void run(IAction action) {
 
 		IFile occieFile = (IFile) ((IStructuredSelection) selection).getFirstElement();
+		deleteFile(occieFile,"ecore");
+		deleteFile(occieFile,"genmodel");
 		try {
 			EPackage.Registry.INSTANCE.put(ECORE_PLATFORM_URI, EcorePackage.eINSTANCE);
 			resourceSet = new ResourceSetImpl();
@@ -161,6 +165,19 @@ public class OCCI2EMFGeneratorAction implements IObjectActionDelegate {
 			Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e));
 		} catch (CoreException e) {
 			Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e));
+		}
+	}
+
+	private void deleteFile(IFile occieFile, String extension) {
+		IPath ecorePath = occieFile.getFullPath().removeFileExtension().addFileExtension(extension);
+		IFile ecoreFile = ResourcesPlugin.getWorkspace().getRoot().getFile(ecorePath);
+		if(ecoreFile.exists()) {
+			try {
+				ecoreFile.delete(true, null);
+			} catch (CoreException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 
