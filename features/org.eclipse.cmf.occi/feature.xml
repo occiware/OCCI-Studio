@@ -862,6 +862,7 @@ litigation.
       <import feature="org.eclipse.epsilon.emf.dt.feature" version="1.4.0.201611012202"/>
       <import feature="org.eclipse.epsilon.emf.feature" version="1.4.0.201611012202"/>
       <import feature="org.eclipse.emf.ecoretools.design" version="3.3.0.201706121316"/>
+      <import feature="org.eclipse.mylyn.wikitext_feature" version="3.0.6.201703111926"/>
       
 <!--
 OCL features installed in the Faiez’s Eclipse:
