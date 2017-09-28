@@ -124,6 +124,14 @@
     <genClasses ecoreClass="OCCI.ecore#//Link">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference OCCI.ecore#//Link/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OCCI.ecore#//Link/target"/>
+      <genOperations ecoreOperation="OCCI.ecore#//Link/LinkTargetInvariant">
+        <genParameters ecoreParameter="OCCI.ecore#//Link/LinkTargetInvariant/resourcekind"/>
+        <genParameters ecoreParameter="OCCI.ecore#//Link/LinkTargetInvariant/linkInstanceKind"/>
+      </genOperations>
+      <genOperations ecoreOperation="OCCI.ecore#//Link/LinkSourceInvariant">
+        <genParameters ecoreParameter="OCCI.ecore#//Link/LinkSourceInvariant/resourcekind"/>
+        <genParameters ecoreParameter="OCCI.ecore#//Link/LinkSourceInvariant/linkInstanceKind"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//Extension">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Extension/name"/>
