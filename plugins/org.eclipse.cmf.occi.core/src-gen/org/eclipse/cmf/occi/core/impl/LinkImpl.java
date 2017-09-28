@@ -222,6 +222,98 @@ public class LinkImpl extends EntityImpl implements Link {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean LinkTargetInvariant(final Kind resourcekind, final Kind linkInstanceKind) {
+		/**
+		 *
+		 * if linkInstanceKind.target <> null
+		 * then resourcekind.occiIsKindOf(linkInstanceKind.target)
+		 * else
+		 *   if linkInstanceKind.parent <> null
+		 *   then LinkTargetInvariant(resourcekind, linkInstanceKind.parent)
+		 *   else true
+		 *   endif
+		 * endif
+		 */
+		if (linkInstanceKind == null) {
+			throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Kind::target\'");
+		}
+		final /*@Thrown*/ Kind target_0 = linkInstanceKind.getTarget();
+		final /*@Thrown*/ boolean ne = target_0 != null;
+		/*@Thrown*/ boolean symbol_1;
+		if (ne) {
+			if (resourcekind == null) {
+				throw new InvalidValueException("Null source for \'occi::Kind::occiIsKindOf(occi::Kind[?]) : Boolean[1]\'");
+			}
+			final /*@Thrown*/ boolean occiIsKindOf = resourcekind.occiIsKindOf(target_0);
+			symbol_1 = occiIsKindOf;
+		}
+		else {
+			final /*@Thrown*/ Kind parent_0 = linkInstanceKind.getParent();
+			final /*@Thrown*/ boolean ne_0 = parent_0 != null;
+			/*@Thrown*/ boolean symbol_0;
+			if (ne_0) {
+				final /*@Thrown*/ boolean LinkTargetInvariant = this.LinkTargetInvariant(resourcekind, parent_0);
+				symbol_0 = LinkTargetInvariant;
+			}
+			else {
+				symbol_0 = ValueUtil.TRUE_VALUE;
+			}
+			symbol_1 = symbol_0;
+		}
+		return symbol_1;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean LinkSourceInvariant(final Kind resourcekind, final Kind linkInstanceKind) {
+		/**
+		 *
+		 * if linkInstanceKind.source <> null
+		 * then resourcekind.occiIsKindOf(linkInstanceKind.source)
+		 * else
+		 *   if linkInstanceKind.parent <> null
+		 *   then LinkSourceInvariant(resourcekind, linkInstanceKind.parent)
+		 *   else true
+		 *   endif
+		 * endif
+		 */
+		if (linkInstanceKind == null) {
+			throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Kind::source\'");
+		}
+		final /*@Thrown*/ Kind source_0 = linkInstanceKind.getSource();
+		final /*@Thrown*/ boolean ne = source_0 != null;
+		/*@Thrown*/ boolean symbol_1;
+		if (ne) {
+			if (resourcekind == null) {
+				throw new InvalidValueException("Null source for \'occi::Kind::occiIsKindOf(occi::Kind[?]) : Boolean[1]\'");
+			}
+			final /*@Thrown*/ boolean occiIsKindOf = resourcekind.occiIsKindOf(source_0);
+			symbol_1 = occiIsKindOf;
+		}
+		else {
+			final /*@Thrown*/ Kind parent_0 = linkInstanceKind.getParent();
+			final /*@Thrown*/ boolean ne_0 = parent_0 != null;
+			/*@Thrown*/ boolean symbol_0;
+			if (ne_0) {
+				final /*@Thrown*/ boolean LinkSourceInvariant = this.LinkSourceInvariant(resourcekind, parent_0);
+				symbol_0 = LinkSourceInvariant;
+			}
+			else {
+				symbol_0 = ValueUtil.TRUE_VALUE;
+			}
+			symbol_1 = symbol_0;
+		}
+		return symbol_1;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean sourceReferenceInvariant(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
 		 *
@@ -233,8 +325,8 @@ public class LinkImpl extends EntityImpl implements Link {
 		 *     else
 		 *       let
 		 *         result : OclAny[1] = let
-		 *           status : Boolean[1] = self.source.kind.occiIsKindOf(
-		 *             self.oclAsType(Entity).kind.source)
+		 *           status : Boolean[1] = LinkSourceInvariant(self.source.kind,
+		 *             self.oclAsType(Entity).kind)
 		 *         in
 		 *           if status = true
 		 *           then true
@@ -263,8 +355,7 @@ public class LinkImpl extends EntityImpl implements Link {
 				final /*@NonInvalid*/ Resource source = this.getSource();
 				final /*@NonInvalid*/ Kind kind_0 = source.getKind();
 				final /*@Thrown*/ Kind kind_1 = oclAsType.getKind();
-				final /*@Thrown*/ Kind source_0 = kind_1.getSource();
-				final /*@Thrown*/ boolean status = kind_0.occiIsKindOf(source_0);
+				final /*@Thrown*/ boolean status = this.LinkSourceInvariant(kind_0, kind_1);
 				/*@Thrown*/ Object symbol_1;
 				if (status) {
 					symbol_1 = ValueUtil.TRUE_VALUE;
@@ -304,8 +395,8 @@ public class LinkImpl extends EntityImpl implements Link {
 		 *     else
 		 *       let
 		 *         result : OclAny[1] = let
-		 *           status : Boolean[1] = self.target.kind.occiIsKindOf(
-		 *             self.oclAsType(Entity).kind.target)
+		 *           status : Boolean[1] = LinkTargetInvariant(self.target.kind,
+		 *             self.oclAsType(Entity).kind)
 		 *         in
 		 *           if status = true
 		 *           then true
@@ -334,8 +425,7 @@ public class LinkImpl extends EntityImpl implements Link {
 				final /*@NonInvalid*/ Resource target = this.getTarget();
 				final /*@NonInvalid*/ Kind kind_0 = target.getKind();
 				final /*@Thrown*/ Kind kind_1 = oclAsType.getKind();
-				final /*@Thrown*/ Kind target_0 = kind_1.getTarget();
-				final /*@Thrown*/ boolean status = kind_0.occiIsKindOf(target_0);
+				final /*@Thrown*/ boolean status = this.LinkTargetInvariant(kind_0, kind_1);
 				/*@Thrown*/ Object symbol_1;
 				if (status) {
 					symbol_1 = ValueUtil.TRUE_VALUE;
@@ -627,6 +717,10 @@ public class LinkImpl extends EntityImpl implements Link {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+			case OCCIPackage.LINK___LINK_TARGET_INVARIANT__KIND_KIND:
+				return LinkTargetInvariant((Kind)arguments.get(0), (Kind)arguments.get(1));
+			case OCCIPackage.LINK___LINK_SOURCE_INVARIANT__KIND_KIND:
+				return LinkSourceInvariant((Kind)arguments.get(0), (Kind)arguments.get(1));
 			case OCCIPackage.LINK___SOURCE_REFERENCE_INVARIANT__DIAGNOSTICCHAIN_MAP:
 				return sourceReferenceInvariant((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 			case OCCIPackage.LINK___TARGET_REFERENCE_INVARIANT__DIAGNOSTICCHAIN_MAP:

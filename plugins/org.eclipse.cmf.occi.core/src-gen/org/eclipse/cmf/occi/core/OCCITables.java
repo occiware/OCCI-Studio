@@ -572,6 +572,7 @@ public class OCCITables
 		public static final /*@NonNull*/ ParameterTypes _Integer = TypeUtil.createParameterTypes(OCLstdlibTables.Types._Integer);
 		public static final /*@NonNull*/ ParameterTypes _Integer___Integer = TypeUtil.createParameterTypes(OCLstdlibTables.Types._Integer, OCLstdlibTables.Types._Integer);
 		public static final /*@NonNull*/ ParameterTypes _Kind = TypeUtil.createParameterTypes(OCCITables.Types._Kind);
+		public static final /*@NonNull*/ ParameterTypes _Kind___Kind = TypeUtil.createParameterTypes(OCCITables.Types._Kind, OCCITables.Types._Kind);
 		public static final /*@NonNull*/ ParameterTypes _OclAny___OclAny___OclAny___Integer___Boolean___Integer = TypeUtil.createParameterTypes(OCLstdlibTables.Types._OclAny, OCLstdlibTables.Types._OclAny, OCLstdlibTables.Types._OclAny, OCLstdlibTables.Types._Integer, OCLstdlibTables.Types._Boolean, OCLstdlibTables.Types._Integer);
 		public static final /*@NonNull*/ ParameterTypes _OclAny___OclAny___OclAny___OclAny___String___Integer___OclAny___Integer = TypeUtil.createParameterTypes(OCLstdlibTables.Types._OclAny, OCLstdlibTables.Types._OclAny, OCLstdlibTables.Types._OclAny, OCLstdlibTables.Types._OclAny, OCLstdlibTables.Types._String, OCLstdlibTables.Types._Integer, OCLstdlibTables.Types._OclAny, OCLstdlibTables.Types._Integer);
 		public static final /*@NonNull*/ ParameterTypes _OclSelf = TypeUtil.createParameterTypes(OCLstdlibTables.Types._OclSelf);
@@ -667,6 +668,11 @@ public class OCCITables
 
 		public static final /*@NonNull*/ ExecutorOperation _Kind__occiIsKindOf = new ExecutorOperation("occiIsKindOf", Parameters._Kind, Types._Kind,
 			0, TemplateParameters.EMPTY_LIST, null);
+
+		public static final /*@NonNull*/ ExecutorOperation _Link__LinkSourceInvariant = new ExecutorOperation("LinkSourceInvariant", Parameters._Kind___Kind, Types._Link,
+			0, TemplateParameters.EMPTY_LIST, null);
+		public static final /*@NonNull*/ ExecutorOperation _Link__LinkTargetInvariant = new ExecutorOperation("LinkTargetInvariant", Parameters._Kind___Kind, Types._Link,
+			1, TemplateParameters.EMPTY_LIST, null);
 
 		public static final /*@NonNull*/ ExecutorOperation _String___add_ = new ExecutorOperation("+", Parameters._String, Types._String,
 			0, TemplateParameters.EMPTY_LIST, org.eclipse.ocl.pivot.library.string.StringConcatOperation.INSTANCE);
@@ -1996,7 +2002,10 @@ public class OCCITables
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Kind__Type = {};
 
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Link__Link = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Link__Link = {
+			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
+			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */
+		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Link__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,

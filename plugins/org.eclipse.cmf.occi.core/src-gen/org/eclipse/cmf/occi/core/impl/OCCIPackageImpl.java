@@ -1313,7 +1313,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getLink__SourceReferenceInvariant__DiagnosticChain_Map() {
+	public EOperation getLink__LinkTargetInvariant__Kind_Kind() {
 		return linkEClass.getEOperations().get(0);
 	}
 
@@ -1322,7 +1322,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getLink__TargetReferenceInvariant__DiagnosticChain_Map() {
+	public EOperation getLink__LinkSourceInvariant__Kind_Kind() {
 		return linkEClass.getEOperations().get(1);
 	}
 
@@ -1331,8 +1331,26 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getLink__LinkKindIsInParent__DiagnosticChain_Map() {
+	public EOperation getLink__SourceReferenceInvariant__DiagnosticChain_Map() {
 		return linkEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getLink__TargetReferenceInvariant__DiagnosticChain_Map() {
+		return linkEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getLink__LinkKindIsInParent__DiagnosticChain_Map() {
+		return linkEClass.getEOperations().get(4);
 	}
 
 	/**
@@ -2109,6 +2127,8 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		linkEClass = createEClass(LINK);
 		createEReference(linkEClass, LINK__SOURCE);
 		createEReference(linkEClass, LINK__TARGET);
+		createEOperation(linkEClass, LINK___LINK_TARGET_INVARIANT__KIND_KIND);
+		createEOperation(linkEClass, LINK___LINK_SOURCE_INVARIANT__KIND_KIND);
 		createEOperation(linkEClass, LINK___SOURCE_REFERENCE_INVARIANT__DIAGNOSTICCHAIN_MAP);
 		createEOperation(linkEClass, LINK___TARGET_REFERENCE_INVARIANT__DIAGNOSTICCHAIN_MAP);
 		createEOperation(linkEClass, LINK___LINK_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP);
@@ -2562,6 +2582,14 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEClass(linkEClass, Link.class, "Link", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLink_Source(), this.getResource(), this.getResource_Links(), "source", null, 1, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLink_Target(), this.getResource(), this.getResource_Rlinks(), "target", null, 1, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getLink__LinkTargetInvariant__Kind_Kind(), this.getBoolean(), "LinkTargetInvariant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getKind(), "resourcekind", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getKind(), "linkInstanceKind", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getLink__LinkSourceInvariant__Kind_Kind(), this.getBoolean(), "LinkSourceInvariant", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getKind(), "resourcekind", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getKind(), "linkInstanceKind", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getLink__SourceReferenceInvariant__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "sourceReferenceInvariant", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);

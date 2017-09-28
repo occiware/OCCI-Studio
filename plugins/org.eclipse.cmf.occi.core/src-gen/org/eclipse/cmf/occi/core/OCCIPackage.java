@@ -1967,13 +1967,31 @@ public interface OCCIPackage extends EPackage {
 	int LINK___ID_UNIQUE__DIAGNOSTICCHAIN_MAP = ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP;
 
 	/**
+	 * The operation id for the '<em>Link Target Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK___LINK_TARGET_INVARIANT__KIND_KIND = ENTITY_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Link Source Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK___LINK_SOURCE_INVARIANT__KIND_KIND = ENTITY_OPERATION_COUNT + 1;
+
+	/**
 	 * The operation id for the '<em>Source Reference Invariant</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK___SOURCE_REFERENCE_INVARIANT__DIAGNOSTICCHAIN_MAP = ENTITY_OPERATION_COUNT + 0;
+	int LINK___SOURCE_REFERENCE_INVARIANT__DIAGNOSTICCHAIN_MAP = ENTITY_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Target Reference Invariant</em>' operation.
@@ -1982,7 +2000,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK___TARGET_REFERENCE_INVARIANT__DIAGNOSTICCHAIN_MAP = ENTITY_OPERATION_COUNT + 1;
+	int LINK___TARGET_REFERENCE_INVARIANT__DIAGNOSTICCHAIN_MAP = ENTITY_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Link Kind Is In Parent</em>' operation.
@@ -1991,7 +2009,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK___LINK_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP = ENTITY_OPERATION_COUNT + 2;
+	int LINK___LINK_KIND_IS_IN_PARENT__DIAGNOSTICCHAIN_MAP = ENTITY_OPERATION_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Link</em>' class.
@@ -2000,7 +2018,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 3;
+	int LINK_OPERATION_COUNT = ENTITY_OPERATION_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.ExtensionImpl <em>Extension</em>}' class.
@@ -4150,6 +4168,26 @@ public interface OCCIPackage extends EPackage {
 	EReference getLink_Target();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Link#LinkTargetInvariant(org.eclipse.cmf.occi.core.Kind, org.eclipse.cmf.occi.core.Kind) <em>Link Target Invariant</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Link Target Invariant</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Link#LinkTargetInvariant(org.eclipse.cmf.occi.core.Kind, org.eclipse.cmf.occi.core.Kind)
+	 * @generated
+	 */
+	EOperation getLink__LinkTargetInvariant__Kind_Kind();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Link#LinkSourceInvariant(org.eclipse.cmf.occi.core.Kind, org.eclipse.cmf.occi.core.Kind) <em>Link Source Invariant</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Link Source Invariant</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Link#LinkSourceInvariant(org.eclipse.cmf.occi.core.Kind, org.eclipse.cmf.occi.core.Kind)
+	 * @generated
+	 */
+	EOperation getLink__LinkSourceInvariant__Kind_Kind();
+
+	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Link#sourceReferenceInvariant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Source Reference Invariant</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5778,6 +5816,22 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LINK__TARGET = eINSTANCE.getLink_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Link Target Invariant</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LINK___LINK_TARGET_INVARIANT__KIND_KIND = eINSTANCE.getLink__LinkTargetInvariant__Kind_Kind();
+
+		/**
+		 * The meta object literal for the '<em><b>Link Source Invariant</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LINK___LINK_SOURCE_INVARIANT__KIND_KIND = eINSTANCE.getLink__LinkSourceInvariant__Kind_Kind();
 
 		/**
 		 * The meta object literal for the '<em><b>Source Reference Invariant</b></em>' operation.
