@@ -251,9 +251,23 @@
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="LinkKindIsInParent" value="kind->closure(parent)->exists(k |&#xA;&#x9;&#x9;&#x9;&#x9;k.term = 'link' and k.scheme = 'http://schemas.ogf.org/occi/core#')"/>
-      <details key="sourceReferenceInvariant" value="Tuple {&#xA;&#x9;&#x9;&#x9;&#x9;status: Boolean= self.source.kind.occiIsKindOf(self.oclAsType(Entity).kind.source),&#xA;&#x9;&#x9;&#x9;&#x9;message: String ='The kind of the source reference in the link instance '+self.oclAsType(Entity).title+' must be a kind of the source of the kind of this link' ,&#xA;&#x9;&#x9;&#x9;&#x9;severity: Integer = -1,&#xA;&#x9;&#x9;&#x9;&#x9;quickfix: String = 'quickfix'&#xA;&#x9;&#x9;&#x9;}.status"/>
-      <details key="targetReferenceInvariant" value="Tuple {&#xA;&#x9;&#x9;&#x9;&#x9;status: Boolean= self.target.kind.occiIsKindOf(self.oclAsType(Entity).kind.target),&#xA;&#x9;&#x9;&#x9;&#x9;message: String ='The kind of the target reference in the link instance '+self.oclAsType(Entity).title+' must be a kind of the target of the kind of this link' ,&#xA;&#x9;&#x9;&#x9;&#x9;severity: Integer = -1,&#xA;&#x9;&#x9;&#x9;&#x9;quickfix: String = 'quickfix'&#xA;&#x9;&#x9;&#x9;}.status"/>
+      <details key="sourceReferenceInvariant" value="Tuple {&#xA;&#x9;&#x9;&#x9;&#x9;status: Boolean= LinkSourceInvariant(self.source.kind,self.oclAsType(Entity).kind),&#xA;&#x9;&#x9;&#x9;&#x9;message: String ='The kind of the source reference in the link instance '+self.oclAsType(Entity).title+' must be a kind of the source of the kind of this link' ,&#xA;&#x9;&#x9;&#x9;&#x9;severity: Integer = -1,&#xA;&#x9;&#x9;&#x9;&#x9;quickfix: String = 'quickfix'&#xA;&#x9;&#x9;&#x9;}.status"/>
+      <details key="targetReferenceInvariant" value="Tuple {&#xA;&#x9;&#x9;&#x9;&#x9;status: Boolean= LinkTargetInvariant(self.target.kind,self.oclAsType(Entity).kind),&#xA;&#x9;&#x9;&#x9;&#x9;message: String ='The kind of the target reference in the link instance '+self.oclAsType(Entity).title+' must be a kind of the target of the kind of this link' ,&#xA;&#x9;&#x9;&#x9;&#x9;severity: Integer = -1,&#xA;&#x9;&#x9;&#x9;&#x9;quickfix: String = 'quickfix'&#xA;&#x9;&#x9;&#x9;}.status"/>
     </eAnnotations>
+    <eOperations name="LinkTargetInvariant" lowerBound="1" eType="#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="body" value="&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;/* if target or source of the kind of this link instance exists */&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (linkInstanceKind.target &lt;> null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;resourcekind.occiIsKindOf(linkInstanceKind.target)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if(linkInstanceKind.parent &lt;> null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;LinkTargetInvariant(resourcekind, linkInstanceKind.parent)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif"/>
+      </eAnnotations>
+      <eParameters name="resourcekind" eType="#//Kind"/>
+      <eParameters name="linkInstanceKind" eType="#//Kind"/>
+    </eOperations>
+    <eOperations name="LinkSourceInvariant" lowerBound="1" eType="#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="body" value="&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;/* if target or source of the kind of this link instance exists */&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if (linkInstanceKind.source &lt;> null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;resourcekind.occiIsKindOf(linkInstanceKind.source)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if(linkInstanceKind.parent &lt;> null)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;LinkSourceInvariant(resourcekind, linkInstanceKind.parent)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;true&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif"/>
+      </eAnnotations>
+      <eParameters name="resourcekind" eType="#//Kind"/>
+      <eParameters name="linkInstanceKind" eType="#//Kind"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
         eType="#//Resource" eOpposite="#//Resource/links"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
