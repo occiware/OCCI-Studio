@@ -24,6 +24,8 @@ import org.eclipse.cmf.occi.core.OCCIFactory;
  * <p>
  * The following operations are tested:
  * <ul>
+ *   <li>{@link org.eclipse.cmf.occi.core.Link#LinkTargetInvariant(org.eclipse.cmf.occi.core.Kind, org.eclipse.cmf.occi.core.Kind) <em>Link Target Invariant</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.Link#LinkSourceInvariant(org.eclipse.cmf.occi.core.Kind, org.eclipse.cmf.occi.core.Kind) <em>Link Source Invariant</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.Link#sourceReferenceInvariant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Source Reference Invariant</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.Link#targetReferenceInvariant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Target Reference Invariant</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.Link#LinkKindIsInParent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Link Kind Is In Parent</em>}</li>
@@ -83,6 +85,32 @@ public class LinkTest extends EntityTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.Link#LinkTargetInvariant(org.eclipse.cmf.occi.core.Kind, org.eclipse.cmf.occi.core.Kind) <em>Link Target Invariant</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.Link#LinkTargetInvariant(org.eclipse.cmf.occi.core.Kind, org.eclipse.cmf.occi.core.Kind)
+	 * @generated
+	 */
+	public void testLinkTargetInvariant__Kind_Kind() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		//fail();
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.Link#LinkSourceInvariant(org.eclipse.cmf.occi.core.Kind, org.eclipse.cmf.occi.core.Kind) <em>Link Source Invariant</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.Link#LinkSourceInvariant(org.eclipse.cmf.occi.core.Kind, org.eclipse.cmf.occi.core.Kind)
+	 * @generated
+	 */
+	public void testLinkSourceInvariant__Kind_Kind() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		//fail();
 	}
 
 	/**
