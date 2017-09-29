@@ -342,7 +342,7 @@ public class OCCIExtension2Ecore {
 			if (!(mixin.getApplies().get(0) == kind))
 				appliesBody += " or ";
 			appliesBody += "self.entity.oclIsKindOf(";
-			if (formatExtensionName((Extension) kind.eContainer()).equals("core"))
+			if (((Extension) kind.eContainer()).getScheme().equals("http://schemas.ogf.org/occi/core#"))
 				appliesBody += "occi";
 			else
 				appliesBody += formatExtensionName((Extension) kind.eContainer());
