@@ -204,11 +204,14 @@ public class OCCI2EMFGeneratorAction implements IObjectActionDelegate {
 		//
 		
 		//Added annotations due to the generated OCL constraints from OCCI constraints
-		EAnnotation annotation1 = EcoreFactory.eINSTANCE.createEAnnotation();
-		annotation1.setSource("http://www.eclipse.org/OCL/Import");
+		EAnnotation importsAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
+		importsAnnotation.setSource("http://www.eclipse.org/OCL/Import");
 		for(Extension importedExt : ext.getImport())
-			annotation1.getDetails().put(importedExt.getName(), Occi2Ecore.convertOcciScheme2EcoreNamespace(importedExt.getScheme()));
-		ePackage.getEAnnotations().add(annotation1);
+			if(importedExt.getScheme().equals("http://schemas.ogf.org/occi/core#"))
+				importsAnnotation.getDetails().put("occi", Occi2Ecore.convertOcciScheme2EcoreNamespace(importedExt.getScheme()));
+			else
+				importsAnnotation.getDetails().put(importedExt.getName(), Occi2Ecore.convertOcciScheme2EcoreNamespace(importedExt.getScheme()));
+		ePackage.getEAnnotations().add(importsAnnotation);
 				
 		resourceSet.getPackageRegistry().put(ePackage.getNsURI(), ePackage);
 		ConverterUtils.persistMetamodel(resourceSet, ePackage,
