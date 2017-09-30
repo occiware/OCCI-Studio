@@ -27,6 +27,7 @@ import java.util.stream.Collectors;
 import org.eclipse.cmf.occi.core.Action;
 import org.eclipse.cmf.occi.core.ArrayType;
 import org.eclipse.cmf.occi.core.Attribute;
+import org.eclipse.cmf.occi.core.BasicType;
 import org.eclipse.cmf.occi.core.BooleanType;
 import org.eclipse.cmf.occi.core.Category;
 import org.eclipse.cmf.occi.core.Constraint;
@@ -57,6 +58,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -298,7 +300,7 @@ public class OCCIExtension2Ecore {
 		
 
 		for (Attribute attribute : mixin.getAttributes()) {
-			EAttribute convertAttribute = convertAttribute(attribute);
+			EStructuralFeature convertAttribute = convertAttribute(attribute);
 			if (convertAttribute != null) {
 				eClass.getEStructuralFeatures().add(convertAttribute);
 			}
@@ -509,6 +511,8 @@ public class OCCIExtension2Ecore {
 			type.getEStructuralFeatures().add(values);
 			values.setName("values");
 			values.setUpperBound(-1);
+			// Set the unique of the Ecore reference to false.
+			values.setUnique(false);
 			values.setEType(getMappedType(arrayType.getType()));
 
 		} else {
@@ -600,7 +604,7 @@ public class OCCIExtension2Ecore {
 		// Convert all attributes of the OCCI kind.
 		for (Attribute attribute : kind.getAttributes()) {
 			// Convert each OCCI attribute to an Ecore attribute.
-			EAttribute convertAttribute = convertAttribute(attribute);
+			EStructuralFeature convertAttribute = convertAttribute(attribute);
 			if (convertAttribute != null) {
 				// Add the Ecore attribute as a structural feature of the Ecore
 				// class.
@@ -806,15 +810,14 @@ public class OCCIExtension2Ecore {
 	 *            the OCCI attribute to convert.
 	 * @return the resulting Ecore attribute.
 	 */
-	protected EAttribute convertAttribute(Attribute attribute) {
+	protected EStructuralFeature convertAttribute(Attribute attribute) {
+		if(attribute.getType() instanceof BasicType || attribute.getType() instanceof EnumerationType) {
 		// Create an Ecore attribute.
 		EAttribute eAttr = EcoreFactory.eINSTANCE.createEAttribute();
 		// Set the name of the Ecore attribute.
 		eAttr.setName(Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName()));
 		// Set the type of the Ecore attribute.
-
 		eAttr.setEType(getMappedType(attribute.getType()));
-
 		// Set the default value of the Ecore attribute.
 		String defaultValue = attribute.getDefault();
 		if (defaultValue != null && !defaultValue.isEmpty()) {
@@ -826,6 +829,23 @@ public class OCCIExtension2Ecore {
 		}
 		attachInfo(eAttr, attribute.getDescription());
 		return eAttr;
+		}
+		else {
+			// Create an Ecore reference.
+			EReference eRef = EcoreFactory.eINSTANCE.createEReference();
+			// Set the name of the Ecore reference.
+			eRef.setName(Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName()));
+			// Set the type of the Ecore reference.
+			eRef.setEType(getMappedType(attribute.getType()));
+			// Set the containment of the Ecore reference to true.
+			eRef.setContainment(true);
+			// The Ecore reference is required when the OCCI attribute is required.
+			if (attribute.isRequired()) {
+				eRef.setLowerBound(1);
+			}
+			attachInfo(eRef, attribute.getDescription());
+			return eRef;
+		}
 	}
 
 	private void attachInfo(EModelElement element, String value) {
