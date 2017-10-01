@@ -212,6 +212,17 @@
             </style>
           </subNodeMappings>
 [/for]
+[comment  the following "for block" was added in order to manage the EReferences generated from Arrays/]
+[for (ereference : EReference | eClass.eReferences)]
+          <subNodeMappings name="[eClass.name/][ereference.name.toUpperFirst()/]"
+                semanticCandidatesExpression="['['/]self/[']'/]" domainClass="[eClass.name/]">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['['/]'[ereference.name/] = ' + self.[ereference.name/].toString()/[']'/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='white'[']'/]"/>
+            </style>
+          </subNodeMappings>
+[/for]
 			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="['['/]self.kind.scheme+self.kind.term/[']'/]">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
@@ -224,6 +235,16 @@
 [for (attribute : EAttribute | ePackage.eClassifiers->select(eclass|mixin.getEClassName().equalsIgnoreCase(eclass.name))->first().oclAsType(EClass).eAllAttributes  )]
 <subNodeMappings name="[mixin.getEClassName()/][attribute.name/]" semanticCandidatesExpression="['['/]self/[']'/]" domainClass="[mixin.getEClassName()/]">
               <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['['/]'[attribute.name/] = ' + self.[attribute.name/].toString()/[']'/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='white'[']'/]"/>
+              </style>
+            </subNodeMappings>
+[/for]
+[comment  the following "for block" was added in order to manage the EReferences generated from Arrays/]
+[for (ereference : EReference | ePackage.eClassifiers->select(eclass|mixin.getEClassName().equalsIgnoreCase(eclass.name))->first().oclAsType(EClass).eReferences  )]
+<subNodeMappings name="[mixin.getEClassName()/][ereference.name/]" semanticCandidatesExpression="['['/]self/[']'/]" domainClass="[mixin.getEClassName()/]">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['['/]'[ereference.name/] = ' + self.[ereference.name/].toString()/[']'/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='white'[']'/]"/>
