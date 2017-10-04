@@ -255,11 +255,12 @@ public final class OcciHelper
 		if(entityKind != null) {
 			addAllAttributes(attributes, entityKind);
 		}
-	
-		for(Mixin mixin : entity.getMixins()) {
-			if(mixin != null)
-			addAllAttributes(attributes, mixin);
-		}	
+
+		/* Removed after supporting mixins in OCCIware metamodel v2 */
+//		for(Mixin mixin : entity.getMixins()) {
+//			if(mixin != null)
+//			addAllAttributes(attributes, mixin);
+//		}	
 		return attributes;
 	}
 
