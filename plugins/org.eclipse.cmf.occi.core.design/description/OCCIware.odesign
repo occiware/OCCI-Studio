@@ -153,7 +153,7 @@
             </style>
           </subNodeMappings>
           <subNodeMappings name="KindConstraint" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditName']" semanticCandidatesExpression="feature:constraints" domainClass="occi.Constraint">
-            <style xsi:type="style:SquareDescription" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -213,7 +213,7 @@
             </style>
           </subNodeMappings>
           <subNodeMappings name="MixinConstraint" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditName']" semanticCandidatesExpression="feature:constraints" domainClass="occi.Constraint">
-            <style xsi:type="style:SquareDescription" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -227,7 +227,7 @@
         </containerMappings>
         <containerMappings name="BooleanTypeContainer" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditName']" semanticCandidatesExpression="feature:types" synchronizationLock="true" domainClass="occi.BooleanType" childrenPresentation="List">
           <subNodeMappings name="EC_BooleanType_Type" semanticCandidatesExpression="var:self" domainClass="occi.BooleanType">
-            <style xsi:type="style:BundledImageDescription" showIcon="false" labelExpression="aql:'boolean'" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <style xsi:type="style:BundledImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'boolean'" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelFormat>italic</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -243,7 +243,7 @@
         </containerMappings>
         <containerMappings name="StringTypeContainer" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditName']" semanticCandidatesExpression="feature:types" synchronizationLock="true" domainClass="occi.StringType" childrenPresentation="List">
           <subNodeMappings name="EC_StringType_Type" semanticCandidatesExpression="var:self" domainClass="occi.StringType">
-            <style xsi:type="style:BundledImageDescription" showIcon="false" labelExpression="aql:'java.lang.String'" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <style xsi:type="style:BundledImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'java.lang.String'" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelFormat>italic</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -259,7 +259,7 @@
         </containerMappings>
         <containerMappings name="NumericTypeContainer" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditName']" semanticCandidatesExpression="feature:types" synchronizationLock="true" domainClass="occi.NumericType" childrenPresentation="List">
           <subNodeMappings name="EC_ENumericType_Type" semanticCandidatesExpression="var:self" domainClass="occi.NumericType">
-            <style xsi:type="style:BundledImageDescription" showIcon="false" labelExpression="feature:type" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <style xsi:type="style:BundledImageDescription" labelSize="10" showIcon="false" labelExpression="feature:type" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelFormat>italic</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -275,7 +275,7 @@
         </containerMappings>
         <containerMappings name="EObjectTypeContainer" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditName']" semanticCandidatesExpression="feature:types" domainClass="occi.EObjectType" childrenPresentation="List">
           <subNodeMappings name="EC_EObjectType_InstanceClassName" semanticCandidatesExpression="var:self" domainClass="occi.EObjectType">
-            <style xsi:type="style:BundledImageDescription" showIcon="false" labelExpression="feature:instanceClassName" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <style xsi:type="style:BundledImageDescription" labelSize="10" showIcon="false" labelExpression="feature:instanceClassName" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelFormat>italic</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -291,7 +291,7 @@
         </containerMappings>
         <containerMappings name="ArrayTypeContainer" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditName']" semanticCandidatesExpression="feature:types" domainClass="occi.ArrayType" childrenPresentation="List">
           <subNodeMappings name="EC_ArrayType_Name" semanticCandidatesExpression="var:self" domainClass="occi.ArrayType">
-            <style xsi:type="style:BundledImageDescription" showIcon="false" labelExpression="aql:'Array'" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <style xsi:type="style:BundledImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'Array'" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelFormat>italic</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -867,20 +867,6 @@
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
               </style>
             </conditionnalStyles>
-          </subNodeMappings>
-          <subNodeMappings name="MixinAction" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditName']" semanticCandidatesExpression="feature:actions" domainClass="occi.Action">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="service:renderAction" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="MixinConstraint" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditName']" semanticCandidatesExpression="feature:constraints" domainClass="occi.Constraint">
-            <style xsi:type="style:SquareDescription" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            </style>
           </subNodeMappings>
           <style xsi:type="style:FlatContainerStyleDescription" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" borderColor="//@userColorsPalettes[name='OCCI-Studio']/@entries[name='MixinBorderColor']" labelSize="12" showIcon="false" roundedCorner="true" backgroundStyle="GradientTopToBottom" backgroundColor="//@userColorsPalettes[name='OCCI-Studio']/@entries[name='MixinColor']">
             <labelFormat>bold</labelFormat>
