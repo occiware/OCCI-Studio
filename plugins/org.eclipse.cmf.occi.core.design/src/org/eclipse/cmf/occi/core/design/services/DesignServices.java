@@ -250,7 +250,7 @@ public class DesignServices {
 		}
 
 		// Iterate over all attributes.
-		for(Attribute attribute : mixinBase.getMixin().getAttributes()) {
+		for(Attribute attribute : OcciHelper.getAllAttributes(mixinBase)) {
 			String attributeName = attribute.getName();
 			if(!attributeNames.contains(attributeName)) {
 				// If not already present create it.
