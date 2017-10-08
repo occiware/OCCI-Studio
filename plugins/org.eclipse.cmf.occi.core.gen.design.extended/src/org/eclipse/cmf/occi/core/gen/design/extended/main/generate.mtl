@@ -1,0 +1,377 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('http://www.eclipse.org/emf/2002/Ecore', 'http://schemas.ogf.org/occi/core/ecore')]
+[**
+ * The documentation of the template generateSiriusDesigner.
+ * @param anEClass
+ */]
+[template public generateSiriusDesigner(aExtension : Extension)]
+[comment @main/]
+[file (aExtension.name + '.odesign', false, 'UTF-8')]
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="[aExtension.name/]" version="10.0.0.201505222000">
+  <ownedViewpoints name="[aExtension.name.toUpperFirst()/]Configuration" label="[aExtension.name.toUpperFirst()/] Configuration">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="[aExtension.name.toUpperFirst()/]Configuration Diagram" domainClass="Configuration">
+	  <metamodel href="[convertOcciScheme2EcoreNamespace(aExtension)/]#/"/>
+[for (importedExtension : Extension | aExtension.import)]
+ 	  <metamodel href="[convertOcciScheme2EcoreNamespace(importedExtension)/]#/"/> 
+[/for]
+      <defaultLayer name="Default">
+[for (extension : Extension | aExtension.getAllExtensionsExceptCore())]
+[for (resourceKind : Kind | getAllResourceKinds(extension))]
+        <edgeMappings name="[resourceKind.name/]LinksEdge" sourceMapping="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resourceKind.name/]Container']" targetMapping="[for (ext : Extension | aExtension.getAllExtensionsExceptCore()) separator(' ') ] [for (link : Kind | ext.getAllLinkKinds()) separator(' ')]//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[link.name/]Container'[']'/][/for][/for]" targetFinderExpression="feature:links">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='gray'[']'/]"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+[/for]
+[/for]
+[for (extension : Extension | aExtension.getAllExtensionsExceptCore())]
+[for (linkKind : Kind | extension.getAllLinkKinds())]
+        <edgeMappings name="[linkKind.name/]TargetEdge" sourceMapping="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[linkKind.name/]Container'[']'/]" targetMapping=" [for (ext : Extension | aExtension.getAllExtensionsExceptCore()) separator(' ') ] [for (resourceKind : Kind | ext.getAllResourceKinds()) separator(' ')]//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resourceKind.name/]Container'][/for][/for]" targetFinderExpression="feature:target">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='gray'[']'/]"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="[linkKind.name/]Edge" sourceMapping="[for (ext : Extension | aExtension.getAllExtensionsExceptCore())  separator(' ') ][for (resource : Kind | ext.getAllResourceKinds()) separator(' ')]//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resource.name/]Container'][/for][/for]" targetMapping="[for (ext : Extension | aExtension.getAllExtensionsExceptCore()) separator(' ') ] [for (resource : Kind | ext.getAllResourceKinds()) separator(' ')] //@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resource.name/]Container'] [/for] [/for]" domainClass="[linkKind.getEClassName()/]" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='gray'[']'/]"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+[/for]
+[/for]
+[for (extension : Extension | aExtension.getAllExtensionsExceptCore())]
+[for (resourceKind : Kind | extension.getAllResourceKinds())]
+        <containerMappings name="[resourceKind.name/]Container" preconditionExpression="['['/]self.oclIsTypeOf([resourceKind.name/])/[']'/]"
+            labelDirectEdit="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@toolSections.3/@ownedTools['['/]name='EditEntityTitle'[']'/]"
+			semanticCandidatesExpression="feature:resources" 
+			domainClass="[resourceKind.getEClassName()/]">
+[generate(aExtension, resourceKind)/]
+        </containerMappings>
+[/for]
+[for (linkKind : Kind | extension.getAllLinkKinds())]
+        <containerMappings name="[linkKind.name/]Container"
+            labelDirectEdit="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@toolSections.3/@ownedTools['['/]name='EditEntityTitle'[']'/]"
+			semanticCandidatesExpression="['['/]resources.links->filter([linkKind.getEClassName()/])/[']'/]" 
+			domainClass="[linkKind.getEClassName()/]">
+[generate(aExtension, linkKind)/]
+        </containerMappings>
+[/for]
+[/for]
+        <toolSections name="[aExtension.name.toUpperFirst()/] resources">
+[for (extension : Extension | aExtension.getAllExtensionsExceptCore())]
+[for (resourceKind : Kind | extension.getAllResourceKinds())]
+          <ownedTools xsi:type="tool:ContainerCreationDescription" 
+			name="Create [resourceKind.name/]"
+			containerMappings="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resourceKind.name/]Container'[']'/]"> 
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="[resourceKind.getEClassName()/]" referenceName="resources">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="['['/]'[resourceKind.name.toLowerFirst()/]' + container.oclAsType(Configuration).resources->size().toString()/[']'/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+[/for]
+[/for]
+</toolSections>
+ <toolSections name="[aExtension.name.toUpperFirst()/] links">
+[for (extension : Extension | aExtension.getAllExtensionsExceptCore())]
+[for (linkKind : Kind | extension.getAllLinkKinds())]
+          <ownedTools xsi:type="tool:EdgeCreationDescription"
+			name="Create [linkKind.name/]"
+			edgeMappings="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@edgeMappings['['/]name='[linkKind.name/]Edge'[']'/]"> 
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="[linkKind.getEClassName()/]" referenceName="links" variableName="link">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+[/for]
+[/for]
+   </toolSections>   
+ <toolSections name="[aExtension.name.toUpperFirst()/] mixins">
+[for (extension : Extension | aExtension.getAllExtensionsExceptCore())]
+[for (mixin : Mixin | extension.mixins)]
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create [mixin.name/]" containerMappings="
+[for (kind : Kind | mixin.applies)]
+[for (kind1 : Kind | extension.getAllExtensionsExceptCore()->collect(e|e.kinds)->select(k : Kind|k.occiIsKindOf(kind))) separator(' ')]
+//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[kind1.name/]Container'[']'/]/@subContainerMappings['['/]name='[mixin.name/]Mixin'[']'/]
+[/for]
+[/for]
+[for (mixina : Mixin | mixin->closure(depends))]
+[for (kind : Kind | mixina.applies)]
+[if (extension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.kinds)->includes(kind) ) ]
+//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[kind.name/]Container'[']'/]/@subContainerMappings['['/]name='[mixina.name/]Mixin'[']'/]
+[/if]
+[/for]
+[/for]
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="[mixin.getEClassName()/]" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+[/for]
+[/for]
+   </toolSections>    
+        <toolSections name="Tools">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditEntityTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+[for (extension : Extension | aExtension.getAllExtensionsExceptCore())]
+[for (kind : Kind | extension.getAllKinds())]
+[for (attribute : EAttribute | kind.getEClass().eAllAttributes)]
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Edit[kind.name/][attribute.name.toUpperFirst()/]" inputLabelExpression="feature:[attribute.name/]">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="[attribute.name/]" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+[/for]
+[for (action : Action | kind.actions)]
+[if (action.attributes->isEmpty())]
+          <ownedTools xsi:type="tool_1:OperationAction" name="[kind.name/][action.name.toUpperFirst()/]Action" label="[action.name.toUpperFirst()/]" precondition="['['/]self.oclIsKindOf([kind.name/])/[']'/]">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType([kind.name/]).[action.name/]()/[']'/]"/>
+            </initialOperation>
+          </ownedTools>
+[else]
+[if (action.attributes->size() = 1)]
+[if (not getFirstParameterEnumType(action).oclIsUndefined())]
+[let enumType : EnumerationType = getFirstParameterEnumType(action)]
+          <ownedTools xsi:type="tool_1:PopupMenu" name="[kind.name/][action.name.toUpperFirst()/]Action" label="[action.name.toUpperFirst()/]" precondition="['['/]self.oclIsKindOf([kind.name/])/[']'/]">
+[for (literal : EnumerationLiteral | enumType.literals)]
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="[enumType.name/][literal.name.toUpperFirst()/]" label="[literal.name.toUpperFirst()/]">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType([kind.name/]).[action.name/]([enumType.name/]::[literal.name/])/[']'/]"/>
+              </initialOperation>
+            </menuItemDescription>
+[/for]
+          </ownedTools>
+[/let]
+[/if]
+[/if]
+[/if]
+[/for]
+[/for]
+[/for]
+          <ownedTools xsi:type="tool_1:PopupMenu" name="CRUD operations" precondition="['['/]self.oclIsKindOf(Entity)/[']'/]">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Create">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType(Entity).occiCreate()/[']'/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Retrieve">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType(Entity).occiRetrieve()/[']'/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Update">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType(Entity).occiUpdate()/[']'/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Delete">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType(Entity).occiDelete()/[']'/]"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+<!--
+    <ownedJavaExtensions qualifiedClassName="org.occiware.clouddesigner.occi.design.services.DesignServices"/>
+-->
+  </ownedViewpoints>
+</description:Group>
+[/file]
+[/template]
+
+[template public generate(aExtension : Extension, kind : Kind)]
+<subContainerMappings name="Sub[kind.name/]Container" semanticCandidatesExpression="['['/]self/[']'/]" domainClass="[kind.getEClassName()/]" childrenPresentation="List">
+[for (attribute : EAttribute | kind.getEClass().eAllAttributes)]
+          <subNodeMappings name="[kind.name/][attribute.name.toUpperFirst()/]"
+                labelDirectEdit="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@toolSections.3/@ownedTools['['/]name='Edit[kind.name/][attribute.name.toUpperFirst()/]'[']'/]"
+                semanticCandidatesExpression="['['/]self/[']'/]" domainClass="[kind.getEClassName()/]">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['['/]'[attribute.name/] = ' + self.[attribute.name/].toString()/[']'/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='white'[']'/]"/>
+            </style>
+          </subNodeMappings>
+[/for]
+[comment  the following "for block" was added in order to manage the EReferences generated from Arrays/]
+[for (attribute : EReference | kind.getEClass().eReferences)]
+          <subNodeMappings name="[kind.name/][kind.name.toUpperFirst()/]"
+                semanticCandidatesExpression="['['/]self/[']'/]" domainClass="[kind.getEClassName()/]">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['['/]'[kind.name/] = ' + self.[kind.name/].toString()/[']'/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='white'[']'/]"/>
+            </style>
+          </subNodeMappings>
+[/for]
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="['['/]self.kind.scheme+self.kind.term/[']'/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='white'[']'/]"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='light_gray'[']'/]"/>
+            </style>
+</subContainerMappings>
+[for ( mixin : Mixin| kind.getMixins(aExtension.getAllExtensionsExceptCore()->asSequence())->asSet() )]
+[generate(mixin)/]
+[comment][for (extension : Extension | aExtension.getAllExtensionsExceptCore())]
+[for (mixin1 : Mixin | extension.mixins)]
+[if (mixin.isParent(mixin1))]
+[generate(mixin1)/]
+[/if]
+[/for] 
+[/for] [/comment]
+[/for] 
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="['['/]self.title + ': [kind.name/]'/[']'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='light_gray']"/>
+          </style> 
+[if (not getStateAttribute(kind).oclIsUndefined())]
+[let stateAttribute : Attribute = getStateAttribute(kind)]
+[for (eLiteral : EnumerationLiteral | stateAttribute.type.oclAsType(EnumerationType).literals)]
+          <conditionnalStyles predicateExpression="['['/][stateAttribute.getEAttributeName()/] = [eLiteral.enumerationType.name/]::[eLiteral.name/]/[']'/]">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="['['/]self.title + ': [kind.name/]'/[']'/]" roundedCorner="true">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='white'[']'/]"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='[getColor(eLiteral)/]'[']'/]"/>
+            </style>
+          </conditionnalStyles>
+[/for]
+[/let]
+[/if]
+[/template]
+
+[template public generate(mixin : Mixin)]
+<subContainerMappings name="[mixin.name/]Mixin" preconditionExpression="['['/]self.oclIsTypeOf([mixin.getEClassName()/])/[']'/]" semanticCandidatesExpression="feature:parts" domainClass="[mixin.getEClassName()/]" childrenPresentation="List">
+[for (attribute : EAttribute | mixin.getEClass().eAllAttributes)]
+<subNodeMappings name="[mixin.getEClassName()/][attribute.name/]" semanticCandidatesExpression="['['/]self/[']'/]" domainClass="[mixin.getEClassName()/]">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['['/]'[attribute.name/] = ' + self.[attribute.name/].toString()/[']'/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='white'[']'/]"/>
+              </style>
+            </subNodeMappings>
+[/for]
+[comment  the following "for block" was added in order to manage the EReferences generated from Arrays/]
+[for (attribute : EReference | mixin.getEClass().eReferences)]
+<subNodeMappings name="[mixin.getEClassName()/][attribute.name/]" semanticCandidatesExpression="['['/]self/[']'/]" domainClass="[mixin.getEClassName()/]">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['['/]'[attribute.name/] = ' + self.[attribute.name/].toString()/[']'/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='white'[']'/]"/>
+              </style>
+            </subNodeMappings>
+[/for]
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="['['/]self.mixin.scheme+self.mixin.term/[']'/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='white'[']'/]"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='light_gray'[']'/]"/>
+            </style>
+          </subContainerMappings>
+[/template]
+[query public convertOcciScheme2EcoreNamespace(aExtension : Extension) : String
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.design.extended.services.GenUtils', 
+	'convertOcciScheme2EcoreNamespace(org.eclipse.cmf.occi.core.Extension)', 
+	Sequence{aExtension})/]
+
+[query public getAllExtensionsExceptCore(ext : Extension) : Set(Extension) = ext->union(ext.import)->select(a:Extension |a.scheme<>'http://schemas.ogf.org/occi/core#')/]
+
+[query public getOcciCoreExtension(ext : Extension) : Extension = ext.import->select(e|e.scheme= 'http://schemas.ogf.org/occi/core#')->first()/]
+
+[query public getAllKinds(ext : Extension) : Collection(Kind) = ext.kinds/]
+
+[query public getAllResourceKinds(ext1 : Extension) : Collection(Kind) = ext1.getAllKinds()->select(ec : Kind| ec.occiIsKindOf(ext1.getOcciCoreExtension().kinds->select(k|k.name='Resource')->first()) )/]
+
+[query public getAllLinkKinds(ext2 : Extension) : Collection(Kind) = ext2.getAllKinds()->select(ec : Kind| ec.occiIsKindOf(ext2.getOcciCoreExtension().kinds->select(k|k.name='Link')->first()))/]
+
+[query public getStateAttribute(aKind : Kind) : Attribute = aKind.attributes->any(attribute : Attribute | attribute.name.endsWith('state') and attribute.type.oclIsTypeOf(EnumerationType)) /]
+
+[query public getColor(eEnumLiteral : EnumerationLiteral) : String
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.design.extended.services.GenUtils', 
+	'getColor(org.eclipse.cmf.occi.core.EnumerationLiteral)', 
+	Sequence{eEnumLiteral})/]
+
+[query public isParent(mixin1 : Mixin, mixin2 : Mixin) : Boolean
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.design.extended.services.GenUtils', 
+	'isParent(org.eclipse.cmf.occi.core.Mixin, org.eclipse.cmf.occi.core.Mixin)', 
+	Sequence{mixin1, mixin2})/]
+
+[query public getEClass(aType : Type) : EClass
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.design.extended.services.GenUtils', 
+	'getEClass(org.eclipse.cmf.occi.core.Type)', 
+	Sequence{aType})/]
+
+[query public getKind(eClass : EClass) : Kind
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.design.extended.services.GenUtils', 
+	'resolveKind(org.eclipse.emf.ecore.EClass)', 
+	Sequence{eClass})/]
+[query public getExtension(ePackage : EPackage) : Extension
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.design.extended.services.GenUtils', 
+	'resolveExtension(org.eclipse.emf.ecore.EPackage)', 
+	Sequence{ePackage})/]
+[query public getMixins(kind : Kind, extensions: Sequence(Extension)) : Sequence(Mixin)
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.design.extended.services.GenUtils', 
+	'getAllRelatedMixins(org.eclipse.cmf.occi.core.Kind, java.util.ArrayList)', 
+	Sequence{kind, extensions})/]
+[query public getEClassName(type : Type) : String
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.design.extended.services.GenUtils', 
+	'occiTerm2EClass(org.eclipse.cmf.occi.core.Type)', 
+	Sequence{type})/]
+[query public getEAttributeName(attribute : Attribute) : String
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.design.extended.services.GenUtils', 
+	'convertOcciAttributeName2EcoreAttributeName(org.eclipse.cmf.occi.core.Attribute)', 
+	Sequence{attribute})/]
+[query public getFirstParameterEnumType(eOperation : EOperation) : EEnum = eOperation.eParameters->at(1).eType.oclAsType(EEnum)/]
+
+[query public getFirstParameterEnumType(action : Action) : EnumerationType = action.attributes->at(1).type.oclAsType(EnumerationType)/]
+
