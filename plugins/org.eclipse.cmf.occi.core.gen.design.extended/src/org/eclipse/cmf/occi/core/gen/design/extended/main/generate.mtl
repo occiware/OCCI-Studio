@@ -53,7 +53,7 @@
 [/for]
 [for (extension : Extension | aExtension.getAllExtensionsExceptCore())]
 [for (resourceKind : Kind | extension.getAllResourceKinds())]
-        <containerMappings name="[resourceKind.name/]Container" preconditionExpression="['['/]self.oclIsTypeOf([resourceKind.name/])/[']'/]"
+        <containerMappings name="[resourceKind.name/]Container" preconditionExpression="['['/]self.oclIsTypeOf([resourceKind.getEClassName()/])/[']'/]"
             labelDirectEdit="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@toolSections.3/@ownedTools['['/]name='EditEntityTitle'[']'/]"
 			semanticCandidatesExpression="feature:resources" 
 			domainClass="[resourceKind.getEClassName()/]">
