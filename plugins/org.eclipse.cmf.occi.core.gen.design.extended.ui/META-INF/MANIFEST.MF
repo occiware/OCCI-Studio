@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Acceleo Extended Module IDE Plug-in
+Bundle-SymbolicName: org.eclipse.cmf.occi.core.gen.design.extended.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Localization: plugin
+Bundle-Activator: org.eclipse.cmf.occi.core.gen.design.extended.ui.Activator
+Bundle-Vendor: Eclipse Modeling Project
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.cmf.occi.core.gen.design.extended,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.ocl,
+ org.eclipse.ocl.ecore,
+ org.eclipse.acceleo.model,
+ org.eclipse.acceleo.engine,
+ org.eclipse.cmf.occi.core;bundle-version="1.0.0",
+ org.eclipse.cmf.occi.core.design;bundle-version="1.0.0",
+ org.eclipse.cmf.occi.core.gen.emf;bundle-version="1.0.0",
+ org.eclipse.emf.transaction;bundle-version="1.9.0",
+ org.eclipse.sirius;bundle-version="5.0.0",
+ org.slf4j.api;bundle-version="1.7.2",
+ org.eclipse.pde.core;bundle-version="3.11.100",
+ org.eclipse.sirius.ext.base;bundle-version="5.0.0",
+ org.eclipse.sirius.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Eclipse-LazyStart: true
