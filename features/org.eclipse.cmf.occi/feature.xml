@@ -343,6 +343,18 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+  <plugin
+         id="org.eclipse.cmf.occi.core.gen.design.extended"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+  <plugin
+         id="org.eclipse.cmf.occi.core.gen.design.extended.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
    <plugin
          id="org.eclipse.cmf.occi.core.gen.connector"
          download-size="0"
