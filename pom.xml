@@ -48,6 +48,9 @@
     <module>plugins/org.eclipse.cmf.occi.core.gen.design</module>
     <module>plugins/org.eclipse.cmf.occi.core.gen.design.ui</module>
     
+    <!-- OCCI Extended Designer Generator -->
+    <module>plugins/org.eclipse.cmf.occi.core.gen.design.extended</module>
+    <module>plugins/org.eclipse.cmf.occi.core.gen.design.extended.ui</module>    
     <!-- Connector Generator -->
     <module>plugins/org.eclipse.cmf.occi.core.gen.connector</module>
     <module>plugins/org.eclipse.cmf.occi.core.gen.connector.ui</module>
