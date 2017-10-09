@@ -86,13 +86,26 @@ import org.slf4j.LoggerFactory;
 [let stateAttribute : Attribute = getStateAttribute(type)]
 import [extendedPackageName/].[stateAttribute.type.name/];
 [/let]
-[for (action: Action| type.actions)] 
+
+[if (type.oclIsTypeOf(Kind))]
+[for (action : Action | type.oclAsType(Kind).actions->union(type.oclAsType(Kind)->closure(parent)->collect(k|k.actions)))]
 [for (attribute: Attribute| action.attributes)]
 [if not (attribute.type.eContainer().oclAsType(Extension).scheme.equalsIgnoreCase('http://schemas.ogf.org/occi/core#'))]
-import [extendedPackageName/].[getJavaTypeName(attribute)/]; 
+import [action.eContainer().oclAsType(Type).getExtendedPackage()/].[getJavaTypeName(attribute)/]; 
 [/if]
 [/for]
 [/for]
+[else]
+[comment if it is a Mixin /]
+[for (action : Action | type.oclAsType(Mixin).getAllDependsOnMixins()->collect(m|m.oclAsType(Mixin).actions))]
+[for (attribute: Attribute| action.attributes)]
+[if not (attribute.type.eContainer().oclAsType(Extension).scheme.equalsIgnoreCase('http://schemas.ogf.org/occi/core#'))]
+import [action.eContainer().oclAsType(Type).getExtendedPackage()/].[getJavaTypeName(attribute)/]; 
+[/if]
+[/for]
+[/for]
+[/if]
+
 /**
  * Connector implementation for the OCCI kind:
  * - scheme: [type.scheme/]
@@ -174,12 +187,20 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 	// [kindClassName/] actions.
 	//
 [/if]
-[for (action : Action | type.actions)]
+
+[if (type.oclIsTypeOf(Kind))]
+[for (action : Action | type.oclAsType(Kind).actions->union(type.oclAsType(Kind)->closure(parent)->collect(k|k.actions)))]
 	// [protected (kindClassName.concat('_Kind_').concat(action.name).concat('_action'))]
 [generateActionMethod(action, type, extendedPackageName)/]
-		// [/protected]
-
+	// [/protected]
 [/for]
+[else]
+
+[for (action : Action | type.oclAsType(Mixin).getAllDependsOnMixins()->collect(m|m.oclAsType(Mixin).actions))]
+	// [protected (kindClassName.concat('_Mixin_').concat(action.name).concat('_action'))]
+[generateActionMethod(action, type, extendedPackageName)/]
+	// [/protected]
+[/for][/if]
 }	
 [/let]
 [/file]
@@ -249,11 +270,19 @@ public class [kindClassName/]Connector extends [extendedPackageName/].impl.[kind
 
 [query public toU1Case(string : String) : String = string.substring(1,1).toUpperCase() + string.substring(2) /]
 
+[query public getAllDependsOnMixins (m: Mixin) : Sequence(Mixin) = if(m.depends->size() > 0 ) then Sequence{m}->union(depends->collect(m2|m2.oclAsType(Mixin).getAllDependsOnMixins())) else Sequence{m} endif/]
+
 [query public getNow() : String
 	= invoke(
 	'org.eclipse.cmf.occi.core.gen.connector.services.GenUtils', 
 	'getNow()', 
 	Sequence{})/]
+
+[query public getExtendedPackage(type : Type) : String
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.connector.services.GenUtils', 
+	'getExtendedPackage(org.eclipse.cmf.occi.core.Type)', 
+	Sequence{type})/] 
 
 [query public getFilePath(extension : Extension) : String
 	= invoke(

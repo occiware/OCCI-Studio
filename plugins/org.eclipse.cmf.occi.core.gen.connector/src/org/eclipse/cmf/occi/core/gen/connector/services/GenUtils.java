@@ -16,7 +16,9 @@ import java.util.Date;
 import org.eclipse.cmf.occi.core.Attribute;
 import org.eclipse.cmf.occi.core.DataType;
 import org.eclipse.cmf.occi.core.Extension;
+import org.eclipse.cmf.occi.core.Type;
 import org.eclipse.cmf.occi.core.util.Occi2Ecore;
+import org.eclipse.cmf.occi.core.util.OcciRegistry;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
@@ -93,5 +95,12 @@ public class GenUtils
 		//System.out.println("attribute "+attribute);
 		//System.out.println("Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName()) "+Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName()));
 		return Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attribute.getName());
+	}
+	
+	public String getExtendedPackage(Type type) {
+		Extension extension = (Extension)type.eContainer();
+		String extensionFile = OcciRegistry.getInstance().getFileURI(extension.getScheme());
+		String[] args = extensionFile.split("\\/");
+		return args[args.length-3];
 	}
 }
