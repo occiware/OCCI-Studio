@@ -77,12 +77,12 @@ public class DesignerGeneratorAction implements IObjectActionDelegate {
 	 */
 	@Override
 	public void run(IAction action) {
-		IFile ecoreFile = (IFile) ((IStructuredSelection) selection).getFirstElement();
+		IFile occieFile = (IFile) ((IStructuredSelection) selection).getFirstElement();
 		try {
-			String designName = ecoreFile.getName().replace(".ecore", ".odesign");
-			String designProjectName = ecoreFile.getProject().getName() + ".design";
-			registerExtension(ecoreFile);
-			IProject project = generateDesignProject(ecoreFile.getLocation().toString(), designName, designProjectName,
+			String designName = occieFile.getName().replace(".occie", ".odesign");
+			String designProjectName = occieFile.getProject().getName() + ".design";
+			registerExtension(occieFile);
+			IProject project = generateDesignProject(occieFile.getLocation().toString(), designName, designProjectName,
 					new NullProgressMonitor());// TODO fix monitor
 
 			// generateDesignTestProject(project, extensionName, new
@@ -97,8 +97,8 @@ public class DesignerGeneratorAction implements IObjectActionDelegate {
 		}
 	}
 
-	private void registerExtension(IFile ecoreFile) {
-		String extensionPath = ecoreFile.getFullPath().toString().replace(".ecore", ".occie");
+	private void registerExtension(IFile occieFile) {
+		String extensionPath = occieFile.getFullPath().toString();
 		URI uri = URI.createPlatformResourceURI(extensionPath, true);
 
 		ResourceSet rs = new ResourceSetImpl();
@@ -119,11 +119,11 @@ public class DesignerGeneratorAction implements IObjectActionDelegate {
 		this.selection = selection;
 	}
 
-	private IProject generateDesignProject(String ecoreLocation, String designName, String designProjectName,
+	private IProject generateDesignProject(String occieLocation, String designName, String designProjectName,
 			final IProgressMonitor monitor) throws CoreException, IOException {
 
 		// Load the ecore file.
-
+		String ecoreLocation = occieLocation.replace(".occie", ".ecore");
 		URI ecoreURI = URI.createFileURI(ecoreLocation);
 		// Create a new resource set.
 		ResourceSet resourceSet = new ResourceSetImpl();
@@ -138,6 +138,9 @@ public class DesignerGeneratorAction implements IObjectActionDelegate {
 		// .odesign file,
 		EPackage.Registry.INSTANCE.put(ePackage.getNsURI(), ePackage);
 
+		
+		URI occieURI = URI.createFileURI(occieLocation);
+		
 		/*
 		 * Create design project
 		 */
@@ -148,7 +151,7 @@ public class DesignerGeneratorAction implements IObjectActionDelegate {
 		 * Create design model
 		 */
 		org.eclipse.cmf.occi.core.gen.design.main.Generate generator = new org.eclipse.cmf.occi.core.gen.design.main.Generate(
-				ecoreURI, project.getFolder("description").getLocation().toFile(), new ArrayList<String>());
+				occieURI, project.getFolder("description").getLocation().toFile(), new ArrayList<String>());
 		generator.doGenerate(BasicMonitor.toMonitor(monitor));
 		project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 		return project;
