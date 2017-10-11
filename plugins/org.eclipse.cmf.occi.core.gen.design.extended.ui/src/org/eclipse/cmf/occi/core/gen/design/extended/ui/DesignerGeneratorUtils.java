@@ -85,7 +85,7 @@ public class DesignerGeneratorUtils {
 				buffer.append("            class=\"").append(projectName).append(".wizard.NewConfigurationWizard\"\n");
 				buffer.append("            icon=\"platform:/plugin/org.eclipse.cmf.occi.core.edit/icons/full/obj16/Configuration.gif\"\n");				
 				buffer.append("            id=\"").append(projectName).append(".wizard.NewConfigurationWizard\"\n");
-				buffer.append("            name=\"").append(modelName).append(" Configuration File\"/>\n");
+				buffer.append("            name=\"").append("Extended ").append(modelName).append(" Configuration File\"/>\n");
 				buffer.append("   </extension>\n");
 			}
 			buffer.append(inputLine + "\n");
