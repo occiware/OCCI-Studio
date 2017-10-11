@@ -1,11 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Acceleo Extended Module IDE Plug-in
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.cmf.occi.core.gen.design.extended.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Localization: plugin
 Bundle-Activator: org.eclipse.cmf.occi.core.gen.design.extended.ui.Activator
-Bundle-Vendor: Eclipse Modeling Project
+Bundle-Vendor: %providerName
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
