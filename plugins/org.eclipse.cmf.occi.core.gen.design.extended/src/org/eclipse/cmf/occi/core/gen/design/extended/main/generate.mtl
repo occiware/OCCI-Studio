@@ -12,7 +12,7 @@
 [file (aExtension.name + '.odesign', false, 'UTF-8')]
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="[aExtension.name/]" version="10.0.0.201505222000">
-  <ownedViewpoints name="[aExtension.name.toUpperFirst()/]Configuration" label="[aExtension.name.toUpperFirst()/] Configuration">
+  <ownedViewpoints name="[aExtension.name.toUpperFirst()/]Configuration" label="Extended [aExtension.getExtendedPackage()/] Configuration">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="[aExtension.name.toUpperFirst()/]Configuration Diagram" domainClass="Configuration">
 	  <metamodel href="[convertOcciScheme2EcoreNamespace(aExtension)/]#/"/>
 [for (importedExtension : Extension | aExtension.import)]
@@ -327,6 +327,14 @@
 [query public getAllLinkKinds(ext2 : Extension) : Collection(Kind) = ext2.getAllKinds()->select(ec : Kind| ec.occiIsKindOf(ext2.getOcciCoreExtension().kinds->select(k|k.name='Link')->first()))/]
 
 [query public getStateAttribute(aKind : Kind) : Attribute = aKind.attributes->any(attribute : Attribute | attribute.name.endsWith('state') and attribute.type.oclIsTypeOf(EnumerationType)) /]
+
+[query public getViewpointName(eObject : EObject) : String = eObject.getExtendedPackage()/]
+
+[query public getExtendedPackage(eObject : EObject) : String
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.design.extended.services.GenUtils', 
+	'getExtendedPackage(org.eclipse.emf.ecore.EObject)', 
+	Sequence{eObject})/] 
 
 [query public getColor(eEnumLiteral : EnumerationLiteral) : String
 	= invoke(

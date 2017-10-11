@@ -29,10 +29,12 @@ import org.eclipse.cmf.occi.core.util.OcciHelper;
 import org.eclipse.cmf.occi.core.util.OcciRegistry;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class GenUtils {
 	/**
@@ -276,5 +278,12 @@ public class GenUtils {
 		EClass eclass = (EClass) ePackage
 				.getEClassifier(ConverterUtils.toU1Case(ConverterUtils.formatName(type.getTerm())));
 		return eclass;
+	}
+	
+	public String getExtendedPackage(EObject eObject) {
+		Extension extension = (Extension) EcoreUtil.getRootContainer(eObject);
+		String extensionFile = OcciRegistry.getInstance().getFileURI(extension.getScheme());
+		String[] args = extensionFile.split("\\/");
+		return args[args.length-3];
 	}
 }
