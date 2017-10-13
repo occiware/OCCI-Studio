@@ -111,15 +111,15 @@
 [for (extension : Extension | aExtension.getAllExtensionsExceptCore())]
 [for (mixin : Mixin | extension.mixins)]
           <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create [mixin.name/]" containerMappings="
-[for (kind : Kind | mixin.applies)]
-[for (kind1 : Kind | extension.getAllExtensionsExceptCore()->collect(e|e.kinds)->select(k : Kind|k.occiIsKindOf(kind))) separator(' ')]
-//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[kind1.name/]Container'[']'/]/@subContainerMappings['['/]name='[mixin.name/]Mixin'[']'/]
-[/for]
+[for (kind : Kind | (mixin.applies->union(mixin.applies->collect(k:Kind|k.getAllChildrenKind(aExtension.getAllExtensionsExceptCore()->asSequence()))->asOrderedSet()))->asOrderedSet() )]
+//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[kind.name/]Container'[']'/]/@subContainerMappings['['/]name='[mixin.name/]Mixin'[']'/]
+[comment][for (kind1 : Kind | extension.getAllExtensionsExceptCore()->collect(e|e.kinds)->select(k : Kind|k.occiIsKindOf(kind))) separator(' ')]
+[/for][/comment]
 [/for]
 [for (mixina : Mixin | mixin->closure(depends))]
-[for (kind : Kind | mixina.applies)]
+[for (kind : Kind | (mixina.applies->union(mixina.applies->collect(k:Kind|k.getAllChildrenKind(aExtension.getAllExtensionsExceptCore()->asSequence()))->asOrderedSet()))->asOrderedSet() )]
 [if (extension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.kinds)->includes(kind) ) ]
-//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[kind.name/]Container'[']'/]/@subContainerMappings['['/]name='[mixina.name/]Mixin'[']'/]
+//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[kind.name/]Container'[']'/]/@subContainerMappings['['/]name='[mixin.name/]Mixin'[']'/]
 [/if]
 [/for]
 [/for]
@@ -328,6 +328,9 @@ kind.getAppliedMixins(extensions)
 	->union(kind.getAppliedMixins(extensions)
 		->collect(m: Mixin|m.getChildrenMixins(extensions))
 	)->asOrderedSet()/]
+
+[query public getAllChildrenKind(kind : Kind, extensions: Sequence(Extension)) : OrderedSet(Kind) = 
+extensions->collect(ext:Extension|ext.kinds)->select(k:Kind|k.occiIsKindOf(kind))->asOrderedSet()/]
 
 [query public getExtendedPackage(eObject : EObject) : String
 	= invoke(
