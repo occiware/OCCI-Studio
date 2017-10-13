@@ -36,12 +36,12 @@
       <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</windows>
    </vm>
 
+
    <plugins>
    </plugins>
 
    <features>
-      <feature id="org.eclipse.cmf.occi" version="1.0.0.qualifier"/>
-      <feature id="org.eclipse.platform" version="4.7.0.v20170612-1255"/>
+      <feature id="org.eclipse.cmf.occi"/>
    </features>
 
    <configurations>
