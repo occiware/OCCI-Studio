@@ -97,18 +97,13 @@
  <toolSections name="[aExtension.name.toUpperFirst()/] mixins">
 [for (mixin : Mixin | aExtension.mixins)]
           <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create [mixin.name/]" containerMappings="
-[for (kind : Kind | mixin.applies)]
-[for (kind1 : Kind | aExtension.kinds->select(k : Kind|k.occiIsKindOf(kind))) separator(' ')]
-[comment  the following condition restricts the creation only to the kinds of this extension example ResourceTpl mixin in infrastructure/]
-[if (aExtension.kinds->includes(kind1))]
-//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[kind1.name/]Container'[']'/]/@subContainerMappings['['/]name='[mixin.name/]Mixin'[']'/]
-[/if]
-[/for]
+[for (kind : Kind | (mixin.applies->union(mixin.applies->collect(k:Kind|k.getAllChildrenKind(Sequence{aExtension}))->asOrderedSet()))->asOrderedSet() )]
+//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[kind.name/]Container'[']'/]/@subContainerMappings['['/]name='[mixin.name/]Mixin'[']'/]
 [/for]
 [for (mixina : Mixin | mixin->closure(depends))]
-[for (kind : Kind | mixina.applies)]
+[for (kind : Kind | (mixina.applies->union(mixina.applies->collect(k:Kind|k.getAllChildrenKind(Sequence{aExtension}))->asOrderedSet()))->asOrderedSet() )]
 [if (aExtension.kinds->includes(kind) ) ]
-//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[kind.name/]Container'[']'/]/@subContainerMappings['['/]name='[mixina.name/]Mixin'[']'/]
+//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[kind.name/]Container'[']'/]/@subContainerMappings['['/]name='[mixin.name/]Mixin'[']'/]
 [/if]
 [/for]
 [/for]
@@ -235,8 +230,10 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='light_gray'[']'/]"/>
             </style>
 </subContainerMappings>
-[for ( mixin : Mixin| kind.getAllRelatedMixins(Sequence{aExtension})->asSet())]
-[generate(mixin)/]
+[for ( mixin : Mixin| kind.getAllRelatedMixins(aExtension.getAllExtensionsExceptCore()->asSequence())->asSet())]
+[if (aExtension.mixins->includes(mixin))]
+	[generate(mixin)/]
+[/if]
 [/for] 
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="['['/]self.title + ': [kind.name/]'/[']'/]" roundedCorner="true">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black']"/>
@@ -314,6 +311,10 @@ kind.getAppliedMixins(extensions)
 	->union(kind.getAppliedMixins(extensions)
 		->collect(m: Mixin|m.getChildrenMixins(extensions))
 	)->asOrderedSet()/]
+
+[query public getAllChildrenKind(kind : Kind, extensions: Sequence(Extension)) : OrderedSet(Kind) = 
+extensions->collect(ext:Extension|ext.kinds)->select(k:Kind|k.occiIsKindOf(kind))->asOrderedSet()/]
+
 
 [query public getExtendedPackage(eObject : EObject) : String
 	= invoke(
