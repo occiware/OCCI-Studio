@@ -235,7 +235,7 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='light_gray'[']'/]"/>
             </style>
 </subContainerMappings>
-[for ( mixin : Mixin| kind.getMixins(Sequence{aExtension}))]
+[for ( mixin : Mixin| kind.getAllRelatedMixins(Sequence{aExtension})->asSet())]
 [generate(mixin)/]
 [/for] 
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="['['/]self.title + ': [kind.name/]'/[']'/]" roundedCorner="true">
@@ -309,6 +309,12 @@
 
 [query public getViewpointName(eObject : EObject) : String = eObject.getExtendedPackage()/]
 
+[query public getAllRelatedMixins(kind : Kind, extensions: Sequence(Extension)) : OrderedSet(Mixin) = 
+kind.getAppliedMixins(extensions)
+	->union(kind.getAppliedMixins(extensions)
+		->collect(m: Mixin|m.getChildrenMixins(extensions))
+	)->asOrderedSet()/]
+
 [query public getExtendedPackage(eObject : EObject) : String
 	= invoke(
 	'org.eclipse.cmf.occi.core.gen.design.services.GenUtils', 
@@ -343,11 +349,19 @@
 	'org.eclipse.cmf.occi.core.gen.design.services.GenUtils', 
 	'resolveExtension(org.eclipse.emf.ecore.EPackage)', 
 	Sequence{ePackage})/]
-[query public getMixins(kind : Kind, extensions: Sequence(Extension)) : Sequence(Mixin)
+
+[query public getAppliedMixins(kind : Kind, extensions: Sequence(Extension)) : Sequence(Mixin)
 	= invoke(
 	'org.eclipse.cmf.occi.core.gen.design.services.GenUtils', 
-	'getAllRelatedMixins(org.eclipse.cmf.occi.core.Kind, java.util.ArrayList)', 
+	'getAppliedMixins(org.eclipse.cmf.occi.core.Kind, java.util.ArrayList)', 
 	Sequence{kind, extensions})/]
+
+[query public getChildrenMixins(mixin : Mixin, extensions: Sequence(Extension)) : Sequence(Mixin)
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.design.services.GenUtils', 
+	'getChildrenMixins(org.eclipse.cmf.occi.core.Mixin, java.util.ArrayList)', 
+	Sequence{mixin, extensions})/]
+
 [query public getEClassName(type : Type) : String
 	= invoke(
 	'org.eclipse.cmf.occi.core.gen.design.services.GenUtils', 

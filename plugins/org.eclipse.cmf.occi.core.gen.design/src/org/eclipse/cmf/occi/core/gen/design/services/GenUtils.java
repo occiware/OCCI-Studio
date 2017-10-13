@@ -153,7 +153,7 @@ public class GenUtils {
 //		return allRelatedMixins;
 //	}
 
-	public static ArrayList<Mixin> getAllRelatedMixins(final Kind kind, ArrayList<Extension> extensions) {
+	public static ArrayList<Mixin> getAppliedMixins(final Kind kind, ArrayList<Extension> extensions) {
 		ArrayList<Mixin> allRelatedMixins = new ArrayList<Mixin>();
 		for (Extension extension : extensions) {
 			for (Mixin mixin : extension.getMixins()) {
@@ -163,25 +163,39 @@ public class GenUtils {
 				}
 			}
 			if (kind.getParent() != null) {
-				allRelatedMixins.addAll(getAllRelatedMixins(kind.getParent(), extensions));
+				allRelatedMixins.addAll(getAppliedMixins(kind.getParent(), extensions));
 			}
 		}
 		return allRelatedMixins;
 	}
 
-	public ArrayList<Mixin> getAllDependsMixins(Mixin m) {
+	public static ArrayList<Mixin> getAllParentMixins(Mixin m) {
 		ArrayList<Mixin> mixins = new ArrayList<Mixin>();
 		for (Mixin m1 : m.getDepends()) {
 			mixins.add(m1);
-			mixins.addAll(getAllDependsMixins(m1));
+			mixins.addAll(getAllParentMixins(m1));
 		}
 		return mixins;
 	}
 
-	public Boolean isParent(Mixin m1, Mixin m2) {
+	public static Boolean isParent(Mixin m1, Mixin m2) {
 		// if m1 is parent of m2
-		return getAllDependsMixins(m2).contains(m1);
+		return getAllParentMixins(m2).contains(m1);
 	}
+	
+	public static ArrayList<Mixin> getChildrenMixins(final Mixin mixin, ArrayList<Extension> extensions) {
+		ArrayList<Mixin> allChildrenMixins = new ArrayList<Mixin>();
+		for (Extension extension : extensions) {
+			for (Mixin mixin1 : extension.getMixins()) {
+				if (isParent(mixin, mixin1)) {
+					// System.out.println("mixin "+mixin + " kind " + kind);
+					allChildrenMixins.add(mixin1);
+				}
+			}
+		}
+		return allChildrenMixins;
+	}
+	
 
 	public static String occiTerm2EClass(Type type) {
 		return toU1Case(formatName(type.getTerm()));
