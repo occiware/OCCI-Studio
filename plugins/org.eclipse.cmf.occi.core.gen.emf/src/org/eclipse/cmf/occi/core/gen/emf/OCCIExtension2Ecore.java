@@ -267,6 +267,7 @@ public class OCCIExtension2Ecore {
 						}
 						}
 					}
+					addSuperTypeFromOCCI(mappedEClass, "MixinBase");
 				}
 //				System.out.println(occiKind2emfEclass);
 		return ePackage;
@@ -294,11 +295,7 @@ public class OCCIExtension2Ecore {
 		EClass eClass = EcoreFactory.eINSTANCE.createEClass();
 		eClass.setName(ConverterUtils.toU1Case(ConverterUtils.formatName(mixin.getTerm())));
 		occiKind2emfEclass.put(mixin, eClass);
-
 		
-		addSuperTypeFromOCCI(eClass, "MixinBase");
-		
-
 		for (Attribute attribute : mixin.getAttributes()) {
 			EStructuralFeature convertAttribute = convertAttribute(attribute);
 			if (convertAttribute != null) {
