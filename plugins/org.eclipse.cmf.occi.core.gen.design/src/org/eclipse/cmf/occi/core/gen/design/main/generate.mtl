@@ -127,7 +127,7 @@
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
             </initialOperation>
           </ownedTools>
-[for (kind : Kind | aExtension.getAllKinds())]
+[for (kind : Type | aExtension.getAllKinds()->union(aExtension.getAllMixins()))]
 [for (attribute : EAttribute | kind.getEClass().eAllAttributes)]
           <ownedTools xsi:type="tool:DirectEditLabel" name="Edit[kind.name/][attribute.name.toUpperFirst()/]" inputLabelExpression="feature:[attribute.name/]">
             <mask mask="{0}"/>
@@ -298,7 +298,9 @@
 
 [query public getOcciCoreExtension(ext : Extension) : Extension = ext.import->select(e|e.scheme= 'http://schemas.ogf.org/occi/core#')->first()/]
 
-[query public getAllKinds(ext : Extension) : Collection(Kind) = ext.kinds/]
+[query public getAllKinds(ext : Extension) : OrderedSet(Kind) = ext.kinds/]
+
+[query public getAllMixins(ext : Extension) : OrderedSet(Mixin) = ext.mixins/]
 
 [query public getAllResourceKinds(ext1 : Extension) : Collection(Kind) = ext1.getAllKinds()->select(ec : Kind| ec.occiIsKindOf(ext1.getOcciCoreExtension().kinds->select(k|k.name='Resource')->first()) )/]
 
