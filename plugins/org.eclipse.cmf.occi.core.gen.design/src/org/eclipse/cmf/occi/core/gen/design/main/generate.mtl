@@ -98,7 +98,9 @@
 [for (mixin : Mixin | aExtension.mixins)]
           <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create [mixin.name/]" containerMappings="
 [for (kind : Kind | (mixin.applies->union(mixin.applies->collect(k:Kind|k.getAllChildrenKind(Sequence{aExtension}))->asOrderedSet()))->asOrderedSet() )]
+[if (aExtension.kinds->includes(kind) ) ]
 //@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[kind.name/]Container'[']'/]/@subContainerMappings['['/]name='[mixin.name/]Mixin'[']'/]
+[/if]
 [/for]
 [for (mixina : Mixin | mixin->closure(depends))]
 [for (kind : Kind | (mixina.applies->union(mixina.applies->collect(k:Kind|k.getAllChildrenKind(Sequence{aExtension}))->asOrderedSet()))->asOrderedSet() )]
