@@ -157,7 +157,7 @@
           <ownedTools xsi:type="tool_1:OperationAction" name="[kind.name/][action.name.toUpperFirst()/]Action" label="[action.name.toUpperFirst()/]" precondition="['['/]self.oclIsKindOf([kind.getEClassName()/])/[']'/]">
             <view name="views"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType([kind.name/]).[action.name/]()/[']'/]"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType([kind.getEClassName()/]).[action.term/]()/[']'/]"/>
             </initialOperation>
           </ownedTools>
 [else]
@@ -169,7 +169,7 @@
             <menuItemDescription xsi:type="tool_1:OperationAction" name="[enumType.name/][literal.name.toUpperFirst()/]" label="[literal.name.toUpperFirst()/]">
               <view name="views"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType([kind.name/]).[action.name/]([enumType.name/]::[literal.name/])/[']'/]"/>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType([kind.getEClass()/]).[action.term/]([enumType.name/]::[literal.name/])/[']'/]"/>
               </initialOperation>
             </menuItemDescription>
 [/for]
