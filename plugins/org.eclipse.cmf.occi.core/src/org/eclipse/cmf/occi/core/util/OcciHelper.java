@@ -319,7 +319,7 @@ public final class OcciHelper
 		MixinBase createdMixinBase = null;
 
 		// Get the name space of the Ecore package for this mixin.
-		String epackageNS = Occi2Ecore.convertOcciScheme2EcoreNamespace(mixin.getScheme());
+		String epackageNS = Occi2Ecore.convertOcciScheme2EcoreNamespace(((Extension)mixin.eContainer()).getScheme());
 		// Get the Ecore package associated to the mixin.
 		EPackage epackage = EPackage.Registry.INSTANCE.getEPackage(epackageNS);
 		if(epackage == null) {
