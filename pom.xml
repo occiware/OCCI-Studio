@@ -30,9 +30,6 @@
     <!-- OCCI Utilities -->
     <module>plugins/org.eclipse.cmf.occi.core.ui</module>
     
-    <!-- Example -->
-    <module>plugins/org.eclipse.cmf.examples</module>
-    
     <!-- OCCI Xtext -->
     <module>plugins/org.eclipse.cmf.occi.core.xtext</module>
     <module>plugins/org.eclipse.cmf.occi.core.xtext.ide</module>
@@ -51,6 +48,7 @@
     <!-- OCCI Extended Designer Generator -->
     <module>plugins/org.eclipse.cmf.occi.core.gen.design.extended</module>
     <module>plugins/org.eclipse.cmf.occi.core.gen.design.extended.ui</module>    
+    
     <!-- Connector Generator -->
     <module>plugins/org.eclipse.cmf.occi.core.gen.connector</module>
     <module>plugins/org.eclipse.cmf.occi.core.gen.connector.ui</module>
@@ -78,7 +76,13 @@
     <!-- Alloy Generator -->
     <module>plugins/org.eclipse.cmf.occi.core.gen.alloy</module>
     <module>plugins/org.eclipse.cmf.occi.core.gen.alloy.ui</module>
-                        
+
+    <!-- jOCCI Connector -->
+    <module>plugins/org.eclipse.cmf.occi.core.connector.jocci</module>
+    
+    <!-- OCCI Examples -->
+    <module>plugins/org.eclipse.cmf.examples</module>
+    
     <!-- OCCI Infrastructure extension -->
     <module>plugins/org.eclipse.cmf.occi.infrastructure</module>
     <module>plugins/org.eclipse.cmf.occi.infrastructure.edit</module>
@@ -123,9 +127,10 @@
     <module>plugins/org.eclipse.cmf.occi.monitoring.design</module>
     <module>plugins/org.eclipse.cmf.occi.monitoring.connector.dummy</module> 
     <module>plugins/org.eclipse.cmf.occi.monitoring.example</module>    
-             
+    
     <!-- Releng -->
     <module>features/org.eclipse.cmf.occi</module>
+    
   </modules>
 
   <profiles>
