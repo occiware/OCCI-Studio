@@ -418,13 +418,13 @@ litigation.
          version="0.0.0"
          unpack="false"/>
    <plugin
-         id="org.eclipse.cmf.occi.gen.alloy"
+         id="org.eclipse.cmf.occi.core.gen.alloy"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
    <plugin
-         id="org.eclipse.cmf.occi.gen.alloy.ui"
+         id="org.eclipse.cmf.occi.core.gen.alloy.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
