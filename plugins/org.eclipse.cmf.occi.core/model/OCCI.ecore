@@ -335,7 +335,14 @@
         unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EObjectType" eSuperTypes="#//BasicType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceClassName" eType="#//String"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="instanceClassNameMustHaveValue"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="instanceClassNameMustHaveValue" value="instanceClassName.size() > 0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceClassName" lowerBound="1"
+        eType="#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanType" eSuperTypes="#//BasicType"/>
   <eClassifiers xsi:type="ecore:EClass" name="NumericType" eSuperTypes="#//BasicType">
