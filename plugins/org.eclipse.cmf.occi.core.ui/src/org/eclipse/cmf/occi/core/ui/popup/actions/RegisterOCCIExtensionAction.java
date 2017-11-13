@@ -12,9 +12,13 @@
  *******************************************************************************/
 package org.eclipse.cmf.occi.core.ui.popup.actions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.util.OcciRegistry;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -23,6 +27,9 @@ import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.sirius.business.api.modelingproject.ModelingProject;
+import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
@@ -62,6 +69,7 @@ public class RegisterOCCIExtensionAction implements IObjectActionDelegate {
 			Extension extension = (Extension) r.getContents().get(0);
 			OcciRegistry.getInstance().registerExtension(extension.getScheme(),
 					uri.toString());
+			closeOtherSessions(selectedFile.getProject());
 			MessageDialog.openInformation(shell,
 					Messages.RegisterExtensionAction_ExtRegistration,
 					Messages.RegisterExtensionAction_RegisteredExtension
@@ -75,5 +83,19 @@ public class RegisterOCCIExtensionAction implements IObjectActionDelegate {
 	public void selectionChanged(IAction action, ISelection selection) {
 		this.selection = selection;
 	}
+	
+	private static void closeOtherSessions(IProject currentProject) {
+        List<Session> sessions = new ArrayList<Session>(SessionManager.INSTANCE.getSessions());
+        Session currentSession = null;
+        ModelingProject modelingProject = ModelingProject.asModelingProject(currentProject).get();
+        if (modelingProject != null) {
+            currentSession = modelingProject.getSession();
+        }
+        for (Session session : sessions) {
+            if (!session.equals(currentSession)) {
+                session.close(null);
+            }
+        }
+    }
 
 }
