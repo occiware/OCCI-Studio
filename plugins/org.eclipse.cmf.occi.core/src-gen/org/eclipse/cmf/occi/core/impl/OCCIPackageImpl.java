@@ -1709,6 +1709,15 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getEObjectType__InstanceClassNameMustHaveValue__DiagnosticChain_Map() {
+		return eObjectTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBooleanType() {
 		return booleanTypeEClass;
 	}
@@ -2177,6 +2186,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 
 		eObjectTypeEClass = createEClass(EOBJECT_TYPE);
 		createEAttribute(eObjectTypeEClass, EOBJECT_TYPE__INSTANCE_CLASS_NAME);
+		createEOperation(eObjectTypeEClass, EOBJECT_TYPE___INSTANCE_CLASS_NAME_MUST_HAVE_VALUE__DIAGNOSTICCHAIN_MAP);
 
 		booleanTypeEClass = createEClass(BOOLEAN_TYPE);
 
@@ -2767,7 +2777,16 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEAttribute(getStringType_MaxLength(), ecorePackage.getEIntegerObject(), "maxLength", null, 0, 1, StringType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eObjectTypeEClass, EObjectType.class, "EObjectType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEObjectType_InstanceClassName(), this.getString(), "instanceClassName", null, 0, 1, EObjectType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEObjectType_InstanceClassName(), this.getString(), "instanceClassName", null, 1, 1, EObjectType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getEObjectType__InstanceClassNameMustHaveValue__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "instanceClassNameMustHaveValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(booleanTypeEClass, BooleanType.class, "BooleanType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2942,6 +2961,12 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		   source, 
 		   new String[] {
 			 "constraints", "AllResourcesLinksKindsInUse"
+		   });	
+		addAnnotation
+		  (eObjectTypeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "instanceClassNameMustHaveValue"
 		   });	
 		addAnnotation
 		  (recordFieldEClass, 

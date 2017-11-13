@@ -371,12 +371,20 @@ public class OCCIValidator extends EObjectValidator {
 	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_KINDS_IN_USE = 40;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Instance Class Name Must Have Value' of 'EObject Type'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int EOBJECT_TYPE__INSTANCE_CLASS_NAME_MUST_HAVE_VALUE = 41;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Type Different Container' of 'Record Field'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RECORD_FIELD__TYPE_DIFFERENT_CONTAINER = 41;
+	public static final int RECORD_FIELD__TYPE_DIFFERENT_CONTAINER = 42;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Container Must Be Record Type' of 'Record Field'.
@@ -384,7 +392,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RECORD_FIELD__CONTAINER_MUST_BE_RECORD_TYPE = 42;
+	public static final int RECORD_FIELD__CONTAINER_MUST_BE_RECORD_TYPE = 43;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Type Different Container' of 'Array Type'.
@@ -392,7 +400,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ARRAY_TYPE__TYPE_DIFFERENT_CONTAINER = 43;
+	public static final int ARRAY_TYPE__TYPE_DIFFERENT_CONTAINER = 44;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -400,7 +408,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 43;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 44;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -1306,7 +1314,27 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateEObjectType(EObjectType eObjectType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(eObjectType, diagnostics, context);
+		if (!validate_NoCircularContainment(eObjectType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(eObjectType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(eObjectType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(eObjectType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(eObjectType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(eObjectType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(eObjectType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(eObjectType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(eObjectType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEObjectType_instanceClassNameMustHaveValue(eObjectType, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the instanceClassNameMustHaveValue constraint of '<em>EObject Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEObjectType_instanceClassNameMustHaveValue(EObjectType eObjectType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return eObjectType.instanceClassNameMustHaveValue(diagnostics, context);
 	}
 
 	/**

@@ -50,6 +50,7 @@ public class OCCITests extends TestSuite {
 		suite.addTestSuite(LinkTest.class);
 		suite.addTestSuite(ExtensionTest.class);
 		suite.addTestSuite(ConfigurationTest.class);
+		suite.addTestSuite(EObjectTypeTest.class);
 		suite.addTestSuite(RecordFieldTest.class);
 		suite.addTestSuite(ArrayTypeTest.class);
 		return suite;

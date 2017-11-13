@@ -2551,13 +2551,22 @@ public interface OCCIPackage extends EPackage {
 	int EOBJECT_TYPE_FEATURE_COUNT = BASIC_TYPE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Instance Class Name Must Have Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EOBJECT_TYPE___INSTANCE_CLASS_NAME_MUST_HAVE_VALUE__DIAGNOSTICCHAIN_MAP = BASIC_TYPE_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>EObject Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EOBJECT_TYPE_OPERATION_COUNT = BASIC_TYPE_OPERATION_COUNT + 0;
+	int EOBJECT_TYPE_OPERATION_COUNT = BASIC_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4628,6 +4637,16 @@ public interface OCCIPackage extends EPackage {
 	EAttribute getEObjectType_InstanceClassName();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.EObjectType#instanceClassNameMustHaveValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Instance Class Name Must Have Value</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Instance Class Name Must Have Value</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.EObjectType#instanceClassNameMustHaveValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getEObjectType__InstanceClassNameMustHaveValue__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.BooleanType <em>Boolean Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6180,6 +6199,14 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EOBJECT_TYPE__INSTANCE_CLASS_NAME = eINSTANCE.getEObjectType_InstanceClassName();
+
+		/**
+		 * The meta object literal for the '<em><b>Instance Class Name Must Have Value</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EOBJECT_TYPE___INSTANCE_CLASS_NAME_MUST_HAVE_VALUE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getEObjectType__InstanceClassNameMustHaveValue__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
