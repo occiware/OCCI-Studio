@@ -92,7 +92,7 @@ public class LinkTest extends EntityTest {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Link#LinkTargetInvariant(org.eclipse.cmf.occi.core.Kind, org.eclipse.cmf.occi.core.Kind)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testLinkTargetInvariant__Kind_Kind() {
 		// TODO: implement this operation test method
@@ -105,7 +105,7 @@ public class LinkTest extends EntityTest {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.cmf.occi.core.Link#LinkSourceInvariant(org.eclipse.cmf.occi.core.Kind, org.eclipse.cmf.occi.core.Kind)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testLinkSourceInvariant__Kind_Kind() {
 		// TODO: implement this operation test method

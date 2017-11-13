@@ -2476,13 +2476,22 @@ public interface OCCIPackage extends EPackage {
 	int STRING_TYPE_FEATURE_COUNT = BASIC_TYPE_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Pattern Must Be Not Empty</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TYPE___PATTERN_MUST_BE_NOT_EMPTY__DIAGNOSTICCHAIN_MAP = BASIC_TYPE_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>String Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRING_TYPE_OPERATION_COUNT = BASIC_TYPE_OPERATION_COUNT + 0;
+	int STRING_TYPE_OPERATION_COUNT = BASIC_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
@@ -4616,6 +4625,16 @@ public interface OCCIPackage extends EPackage {
 	EAttribute getStringType_MaxLength();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.StringType#PatternMustBeNotEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Pattern Must Be Not Empty</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Pattern Must Be Not Empty</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.StringType#PatternMustBeNotEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getStringType__PatternMustBeNotEmpty__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.EObjectType <em>EObject Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6181,6 +6200,14 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STRING_TYPE__MAX_LENGTH = eINSTANCE.getStringType_MaxLength();
+
+		/**
+		 * The meta object literal for the '<em><b>Pattern Must Be Not Empty</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STRING_TYPE___PATTERN_MUST_BE_NOT_EMPTY__DIAGNOSTICCHAIN_MAP = eINSTANCE.getStringType__PatternMustBeNotEmpty__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.EObjectTypeImpl <em>EObject Type</em>}' class.

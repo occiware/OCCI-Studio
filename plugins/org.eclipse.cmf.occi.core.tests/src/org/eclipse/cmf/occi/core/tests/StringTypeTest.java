@@ -20,6 +20,12 @@ import org.eclipse.cmf.occi.core.StringType;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>String Type</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link org.eclipse.cmf.occi.core.StringType#PatternMustBeNotEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Pattern Must Be Not Empty</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class StringTypeTest extends BasicTypeTest {
@@ -74,6 +80,19 @@ public class StringTypeTest extends BasicTypeTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.StringType#PatternMustBeNotEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Pattern Must Be Not Empty</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.StringType#PatternMustBeNotEmpty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated NOT
+	 */
+	public void testPatternMustBeNotEmpty__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		//fail();
 	}
 
 } //StringTypeTest

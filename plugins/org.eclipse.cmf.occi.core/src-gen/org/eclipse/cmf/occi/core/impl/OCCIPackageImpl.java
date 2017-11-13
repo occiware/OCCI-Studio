@@ -1691,6 +1691,15 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getStringType__PatternMustBeNotEmpty__DiagnosticChain_Map() {
+		return stringTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEObjectType() {
 		return eObjectTypeEClass;
 	}
@@ -2183,6 +2192,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		createEAttribute(stringTypeEClass, STRING_TYPE__LENGTH);
 		createEAttribute(stringTypeEClass, STRING_TYPE__MIN_LENGTH);
 		createEAttribute(stringTypeEClass, STRING_TYPE__MAX_LENGTH);
+		createEOperation(stringTypeEClass, STRING_TYPE___PATTERN_MUST_BE_NOT_EMPTY__DIAGNOSTICCHAIN_MAP);
 
 		eObjectTypeEClass = createEClass(EOBJECT_TYPE);
 		createEAttribute(eObjectTypeEClass, EOBJECT_TYPE__INSTANCE_CLASS_NAME);
@@ -2776,6 +2786,15 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEAttribute(getStringType_MinLength(), ecorePackage.getEIntegerObject(), "minLength", null, 0, 1, StringType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStringType_MaxLength(), ecorePackage.getEIntegerObject(), "maxLength", null, 0, 1, StringType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		op = initEOperation(getStringType__PatternMustBeNotEmpty__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "PatternMustBeNotEmpty", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(eObjectTypeEClass, EObjectType.class, "EObjectType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEObjectType_InstanceClassName(), this.getString(), "instanceClassName", null, 1, 1, EObjectType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2961,6 +2980,12 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		   source, 
 		   new String[] {
 			 "constraints", "AllResourcesLinksKindsInUse"
+		   });	
+		addAnnotation
+		  (stringTypeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "PatternMustBeNotEmpty"
 		   });	
 		addAnnotation
 		  (eObjectTypeEClass, 

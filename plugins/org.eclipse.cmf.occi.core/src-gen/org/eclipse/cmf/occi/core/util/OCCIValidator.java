@@ -371,12 +371,20 @@ public class OCCIValidator extends EObjectValidator {
 	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_KINDS_IN_USE = 40;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Pattern Must Be Not Empty' of 'String Type'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int STRING_TYPE__PATTERN_MUST_BE_NOT_EMPTY = 41;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Instance Class Name Must Have Value' of 'EObject Type'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EOBJECT_TYPE__INSTANCE_CLASS_NAME_MUST_HAVE_VALUE = 41;
+	public static final int EOBJECT_TYPE__INSTANCE_CLASS_NAME_MUST_HAVE_VALUE = 42;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Type Different Container' of 'Record Field'.
@@ -384,7 +392,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RECORD_FIELD__TYPE_DIFFERENT_CONTAINER = 42;
+	public static final int RECORD_FIELD__TYPE_DIFFERENT_CONTAINER = 43;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Container Must Be Record Type' of 'Record Field'.
@@ -392,7 +400,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RECORD_FIELD__CONTAINER_MUST_BE_RECORD_TYPE = 43;
+	public static final int RECORD_FIELD__CONTAINER_MUST_BE_RECORD_TYPE = 44;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Type Different Container' of 'Array Type'.
@@ -400,7 +408,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ARRAY_TYPE__TYPE_DIFFERENT_CONTAINER = 44;
+	public static final int ARRAY_TYPE__TYPE_DIFFERENT_CONTAINER = 45;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -408,7 +416,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 44;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 45;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -1305,7 +1313,27 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateStringType(StringType stringType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(stringType, diagnostics, context);
+		if (!validate_NoCircularContainment(stringType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(stringType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(stringType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(stringType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(stringType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(stringType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(stringType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(stringType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(stringType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStringType_PatternMustBeNotEmpty(stringType, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the PatternMustBeNotEmpty constraint of '<em>String Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStringType_PatternMustBeNotEmpty(StringType stringType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return stringType.PatternMustBeNotEmpty(diagnostics, context);
 	}
 
 	/**
