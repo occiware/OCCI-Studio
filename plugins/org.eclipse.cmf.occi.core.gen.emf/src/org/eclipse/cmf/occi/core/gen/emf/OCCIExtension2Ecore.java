@@ -288,7 +288,7 @@ public class OCCIExtension2Ecore {
 
 	public static String formatExtensionName(Extension extension) {
 		return ConverterUtils
-				.formatName(extension.getName().replaceFirst("OCCI ", "").replaceFirst("OCCIware ", "").toLowerCase());
+				.formatName(extension.getName().replaceFirst("OCCI ", "").replaceFirst("OCCIware ", "").toLowerCase()).replaceAll("-", "_");
 	}
 
 	protected EClass convertMixin(Mixin mixin) {
