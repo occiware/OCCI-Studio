@@ -371,12 +371,20 @@ public class OCCIValidator extends EObjectValidator {
 	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_KINDS_IN_USE = 40;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Data Type Name Regex' of 'Data Type'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int DATA_TYPE__DATA_TYPE_NAME_REGEX = 41;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Pattern Must Be Not Empty' of 'String Type'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int STRING_TYPE__PATTERN_MUST_BE_NOT_EMPTY = 41;
+	public static final int STRING_TYPE__PATTERN_MUST_BE_NOT_EMPTY = 42;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Instance Class Name Must Have Value' of 'EObject Type'.
@@ -384,7 +392,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EOBJECT_TYPE__INSTANCE_CLASS_NAME_MUST_HAVE_VALUE = 42;
+	public static final int EOBJECT_TYPE__INSTANCE_CLASS_NAME_MUST_HAVE_VALUE = 43;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Type Different Container' of 'Record Field'.
@@ -392,7 +400,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RECORD_FIELD__TYPE_DIFFERENT_CONTAINER = 43;
+	public static final int RECORD_FIELD__TYPE_DIFFERENT_CONTAINER = 44;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Container Must Be Record Type' of 'Record Field'.
@@ -400,7 +408,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RECORD_FIELD__CONTAINER_MUST_BE_RECORD_TYPE = 44;
+	public static final int RECORD_FIELD__CONTAINER_MUST_BE_RECORD_TYPE = 45;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Type Different Container' of 'Array Type'.
@@ -408,7 +416,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ARRAY_TYPE__TYPE_DIFFERENT_CONTAINER = 45;
+	public static final int ARRAY_TYPE__TYPE_DIFFERENT_CONTAINER = 46;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -416,7 +424,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 45;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 46;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -1295,7 +1303,27 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDataType(DataType dataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(dataType, diagnostics, context);
+		if (!validate_NoCircularContainment(dataType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(dataType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(dataType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(dataType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(dataType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(dataType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(dataType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dataType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dataType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDataType_DataTypeNameRegex(dataType, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the DataTypeNameRegex constraint of '<em>Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDataType_DataTypeNameRegex(DataType dataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return dataType.DataTypeNameRegex(diagnostics, context);
 	}
 
 	/**
@@ -1304,7 +1332,17 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateBasicType(BasicType basicType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(basicType, diagnostics, context);
+		if (!validate_NoCircularContainment(basicType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(basicType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(basicType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(basicType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(basicType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(basicType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(basicType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(basicType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(basicType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDataType_DataTypeNameRegex(basicType, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -1322,6 +1360,7 @@ public class OCCIValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(stringType, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(stringType, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(stringType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDataType_DataTypeNameRegex(stringType, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStringType_PatternMustBeNotEmpty(stringType, diagnostics, context);
 		return result;
 	}
@@ -1351,6 +1390,7 @@ public class OCCIValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(eObjectType, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(eObjectType, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(eObjectType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDataType_DataTypeNameRegex(eObjectType, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEObjectType_instanceClassNameMustHaveValue(eObjectType, diagnostics, context);
 		return result;
 	}
@@ -1371,7 +1411,17 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateBooleanType(BooleanType booleanType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(booleanType, diagnostics, context);
+		if (!validate_NoCircularContainment(booleanType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(booleanType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(booleanType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(booleanType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(booleanType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(booleanType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(booleanType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(booleanType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(booleanType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDataType_DataTypeNameRegex(booleanType, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -1380,7 +1430,17 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateNumericType(NumericType numericType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(numericType, diagnostics, context);
+		if (!validate_NoCircularContainment(numericType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(numericType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(numericType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(numericType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(numericType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(numericType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(numericType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(numericType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(numericType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDataType_DataTypeNameRegex(numericType, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -1389,7 +1449,17 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateEnumerationType(EnumerationType enumerationType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(enumerationType, diagnostics, context);
+		if (!validate_NoCircularContainment(enumerationType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(enumerationType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(enumerationType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(enumerationType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(enumerationType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(enumerationType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(enumerationType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(enumerationType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(enumerationType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDataType_DataTypeNameRegex(enumerationType, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -1407,7 +1477,17 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateRecordType(RecordType recordType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(recordType, diagnostics, context);
+		if (!validate_NoCircularContainment(recordType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(recordType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(recordType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(recordType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(recordType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(recordType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(recordType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(recordType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(recordType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDataType_DataTypeNameRegex(recordType, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -1465,6 +1545,7 @@ public class OCCIValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(arrayType, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(arrayType, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(arrayType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDataType_DataTypeNameRegex(arrayType, diagnostics, context);
 		if (result || diagnostics != null) result &= validateArrayType_TypeDifferentContainer(arrayType, diagnostics, context);
 		return result;
 	}

@@ -52,6 +52,10 @@ public class OCCITests extends TestSuite {
 		suite.addTestSuite(ConfigurationTest.class);
 		suite.addTestSuite(StringTypeTest.class);
 		suite.addTestSuite(EObjectTypeTest.class);
+		suite.addTestSuite(BooleanTypeTest.class);
+		suite.addTestSuite(NumericTypeTest.class);
+		suite.addTestSuite(EnumerationTypeTest.class);
+		suite.addTestSuite(RecordTypeTest.class);
 		suite.addTestSuite(RecordFieldTest.class);
 		suite.addTestSuite(ArrayTypeTest.class);
 		return suite;

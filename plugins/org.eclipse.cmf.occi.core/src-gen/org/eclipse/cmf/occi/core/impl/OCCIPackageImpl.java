@@ -1637,6 +1637,15 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getDataType__DataTypeNameRegex__DiagnosticChain_Map() {
+		return dataTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBasicType() {
 		return basicTypeEClass;
 	}
@@ -2184,6 +2193,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		dataTypeEClass = createEClass(DATA_TYPE);
 		createEAttribute(dataTypeEClass, DATA_TYPE__NAME);
 		createEAttribute(dataTypeEClass, DATA_TYPE__DOCUMENTATION);
+		createEOperation(dataTypeEClass, DATA_TYPE___DATA_TYPE_NAME_REGEX__DIAGNOSTICCHAIN_MAP);
 
 		basicTypeEClass = createEClass(BASIC_TYPE);
 
@@ -2775,8 +2785,17 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataType_Name(), this.getName_(), "name", null, 1, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataType_Name(), this.getString(), "name", null, 1, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataType_Documentation(), this.getString(), "documentation", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getDataType__DataTypeNameRegex__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "DataTypeNameRegex", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(basicTypeEClass, BasicType.class, "BasicType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2980,6 +2999,12 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		   source, 
 		   new String[] {
 			 "constraints", "AllResourcesLinksKindsInUse"
+		   });	
+		addAnnotation
+		  (dataTypeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "DataTypeNameRegex"
 		   });	
 		addAnnotation
 		  (stringTypeEClass, 

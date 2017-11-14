@@ -129,6 +129,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR_Configuration_c_c_AllResourcesLinksMixinsInUse = "Configuration::AllResourcesLinksMixinsInUse";
 	public static final /*@NonInvalid*/ java.lang.String STR_Configuration_c_c_AllResourcesLinksTargetsInConfiguration = "Configuration::AllResourcesLinksTargetsInConfiguration";
 	public static final /*@NonInvalid*/ java.lang.String STR_Configuration_c_c_AllResourcesMixinsInUse = "Configuration::AllResourcesMixinsInUse";
+	public static final /*@NonInvalid*/ java.lang.String STR_DataType_c_c_DataTypeNameRegex = "DataType::DataTypeNameRegex";
 	public static final /*@NonInvalid*/ java.lang.String STR_EObjectType_c_c_instanceClassNameMustHaveValue = "EObjectType::instanceClassNameMustHaveValue";
 	public static final /*@NonInvalid*/ java.lang.String STR_Entity_c_c_AttributesNameUnique = "Entity::AttributesNameUnique";
 	public static final /*@NonInvalid*/ java.lang.String STR_Entity_c_c_IdUnique = "Entity::IdUnique";
@@ -180,6 +181,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR__34_32_state_32_in_32_the_32_FSM_32_of_32_34 = "\" state in the FSM of \"";
 	public static final /*@NonInvalid*/ java.lang.String STR__34_32_state_32_to_32_the_32_34 = "\" state to the \"";
 	public static final /*@NonInvalid*/ java.lang.String STR__35 = "#";
+	public static final /*@NonInvalid*/ java.lang.String STR__91_a_m_zA_m_Z__93_91_a_m_zA_m_Z0_m_9__93_a = "[a-zA-Z_][a-zA-Z0-9_]*";
 	public static final /*@NonInvalid*/ java.lang.String STR__s_action_35 = "/action#";
 	public static final /*@NonInvalid*/ java.lang.String STR_entity = "entity";
 	public static final /*@NonInvalid*/ java.lang.String STR_http_c_s_s_schemas_ogf_org_s_occi_s_core_35 = "http://schemas.ogf.org/occi/core#";

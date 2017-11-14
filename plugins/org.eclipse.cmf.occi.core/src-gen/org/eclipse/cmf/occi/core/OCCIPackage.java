@@ -2348,13 +2348,22 @@ public interface OCCIPackage extends EPackage {
 	int DATA_TYPE_FEATURE_COUNT = 2;
 
 	/**
+	 * The operation id for the '<em>Data Type Name Regex</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE___DATA_TYPE_NAME_REGEX__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
 	 * The number of operations of the '<em>Data Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE_OPERATION_COUNT = 0;
+	int DATA_TYPE_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.BasicTypeImpl <em>Basic Type</em>}' class.
@@ -2392,6 +2401,15 @@ public interface OCCIPackage extends EPackage {
 	 * @ordered
 	 */
 	int BASIC_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Data Type Name Regex</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASIC_TYPE___DATA_TYPE_NAME_REGEX__DIAGNOSTICCHAIN_MAP = DATA_TYPE___DATA_TYPE_NAME_REGEX__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The number of operations of the '<em>Basic Type</em>' class.
@@ -2474,6 +2492,15 @@ public interface OCCIPackage extends EPackage {
 	 * @ordered
 	 */
 	int STRING_TYPE_FEATURE_COUNT = BASIC_TYPE_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Data Type Name Regex</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_TYPE___DATA_TYPE_NAME_REGEX__DIAGNOSTICCHAIN_MAP = BASIC_TYPE___DATA_TYPE_NAME_REGEX__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Pattern Must Be Not Empty</em>' operation.
@@ -2560,6 +2587,15 @@ public interface OCCIPackage extends EPackage {
 	int EOBJECT_TYPE_FEATURE_COUNT = BASIC_TYPE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Data Type Name Regex</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EOBJECT_TYPE___DATA_TYPE_NAME_REGEX__DIAGNOSTICCHAIN_MAP = BASIC_TYPE___DATA_TYPE_NAME_REGEX__DIAGNOSTICCHAIN_MAP;
+
+	/**
 	 * The operation id for the '<em>Instance Class Name Must Have Value</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2603,6 +2639,15 @@ public interface OCCIPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOLEAN_TYPE_FEATURE_COUNT = BASIC_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Data Type Name Regex</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_TYPE___DATA_TYPE_NAME_REGEX__DIAGNOSTICCHAIN_MAP = BASIC_TYPE___DATA_TYPE_NAME_REGEX__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The number of operations of the '<em>Boolean Type</em>' class.
@@ -2695,6 +2740,15 @@ public interface OCCIPackage extends EPackage {
 	int NUMERIC_TYPE_FEATURE_COUNT = BASIC_TYPE_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Data Type Name Regex</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMERIC_TYPE___DATA_TYPE_NAME_REGEX__DIAGNOSTICCHAIN_MAP = BASIC_TYPE___DATA_TYPE_NAME_REGEX__DIAGNOSTICCHAIN_MAP;
+
+	/**
 	 * The number of operations of the '<em>Numeric Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2748,6 +2802,15 @@ public interface OCCIPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENUMERATION_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Data Type Name Regex</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_TYPE___DATA_TYPE_NAME_REGEX__DIAGNOSTICCHAIN_MAP = DATA_TYPE___DATA_TYPE_NAME_REGEX__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The number of operations of the '<em>Enumeration Type</em>' class.
@@ -2858,6 +2921,15 @@ public interface OCCIPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECORD_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Data Type Name Regex</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_TYPE___DATA_TYPE_NAME_REGEX__DIAGNOSTICCHAIN_MAP = DATA_TYPE___DATA_TYPE_NAME_REGEX__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The number of operations of the '<em>Record Type</em>' class.
@@ -3022,6 +3094,15 @@ public interface OCCIPackage extends EPackage {
 	 * @ordered
 	 */
 	int ARRAY_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Data Type Name Regex</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_TYPE___DATA_TYPE_NAME_REGEX__DIAGNOSTICCHAIN_MAP = DATA_TYPE___DATA_TYPE_NAME_REGEX__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Type Different Container</em>' operation.
@@ -4548,6 +4629,16 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDataType_Documentation();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.DataType#DataTypeNameRegex(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Data Type Name Regex</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Data Type Name Regex</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.DataType#DataTypeNameRegex(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getDataType__DataTypeNameRegex__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.DataType#getName <em>Name</em>}'.
@@ -6140,6 +6231,14 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATA_TYPE__DOCUMENTATION = eINSTANCE.getDataType_Documentation();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Type Name Regex</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TYPE___DATA_TYPE_NAME_REGEX__DIAGNOSTICCHAIN_MAP = eINSTANCE.getDataType__DataTypeNameRegex__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

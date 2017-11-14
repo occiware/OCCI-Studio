@@ -20,6 +20,12 @@ import org.eclipse.cmf.occi.core.DataType;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Data Type</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link org.eclipse.cmf.occi.core.DataType#DataTypeNameRegex(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Data Type Name Regex</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public abstract class DataTypeTest extends TestCase {
@@ -60,6 +66,19 @@ public abstract class DataTypeTest extends TestCase {
 	 */
 	protected DataType getFixture() {
 		return fixture;
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.DataType#DataTypeNameRegex(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Data Type Name Regex</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.DataType#DataTypeNameRegex(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated NOT
+	 */
+	public void testDataTypeNameRegex__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		// fail();
 	}
 
 	/**
