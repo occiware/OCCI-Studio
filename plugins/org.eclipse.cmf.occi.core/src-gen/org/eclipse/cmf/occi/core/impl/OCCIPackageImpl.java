@@ -1862,6 +1862,15 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getEnumerationLiteral__EnumerationLiteralNameRegex__DiagnosticChain_Map() {
+		return enumerationLiteralEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRecordType() {
 		return recordTypeEClass;
 	}
@@ -2225,6 +2234,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		createEAttribute(enumerationLiteralEClass, ENUMERATION_LITERAL__NAME);
 		createEAttribute(enumerationLiteralEClass, ENUMERATION_LITERAL__DOCUMENTATION);
 		createEReference(enumerationLiteralEClass, ENUMERATION_LITERAL__ENUMERATION_TYPE);
+		createEOperation(enumerationLiteralEClass, ENUMERATION_LITERAL___ENUMERATION_LITERAL_NAME_REGEX__DIAGNOSTICCHAIN_MAP);
 
 		recordTypeEClass = createEClass(RECORD_TYPE);
 		createEReference(recordTypeEClass, RECORD_TYPE__RECORD_FIELDS);
@@ -2844,6 +2854,15 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEAttribute(getEnumerationLiteral_Documentation(), this.getString(), "documentation", null, 0, 1, EnumerationLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnumerationLiteral_EnumerationType(), this.getEnumerationType(), this.getEnumerationType_Literals(), "enumerationType", null, 1, 1, EnumerationLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		op = initEOperation(getEnumerationLiteral__EnumerationLiteralNameRegex__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "EnumerationLiteralNameRegex", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(recordTypeEClass, RecordType.class, "RecordType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRecordType_RecordFields(), this.getRecordField(), null, "recordFields", null, 1, -1, RecordType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -3017,6 +3036,12 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		   source, 
 		   new String[] {
 			 "constraints", "instanceClassNameMustHaveValue"
+		   });	
+		addAnnotation
+		  (enumerationLiteralEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "EnumerationLiteralNameRegex"
 		   });	
 		addAnnotation
 		  (recordFieldEClass, 

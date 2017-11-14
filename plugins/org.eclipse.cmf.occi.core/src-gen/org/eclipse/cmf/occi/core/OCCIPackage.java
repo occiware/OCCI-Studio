@@ -2868,13 +2868,22 @@ public interface OCCIPackage extends EPackage {
 	int ENUMERATION_LITERAL_FEATURE_COUNT = 3;
 
 	/**
+	 * The operation id for the '<em>Enumeration Literal Name Regex</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_LITERAL___ENUMERATION_LITERAL_NAME_REGEX__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
 	 * The number of operations of the '<em>Enumeration Literal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_LITERAL_OPERATION_COUNT = 0;
+	int ENUMERATION_LITERAL_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.RecordTypeImpl <em>Record Type</em>}' class.
@@ -4907,6 +4916,16 @@ public interface OCCIPackage extends EPackage {
 	EReference getEnumerationLiteral_EnumerationType();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.EnumerationLiteral#EnumerationLiteralNameRegex(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Enumeration Literal Name Regex</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Enumeration Literal Name Regex</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.EnumerationLiteral#EnumerationLiteralNameRegex(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getEnumerationLiteral__EnumerationLiteralNameRegex__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.RecordType <em>Record Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6453,6 +6472,14 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENUMERATION_LITERAL__ENUMERATION_TYPE = eINSTANCE.getEnumerationLiteral_EnumerationType();
+
+		/**
+		 * The meta object literal for the '<em><b>Enumeration Literal Name Regex</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ENUMERATION_LITERAL___ENUMERATION_LITERAL_NAME_REGEX__DIAGNOSTICCHAIN_MAP = eINSTANCE.getEnumerationLiteral__EnumerationLiteralNameRegex__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.RecordTypeImpl <em>Record Type</em>}' class.

@@ -395,12 +395,20 @@ public class OCCIValidator extends EObjectValidator {
 	public static final int EOBJECT_TYPE__INSTANCE_CLASS_NAME_MUST_HAVE_VALUE = 43;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Enumeration Literal Name Regex' of 'Enumeration Literal'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ENUMERATION_LITERAL__ENUMERATION_LITERAL_NAME_REGEX = 44;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Type Different Container' of 'Record Field'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RECORD_FIELD__TYPE_DIFFERENT_CONTAINER = 44;
+	public static final int RECORD_FIELD__TYPE_DIFFERENT_CONTAINER = 45;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Container Must Be Record Type' of 'Record Field'.
@@ -408,7 +416,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RECORD_FIELD__CONTAINER_MUST_BE_RECORD_TYPE = 45;
+	public static final int RECORD_FIELD__CONTAINER_MUST_BE_RECORD_TYPE = 46;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Type Different Container' of 'Array Type'.
@@ -416,7 +424,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ARRAY_TYPE__TYPE_DIFFERENT_CONTAINER = 46;
+	public static final int ARRAY_TYPE__TYPE_DIFFERENT_CONTAINER = 47;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -424,7 +432,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 46;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 47;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -1468,7 +1476,27 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateEnumerationLiteral(EnumerationLiteral enumerationLiteral, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(enumerationLiteral, diagnostics, context);
+		if (!validate_NoCircularContainment(enumerationLiteral, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(enumerationLiteral, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(enumerationLiteral, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(enumerationLiteral, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(enumerationLiteral, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(enumerationLiteral, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(enumerationLiteral, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(enumerationLiteral, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(enumerationLiteral, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEnumerationLiteral_EnumerationLiteralNameRegex(enumerationLiteral, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the EnumerationLiteralNameRegex constraint of '<em>Enumeration Literal</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEnumerationLiteral_EnumerationLiteralNameRegex(EnumerationLiteral enumerationLiteral, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return enumerationLiteral.EnumerationLiteralNameRegex(diagnostics, context);
 	}
 
 	/**

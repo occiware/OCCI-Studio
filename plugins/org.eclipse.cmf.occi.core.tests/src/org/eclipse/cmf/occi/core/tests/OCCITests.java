@@ -55,6 +55,7 @@ public class OCCITests extends TestSuite {
 		suite.addTestSuite(BooleanTypeTest.class);
 		suite.addTestSuite(NumericTypeTest.class);
 		suite.addTestSuite(EnumerationTypeTest.class);
+		suite.addTestSuite(EnumerationLiteralTest.class);
 		suite.addTestSuite(RecordTypeTest.class);
 		suite.addTestSuite(RecordFieldTest.class);
 		suite.addTestSuite(ArrayTypeTest.class);
