@@ -484,8 +484,10 @@ public class OCCIExtension2Ecore {
 				eannotation.getDetails().put("maxLength", Integer.toString(type.getMaxLength()));
 			if (type.isSetMinLength())
 				eannotation.getDetails().put("minLength", Integer.toString(type.getMinLength()));
-			if (type.getPattern() != "")
-				eannotation.getDetails().put("pattern", type.getPattern());
+			if (type.getPattern() != null) {
+				if (type.getPattern() != "")
+					eannotation.getDetails().put("pattern", type.getPattern());
+			}
 		}
 		return edatatype;
 	}
