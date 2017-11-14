@@ -43,7 +43,7 @@ public interface EnumerationLiteral extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.cmf.occi.core.OCCIPackage#getEnumerationLiteral_Name()
-	 * @model dataType="org.eclipse.cmf.occi.core.String" required="true"
+	 * @model dataType="org.eclipse.cmf.occi.core.Name" required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/core/ecore!EnumerationLiteral!name'"
 	 * @generated
 	 */
