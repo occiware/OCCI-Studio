@@ -321,7 +321,7 @@
         eType="#//Mixin" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="#//Name"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="documentation" eType="#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BasicType" abstract="true" eSuperTypes="#//DataType"/>
