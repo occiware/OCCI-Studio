@@ -375,6 +375,12 @@
         upperBound="-1" eType="#//EnumerationLiteral" containment="true" eOpposite="#//EnumerationLiteral/enumerationType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnumerationLiteral">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="EnumerationLiteralNameRegex"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="EnumerationLiteralNameRegex" value="self.name.matches('[a-zA-Z_][a-zA-Z0-9_]*')"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="#//Name"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="documentation" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="enumerationType" lowerBound="1"
