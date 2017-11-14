@@ -392,11 +392,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RecordField" eSuperTypes="#//Attribute">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="TypeDifferentContainer ContainerMustBeRecordType"/>
+      <details key="constraints" value="TypeDifferentContainer ContainerMustBeRecordType RecordFieldNameRegex"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="TypeDifferentContainer" value="self.type &lt;> self.oclContainer"/>
       <details key="ContainerMustBeRecordType" value="self.oclContainer.oclIsTypeOf(occi::RecordType)"/>
+      <details key="RecordFieldNameRegex" value="self.name.matches('[a-zA-Z][a-zA-Z0-9]*')"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArrayType" eSuperTypes="#//DataType">
