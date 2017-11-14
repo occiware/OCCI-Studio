@@ -1907,8 +1907,17 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRecordField__ContainerMustBeRecordType__DiagnosticChain_Map() {
+	public EOperation getRecordField__RecordFieldNameRegex__DiagnosticChain_Map() {
 		return recordFieldEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRecordField__ContainerMustBeRecordType__DiagnosticChain_Map() {
+		return recordFieldEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -2241,6 +2250,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 
 		recordFieldEClass = createEClass(RECORD_FIELD);
 		createEOperation(recordFieldEClass, RECORD_FIELD___TYPE_DIFFERENT_CONTAINER__DIAGNOSTICCHAIN_MAP);
+		createEOperation(recordFieldEClass, RECORD_FIELD___RECORD_FIELD_NAME_REGEX__DIAGNOSTICCHAIN_MAP);
 		createEOperation(recordFieldEClass, RECORD_FIELD___CONTAINER_MUST_BE_RECORD_TYPE__DIAGNOSTICCHAIN_MAP);
 
 		arrayTypeEClass = createEClass(ARRAY_TYPE);
@@ -2869,6 +2879,15 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEClass(recordFieldEClass, RecordField.class, "RecordField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = initEOperation(getRecordField__TypeDifferentContainer__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "TypeDifferentContainer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getRecordField__RecordFieldNameRegex__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "RecordFieldNameRegex", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());

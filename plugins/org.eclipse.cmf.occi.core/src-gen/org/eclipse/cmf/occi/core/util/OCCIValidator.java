@@ -411,12 +411,20 @@ public class OCCIValidator extends EObjectValidator {
 	public static final int RECORD_FIELD__TYPE_DIFFERENT_CONTAINER = 45;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Record Field Name Regex' of 'Record Field'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int RECORD_FIELD__RECORD_FIELD_NAME_REGEX = 46;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Container Must Be Record Type' of 'Record Field'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RECORD_FIELD__CONTAINER_MUST_BE_RECORD_TYPE = 46;
+	public static final int RECORD_FIELD__CONTAINER_MUST_BE_RECORD_TYPE = 47;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Type Different Container' of 'Array Type'.
@@ -424,7 +432,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ARRAY_TYPE__TYPE_DIFFERENT_CONTAINER = 47;
+	public static final int ARRAY_TYPE__TYPE_DIFFERENT_CONTAINER = 48;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -432,7 +440,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 47;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 48;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -1535,6 +1543,7 @@ public class OCCIValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(recordField, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRecordField_ContainerMustBeRecordType(recordField, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRecordField_TypeDifferentContainer(recordField, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRecordField_RecordFieldNameRegex(recordField, diagnostics, context);
 		return result;
 	}
 
@@ -1556,6 +1565,16 @@ public class OCCIValidator extends EObjectValidator {
 	 */
 	public boolean validateRecordField_TypeDifferentContainer(RecordField recordField, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return recordField.TypeDifferentContainer(diagnostics, context);
+	}
+
+	/**
+	 * Validates the RecordFieldNameRegex constraint of '<em>Record Field</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRecordField_RecordFieldNameRegex(RecordField recordField, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return recordField.RecordFieldNameRegex(diagnostics, context);
 	}
 
 	/**

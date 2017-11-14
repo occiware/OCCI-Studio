@@ -25,6 +25,7 @@ import org.eclipse.cmf.occi.core.RecordField;
  * The following operations are tested:
  * <ul>
  *   <li>{@link org.eclipse.cmf.occi.core.RecordField#TypeDifferentContainer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Type Different Container</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.RecordField#RecordFieldNameRegex(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Record Field Name Regex</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.RecordField#ContainerMustBeRecordType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Container Must Be Record Type</em>}</li>
  * </ul>
  * </p>
@@ -95,6 +96,19 @@ public class RecordFieldTest extends AttributeTest {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		//fail();
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.RecordField#RecordFieldNameRegex(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Record Field Name Regex</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.RecordField#RecordFieldNameRegex(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated NOT
+	 */
+	public void testRecordFieldNameRegex__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		// fail();
 	}
 
 	/**

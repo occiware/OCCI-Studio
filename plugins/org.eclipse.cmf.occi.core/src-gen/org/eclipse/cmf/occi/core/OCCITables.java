@@ -157,6 +157,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR_Mixin_c_c_CorrectScheme = "Mixin::CorrectScheme";
 	public static final /*@NonInvalid*/ java.lang.String STR_Mixin_c_c_NoCyclicInheritance = "Mixin::NoCyclicInheritance";
 	public static final /*@NonInvalid*/ java.lang.String STR_RecordField_c_c_ContainerMustBeRecordType = "RecordField::ContainerMustBeRecordType";
+	public static final /*@NonInvalid*/ java.lang.String STR_RecordField_c_c_RecordFieldNameRegex = "RecordField::RecordFieldNameRegex";
 	public static final /*@NonInvalid*/ java.lang.String STR_RecordField_c_c_TypeDifferentContainer = "RecordField::TypeDifferentContainer";
 	public static final /*@NonInvalid*/ java.lang.String STR_Resource_c_c_ResourceKindIsInParent = "Resource::ResourceKindIsInParent";
 	public static final /*@NonInvalid*/ java.lang.String STR_State_c_c_StateLiteralAlreadyDefinedInFSMAttributeType = "State::StateLiteralAlreadyDefinedInFSMAttributeType";
@@ -182,6 +183,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR__34_32_state_32_in_32_the_32_FSM_32_of_32_34 = "\" state in the FSM of \"";
 	public static final /*@NonInvalid*/ java.lang.String STR__34_32_state_32_to_32_the_32_34 = "\" state to the \"";
 	public static final /*@NonInvalid*/ java.lang.String STR__35 = "#";
+	public static final /*@NonInvalid*/ java.lang.String STR__91_a_m_zA_m_Z_93_91_a_m_zA_m_Z0_m_9_93_a = "[a-zA-Z][a-zA-Z0-9]*";
 	public static final /*@NonInvalid*/ java.lang.String STR__91_a_m_zA_m_Z__93_91_a_m_zA_m_Z0_m_9__93_a = "[a-zA-Z_][a-zA-Z0-9_]*";
 	public static final /*@NonInvalid*/ java.lang.String STR__s_action_35 = "/action#";
 	public static final /*@NonInvalid*/ java.lang.String STR_entity = "entity";
