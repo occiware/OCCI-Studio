@@ -741,7 +741,7 @@ public class OCCIExtension2Ecore {
 		//System.out.println("sorted "+categoriesSorted);
 		ArrayList<String> keys = new ArrayList<String>(categoriesSorted.keySet());
         for(int i=keys.size()-1; i>=0;i--){
-            System.out.println("bottom "+categoriesSorted.get(keys.get(i)));
+            //System.out.println("bottom "+categoriesSorted.get(keys.get(i)));
             body = body.replace(keys.get(i), categoriesSorted.get(keys.get(i)));
         }
 		//System.out.println(body);
