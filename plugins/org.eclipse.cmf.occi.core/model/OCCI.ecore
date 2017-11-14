@@ -369,7 +369,7 @@
         upperBound="-1" eType="#//EnumerationLiteral" containment="true" eOpposite="#//EnumerationLiteral/enumerationType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnumerationLiteral">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="#//Name"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="documentation" eType="#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="enumerationType" lowerBound="1"
         eType="#//EnumerationType" eOpposite="#//EnumerationType/literals"/>
