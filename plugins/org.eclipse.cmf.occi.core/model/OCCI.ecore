@@ -194,12 +194,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="IdUnique AttributesNameUnique KindCompatibleWithOneAppliesOfEachMixin"/>
+      <details key="constraints" value="IdUnique AttributesNameUnique KindCompatibleWithOneAppliesOfEachMixin DifferentMixins"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="IdUnique" value="Entity.allInstances()->isUnique(id)"/>
       <details key="AttributesNameUnique" value="attributes->isUnique(name)"/>
       <details key="KindCompatibleWithOneAppliesOfEachMixin" value="parts.mixin->forAll(m |&#xA;&#x9;&#x9;&#x9;&#x9;m.applies->notEmpty() implies m.applies->exists(k | kind->closure(parent)->includes(k)))"/>
+      <details key="DifferentMixins" value="self.parts ->forAll(mixinBase1, mixinBase2 | mixinBase1 &lt;> mixinBase2 implies mixinBase1.mixin &lt;> mixinBase2.mixin)"/>
     </eAnnotations>
     <eOperations name="occiCreate"/>
     <eOperations name="occiRetrieve"/>
