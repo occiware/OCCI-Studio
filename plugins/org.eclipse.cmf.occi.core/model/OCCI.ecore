@@ -200,7 +200,7 @@
       <details key="IdUnique" value="Entity.allInstances()->isUnique(id)"/>
       <details key="AttributesNameUnique" value="attributes->isUnique(name)"/>
       <details key="KindCompatibleWithOneAppliesOfEachMixin" value="parts.mixin->forAll(m |&#xA;&#x9;&#x9;&#x9;&#x9;m.applies->notEmpty() implies m.applies->exists(k | kind->closure(parent)->includes(k)))"/>
-      <details key="DifferentMixins" value="self.parts ->forAll(mixinBase1, mixinBase2 | mixinBase1 &lt;> mixinBase2 implies mixinBase1.mixin &lt;> mixinBase2.mixin)"/>
+      <details key="DifferentMixins" value="Tuple {&#xA;&#x9;&#x9;&#x9;&#x9;status: Boolean= self.parts ->forAll(mixinBase1, mixinBase2 | mixinBase1 &lt;> mixinBase2 implies mixinBase1.mixin &lt;> mixinBase2.mixin),&#xA;&#x9;&#x9;&#x9;&#x9;message: String ='Two instances of the same mixin are not allowed on the same Entity '+self.oclAsType(Entity).id,&#xA;&#x9;&#x9;&#x9;&#x9;severity: Integer = -1,&#xA;&#x9;&#x9;&#x9;&#x9;quickfix: String = 'quickfix'&#xA;&#x9;&#x9;&#x9;}.status"/>
     </eAnnotations>
     <eOperations name="occiCreate"/>
     <eOperations name="occiRetrieve"/>
