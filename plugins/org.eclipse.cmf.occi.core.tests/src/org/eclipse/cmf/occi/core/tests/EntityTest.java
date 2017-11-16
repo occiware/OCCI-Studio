@@ -33,9 +33,10 @@ import org.eclipse.cmf.occi.core.Entity;
  *   <li>{@link org.eclipse.cmf.occi.core.Entity#occiRetrieve() <em>Occi Retrieve</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.Entity#occiUpdate() <em>Occi Update</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.Entity#occiDelete() <em>Occi Delete</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.Entity#IdUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Id Unique</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.Entity#AttributesNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Attributes Name Unique</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.Entity#KindCompatibleWithOneAppliesOfEachMixin(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Kind Compatible With One Applies Of Each Mixin</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.core.Entity#IdUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Id Unique</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.Entity#DifferentMixins(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Different Mixins</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -169,6 +170,19 @@ public abstract class EntityTest extends TestCase {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		// fail();
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.Entity#DifferentMixins(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Different Mixins</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.Entity#DifferentMixins(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testDifferentMixins__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 	/**
