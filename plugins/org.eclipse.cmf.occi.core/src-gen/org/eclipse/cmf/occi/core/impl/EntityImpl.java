@@ -55,11 +55,13 @@ import org.eclipse.ocl.pivot.evaluation.Executor;
 import org.eclipse.ocl.pivot.ids.IdResolver;
 import org.eclipse.ocl.pivot.ids.TypeId;
 
+import org.eclipse.ocl.pivot.internal.library.executor.ExecutorDoubleIterationManager;
 import org.eclipse.ocl.pivot.internal.library.executor.ExecutorSingleIterationManager;
 
 import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
 
 import org.eclipse.ocl.pivot.library.AbstractBinaryOperation;
+import org.eclipse.ocl.pivot.library.AbstractTernaryOperation;
 import org.eclipse.ocl.pivot.library.LibraryIteration;
 
 import org.eclipse.ocl.pivot.library.classifier.ClassifierAllInstancesOperation;
@@ -754,6 +756,94 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean DifferentMixins(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv DifferentMixins:
+		 *   let severity : Integer[1] = 'Entity::DifferentMixins'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : Boolean[?] = self.parts->forAll(mixinBase1, mixinBase2 | mixinBase1 <> mixinBase2 implies mixinBase1.mixin <> mixinBase2.mixin)
+		 *       in
+		 *         'Entity::DifferentMixins'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+		final /*@NonInvalid*/ StandardLibrary standardLibrary = idResolver.getStandardLibrary();
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, OCCITables.STR_Entity_c_c_DifferentMixins);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
+		/*@NonInvalid*/ boolean symbol_4;
+		if (le) {
+			symbol_4 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			/*@Caught*/ /*@Nullable*/ Object CAUGHT_result;
+			try {
+				final /*@NonInvalid*/ List<MixinBase> parts = this.getParts();
+				final /*@NonInvalid*/ OrderedSetValue BOXED_parts = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_MixinBase, parts);
+				final org.eclipse.ocl.pivot.Class TYPE_result_0 = executor.getStaticTypeOf(BOXED_parts);
+				final LibraryIteration.LibraryIterationExtension IMPL_result_0 = (LibraryIteration.LibraryIterationExtension)TYPE_result_0.lookupImplementation(standardLibrary, OCLstdlibTables.Operations._Collection__0_forAll);
+				final /*@NonNull*/ Object ACC_result_0 = IMPL_result_0.createAccumulatorValue(executor, TypeId.BOOLEAN, TypeId.BOOLEAN);
+				/**
+				 * Implementation of the iterator body.
+				 */
+				final /*@NonNull*/ AbstractTernaryOperation BODY_result_0 = new AbstractTernaryOperation() {
+					/**
+					 * mixinBase1 <> mixinBase2 implies mixinBase1.mixin <> mixinBase2.mixin
+					 */
+					@Override
+					public /*@Nullable*/ Object evaluate(final /*@NonNull*/ Executor executor, final /*@NonNull*/ TypeId typeId, final /*@Nullable*/ Object BOXED_parts, final /*@NonInvalid*/ Object mixinBase1, final /*@NonInvalid*/ Object mixinBase2) {
+						/*@Caught*/ /*@NonNull*/ Object CAUGHT_implies;
+						try {
+							final /*@NonInvalid*/ MixinBase symbol_0 = (MixinBase)mixinBase1;
+							final /*@NonInvalid*/ MixinBase symbol_1 = (MixinBase)mixinBase2;
+							final /*@NonInvalid*/ boolean ne = (symbol_0 != null) ? !symbol_0.equals(symbol_1) : (symbol_1 != null);
+							/*@Thrown*/ boolean implies;
+							if (ne) {
+								if (symbol_0 == null) {
+									throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::MixinBase::mixin\'");
+								}
+								final /*@Thrown*/ Mixin mixin = symbol_0.getMixin();
+								if (symbol_1 == null) {
+									throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::MixinBase::mixin\'");
+								}
+								final /*@Thrown*/ Mixin mixin_0 = symbol_1.getMixin();
+								final /*@Thrown*/ boolean ne_0 = !mixin.equals(mixin_0);
+								implies = ne_0;
+							}
+							else {
+								implies = ValueUtil.TRUE_VALUE;
+							}
+							CAUGHT_implies = implies;
+						}
+						catch (Exception e) {
+							CAUGHT_implies = ValueUtil.createInvalidValue(e);
+						}
+						return CAUGHT_implies;
+					}
+				};
+				final /*@NonNull*/  ExecutorDoubleIterationManager MGR_result_0 = new ExecutorDoubleIterationManager(executor, TypeId.BOOLEAN, BODY_result_0, BOXED_parts, ACC_result_0);
+				final /*@Thrown*/ Boolean result = (Boolean)IMPL_result_0.evaluateIteration(MGR_result_0);
+				CAUGHT_result = result;
+			}
+			catch (Exception e) {
+				CAUGHT_result = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Entity_c_c_DifferentMixins, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, OCCITables.INT_0).booleanValue();
+			symbol_4 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_4;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean IdUnique(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
 		 *
@@ -975,12 +1065,14 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 			case OCCIPackage.ENTITY___OCCI_DELETE:
 				occiDelete();
 				return null;
+			case OCCIPackage.ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP:
+				return IdUnique((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 			case OCCIPackage.ENTITY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP:
 				return AttributesNameUnique((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 			case OCCIPackage.ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP:
 				return KindCompatibleWithOneAppliesOfEachMixin((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case OCCIPackage.ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP:
-				return IdUnique((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case OCCIPackage.ENTITY___DIFFERENT_MIXINS__DIAGNOSTICCHAIN_MAP:
+				return DifferentMixins((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

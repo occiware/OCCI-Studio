@@ -132,6 +132,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR_DataType_c_c_DataTypeNameRegex = "DataType::DataTypeNameRegex";
 	public static final /*@NonInvalid*/ java.lang.String STR_EObjectType_c_c_instanceClassNameMustHaveValue = "EObjectType::instanceClassNameMustHaveValue";
 	public static final /*@NonInvalid*/ java.lang.String STR_Entity_c_c_AttributesNameUnique = "Entity::AttributesNameUnique";
+	public static final /*@NonInvalid*/ java.lang.String STR_Entity_c_c_DifferentMixins = "Entity::DifferentMixins";
 	public static final /*@NonInvalid*/ java.lang.String STR_Entity_c_c_IdUnique = "Entity::IdUnique";
 	public static final /*@NonInvalid*/ java.lang.String STR_Entity_c_c_KindCompatibleWithOneAppliesOfEachMixin = "Entity::KindCompatibleWithOneAppliesOfEachMixin";
 	public static final /*@NonInvalid*/ java.lang.String STR_EnumerationLiteral_c_c_EnumerationLiteralNameRegex = "EnumerationLiteral::EnumerationLiteralNameRegex";

@@ -1152,15 +1152,6 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * @generated
 	 */
 	public EOperation getEntity__AttributesNameUnique__DiagnosticChain_Map() {
-		return entityEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getEntity__KindCompatibleWithOneAppliesOfEachMixin__DiagnosticChain_Map() {
 		return entityEClass.getEOperations().get(5);
 	}
 
@@ -1169,8 +1160,26 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getEntity__IdUnique__DiagnosticChain_Map() {
+	public EOperation getEntity__KindCompatibleWithOneAppliesOfEachMixin__DiagnosticChain_Map() {
 		return entityEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getEntity__DifferentMixins__DiagnosticChain_Map() {
+		return entityEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getEntity__IdUnique__DiagnosticChain_Map() {
+		return entityEClass.getEOperations().get(4);
 	}
 
 	/**
@@ -2150,9 +2159,10 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		createEOperation(entityEClass, ENTITY___OCCI_RETRIEVE);
 		createEOperation(entityEClass, ENTITY___OCCI_UPDATE);
 		createEOperation(entityEClass, ENTITY___OCCI_DELETE);
+		createEOperation(entityEClass, ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP);
 		createEOperation(entityEClass, ENTITY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP);
 		createEOperation(entityEClass, ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP);
-		createEOperation(entityEClass, ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP);
+		createEOperation(entityEClass, ENTITY___DIFFERENT_MIXINS__DIAGNOSTICCHAIN_MAP);
 
 		mixinBaseEClass = createEClass(MIXIN_BASE);
 		createEReference(mixinBaseEClass, MIXIN_BASE__MIXIN);
@@ -2579,6 +2589,15 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 
 		initEOperation(getEntity__OcciDelete(), null, "occiDelete", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = initEOperation(getEntity__IdUnique__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "IdUnique", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		op = initEOperation(getEntity__AttributesNameUnique__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "AttributesNameUnique", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
@@ -2597,7 +2616,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getEntity__IdUnique__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "IdUnique", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getEntity__DifferentMixins__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "DifferentMixins", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -3012,7 +3031,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		  (entityEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "IdUnique"
+			 "constraints", "DifferentMixins"
 		   });	
 		addAnnotation
 		  (resourceEClass, 

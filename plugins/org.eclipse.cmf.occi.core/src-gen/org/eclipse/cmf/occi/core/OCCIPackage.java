@@ -1477,13 +1477,22 @@ public interface OCCIPackage extends EPackage {
 	int ENTITY___OCCI_DELETE = 3;
 
 	/**
+	 * The operation id for the '<em>Id Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP = 4;
+
+	/**
 	 * The operation id for the '<em>Attributes Name Unique</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = 4;
+	int ENTITY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP = 5;
 
 	/**
 	 * The operation id for the '<em>Kind Compatible With One Applies Of Each Mixin</em>' operation.
@@ -1492,16 +1501,16 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP = 5;
+	int ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP = 6;
 
 	/**
-	 * The operation id for the '<em>Id Unique</em>' operation.
+	 * The operation id for the '<em>Different Mixins</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP = 6;
+	int ENTITY___DIFFERENT_MIXINS__DIAGNOSTICCHAIN_MAP = 7;
 
 	/**
 	 * The number of operations of the '<em>Entity</em>' class.
@@ -1510,7 +1519,7 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OPERATION_COUNT = 7;
+	int ENTITY_OPERATION_COUNT = 8;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.MixinBaseImpl <em>Mixin Base</em>}' class.
@@ -1759,6 +1768,15 @@ public interface OCCIPackage extends EPackage {
 	int RESOURCE___OCCI_DELETE = ENTITY___OCCI_DELETE;
 
 	/**
+	 * The operation id for the '<em>Id Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE___ID_UNIQUE__DIAGNOSTICCHAIN_MAP = ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP;
+
+	/**
 	 * The operation id for the '<em>Attributes Name Unique</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1777,13 +1795,13 @@ public interface OCCIPackage extends EPackage {
 	int RESOURCE___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP = ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The operation id for the '<em>Id Unique</em>' operation.
+	 * The operation id for the '<em>Different Mixins</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE___ID_UNIQUE__DIAGNOSTICCHAIN_MAP = ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP;
+	int RESOURCE___DIFFERENT_MIXINS__DIAGNOSTICCHAIN_MAP = ENTITY___DIFFERENT_MIXINS__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Resource Kind Is In Parent</em>' operation.
@@ -1940,6 +1958,15 @@ public interface OCCIPackage extends EPackage {
 	int LINK___OCCI_DELETE = ENTITY___OCCI_DELETE;
 
 	/**
+	 * The operation id for the '<em>Id Unique</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK___ID_UNIQUE__DIAGNOSTICCHAIN_MAP = ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP;
+
+	/**
 	 * The operation id for the '<em>Attributes Name Unique</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1958,13 +1985,13 @@ public interface OCCIPackage extends EPackage {
 	int LINK___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP = ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The operation id for the '<em>Id Unique</em>' operation.
+	 * The operation id for the '<em>Different Mixins</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK___ID_UNIQUE__DIAGNOSTICCHAIN_MAP = ENTITY___ID_UNIQUE__DIAGNOSTICCHAIN_MAP;
+	int LINK___DIFFERENT_MIXINS__DIAGNOSTICCHAIN_MAP = ENTITY___DIFFERENT_MIXINS__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Link Target Invariant</em>' operation.
@@ -4115,6 +4142,16 @@ public interface OCCIPackage extends EPackage {
 	EOperation getEntity__KindCompatibleWithOneAppliesOfEachMixin__DiagnosticChain_Map();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Entity#DifferentMixins(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Different Mixins</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Different Mixins</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Entity#DifferentMixins(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getEntity__DifferentMixins__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Entity#IdUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Id Unique</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5847,6 +5884,14 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ENTITY___KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN__DIAGNOSTICCHAIN_MAP = eINSTANCE.getEntity__KindCompatibleWithOneAppliesOfEachMixin__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Different Mixins</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ENTITY___DIFFERENT_MIXINS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getEntity__DifferentMixins__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>Id Unique</b></em>' operation.
