@@ -170,6 +170,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR_The_32_source_32_reference_32_of_32 = "The source reference of ";
 	public static final /*@NonInvalid*/ java.lang.String STR_The_32_target_32_reference_32_of_32 = "The target reference of ";
 	public static final /*@NonInvalid*/ java.lang.String STR_Transition_c_c_containedActionMustBeDeclaredInTheAppropriateType = "Transition::containedActionMustBeDeclaredInTheAppropriateType";
+	public static final /*@NonInvalid*/ java.lang.String STR_Two_32_instances_32_of_32_the_32_same_32_mixin_32_are_32_not_32_allowed_32_on_32_the_32_same_32_Enti = "Two instances of the same mixin are not allowed on the same Entity ";
 	public static final /*@NonInvalid*/ java.lang.String STR_Type_c_c_ActionTermUnicity = "Type::ActionTermUnicity";
 	public static final /*@NonInvalid*/ java.lang.String STR_Type_c_c_ConstraintNameUnique = "Type::ConstraintNameUnique";
 	public static final /*@NonInvalid*/ java.lang.String STR__32_Kind = " Kind";
