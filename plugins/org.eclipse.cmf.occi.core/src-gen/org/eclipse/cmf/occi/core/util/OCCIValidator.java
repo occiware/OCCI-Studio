@@ -123,12 +123,20 @@ public class OCCIValidator extends EObjectValidator {
 	public static final int TRANSITION__CONTAINED_ACTION_MUST_BE_DECLARED_IN_THE_APPROPRIATE_TYPE = 9;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Default Value Must Be Instance Of Type' of 'Attribute'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ATTRIBUTE__DEFAULT_VALUE_MUST_BE_INSTANCE_OF_TYPE = 10;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'No Cyclic Inheritance' of 'Kind'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int KIND__NO_CYCLIC_INHERITANCE = 12;
+	public static final int KIND__NO_CYCLIC_INHERITANCE = 13;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Attributes Name Not Already Defined In Parent' of 'Kind'.
@@ -136,7 +144,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int KIND__ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_PARENT = 14;
+	public static final int KIND__ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_PARENT = 15;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Source Reference Invariant' of 'Kind'.
@@ -144,7 +152,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int KIND__SOURCE_REFERENCE_INVARIANT = 15;
+	public static final int KIND__SOURCE_REFERENCE_INVARIANT = 16;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Correct Scheme' of 'Kind'.
@@ -152,7 +160,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int KIND__CORRECT_SCHEME = 10;
+	public static final int KIND__CORRECT_SCHEME = 11;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Target Reference Invariant' of 'Kind'.
@@ -160,7 +168,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int KIND__TARGET_REFERENCE_INVARIANT = 11;
+	public static final int KIND__TARGET_REFERENCE_INVARIANT = 12;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Entity Kind Is Root Parent' of 'Kind'.
@@ -168,7 +176,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int KIND__ENTITY_KIND_IS_ROOT_PARENT = 13;
+	public static final int KIND__ENTITY_KIND_IS_ROOT_PARENT = 14;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Contained Action' of 'Action'.
@@ -176,7 +184,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ACTION__CONTAINED_ACTION = 16;
+	public static final int ACTION__CONTAINED_ACTION = 17;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Correct Scheme' of 'Action'.
@@ -184,7 +192,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ACTION__CORRECT_SCHEME = 17;
+	public static final int ACTION__CORRECT_SCHEME = 18;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Correct Scheme' of 'Mixin'.
@@ -192,7 +200,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MIXIN__CORRECT_SCHEME = 18;
+	public static final int MIXIN__CORRECT_SCHEME = 19;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'No Cyclic Inheritance' of 'Mixin'.
@@ -200,7 +208,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MIXIN__NO_CYCLIC_INHERITANCE = 19;
+	public static final int MIXIN__NO_CYCLIC_INHERITANCE = 20;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Attributes Name Not Already Defined In Depends' of 'Mixin'.
@@ -208,7 +216,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MIXIN__ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_DEPENDS = 20;
+	public static final int MIXIN__ATTRIBUTES_NAME_NOT_ALREADY_DEFINED_IN_DEPENDS = 21;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Attributes Name Unique' of 'Entity'.
@@ -216,7 +224,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENTITY__ATTRIBUTES_NAME_UNIQUE = 22;
+	public static final int ENTITY__ATTRIBUTES_NAME_UNIQUE = 23;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Kind Compatible With One Applies Of Each Mixin' of 'Entity'.
@@ -224,7 +232,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENTITY__KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN = 23;
+	public static final int ENTITY__KIND_COMPATIBLE_WITH_ONE_APPLIES_OF_EACH_MIXIN = 24;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Different Mixins' of 'Entity'.
@@ -232,7 +240,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENTITY__DIFFERENT_MIXINS = 24;
+	public static final int ENTITY__DIFFERENT_MIXINS = 25;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Id Unique' of 'Entity'.
@@ -240,7 +248,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENTITY__ID_UNIQUE = 21;
+	public static final int ENTITY__ID_UNIQUE = 22;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Resource Kind Is In Parent' of 'Resource'.
@@ -248,7 +256,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RESOURCE__RESOURCE_KIND_IS_IN_PARENT = 25;
+	public static final int RESOURCE__RESOURCE_KIND_IS_IN_PARENT = 26;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Source Reference Invariant' of 'Link'.
@@ -256,7 +264,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int LINK__SOURCE_REFERENCE_INVARIANT = 26;
+	public static final int LINK__SOURCE_REFERENCE_INVARIANT = 27;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Target Reference Invariant' of 'Link'.
@@ -264,7 +272,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int LINK__TARGET_REFERENCE_INVARIANT = 27;
+	public static final int LINK__TARGET_REFERENCE_INVARIANT = 28;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Link Kind Is In Parent' of 'Link'.
@@ -272,7 +280,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int LINK__LINK_KIND_IS_IN_PARENT = 28;
+	public static final int LINK__LINK_KIND_IS_IN_PARENT = 29;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Kinds Scheme Valid' of 'Extension'.
@@ -280,7 +288,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__KINDS_SCHEME_VALID = 29;
+	public static final int EXTENSION__KINDS_SCHEME_VALID = 30;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Kind Parent Local Or Imported' of 'Extension'.
@@ -288,7 +296,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__KIND_PARENT_LOCAL_OR_IMPORTED = 30;
+	public static final int EXTENSION__KIND_PARENT_LOCAL_OR_IMPORTED = 31;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Mixins Scheme Valid' of 'Extension'.
@@ -296,7 +304,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__MIXINS_SCHEME_VALID = 31;
+	public static final int EXTENSION__MIXINS_SCHEME_VALID = 32;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Term Unicity' of 'Extension'.
@@ -304,7 +312,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__TERM_UNICITY = 32;
+	public static final int EXTENSION__TERM_UNICITY = 33;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Mixin Applies Local Or Imported' of 'Extension'.
@@ -312,7 +320,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__MIXIN_APPLIES_LOCAL_OR_IMPORTED = 33;
+	public static final int EXTENSION__MIXIN_APPLIES_LOCAL_OR_IMPORTED = 34;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Scheme Unique' of 'Extension'.
@@ -320,7 +328,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__SCHEME_UNIQUE = 34;
+	public static final int EXTENSION__SCHEME_UNIQUE = 35;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Mixin Depends Local Or Imported' of 'Extension'.
@@ -328,7 +336,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EXTENSION__MIXIN_DEPENDS_LOCAL_OR_IMPORTED = 35;
+	public static final int EXTENSION__MIXIN_DEPENDS_LOCAL_OR_IMPORTED = 36;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Mixins Are Tags' of 'Configuration'.
@@ -336,7 +344,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIGURATION__ALL_MIXINS_ARE_TAGS = 36;
+	public static final int CONFIGURATION__ALL_MIXINS_ARE_TAGS = 37;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Resources Links Targets In Configuration' of 'Configuration'.
@@ -344,7 +352,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_TARGETS_IN_CONFIGURATION = 37;
+	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_TARGETS_IN_CONFIGURATION = 38;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Resources Kinds In Use' of 'Configuration'.
@@ -352,7 +360,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIGURATION__ALL_RESOURCES_KINDS_IN_USE = 38;
+	public static final int CONFIGURATION__ALL_RESOURCES_KINDS_IN_USE = 39;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Resources Links Mixins In Use' of 'Configuration'.
@@ -360,7 +368,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_MIXINS_IN_USE = 39;
+	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_MIXINS_IN_USE = 40;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Resources Mixins In Use' of 'Configuration'.
@@ -368,7 +376,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIGURATION__ALL_RESOURCES_MIXINS_IN_USE = 40;
+	public static final int CONFIGURATION__ALL_RESOURCES_MIXINS_IN_USE = 41;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'All Resources Links Kinds In Use' of 'Configuration'.
@@ -376,7 +384,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_KINDS_IN_USE = 41;
+	public static final int CONFIGURATION__ALL_RESOURCES_LINKS_KINDS_IN_USE = 42;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Data Type Name Regex' of 'Data Type'.
@@ -384,7 +392,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int DATA_TYPE__DATA_TYPE_NAME_REGEX = 42;
+	public static final int DATA_TYPE__DATA_TYPE_NAME_REGEX = 43;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Pattern Must Be Not Empty' of 'String Type'.
@@ -392,7 +400,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int STRING_TYPE__PATTERN_MUST_BE_NOT_EMPTY = 43;
+	public static final int STRING_TYPE__PATTERN_MUST_BE_NOT_EMPTY = 44;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Instance Class Name Must Have Value' of 'EObject Type'.
@@ -400,7 +408,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int EOBJECT_TYPE__INSTANCE_CLASS_NAME_MUST_HAVE_VALUE = 44;
+	public static final int EOBJECT_TYPE__INSTANCE_CLASS_NAME_MUST_HAVE_VALUE = 45;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Enumeration Literal Name Regex' of 'Enumeration Literal'.
@@ -408,7 +416,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ENUMERATION_LITERAL__ENUMERATION_LITERAL_NAME_REGEX = 45;
+	public static final int ENUMERATION_LITERAL__ENUMERATION_LITERAL_NAME_REGEX = 46;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Type Different Container' of 'Record Field'.
@@ -416,7 +424,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RECORD_FIELD__TYPE_DIFFERENT_CONTAINER = 46;
+	public static final int RECORD_FIELD__TYPE_DIFFERENT_CONTAINER = 47;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Record Field Name Regex' of 'Record Field'.
@@ -424,7 +432,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RECORD_FIELD__RECORD_FIELD_NAME_REGEX = 47;
+	public static final int RECORD_FIELD__RECORD_FIELD_NAME_REGEX = 48;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Container Must Be Record Type' of 'Record Field'.
@@ -432,7 +440,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RECORD_FIELD__CONTAINER_MUST_BE_RECORD_TYPE = 48;
+	public static final int RECORD_FIELD__CONTAINER_MUST_BE_RECORD_TYPE = 49;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Type Different Container' of 'Array Type'.
@@ -440,7 +448,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ARRAY_TYPE__TYPE_DIFFERENT_CONTAINER = 49;
+	public static final int ARRAY_TYPE__TYPE_DIFFERENT_CONTAINER = 50;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -448,7 +456,7 @@ public class OCCIValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 49;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 50;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -796,7 +804,27 @@ public class OCCIValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAttribute(Attribute attribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(attribute, diagnostics, context);
+		if (!validate_NoCircularContainment(attribute, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(attribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(attribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(attribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(attribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(attribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(attribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(attribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(attribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAttribute_DefaultValueMustBeInstanceOfType(attribute, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the DefaultValueMustBeInstanceOfType constraint of '<em>Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAttribute_DefaultValueMustBeInstanceOfType(Attribute attribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return attribute.DefaultValueMustBeInstanceOfType(diagnostics, context);
 	}
 
 	/**
@@ -1562,6 +1590,7 @@ public class OCCIValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(recordField, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(recordField, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(recordField, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAttribute_DefaultValueMustBeInstanceOfType(recordField, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRecordField_ContainerMustBeRecordType(recordField, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRecordField_TypeDifferentContainer(recordField, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRecordField_RecordFieldNameRegex(recordField, diagnostics, context);

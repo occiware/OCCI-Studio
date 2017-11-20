@@ -845,6 +845,15 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getAttribute__DefaultValueMustBeInstanceOfType__DiagnosticChain_Map() {
+		return attributeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getKind() {
 		return kindEClass;
 	}
@@ -2121,6 +2130,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		createEAttribute(attributeEClass, ATTRIBUTE__DEFAULT);
 		createEAttribute(attributeEClass, ATTRIBUTE__DESCRIPTION);
 		createEReference(attributeEClass, ATTRIBUTE__TYPE);
+		createEOperation(attributeEClass, ATTRIBUTE___DEFAULT_VALUE_MUST_BE_INSTANCE_OF_TYPE__DIAGNOSTICCHAIN_MAP);
 
 		kindEClass = createEClass(KIND);
 		createEReference(kindEClass, KIND__PARENT);
@@ -2456,6 +2466,15 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEAttribute(getAttribute_Default(), this.getString(), "default", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttribute_Description(), this.getString(), "description", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAttribute_Type(), this.getDataType(), null, "type", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getAttribute__DefaultValueMustBeInstanceOfType__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "DefaultValueMustBeInstanceOfType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(kindEClass, Kind.class, "Kind", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getKind_Parent(), this.getKind(), null, "parent", null, 0, 1, Kind.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3008,6 +3027,12 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		   source, 
 		   new String[] {
 			 "constraints", "containedActionMustBeDeclaredInTheAppropriateType"
+		   });	
+		addAnnotation
+		  (attributeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "DefaultValueMustBeInstanceOfType"
 		   });	
 		addAnnotation
 		  (kindEClass, 

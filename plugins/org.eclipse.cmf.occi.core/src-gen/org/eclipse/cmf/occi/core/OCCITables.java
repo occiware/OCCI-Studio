@@ -78,6 +78,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_ArrayType = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("ArrayType", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Attribute = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Attribute", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_AttributeState = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("AttributeState", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_BooleanType = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("BooleanType", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Category = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Category", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Class = org.eclipse.cmf.occi.core.OCCITables.PACKid_$metamodel$.getClassId("Class", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Configuration = org.eclipse.cmf.occi.core.OCCITables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Configuration", 0);
@@ -120,6 +121,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR_Action_c_c_CorrectScheme = "Action::CorrectScheme";
 	public static final /*@NonInvalid*/ java.lang.String STR_Action_c_c_containedAction = "Action::containedAction";
 	public static final /*@NonInvalid*/ java.lang.String STR_ArrayType_c_c_TypeDifferentContainer = "ArrayType::TypeDifferentContainer";
+	public static final /*@NonInvalid*/ java.lang.String STR_Attribute_c_c_DefaultValueMustBeInstanceOfType = "Attribute::DefaultValueMustBeInstanceOfType";
 	public static final /*@NonInvalid*/ java.lang.String STR_Category_c_c_AttributesNameUnique = "Category::AttributesNameUnique";
 	public static final /*@NonInvalid*/ java.lang.String STR_Category_c_c_IdentityUnique = "Category::IdentityUnique";
 	public static final /*@NonInvalid*/ java.lang.String STR_Category_c_c_SchemeEndsWithSharp = "Category::SchemeEndsWithSharp";
@@ -165,6 +167,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR_StringType_c_c_PatternMustBeNotEmpty = "StringType::PatternMustBeNotEmpty";
 	public static final /*@NonInvalid*/ java.lang.String STR_The_32_action_32 = "The action ";
 	public static final /*@NonInvalid*/ java.lang.String STR_The_32_action_32_of_32_Transition_32_instance_32_coming_32_from_32_the_32_34 = "The action of Transition instance coming from the \"";
+	public static final /*@NonInvalid*/ java.lang.String STR_The_32_default_32_value_32_of_32_the_32_attribute_32 = "The default value of the attribute ";
 	public static final /*@NonInvalid*/ java.lang.String STR_The_32_kind_32_of_32_the_32_source_32_reference_32_in_32_the_32_link_32_instance_32 = "The kind of the source reference in the link instance ";
 	public static final /*@NonInvalid*/ java.lang.String STR_The_32_kind_32_of_32_the_32_target_32_reference_32_in_32_the_32_link_32_instance_32 = "The kind of the target reference in the link instance ";
 	public static final /*@NonInvalid*/ java.lang.String STR_The_32_source_32_reference_32_of_32 = "The source reference of ";
@@ -176,6 +179,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR__32_Kind = " Kind";
 	public static final /*@NonInvalid*/ java.lang.String STR__32_declared_32_in_32 = " declared in ";
 	public static final /*@NonInvalid*/ java.lang.String STR__32_doesn_39_t_32_appear_32_in_32_the_32_FSM_32_of_32 = " doesn\'t appear in the FSM of ";
+	public static final /*@NonInvalid*/ java.lang.String STR__32_is_32_wrong = " is wrong";
 	public static final /*@NonInvalid*/ java.lang.String STR__32_kind_32_must_32_connect_32_a_32_child_32_of_32_34_link_34_32_Kind_32_to_32_a_32_child_32_of_32_34_resourc = " kind must connect a child of \"link\" Kind to a child of \"resource\" Kind";
 	public static final /*@NonInvalid*/ java.lang.String STR__32_kind_s_mixin = " kind/mixin.";
 	public static final /*@NonInvalid*/ java.lang.String STR__32_kind_s_mixin_32_cannot_32_be_32_used_32_in_32_the_32_FSM_32_of_32 = " kind/mixin cannot be used in the FSM of ";
@@ -189,11 +193,13 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR__91_a_m_zA_m_Z__93_91_a_m_zA_m_Z0_m_9__93_a = "[a-zA-Z_][a-zA-Z0-9_]*";
 	public static final /*@NonInvalid*/ java.lang.String STR__s_action_35 = "/action#";
 	public static final /*@NonInvalid*/ java.lang.String STR_entity = "entity";
+	public static final /*@NonInvalid*/ java.lang.String STR_false = "false";
 	public static final /*@NonInvalid*/ java.lang.String STR_http_c_s_s_schemas_ogf_org_s_occi_s_core_35 = "http://schemas.ogf.org/occi/core#";
 	public static final /*@NonInvalid*/ java.lang.String STR_link = "link";
 	public static final /*@NonInvalid*/ java.lang.String STR_quickfix = "quickfix";
 	public static final /*@NonInvalid*/ java.lang.String STR_quot = "/";
 	public static final /*@NonInvalid*/ java.lang.String STR_resource = "resource";
+	public static final /*@NonInvalid*/ java.lang.String STR_true = "true";
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_ArrayType = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_ArrayType);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Attribute = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Attribute);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Configuration = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Configuration);
@@ -232,6 +238,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_Resource = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Resource);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_Transition = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Transition);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_DATAid_AttributeName = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.DATAid_AttributeName);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_DATAid_Name = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.DATAid_Name);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SET_CLSSid_Category = org.eclipse.ocl.pivot.ids.TypeId.SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Category);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SET_CLSSid_Entity = org.eclipse.ocl.pivot.ids.TypeId.SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Entity);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SET_CLSSid_Extension = org.eclipse.ocl.pivot.ids.TypeId.SET.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Extension);

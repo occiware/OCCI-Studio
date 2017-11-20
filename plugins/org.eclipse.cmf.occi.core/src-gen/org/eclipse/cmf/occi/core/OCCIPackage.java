@@ -762,13 +762,22 @@ public interface OCCIPackage extends EPackage {
 	int ATTRIBUTE_FEATURE_COUNT = ANNOTATED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Default Value Must Be Instance Of Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE___DEFAULT_VALUE_MUST_BE_INSTANCE_OF_TYPE__DIAGNOSTICCHAIN_MAP = ANNOTATED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_OPERATION_COUNT = ANNOTATED_ELEMENT_OPERATION_COUNT + 0;
+	int ATTRIBUTE_OPERATION_COUNT = ANNOTATED_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.core.impl.KindImpl <em>Kind</em>}' class.
@@ -3059,6 +3068,15 @@ public interface OCCIPackage extends EPackage {
 	int RECORD_FIELD_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Default Value Must Be Instance Of Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECORD_FIELD___DEFAULT_VALUE_MUST_BE_INSTANCE_OF_TYPE__DIAGNOSTICCHAIN_MAP = ATTRIBUTE___DEFAULT_VALUE_MUST_BE_INSTANCE_OF_TYPE__DIAGNOSTICCHAIN_MAP;
+
+	/**
 	 * The operation id for the '<em>Type Different Container</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3766,6 +3784,16 @@ public interface OCCIPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAttribute_Type();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Attribute#DefaultValueMustBeInstanceOfType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Default Value Must Be Instance Of Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Default Value Must Be Instance Of Type</em>' operation.
+	 * @see org.eclipse.cmf.occi.core.Attribute#DefaultValueMustBeInstanceOfType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getAttribute__DefaultValueMustBeInstanceOfType__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.core.Kind <em>Kind</em>}'.
@@ -5588,6 +5616,14 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ATTRIBUTE__TYPE = eINSTANCE.getAttribute_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Value Must Be Instance Of Type</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ATTRIBUTE___DEFAULT_VALUE_MUST_BE_INSTANCE_OF_TYPE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getAttribute__DefaultValueMustBeInstanceOfType__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.core.impl.KindImpl <em>Kind</em>}' class.
