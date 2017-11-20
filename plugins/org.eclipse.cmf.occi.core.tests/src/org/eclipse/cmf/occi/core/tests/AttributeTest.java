@@ -21,6 +21,12 @@ import org.eclipse.cmf.occi.core.OCCIFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Attribute</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link org.eclipse.cmf.occi.core.Attribute#DefaultValueMustBeInstanceOfType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Default Value Must Be Instance Of Type</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class AttributeTest extends AnnotatedElementTest {
@@ -75,6 +81,19 @@ public class AttributeTest extends AnnotatedElementTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.core.Attribute#DefaultValueMustBeInstanceOfType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Default Value Must Be Instance Of Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.core.Attribute#DefaultValueMustBeInstanceOfType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated NOT
+	 */
+	public void testDefaultValueMustBeInstanceOfType__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		// fail();
 	}
 
 	/**

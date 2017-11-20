@@ -43,6 +43,7 @@ public class OCCITests extends TestSuite {
 		suite.addTestSuite(FSMTest.class);
 		suite.addTestSuite(StateTest.class);
 		suite.addTestSuite(TransitionTest.class);
+		suite.addTestSuite(AttributeTest.class);
 		suite.addTestSuite(KindTest.class);
 		suite.addTestSuite(ActionTest.class);
 		suite.addTestSuite(MixinTest.class);
