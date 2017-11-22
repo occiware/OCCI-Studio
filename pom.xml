@@ -98,6 +98,7 @@
     <module>plugins/org.eclipse.cmf.occi.crtp.editor</module>
     <module>plugins/org.eclipse.cmf.occi.crtp.tests</module>
     <module>plugins/org.eclipse.cmf.occi.crtp.design</module>
+    <module>plugins/org.eclipse.cmf.occi.crtp.design.extended</module>
     <module>plugins/org.eclipse.cmf.occi.crtp.connector.dummy</module>   
     <module>plugins/org.eclipse.cmf.occi.crtp.example</module>     
     
