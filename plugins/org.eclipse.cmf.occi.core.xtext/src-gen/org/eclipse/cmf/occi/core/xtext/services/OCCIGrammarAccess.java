@@ -623,11 +623,21 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cSourceAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final CrossReference cSourceKindCrossReference_3_1_0 = (CrossReference)cSourceAssignment_3_1.eContents().get(0);
 		private final RuleCall cSourceKindQualifiedIDParserRuleCall_3_1_0_1 = (RuleCall)cSourceKindCrossReference_3_1_0.eContents().get(1);
+		private final Group cGroup_3_2 = (Group)cGroup_3.eContents().get(2);
+		private final Keyword cCommaKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
+		private final Assignment cSourceAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
+		private final CrossReference cSourceKindCrossReference_3_2_1_0 = (CrossReference)cSourceAssignment_3_2_1.eContents().get(0);
+		private final RuleCall cSourceKindQualifiedIDParserRuleCall_3_2_1_0_1 = (RuleCall)cSourceKindCrossReference_3_2_1_0.eContents().get(1);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cTargetKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cTargetAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
 		private final CrossReference cTargetKindCrossReference_4_1_0 = (CrossReference)cTargetAssignment_4_1.eContents().get(0);
 		private final RuleCall cTargetKindQualifiedIDParserRuleCall_4_1_0_1 = (RuleCall)cTargetKindCrossReference_4_1_0.eContents().get(1);
+		private final Group cGroup_4_2 = (Group)cGroup_4.eContents().get(2);
+		private final Keyword cCommaKeyword_4_2_0 = (Keyword)cGroup_4_2.eContents().get(0);
+		private final Assignment cTargetAssignment_4_2_1 = (Assignment)cGroup_4_2.eContents().get(1);
+		private final CrossReference cTargetKindCrossReference_4_2_1_0 = (CrossReference)cTargetAssignment_4_2_1.eContents().get(0);
+		private final RuleCall cTargetKindQualifiedIDParserRuleCall_4_2_1_0_1 = (RuleCall)cTargetKindCrossReference_4_2_1_0.eContents().get(1);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cTitleKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cTitleAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
@@ -657,18 +667,19 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Kind:
 		//	'kind'
-		//	name=NameID ('extends' parent=[Kind|QualifiedID])? ('source' source=[Kind|QualifiedID])? ('target'
-		//	target=[Kind|QualifiedID])? ('title' title=STRING)? ('{' (attributes+=Attribute
+		//	name=NameID ('extends' parent=[Kind|QualifiedID])? ('source' source+=[Kind|QualifiedID] (","
+		//	source+=[Kind|QualifiedID])*)? ('target' target+=[Kind|QualifiedID] ("," target+=[Kind|QualifiedID])*)? ('title'
+		//	title=STRING)? ('{' (attributes+=Attribute
 		//	| actions+=Action
 		//	| constraints+=Constraint)+
 		//	'}')?
 		//	fsm=FSM? ('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)* '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'kind' name=NameID ('extends' parent=[Kind|QualifiedID])? ('source' source=[Kind|QualifiedID])? ('target'
-		//target=[Kind|QualifiedID])? ('title' title=STRING)? ('{' (attributes+=Attribute | actions+=Action |
-		//constraints+=Constraint)+ '}')? fsm=FSM? ('annotations' '{' annotations+=Annotation ("," annotations+=Annotation)*
-		//'}')?
+		//'kind' name=NameID ('extends' parent=[Kind|QualifiedID])? ('source' source+=[Kind|QualifiedID] (","
+		//source+=[Kind|QualifiedID])*)? ('target' target+=[Kind|QualifiedID] ("," target+=[Kind|QualifiedID])*)? ('title'
+		//title=STRING)? ('{' (attributes+=Attribute | actions+=Action | constraints+=Constraint)+ '}')? fsm=FSM? ('annotations'
+		//'{' annotations+=Annotation ("," annotations+=Annotation)* '}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'kind'
@@ -695,13 +706,13 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedID
 		public RuleCall getParentKindQualifiedIDParserRuleCall_2_1_0_1() { return cParentKindQualifiedIDParserRuleCall_2_1_0_1; }
 		
-		//('source' source=[Kind|QualifiedID])?
+		//('source' source+=[Kind|QualifiedID] ("," source+=[Kind|QualifiedID])*)?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//'source'
 		public Keyword getSourceKeyword_3_0() { return cSourceKeyword_3_0; }
 		
-		//source=[Kind|QualifiedID]
+		//source+=[Kind|QualifiedID]
 		public Assignment getSourceAssignment_3_1() { return cSourceAssignment_3_1; }
 		
 		//[Kind|QualifiedID]
@@ -710,13 +721,28 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedID
 		public RuleCall getSourceKindQualifiedIDParserRuleCall_3_1_0_1() { return cSourceKindQualifiedIDParserRuleCall_3_1_0_1; }
 		
-		//('target' target=[Kind|QualifiedID])?
+		//("," source+=[Kind|QualifiedID])*
+		public Group getGroup_3_2() { return cGroup_3_2; }
+		
+		//","
+		public Keyword getCommaKeyword_3_2_0() { return cCommaKeyword_3_2_0; }
+		
+		//source+=[Kind|QualifiedID]
+		public Assignment getSourceAssignment_3_2_1() { return cSourceAssignment_3_2_1; }
+		
+		//[Kind|QualifiedID]
+		public CrossReference getSourceKindCrossReference_3_2_1_0() { return cSourceKindCrossReference_3_2_1_0; }
+		
+		//QualifiedID
+		public RuleCall getSourceKindQualifiedIDParserRuleCall_3_2_1_0_1() { return cSourceKindQualifiedIDParserRuleCall_3_2_1_0_1; }
+		
+		//('target' target+=[Kind|QualifiedID] ("," target+=[Kind|QualifiedID])*)?
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//'target'
 		public Keyword getTargetKeyword_4_0() { return cTargetKeyword_4_0; }
 		
-		//target=[Kind|QualifiedID]
+		//target+=[Kind|QualifiedID]
 		public Assignment getTargetAssignment_4_1() { return cTargetAssignment_4_1; }
 		
 		//[Kind|QualifiedID]
@@ -724,6 +750,21 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//QualifiedID
 		public RuleCall getTargetKindQualifiedIDParserRuleCall_4_1_0_1() { return cTargetKindQualifiedIDParserRuleCall_4_1_0_1; }
+		
+		//("," target+=[Kind|QualifiedID])*
+		public Group getGroup_4_2() { return cGroup_4_2; }
+		
+		//","
+		public Keyword getCommaKeyword_4_2_0() { return cCommaKeyword_4_2_0; }
+		
+		//target+=[Kind|QualifiedID]
+		public Assignment getTargetAssignment_4_2_1() { return cTargetAssignment_4_2_1; }
+		
+		//[Kind|QualifiedID]
+		public CrossReference getTargetKindCrossReference_4_2_1_0() { return cTargetKindCrossReference_4_2_1_0; }
+		
+		//QualifiedID
+		public RuleCall getTargetKindQualifiedIDParserRuleCall_4_2_1_0_1() { return cTargetKindQualifiedIDParserRuleCall_4_2_1_0_1; }
 		
 		//('title' title=STRING)?
 		public Group getGroup_5() { return cGroup_5; }
@@ -2549,24 +2590,25 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cMinLengthKeyword_39 = (Keyword)cAlternatives.eContents().get(39);
 		private final Keyword cMaxLengthKeyword_40 = (Keyword)cAlternatives.eContents().get(40);
 		private final Keyword cEObjectTypeKeyword_41 = (Keyword)cAlternatives.eContents().get(41);
-		private final Keyword cBooleanTypeKeyword_42 = (Keyword)cAlternatives.eContents().get(42);
-		private final Keyword cNumericTypeKeyword_43 = (Keyword)cAlternatives.eContents().get(43);
-		private final Keyword cTotalDigitsKeyword_44 = (Keyword)cAlternatives.eContents().get(44);
-		private final Keyword cMinExclusiveKeyword_45 = (Keyword)cAlternatives.eContents().get(45);
-		private final Keyword cMaxExclusiveKeyword_46 = (Keyword)cAlternatives.eContents().get(46);
-		private final Keyword cMinInclusiveKeyword_47 = (Keyword)cAlternatives.eContents().get(47);
-		private final Keyword cMaxInclusiveKeyword_48 = (Keyword)cAlternatives.eContents().get(48);
-		private final Keyword cByteKeyword_49 = (Keyword)cAlternatives.eContents().get(49);
-		private final Keyword cDoubleKeyword_50 = (Keyword)cAlternatives.eContents().get(50);
-		private final Keyword cFloatKeyword_51 = (Keyword)cAlternatives.eContents().get(51);
-		private final Keyword cIntegerKeyword_52 = (Keyword)cAlternatives.eContents().get(52);
-		private final Keyword cLongKeyword_53 = (Keyword)cAlternatives.eContents().get(53);
-		private final Keyword cShortKeyword_54 = (Keyword)cAlternatives.eContents().get(54);
-		private final Keyword cBigDecimalKeyword_55 = (Keyword)cAlternatives.eContents().get(55);
-		private final Keyword cEnumerationTypeKeyword_56 = (Keyword)cAlternatives.eContents().get(56);
-		private final Keyword cLiteralsKeyword_57 = (Keyword)cAlternatives.eContents().get(57);
-		private final Keyword cRecordKeyword_58 = (Keyword)cAlternatives.eContents().get(58);
-		private final Keyword cArrayKeyword_59 = (Keyword)cAlternatives.eContents().get(59);
+		private final Keyword cTypeKeyword_42 = (Keyword)cAlternatives.eContents().get(42);
+		private final Keyword cBooleanTypeKeyword_43 = (Keyword)cAlternatives.eContents().get(43);
+		private final Keyword cNumericTypeKeyword_44 = (Keyword)cAlternatives.eContents().get(44);
+		private final Keyword cTotalDigitsKeyword_45 = (Keyword)cAlternatives.eContents().get(45);
+		private final Keyword cMinExclusiveKeyword_46 = (Keyword)cAlternatives.eContents().get(46);
+		private final Keyword cMaxExclusiveKeyword_47 = (Keyword)cAlternatives.eContents().get(47);
+		private final Keyword cMinInclusiveKeyword_48 = (Keyword)cAlternatives.eContents().get(48);
+		private final Keyword cMaxInclusiveKeyword_49 = (Keyword)cAlternatives.eContents().get(49);
+		private final Keyword cByteKeyword_50 = (Keyword)cAlternatives.eContents().get(50);
+		private final Keyword cDoubleKeyword_51 = (Keyword)cAlternatives.eContents().get(51);
+		private final Keyword cFloatKeyword_52 = (Keyword)cAlternatives.eContents().get(52);
+		private final Keyword cIntegerKeyword_53 = (Keyword)cAlternatives.eContents().get(53);
+		private final Keyword cLongKeyword_54 = (Keyword)cAlternatives.eContents().get(54);
+		private final Keyword cShortKeyword_55 = (Keyword)cAlternatives.eContents().get(55);
+		private final Keyword cBigDecimalKeyword_56 = (Keyword)cAlternatives.eContents().get(56);
+		private final Keyword cEnumerationTypeKeyword_57 = (Keyword)cAlternatives.eContents().get(57);
+		private final Keyword cLiteralsKeyword_58 = (Keyword)cAlternatives.eContents().get(58);
+		private final Keyword cRecordKeyword_59 = (Keyword)cAlternatives.eContents().get(59);
+		private final Keyword cArrayKeyword_60 = (Keyword)cAlternatives.eContents().get(60);
 		
 		//KEYWORD: // Configuration
 		//	'configuration' | 'description' | 'location' | 'use' | // Resource
@@ -2597,8 +2639,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//	// DataType
 		//	// StringType
 		//	'StringType' | 'pattern' | 'length' | 'minLength' | 'maxLength' | // EObjectType
-		//	'EObjectType' | // 'type' | 
-		//	// BooleanType
+		//	'EObjectType' | 'type' | // BooleanType
 		//	'BooleanType' | // NumericType
 		//	'NumericType' | 'totalDigits' | 'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' | // 'type' | 
 		//	// NumericTypeEnum
@@ -2641,8 +2682,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//// DataType
 		//// StringType
 		//'StringType' | 'pattern' | 'length' | 'minLength' | 'maxLength' | // EObjectType
-		//'EObjectType' | // 'type' | 
-		//// BooleanType
+		//'EObjectType' | 'type' | // BooleanType
 		//'BooleanType' | // NumericType
 		//'NumericType' | 'totalDigits' | 'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' | // 'type' | 
 		//// NumericTypeEnum
@@ -2811,71 +2851,73 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 		//'EObjectType'
 		public Keyword getEObjectTypeKeyword_41() { return cEObjectTypeKeyword_41; }
 		
-		//// 'type' | 
+		//'type'
+		public Keyword getTypeKeyword_42() { return cTypeKeyword_42; }
+		
 		//// BooleanType
 		//'BooleanType'
-		public Keyword getBooleanTypeKeyword_42() { return cBooleanTypeKeyword_42; }
+		public Keyword getBooleanTypeKeyword_43() { return cBooleanTypeKeyword_43; }
 		
 		//// NumericType
 		//'NumericType'
-		public Keyword getNumericTypeKeyword_43() { return cNumericTypeKeyword_43; }
+		public Keyword getNumericTypeKeyword_44() { return cNumericTypeKeyword_44; }
 		
 		//'totalDigits'
-		public Keyword getTotalDigitsKeyword_44() { return cTotalDigitsKeyword_44; }
+		public Keyword getTotalDigitsKeyword_45() { return cTotalDigitsKeyword_45; }
 		
 		//'minExclusive'
-		public Keyword getMinExclusiveKeyword_45() { return cMinExclusiveKeyword_45; }
+		public Keyword getMinExclusiveKeyword_46() { return cMinExclusiveKeyword_46; }
 		
 		//'maxExclusive'
-		public Keyword getMaxExclusiveKeyword_46() { return cMaxExclusiveKeyword_46; }
+		public Keyword getMaxExclusiveKeyword_47() { return cMaxExclusiveKeyword_47; }
 		
 		//'minInclusive'
-		public Keyword getMinInclusiveKeyword_47() { return cMinInclusiveKeyword_47; }
+		public Keyword getMinInclusiveKeyword_48() { return cMinInclusiveKeyword_48; }
 		
 		//'maxInclusive'
-		public Keyword getMaxInclusiveKeyword_48() { return cMaxInclusiveKeyword_48; }
+		public Keyword getMaxInclusiveKeyword_49() { return cMaxInclusiveKeyword_49; }
 		
 		//// 'type' | 
 		//// NumericTypeEnum
 		//'Byte'
-		public Keyword getByteKeyword_49() { return cByteKeyword_49; }
+		public Keyword getByteKeyword_50() { return cByteKeyword_50; }
 		
 		//'Double'
-		public Keyword getDoubleKeyword_50() { return cDoubleKeyword_50; }
+		public Keyword getDoubleKeyword_51() { return cDoubleKeyword_51; }
 		
 		//'Float'
-		public Keyword getFloatKeyword_51() { return cFloatKeyword_51; }
+		public Keyword getFloatKeyword_52() { return cFloatKeyword_52; }
 		
 		//'Integer'
-		public Keyword getIntegerKeyword_52() { return cIntegerKeyword_52; }
+		public Keyword getIntegerKeyword_53() { return cIntegerKeyword_53; }
 		
 		//'Long'
-		public Keyword getLongKeyword_53() { return cLongKeyword_53; }
+		public Keyword getLongKeyword_54() { return cLongKeyword_54; }
 		
 		//'Short'
-		public Keyword getShortKeyword_54() { return cShortKeyword_54; }
+		public Keyword getShortKeyword_55() { return cShortKeyword_55; }
 		
 		//'BigDecimal'
-		public Keyword getBigDecimalKeyword_55() { return cBigDecimalKeyword_55; }
+		public Keyword getBigDecimalKeyword_56() { return cBigDecimalKeyword_56; }
 		
 		//// EnumerationType
 		//'EnumerationType'
-		public Keyword getEnumerationTypeKeyword_56() { return cEnumerationTypeKeyword_56; }
+		public Keyword getEnumerationTypeKeyword_57() { return cEnumerationTypeKeyword_57; }
 		
 		//'literals'
-		public Keyword getLiteralsKeyword_57() { return cLiteralsKeyword_57; }
+		public Keyword getLiteralsKeyword_58() { return cLiteralsKeyword_58; }
 		
 		////EnumerationLiteral
 		////  
 		//// RecordType
 		//'record'
-		public Keyword getRecordKeyword_58() { return cRecordKeyword_58; }
+		public Keyword getRecordKeyword_59() { return cRecordKeyword_59; }
 		
 		//// RecordField
 		//// 'mutable'| 'required' | 'description'| 'annotations'
 		//// ArrayType
 		//'array'
-		public Keyword getArrayKeyword_59() { return cArrayKeyword_59; }
+		public Keyword getArrayKeyword_60() { return cArrayKeyword_60; }
 	}
 	
 	public class NumericTypeEnumElements extends AbstractEnumRuleElementFinder {
@@ -3155,8 +3197,9 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Kind:
 	//	'kind'
-	//	name=NameID ('extends' parent=[Kind|QualifiedID])? ('source' source=[Kind|QualifiedID])? ('target'
-	//	target=[Kind|QualifiedID])? ('title' title=STRING)? ('{' (attributes+=Attribute
+	//	name=NameID ('extends' parent=[Kind|QualifiedID])? ('source' source+=[Kind|QualifiedID] (","
+	//	source+=[Kind|QualifiedID])*)? ('target' target+=[Kind|QualifiedID] ("," target+=[Kind|QualifiedID])*)? ('title'
+	//	title=STRING)? ('{' (attributes+=Attribute
 	//	| actions+=Action
 	//	| constraints+=Constraint)+
 	//	'}')?
@@ -3491,8 +3534,7 @@ public class OCCIGrammarAccess extends AbstractGrammarElementFinder {
 	//	// DataType
 	//	// StringType
 	//	'StringType' | 'pattern' | 'length' | 'minLength' | 'maxLength' | // EObjectType
-	//	'EObjectType' | // 'type' | 
-	//	// BooleanType
+	//	'EObjectType' | 'type' | // BooleanType
 	//	'BooleanType' | // NumericType
 	//	'NumericType' | 'totalDigits' | 'minExclusive' | 'maxExclusive' | 'minInclusive' | 'maxInclusive' | // 'type' | 
 	//	// NumericTypeEnum

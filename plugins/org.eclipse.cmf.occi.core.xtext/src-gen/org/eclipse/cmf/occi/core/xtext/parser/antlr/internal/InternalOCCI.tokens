@@ -1,6 +1,6 @@
 '('=38
 ')'=39
-','=36
+','=35
 '-'=73
 ':'=18
 '='=27
@@ -18,7 +18,7 @@
 'Short'=80
 'StringType'=55
 'action'=46
-'annotations'=35
+'annotations'=36
 'applies'=40
 'array'=72
 'as'=31

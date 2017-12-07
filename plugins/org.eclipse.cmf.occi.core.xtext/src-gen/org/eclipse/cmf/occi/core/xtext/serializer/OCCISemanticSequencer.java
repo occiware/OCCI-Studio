@@ -341,8 +341,8 @@ public class OCCISemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (
 	 *         name=NameID 
 	 *         parent=[Kind|QualifiedID]? 
-	 *         source=[Kind|QualifiedID]? 
-	 *         target=[Kind|QualifiedID]? 
+	 *         (source+=[Kind|QualifiedID] source+=[Kind|QualifiedID]*)? 
+	 *         (target+=[Kind|QualifiedID] target+=[Kind|QualifiedID]*)? 
 	 *         title=STRING? 
 	 *         (attributes+=Attribute | actions+=Action | constraints+=Constraint)* 
 	 *         fsm=FSM? 
