@@ -625,7 +625,7 @@ public class OCCIExtension2Ecore {
 
 		// Convert all constraints of the OCCI kind.
 		convertConstraints(eClass, kind);
-		if(kind.getTarget()!= null){
+		if(kind.getTarget().size() > 0){
 			addTargetConstraint(kind, eClass);
 		}
 		return eClass;
@@ -657,8 +657,18 @@ public class OCCIExtension2Ecore {
 	}
 
 	private String createTargetConstraintBody(Kind kind) {
-		String epackage_name = formatExtensionName((Extension)kind.getTarget().eContainer());
-		return "self.target.oclIsKindOf("+epackage_name+"::"+ConverterUtils.toU1Case(ConverterUtils.formatName(kind.getTarget().getTerm()))+")";
+		StringBuilder constraint = new StringBuilder();
+		for(Kind targetKind: kind.getTarget()) {
+			String epackage_name = formatExtensionName((Extension)targetKind.eContainer());
+			if(kind.getTarget().get(0)==targetKind) {
+				constraint.append("self.target.oclIsKindOf("+epackage_name+"::"+ConverterUtils.toU1Case(ConverterUtils.formatName(targetKind.getTerm()))+")");
+			}
+			else {
+				constraint.append(" or self.target.oclIsKindOf("+epackage_name+"::"+ConverterUtils.toU1Case(ConverterUtils.formatName(targetKind.getTerm()))+")");
+
+			}
+		}
+		return constraint.toString();
 	}
 
 	protected void convertConstraints(EClass eClass, Type type) {
