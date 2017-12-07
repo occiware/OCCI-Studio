@@ -14,6 +14,7 @@ package org.eclipse.cmf.occi.core.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Kind;
@@ -69,6 +70,7 @@ import org.eclipse.ocl.pivot.utilities.ValueUtil;
 
 import org.eclipse.ocl.pivot.values.IntegerValue;
 import org.eclipse.ocl.pivot.values.InvalidValueException;
+import org.eclipse.ocl.pivot.values.OrderedSetValue;
 import org.eclipse.ocl.pivot.values.SetValue;
 import org.eclipse.ocl.pivot.values.TupleValue;
 
@@ -225,42 +227,60 @@ public class LinkImpl extends EntityImpl implements Link {
 	public boolean LinkTargetInvariant(final Kind resourcekind, final Kind linkInstanceKind) {
 		/**
 		 *
-		 * if linkInstanceKind.target <> null
-		 * then resourcekind.occiIsKindOf(linkInstanceKind.target)
-		 * else
-		 *   if linkInstanceKind.parent <> null
-		 *   then LinkTargetInvariant(resourcekind, linkInstanceKind.parent)
-		 *   else true
-		 *   endif
-		 * endif
+		 * linkInstanceKind.target->exists(aTarget |
+		 *   resourcekind.occiIsKindOf(aTarget))
 		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
 		if (linkInstanceKind == null) {
 			throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Kind::target\'");
 		}
-		final /*@Thrown*/ Kind target_0 = linkInstanceKind.getTarget();
-		final /*@Thrown*/ boolean ne = target_0 != null;
-		/*@Thrown*/ boolean symbol_1;
-		if (ne) {
-			if (resourcekind == null) {
-				throw new InvalidValueException("Null source for \'occi::Kind::occiIsKindOf(occi::Kind[?]) : Boolean[1]\'");
+		final /*@Thrown*/ List<Kind> target = linkInstanceKind.getTarget();
+		final /*@Thrown*/ OrderedSetValue BOXED_target = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Kind, target);
+		/*@Thrown*/ Object accumulator = ValueUtil.FALSE_VALUE;
+		/*@NonNull*/ Iterator<Object> ITERATOR_aTarget = BOXED_target.iterator();
+		/*@Thrown*/ boolean exists;
+		while (true) {
+			if (!ITERATOR_aTarget.hasNext()) {
+				if (accumulator == ValueUtil.FALSE_VALUE) {
+					exists = ValueUtil.FALSE_VALUE;
+				}
+				else {
+					throw (InvalidValueException)accumulator;
+				}
+				break;
 			}
-			final /*@Thrown*/ boolean occiIsKindOf = resourcekind.occiIsKindOf(target_0);
-			symbol_1 = occiIsKindOf;
+			/*@NonInvalid*/ Kind aTarget = (Kind)ITERATOR_aTarget.next();
+			/**
+			 * resourcekind.occiIsKindOf(aTarget)
+			 */
+			/*@Caught*/ /*@NonNull*/ Object CAUGHT_occiIsKindOf;
+			try {
+				if (resourcekind == null) {
+					throw new InvalidValueException("Null source for \'occi::Kind::occiIsKindOf(occi::Kind[?]) : Boolean[1]\'");
+				}
+				final /*@Thrown*/ boolean occiIsKindOf = resourcekind.occiIsKindOf(aTarget);
+				CAUGHT_occiIsKindOf = occiIsKindOf;
+			}
+			catch (Exception e) {
+				CAUGHT_occiIsKindOf = ValueUtil.createInvalidValue(e);
+			}
+			//
+			if (CAUGHT_occiIsKindOf == ValueUtil.TRUE_VALUE) {					// Normal successful body evaluation result
+				exists = ValueUtil.TRUE_VALUE;
+				break;														// Stop immediately
+			}
+			else if (CAUGHT_occiIsKindOf == ValueUtil.FALSE_VALUE) {				// Normal unsuccessful body evaluation result
+				;															// Carry on
+			}
+			else if (CAUGHT_occiIsKindOf instanceof InvalidValueException) {		// Abnormal exception evaluation result
+				accumulator = CAUGHT_occiIsKindOf;									// Cache an exception failure
+			}
+			else {															// Impossible badly typed result
+				accumulator = new InvalidValueException(PivotMessages.NonBooleanBody, "exists");
+			}
 		}
-		else {
-			final /*@Thrown*/ Kind parent_0 = linkInstanceKind.getParent();
-			final /*@Thrown*/ boolean ne_0 = parent_0 != null;
-			/*@Thrown*/ boolean symbol_0;
-			if (ne_0) {
-				final /*@Thrown*/ boolean LinkTargetInvariant = this.LinkTargetInvariant(resourcekind, parent_0);
-				symbol_0 = LinkTargetInvariant;
-			}
-			else {
-				symbol_0 = ValueUtil.TRUE_VALUE;
-			}
-			symbol_1 = symbol_0;
-		}
-		return symbol_1;
+		return exists;
 	}
 
 	/**
@@ -271,42 +291,60 @@ public class LinkImpl extends EntityImpl implements Link {
 	public boolean LinkSourceInvariant(final Kind resourcekind, final Kind linkInstanceKind) {
 		/**
 		 *
-		 * if linkInstanceKind.source <> null
-		 * then resourcekind.occiIsKindOf(linkInstanceKind.source)
-		 * else
-		 *   if linkInstanceKind.parent <> null
-		 *   then LinkSourceInvariant(resourcekind, linkInstanceKind.parent)
-		 *   else true
-		 *   endif
-		 * endif
+		 * linkInstanceKind.source->exists(aSource |
+		 *   resourcekind.occiIsKindOf(aSource))
 		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
 		if (linkInstanceKind == null) {
 			throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Kind::source\'");
 		}
-		final /*@Thrown*/ Kind source_0 = linkInstanceKind.getSource();
-		final /*@Thrown*/ boolean ne = source_0 != null;
-		/*@Thrown*/ boolean symbol_1;
-		if (ne) {
-			if (resourcekind == null) {
-				throw new InvalidValueException("Null source for \'occi::Kind::occiIsKindOf(occi::Kind[?]) : Boolean[1]\'");
+		final /*@Thrown*/ List<Kind> source = linkInstanceKind.getSource();
+		final /*@Thrown*/ OrderedSetValue BOXED_source = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Kind, source);
+		/*@Thrown*/ Object accumulator = ValueUtil.FALSE_VALUE;
+		/*@NonNull*/ Iterator<Object> ITERATOR_aSource = BOXED_source.iterator();
+		/*@Thrown*/ boolean exists;
+		while (true) {
+			if (!ITERATOR_aSource.hasNext()) {
+				if (accumulator == ValueUtil.FALSE_VALUE) {
+					exists = ValueUtil.FALSE_VALUE;
+				}
+				else {
+					throw (InvalidValueException)accumulator;
+				}
+				break;
 			}
-			final /*@Thrown*/ boolean occiIsKindOf = resourcekind.occiIsKindOf(source_0);
-			symbol_1 = occiIsKindOf;
+			/*@NonInvalid*/ Kind aSource = (Kind)ITERATOR_aSource.next();
+			/**
+			 * resourcekind.occiIsKindOf(aSource)
+			 */
+			/*@Caught*/ /*@NonNull*/ Object CAUGHT_occiIsKindOf;
+			try {
+				if (resourcekind == null) {
+					throw new InvalidValueException("Null source for \'occi::Kind::occiIsKindOf(occi::Kind[?]) : Boolean[1]\'");
+				}
+				final /*@Thrown*/ boolean occiIsKindOf = resourcekind.occiIsKindOf(aSource);
+				CAUGHT_occiIsKindOf = occiIsKindOf;
+			}
+			catch (Exception e) {
+				CAUGHT_occiIsKindOf = ValueUtil.createInvalidValue(e);
+			}
+			//
+			if (CAUGHT_occiIsKindOf == ValueUtil.TRUE_VALUE) {					// Normal successful body evaluation result
+				exists = ValueUtil.TRUE_VALUE;
+				break;														// Stop immediately
+			}
+			else if (CAUGHT_occiIsKindOf == ValueUtil.FALSE_VALUE) {				// Normal unsuccessful body evaluation result
+				;															// Carry on
+			}
+			else if (CAUGHT_occiIsKindOf instanceof InvalidValueException) {		// Abnormal exception evaluation result
+				accumulator = CAUGHT_occiIsKindOf;									// Cache an exception failure
+			}
+			else {															// Impossible badly typed result
+				accumulator = new InvalidValueException(PivotMessages.NonBooleanBody, "exists");
+			}
 		}
-		else {
-			final /*@Thrown*/ Kind parent_0 = linkInstanceKind.getParent();
-			final /*@Thrown*/ boolean ne_0 = parent_0 != null;
-			/*@Thrown*/ boolean symbol_0;
-			if (ne_0) {
-				final /*@Thrown*/ boolean LinkSourceInvariant = this.LinkSourceInvariant(resourcekind, parent_0);
-				symbol_0 = LinkSourceInvariant;
-			}
-			else {
-				symbol_0 = ValueUtil.TRUE_VALUE;
-			}
-			symbol_1 = symbol_0;
-		}
-		return symbol_1;
+		return exists;
 	}
 
 	/**

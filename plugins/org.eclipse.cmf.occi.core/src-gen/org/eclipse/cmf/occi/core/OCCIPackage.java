@@ -889,7 +889,7 @@ public interface OCCIPackage extends EPackage {
 	int KIND__ENTITIES = TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * The feature id for the '<em><b>Source</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -898,7 +898,7 @@ public interface OCCIPackage extends EPackage {
 	int KIND__SOURCE = TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * The feature id for the '<em><b>Target</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3828,10 +3828,10 @@ public interface OCCIPackage extends EPackage {
 	EReference getKind_Entities();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.cmf.occi.core.Kind#getSource <em>Source</em>}'.
+	 * Returns the meta object for the reference list '{@link org.eclipse.cmf.occi.core.Kind#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @return the meta object for the reference list '<em>Source</em>'.
 	 * @see org.eclipse.cmf.occi.core.Kind#getSource()
 	 * @see #getKind()
 	 * @generated
@@ -3839,10 +3839,10 @@ public interface OCCIPackage extends EPackage {
 	EReference getKind_Source();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.cmf.occi.core.Kind#getTarget <em>Target</em>}'.
+	 * Returns the meta object for the reference list '{@link org.eclipse.cmf.occi.core.Kind#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @return the meta object for the reference list '<em>Target</em>'.
 	 * @see org.eclipse.cmf.occi.core.Kind#getTarget()
 	 * @see #getKind()
 	 * @generated
@@ -5652,7 +5652,7 @@ public interface OCCIPackage extends EPackage {
 		EReference KIND__ENTITIES = eINSTANCE.getKind_Entities();
 
 		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Source</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5660,7 +5660,7 @@ public interface OCCIPackage extends EPackage {
 		EReference KIND__SOURCE = eINSTANCE.getKind_Source();
 
 		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Target</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
