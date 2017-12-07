@@ -81,8 +81,8 @@ Kind returns Kind:
 	'kind'
 	name=NameID
 	('extends' parent=[Kind|QualifiedID])?
-	('source' source=[Kind|QualifiedID])?
-	('target' target=[Kind|QualifiedID])?
+	('source' source+=[Kind|QualifiedID] ("," source+=[Kind|QualifiedID])* )?
+	('target' target+=[Kind|QualifiedID] ("," target+=[Kind|QualifiedID])* )?
 	( 'title' title=STRING )?
 //	'scheme' scheme=STRING
 	('{'
@@ -300,7 +300,7 @@ KEYWORD:
 	'StringType' | 'pattern' | 'length' | 'minLength' | 'maxLength' |  
 	
 	// EObjectType
-	'EObjectType' | // 'type' | 
+	'EObjectType' | 'type' | 
 	
 	// BooleanType
 	'BooleanType' | 
