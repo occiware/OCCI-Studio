@@ -319,11 +319,18 @@ public final class OcciHelper
 		MixinBase createdMixinBase = null;
 
 		// Get the name space of the Ecore package for this mixin.
-		String epackageNS = Occi2Ecore.convertOcciScheme2EcoreNamespace(((Extension)mixin.eContainer()).getScheme());
-		// Get the Ecore package associated to the mixin.
-		EPackage epackage = EPackage.Registry.INSTANCE.getEPackage(epackageNS);
+		String epackageNS = null;
+		// If the mixin is a new mixin tag (doesnt exist on extension so, the method eContainer() will return a Configuration object.
+		EPackage epackage = null;
+		if (mixin.eContainer() instanceof Extension) {
+			// Establish that this is an extension.
+			epackageNS = Occi2Ecore.convertOcciScheme2EcoreNamespace(((Extension)mixin.eContainer()).getScheme());
+			// Get the Ecore package associated to the mixin.
+			epackage = EPackage.Registry.INSTANCE.getEPackage(epackageNS);
+		}
+		// String epackageNS = Occi2Ecore.convertOcciScheme2EcoreNamespace(((Extension)mixin.eContainer()).getScheme());
 		if(epackage == null) {
-			LOGGER.warn("EPackage " + epackageNS + " not found!");
+			LOGGER.warn("EPackage " + epackageNS + " not found ! and this is a mixin tag");
 		} else {
 			String classname = Occi2Ecore.convertOcciCategoryTerm2EcoreClassName(mixin.getTerm());
 			// Get the Ecore class associated to the mixin.
