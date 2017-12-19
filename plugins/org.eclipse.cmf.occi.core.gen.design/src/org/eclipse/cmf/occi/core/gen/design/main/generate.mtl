@@ -53,7 +53,7 @@
         </containerMappings>
 [/for]
 [for (linkKind : Kind | aExtension.getAllLinkKinds())]
-        <containerMappings name="[linkKind.name/]Container"
+        <containerMappings name="[linkKind.name/]Container" preconditionExpression="['['/]self.oclIsTypeOf([linkKind.getEClassName()/])/[']'/]"
             labelDirectEdit="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@toolSections.3/@ownedTools['['/]name='EditEntityTitle'[']'/]"
 			semanticCandidatesExpression="['['/]resources.links->filter([linkKind.getEClassName()/])/[']'/]" 
 			domainClass="[linkKind.getEClassName()/]">
