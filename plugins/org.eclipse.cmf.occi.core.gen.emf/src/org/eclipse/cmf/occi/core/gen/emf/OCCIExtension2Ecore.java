@@ -625,6 +625,10 @@ public class OCCIExtension2Ecore {
 
 		// Convert all constraints of the OCCI kind.
 		convertConstraints(eClass, kind);
+		
+		if(kind.getSource().size() > 0){
+			addSourceConstraint(kind, eClass);
+		}
 		if(kind.getTarget().size() > 0){
 			addTargetConstraint(kind, eClass);
 		}
@@ -632,8 +636,7 @@ public class OCCIExtension2Ecore {
 	}
 
 	private void addTargetConstraint(Kind kind, EClass eClass) {
-
-		if (kind.getConstraints().size() > 0) {
+		if (eClass.getEAnnotation("http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot") != null) {
 			// So, it exists emf and ocl annotations
 			EAnnotation annotation_emf = eClass.getEAnnotation("http://www.eclipse.org/emf/2002/Ecore");
 			annotation_emf.getDetails().put("constraints", annotation_emf.getDetails().get("constraints")+ " targetConstraint");
@@ -671,6 +674,46 @@ public class OCCIExtension2Ecore {
 		return constraint.toString();
 	}
 
+	private void addSourceConstraint(Kind kind, EClass eClass) {
+		
+		if (eClass.getEAnnotation("http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot") != null) {
+			// So, it exists emf and ocl annotations
+			EAnnotation annotation_emf = eClass.getEAnnotation("http://www.eclipse.org/emf/2002/Ecore");
+			annotation_emf.getDetails().put("constraints", annotation_emf.getDetails().get("constraints")+ " sourceConstraint");
+			
+			EAnnotation annotation_ocl = eClass.getEAnnotation("http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot");
+			annotation_ocl.getDetails().put("sourceConstraint", createSourceConstraintBody(kind));
+		} else {
+			// EMF Annotation
+			EAnnotation annotation_emf = EcoreFactory.eINSTANCE.createEAnnotation();
+			annotation_emf.setSource("http://www.eclipse.org/emf/2002/Ecore");
+			// OCL Annotation
+			EAnnotation annotation_ocl = EcoreFactory.eINSTANCE.createEAnnotation();
+			annotation_ocl.setSource("http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot");
+
+			annotation_ocl.getDetails().put("sourceConstraint", createSourceConstraintBody(kind));
+			annotation_emf.getDetails().put("constraints", "sourceConstraint");
+			eClass.getEAnnotations().add(annotation_emf);
+			eClass.getEAnnotations().add(annotation_ocl);
+		}
+	
+	}
+
+	private String createSourceConstraintBody(Kind kind) {
+		StringBuilder constraint = new StringBuilder();
+		for(Kind sourceKind: kind.getSource()) {
+			String epackage_name = formatExtensionName((Extension)sourceKind.eContainer());
+			if(kind.getSource().get(0)==sourceKind) {
+				constraint.append("self.source.oclIsKindOf("+epackage_name+"::"+ConverterUtils.toU1Case(ConverterUtils.formatName(sourceKind.getTerm()))+")");
+			}
+			else {
+				constraint.append(" or self.source.oclIsKindOf("+epackage_name+"::"+ConverterUtils.toU1Case(ConverterUtils.formatName(sourceKind.getTerm()))+")");
+
+			}
+		}
+		return constraint.toString();
+	}
+	
 	protected void convertConstraints(EClass eClass, Type type) {
 		if (type.getConstraints().size() > 0) {
 			// EMF Annotation
