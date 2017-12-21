@@ -17,7 +17,7 @@
 	  <metamodel href="[convertOcciScheme2EcoreNamespace(aExtension)/]#/"/>
       <defaultLayer name="Default">
 [for (resourceKind : Kind | getAllResourceKinds(aExtension))]
-        <edgeMappings name="[resourceKind.name/]LinksEdge" sourceMapping="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resourceKind.name/]Container']" targetMapping="[for (link : Kind | aExtension.getAllLinkKinds()) separator(' ')]//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[link.name/]Container'[']'/][/for]" targetFinderExpression="feature:links">
+        <edgeMappings name="[resourceKind.name/]LinksEdge" sourceMapping="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resourceKind.name/]Container']" targetMapping="[for (link : Kind | getTargetLinkKindsFromAResourceKind(resourceKind,Sequence{aExtension})) separator(' ')]//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[link.name/]Container'[']'/][/for]" targetFinderExpression="feature:links">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='gray'[']'/]"/>
             <centerLabelStyleDescription>
@@ -27,7 +27,7 @@
         </edgeMappings>
 [/for]
 [for (linkKind : Kind | aExtension.getAllLinkKinds())]
-        <edgeMappings name="[linkKind.name/]TargetEdge" sourceMapping="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[linkKind.name/]Container'[']'/]" targetMapping="[for (resourceKind : Kind | aExtension.getAllResourceKinds()) separator(' ')]//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resourceKind.name/]Container'][/for]" targetFinderExpression="feature:target">
+        <edgeMappings name="[linkKind.name/]TargetEdge" sourceMapping="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[linkKind.name/]Container'[']'/]" targetMapping="[for (resourceKind : Kind | getTargetResourceKinds(linkKind, Sequence{linkKind.eContainer().oclAsType(Extension)})) separator(' ')]//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resourceKind.name/]Container'][/for]" targetFinderExpression="feature:target">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='gray'[']'/]"/>
             <centerLabelStyleDescription>
@@ -35,7 +35,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="[linkKind.name/]Edge" sourceMapping="[for (resource : Kind | aExtension.getAllResourceKinds()) separator(' ')]//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resource.name/]Container'][/for]" targetMapping="[for (resource : Kind | aExtension.getAllResourceKinds()) separator(' ')] //@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resource.name/]Container'] [/for]" domainClass="[linkKind.getEClassName()/]" useDomainElement="true">
+        <edgeMappings name="[linkKind.name/]Edge" sourceMapping="[for (resource : Kind | getSourceResourceKinds(linkKind, Sequence{linkKind.eContainer().oclAsType(Extension)})) separator(' ')]//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resource.name/]Container'][/for]" targetMapping="[for (resource : Kind | getTargetResourceKinds(linkKind, Sequence{linkKind.eContainer().oclAsType(Extension)})) separator(' ')] //@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resource.name/]Container'] [/for]" domainClass="[linkKind.getEClassName()/]" useDomainElement="true">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='gray'[']'/]"/>
             <centerLabelStyleDescription>
@@ -380,4 +380,29 @@ extensions->collect(ext:Extension|ext.kinds)->select(k:Kind|k.occiIsKindOf(kind)
 [query public getFirstParameterEnumType(eOperation : EOperation) : EEnum = eOperation.eParameters->at(1).eType.oclAsType(EEnum)/]
 
 [query public getFirstParameterEnumType(action : Action) : EnumerationType = action.attributes->at(1).type.oclAsType(EnumerationType)/]
+
+[comment from a linkKind, get all resource Kinds that can be the source of the linkKind/]
+[query public getSourceResourceKinds(linkKind: Kind, extensions: Sequence(Extension)) : Collection(Kind) = 
+if(linkKind.source->size() > 0) 
+then 
+	linkKind.source->union(
+							linkKind.source->collect(lk|getAllChildrenKind(lk, extensions))->asOrderedSet()
+						  )->select(k|extensions->collect(ext|ext.scheme)->includes(k.eContainer().oclAsType(Extension).scheme))
+else 
+	getSourceResourceKinds(linkKind.parent, extensions) 
+endif/]
+[comment from a linkKind, get all resource Kinds that can be the target of the linkKind/]
+[query public getTargetResourceKinds(linkKind: Kind, extensions: Sequence(Extension)) : Collection(Kind) = 
+if(linkKind.target->size() > 0)
+then 
+	linkKind.target->union(
+							linkKind.target->collect(lk|getAllChildrenKind(lk, extensions))->asOrderedSet()
+						  )->select(k|extensions->collect(ext|ext.scheme)->includes(k.eContainer().oclAsType(Extension).scheme))
+else 
+	getTargetResourceKinds(linkKind.parent, extensions) 
+endif/]
+
+[comment from a resourceKind, get all link Kinds that can be the target of the resourceKind/]
+[query public getTargetLinkKindsFromAResourceKind(resourceKind: Kind, extensions: Sequence(Extension)) : Collection(Kind) = 
+extensions->collect(aExtension|aExtension.getAllLinkKinds())->select(lk|getSourceResourceKinds(lk, extensions)->includes(resourceKind))/]
 
