@@ -748,7 +748,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="ResourceContainer" deletionDescription="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteTool']" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='EditTitle']" semanticCandidatesExpression="feature:resources" domainClass="occi.Resource">
+        <containerMappings name="ResourceContainer" deletionDescription="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteTool']" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='EditTitle']" semanticCandidatesExpression="feature:resources" domainClass="occi.Resource" childrenPresentation="VerticalStack">
           <subContainerMappings name="SubResourceContainer" semanticCandidatesExpression="[self/]" domainClass="occi.Resource" childrenPresentation="List">
             <subNodeMappings name="ResourceAttributeState" deletionDescription="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteTool']" semanticCandidatesExpression="feature:attributes" domainClass="occi.AttributeState">
               <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="[name+'= '+value/]" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
@@ -757,7 +757,7 @@
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
               </style>
             </subNodeMappings>
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="aql:self.kind.scheme+self.kind.term">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql:self.kind.term">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -773,7 +773,7 @@
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
               </style>
             </subNodeMappings>
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="aql:self.mixin.scheme+self.mixin.term">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="aql:self.mixin.term">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -781,14 +781,14 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
           </subContainerMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" labelSize="10" labelExpression="[title+': '+kind.term/]" foregroundColor="//@userColorsPalettes[name='OCCI-Studio']/@entries[name='ResourceColor']">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" labelSize="12" labelExpression="[title+': '+kind.term/]" foregroundColor="//@userColorsPalettes[name='OCCI-Studio']/@entries[name='ResourceColor']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </containerMappings>
-        <containerMappings name="LinkContainer" deletionDescription="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteTool']" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='EditTitle']" semanticCandidatesExpression="[resources.links/]" domainClass="occi.Link">
+        <containerMappings name="LinkContainer" deletionDescription="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteTool']" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='EditTitle']" semanticCandidatesExpression="[resources.links/]" domainClass="occi.Link" childrenPresentation="VerticalStack">
           <subContainerMappings name="SubLinkContainer" semanticCandidatesExpression="[self/]" domainClass="occi.Link" childrenPresentation="List">
             <subNodeMappings name="LinkAttributeState" semanticCandidatesExpression="feature:attributes" domainClass="occi.AttributeState">
               <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="[name+'= '+value/]" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
@@ -797,7 +797,7 @@
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
               </style>
             </subNodeMappings>
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="aql:self.kind.scheme+self.kind.term">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql:self.kind.term">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -813,7 +813,7 @@
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
               </style>
             </subNodeMappings>
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="aql:self.mixin.scheme+self.mixin.term">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql:self.mixin.term">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -821,7 +821,7 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
           </subContainerMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="[title+': '+kind.term/]" foregroundColor="//@userColorsPalettes[name='OCCI-Studio']/@entries[name='LinkColor']">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="[title+': '+kind.term/]" foregroundColor="//@userColorsPalettes[name='OCCI-Studio']/@entries[name='LinkColor']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
