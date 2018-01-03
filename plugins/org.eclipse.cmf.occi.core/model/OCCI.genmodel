@@ -44,6 +44,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Category/scheme"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Category/title"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OCCI.ecore#//Category/attributes"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute OCCI.ecore#//Category/description"/>
     </genClasses>
     <genClasses ecoreClass="OCCI.ecore#//Constraint">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OCCI.ecore#//Constraint/name"/>
