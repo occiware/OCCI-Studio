@@ -512,6 +512,15 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getCategory_Description() {
+		return (EAttribute)categoryEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getCategory__AttributesNameUnique__DiagnosticChain_Map() {
 		return categoryEClass.getEOperations().get(0);
 	}
@@ -2087,6 +2096,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		createEAttribute(categoryEClass, CATEGORY__SCHEME);
 		createEAttribute(categoryEClass, CATEGORY__TITLE);
 		createEReference(categoryEClass, CATEGORY__ATTRIBUTES);
+		createEAttribute(categoryEClass, CATEGORY__DESCRIPTION);
 		createEOperation(categoryEClass, CATEGORY___ATTRIBUTES_NAME_UNIQUE__DIAGNOSTICCHAIN_MAP);
 		createEOperation(categoryEClass, CATEGORY___IDENTITY_UNIQUE__DIAGNOSTICCHAIN_MAP);
 		createEOperation(categoryEClass, CATEGORY___SCHEME_ENDS_WITH_SHARP__DIAGNOSTICCHAIN_MAP);
@@ -2351,6 +2361,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		initEAttribute(getCategory_Scheme(), this.getScheme(), "scheme", null, 1, 1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCategory_Title(), this.getString(), "title", null, 0, 1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCategory_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCategory_Description(), this.getString(), "description", null, 0, 1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getCategory__AttributesNameUnique__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "AttributesNameUnique", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);

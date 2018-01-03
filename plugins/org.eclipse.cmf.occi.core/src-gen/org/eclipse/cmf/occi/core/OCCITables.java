@@ -818,10 +818,11 @@ public class OCCITables
 		public static final /*@NonNull*/ ExecutorProperty _AttributeState__MixinBase__attributes = new ExecutorPropertyWithImplementation("MixinBase", Types._AttributeState, 3, new EcoreLibraryOppositeProperty(OCCIPackage.Literals.MIXIN_BASE__ATTRIBUTES));
 
 		public static final /*@NonNull*/ ExecutorProperty _Category__attributes = new EcoreExecutorProperty(OCCIPackage.Literals.CATEGORY__ATTRIBUTES, Types._Category, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Category__name = new EcoreExecutorProperty(OCCIPackage.Literals.CATEGORY__NAME, Types._Category, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Category__scheme = new EcoreExecutorProperty(OCCIPackage.Literals.CATEGORY__SCHEME, Types._Category, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Category__term = new EcoreExecutorProperty(OCCIPackage.Literals.CATEGORY__TERM, Types._Category, 3);
-		public static final /*@NonNull*/ ExecutorProperty _Category__title = new EcoreExecutorProperty(OCCIPackage.Literals.CATEGORY__TITLE, Types._Category, 4);
+		public static final /*@NonNull*/ ExecutorProperty _Category__description = new EcoreExecutorProperty(OCCIPackage.Literals.CATEGORY__DESCRIPTION, Types._Category, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Category__name = new EcoreExecutorProperty(OCCIPackage.Literals.CATEGORY__NAME, Types._Category, 2);
+		public static final /*@NonNull*/ ExecutorProperty _Category__scheme = new EcoreExecutorProperty(OCCIPackage.Literals.CATEGORY__SCHEME, Types._Category, 3);
+		public static final /*@NonNull*/ ExecutorProperty _Category__term = new EcoreExecutorProperty(OCCIPackage.Literals.CATEGORY__TERM, Types._Category, 4);
+		public static final /*@NonNull*/ ExecutorProperty _Category__title = new EcoreExecutorProperty(OCCIPackage.Literals.CATEGORY__TITLE, Types._Category, 5);
 
 		public static final /*@NonNull*/ ExecutorProperty _Configuration__description = new EcoreExecutorProperty(OCCIPackage.Literals.CONFIGURATION__DESCRIPTION, Types._Configuration, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Configuration__location = new EcoreExecutorProperty(OCCIPackage.Literals.CONFIGURATION__LOCATION, Types._Configuration, 1);
@@ -2742,6 +2743,7 @@ public class OCCITables
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Action = {
 			OCCITables.Properties._AnnotatedElement__annotations,
 			OCCITables.Properties._Category__attributes,
+			OCCITables.Properties._Category__description,
 			OCCITables.Properties._Category__name,
 			OCCITables.Properties._Category__scheme,
 			OCCITables.Properties._Category__term,
@@ -2795,6 +2797,7 @@ public class OCCITables
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Category = {
 			OCCITables.Properties._AnnotatedElement__annotations,
 			OCCITables.Properties._Category__attributes,
+			OCCITables.Properties._Category__description,
 			OCCITables.Properties._Category__name,
 			OCCITables.Properties._Category__scheme,
 			OCCITables.Properties._Category__term,
@@ -2871,6 +2874,7 @@ public class OCCITables
 			OCCITables.Properties._AnnotatedElement__annotations,
 			OCCITables.Properties._Category__attributes,
 			OCCITables.Properties._Type__constraints,
+			OCCITables.Properties._Category__description,
 			OCCITables.Properties._Kind__entities,
 			OCCITables.Properties._Type__fsm,
 			OCCITables.Properties._Category__name,
@@ -2901,6 +2905,7 @@ public class OCCITables
 			OCCITables.Properties._Category__attributes,
 			OCCITables.Properties._Type__constraints,
 			OCCITables.Properties._Mixin__depends,
+			OCCITables.Properties._Category__description,
 			OCCITables.Properties._Mixin__entities,
 			OCCITables.Properties._Type__fsm,
 			OCCITables.Properties._Category__name,
@@ -2993,6 +2998,7 @@ public class OCCITables
 			OCCITables.Properties._AnnotatedElement__annotations,
 			OCCITables.Properties._Category__attributes,
 			OCCITables.Properties._Type__constraints,
+			OCCITables.Properties._Category__description,
 			OCCITables.Properties._Type__fsm,
 			OCCITables.Properties._Category__name,
 			OCCITables.Properties._Category__scheme,

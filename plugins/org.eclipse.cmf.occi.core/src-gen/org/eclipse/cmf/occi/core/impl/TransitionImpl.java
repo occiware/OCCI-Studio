@@ -302,8 +302,8 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 		else {
 			/*@Caught*/ /*@NonNull*/ Object CAUGHT_symbol_2;
 			try {
-				final /*@NonInvalid*/ Action action_0 = this.getAction();
-				final /*@NonInvalid*/ boolean ne = action_0 != null;
+				final /*@NonInvalid*/ Action action = this.getAction();
+				final /*@NonInvalid*/ boolean ne = action != null;
 				/*@Thrown*/ boolean status;
 				if (ne) {
 					final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_FSM = idResolver.getClass(OCCITables.CLSSid_FSM, null);
@@ -317,7 +317,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 					final /*@Thrown*/ Type oclAsType_1 = ClassUtil.nonNullState((Type)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_1, TYP_occi_c_c_Type_0));
 					final /*@Thrown*/ List<Action> actions = oclAsType_1.getActions();
 					final /*@Thrown*/ OrderedSetValue BOXED_actions = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Action, actions);
-					final /*@Thrown*/ boolean includes = CollectionIncludesOperation.INSTANCE.evaluate(BOXED_actions, action_0).booleanValue();
+					final /*@Thrown*/ boolean includes = CollectionIncludesOperation.INSTANCE.evaluate(BOXED_actions, action).booleanValue();
 					status = includes;
 				}
 				else {
@@ -333,13 +333,13 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
 					if (ne) {
 						final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_FSM_0 = idResolver.getClass(OCCITables.CLSSid_FSM, null);
 						final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_State_0 = idResolver.getClass(OCCITables.CLSSid_State, null);
-						if (action_0 == null) {
+						if (action == null) {
 							throw new InvalidValueException("Null source for \'\'http://schemas.ogf.org/occi/core/ecore\'::Category::name\'");
 						}
-						final /*@Thrown*/ String name = action_0.getName();
+						final /*@Thrown*/ String name = action.getName();
 						final /*@Thrown*/ String sum = StringConcatOperation.INSTANCE.evaluate(OCCITables.STR_The_32_action_32, name);
 						final /*@Thrown*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, OCCITables.STR__32_declared_32_in_32);
-						final /*@Thrown*/ Object oclContainer_2 = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, action_0);
+						final /*@Thrown*/ Object oclContainer_2 = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, action);
 						final /*@Thrown*/ Type oclAsType_2 = ClassUtil.nonNullState((Type)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_2, TYP_occi_c_c_Type_3));
 						final /*@Thrown*/ String name_0 = oclAsType_2.getName();
 						final /*@Thrown*/ String sum_1 = StringConcatOperation.INSTANCE.evaluate(sum_0, name_0);

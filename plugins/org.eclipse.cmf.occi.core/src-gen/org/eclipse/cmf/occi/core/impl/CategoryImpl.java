@@ -71,6 +71,7 @@ import org.eclipse.ocl.pivot.values.SetValue;
  *   <li>{@link org.eclipse.cmf.occi.core.impl.CategoryImpl#getScheme <em>Scheme</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.impl.CategoryImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.core.impl.CategoryImpl#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.core.impl.CategoryImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated
@@ -155,6 +156,26 @@ public abstract class CategoryImpl extends AnnotatedElementImpl implements Categ
 	 * @ordered
 	 */
 	protected EList<Attribute> attributes;
+
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -262,6 +283,27 @@ public abstract class CategoryImpl extends AnnotatedElementImpl implements Categ
 			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, OCCIPackage.CATEGORY__ATTRIBUTES);
 		}
 		return attributes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDescription(String newDescription) {
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OCCIPackage.CATEGORY__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -463,6 +505,8 @@ public abstract class CategoryImpl extends AnnotatedElementImpl implements Categ
 				return getTitle();
 			case OCCIPackage.CATEGORY__ATTRIBUTES:
 				return getAttributes();
+			case OCCIPackage.CATEGORY__DESCRIPTION:
+				return getDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -489,6 +533,9 @@ public abstract class CategoryImpl extends AnnotatedElementImpl implements Categ
 				getAttributes().clear();
 				getAttributes().addAll((Collection<? extends Attribute>)newValue);
 				return;
+			case OCCIPackage.CATEGORY__DESCRIPTION:
+				setDescription((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -513,6 +560,9 @@ public abstract class CategoryImpl extends AnnotatedElementImpl implements Categ
 			case OCCIPackage.CATEGORY__ATTRIBUTES:
 				getAttributes().clear();
 				return;
+			case OCCIPackage.CATEGORY__DESCRIPTION:
+				setDescription(DESCRIPTION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -535,6 +585,8 @@ public abstract class CategoryImpl extends AnnotatedElementImpl implements Categ
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case OCCIPackage.CATEGORY__ATTRIBUTES:
 				return attributes != null && !attributes.isEmpty();
+			case OCCIPackage.CATEGORY__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -574,6 +626,8 @@ public abstract class CategoryImpl extends AnnotatedElementImpl implements Categ
 		result.append(scheme);
 		result.append(", title: ");
 		result.append(title);
+		result.append(", description: ");
+		result.append(description);
 		result.append(')');
 		return result.toString();
 	}

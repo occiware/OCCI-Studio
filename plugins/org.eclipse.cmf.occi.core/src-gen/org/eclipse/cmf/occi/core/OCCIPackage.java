@@ -216,13 +216,22 @@ public interface OCCIPackage extends EPackage {
 	int CATEGORY__ATTRIBUTES = ANNOTATED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATEGORY__DESCRIPTION = ANNOTATED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Category</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CATEGORY_FEATURE_COUNT = ANNOTATED_ELEMENT_FEATURE_COUNT + 5;
+	int CATEGORY_FEATURE_COUNT = ANNOTATED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Attributes Name Unique</em>' operation.
@@ -378,6 +387,15 @@ public interface OCCIPackage extends EPackage {
 	 * @ordered
 	 */
 	int TYPE__ATTRIBUTES = CATEGORY__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE__DESCRIPTION = CATEGORY__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -844,6 +862,15 @@ public interface OCCIPackage extends EPackage {
 	int KIND__ATTRIBUTES = TYPE__ATTRIBUTES;
 
 	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KIND__DESCRIPTION = TYPE__DESCRIPTION;
+
+	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1097,6 +1124,15 @@ public interface OCCIPackage extends EPackage {
 	int ACTION__ATTRIBUTES = CATEGORY__ATTRIBUTES;
 
 	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__DESCRIPTION = CATEGORY__DESCRIPTION;
+
+	/**
 	 * The number of structural features of the '<em>Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1222,6 +1258,15 @@ public interface OCCIPackage extends EPackage {
 	 * @ordered
 	 */
 	int MIXIN__ATTRIBUTES = TYPE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXIN__DESCRIPTION = TYPE__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -3394,6 +3439,17 @@ public interface OCCIPackage extends EPackage {
 	EReference getCategory_Attributes();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.core.Category#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see org.eclipse.cmf.occi.core.Category#getDescription()
+	 * @see #getCategory()
+	 * @generated
+	 */
+	EAttribute getCategory_Description();
+
+	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.core.Category#AttributesNameUnique(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Attributes Name Unique</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5308,6 +5364,14 @@ public interface OCCIPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CATEGORY__ATTRIBUTES = eINSTANCE.getCategory_Attributes();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CATEGORY__DESCRIPTION = eINSTANCE.getCategory_Description();
 
 		/**
 		 * The meta object literal for the '<em><b>Attributes Name Unique</b></em>' operation.
