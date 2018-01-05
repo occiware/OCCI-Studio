@@ -56,7 +56,7 @@
         <containerMappings name="[resourceKind.name/]Container" preconditionExpression="['['/]self.oclIsTypeOf([resourceKind.getEClassName()/])/[']'/]"
             labelDirectEdit="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@toolSections.3/@ownedTools['['/]name='EditEntityTitle'[']'/]"
 			semanticCandidatesExpression="feature:resources" 
-			domainClass="[resourceKind.getEClassName()/]">
+			domainClass="[resourceKind.getEClassName()/]" childrenPresentation="VerticalStack">
 [generate(aExtension, resourceKind)/]
         </containerMappings>
 [/for]
@@ -64,7 +64,7 @@
         <containerMappings name="[linkKind.name/]Container" preconditionExpression="['['/]self.oclIsTypeOf([linkKind.getEClassName()/])/[']'/]"
             labelDirectEdit="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@toolSections.3/@ownedTools['['/]name='EditEntityTitle'[']'/]"
 			semanticCandidatesExpression="['['/]resources.links->filter([linkKind.getEClassName()/])/[']'/]" 
-			domainClass="[linkKind.getEClassName()/]">
+			domainClass="[linkKind.getEClassName()/]"  childrenPresentation="VerticalStack">
 [generate(aExtension, linkKind)/]
         </containerMappings>
 [/for]
@@ -244,7 +244,7 @@
             </style>
           </subNodeMappings>
 [/for]
-			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="['['/]self.kind.scheme+self.kind.term/[']'/]">
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="['['/]self.kind.name/[']'/]">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='white'[']'/]"/>
@@ -254,7 +254,7 @@
 [for ( mixin : Mixin| kind.getAllRelatedMixins(aExtension.getAllExtensionsExceptCore()->asSequence())->asSet())]
 [generate(mixin)/]
 [/for] 
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="['['/]self.title + ': [kind.name/]'/[']'/]" roundedCorner="true">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="['['/]self.title + ': [kind.name/]'/[']'/]" roundedCorner="true">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='white']"/>
@@ -264,7 +264,7 @@
 [let stateAttribute : Attribute = getStateAttribute(kind)]
 [for (eLiteral : EnumerationLiteral | stateAttribute.type.oclAsType(EnumerationType).literals)]
           <conditionnalStyles predicateExpression="['['/][stateAttribute.getEAttributeName()/] = [eLiteral.enumerationType.name/]::[eLiteral.name/]/[']'/]">
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="['['/]self.title + ': [kind.name/]'/[']'/]" roundedCorner="true">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="['['/]self.title + ': [kind.name/]'/[']'/]" roundedCorner="true">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='white'[']'/]"/>
@@ -297,7 +297,7 @@
               </style>
             </subNodeMappings>
 [/for]
-<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="['['/]self.mixin.scheme+self.mixin.term/[']'/]">
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="['['/]self.mixin.name/[']'/]">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='white'[']'/]"/>
