@@ -31,6 +31,7 @@ import org.eclipse.cmf.occi.core.Mixin;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.OCCIFactory;
 import org.eclipse.cmf.occi.core.Resource;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -55,8 +56,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author Philippe Merle - Inria
  */
-public final class OcciHelper
-{
+public final class OcciHelper {
 	/**
 	 * Initialize the logger.
 	 */
@@ -65,8 +65,7 @@ public final class OcciHelper
 	/**
 	 * This class can not be instantiated.
 	 */
-	private OcciHelper()
-	{
+	private OcciHelper() {
 	}
 
 	// ----------------------------------------------------------------------
@@ -76,29 +75,31 @@ public final class OcciHelper
 	// ----------------------------------------------------------------------
 
 	/**
-	 * Validates a given OCCI object according to the EMF and OCL constraints of its metamodel.
-	 * @param occiObject the given OCCI object.
+	 * Validates a given OCCI object according to the EMF and OCL constraints of its
+	 * metamodel.
+	 * 
+	 * @param occiObject
+	 *            the given OCCI object.
 	 */
-	public static boolean validate(EObject occiObject)
-	{
+	public static boolean validate(EObject occiObject) {
 		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(occiObject);
 		if (diagnostic.getSeverity() != Diagnostic.OK) {
 			StringBuffer stringBuffer = printDiagnostic(diagnostic, "", new StringBuffer());
-	        LOGGER.warn(stringBuffer.toString());
-	        return false;
+			LOGGER.warn(stringBuffer.toString());
+			return false;
 		}
 		return true;
 	}
 
 	/**
 	 * Print an EMF validation diagnostic.
+	 * 
 	 * @param diagnostic
 	 * @param indent
 	 * @param stringBuffer
 	 * @return
 	 */
-	private static StringBuffer printDiagnostic(Diagnostic diagnostic, String indent, StringBuffer stringBuffer)
-	{
+	private static StringBuffer printDiagnostic(Diagnostic diagnostic, String indent, StringBuffer stringBuffer) {
 		stringBuffer.append(indent);
 		stringBuffer.append(diagnostic.getMessage());
 		stringBuffer.append("\n");
@@ -116,37 +117,40 @@ public final class OcciHelper
 
 	/**
 	 * Load an OCCI extension.
-	 * @param extensionURI URI of the extension to load.
+	 * 
+	 * @param extensionURI
+	 *            URI of the extension to load.
 	 * @return the loaded OCCI extension.
 	 */
-	public static Extension loadExtension(String extensionURI)
-	{
-		 return (Extension)loadOCCI(extensionURI);
+	public static Extension loadExtension(String extensionURI) {
+		return (Extension) loadOCCI(extensionURI);
 	}
 
 	/**
 	 * Load an OCCI configuration.
-	 * @param configurationURI URI of the configuration to load.
+	 * 
+	 * @param configurationURI
+	 *            URI of the configuration to load.
 	 * @return the loaded OCCI configuration.
 	 */
-	public static Configuration loadConfiguration(String configurationURI)
-	{
-		 return (Configuration)loadOCCI(configurationURI);
+	public static Configuration loadConfiguration(String configurationURI) {
+		return (Configuration) loadOCCI(configurationURI);
 	}
 
 	/**
 	 * Load an OCCI object.
-	 * @param uri URI of the OCCI object to load.
+	 * 
+	 * @param uri
+	 *            URI of the OCCI object to load.
 	 * @return the loaded OCCI object.
 	 */
-	private static Object loadOCCI(String uri)
-	{
-		 // Create a new resource set.
-		 ResourceSet resourceSet = new ResourceSetImpl();
-		 // Load the OCCI resource.
-		 org.eclipse.emf.ecore.resource.Resource resource = resourceSet.getResource(URI.createURI(uri), true);
-		 // Return the first element.
-		 return resource.getContents().get(0);
+	private static Object loadOCCI(String uri) {
+		// Create a new resource set.
+		ResourceSet resourceSet = new ResourceSetImpl();
+		// Load the OCCI resource.
+		org.eclipse.emf.ecore.resource.Resource resource = resourceSet.getResource(URI.createURI(uri), true);
+		// Return the first element.
+		return resource.getContents().get(0);
 	}
 
 	// ----------------------------------------------------------------------
@@ -157,29 +161,32 @@ public final class OcciHelper
 
 	/**
 	 * Get the configuration containing a given entity.
-	 * @param entity the given entity.
+	 * 
+	 * @param entity
+	 *            the given entity.
 	 * @return the entity configuration.
-	 * @throws java.lang.IllegalArgumentException If the given entity is not a resource or a link.
+	 * @throws java.lang.IllegalArgumentException
+	 *             If the given entity is not a resource or a link.
 	 */
 	public static Configuration getConfiguration(final Entity entity) {
-		if(entity instanceof Resource) {
-			return (Configuration)entity.eContainer();
-		} else if(entity instanceof Link) {
+		if (entity instanceof Resource) {
+			return (Configuration) entity.eContainer();
+		} else if (entity instanceof Link) {
 			EObject econtainer = entity.eContainer();
-			return (econtainer == null) ? null : (Configuration)econtainer.eContainer();
+			return (econtainer == null) ? null : (Configuration) econtainer.eContainer();
 		} else {
 			throw new IllegalArgumentException(entity.toString() + " is not a resource or link!");
 		}
 	}
-	
+
 	public static Configuration getConfiguration(final MixinBase mixinBase) {
-		if(mixinBase instanceof MixinBase) {
-			return (Configuration)mixinBase.eContainer();
+		if (mixinBase instanceof MixinBase) {
+			return (Configuration) mixinBase.eContainer();
 		} else {
 			throw new IllegalArgumentException(mixinBase.toString() + " is not a resource or link!");
 		}
 	}
-	
+
 	// ----------------------------------------------------------------------
 	//
 	// Related to Kind.
@@ -187,38 +194,42 @@ public final class OcciHelper
 	// ----------------------------------------------------------------------
 
 	/**
-	 * Get a kind by its term. 
-	 * @param extension The extension where to search.
-	 * @param kindTerm The term of the kind to search.
+	 * Get a kind by its term.
+	 * 
+	 * @param extension
+	 *            The extension where to search.
+	 * @param kindTerm
+	 *            The term of the kind to search.
 	 * @return The found kind.
-	 * @throws java.lang.IllegalArgumentException If the term is not found into the given extension.
+	 * @throws java.lang.IllegalArgumentException
+	 *             If the term is not found into the given extension.
 	 */
-	public static Kind getKindByTerm(final Extension extension, final String kindTerm)
-	{
+	public static Kind getKindByTerm(final Extension extension, final String kindTerm) {
 		// Iterate over all kinds of the given extension.
-		for(Kind kind : extension.getKinds()) {
+		for (Kind kind : extension.getKinds()) {
 			// If this kind has the same term that those searched then return this kind.
-			if(kind.getTerm().equals(kindTerm)) {
+			if (kind.getTerm().equals(kindTerm)) {
 				return kind;
 			}
 		}
 		// Kind not found.
-		throw new IllegalArgumentException("term '" + kindTerm + "' is not found into extension '" + extension.getScheme() + "'!");
+		throw new IllegalArgumentException(
+				"term '" + kindTerm + "' is not found into extension '" + extension.getScheme() + "'!");
 	}
-	
-	public static Mixin getMixinByTerm(final Extension extension, final String kindTerm)
-	{
+
+	public static Mixin getMixinByTerm(final Extension extension, final String kindTerm) {
 		// Iterate over all kinds of the given extension.
-		for(Mixin mixin : extension.getMixins()) {
+		for (Mixin mixin : extension.getMixins()) {
 			// If this kind has the same term that those searched then return this kind.
-			if(mixin.getTerm().equals(kindTerm)) {
+			if (mixin.getTerm().equals(kindTerm)) {
 				return mixin;
 			}
 		}
 		// Kind not found.
-		throw new IllegalArgumentException("term '" + kindTerm + "' is not found into extension '" + extension.getScheme() + "'!");
+		throw new IllegalArgumentException(
+				"term '" + kindTerm + "' is not found into extension '" + extension.getScheme() + "'!");
 	}
-	
+
 	public static Collection<Attribute> getAllAttributes(Kind kind) {
 		List<Attribute> res = new ArrayList<Attribute>();
 		res.addAll(kind.getAttributes());
@@ -227,7 +238,7 @@ public final class OcciHelper
 		}
 		return res;
 	}
-	
+
 	public static Collection<Attribute> getAllAttributes(Mixin mixin) {
 		List<Attribute> res = new ArrayList<Attribute>();
 		res.addAll(mixin.getAttributes());
@@ -236,7 +247,7 @@ public final class OcciHelper
 		}
 		return res;
 	}
-	
+
 	// ----------------------------------------------------------------------
 	//
 	// Related to Entity.
@@ -245,50 +256,51 @@ public final class OcciHelper
 
 	/**
 	 * Get all the attributes of an Entity instance.
-	 * @param entity the given Entity instance.
+	 * 
+	 * @param entity
+	 *            the given Entity instance.
 	 * @return all the attributes of the given instance.
 	 */
-	public static Collection<Attribute> getAllAttributes(final Entity entity)
-	{
+	public static Collection<Attribute> getAllAttributes(final Entity entity) {
 		List<Attribute> attributes = new ArrayList<Attribute>();
 		Kind entityKind = entity.getKind();
-		if(entityKind != null) {
+		if (entityKind != null) {
 			addAllAttributes(attributes, entityKind);
 		}
 
 		/* Removed after supporting mixins in OCCIware metamodel v2 */
-//		for(Mixin mixin : entity.getMixins()) {
-//			if(mixin != null)
-//			addAllAttributes(attributes, mixin);
-//		}	
+		// for(Mixin mixin : entity.getMixins()) {
+		// if(mixin != null)
+		// addAllAttributes(attributes, mixin);
+		// }
 		return attributes;
 	}
 
 	/**
 	 * Get all the attributes of an Entity instance.
-	 * @param mixinBase the given Entity instance.
+	 * 
+	 * @param mixinBase
+	 *            the given Entity instance.
 	 * @return all the attributes of the given instance.
 	 */
-	public static Collection<Attribute> getAllAttributes(final MixinBase mixinBase)
-	{
+	public static Collection<Attribute> getAllAttributes(final MixinBase mixinBase) {
 		List<Attribute> attributes = new ArrayList<Attribute>();
 		Mixin entityKind = mixinBase.getMixin();
-		if(entityKind != null) {
+		if (entityKind != null) {
 			addAllAttributes(attributes, entityKind);
 		}
 		return attributes;
 	}
-	
-	
 
 	/**
 	 * Add all the attributes of a given Kind instance and all its parent kinds.
 	 *
-	 * @param attributes the collection where attributes will be added.
-	 * @param kind the given Kind instance.
+	 * @param attributes
+	 *            the collection where attributes will be added.
+	 * @param kind
+	 *            the given Kind instance.
 	 */
-	public static void addAllAttributes(final Collection<Attribute> attributes, final Kind kind)
-	{
+	public static void addAllAttributes(final Collection<Attribute> attributes, final Kind kind) {
 		Kind kindParent = kind.getParent();
 		if (kindParent != null) {
 			addAllAttributes(attributes, kindParent);
@@ -299,12 +311,13 @@ public final class OcciHelper
 	/**
 	 * Add all the attributes of a given Mixin instance and all its depend mixins.
 	 *
-	 * @param attributes the collection where attributes will be added.
-	 * @param mixin the given Mixin instance.
+	 * @param attributes
+	 *            the collection where attributes will be added.
+	 * @param mixin
+	 *            the given Mixin instance.
 	 */
-	public static void addAllAttributes(final Collection<Attribute> attributes, final Mixin mixin)
-	{
-		for(Mixin md : mixin.getDepends()) {
+	public static void addAllAttributes(final Collection<Attribute> attributes, final Mixin mixin) {
+		for (Mixin md : mixin.getDepends()) {
 			addAllAttributes(attributes, md);
 		}
 		attributes.addAll(mixin.getAttributes());
@@ -312,7 +325,9 @@ public final class OcciHelper
 
 	/**
 	 * Create an entity of a given kind.
-	 * @param kind The kind of the entity to create.
+	 * 
+	 * @param kind
+	 *            The kind of the entity to create.
 	 * @return The created entity, else null.
 	 */
 	public static MixinBase createMixinBase(Entity entity, Mixin mixin) {
@@ -320,35 +335,37 @@ public final class OcciHelper
 
 		// Get the name space of the Ecore package for this mixin.
 		String epackageNS = null;
-		// If the mixin is a new mixin tag (doesnt exist on extension so, the method eContainer() will return a Configuration object.
+		// If the mixin is a new mixin tag (doesnt exist on extension so, the method
+		// eContainer() will return a Configuration object.
 		EPackage epackage = null;
 		if (mixin.eContainer() instanceof Extension) {
 			// Establish that this is an extension.
-			epackageNS = Occi2Ecore.convertOcciScheme2EcoreNamespace(((Extension)mixin.eContainer()).getScheme());
+			epackageNS = Occi2Ecore.convertOcciScheme2EcoreNamespace(((Extension) mixin.eContainer()).getScheme());
 			// Get the Ecore package associated to the mixin.
 			epackage = EPackage.Registry.INSTANCE.getEPackage(epackageNS);
 		}
-		// String epackageNS = Occi2Ecore.convertOcciScheme2EcoreNamespace(((Extension)mixin.eContainer()).getScheme());
-		if(epackage == null) {
+		// String epackageNS =
+		// Occi2Ecore.convertOcciScheme2EcoreNamespace(((Extension)mixin.eContainer()).getScheme());
+		if (epackage == null) {
 			LOGGER.warn("EPackage " + epackageNS + " not found ! and this is a mixin tag");
 		} else {
 			String classname = Occi2Ecore.convertOcciCategoryTerm2EcoreClassName(mixin.getTerm());
 			// Get the Ecore class associated to the mixin.
 			EClass eclass = (EClass) epackage.getEClassifier(classname);
-			if(eclass == null) {
+			if (eclass == null) {
 				LOGGER.warn("EClass " + classname + " not found!");
 			} else {
 				// Get the Ecore factory associated to the mixinbase.
 				EFactory efactory = EPackage.Registry.INSTANCE.getEFactory(epackageNS);
-				if(efactory == null) {
+				if (efactory == null) {
 					LOGGER.warn("EFactory " + epackageNS + " not found!");
 				} else {
 					// Create the EObject for this kind.
-					createdMixinBase = (MixinBase)efactory.create(eclass);
+					createdMixinBase = (MixinBase) efactory.create(eclass);
 				}
 			}
 		}
-		if(createdMixinBase == null) {
+		if (createdMixinBase == null) {
 			LOGGER.warn("Couldnt create mixin base for mixin : " + mixin.getScheme() + mixin.getTerm());
 			createdMixinBase = OCCIFactory.eINSTANCE.createMixinBase();
 		}
@@ -360,10 +377,12 @@ public final class OcciHelper
 		// Return the new entity.
 		return createdMixinBase;
 	}
-	
+
 	/**
 	 * Create an entity of a given kind.
-	 * @param kind The kind of the entity to create.
+	 * 
+	 * @param kind
+	 *            The kind of the entity to create.
 	 * @return The created entity, else null.
 	 */
 	public static Entity createEntity(Kind kind) {
@@ -373,26 +392,26 @@ public final class OcciHelper
 		String epackageNS = Occi2Ecore.convertOcciScheme2EcoreNamespace(kind.getScheme());
 		// Get the Ecore package associated to the kind.
 		EPackage epackage = EPackage.Registry.INSTANCE.getEPackage(epackageNS);
-		if(epackage == null) {
+		if (epackage == null) {
 			LOGGER.warn("EPackage " + epackageNS + " not found!");
 		} else {
 			String classname = Occi2Ecore.convertOcciCategoryTerm2EcoreClassName(kind.getTerm());
 			// Get the Ecore class associated to the kind.
 			EClass eclass = (EClass) epackage.getEClassifier(classname);
-			if(eclass == null) {
+			if (eclass == null) {
 				LOGGER.warn("EClass " + classname + " not found!");
 			} else {
 				// Get the Ecore factory associated to the kind.
 				EFactory efactory = EPackage.Registry.INSTANCE.getEFactory(epackageNS);
-				if(efactory == null) {
+				if (efactory == null) {
 					LOGGER.warn("EFactory " + epackageNS + " not found!");
 				} else {
 					// Create the EObject for this kind.
-					createdEntity = (Entity)efactory.create(eclass);
+					createdEntity = (Entity) efactory.create(eclass);
 				}
 			}
 		}
-		if(createdEntity == null) {
+		if (createdEntity == null) {
 			LOGGER.warn("Create OCCI Core Resource!");
 			createdEntity = OCCIFactory.eINSTANCE.createResource();
 			createdEntity.setKind(kind);
@@ -405,13 +424,18 @@ public final class OcciHelper
 
 	/**
 	 * Set an attribute of an OCCI entity.
-	 * @param entity the given entity.
-	 * @param attributeName the attribute name.
-	 * @param attributeValue the attribute value.
-	 * @throws java.lang.IllegalArgumentException Thrown when the attribute name is unknown or the attribute value is invalid.
+	 * 
+	 * @param entity
+	 *            the given entity.
+	 * @param attributeName
+	 *            the attribute name.
+	 * @param attributeValue
+	 *            the attribute value.
+	 * @throws java.lang.IllegalArgumentException
+	 *             Thrown when the attribute name is unknown or the attribute value
+	 *             is invalid.
 	 */
-	public static void setAttribute(Entity entity, String attributeName, String attributeValue)
-	{
+	public static void setAttribute(Entity entity, String attributeName, String attributeValue) {
 		// Check that attribute name exists from this entity.
 		getAttribute(entity, attributeName);
 
@@ -420,26 +444,29 @@ public final class OcciHelper
 		final EStructuralFeature eStructuralFeature = entity.eClass().getEStructuralFeature(eAttributeName);
 
 		if (eStructuralFeature == null) {
-            // Create the attribute state and update it, if none, create it.
-            AttributeState attrState = getAttributeStateObject(entity, attributeName);
-            if (attrState == null) {
-                // Create the attribute.
-                attrState = createAttributeState(attributeName, attributeValue);
-                entity.getAttributes().add(attrState);
-            } 
-            
-            return;
-			// throw new IllegalArgumentException("Ecore structural feature '" + eAttributeName + "' not found!");
+			// Create the attribute state and update it, if none, create it.
+			AttributeState attrState = getAttributeStateObject(entity, attributeName);
+			if (attrState == null) {
+				// Create the attribute.
+				attrState = createAttributeState(attributeName, attributeValue);
+				entity.getAttributes().add(attrState);
+			}
+
+			return;
+			// throw new IllegalArgumentException("Ecore structural feature '" +
+			// eAttributeName + "' not found!");
 		}
-		if(!(eStructuralFeature instanceof EAttribute)) {
-			throw new IllegalArgumentException("Ecore structural feature '" + eAttributeName + "' is not an Ecore attribute!");
+		if (!(eStructuralFeature instanceof EAttribute)) {
+			throw new IllegalArgumentException(
+					"Ecore structural feature '" + eAttributeName + "' is not an Ecore attribute!");
 		}
 
 		// Obtain the attribute type.
-		EDataType eAttributeType = ((EAttribute)eStructuralFeature).getEAttributeType();
+		EDataType eAttributeType = ((EAttribute) eStructuralFeature).getEAttributeType();
 
 		// Convert the attribute value according to the attribute type.
-		Object eAttributeValue = eAttributeType.getEPackage().getEFactoryInstance().createFromString(eAttributeType, attributeValue);
+		Object eAttributeValue = eAttributeType.getEPackage().getEFactoryInstance().createFromString(eAttributeType,
+				attributeValue);
 
 		// Set the Ecore attribute.
 		entity.eSet(eStructuralFeature, eAttributeValue);
@@ -447,13 +474,18 @@ public final class OcciHelper
 
 	/**
 	 * Set an attribute of an OCCI entity.
-	 * @param mixinBase the given entity.
-	 * @param attributeName the attribute name.
-	 * @param attributeValue the attribute value.
-	 * @throws java.lang.IllegalArgumentException Thrown when the attribute name is unknown or the attribute value is invalid.
+	 * 
+	 * @param mixinBase
+	 *            the given entity.
+	 * @param attributeName
+	 *            the attribute name.
+	 * @param attributeValue
+	 *            the attribute value.
+	 * @throws java.lang.IllegalArgumentException
+	 *             Thrown when the attribute name is unknown or the attribute value
+	 *             is invalid.
 	 */
-	public static void setAttribute(MixinBase mixinBase, String attributeName, String attributeValue)
-	{
+	public static void setAttribute(MixinBase mixinBase, String attributeName, String attributeValue) {
 		// Check that attribute name exists from this entity.
 		getAttribute(mixinBase, attributeName);
 
@@ -462,81 +494,94 @@ public final class OcciHelper
 		final EStructuralFeature eStructuralFeature = mixinBase.eClass().getEStructuralFeature(eAttributeName);
 
 		if (eStructuralFeature == null) {
-            // Create the attribute state and update it, if none, create it.
-            AttributeState attrState = getAttributeStateObject(mixinBase, attributeName);
-            if (attrState == null) {
-                // Create the attribute.
-                attrState = createAttributeState(attributeName, attributeValue);
-                mixinBase.getAttributes().add(attrState);
-            } 
-            
-            return;
-			// throw new IllegalArgumentException("Ecore structural feature '" + eAttributeName + "' not found!");
+			// Create the attribute state and update it, if none, create it.
+			AttributeState attrState = getAttributeStateObject(mixinBase, attributeName);
+			if (attrState == null) {
+				// Create the attribute.
+				attrState = createAttributeState(attributeName, attributeValue);
+				mixinBase.getAttributes().add(attrState);
+			}
+
+			return;
+			// throw new IllegalArgumentException("Ecore structural feature '" +
+			// eAttributeName + "' not found!");
 		}
-		if(!(eStructuralFeature instanceof EAttribute)) {
-			throw new IllegalArgumentException("Ecore structural feature '" + eAttributeName + "' is not an Ecore attribute!");
+		if (!(eStructuralFeature instanceof EAttribute)) {
+			throw new IllegalArgumentException(
+					"Ecore structural feature '" + eAttributeName + "' is not an Ecore attribute!");
 		}
 
 		// Obtain the attribute type.
-		EDataType eAttributeType = ((EAttribute)eStructuralFeature).getEAttributeType();
+		EDataType eAttributeType = ((EAttribute) eStructuralFeature).getEAttributeType();
 
 		// Convert the attribute value according to the attribute type.
-		Object eAttributeValue = eAttributeType.getEPackage().getEFactoryInstance().createFromString(eAttributeType, attributeValue);
+		Object eAttributeValue = eAttributeType.getEPackage().getEFactoryInstance().createFromString(eAttributeType,
+				attributeValue);
 
 		// Set the Ecore attribute.
 		mixinBase.eSet(eStructuralFeature, eAttributeValue);
 	}
-	
+
 	/**
 	 * Get an attribute of an OCCI entity.
-	 * @param entity the given entity.
-	 * @param attributeName the attribute name.
-	 * @throws java.lang.IllegalArgumentException Thrown when the attribute name is unknown.
+	 * 
+	 * @param entity
+	 *            the given entity.
+	 * @param attributeName
+	 *            the attribute name.
+	 * @throws java.lang.IllegalArgumentException
+	 *             Thrown when the attribute name is unknown.
 	 */
-	public static Attribute getAttribute(Entity entity, String attributeName)
-	{
-		for(Attribute attribute : getAllAttributes(entity)) {
-			if(attribute.getName().equals(attributeName)) {
+	public static Attribute getAttribute(Entity entity, String attributeName) {
+		for (Attribute attribute : getAllAttributes(entity)) {
+			if (attribute.getName().equals(attributeName)) {
 				return attribute;
 			}
 		}
 		throw new IllegalArgumentException("attribute '" + attributeName + "' is not found in " + entity + "!");
 	}
-	
+
 	/**
 	 * Get an attribute of an OCCI entity.
-	 * @param entity the given entity.
-	 * @param attributeName the attribute name.
-	 * @throws java.lang.IllegalArgumentException Thrown when the attribute name is unknown.
+	 * 
+	 * @param entity
+	 *            the given entity.
+	 * @param attributeName
+	 *            the attribute name.
+	 * @throws java.lang.IllegalArgumentException
+	 *             Thrown when the attribute name is unknown.
 	 */
-	public static Attribute getAttribute(MixinBase mixinBase, String attributeName)
-	{
-		for(Attribute attribute : getAllAttributes(mixinBase)) {
-			if(attribute.getName().equals(attributeName)) {
+	public static Attribute getAttribute(MixinBase mixinBase, String attributeName) {
+		for (Attribute attribute : getAllAttributes(mixinBase)) {
+			if (attribute.getName().equals(attributeName)) {
 				return attribute;
 			}
 		}
 		throw new IllegalArgumentException("attribute '" + attributeName + "' is not found in " + mixinBase + "!");
 	}
 
-	
-
 	/**
 	 * Execute an action on an OCCI entity.
-	 * @param entity the given entity.
-	 * @param actionName the action name.
-	 * @param parameters the parameters.
-	 * @throws IllegalArgumentException Thrown when the action name is unknown or parameters are invalid.
-	 * @throws InvocationTargetException Thrown when the action throws an exception.
+	 * 
+	 * @param entity
+	 *            the given entity.
+	 * @param actionName
+	 *            the action name.
+	 * @param parameters
+	 *            the parameters.
+	 * @throws IllegalArgumentException
+	 *             Thrown when the action name is unknown or parameters are invalid.
+	 * @throws InvocationTargetException
+	 *             Thrown when the action throws an exception.
 	 */
-	public static void executeAction(Entity entity, String actionName, String... parameters) throws InvocationTargetException
-	{
+	public static void executeAction(Entity entity, String actionName, String... parameters)
+			throws InvocationTargetException {
 		// TODO: Check that actionName is an OCCI action.
-		
+
 		// Search the Ecore operation.
 		EOperation eOperation = null;
-		for(EOperation tmp : entity.eClass().getEAllOperations()) {
-			if(tmp.getName().equals(actionName)) {
+		for (EOperation tmp : entity.eClass().getEAllOperations()) {
+			if (tmp.getName().equals(actionName)) {
 				eOperation = tmp;
 				break;
 			}
@@ -559,39 +604,40 @@ public final class OcciHelper
 				}
 			}
 		}
-		
-		
+
 		// Exception if operation not found.
-		if(eOperation == null) {
+		if (eOperation == null) {
 			throw new IllegalArgumentException("Ecore operation '" + actionName + "' not found!");
 		}
 
 		// Check the number of parameters.
-        EList<EParameter> eOperationParameters = eOperation.getEParameters();
-        int nbParameters = eOperationParameters.size();
-        if(parameters.length != nbParameters) {
-        	throw new IllegalArgumentException("Bad number of parameters: " + parameters.length + " given when " + nbParameters + " expected!");
-        }
-		
+		EList<EParameter> eOperationParameters = eOperation.getEParameters();
+		int nbParameters = eOperationParameters.size();
+		if (parameters.length != nbParameters) {
+			throw new IllegalArgumentException(
+					"Bad number of parameters: " + parameters.length + " given when " + nbParameters + " expected!");
+		}
+
 		// Convert parameters according to the type of Ecore operation parameters.
-        Object[] eParameters = new Object[nbParameters];
-        Class<?>[] parameterClasses = new Class[nbParameters];
-        for(int i=0; i<nbParameters; i++) {
-        		EParameter eParameter = eOperationParameters.get(i);
-        		EDataType parameterType = (EDataType)eParameter.getEType();
-        		try {
-        			eParameters[i] = parameterType.getEPackage().getEFactoryInstance().createFromString(parameterType, parameters[i]);
-        		} catch(IllegalArgumentException e) {
-        			throw new IllegalArgumentException("Bad value for '" + eParameter.getName() + "' parameter!", e);
-        		}
-        		parameterClasses[i] = parameterType.getInstanceClass();
-        }
+		Object[] eParameters = new Object[nbParameters];
+		Class<?>[] parameterClasses = new Class[nbParameters];
+		for (int i = 0; i < nbParameters; i++) {
+			EParameter eParameter = eOperationParameters.get(i);
+			EDataType parameterType = (EDataType) eParameter.getEType();
+			try {
+				eParameters[i] = parameterType.getEPackage().getEFactoryInstance().createFromString(parameterType,
+						parameters[i]);
+			} catch (IllegalArgumentException e) {
+				throw new IllegalArgumentException("Bad value for '" + eParameter.getName() + "' parameter!", e);
+			}
+			parameterClasses[i] = parameterType.getInstanceClass();
+		}
 
-        // Execute the Ecore operation.
-// FIXME: Does not work for Infrastructure metamodel!
-//		entity.eInvoke(eOperation, null);
+		// Execute the Ecore operation.
+		// FIXME: Does not work for Infrastructure metamodel!
+		// entity.eInvoke(eOperation, null);
 
-// FIXME: Then use Java reflection invocation.
+		// FIXME: Then use Java reflection invocation.
 		try {
 			if (!onMixin) {
 				Method method = entity.getClass().getMethod(actionName, parameterClasses);
@@ -610,7 +656,7 @@ public final class OcciHelper
 			throw new IllegalArgumentException("Illegal argument exception on method '" + actionName + "'!", e);
 		}
 	}
-	
+
 	/**
 	 * Create an attribute without add this to the entity object.
 	 * 
@@ -630,8 +676,8 @@ public final class OcciHelper
 	 * 
 	 * @param key
 	 *            ex: occi.core.title.
-	 * @return an AttributeState object, if attribute does not exist, null value
-	 *         is returned.
+	 * @return an AttributeState object, if attribute does not exist, null value is
+	 *         returned.
 	 */
 	private static AttributeState getAttributeStateObject(Entity entity, final String key) {
 		AttributeState attr = null;
@@ -664,10 +710,19 @@ public final class OcciHelper
 
 		return attr;
 	}
-	
+
 	public static EObject getRootElement(ResourceSet resourceSet, String path) {
-	org.eclipse.emf.ecore.resource.Resource resource = resourceSet.getResource(URI.createURI(path), true);
-	EcoreUtil.resolveAll(resource);
-	return resource.getContents().get(0);
-}
+		org.eclipse.emf.ecore.resource.Resource resource = resourceSet.getResource(URI.createURI(path), true);
+		EcoreUtil.resolveAll(resource);
+		return resource.getContents().get(0);
+	}
+	
+	public static EObject getRootElement(ResourceSet resourceSet, IFile file) {
+		URI uri = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
+		System.out.println("file " + file.getFullPath().toString());
+		System.out.println("uri " + uri);
+		org.eclipse.emf.ecore.resource.Resource resource = resourceSet.getResource(uri, true);
+		EcoreUtil.resolveAll(resource);
+		return resource.getContents().get(0);
+	}
 }
