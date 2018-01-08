@@ -102,8 +102,7 @@ public class OCCI2EMFGeneratorAction implements IObjectActionDelegate {
 		try {
 			EPackage.Registry.INSTANCE.put(ECORE_PLATFORM_URI, EcorePackage.eINSTANCE);
 			resourceSet = new ResourceSetImpl();
-			Extension ext = (Extension) OcciHelper.getRootElement(resourceSet,
-					"file:" + occieFile.getLocation().toString());
+			Extension ext = (Extension) OcciHelper.getRootElement(resourceSet, occieFile);
 
 			Map<Object, Object> validationContext = LabelUtil.createDefaultContext(Diagnostician.INSTANCE);
 			BasicDiagnostic diagnostics = Diagnostician.INSTANCE.createDefaultDiagnostic(ext);
