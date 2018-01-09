@@ -19,6 +19,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 import org.eclipse.cmf.occi.core.Attribute;
 import org.eclipse.cmf.occi.core.AttributeState;
@@ -725,4 +726,35 @@ public final class OcciHelper {
 		EcoreUtil.resolveAll(resource);
 		return resource.getContents().get(0);
 	}
+	
+	/**
+     * Get the mixin base instance tClass to apply on instance.
+     * For example : Optional<User_data> optionalUserData = MixinUtils.getMixinBase(myresourcemodel.getParts(),User_data.class);
+     */
+    public static <T extends MixinBase> Optional<T> getMixinBase(EList<MixinBase> mixins, Class<T> tClass){
+        List<MixinBase> mixinBase = mixins;
+        return mixinBase.stream()
+                .filter(mixinB -> tClass.isInstance(mixinB))
+                .findFirst()
+                .map(mixin -> (T) mixin);
+    }
+
+    /**
+     * Get the mixin base instance tClass to apply on instance.
+     * Same as getMixinBase with single class but with a list of classes.
+     * The list of classes may be listed as the following : 
+     * List<Class<T>> resourceTplList = new ArrayList<>();
+     * resourceTplList.add((Class<T>) Small.class);
+     * resourceTplList.add((Class<T>) Medium.class);
+     * resourceTplList.add((Class<T>) Large.class);
+     */
+    public static <T extends MixinBase> Optional<T> getMixinBase(EList<MixinBase> mixins, List<Class<T>> tClasses){
+        List<MixinBase> mixinBases = mixins;
+        return mixinBases.stream()
+                .filter(mixinB -> tClasses.stream()
+                        .anyMatch(tClass -> tClass.isInstance(mixinB)))
+                .findFirst()
+                .map(mixin -> (T) mixin);
+    }
+	
 }
