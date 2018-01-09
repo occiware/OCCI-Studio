@@ -140,13 +140,13 @@ public class ActionImpl extends CategoryImpl implements Action {
 		else {
 			/*@Caught*/ /*@NonNull*/ Object CAUGHT_symbol_2;
 			try {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Kind = idResolver.getClass(OCCITables.CLSSid_Kind, null);
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Kind_0 = idResolver.getClass(OCCITables.CLSSid_Kind, null);
 				final /*@NonInvalid*/ Object oclContainer = this.eContainer();
-				final /*@Thrown*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, oclContainer, TYP_occi_c_c_Kind).booleanValue();
+				final /*@Thrown*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, oclContainer, TYP_occi_c_c_Kind_0).booleanValue();
 				/*@Thrown*/ boolean status;
 				if (oclIsTypeOf) {
 					final /*@NonInvalid*/ Object oclContainer_0 = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, this);
-					final /*@Thrown*/ Kind oclAsType = ClassUtil.nonNullState((Kind)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_0, TYP_occi_c_c_Kind));
+					final /*@Thrown*/ Kind oclAsType = ClassUtil.nonNullState((Kind)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_0, TYP_occi_c_c_Kind_0));
 					final /*@Thrown*/ FSM fsm = oclAsType.getFsm();
 					final /*@Thrown*/ boolean ne = fsm != null;
 					/*@Thrown*/ boolean symbol_0;
@@ -211,7 +211,7 @@ public class ActionImpl extends CategoryImpl implements Action {
 					final /*@NonInvalid*/ String sum = StringConcatOperation.INSTANCE.evaluate(OCCITables.STR_The_32_action_32, name);
 					final /*@NonInvalid*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, OCCITables.STR__32_doesn_39_t_32_appear_32_in_32_the_32_FSM_32_of_32);
 					final /*@NonInvalid*/ Object oclContainer_2 = ClassifierOclContainerOperation.INSTANCE.evaluate(executor, this);
-					final /*@Thrown*/ Kind oclAsType_1 = ClassUtil.nonNullState((Kind)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_2, TYP_occi_c_c_Kind));
+					final /*@Thrown*/ Kind oclAsType_1 = ClassUtil.nonNullState((Kind)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, oclContainer_2, TYP_occi_c_c_Kind_0));
 					final /*@Thrown*/ String name_0 = oclAsType_1.getName();
 					final /*@Thrown*/ String sum_1 = StringConcatOperation.INSTANCE.evaluate(sum_0, name_0);
 					final /*@Thrown*/ String sum_2 = StringConcatOperation.INSTANCE.evaluate(sum_1, OCCITables.STR__32_Kind);

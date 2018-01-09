@@ -200,6 +200,7 @@ public class OCCITables
 	public static final /*@NonInvalid*/ java.lang.String STR_quot = "/";
 	public static final /*@NonInvalid*/ java.lang.String STR_resource = "resource";
 	public static final /*@NonInvalid*/ java.lang.String STR_true = "true";
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Action = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Action);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_ArrayType = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_ArrayType);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Attribute = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Attribute);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId BAG_CLSSid_Configuration = org.eclipse.ocl.pivot.ids.TypeId.BAG.getSpecializedId(org.eclipse.cmf.occi.core.OCCITables.CLSSid_Configuration);
