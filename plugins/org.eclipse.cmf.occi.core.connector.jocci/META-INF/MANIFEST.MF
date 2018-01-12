@@ -5,17 +5,26 @@ Bundle-SymbolicName: org.eclipse.cmf.occi.core.connector.jocci;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.eclipse.cmf.occi.core.connector.jocci.Activator
 Bundle-Localization: plugin
-Require-Bundle: org.eclipse.ui,
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.eclipse.cmf.occi.core;visibility:=reexport,
+ org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.core.resources,
  org.eclipse.sirius,
- org.eclipse.sirius.common.acceleo.aql,
- org.eclipse.cmf.occi.core,
- org.eclipse.emf.transaction,
- org.eclipse.cmf.occi.core.design,
- org.eclipse.ui.workbench,
+ org.eclipse.sirius.common.acceleo.mtl,
+ org.eclipse.core.resources,
  org.eclipse.ui.ide,
- org.eclipse.cmf.occi.core.edit
+ org.eclipse.sirius.ext.base,
+ org.eclipse.sirius.common,
+ org.eclipse.sirius.common.ui,
+ org.eclipse.sirius.ui,
+ org.eclipse.emf.transaction,
+ org.eclipse.emf.edit.ui,
+ org.eclipse.cmf.occi.core.edit,
+ org.eclipse.pde.ui,
+ org.eclipse.cmf.occi.core.design;bundle-version="0.1.0",
+ org.slf4j.api;bundle-version="1.7.2"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: %providerName
