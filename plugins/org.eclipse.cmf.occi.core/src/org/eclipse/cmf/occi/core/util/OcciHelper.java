@@ -278,10 +278,10 @@ public final class OcciHelper {
 	}
 
 	/**
-	 * Get all the attributes of an Entity instance.
+	 * Get all the attributes of an MixinBase instance.
 	 * 
 	 * @param mixinBase
-	 *            the given Entity instance.
+	 *            the given MixinBase instance.
 	 * @return all the attributes of the given instance.
 	 */
 	public static Collection<Attribute> getAllAttributes(final MixinBase mixinBase) {
@@ -293,6 +293,21 @@ public final class OcciHelper {
 		return attributes;
 	}
 
+	/**
+	 * Get all the attributes of an Entity instance and of its different MixinBase instance.
+	 * 
+	 * @param entity
+	 *            the given Entity instance.
+	 * @return whole the attributes of the given instance.
+	 */
+	public static Collection<Attribute> getWholeAttributes(final Entity entity) {
+		List<Attribute> attributes = new ArrayList<Attribute>();
+		attributes.addAll(getAllAttributes(entity));
+		for (MixinBase mb : entity.getParts()) {
+			attributes.addAll(getAllAttributes(mb));
+		}
+		return attributes;
+	}
 	/**
 	 * Add all the attributes of a given Kind instance and all its parent kinds.
 	 *
