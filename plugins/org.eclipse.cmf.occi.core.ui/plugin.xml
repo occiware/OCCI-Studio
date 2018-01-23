@@ -25,13 +25,11 @@
          </action>
       </objectContribution>
    </extension>
- <!-- Popup menu for generate an OCCI configuration from Extension configuration. 
    <extension
          point="org.eclipse.ui.popupMenus">
       <objectContribution
-            objectClass="org.eclipse.core.resources.IFile"
-            nameFilter="*.*"
-            id="org.eclipse.cmf.occi.core.ui.contribution1">
+            objectClass="org.eclipse.core.resources.IProject"
+            id="org.eclipse.cmf.occi.core.ui.contribution2">
          <menu
                label="OCCI Studio"
                path="additionsOCCIStudio"
@@ -41,13 +39,12 @@
             </separator>
          </menu>
          <action
-               label="Generate OCCI Configuration"
-               class="org.eclipse.cmf.occi.core.ui.popup.actions.ExtensionConfiguration2OCCICAction"
+               label="Register All OCCI Extension"
+               class="org.eclipse.cmf.occi.core.ui.popup.actions.RegisterAllOCCIExtensionAction"
                menubarPath="org.eclipse.cmf.occi.core.occi-studio.ui.menu/group"
-               enablesFor="1"
-               id="org.eclipse.cmf.occi.core.ui.RegisterOCCIExtension">
+               enablesFor="*"
+               id="org.eclipse.cmf.occi.core.ui.RegisterAllOCCIExtension">
          </action>
       </objectContribution>
    </extension>
-   -->
 </plugin>

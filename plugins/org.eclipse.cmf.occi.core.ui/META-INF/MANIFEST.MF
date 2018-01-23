@@ -12,7 +12,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.ecore,
  org.eclipse.cmf.occi.core,
  org.eclipse.sirius,
- org.eclipse.sirius.ext.base
+ org.eclipse.sirius.ext.base,
+ org.eclipse.pde.core
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.cmf.occi.core.ui.popup.actions
