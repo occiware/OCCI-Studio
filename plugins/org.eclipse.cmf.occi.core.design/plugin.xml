@@ -46,28 +46,4 @@ Contributors:
             name="OCCI Configuration File">
       </wizard>
    </extension>
-
-   <!-- Popup menu for register an OCCI extension. 
-   <extension point="org.eclipse.ui.popupMenus">
-      <objectContribution
-            id="org.eclipse.cmf.occi.core.design.contribution.occie"
-            nameFilter="*.occie"
-            objectClass="org.eclipse.core.resources.IFile">
-         <menu
-               id="org.eclipse.cmf.occi.core.gen.connector.ui.menu"
-               label="OCCI Studio"
-               path="additionsOcciStudio">
-            <separator
-                  name="group"/>
-         </menu>
-         <action
-               class="org.eclipse.cmf.occi.core.design.popup.actions.RegisterExtensionAction"
-               enablesFor="1"
-               id="org.eclipse.cmf.occi.core.design.registerExtensionAction"
-               label="Register OCCI Extension"
-               menubarPath="org.eclipse.cmf.occi.core.gen.connector.ui.menu/group">
-         </action>
-      </objectContribution>
-   </extension>
--->
 </plugin>
