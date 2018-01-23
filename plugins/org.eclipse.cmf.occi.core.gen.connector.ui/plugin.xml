@@ -38,18 +38,18 @@
           <menu
                label="OCCI Studio"
                path="additionsOCCIStudio"
-               id="org.eclipse.cmf.occi.core.gen.connector.ui.menu">
+               id="org.eclipse.cmf.occi.core.occi-studio.ui.menu">
             <separator
                   name="group">
             </separator>
          </menu>
          <action
                class="org.eclipse.cmf.occi.core.gen.connector.ui.popupMenus.RegenerateConnectorAction"
-               enablesFor="+"
+               enablesFor="1"
                id="org.eclipse.cmf.occi.core.gen.connector.ui.popupMenus.acceleoGenerateConnectorAction"
                icon="icons/ConnectorProject.gif"
                label="Regenerate OCCI Connector"
-               menubarPath="org.eclipse.cmf.occi.core.gen.connector.ui.menu/group"/>
+               menubarPath="org.eclipse.cmf.occi.core.occi-studio.ui.menu/group"/>
       </objectContribution>
    </extension>
  </plugin> 
