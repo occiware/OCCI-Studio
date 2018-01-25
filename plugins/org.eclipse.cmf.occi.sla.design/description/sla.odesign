@@ -2,8 +2,7 @@
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="sla" version="10.0.0.201505222000">
   <ownedViewpoints name="SlaConfiguration" label="org.eclipse.cmf.occi.sla Configuration">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SlaConfiguration Diagram" domainClass="Configuration">
-      <metamodel href="http://schemas.ogf.org/occi/core/ecore#/"/>
-      <metamodel href="http://schemas.ogf.org/occi/sla/ecore#/"/>
+	  <metamodel href="http://schemas.ogf.org/occi/sla/ecore#/"/>
       <defaultLayer name="Default">
         <edgeMappings name="agreementLinksEdge" sourceMapping="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='agreementContainer']" targetMapping="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='agreement_linkContainer']" targetFinderExpression="feature:links">
           <style sizeComputationExpression="2">
@@ -32,7 +31,7 @@
         <containerMappings name="agreementContainer" preconditionExpression="[self.oclIsTypeOf(Agreement)/]"
             labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
 			semanticCandidatesExpression="feature:resources" 
-			domainClass="Agreement">
+			domainClass="Agreement"  childrenPresentation="VerticalStack">
 <subContainerMappings name="SubagreementContainer" semanticCandidatesExpression="[self/]" domainClass="Agreement" childrenPresentation="List">
           <subNodeMappings name="agreementId"
                 labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditagreementId']"
@@ -106,13 +105,21 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subNodeMappings>
-			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="[self.kind.name/]">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
 </subContainerMappings>
+	<subContainerMappings name="agreement_tplMixin" preconditionExpression="[self.oclIsTypeOf(Agreement_tpl)/]" semanticCandidatesExpression="feature:parts" domainClass="Agreement_tpl" childrenPresentation="List">
+	<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="[self.mixin.name/]">
+	              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+	              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+	              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+	              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+	            </style>
+	          </subContainerMappings>
 	<subContainerMappings name="agreement_termMixin" preconditionExpression="[self.oclIsTypeOf(Agreement_term)/]" semanticCandidatesExpression="feature:parts" domainClass="Agreement_term" childrenPresentation="List">
 	<subNodeMappings name="Agreement_termocciAgreementTermType" semanticCandidatesExpression="[self/]" domainClass="Agreement_term">
 	              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiAgreementTermType = ' + self.occiAgreementTermType.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
@@ -142,29 +149,21 @@
 	                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
 	              </style>
 	            </subNodeMappings>
-	<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+	<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="[self.mixin.name/]">
 	              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
 	              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
 	              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
 	              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
 	            </style>
 	          </subContainerMappings>
-	<subContainerMappings name="agreement_tplMixin" preconditionExpression="[self.oclIsTypeOf(Agreement_tpl)/]" semanticCandidatesExpression="feature:parts" domainClass="Agreement_tpl" childrenPresentation="List">
-	<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
-	              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-	              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-	              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-	              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
-	            </style>
-	          </subContainerMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': agreement'/]" roundedCorner="true">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="[self.title + ': agreement'/]" roundedCorner="true">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style> 
           <conditionnalStyles predicateExpression="[occiAgreementState = AgreementStatus::Pending/]">
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': agreement'/]" roundedCorner="true">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="[self.title + ': agreement'/]" roundedCorner="true">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -172,7 +171,7 @@
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="[occiAgreementState = AgreementStatus::Accepted/]">
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': agreement'/]" roundedCorner="true">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="[self.title + ': agreement'/]" roundedCorner="true">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -180,7 +179,7 @@
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="[occiAgreementState = AgreementStatus::Rejected/]">
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': agreement'/]" roundedCorner="true">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="[self.title + ': agreement'/]" roundedCorner="true">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -188,7 +187,7 @@
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="[occiAgreementState = AgreementStatus::Suspended/]">
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': agreement'/]" roundedCorner="true">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="[self.title + ': agreement'/]" roundedCorner="true">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -196,7 +195,7 @@
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="[occiAgreementState = AgreementStatus::Terminated/]">
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': agreement'/]" roundedCorner="true">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="[self.title + ': agreement'/]" roundedCorner="true">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -205,10 +204,10 @@
           </conditionnalStyles>
 
         </containerMappings>
-        <containerMappings name="agreement_linkContainer"
+        <containerMappings name="agreement_linkContainer" preconditionExpression="[self.oclIsTypeOf(Agreement_link)/]"
             labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
 			semanticCandidatesExpression="[resources.links->filter(Agreement_link)/]" 
-			domainClass="Agreement_link">
+			domainClass="Agreement_link"  childrenPresentation="VerticalStack">
 <subContainerMappings name="Subagreement_linkContainer" semanticCandidatesExpression="[self/]" domainClass="Agreement_link" childrenPresentation="List">
           <subNodeMappings name="agreement_linkId"
                 labelDirectEdit="//@ownedViewpoints[name='SlaConfiguration']/@ownedRepresentations[name='SlaConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='Editagreement_linkId']"
@@ -237,14 +236,14 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subNodeMappings>
-			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="[self.kind.name/]">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
 </subContainerMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': agreement_link'/]" roundedCorner="true">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="[self.title + ': agreement_link'/]" roundedCorner="true">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -337,6 +336,24 @@
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiAgreementTermRemedy" valueExpression="var:arg0"/>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Editagreement_linkId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Editagreement_linkTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Editagreement_linkLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
           <ownedTools xsi:type="tool:DirectEditLabel" name="EditagreementId" inputLabelExpression="feature:id">
             <mask mask="{0}"/>
             <initialOperation>
@@ -413,24 +430,6 @@
             <view name="views"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Agreement).terminate()/]"/>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="Editagreement_linkId" inputLabelExpression="feature:id">
-            <mask mask="{0}"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="Editagreement_linkTitle" inputLabelExpression="feature:title">
-            <mask mask="{0}"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="Editagreement_linkLocation" inputLabelExpression="feature:location">
-            <mask mask="{0}"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool_1:PopupMenu" name="CRUD operations" precondition="[self.oclIsKindOf(Entity)/]">
