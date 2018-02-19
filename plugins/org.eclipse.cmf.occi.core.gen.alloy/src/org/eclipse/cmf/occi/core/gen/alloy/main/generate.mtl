@@ -21,14 +21,14 @@
 
 // ======================================================================
 //
-// Static Semantics for OCCI Extension '[extension.name/]'
+// Static Semantics for fclouds '[extension.name/]'
 //
 // ======================================================================
 
 module [extension.name/]
 
 open util/boolean
-open OCCI
+open fclouds
 
 // ======================================================================
 //
@@ -42,7 +42,7 @@ open [imported.name/]
 
 // ======================================================================
 //
-// OCCI extension '[extension.name/]'
+// fclouds extension '[extension.name/]'
 //
 // ======================================================================
 
@@ -76,11 +76,53 @@ run Consistency {} for 10
 
 run The_OCCI_Type_System {} for 0
 
+// ======================================================================
+// imported check
+// ======================================================================
+
+check GetAllCategoriesIsSafe for 10
+check GetAllCategoriesIsIdempotent for 10
+check GetAllCategoriesOnConfigurationWithoutExtensionsAndUserMixinsReturnsNoCategory for 10
+check GetAllCategoriesOnConfigurationWithoutExtensionsReturnsUserMixins for 10
+check GetAllCategoriesOnConfigurationWithoutUserMixinsReturnsAllExtensionsKindsAndMixins for 10
+check CreateResourceIsIdempotent for 10
+check CreateResourceImpliesResourceAddedToKind for 10
+check RetrieveResourceIsSafe for 10
+check RetrieveResourceIsIdempotent for 10
+check CreateResourceAndRetrieveResourceAreSequential for 10 //but exactly 1 Configuration, exactly 2 Resource, exactly 3 Time
+check UpdateResourceIsIdempotent for 10
+check DeleteResourceIsIdempotent for 10
+check DeleteResourceImpliesResourceRemovedFromConfiguration for 10
+check CreateResourceAndDeleteResourceAreReversible for 10
+check CreateLinkIsIdempotent for 10
+check CreateLinkImpliesLinkAddedToKind for 10
+check RetrieveLinkIsSafe for 10
+check RetrieveLinkIsIdempotent for 10
+check CreateLinkAndRetrieveLinkAreSequential for 10
+check DeleteLinkIsIdempotent for 10
+check DeleteLinkImpliesLinkRemovedFromConfiguration for 10
+check CreateLinkAndDeleteLinkAreReversible for 10
+check UpdateLinkIsIdempotent for 10
+check AddUserMixinDoesNotModifyConfigurationExtensionsAndResources for 10
+check AddUserMixinCanNotAddAlreadyExistingMixin for 10
+check AddUserMixinDoesTheWork for 10
+check RemoveUserMixinDoesNotModifyConfigurationExtensionsAndResources for 10
+check RemoveUserMixinCanNotRemoveNotExistingMixin for 10
+check RemoveUserMixinDoesTheWork for 10
+check AddUserMixinAndRemoveUserMixinAreReversibleOperations_v2 for 10
+check AssociateMixinToResourceIsIdempotent for 10
+check DissociateMixinFromResourceIsIdempotent for 10
+check AssociateMixinToResourceAndDissociateMixinFromResourceAreReversible for 10
+check RetrieveCollectionIsSafe for 10
+check RetrieveCollectionOnConfigurationWithoutExtensionsAndUserMixinsReturnsNoCategory for 10
+check RetrieveCollectionOnConfigurationWithoutExtensionsReturnsUserMixins for 10
+check RetrieveCollectionOnConfigurationWithoutUserMixinsReturnsAllExtensionsKindsAndMixins for 10
+
 [/file]
 [/template]
 
 [template public generateStringField(label : String, value : String) post (trim())]
-    [if (value = null or value.size() = 0)]no [label/][else][label/] = "[value/]"[/if]
+    [if (value = null or value.size() = 0)]no [label/][else][label/] = "[escape(value)/]"[/if]
 [/template]
 
 [template public generateTermSchemeTitle(category : Category)]
@@ -102,7 +144,7 @@ one sig [kind.term/] extends Kind {} {
     [if (kind.parent = null)]no parent[else]parent = [getKindParent(kind)/][/if]
     [if (kind.attributes->isEmpty())]no attributes[else]attributes = [for (attribute : Attribute | kind.attributes) separator(' + ')][getSigName(attribute)/][/for][/if]
     [if (kind.actions->isEmpty())]no actions[else]actions = [for (action : Action | kind.actions) separator(' + ')][getSigName(action)/][/for][/if]
-    entities in [toU1Case(kind.term)/]
+	entities.Time in [if (kind.term = 'entity')]fclouds/Entity[else]this/[toU1Case(kind.term)/][/if]
 }
 [for (attribute : Attribute | kind.attributes)]
 [generateStaticSemantics(attribute)/]
@@ -138,7 +180,7 @@ one sig [mixin.term/] extends Mixin {} {
     [if (mixin.applies->isEmpty())]no applies[else]applies = [for (kind : Kind | mixin.applies) separator(' + ')][getKind(kind, mixin)/][/for][/if]
     [if (mixin.attributes->isEmpty())]no attributes[else]attributes = [for (attribute : Attribute | mixin.attributes) separator(' + ')][getSigName(attribute)/][/for][/if]
     [if (mixin.actions->isEmpty())]no actions[else]actions = [for (action : Action | mixin.actions) separator(' + ')][getSigName(action)/][/for][/if]
-    entities in [toU1Case(mixin.term)/]
+    entities.Time in this/[toU1Case(mixin.term)/]
 }
 [for (attribute : Attribute | mixin.attributes)]
 [generateStaticSemantics(attribute)/]
@@ -170,7 +212,7 @@ one sig [getSigName(attribute)/] extends Attribute {} {
     required = [generate(attribute.required)/]
     [generateStringField('default', attribute.default)/]
     [generateStringField('description', attribute.description)/]
-    multiple_values = [comment [generate(attribute.multiple_values) /]
+    multiple_values = False[comment [generate(attribute.multiple_values) /]
 }
 [/template]
 
@@ -217,14 +259,14 @@ one sig [for (literal : EEnumLiteral | type.eLiterals) separator(', ')][type.nam
 
 // ======================================================================
 //
-// Dynamic Semantics for OCCI Extensions '[extension.name/]'
+// Dynamic Semantics for fclouds '[extension.name/]'
 //
 // ======================================================================
 
 module [extension.name/]_behaviour
 
 open util/boolean
-open OCCI
+open fclouds
 open [extension.name/]
 
 //
@@ -338,6 +380,12 @@ pred [action.term/]['['/]before: [categorySig/][for (attribute : Attribute | act
 	'getNow()', 
 	Sequence{})/]
 
+[query public escape(string : String) : String
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.alloy.services.GenUtils', 
+	'escape(java.lang.String)', 
+	Sequence{string})/]
+
 [query public getFilePath(extension : Extension) : String
 	= invoke(
 	'org.eclipse.cmf.occi.core.gen.alloy.services.GenUtils', 
@@ -370,7 +418,11 @@ pred [action.term/]['['/]before: [categorySig/][for (attribute : Attribute | act
 
 [query public getKindSig(kind : Kind, ctx : Mixin) : String = getScope4Mixin(kind, ctx) + toU1Case(kind.term) /]
 
-[query public getKindParentSig(kind : Kind) : String = getScope4KindParent(kind) + toU1Case(kind.parent.term) /] 
+[query public getKindParentSig(kind : Kind) : String 
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.alloy.services.GenUtils', 
+	'getKindParentSig(org.eclipse.cmf.occi.core.Kind)', 
+	Sequence{kind})/]
 
 [query public getKindParent(kind : Kind) : String = getScope4KindParent(kind) + kind.parent.term /]
 

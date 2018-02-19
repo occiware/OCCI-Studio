@@ -75,4 +75,19 @@ public class GenUtils
 		}
 		return sb.toString();
 	}
+	
+	public String getKindParentSig(Kind kind) {
+		if (kind.getParent() == null && "entity".equals(kind.getTerm())) {
+			return "fclouds/Entity";
+		} else {
+			String termOfParent = kind.getParent().getTerm();
+			String scopeParent = getScope4KindParent(kind);
+			return  (scopeParent.isEmpty() ? "this/" : scopeParent) +
+					(termOfParent.substring(0,1).toUpperCase() + termOfParent.substring(1));
+		}
+	}
+	
+	public String escape(String stringToBeEscaped) {
+		return stringToBeEscaped.replace("\"", "\\\"").replace("\n", "\\n");
+	}
 }
