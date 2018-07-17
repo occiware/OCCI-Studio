@@ -18,15 +18,15 @@
       version="1.0.0.qualifier"
       provider-name="OCCIware">
 
-  <description url="http://www.occiware.org">
+   <description url="http://www.occiware.org">
       OCCI Studio developed within the OCCIware project.
-  </description>
+   </description>
 
-  <copyright url="http://www.occiware.org">
+   <copyright url="http://www.occiware.org">
       Copyright (c) 2015-2017 Obeo, Inria
-  </copyright>
+   </copyright>
 
-  <license url="http://www.eclipse.org/legal/epl-v10.html">
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
       Eclipse Public License - v 1.0
 THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS
 ECLIPSE PUBLIC LICENSE (&quot;AGREEMENT&quot;). ANY USE, REPRODUCTION OR
@@ -223,74 +223,107 @@ No party to this Agreement will bring a legal action under this
 Agreement more than one year after the cause of action arose.
 Each party waives its rights to a jury trial in any resulting
 litigation.
-  </license>
+   </license>
 
-  <plugin
+   <requires>
+      <import feature="org.eclipse.egit" version="5.0.1.201806211838-r"/>
+      <import feature="org.eclipse.emf" version="2.14.0.v20180529-1144"/>
+      <import feature="org.eclipse.emf.compare.egit" version="1.2.3.201805161152"/>
+      <import feature="org.eclipse.emf.ecoretools.design" version="3.3.0.201706121316"/>
+      <import feature="org.eclipse.epsilon.core.dt.feature" version="1.4.0.201611012202"/>
+      <import feature="org.eclipse.epsilon.core.feature" version="1.4.0.201611012202"/>
+      <import feature="org.eclipse.epsilon.emf.dt.feature" version="1.4.0.201611012202"/>
+      <import feature="org.eclipse.epsilon.emf.feature" version="1.4.0.201611012202"/>
+      <import feature="org.eclipse.mylyn.wikitext_feature" version="3.0.19.201711172000"/>
+      <import feature="org.eclipse.ocl.all.sdk" version="5.4.0.v20180611-1119"/>
+      <import feature="org.eclipse.ocl.examples" version="6.4.0.v20180611-1119"/>
+      <import feature="org.eclipse.pde" version="3.13.100.v20180611-0826"/>
+      <import feature="org.eclipse.sdk" version="4.8.0.v20180611-0826"/>
+      <import feature="org.eclipse.sirius.runtime" version="6.0.0.201806111309"/>
+      <import feature="org.eclipse.sirius.runtime.aql" version="6.0.0.201806111309"/>
+      <import feature="org.eclipse.sirius.runtime.ide.ui" version="6.0.0.201806111309"/>
+      <import feature="org.eclipse.sirius.specifier" version="6.0.0.201806111309"/>
+      <import feature="org.eclipse.xtend.sdk" version="2.14.0.v20180523-0937"/>
+      <import feature="org.eclipse.xtext.sdk" version="2.14.0.v20180523-0937"/>
+   </requires>
+
+   <plugin
          id="org.eclipse.cmf.occi.core"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-  <plugin
+
+   <plugin
          id="org.eclipse.cmf.occi.core.design"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-  <plugin
+
+   <plugin
          id="org.eclipse.cmf.occi.core.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-  <plugin
+
+   <plugin
          id="org.eclipse.cmf.occi.core.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-  <plugin
+
+   <plugin
          id="org.eclipse.cmf.occi.core.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-  <plugin
+
+   <plugin
          id="org.eclipse.cmf.examples"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-  <plugin
+
+   <plugin
          id="org.eclipse.cmf.occi.core.xtext"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-  <plugin
+
+   <plugin
          id="org.eclipse.cmf.occi.core.xtext.ide"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-  <plugin
+
+   <plugin
          id="org.eclipse.cmf.occi.core.xtext.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-  <plugin
+
+   <plugin
          id="org.eclipse.cmf.occi.core.xtext.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-  <plugin
+
+   <plugin
          id="org.eclipse.cmf.occi.core.xtext.ui.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/> 
+         unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.core.gen.emf"
          download-size="0"
@@ -304,6 +337,7 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.core.gen.textile"
          download-size="0"
@@ -317,6 +351,7 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.core.gen.latex"
          download-size="0"
@@ -330,6 +365,7 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.core.gen.design"
          download-size="0"
@@ -343,30 +379,35 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-  <plugin
+
+   <plugin
          id="org.eclipse.cmf.occi.core.gen.design.extended"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-  <plugin
+
+   <plugin
          id="org.eclipse.cmf.occi.core.gen.design.extended.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.core.gen.connector"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.core.gen.connector.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.core.gen.uris"
          download-size="0"
@@ -380,6 +421,7 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.core.gen.curl"
          download-size="0"
@@ -393,258 +435,301 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.core.gen.xml"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.core.gen.xml.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.core.gen.xml"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.core.gen.xml.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.core.gen.alloy"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.core.gen.alloy.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.core.connector.jocci"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.infrastructure"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.infrastructure.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.infrastructure.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.infrastructure.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.infrastructure.design"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.infrastructure.connector.dummy"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.infrastructure.example"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.crtp"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.crtp.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.crtp.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.crtp.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.crtp.design"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.crtp.design.extended"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.crtp.connector.dummy"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.crtp.example"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.monitoring"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.monitoring.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.monitoring.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.monitoring.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.monitoring.design"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.monitoring.connector.dummy"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.monitoring.example"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.platform"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.platform.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.platform.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.platform.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.platform.design"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.platform.connector.dummy"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.platform.example"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.sla"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.sla.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.sla.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.sla.design"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.sla.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.sla.connector.dummy"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="org.eclipse.cmf.occi.sla.example"
          download-size="0"
@@ -652,276 +737,4 @@ litigation.
          version="0.0.0"
          unpack="false"/>
 
-<!-- TODO: add following plugins.
-   <plugin
-         id="org.eclipse.cmf.occi.gen.alloy"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.gen.alloy.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.gen.connector"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.gen.connector.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.gen.curl"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.gen.curl.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.gen.doc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.gen.doc.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.gen.xml"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.gen.xml.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.infrastructure.design"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.platform"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.platform.connector.dummy"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.platform.design"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.platform.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.platform.editor"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.monitoring"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="oorg.eclipse.cmf.occi.monitoring.occiware"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.monitoring.connector.dummy"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="oorg.eclipse.cmf.occi.monitoring.design"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.monitoring.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.monitoring.editor"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.xtext"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.xtext.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.emfgen"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.emfgen.design"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.emfgen.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.connector.jocci"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.examples"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.infrastructure.example"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-   <plugin
-         id="org.eclipse.cmf.occi.monitoring.example"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
--->
-
-  <requires>
-    <!-- Eclipse Modeling Framework and tools. -->
-    <import feature="org.eclipse.emf" version="2.12.0.v20160526-0356"/>
-
-<!-- TODO: remove previous list of required features
-      <import feature="org.eclipse.mylyn.wikitext_feature" version="2.5.0.v20150522-1430"/>
-      <import feature="org.eclipse.acceleo" version="3.6.0.201506080954"/>
-      <import feature="org.eclipse.epp.package.java.feature" version="4.5.0.20150621-1200"/>
-      <import feature="org.eclipse.emf.ecoretools.sdk" version="3.0.0.201505261431"/>  -->
-      <import feature="org.eclipse.sirius.runtime" version="5.0.0.201706130938"/>
-      <import feature="org.eclipse.sirius.runtime.aql" version="5.0.0.201706130938"/>
-      <import feature="org.eclipse.sirius.runtime.ide.ui" version="5.0.0.201706130938"/>
-      <import feature="org.eclipse.sirius.specifier" version="5.0.0.201706130938"/>
-      <import feature="org.eclipse.xtend.sdk" version="2.12.0.v20170519-1412"/>
-      <import feature="org.eclipse.xtext.sdk" version="2.12.0.v20170519-1412"/>
- <!--      <import plugin="org.eclipse.jdt.annotation" version="2.1.0"/>
-     <import plugin="org.eclipse.epsilon.emc.emf" version="1.4.0"/>
-      <import plugin="org.eclipse.epsilon.emc.emf.dt" version="1.4.0"/>
-      <import plugin="org.eclipse.epsilon.emf.dt" version="1.4.0"/> -->
-      
-      <import feature="org.eclipse.pde" version="3.13.0.v20170612-0950"/>
-      <import feature="org.eclipse.sdk" version="4.7.0.v20170612-1255"/>
-
-      <import feature="org.eclipse.ocl.all.sdk" version="5.3.0.v20170607-1133"/>
-      <import feature="org.eclipse.ocl.examples" version="6.3.0.v20170613-1432"/>
-      <import feature="org.eclipse.epsilon.core.feature" version="1.4.0.201611012202"/>
-      <import feature="org.eclipse.epsilon.core.dt.feature" version="1.4.0.201611012202"/>
-      <import feature="org.eclipse.epsilon.emf.dt.feature" version="1.4.0.201611012202"/>
-      <import feature="org.eclipse.epsilon.emf.feature" version="1.4.0.201611012202"/>
-      <import feature="org.eclipse.emf.ecoretools.design" version="3.3.0.201706121316"/>
-      <import feature="org.eclipse.mylyn.wikitext_feature" version="3.0.6.201703111926"/>
-      <import feature="org.eclipse.egit" version="4.8.0.201706111038-r"/>
-      <import feature="org.eclipse.emf.compare.egit" version="1.2.1.201706130827"/>
-      
-<!--
-OCL features installed in the Faiez’s Eclipse:
-org.eclipse.ocl (3.7.0.v20170219-1911) "OCL for Ecore"                     -> REQUIRED for compiling EMF generated code.
-org.eclipse.ocl.doc (3.7.0.v20170120-1018) "OCL Documentation"             -> USELESS for compiling EMF generated code.
-org.eclipse.ocl.edit (5.1.0.v20170120-1018) "OCL Edit Support"             -> USELESS for compiling EMF generated code.
-org.eclipse.ocl.examples (6.3.0.v20170302-1545) "OCL Examples and Editors" -> USELESS for compiling EMF generated code.
-org.eclipse.ocl.examples.classic (5.3.0.v20170219-1911) "OCL Classic SDK"  -> USELESS for compiling EMF generated code.
-org.eclipse.ocl.examples.tests (1.5.0.v20170222-1221) "OCL Examples Tests" -> NOT FOUND
-org.eclipse.ocl.examples.unified (4.2.0.v20170302-1545) "OCL Unified SDK"  -> USELESS for compiling EMF generated code.
-org.eclipse.ocl.master (6.3.0.v20170302-1545) "OCL All-In-One SDK"         -> NOT FOUND
-org.eclipse.ocl.tests (5.1.0.v20150609-0403) "OCL Test Support"            -> NOT FOUND
-org.eclipse.ocl.ui (2.2.0.v20170120-1018) "OCL User Interface"             -> USELESS for compiling EMF generated code.
-org.eclipse.ocl.uml (5.3.0.v20170219-1911) "OCL for UML"                   -> USELESS for compiling EMF generated code. 
--->
-<!--
-    <import feature="org.eclipse.ocl" version="3.7.0.v20170219-1911"/>
- -->
-<!-- TODO: remove previous list of required features
-      <import feature="org.eclipse.emf.compare.ide.ui" version="3.1.0.201506080833"/>
-      <import feature="org.eclipse.pde" version="3.11.0.v20150603-2000"/>
- -->
-  </requires>
 </feature>

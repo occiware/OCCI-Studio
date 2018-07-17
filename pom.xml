@@ -153,9 +153,9 @@
   <repositories>
     <!-- configure p2 repository to resolve against -->
 	<repository>
-      <id>oxygen</id>
+      <id>photon</id>
       <layout>p2</layout>
-      <url>http://download.eclipse.org/releases/oxygen</url>
+      <url>http://download.eclipse.org/releases/photon</url>
     </repository>
  
     <repository>
