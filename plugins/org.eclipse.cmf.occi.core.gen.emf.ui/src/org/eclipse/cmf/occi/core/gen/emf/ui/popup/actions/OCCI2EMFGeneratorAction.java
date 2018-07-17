@@ -224,9 +224,8 @@ public class OCCI2EMFGeneratorAction implements IObjectActionDelegate {
 		 */
 		Collection<GenPackage> usedPackages = new ArrayList<GenPackage>();
 		for (Extension extension : ext.getImport()) {
-			if (!extension.getName().equals("core")) {
+			if (!extension.getScheme().equals("http://schemas.ogf.org/occi/core#")) {
 				String extensionFileUri = OcciRegistry.getInstance().getFileURI(extension.getScheme());
-				//System.out.println(extensionFileUri);
 				GenModel genModel = (GenModel) resourceSet
 						.getResource(URI.createURI(extensionFileUri.replaceAll(".occie", ".genmodel")), true)
 						.getContents().get(0);
