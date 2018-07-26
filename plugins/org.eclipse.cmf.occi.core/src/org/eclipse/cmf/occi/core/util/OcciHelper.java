@@ -735,8 +735,8 @@ public final class OcciHelper {
 	
 	public static EObject getRootElement(ResourceSet resourceSet, IFile file) {
 		URI uri = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
-		System.out.println("file " + file.getFullPath().toString());
-		System.out.println("uri " + uri);
+		//System.out.println("file " + file.getFullPath().toString());
+		//System.out.println("uri " + uri);
 		org.eclipse.emf.ecore.resource.Resource resource = resourceSet.getResource(uri, true);
 		EcoreUtil.resolveAll(resource);
 		return resource.getContents().get(0);

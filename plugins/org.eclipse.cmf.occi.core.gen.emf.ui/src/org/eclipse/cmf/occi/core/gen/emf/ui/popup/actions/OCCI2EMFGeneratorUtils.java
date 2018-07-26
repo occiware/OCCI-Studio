@@ -60,10 +60,10 @@ public class OCCI2EMFGeneratorUtils {
 				"- Faiez Zalila <faiez.zalila@inria.fr>"
 		);
 		// Added to generate java code corresponding to OCL constraints defined in the OCCI extension
-//		GenAnnotation genannotation = GenModelFactory.eINSTANCE.createGenAnnotation();
-//		genannotation.setSource("http://www.eclipse.org/OCL/GenModel");
-//		genannotation.getDetails().put("Use Delegates", "false");
-//		genModel.getGenAnnotations().add(genannotation);
+		GenAnnotation genannotation = GenModelFactory.eINSTANCE.createGenAnnotation();
+		genannotation.setSource("http://www.eclipse.org/OCL/GenModel");
+		genannotation.getDetails().put("Use Delegates", "false");
+		genModel.getGenAnnotations().add(genannotation);
 		
 		String modelPluginId = new Path(ecoreLocation).removeLastSegments(2).lastSegment().toString();
 		String editPluginId = modelPluginId + ".edit";
@@ -87,7 +87,7 @@ public class OCCI2EMFGeneratorUtils {
 		GenPackage genPackage = genModel.getGenPackages().get(0);
 		genPackage.setPrefix(ConverterUtils.toU1Case(rootPackage.getNsPrefix()));
 		genPackage.setBasePackage(basePackage);
-		genPackage.setLoadInitialization(false);
+		//genPackage.setLoadInitialization(false);
 		URI genModelURI = URI
 				.createFileURI(new Path(ecoreLocation).removeFileExtension().addFileExtension("genmodel").toString());
 		final XMIResourceImpl genModelResource = new XMIResourceImpl(genModelURI);

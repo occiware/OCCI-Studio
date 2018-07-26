@@ -453,13 +453,13 @@ public class OCCIExtension2Ecore {
 			if (type.isSetTotalDigits())
 				eannotation.getDetails().put("totalDigits", Integer.toString(type.getTotalDigits()));
 			if (type.isSetMinInclusive())
-				eannotation.getDetails().put("MinInclusive", type.getMinInclusive());
+				eannotation.getDetails().put("minInclusive", type.getMinInclusive());
 			if (type.isSetMinExclusive())
-				eannotation.getDetails().put("MinExclusive", type.getMinExclusive());
+				eannotation.getDetails().put("minExclusive", type.getMinExclusive());
 			if (type.isSetMaxInclusive())
-				eannotation.getDetails().put("MaxInclusive", type.getMaxInclusive());
+				eannotation.getDetails().put("maxInclusive", type.getMaxInclusive());
 			if (type.isSetMaxExclusive())
-				eannotation.getDetails().put("MaxExclusive", type.getMaxExclusive());
+				eannotation.getDetails().put("maxExclusive", type.getMaxExclusive());
 		}
 		if (type.getDocumentation() != null) {
 			attachInfo(edatatype, type.getDocumentation());

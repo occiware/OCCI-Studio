@@ -207,9 +207,12 @@ public class OCCI2EMFGeneratorAction implements IObjectActionDelegate {
 		importsAnnotation.setSource("http://www.eclipse.org/OCL/Import");
 		for(Extension importedExt : ext.getImport())
 			if(importedExt.getScheme().equals("http://schemas.ogf.org/occi/core#"))
-				importsAnnotation.getDetails().put("occi", Occi2Ecore.convertOcciScheme2EcoreNamespace(importedExt.getScheme()));
+				importsAnnotation.getDetails().put("occi", "platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#/");
 			else
-				importsAnnotation.getDetails().put(importedExt.getName(), Occi2Ecore.convertOcciScheme2EcoreNamespace(importedExt.getScheme()));
+				{
+					//System.out.println("imported extension file uri " + OcciRegistry.getInstance().getFileURI(importedExt.getScheme()).replace(".occie", ".ecore#/"));
+					importsAnnotation.getDetails().put(importedExt.getName(), OcciRegistry.getInstance().getFileURI(importedExt.getScheme()).replace(".occie", ".ecore#/"));
+				}
 		ePackage.getEAnnotations().add(importsAnnotation);
 				
 		resourceSet.getPackageRegistry().put(ePackage.getNsURI(), ePackage);
