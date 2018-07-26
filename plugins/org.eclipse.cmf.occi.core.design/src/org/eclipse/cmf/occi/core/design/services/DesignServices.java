@@ -34,6 +34,7 @@ import org.eclipse.cmf.occi.core.State;
 import org.eclipse.cmf.occi.core.Transition;
 import org.eclipse.cmf.occi.core.Type;
 import org.eclipse.cmf.occi.core.design.dialog.LoadExtensionDialog;
+import org.eclipse.cmf.occi.core.util.OCCIResourceImpl;
 import org.eclipse.cmf.occi.core.util.OcciHelper;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
@@ -144,6 +145,16 @@ public class DesignServices {
 					&& !extension.getImport().contains(resource.getContents().get(0))) {
 				extension.getImport().add((Extension) resource.getContents().get(0));
 			}
+		}
+	}
+	public void deleteExtension(EObject extension) {
+		Session session = SessionManager.INSTANCE.getSession(extension);
+		for(Resource rs : session.getSessionResource().getResourceSet().getResources()) {
+			if (rs instanceof OCCIResourceImpl)
+				{
+					Extension container = (Extension) rs.getContents().get(0);
+					container.getImport().remove(extension);
+				}			
 		}
 	}
 	
