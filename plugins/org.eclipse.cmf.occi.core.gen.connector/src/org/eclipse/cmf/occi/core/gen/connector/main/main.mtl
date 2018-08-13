@@ -14,30 +14,65 @@
 [/template]
 
 [template public generateLoggerProperties(targetPackageName : String)]
-[file (getPackagePath(targetPackageName).concat('log4j.properties'), false, 'UTF-8')]
-##
- # Copyright (c) 2016-2017 Inria
- #  
- # All rights reserved. This program and the accompanying materials
- # are made available under the terms of the Eclipse Public License v1.0
- # which accompanies this distribution, and is available at
- # http://www.eclipse.org/legal/epl-v10.html
- # 
- # Contributor:
- # - Faiez Zalila <faiez.zalila@inria.fr>
- #
- # Generated at [getNow()/] by org.eclipse.cmf.occi.core.gen.connector
-##
-# Set root logger level to DEBUG and its only appender to A1.
-log4j.rootLogger=DEBUG, A1
+[file (getPackagePath(targetPackageName).concat('Activator.java'), false, 'UTF-8')]
+package [targetPackageName/];
 
-# A1 is set to be a ConsoleAppender.
-log4j.appender.A1=org.apache.log4j.ConsoleAppender
+import java.net.URL;
+import java.util.Properties;
+import org.apache.log4j.PropertyConfigurator;
+import org.eclipse.core.runtime.Plugin;
+import org.osgi.framework.BundleContext;
 
-# A1 uses PatternLayout.
-log4j.appender.A1.layout=org.apache.log4j.PatternLayout
-log4j.appender.A1.layout.ConversionPattern=%-4r ['['/]%t[']'/]  %-5p %c %x - %m%n
+public class Activator extends Plugin {
 
+    /**
+     * The plug-in ID.
+     */
+    public static final String PLUGIN_ID = "[targetPackageName/]";
+
+    /**
+     * The shared instance.
+     */
+    private static Activator plugin;
+    
+    /**
+     * The constructor.
+     */
+    public Activator() {
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @see org.eclipse.core.runtime.Plugin#start(org.osgi.framework.BundleContext)
+     */
+    public void start(BundleContext context) throws Exception {
+        super.start(context);
+        plugin = this;
+        Properties log4jProperties = new Properties();
+        URL url = this.getBundle().getResource("log4j.properties");
+        log4jProperties.load(url.openStream());
+        PropertyConfigurator.configure(log4jProperties);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @see org.eclipse.core.runtime.Plugin#stop(org.osgi.framework.BundleContext)
+     */
+    public void stop(BundleContext context) throws Exception {
+        plugin = null;
+        super.stop(context);
+    }
+
+    /**
+     * Returns the shared instance.
+     *
+     * @return the shared instance
+     */
+    public static Activator getDefault() {
+        return plugin;
+    }
 
 }
 [/file]

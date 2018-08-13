@@ -17,9 +17,11 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 
 import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.OcciCoreConstants;
+import org.eclipse.cmf.occi.core.gen.connector.services.GenUtils;
 import org.eclipse.cmf.occi.core.gen.connector.ui.Activator;
 import org.eclipse.cmf.occi.core.gen.connector.ui.common.GenerateAll;
 import org.eclipse.cmf.occi.core.gen.emf.OCCIExtension2Ecore;
@@ -33,8 +35,10 @@ import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
@@ -245,8 +249,17 @@ public class NewConnectorWizard extends BasicNewProjectResourceWizard {
 			"Bundle-ActivationPolicy: lazy\n" +
 			"Require-Bundle: org.slf4j.api,\n" +
 			" org.eclipse.cmf.occi.core,\n" +
-			" " + requireBundle + "\n" +
-			"Export-Package: " + connectorProjectName + "\n";
+			" " + requireBundle + ",\n" + 
+			" org.eclipse.osgi,\n" + 
+			" org.eclipse.swt,\n" + 
+			" org.eclipse.ui.workbench,\n" + 
+			" org.eclipse.equinox.app,\n" + 
+			" org.apache.log4j\n" +
+			"Export-Package: " + connectorProjectName + "\n"+
+			"Bundle-Activator: "+ connectorProjectName +".Activator\n"+
+			"Import-Package: org.eclipse.core.runtime\n"+
+			"Automatic-Module-Name: "+connectorProjectName+
+			"\n";
 		manifest.setContents(new ByteArrayInputStream(manifestContent.getBytes()), true, false, monitor);
 
 		// Generate build.properties
@@ -297,7 +310,33 @@ public class NewConnectorWizard extends BasicNewProjectResourceWizard {
 			"\n" +
 			"</plugin>\n";
 		pluginXML.create(new ByteArrayInputStream(pluginContent.getBytes()), true, monitor);
-
+		
+		// Generate log4j.properties
+		IFile logger = PDEProject.getBundleRelativeFile(connectorProject, new Path("log4j").addFileExtension("properties"));
+		String loggerContent = "##\n" + 
+				" # Copyright (c) 2016-2018 Inria\n" + 
+				" #  \n" + 
+				" # All rights reserved. This program and the accompanying materials\n" + 
+				" # are made available under the terms of the Eclipse Public License v1.0\n" + 
+				" # which accompanies this distribution, and is available at\n" + 
+				" # http://www.eclipse.org/legal/epl-v10.html\n" + 
+				" # \n" + 
+				" # Contributor:\n" + 
+				" # - Faiez Zalila <faiez.zalila@inria.fr>\n" + 
+				" #\n" + 
+				" # Generated at "+new Date().toString()+" by org.eclipse.cmf.occi.core.gen.connector\n" + 
+				"##\n" + 
+				"# Set root logger level to DEBUG and its only appender to A1.\n" + 
+				"log4j.rootLogger=DEBUG, A1\n" + 
+				"\n" + 
+				"# A1 is set to be a ConsoleAppender.\n" + 
+				"log4j.appender.A1=org.apache.log4j.ConsoleAppender\n" + 
+				"\n" + 
+				"# A1 uses PatternLayout.\n" + 
+				"log4j.appender.A1.layout=org.apache.log4j.PatternLayout\n" + 
+				"log4j.appender.A1.layout.ConversionPattern=%-4r [%t]  %-5p %c %x - %m%n";
+		logger.create(new ByteArrayInputStream(loggerContent.getBytes()), true, monitor);
+		
 		// Generate Java code for the connector.
 		try {
 			URI modelURI = URI.createURI(extensionFile, true);
