@@ -47,4 +47,26 @@
          </action>
       </objectContribution>
    </extension>
+      <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="org.eclipse.cmf.occi.core.ui.contribution3"
+            objectClass="org.eclipse.core.resources.IProject">
+        <menu
+               label="OCCI Studio"
+               path="additionsOCCIStudio"
+               id="org.eclipse.cmf.occi.core.occi-studio.ui.menu">
+            <separator
+                  name="group">
+            </separator>
+         </menu>
+         <action
+               class="org.eclipse.cmf.occi.core.ui.popup.actions.RegisterAllMetamodelAction"
+               icon="icons/register.gif"
+               menubarPath="org.eclipse.cmf.occi.core.occi-studio.ui.menu/group"
+               enablesFor="*"
+               id="org.eclipse.cmf.occi.core.ui.RegisterAllMetamodel"
+               label="Register All EPackages"/>
+      </objectContribution>
+   </extension>
 </plugin>
