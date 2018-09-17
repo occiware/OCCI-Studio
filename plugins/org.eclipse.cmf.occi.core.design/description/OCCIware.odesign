@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="OCCIware" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="OCCIware" version="12.0.0.2017041100">
   <ownedViewpoints name="OCCI Extension" modelFileExtension="occie">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Extension diagram" domainClass="occi.Extension">
       <metamodel href="../../org.eclipse.cmf.occi.core/model/OCCI.ecore#/"/>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide parents edges">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@edgeMappings[name='ParentEdge']" viewConditionExpression="aql:not ( self.oclAsType(diagram::DEdge).targetNode.oclAsType(viewpoint::DSemanticDecorator).target.oclAsType(occi::Kind).eContainer().oclAsType(occi::Extension).scheme='http://schemas.ogf.org/occi/core#' and (self.oclAsType(diagram::DEdge).targetNode.oclAsType(viewpoint::DSemanticDecorator).target.oclAsType(occi::Kind).name='Resource'   or self.oclAsType(diagram::DEdge).targetNode.oclAsType(viewpoint::DSemanticDecorator).target.oclAsType(occi::Kind).name='Link'))"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide all parents edges">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@edgeMappings[name='ParentEdge']" viewConditionExpression="aql:self.oclAsType(diagram::DEdge).sourceNode.oclAsType(viewpoint::DSemanticDecorator).target.oclAsType(occi::Kind).eContainer().oclAsType(occi::Extension).scheme='http://schemas.ogf.org/occi/core#'"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide all FSMs">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='FSMContainer']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide data types">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='RecordTypeContainer'] //@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='StringTypeContainer'] //@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer'] //@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='EObjectTypeContainer'] //@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='EnumerationTypeContainer'] //@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='BooleanTypeContainer'] //@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='ArrayTypeContainer']" viewConditionExpression="aql:self.eContainer().oclAsType(viewpoint::DSemanticDecorator).target.oclAsType(occi::Extension).scheme='http://schemas.ogf.org/occi/core#'"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide Import edges">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@edgeMappings[name='ImportEdge']"/>
+      </filters>
       <defaultLayer name="Default layer">
         <edgeMappings name="ParentEdge" deletionDescription="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='DeleteParent']" sourceMapping="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='KindContainer']" targetMapping="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='KindContainer']" targetFinderExpression="feature:parent">
-          <style targetArrow="InputClosedArrow" sizeComputationExpression="2">
+          <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -159,11 +174,32 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             </style>
           </subNodeMappings>
+          <subNodeMappings name="KindAnnotation" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditAnnotationValue']" semanticCandidatesExpression="feature:annotations" domainClass="occi.Annotation">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="aql:'Annotation: '+self.key" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
           <style xsi:type="style:FlatContainerStyleDescription" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" borderColor="//@userColorsPalettes[name='OCCI-Studio']/@entries[name='KindBorderColor']" labelSize="12" showIcon="false" roundedCorner="true" backgroundStyle="GradientTopToBottom" backgroundColor="//@userColorsPalettes[name='OCCI-Studio']/@entries[name='KindColor']">
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
+          <conditionnalStyles predicateExpression="aql:(self.eContainer().oclAsType(occi::Extension).scheme='http://schemas.ogf.org/occi/core#' and self.name='Resource') or self.oclAsType(occi::Kind).occiIsKindOf(self.eContainer().oclAsType(occi::Extension).import->select(e|e.scheme='http://schemas.ogf.org/occi/core#')->first().kinds->select(k|k.name='Resource')->first())">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" borderColor="//@userColorsPalettes[name='OCCI-Studio']/@entries[name='KindBorderColor']" labelSize="12" showIcon="false" roundedCorner="true" backgroundStyle="GradientTopToBottom" backgroundColor="//@userColorsPalettes[name='OCCI-Studio']/@entries[name='ResourceKindColor']">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:(self.eContainer().oclAsType(occi::Extension).scheme='http://schemas.ogf.org/occi/core#' and self.name='Link') or self.oclAsType(occi::Kind).occiIsKindOf(self.eContainer().oclAsType(occi::Extension).import->select(e|e.scheme='http://schemas.ogf.org/occi/core#')->first().kinds->select(k|k.name='Link')->first()) ">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" borderColor="//@userColorsPalettes[name='OCCI-Studio']/@entries[name='KindBorderColor']" labelSize="12" showIcon="false" roundedCorner="true" backgroundStyle="GradientTopToBottom" backgroundColor="//@userColorsPalettes[name='OCCI-Studio']/@entries[name='LinkKindColor']">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
         </containerMappings>
         <containerMappings name="MixinContainer" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditName']" semanticCandidatesExpression="feature:mixins" synchronizationLock="true" domainClass="occi.Mixin" childrenPresentation="List">
           <subNodeMappings name="MixinAttribute" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditName']" semanticCandidatesExpression="feature:attributes" domainClass="occi.Attribute">
@@ -214,6 +250,13 @@
           </subNodeMappings>
           <subNodeMappings name="MixinConstraint" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditName']" semanticCandidatesExpression="feature:constraints" domainClass="occi.Constraint">
             <style xsi:type="style:SquareDescription" labelSize="10" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="MixinAnnotation" labelDirectEdit="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditAnnotationValue']" semanticCandidatesExpression="feature:annotations" domainClass="occi.Annotation">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="aql:'Annotation: '+self.key" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -407,6 +450,12 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditAnnotationValue" inputLabelExpression="feature:value">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
         </toolSections>
         <toolSections name="Extension" label="Extension">
           <ownedTools xsi:type="tool_1:ToolDescription" name="Import Extension" iconPath="/org.eclipse.cmf.occi.core.design/images/search.gif">
@@ -483,6 +532,15 @@
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="occi.Constraint" referenceName="constraints">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['constraint' + container.oclAsType(Type).actions->size().toString()/]"/>
                 </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Annotation" nodeMappings="//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='KindContainer']/@subNodeMappings[name='KindAnnotation'] //@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAnnotation']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="occi.Annotation" referenceName="annotations"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -1059,6 +1117,8 @@
   </ownedViewpoints>
   <userColorsPalettes name="OCCI-Studio">
     <entries xsi:type="description:UserFixedColor" red="187" green="242" blue="196" name="KindColor"/>
+    <entries xsi:type="description:UserFixedColor" red="253" green="184" blue="255" name="ResourceKindColor"/>
+    <entries xsi:type="description:UserFixedColor" red="255" green="177" blue="197" name="LinkKindColor"/>
     <entries xsi:type="description:UserFixedColor" red="0" green="47" blue="0" name="KindBorderColor"/>
     <entries xsi:type="description:UserFixedColor" red="187" green="221" blue="255" name="MixinColor"/>
     <entries xsi:type="description:UserFixedColor" red="0" green="37" blue="74" name="MixinBorderColor"/>
