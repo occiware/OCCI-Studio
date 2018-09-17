@@ -366,7 +366,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link OCCIPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -380,7 +380,8 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		if (isInited) return (OCCIPackage)EPackage.Registry.INSTANCE.getEPackage(OCCIPackage.eNS_URI);
 
 		// Obtain or create and register package
-		OCCIPackageImpl theOCCIPackage = (OCCIPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof OCCIPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new OCCIPackageImpl());
+		Object registeredOCCIPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		OCCIPackageImpl theOCCIPackage = registeredOCCIPackage instanceof OCCIPackageImpl ? (OCCIPackageImpl)registeredOCCIPackage : new OCCIPackageImpl();
 
 		isInited = true;
 
@@ -392,7 +393,7 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
-			(theOCCIPackage, 
+			(theOCCIPackage,
 			 new EValidator.Descriptor() {
 				 public EValidator getEValidator() {
 					 return OCCIValidator.INSTANCE;
@@ -402,7 +403,6 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 		// Mark meta-data to indicate it can't be changed
 		theOCCIPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(OCCIPackage.eNS_URI, theOCCIPackage);
 		return theOCCIPackage;
@@ -3003,131 +3003,131 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
 		addAnnotation
-		  (this, 
-		   source, 
+		  (this,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (categoryEClass, 
-		   source, 
+		  (categoryEClass,
+		   source,
 		   new String[] {
-			 "constraints", "SchemeEndsWithSharp"
-		   });	
+			   "constraints", "SchemeEndsWithSharp"
+		   });
 		addAnnotation
-		  (typeEClass, 
-		   source, 
+		  (typeEClass,
+		   source,
 		   new String[] {
-			 "constraints", "ConstraintNameUnique"
-		   });	
+			   "constraints", "ConstraintNameUnique"
+		   });
 		addAnnotation
-		  (fsmEClass, 
-		   source, 
+		  (fsmEClass,
+		   source,
 		   new String[] {
-			 "constraints", "containedAttribute"
-		   });	
+			   "constraints", "containedAttribute"
+		   });
 		addAnnotation
-		  (stateEClass, 
-		   source, 
+		  (stateEClass,
+		   source,
 		   new String[] {
-			 "constraints", "StateLiteralAlreadyDefinedInFSMAttributeType"
-		   });	
+			   "constraints", "StateLiteralAlreadyDefinedInFSMAttributeType"
+		   });
 		addAnnotation
-		  (transitionEClass, 
-		   source, 
+		  (transitionEClass,
+		   source,
 		   new String[] {
-			 "constraints", "containedActionMustBeDeclaredInTheAppropriateType"
-		   });	
+			   "constraints", "containedActionMustBeDeclaredInTheAppropriateType"
+		   });
 		addAnnotation
-		  (attributeEClass, 
-		   source, 
+		  (attributeEClass,
+		   source,
 		   new String[] {
-			 "constraints", "DefaultValueMustBeInstanceOfType"
-		   });	
+			   "constraints", "DefaultValueMustBeInstanceOfType"
+		   });
 		addAnnotation
-		  (kindEClass, 
-		   source, 
+		  (kindEClass,
+		   source,
 		   new String[] {
-			 "constraints", "sourceReferenceInvariant"
-		   });	
+			   "constraints", "sourceReferenceInvariant"
+		   });
 		addAnnotation
-		  (actionEClass, 
-		   source, 
+		  (actionEClass,
+		   source,
 		   new String[] {
-			 "constraints", "CorrectScheme"
-		   });	
+			   "constraints", "CorrectScheme"
+		   });
 		addAnnotation
-		  (mixinEClass, 
-		   source, 
+		  (mixinEClass,
+		   source,
 		   new String[] {
-			 "constraints", "AttributesNameNotAlreadyDefinedInDepends"
-		   });	
+			   "constraints", "AttributesNameNotAlreadyDefinedInDepends"
+		   });
 		addAnnotation
-		  (entityEClass, 
-		   source, 
+		  (entityEClass,
+		   source,
 		   new String[] {
-			 "constraints", "DifferentMixins"
-		   });	
+			   "constraints", "DifferentMixins"
+		   });
 		addAnnotation
-		  (resourceEClass, 
-		   source, 
+		  (resourceEClass,
+		   source,
 		   new String[] {
-			 "constraints", "ResourceKindIsInParent"
-		   });	
+			   "constraints", "ResourceKindIsInParent"
+		   });
 		addAnnotation
-		  (linkEClass, 
-		   source, 
+		  (linkEClass,
+		   source,
 		   new String[] {
-			 "constraints", "LinkKindIsInParent"
-		   });	
+			   "constraints", "LinkKindIsInParent"
+		   });
 		addAnnotation
-		  (extensionEClass, 
-		   source, 
+		  (extensionEClass,
+		   source,
 		   new String[] {
-			 "constraints", "MixinDependsLocalOrImported"
-		   });	
+			   "constraints", "MixinDependsLocalOrImported"
+		   });
 		addAnnotation
-		  (configurationEClass, 
-		   source, 
+		  (configurationEClass,
+		   source,
 		   new String[] {
-			 "constraints", "AllResourcesLinksKindsInUse"
-		   });	
+			   "constraints", "AllResourcesLinksKindsInUse"
+		   });
 		addAnnotation
-		  (dataTypeEClass, 
-		   source, 
+		  (dataTypeEClass,
+		   source,
 		   new String[] {
-			 "constraints", "DataTypeNameRegex"
-		   });	
+			   "constraints", "DataTypeNameRegex"
+		   });
 		addAnnotation
-		  (stringTypeEClass, 
-		   source, 
+		  (stringTypeEClass,
+		   source,
 		   new String[] {
-			 "constraints", "PatternMustBeNotEmpty"
-		   });	
+			   "constraints", "PatternMustBeNotEmpty"
+		   });
 		addAnnotation
-		  (eObjectTypeEClass, 
-		   source, 
+		  (eObjectTypeEClass,
+		   source,
 		   new String[] {
-			 "constraints", "instanceClassNameMustHaveValue"
-		   });	
+			   "constraints", "instanceClassNameMustHaveValue"
+		   });
 		addAnnotation
-		  (enumerationLiteralEClass, 
-		   source, 
+		  (enumerationLiteralEClass,
+		   source,
 		   new String[] {
-			 "constraints", "EnumerationLiteralNameRegex"
-		   });	
+			   "constraints", "EnumerationLiteralNameRegex"
+		   });
 		addAnnotation
-		  (recordFieldEClass, 
-		   source, 
+		  (recordFieldEClass,
+		   source,
 		   new String[] {
-			 "constraints", "ContainerMustBeRecordType"
-		   });	
+			   "constraints", "ContainerMustBeRecordType"
+		   });
 		addAnnotation
-		  (arrayTypeEClass, 
-		   source, 
+		  (arrayTypeEClass,
+		   source,
 		   new String[] {
-			 "constraints", "TypeDifferentContainer"
+			   "constraints", "TypeDifferentContainer"
 		   });
 	}
 
@@ -3138,66 +3138,66 @@ public class OCCIPackageImpl extends EPackageImpl implements OCCIPackage {
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";	
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
 		addAnnotation
-		  (fsmEClass, 
-		   source, 
+		  (fsmEClass,
+		   source,
 		   new String[] {
-			 "name", "State"
-		   });	
+			   "name", "State"
+		   });
 		addAnnotation
-		  (getFSM_OwnedState(), 
-		   source, 
+		  (getFSM_OwnedState(),
+		   source,
 		   new String[] {
-			 "name", "State"
-		   });	
+			   "name", "State"
+		   });
 		addAnnotation
-		  (getState_Literal(), 
-		   source, 
+		  (getState_Literal(),
+		   source,
 		   new String[] {
-			 "name", "State"
-		   });	
+			   "name", "State"
+		   });
 		addAnnotation
-		  (getState_OutgoingTransition(), 
-		   source, 
+		  (getState_OutgoingTransition(),
+		   source,
 		   new String[] {
-			 "name", "State"
-		   });	
+			   "name", "State"
+		   });
 		addAnnotation
-		  (transitionEClass, 
-		   source, 
+		  (transitionEClass,
+		   source,
 		   new String[] {
-			 "name", "State"
-		   });	
+			   "name", "State"
+		   });
 		addAnnotation
-		  (getTransition_Action(), 
-		   source, 
+		  (getTransition_Action(),
+		   source,
 		   new String[] {
-			 "name", "State"
-		   });	
+			   "name", "State"
+		   });
 		addAnnotation
-		  (uriEDataType, 
-		   source, 
+		  (uriEDataType,
+		   source,
 		   new String[] {
-			 "pattern", "[A-Za-z][A-Za-z0-9+-\\.]*:(//(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]|%[0-9A-Fa-f]{2})*@)?(\\[(((([0-9A-Fa-f]{1,4}:){6}|::([0-9A-Fa-f]{1,4}:){5}|([0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){4}|(([0-9A-Fa-f]{1,4}:){0,1}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){3}|(([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){2}|(([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:)|(([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})?::)([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]))|(([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}|(([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})?::)|[Vv][0-9A-Fa-f]+\\.[A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]+)\\]|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=]|%[0-9A-Fa-f]{2})*)(:[0-9]*)?(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|/(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*)?|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|.{0})(\\?([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@/?]|%[0-9A-Fa-f]{2})*)?(\\#([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@/?]|%[0-9A-Fa-f]{2})*)?"
-		   });	
+			   "pattern", "[A-Za-z][A-Za-z0-9+-\\.]*:(//(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]|%[0-9A-Fa-f]{2})*@)?(\\[(((([0-9A-Fa-f]{1,4}:){6}|::([0-9A-Fa-f]{1,4}:){5}|([0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){4}|(([0-9A-Fa-f]{1,4}:){0,1}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){3}|(([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){2}|(([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:)|(([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})?::)([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]))|(([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}|(([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})?::)|[Vv][0-9A-Fa-f]+\\.[A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]+)\\]|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=]|%[0-9A-Fa-f]{2})*)(:[0-9]*)?(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|/(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*)?|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|.{0})(\\?([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@/?]|%[0-9A-Fa-f]{2})*)?(\\#([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@/?]|%[0-9A-Fa-f]{2})*)?"
+		   });
 		addAnnotation
-		  (attributeNameEDataType, 
-		   source, 
+		  (attributeNameEDataType,
+		   source,
 		   new String[] {
-			 "pattern", "[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)*"
-		   });	
+			   "pattern", "[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)*"
+		   });
 		addAnnotation
-		  (nameEDataType, 
-		   source, 
+		  (nameEDataType,
+		   source,
 		   new String[] {
-			 "pattern", "[a-zA-Z][a-zA-Z0-9_-]*"
-		   });	
+			   "pattern", "[a-zA-Z][a-zA-Z0-9_-]*"
+		   });
 		addAnnotation
-		  (schemeEDataType, 
-		   source, 
+		  (schemeEDataType,
+		   source,
 		   new String[] {
-			 "pattern", "[A-Za-z][A-Za-z0-9+-\\.]*:(//(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]|%[0-9A-Fa-f]{2})*@)?(\\[(((([0-9A-Fa-f]{1,4}:){6}|::([0-9A-Fa-f]{1,4}:){5}|([0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){4}|(([0-9A-Fa-f]{1,4}:){0,1}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){3}|(([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){2}|(([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:)|(([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})?::)([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]))|(([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}|(([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})?::)|[Vv][0-9A-Fa-f]+\\.[A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]+)\\]|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=]|%[0-9A-Fa-f]{2})*)(:[0-9]*)?(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|/(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*)?|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|.{0})(\\#)"
+			   "pattern", "[A-Za-z][A-Za-z0-9+-\\.]*:(//(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]|%[0-9A-Fa-f]{2})*@)?(\\[(((([0-9A-Fa-f]{1,4}:){6}|::([0-9A-Fa-f]{1,4}:){5}|([0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){4}|(([0-9A-Fa-f]{1,4}:){0,1}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){3}|(([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:){2}|(([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})?::([0-9A-Fa-f]{1,4}:)|(([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})?::)([0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]))|(([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}|(([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})?::)|[Vv][0-9A-Fa-f]+\\.[A-Za-z0-9\\-_~\\.!$&\'()*+,;=:]+)\\]|((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9])|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=]|%[0-9A-Fa-f]{2})*)(:[0-9]*)?(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|/(([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*)?|([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})+(/([A-Za-z0-9\\-_~\\.!$&\'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|.{0})(\\#)"
 		   });
 	}
 

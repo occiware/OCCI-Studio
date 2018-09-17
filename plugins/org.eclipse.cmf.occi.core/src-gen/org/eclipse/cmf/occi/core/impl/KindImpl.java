@@ -255,47 +255,59 @@ public class KindImpl extends TypeImpl implements Kind {
 		 *
 		 * if self.parent <> null
 		 * then
-		 *   if self = kind
-		 *   then true
-		 *   else
-		 *     if self.parent = kind
+		 *   if kind <> null
+		 *   then
+		 *     if self = kind
 		 *     then true
-		 *     else self.parent.occiIsKindOf(kind)
+		 *     else
+		 *       if self.parent = kind
+		 *       then true
+		 *       else self.parent.occiIsKindOf(kind)
+		 *       endif
 		 *     endif
+		 *   else false
 		 *   endif
 		 * else false
 		 * endif
 		 */
 		final /*@NonInvalid*/ Kind parent = this.getParent();
 		final /*@NonInvalid*/ boolean ne = parent != null;
-		/*@Thrown*/ boolean symbol_2;
+		/*@Thrown*/ boolean symbol_3;
 		if (ne) {
-			final /*@NonInvalid*/ boolean eq = this.equals(kind);
-			/*@Thrown*/ boolean symbol_1;
-			if (eq) {
-				symbol_1 = ValueUtil.TRUE_VALUE;
-			}
-			else {
-				final /*@NonInvalid*/ boolean eq_0 = (parent != null) ? parent.equals(kind) : (kind == null);
-				/*@Thrown*/ boolean symbol_0;
-				if (eq_0) {
-					symbol_0 = ValueUtil.TRUE_VALUE;
+			final /*@NonInvalid*/ boolean ne_0 = kind != null;
+			/*@Thrown*/ boolean symbol_2;
+			if (ne_0) {
+				final /*@NonInvalid*/ boolean eq = this.equals(kind);
+				/*@Thrown*/ boolean symbol_1;
+				if (eq) {
+					symbol_1 = ValueUtil.TRUE_VALUE;
 				}
 				else {
-					if (parent == null) {
-						throw new InvalidValueException("Null source for \'occi::Kind::occiIsKindOf(occi::Kind[?]) : Boolean[1]\'");
+					final /*@NonInvalid*/ boolean eq_0 = (parent != null) ? parent.equals(kind) : (kind == null);
+					/*@Thrown*/ boolean symbol_0;
+					if (eq_0) {
+						symbol_0 = ValueUtil.TRUE_VALUE;
 					}
-					final /*@Thrown*/ boolean occiIsKindOf = parent.occiIsKindOf(kind);
-					symbol_0 = occiIsKindOf;
+					else {
+						if (parent == null) {
+							throw new InvalidValueException("Null source for \'occi::Kind::occiIsKindOf(occi::Kind[?]) : Boolean[1]\'");
+						}
+						final /*@Thrown*/ boolean occiIsKindOf = parent.occiIsKindOf(kind);
+						symbol_0 = occiIsKindOf;
+					}
+					symbol_1 = symbol_0;
 				}
-				symbol_1 = symbol_0;
+				symbol_2 = symbol_1;
 			}
-			symbol_2 = symbol_1;
+			else {
+				symbol_2 = ValueUtil.FALSE_VALUE;
+			}
+			symbol_3 = symbol_2;
 		}
 		else {
-			symbol_2 = ValueUtil.FALSE_VALUE;
+			symbol_3 = ValueUtil.FALSE_VALUE;
 		}
-		return symbol_2;
+		return symbol_3;
 	}
 
 	/**
@@ -534,12 +546,12 @@ public class KindImpl extends TypeImpl implements Kind {
 		final /*@NonInvalid*/ StandardLibrary standardLibrary = idResolver.getStandardLibrary();
 		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, OCCITables.STR_Kind_c_c_sourceReferenceInvariant);
 		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
-		/*@NonInvalid*/ Object symbol_5;
+		/*@NonInvalid*/ Object symbol_4;
 		if (le) {
-			symbol_5 = ValueUtil.TRUE_VALUE;
+			symbol_4 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			/*@Caught*/ /*@NonNull*/ Object CAUGHT_symbol_4;
+			/*@Caught*/ /*@NonNull*/ Object CAUGHT_symbol_3;
 			try {
 				final /*@NonInvalid*/ List<Kind> source = this.getSource();
 				final /*@NonInvalid*/ OrderedSetValue BOXED_source = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Kind, source);
@@ -806,28 +818,28 @@ public class KindImpl extends TypeImpl implements Kind {
 				else {
 					status = ValueUtil.TRUE_VALUE;
 				}
-				final /*@Thrown*/ boolean symbol_2 = status == Boolean.TRUE;
-				/*@Thrown*/ Object symbol_4;
-				if (symbol_2) {
-					symbol_4 = ValueUtil.TRUE_VALUE;
+				final /*@Thrown*/ boolean eq_3 = status == Boolean.TRUE;
+				/*@Thrown*/ Object symbol_3;
+				if (eq_3) {
+					symbol_3 = ValueUtil.TRUE_VALUE;
 				}
 				else {
 					final /*@NonInvalid*/ String name = this.getName();
 					final /*@NonInvalid*/ String sum = StringConcatOperation.INSTANCE.evaluate(OCCITables.STR_The_32_source_32_reference_32_of_32, name);
 					final /*@NonInvalid*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, OCCITables.STR__32_kind_32_must_32_connect_32_a_32_child_32_of_32_34_link_34_32_Kind_32_to_32_a_32_child_32_of_32_34_resourc);
 					final /*@NonInvalid*/ IntegerValue diff = (IntegerValue)NumericNegateOperation.INSTANCE.evaluate(OCCITables.INT_1);
-					final /*@Thrown*/ TupleValue symbol_3 = ValueUtil.createTupleOfEach(OCCITables.TUPLid__0, sum_0, OCCITables.STR_quickfix, diff, status);
-					symbol_4 = symbol_3;
+					final /*@Thrown*/ TupleValue symbol_2 = ValueUtil.createTupleOfEach(OCCITables.TUPLid__0, sum_0, OCCITables.STR_quickfix, diff, status);
+					symbol_3 = symbol_2;
 				}
-				CAUGHT_symbol_4 = symbol_4;
+				CAUGHT_symbol_3 = symbol_3;
 			}
 			catch (Exception e) {
-				CAUGHT_symbol_4 = ValueUtil.createInvalidValue(e);
+				CAUGHT_symbol_3 = ValueUtil.createInvalidValue(e);
 			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Kind_c_c_sourceReferenceInvariant, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_4, OCCITables.INT_0).booleanValue();
-			symbol_5 = logDiagnostic;
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Kind_c_c_sourceReferenceInvariant, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_3, OCCITables.INT_0).booleanValue();
+			symbol_4 = logDiagnostic;
 		}
-		return Boolean.TRUE == symbol_5;
+		return Boolean.TRUE == symbol_4;
 	}
 
 	/**
@@ -920,12 +932,12 @@ public class KindImpl extends TypeImpl implements Kind {
 		final /*@NonInvalid*/ StandardLibrary standardLibrary = idResolver.getStandardLibrary();
 		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, OCCITables.STR_Kind_c_c_targetReferenceInvariant);
 		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
-		/*@NonInvalid*/ Object symbol_5;
+		/*@NonInvalid*/ Object symbol_4;
 		if (le) {
-			symbol_5 = ValueUtil.TRUE_VALUE;
+			symbol_4 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			/*@Caught*/ /*@NonNull*/ Object CAUGHT_symbol_4;
+			/*@Caught*/ /*@NonNull*/ Object CAUGHT_symbol_3;
 			try {
 				final /*@NonInvalid*/ List<Kind> target = this.getTarget();
 				final /*@NonInvalid*/ OrderedSetValue BOXED_target = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_Kind, target);
@@ -1192,28 +1204,28 @@ public class KindImpl extends TypeImpl implements Kind {
 				else {
 					status = ValueUtil.TRUE_VALUE;
 				}
-				final /*@Thrown*/ boolean symbol_2 = status == Boolean.TRUE;
-				/*@Thrown*/ Object symbol_4;
-				if (symbol_2) {
-					symbol_4 = ValueUtil.TRUE_VALUE;
+				final /*@Thrown*/ boolean eq_3 = status == Boolean.TRUE;
+				/*@Thrown*/ Object symbol_3;
+				if (eq_3) {
+					symbol_3 = ValueUtil.TRUE_VALUE;
 				}
 				else {
 					final /*@NonInvalid*/ String name = this.getName();
 					final /*@NonInvalid*/ String sum = StringConcatOperation.INSTANCE.evaluate(OCCITables.STR_The_32_target_32_reference_32_of_32, name);
 					final /*@NonInvalid*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, OCCITables.STR__32_kind_32_must_32_connect_32_a_32_child_32_of_32_34_link_34_32_Kind_32_to_32_a_32_child_32_of_32_34_resourc);
 					final /*@NonInvalid*/ IntegerValue diff = (IntegerValue)NumericNegateOperation.INSTANCE.evaluate(OCCITables.INT_1);
-					final /*@Thrown*/ TupleValue symbol_3 = ValueUtil.createTupleOfEach(OCCITables.TUPLid__0, sum_0, OCCITables.STR_quickfix, diff, status);
-					symbol_4 = symbol_3;
+					final /*@Thrown*/ TupleValue symbol_2 = ValueUtil.createTupleOfEach(OCCITables.TUPLid__0, sum_0, OCCITables.STR_quickfix, diff, status);
+					symbol_3 = symbol_2;
 				}
-				CAUGHT_symbol_4 = symbol_4;
+				CAUGHT_symbol_3 = symbol_3;
 			}
 			catch (Exception e) {
-				CAUGHT_symbol_4 = ValueUtil.createInvalidValue(e);
+				CAUGHT_symbol_3 = ValueUtil.createInvalidValue(e);
 			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Kind_c_c_targetReferenceInvariant, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_4, OCCITables.INT_0).booleanValue();
-			symbol_5 = logDiagnostic;
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Kind_c_c_targetReferenceInvariant, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_3, OCCITables.INT_0).booleanValue();
+			symbol_4 = logDiagnostic;
 		}
-		return Boolean.TRUE == symbol_5;
+		return Boolean.TRUE == symbol_4;
 	}
 
 	/**

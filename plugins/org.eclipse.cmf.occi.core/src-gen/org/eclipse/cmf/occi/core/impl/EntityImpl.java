@@ -789,12 +789,12 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 		final /*@NonInvalid*/ StandardLibrary standardLibrary = idResolver.getStandardLibrary();
 		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, OCCITables.STR_Entity_c_c_DifferentMixins);
 		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OCCITables.INT_0).booleanValue();
-		/*@NonInvalid*/ Object symbol_7;
+		/*@NonInvalid*/ Object symbol_6;
 		if (le) {
-			symbol_7 = ValueUtil.TRUE_VALUE;
+			symbol_6 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			/*@Caught*/ /*@NonNull*/ Object CAUGHT_symbol_6;
+			/*@Caught*/ /*@NonNull*/ Object CAUGHT_symbol_5;
 			try {
 				final /*@NonInvalid*/ List<MixinBase> parts = this.getParts();
 				final /*@NonInvalid*/ OrderedSetValue BOXED_parts = idResolver.createOrderedSetOfAll(OCCITables.ORD_CLSSid_MixinBase, parts);
@@ -841,10 +841,10 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 				};
 				final /*@NonNull*/  ExecutorDoubleIterationManager MGR_status_0 = new ExecutorDoubleIterationManager(executor, TypeId.BOOLEAN, BODY_status_0, BOXED_parts, ACC_status_0);
 				final /*@Thrown*/ Boolean status = (Boolean)IMPL_status_0.evaluateIteration(MGR_status_0);
-				final /*@Thrown*/ boolean symbol_4 = status == Boolean.TRUE;
-				/*@Thrown*/ Object symbol_6;
-				if (symbol_4) {
-					symbol_6 = ValueUtil.TRUE_VALUE;
+				final /*@Thrown*/ boolean eq = status == Boolean.TRUE;
+				/*@Thrown*/ Object symbol_5;
+				if (eq) {
+					symbol_5 = ValueUtil.TRUE_VALUE;
 				}
 				else {
 					final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Entity_0 = idResolver.getClass(OCCITables.CLSSid_Entity, null);
@@ -852,18 +852,18 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 					final /*@Thrown*/ String id = oclAsType.getId();
 					final /*@Thrown*/ String sum = StringConcatOperation.INSTANCE.evaluate(OCCITables.STR_Two_32_instances_32_of_32_the_32_same_32_mixin_32_are_32_not_32_allowed_32_on_32_the_32_same_32_Enti, id);
 					final /*@NonInvalid*/ IntegerValue diff = (IntegerValue)NumericNegateOperation.INSTANCE.evaluate(OCCITables.INT_1);
-					final /*@Thrown*/ TupleValue symbol_5 = ValueUtil.createTupleOfEach(OCCITables.TUPLid__0, sum, OCCITables.STR_quickfix, diff, status);
-					symbol_6 = symbol_5;
+					final /*@Thrown*/ TupleValue symbol_4 = ValueUtil.createTupleOfEach(OCCITables.TUPLid__0, sum, OCCITables.STR_quickfix, diff, status);
+					symbol_5 = symbol_4;
 				}
-				CAUGHT_symbol_6 = symbol_6;
+				CAUGHT_symbol_5 = symbol_5;
 			}
 			catch (Exception e) {
-				CAUGHT_symbol_6 = ValueUtil.createInvalidValue(e);
+				CAUGHT_symbol_5 = ValueUtil.createInvalidValue(e);
 			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Entity_c_c_DifferentMixins, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_6, OCCITables.INT_0).booleanValue();
-			symbol_7 = logDiagnostic;
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OCCITables.STR_Entity_c_c_DifferentMixins, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_5, OCCITables.INT_0).booleanValue();
+			symbol_6 = logDiagnostic;
 		}
-		return Boolean.TRUE == symbol_7;
+		return Boolean.TRUE == symbol_6;
 	}
 
 	/**
@@ -1113,7 +1113,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (id: ");
 		result.append(id);
 		result.append(", title: ");

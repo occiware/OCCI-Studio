@@ -511,7 +511,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (initial: ");
 		result.append(initial);
 		result.append(", final: ");
