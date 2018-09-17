@@ -13,16 +13,15 @@
 package org.eclipse.cmf.occi.core.ui.popup.actions;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-
 import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.util.OcciRegistry;
-import org.eclipse.core.internal.resources.Project;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IPath;
@@ -42,7 +41,6 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
@@ -68,35 +66,47 @@ public class RegisterAllOCCIExtensionAction implements IObjectActionDelegate {
 	 * @see IActionDelegate#run(IAction)
 	 */
 	public void run(IAction action) {
-		//System.out.println("OcciRegistry" + OcciRegistry.getInstance().getRegisteredExtensions()) ;
-		//System.out.println(" selection "+selection);
+		Boolean at_leat_one_extension_is_registred = false;
 		Iterator<?> it = ((IStructuredSelection) selection).iterator();
-		int i= 0;
-		String message="\n";
-		while (it.hasNext()) { 
-			
-			IProject selectedProject = (IProject)it.next();
-			if(selectedProject instanceof IProject) {
+		String message = "\n";
+		while (it.hasNext()) {
+
+			IProject selectedProject = (IProject) it.next();
+			if (selectedProject instanceof IProject) {
 				// Generate plugin.xml
 				IFile pluginXML = PDEProject.getPluginXml(selectedProject);
-				if(pluginXML.exists()) {
-					if (!(getExtensionScheme(pluginXML).equals("") || getExtensionURI(pluginXML).equals(""))) {
-					//System.out.println(" selectedElement "+selectedProject +"   "+selectedProject.getClass());
-					//System.out.println(" selectedElement "+getExtensionScheme(pluginXML));
-					//System.out.println(" selectedElement "+getExtensionURI(pluginXML));
-					OcciRegistry.getInstance().registerExtension(getExtensionScheme(pluginXML), getExtensionURI(pluginXML));
-					closeOtherSessions(selectedProject);
-					i++;
-					message = message.concat(getExtensionScheme(pluginXML)).concat("\n");
+				if (pluginXML.exists()) {
+					if (getOccieExtensionPointNode(pluginXML) != null) {
+						try {
+							ResourceSet resSet = new ResourceSetImpl();
+							final URI uri = URI.createURI("platform:/resource/" + selectedProject.getName() + "/"
+									+ getExtensionURI(pluginXML), true);
+							Resource res = resSet.createResource(uri);
+							// to ensure that uri is correct and the resource exists
+							res.load(Collections.emptyMap());
+							final Extension extension = (Extension) res.getContents().get(0);
+							if (!extension.getScheme().equals(getExtensionScheme(pluginXML))) {
+								throw new RuntimeException("Invalid scheme "+ getExtensionScheme(pluginXML) +" in plugin.xml of " + selectedProject.getName() + " project");
+							}
+							// the registry statement
+							OcciRegistry.getInstance().registerExtension(getExtensionScheme(pluginXML), uri.toString());
+							closeOtherSessions(selectedProject);
+							message = message.concat(getExtensionScheme(pluginXML)).concat(" ["+uri+"]").concat("\n");
+							at_leat_one_extension_is_registred = true;
+
+						} catch (IOException e) {
+							MessageDialog.openError(shell, "Invalid plugin.xml", e.getMessage());
+						} catch (RuntimeException e) {
+							MessageDialog.openError(shell, "Invalid extension scheme", e.getMessage());
+						}
 					}
-			}
+				}
 			}
 		}
-		if(i>0)
-		MessageDialog.openInformation(shell,
-				Messages.RegisterExtensionAction_ExtRegistration,
-				Messages.RegisterExtensionAction_RegisteredExtension
-						+message);
+		if (at_leat_one_extension_is_registred)
+			MessageDialog.openInformation(shell, Messages.RegisterExtensionAction_ExtRegistration,
+					Messages.RegisterExtensionAction_RegisteredExtension + message);
+
 	}
 
 	/**
@@ -119,62 +129,45 @@ public class RegisterAllOCCIExtensionAction implements IObjectActionDelegate {
 			}
 		}
 	}
-	@SuppressWarnings("unlikely-arg-type")
+
 	private String getExtensionScheme(IFile pluginXML) {
-		try {
-			IPath location = pluginXML.getLocation();
-			if (location != null) {
-				File file = location.toFile();
 
-				DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-				DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-				Document doc = dBuilder.parse(file);
-
-				if (doc.hasChildNodes()) {
-					NodeList nodeList = doc.getChildNodes();
-					for (int count = 0; count < nodeList.getLength(); count++) {
-						Node tempNode = nodeList.item(count);
-						if (tempNode.getNodeType() == Node.ELEMENT_NODE) {
-							if (tempNode.getNodeName().equals("plugin")) {
-								for (int count1 = 0; count1 < tempNode.getChildNodes().getLength(); count1++) {
-									Node tempNode1 = tempNode.getChildNodes().item(count1);
-									if (tempNode1.getNodeType() == Node.ELEMENT_NODE) {
-										if (tempNode1.getNodeName().equals("extension")) {
-											//System.out.println(" tempNode1 "+tempNode1.getAttributes().getNamedItem("point"));
-											String obj = "org.eclipse.emf.ecore.uri_mapping";
-											if (tempNode1.getAttributes().getNamedItem("point").getNodeValue().equals(obj)) {
-												for (int count2 = 0; count2 < tempNode1.getChildNodes().getLength(); count2++) {
-													Node tempNode2 = tempNode1.getChildNodes().item(count2);
-													if (tempNode2.getNodeType() == Node.ELEMENT_NODE) {
-														if (tempNode2.getNodeName().equals("mapping")) {
-															return tempNode2.getAttributes().getNamedItem("source").getNodeValue().concat("#");
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
+		if (getOccieExtensionPointNode(pluginXML) != null) {
+			for (int count2 = 0; count2 < getOccieExtensionPointNode(pluginXML).getChildNodes().getLength(); count2++) {
+				Node tempNode2 = getOccieExtensionPointNode(pluginXML).getChildNodes().item(count2);
+				if (tempNode2.getNodeType() == Node.ELEMENT_NODE) {
+					if (tempNode2.getNodeName().equals("occie")) {
+						return tempNode2.getAttributes().getNamedItem("scheme").getNodeValue();
 					}
 				}
 			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
 		}
 		return "";
 	}
+
 	private String getExtensionURI(IFile pluginXML) {
+
+		if (getOccieExtensionPointNode(pluginXML) != null) {
+			for (int count2 = 0; count2 < getOccieExtensionPointNode(pluginXML).getChildNodes().getLength(); count2++) {
+				Node tempNode2 = getOccieExtensionPointNode(pluginXML).getChildNodes().item(count2);
+				if (tempNode2.getNodeType() == Node.ELEMENT_NODE) {
+					if (tempNode2.getNodeName().equals("occie")) {
+						return tempNode2.getAttributes().getNamedItem("file").getNodeValue();
+					}
+				}
+			}
+		}
+		return "";
+	}
+
+	private Node getOccieExtensionPointNode(IFile pluginXML) {
 		try {
 			IPath location = pluginXML.getLocation();
 			if (location != null) {
 				File file = location.toFile();
-
 				DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 				DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 				Document doc = dBuilder.parse(file);
-
 				if (doc.hasChildNodes()) {
 					NodeList nodeList = doc.getChildNodes();
 					for (int count = 0; count < nodeList.getLength(); count++) {
@@ -185,18 +178,14 @@ public class RegisterAllOCCIExtensionAction implements IObjectActionDelegate {
 									Node tempNode1 = tempNode.getChildNodes().item(count1);
 									if (tempNode1.getNodeType() == Node.ELEMENT_NODE) {
 										if (tempNode1.getNodeName().equals("extension")) {
-											//System.out.println(" tempNode1 "+tempNode1.getAttributes().getNamedItem("point"));
-											String obj = "org.eclipse.emf.ecore.uri_mapping";
-											if (tempNode1.getAttributes().getNamedItem("point").getNodeValue().equals(obj)) {
-												for (int count2 = 0; count2 < tempNode1.getChildNodes().getLength(); count2++) {
-													Node tempNode2 = tempNode1.getChildNodes().item(count2);
-													if (tempNode2.getNodeType() == Node.ELEMENT_NODE) {
-														if (tempNode2.getNodeName().equals("mapping")) {
-															return tempNode2.getAttributes().getNamedItem("target").getNodeValue().replaceFirst("platform:/plugin/", "platform:/resource/");
-														}
-													}
-												}
+											// System.out.println(" tempNode1
+											// "+tempNode1.getAttributes().getNamedItem("point"));
+											String obj = "org.eclipse.cmf.occi.core.occie";
+											if (tempNode1.getAttributes().getNamedItem("point").getNodeValue()
+													.equals(obj)) {
+												return tempNode1;
 											}
+
 										}
 									}
 								}
@@ -208,7 +197,8 @@ public class RegisterAllOCCIExtensionAction implements IObjectActionDelegate {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
-		return "";
+		return null;
+
 	}
 
 }
