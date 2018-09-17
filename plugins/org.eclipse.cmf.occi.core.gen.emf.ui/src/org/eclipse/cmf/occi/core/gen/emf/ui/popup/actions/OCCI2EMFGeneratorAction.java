@@ -46,6 +46,7 @@ import org.eclipse.emf.codegen.ecore.genmodel.util.GenModelUtil;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcoreFactory;
@@ -147,6 +148,10 @@ public class OCCI2EMFGeneratorAction implements IObjectActionDelegate {
 				MessageDialog.openError(shell, "Invalid Extension", e.getMessage());
 				return;
 			}
+			catch (WrappedException e) {
+				MessageDialog.openError(shell, "Wrapped Exception", e.getMessage());
+				return;
+			}
 			occieFile.getParent().refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 			generateEMFCode(occieFile.getLocation().removeFileExtension().addFileExtension("genmodel").toString());
 
@@ -187,7 +192,7 @@ public class OCCI2EMFGeneratorAction implements IObjectActionDelegate {
 		this.selection = selection;
 	}
 
-	private void generateEMFModels(Extension ext, IFile occieFile, String basePackage) throws IOException {
+	private void generateEMFModels(Extension ext, IFile occieFile, String basePackage) throws IOException, WrappedException {
 		/*
 		 * OCCIE => Ecore conversion
 		 */
