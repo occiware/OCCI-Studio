@@ -10,221 +10,318 @@
 [template public generateSiriusDesigner(aExtension : Extension)]
 [comment @main/]
 [file (aExtension.name + '.odesign', false, 'UTF-8')]
+[ViewpointHeader(aExtension)/]
+[comment the following block generate a representation without annotation (the classical one)/]
+[aExtension.generateSiriusRepresentation(null)/]
+[for (extension : Extension | aExtension.getAllExtensionsExceptCore())]
+[if (extension.getAllContainmentAnnotation()->size() > 0)]
+[for (annotation : Annotation | extension.getAllContainmentAnnotation())]
+[comment the following block generate a representation for each containment annotation/]
+[aExtension.generateSiriusRepresentation(annotation)/]
+[/for]
+[/if]
+[/for]
+[ViewpointFooter(aExtension)/]
+[/file]
+[/template]
+
+[template public ViewpointHeader(aExtension : Extension)]
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="[aExtension.name/]" version="10.0.0.201505222000">
   <ownedViewpoints name="[aExtension.name.toUpperFirst()/]Configuration" label="Extended [aExtension.getExtendedPackage()/] Configuration">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="[aExtension.name.toUpperFirst()/]Configuration Diagram" domainClass="Configuration">
-	  <metamodel href="[convertOcciScheme2EcoreNamespace(aExtension)/]#/"/>
-[for (importedExtension : Extension | aExtension.import)]
- 	  <metamodel href="[convertOcciScheme2EcoreNamespace(importedExtension)/]#/"/> 
-[/for]
-      <defaultLayer name="Default">
+[/template]
+
+[template public generateSiriusRepresentation(aExtension : Extension , annotation: Annotation)]
+[RepresentationHeader(aExtension, annotation)/]
 [for (extension : Extension | aExtension.getAllExtensionsExceptCore())]
 [for (resourceKind : Kind | getAllResourceKinds(extension))]
-        <edgeMappings name="[resourceKind.name/]LinksEdge" sourceMapping="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resourceKind.name/]Container']" targetMapping="[for (link : Kind | getTargetLinkKindsFromAResourceKind(resourceKind,aExtension.getAllExtensionsExceptCore()->asSequence())) separator(' ')]//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[link.name/]Container'[']'/][/for]" targetFinderExpression="feature:links">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='gray'[']'/]"/>
-            <centerLabelStyleDescription>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
-            </centerLabelStyleDescription>
-          </style>
-        </edgeMappings>
+		[ResourceKindSourceEdge(resourceKind, aExtension,annotation)/]
 [/for]
 [/for]
 [for (extension : Extension | aExtension.getAllExtensionsExceptCore())]
 [for (linkKind : Kind | extension.getAllLinkKinds())]
-        <edgeMappings name="[linkKind.name/]TargetEdge" sourceMapping="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[linkKind.name/]Container'[']'/]" targetMapping=" [for (resourceKind : Kind | getTargetResourceKinds(linkKind, aExtension.getAllExtensionsExceptCore()->asSequence())) separator(' ')]//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resourceKind.name/]Container'][/for]" targetFinderExpression="feature:target">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='gray'[']'/]"/>
-            <centerLabelStyleDescription>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
-            </centerLabelStyleDescription>
-          </style>
-        </edgeMappings>
-        <edgeMappings name="[linkKind.name/]Edge" sourceMapping="[for (resource : Kind | getSourceResourceKinds(linkKind, aExtension.getAllExtensionsExceptCore()->asSequence())) separator(' ')]//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resource.name/]Container'][/for]" targetMapping="[for (resource : Kind | getTargetResourceKinds(linkKind, aExtension.getAllExtensionsExceptCore()->asSequence())) separator(' ')] //@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resource.name/]Container'] [/for]" domainClass="[linkKind.eContainer().oclAsType(Extension).getEPackage().name/]::[linkKind.getEClassName()/]" useDomainElement="true">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='gray'[']'/]"/>
-            <centerLabelStyleDescription>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
-            </centerLabelStyleDescription>
-          </style>
-        </edgeMappings>
+		[LinkKindTargetEdge(linkKind, aExtension, annotation)/]
+		[LinkKindEdgeCreator(linkKind, aExtension, annotation)/] 
 [/for]
 [/for]
 [for (extension : Extension | aExtension.getAllExtensionsExceptCore())]
 [for (resourceKind : Kind | extension.getAllResourceKinds())]
-        <containerMappings name="[resourceKind.name/]Container" preconditionExpression="['['/]self.oclIsTypeOf([resourceKind.eContainer().oclAsType(Extension).getEPackage().name/]::[resourceKind.getEClassName()/])/[']'/]"
-            labelDirectEdit="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@toolSections.3/@ownedTools['['/]name='EditEntityTitle'[']'/]"
-			semanticCandidatesExpression="feature:resources" 
-			domainClass="[resourceKind.eContainer().oclAsType(Extension).getEPackage().name/]::[resourceKind.getEClassName()/]" childrenPresentation="VerticalStack">
-[generate(aExtension, resourceKind)/]
-        </containerMappings>
+		[ResourceKindContainer(resourceKind, aExtension, annotation)/]
 [/for]
 [for (linkKind : Kind | extension.getAllLinkKinds())]
-        <containerMappings name="[linkKind.name/]Container" preconditionExpression="['['/]self.oclIsTypeOf([linkKind.eContainer().oclAsType(Extension).getEPackage().name/]::[linkKind.getEClassName()/])/[']'/]"
-            labelDirectEdit="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@toolSections.3/@ownedTools['['/]name='EditEntityTitle'[']'/]"
-			semanticCandidatesExpression="['['/]resources.links->filter([linkKind.eContainer().oclAsType(Extension).getEPackage().name/]::[linkKind.getEClassName()/])/[']'/]" 
-			domainClass="[linkKind.eContainer().oclAsType(Extension).getEPackage().name/]::[linkKind.getEClassName()/]"  childrenPresentation="VerticalStack">
-[generate(aExtension, linkKind)/]
-        </containerMappings>
+		[LinkKindContainer(linkKind, aExtension, annotation)/]
 [/for]
 [/for]
         <toolSections name="[aExtension.name.toUpperFirst()/] resources">
 [for (extension : Extension | aExtension.getAllExtensionsExceptCore())]
 [for (resourceKind : Kind | extension.getAllResourceKinds())]
-          <ownedTools xsi:type="tool:ContainerCreationDescription" 
-			name="Create [resourceKind.name/]"
-			containerMappings="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resourceKind.name/]Container'[']'/]"> 
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="[resourceKind.eContainer().oclAsType(Extension).getEPackage().name/]::[resourceKind.getEClassName()/]" referenceName="resources">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="['['/]'[resourceKind.name.toLowerFirst()/]' + container.oclAsType(Configuration).resources->size().toString()/[']'/]"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
+		[ResourceKindCreation(resourceKind, aExtension, annotation)/]
 [/for]
 [/for]
 </toolSections>
  <toolSections name="[aExtension.name.toUpperFirst()/] links">
 [for (extension : Extension | aExtension.getAllExtensionsExceptCore())]
 [for (linkKind : Kind | extension.getAllLinkKinds())]
-          <ownedTools xsi:type="tool:EdgeCreationDescription"
-			name="Create [linkKind.name/]"
-			edgeMappings="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@edgeMappings['['/]name='[linkKind.name/]Edge'[']'/]"> 
-            <sourceVariable name="source"/>
-            <targetVariable name="target"/>
-            <sourceViewVariable name="sourceView"/>
-            <targetViewVariable name="targetView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="[linkKind.eContainer().oclAsType(Extension).getEPackage().name/]::[linkKind.getEClassName()/]" referenceName="links" variableName="link">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
+		[LinkKindCreation(linkKind, aExtension, annotation)/]
 [/for]
 [/for]
    </toolSections>   
  <toolSections name="[aExtension.name.toUpperFirst()/] mixins">
 [for (extension : Extension | aExtension.getAllExtensionsExceptCore())]
 [for (mixin : Mixin | extension.mixins)]
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create [mixin.name/]" containerMappings="
-[for (kind : Kind | (mixin.applies->union(mixin.applies->collect(k:Kind|k.getAllChildrenKind(aExtension.getAllExtensionsExceptCore()->asSequence()))->asOrderedSet()))->asOrderedSet() )]
-[if (aExtension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.kinds)->includes(kind) ) ]
-//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[kind.name/]Container'[']'/]/@subContainerMappings['['/]name='[mixin.name/]Mixin'[']'/]
-[comment][for (kind1 : Kind | extension.getAllExtensionsExceptCore()->collect(e|e.kinds)->select(k : Kind|k.occiIsKindOf(kind))) separator(' ')]
-[/for][/comment]
-[/if]
-[/for]
-[for (mixina : Mixin | mixin->closure(depends))]
-[for (kind : Kind | (mixina.applies->union(mixina.applies->collect(k:Kind|k.getAllChildrenKind(aExtension.getAllExtensionsExceptCore()->asSequence()))->asOrderedSet()))->asOrderedSet() )]
-[if (aExtension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.kinds)->includes(kind) ) ]
-//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[kind.name/]Container'[']'/]/@subContainerMappings['['/]name='[mixin.name/]Mixin'[']'/]
-[/if]
-[/for]
-[/for]
-">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="[mixin.eContainer().oclAsType(Extension).getEPackage().name/]::[mixin.getEClassName()/]" referenceName="parts"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
+	[MixinCreation(mixin, aExtension, annotation)/]
 [/for]
 [/for]
    </toolSections>    
         <toolSections name="Tools">
-          <ownedTools xsi:type="tool:DirectEditLabel" name="EditEntityTitle" inputLabelExpression="feature:title">
-            <mask mask="{0}"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
-            </initialOperation>
-          </ownedTools>
+		  [EditTitleAttributes(aExtension)/]
 [for (extension : Extension | aExtension.getAllExtensionsExceptCore())]
-[for (kind : Type | extension.getAllKinds()->union(extension.getAllMixins()))]
-[for (attribute : EAttribute | kind.getEClass().eAllAttributes)]
-          <ownedTools xsi:type="tool:DirectEditLabel" name="Edit[kind.name/][attribute.name.toUpperFirst()/]" inputLabelExpression="feature:[attribute.name/]">
-            <mask mask="{0}"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="[attribute.name/]" valueExpression="var:arg0"/>
-            </initialOperation>
-          </ownedTools>
-[/for]
-[for (action : Action | kind.actions)]
-[if (action.attributes->isEmpty())]
-          <ownedTools xsi:type="tool_1:OperationAction" name="[kind.name/][action.name.toUpperFirst()/]Action" label="[action.name.toUpperFirst()/]" precondition="['['/]self.oclIsKindOf([kind.eContainer().oclAsType(Extension).getEPackage().name/]::[kind.getEClassName()/])/[']'/]">
-            <view name="views"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType([kind.eContainer().oclAsType(Extension).getEPackage().name/]::[kind.getEClassName()/]).[action.term/]()/[']'/]"/>
-            </initialOperation>
-          </ownedTools>
-[else]
-[if (action.attributes->size() = 1)]
-[if (not getFirstParameterEnumType(action).oclIsUndefined())]
-[let enumType : EnumerationType = getFirstParameterEnumType(action)]
-          <ownedTools xsi:type="tool_1:PopupMenu" name="[kind.name/][action.name.toUpperFirst()/]Action" label="[action.name.toUpperFirst()/]" precondition="['['/]self.oclIsKindOf([kind.eContainer().oclAsType(Extension).getEPackage().name/]::[kind.getEClassName()/])/[']'/]">
-[for (literal : EnumerationLiteral | enumType.literals)]
-            <menuItemDescription xsi:type="tool_1:OperationAction" name="[enumType.name/][literal.name.toUpperFirst()/]" label="[literal.name.toUpperFirst()/]">
-              <view name="views"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType([kind.eContainer().oclAsType(Extension).getEPackage().name/]::[kind.getEClass()/]).[action.term/]([enumType.name/]::[literal.name/])/[']'/]"/>
-              </initialOperation>
-            </menuItemDescription>
-[/for]
-          </ownedTools>
-[/let]
-[/if]
-[/if]
-[/if]
+[for (type : Type | extension.getAllKinds()->union(extension.getAllMixins()))]
+			[EditTypeFeatures(type)/]
 [/for]
 [/for]
-[/for]
-          <ownedTools xsi:type="tool_1:PopupMenu" name="CRUD operations" precondition="['['/]self.oclIsKindOf(Entity)/[']'/]">
-            <menuItemDescription xsi:type="tool_1:OperationAction" name="Create">
-              <view name="views"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType(Entity).occiCreate()/[']'/]"/>
-              </initialOperation>
-            </menuItemDescription>
-            <menuItemDescription xsi:type="tool_1:OperationAction" name="Retrieve">
-              <view name="views"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType(Entity).occiRetrieve()/[']'/]"/>
-              </initialOperation>
-            </menuItemDescription>
-            <menuItemDescription xsi:type="tool_1:OperationAction" name="Update">
-              <view name="views"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType(Entity).occiUpdate()/[']'/]"/>
-              </initialOperation>
-            </menuItemDescription>
-            <menuItemDescription xsi:type="tool_1:OperationAction" name="Delete">
-              <view name="views"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType(Entity).occiDelete()/[']'/]"/>
-              </initialOperation>
-            </menuItemDescription>
-          </ownedTools>
-        </toolSections>
-      </defaultLayer>
-    </ownedRepresentations>
-<!--
-    <ownedJavaExtensions qualifiedClassName="org.occiware.clouddesigner.occi.design.services.DesignServices"/>
--->
-  </ownedViewpoints>
-</description:Group>
-[/file]
+		[CRUDOperationsMenu(aExtension)/]
+[RepresentationFooter(aExtension)/]
 [/template]
 
-[template public generate(aExtension : Extension, kind : Kind)]
+[template public ViewpointFooter(aExtension : Extension)]
+  </ownedViewpoints>
+</description:Group>
+[/template]
+
+[template public RepresentationHeader(aExtension : Extension, annotation:Annotation)]
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="[aExtension.RepresentationNameDeclaration(annotation)/]Configuration Diagram" domainClass="Configuration">
+	  <metamodel href="[convertOcciScheme2EcoreNamespace(aExtension)/]#/"/>
+[for (importedExtension : Extension | aExtension.import)]
+ 	  <metamodel href="[convertOcciScheme2EcoreNamespace(importedExtension)/]#/"/> 
+[/for]
+      <defaultLayer name="Default">
+[/template]
+
+
+[template public RepresentationNameDeclaration(aExtension : Extension, annotation : Annotation)]
+[if (annotation <> null)][annotation.value.replaceAll(' ', '')/] [aExtension.name.toUpperFirst()/][else][aExtension.name.toUpperFirst()/][/if]
+[/template]
+[template public RepresentationName(aExtension : Extension, annotation:Annotation)]
+[if (annotation <> null)][annotation.value.replaceAll(' ', '')/]%20[aExtension.name.toUpperFirst()/][else][aExtension.name.toUpperFirst()/][/if]
+[/template]
+
+[template public RepresentationFooter(aExtension : Extension)]
+      </defaultLayer>
+    </ownedRepresentations>
+[/template]
+
+
+
+[template public ResourceKindSourceEdge(resourceKind : Kind, aExtension : Extension, annotation:Annotation)]
+        <edgeMappings name="[resourceKind.name/]LinksEdge" 
+sourceMapping="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resourceKind.name/]Container'] 
+[comment if resourceKind is contained by annotation. So we need to create a link FROM a contained resource (sourceMapping) with another resource/]
+[if (resourceKind.occiIsKindOf(annotation.getResourceKindContained()))]
+[for (container : Kind | aExtension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.getAllResourceKinds())->select(kind:Kind|kind.occiIsKindOf(annotation.getResourceKindContainer())))] 
+//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[container.name/]Container'[']'/]/@subContainerMappings['['/]name='FreeSub[container.name/]Container'[']'/]/@subContainerMappings['['/]name='Contained[resourceKind.name/]Container'[']'/]
+[/for]
+[/if]
+" 
+targetMapping="[for (link : Kind | getTargetLinkKindsFromAResourceKind(resourceKind,aExtension.getAllExtensionsExceptCore()->asSequence())) separator(' ')]//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[link.name/]Container'[']'/][/for] 
+[comment the following block allows to create an edge TO (targetMapping) a contained link inside a container resource/]
+[if (resourceKind.occiIsKindOf(annotation.getResourceKindContained()))]
+[for (container : Kind | aExtension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.getAllResourceKinds())->select(kind:Kind|kind.occiIsKindOf(annotation.getResourceKindContainer())))] 
+[for (link : Kind | getTargetLinkKindsFromAResourceKind(resourceKind,aExtension.getAllExtensionsExceptCore()->asSequence())) separator(' ')]
+//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[container.name/]Container'[']'/]/@subContainerMappings['['/]name='FreeSub[container.name/]Container'[']'/]/@subContainerMappings['['/]name='Contained[link.name/]Container'[']'/]
+[/for]
+[/for]
+[/if]
+" 
+targetFinderExpression="feature:links">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='gray'[']'/]"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+[/template]
+
+
+[template public LinkKindTargetEdge(linkKind : Kind, aExtension : Extension, annotation: Annotation)]
+        <edgeMappings name="[linkKind.name/]TargetEdge" 
+sourceMapping="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[linkKind.name/]Container'[']'/] 
+[comment the following block allows to create an edge FROM (sourceMapping) a contained link inside a container resource/]
+[if (linkKind.isSourceLinkOfAnnotationContainedResource(aExtension, annotation))]
+[for (container : Kind | aExtension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.getAllResourceKinds())->select(kind:Kind|kind.occiIsKindOf(annotation.getResourceKindContainer())))] 
+//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[container.name/]Container'[']'/]/@subContainerMappings['['/]name='FreeSub[container.name/]Container'[']'/]/@subContainerMappings['['/]name='Contained[linkKind.name/]Container'[']'/]
+[/for]
+[/if]
+" 
+targetMapping="[for (resourceKind : Kind | getTargetResourceKinds(linkKind, aExtension.getAllExtensionsExceptCore()->asSequence())) separator(' ')]
+//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resourceKind.name/]Container']
+[comment if resourceKind is contained by annotation. So we need to create a link from another resource to the contained resource (targetMapping)/]
+[if (resourceKind.occiIsKindOf(annotation.getResourceKindContained()))]
+[for (container : Kind | aExtension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.getAllResourceKinds())->select(kind:Kind|kind.occiIsKindOf(annotation.getResourceKindContainer())))] 
+//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[container.name/]Container'[']'/]/@subContainerMappings['['/]name='FreeSub[container.name/]Container'[']'/]/@subContainerMappings['['/]name='Contained[resourceKind.name/]Container'[']'/]
+[/for]
+[/if]
+[/for] 
+" targetFinderExpression="feature:target">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='gray'[']'/]"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+[/template]
+
+[template public LinkKindEdgeCreator(linkKind : Kind, aExtension : Extension, annotation:Annotation)]
+<edgeMappings name="[linkKind.name/]Edge" 
+sourceMapping="
+[for (resource : Kind | getSourceResourceKinds(linkKind, aExtension.getAllExtensionsExceptCore()->asSequence())) separator(' ')]
+//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resource.name/]Container']
+[comment if resource is contained by annotation. So we need to link the contained resource with another resource/]
+[if (resource.occiIsKindOf(annotation.getResourceKindContained()))]
+[for (container : Kind | aExtension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.getAllResourceKinds())->select(kind:Kind|kind.occiIsKindOf(annotation.getResourceKindContainer())))] 
+//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[container.name/]Container'[']'/]/@subContainerMappings['['/]name='FreeSub[container.name/]Container'[']'/]/@subContainerMappings['['/]name='Contained[resource.name/]Container'[']'/]
+[/for]
+[/if]
+[/for]" 
+
+targetMapping="
+[for (resource : Kind | getTargetResourceKinds(linkKind, aExtension.getAllExtensionsExceptCore()->asSequence())) separator(' ')] 
+//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resource.name/]Container'] 
+[comment if resource is contained by annotation. So we need to link the contained resource with another resource/]
+[if (resource.occiIsKindOf(annotation.getResourceKindContained()))]
+[for (container : Kind | aExtension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.getAllResourceKinds())->select(kind:Kind|kind.occiIsKindOf(annotation.getResourceKindContainer())))] 
+//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[container.name/]Container'[']'/]/@subContainerMappings['['/]name='FreeSub[container.name/]Container'[']'/]/@subContainerMappings['['/]name='Contained[resource.name/]Container'[']'/]
+[/for]
+[/if]
+[/for]" 
+domainClass="[linkKind.getEClassName()/]" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='gray'[']'/]"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+[/template]
+
+[template public ResourceKindContainer(resourceKind : Kind, aExtension : Extension, annotation:Annotation)]
+        <containerMappings name="[resourceKind.name/]Container" 
+		preconditionExpression="['['/]self.oclIsTypeOf([resourceKind.eContainer().oclAsType(Extension).getEPackage().name/]::[resourceKind.getEClassName()/]) 
+		[comment added to manage resource container/]
+		[comment the following block allows to create a constraint that prohibits the visualization of a contained resource outside the container resource/]
+		[if (resourceKind.occiIsKindOf(annotation.getResourceKindContained()))]
+			and self.rlinks->select(l:occi::Link|l.oclIsKindOf([annotation.eContainer().oclAsType(Kind).eContainer().oclAsType(Extension).getEPackage().name/]::[annotation.eContainer().oclAsType(Kind).getEClassName()/]))->forAll(i|not i.eContainer().oclIsKindOf([annotation.getResourceKindContainer().oclAsType(Kind).eContainer().oclAsType(Extension).getEPackage().name/]::[annotation.getResourceKindContainer().getEClassName()/]))
+			and self.links->select(l:occi::Link|l.oclIsKindOf([annotation.eContainer().oclAsType(Kind).eContainer().oclAsType(Extension).getEPackage().name/]::[annotation.eContainer().oclAsType(Kind).getEClassName()/]))->forAll(i|not i.target.oclIsKindOf([annotation.getResourceKindContainer().oclAsType(Kind).eContainer().oclAsType(Extension).getEPackage().name/]::[annotation.getResourceKindContainer().getEClassName()/]))
+		[/if]
+		[comment end added to manage resource container/]		
+/[']'/]"
+            labelDirectEdit="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@toolSections.3/@ownedTools['['/]name='EditEntityTitle'[']'/]"
+			semanticCandidatesExpression="feature:resources" 
+			domainClass="[resourceKind.eContainer().oclAsType(Extension).getEPackage().name/]::[resourceKind.getEClassName()/]"  
+[if (resourceKind.occiIsKindOf(annotation.getResourceKindContainer()))]
+childrenPresentation="HorizontalStack"
+[else]
+childrenPresentation="VerticalStack"
+[/if]
+>
+[generateKindNodes(aExtension, resourceKind, annotation)/]
+
+[comment added to manage resource container/]
+[comment the following block consists in creating the contained resource kind (and its children) inside the container (or inside one of its children)/]
+[if (resourceKind.occiIsKindOf(annotation.getResourceKindContainer()))]
+<subContainerMappings name="FreeSub[resourceKind.name/]Container" semanticCandidatesExpression="['['/]self/[']'/]" 
+			domainClass="[resourceKind.eContainer().oclAsType(Extension).getEPackage().name/]::[resourceKind.getEClassName()/]">
+[for (containedResource : Kind | aExtension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.getAllResourceKinds())->select(rk:Kind|rk.occiIsKindOf(annotation.getResourceKindContained())))]
+	[ResourceKindContainedContainer(annotation,aExtension, containedResource)/]
+[/for]
+[comment: In the following, we create the contained links inside the  container resource./]
+[for (containedLink : Kind | aExtension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.getAllLinkKinds())->select(linkK:Kind|linkK.isSourceLinkOfAnnotationContainedResource(aExtension, annotation))
+)]
+[LinkKindSubContainer(containedLink, aExtension, annotation)/]
+[/for]
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='white'[']'/]"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='light_gray'[']'/]"/>
+            </style>
+</subContainerMappings>
+[/if]
+[comment end added to manage resource container/]
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="['['/]self.kind.name/[']'/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='white'[']'/]"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='light_gray'[']'/]"/>
+            </style>
+        </containerMappings>
+[/template]
+
+[template public ResourceKindContainedContainer(annotation : Annotation, aExtension : Extension, containedResourceKind:Kind)]
+        <subContainerMappings name="Contained[containedResourceKind.name/]Container" preconditionExpression="['['/]self.oclIsTypeOf([containedResourceKind.eContainer().oclAsType(Extension).getEPackage().name/]::[containedResourceKind.getEClassName()/])/[']'/]"
+            labelDirectEdit="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@toolSections.3/@ownedTools['['/]name='EditEntityTitle'[']'/]"
+			semanticCandidatesExpression="aql:self.links.target->union(self.rlinks.source)" 
+			domainClass="[containedResourceKind.eContainer().oclAsType(Extension).getEPackage().name/]::[containedResourceKind.getEClassName()/]"  childrenPresentation="VerticalStack">
+[generateKindNodes(aExtension, containedResourceKind, annotation)/]
+        </subContainerMappings>
+[/template]
+
+[template public LinkKindContainer(linkKind : Kind, aExtension : Extension, annotation: Annotation)]
+         <containerMappings name="[linkKind.name/]Container" preconditionExpression="['['/]self.oclIsTypeOf([linkKind.eContainer().oclAsType(Extension).getEPackage().name/]::[linkKind.getEClassName()/]) 
+[comment added to manage resource container/]
+[comment the following OCL expression prohibits the visualization of a containment link/]
+[if (annotation <> null)]
+[if (linkKind.occiIsKindOf(annotation.eContainer().oclAsType(Kind)))]
+	and not (self.eContainer().oclIsKindOf([annotation.getResourceKindContainer().eContainer().oclAsType(Extension).getEPackage().name/]::[annotation.getResourceKindContainer().getEClassName()/]) and self.target.oclIsKindOf([annotation.getResourceKindContained().eContainer().oclAsType(Extension).getEPackage().name/]::[annotation.getResourceKindContained().getEClassName()/]))
+	and not (self.eContainer().oclIsKindOf([annotation.getResourceKindContained().eContainer().oclAsType(Extension).getEPackage().name/]::[annotation.getResourceKindContained().getEClassName()/]) and self.target.oclIsKindOf([annotation.getResourceKindContainer().eContainer().oclAsType(Extension).getEPackage().name/]::[annotation.getResourceKindContainer().getEClassName()/])) 
+[/if]
+[comment if linkKind can be a source link of the contained resource of the annotation, then we prohibit the creation of this link in the configuration because it is already created inside the container resource/]
+[if (linkKind.isSourceLinkOfAnnotationContainedResource(aExtension, annotation))]
+and not (diagram.containers->exists(con:DDiagramElementContainer|con.semanticElements->first().oclIsKindOf([annotation.getResourceKindContainer().eContainer().oclAsType(Extension).getEPackage().name/]::[annotation.getResourceKindContainer().getEClassName()/]) and con.containers->exists(contai:DDiagramElementContainer|contai.semanticElements->first()=self.eContainer() and self.eContainer().oclIsKindOf([annotation.getResourceKindContained().eContainer().oclAsType(Extension).getEPackage().name/]::[annotation.getResourceKindContained().getEClassName()/]) )))
+[/if]
+[/if]
+[comment end added to manage resource container/]	
+/[']'/]"
+            labelDirectEdit="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@toolSections.3/@ownedTools['['/]name='EditEntityTitle'[']'/]"
+			semanticCandidatesExpression="['['/]resources.links->filter([linkKind.eContainer().oclAsType(Extension).getEPackage().name/]::[linkKind.getEClassName()/])/[']'/]" 
+			domainClass="[linkKind.eContainer().oclAsType(Extension).getEPackage().name/]::[linkKind.getEClassName()/]"  childrenPresentation="VerticalStack">
+[generateKindNodes(aExtension, linkKind, annotation)/]
+        </containerMappings>
+[/template]
+
+[comment the following template create a link sub container inside the container resource /]
+[template public LinkKindSubContainer(linkKind : Kind, aExtension : Extension, annotation: Annotation)]
+         <subContainerMappings name="Contained[linkKind.name/]Container" preconditionExpression="['['/]self.oclIsTypeOf([linkKind.eContainer().oclAsType(Extension).getEPackage().name/]::[linkKind.getEClassName()/]) 
+[comment added to manage resource container/]
+[comment the following OCL expression prohibits the visualization of a containment link/]
+[if (annotation <> null)]
+[if (linkKind.occiIsKindOf(annotation.eContainer().oclAsType(Kind)))]
+	and not (self.eContainer().oclIsKindOf([annotation.getResourceKindContainer().eContainer().oclAsType(Extension).getEPackage().name/]::[annotation.getResourceKindContainer().getEClassName()/]) and self.target.oclIsKindOf([annotation.getResourceKindContained().eContainer().oclAsType(Extension).getEPackage().name/]::[annotation.getResourceKindContained().getEClassName()/]))
+	and not (self.eContainer().oclIsKindOf([annotation.getResourceKindContained().eContainer().oclAsType(Extension).getEPackage().name/]::[annotation.getResourceKindContained().getEClassName()/]) and self.target.oclIsKindOf([annotation.getResourceKindContainer().eContainer().oclAsType(Extension).getEPackage().name/]::[annotation.getResourceKindContainer().getEClassName()/])) 
+[/if]
+[/if]
+[comment end added to manage resource container/]	
+/[']'/]"
+            labelDirectEdit="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@toolSections.3/@ownedTools['['/]name='EditEntityTitle'[']'/]"
+			semanticCandidatesExpression="['['/]links->collect(l:occi::Link|l.target)->filter([annotation.getResourceKindContained().oclAsType(Kind).eContainer().oclAsType(Extension).getEPackage().name/]::[annotation.getResourceKindContained().getEClassName()/])->collect(c:[annotation.getResourceKindContained().oclAsType(Kind).eContainer().oclAsType(Extension).getEPackage().name/]::[annotation.getResourceKindContained().getEClassName()/]|c.links)->union(rlinks->collect(l:occi::Link|l.source)->filter([annotation.getResourceKindContained().oclAsType(Kind).eContainer().oclAsType(Extension).getEPackage().name/]::[annotation.getResourceKindContained().getEClassName()/])->collect(c:[annotation.getResourceKindContained().oclAsType(Kind).eContainer().oclAsType(Extension).getEPackage().name/]::[annotation.getResourceKindContained().getEClassName()/]|c.links))/[']'/]" 
+			domainClass="[linkKind.eContainer().oclAsType(Extension).getEPackage().name/]::[linkKind.getEClassName()/]"  childrenPresentation="VerticalStack">
+[generateKindNodes(aExtension, linkKind, annotation)/]
+        </subContainerMappings>
+[/template]
+
+[template public generateKindNodes(aExtension : Extension, kind : Kind, annotation: Annotation)]
+[comment if kind is a container in annotation. So we create two nested containers. The first one Sub contains the second one and related mixins. the second one SubSub contains attributes/]
+[if (kind.occiIsKindOf(annotation.getResourceKindContainer()))]
+<subContainerMappings name="Sub[kind.name/]Container" semanticCandidatesExpression="['['/]self/[']'/]" domainClass="[kind.eContainer().oclAsType(Extension).getEPackage().name/]::[kind.getEClassName()/]" childrenPresentation="VerticalStack">
+<subContainerMappings name="SubSub[kind.name/]Container" semanticCandidatesExpression="['['/]self/[']'/]" domainClass="[kind.eContainer().oclAsType(Extension).getEPackage().name/]::[kind.getEClassName()/]" childrenPresentation="List">
+[else]
 <subContainerMappings name="Sub[kind.name/]Container" semanticCandidatesExpression="['['/]self/[']'/]" domainClass="[kind.eContainer().oclAsType(Extension).getEPackage().name/]::[kind.getEClassName()/]" childrenPresentation="List">
+[/if]
 [for (attribute : EAttribute | kind.getEClass().eAllAttributes)]
           <subNodeMappings name="[kind.name/][attribute.name.toUpperFirst()/]"
-                labelDirectEdit="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.name.toUpperFirst()/]Configuration%20Diagram'[']'/]/@defaultLayer/@toolSections.3/@ownedTools['['/]name='Edit[kind.name/][attribute.name.toUpperFirst()/]'[']'/]"
+                labelDirectEdit="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@toolSections.3/@ownedTools['['/]name='Edit[kind.name/][attribute.name.toUpperFirst()/]'[']'/]"
                 semanticCandidatesExpression="['['/]self/[']'/]" domainClass="[kind.eContainer().oclAsType(Extension).getEPackage().name/]::[kind.getEClassName()/]">
             <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['['/]'[attribute.name/] = ' + self.[attribute.name/].toString()/[']'/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black'[']'/]"/>
@@ -252,7 +349,7 @@
             </style>
 </subContainerMappings>
 [for ( mixin : Mixin| kind.getAllRelatedMixins(aExtension.getAllExtensionsExceptCore()->asSequence())->asSet())]
-[generate(mixin)/]
+	[generateMixinContainer(mixin)/]
 [/for] 
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="['['/]self.title + ': [kind.name/]'/[']'/]" roundedCorner="true">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries['['/]name='black']"/>
@@ -274,9 +371,13 @@
 [/for]
 [/let]
 [/if]
+[comment to close the first container previously created/]
+[if (kind.occiIsKindOf(annotation.getResourceKindContainer()))]
+</subContainerMappings>
+[/if]
 [/template]
 
-[template public generate(mixin : Mixin)]
+[template public generateMixinContainer(mixin : Mixin)]
 <subContainerMappings name="[mixin.name/]Mixin" preconditionExpression="['['/]self.oclIsTypeOf([mixin.eContainer().oclAsType(Extension).getEPackage().name/]::[mixin.getEClassName()/])/[']'/]" semanticCandidatesExpression="feature:parts" domainClass="[mixin.eContainer().oclAsType(Extension).getEPackage().name/]::[mixin.getEClassName()/]" childrenPresentation="List">
 [for (attribute : EAttribute | mixin.getEClass().eAllAttributes)]
 <subNodeMappings name="[mixin.getEClassName()/][attribute.name/]" semanticCandidatesExpression="['['/]self/[']'/]" domainClass="[mixin.eContainer().oclAsType(Extension).getEPackage().name/]::[mixin.getEClassName()/]">
@@ -305,6 +406,309 @@
             </style>
           </subContainerMappings>
 [/template]
+
+[template public ResourceKindCreation(resourceKind : Kind, aExtension : Extension , annotation: Annotation)]
+<ownedTools xsi:type="tool:ContainerCreationDescription" 
+			name="Create [resourceKind.name/]"
+			containerMappings="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[resourceKind.name/]Container'[']'/] 
+[comment added to manage resource container/]
+[comment collect the different created contained mappings/]
+[if (resourceKind.occiIsKindOf(annotation.getResourceKindContained()))] 
+[for (container : Kind | aExtension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.getAllResourceKinds())->select(kind:Kind|kind.occiIsKindOf(annotation.getResourceKindContainer())))] 
+//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[container.name/]Container'[']'/]/@subContainerMappings['['/]name='FreeSub[container.name/]Container'[']'/]/@subContainerMappings['['/]name='Contained[resourceKind.name/]Container'[']'/]
+[/for]
+[/if]
+[comment end added to manage resource container/]
+"> 
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Switch">
+[comment added to manage resource container/]
+[comment collect the different containers in order to create contained resource inside the different container resource/]
+[if (resourceKind.occiIsKindOf(annotation.getResourceKindContained()))] 
+[for (container : Kind | aExtension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.getAllResourceKinds())->select(kind:Kind|kind.occiIsKindOf(annotation.getResourceKindContainer())))] 
+	<cases conditionExpression="aql:container.oclIsKindOf([container.eContainer().oclAsType(Extension).getEPackage().name/]::[container.getEClassName()/])"> 
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="feature:eContainer">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="[resourceKind.eContainer().oclAsType(Extension).getEPackage().name/]::[resourceKind.getEClassName()/]" referenceName="resources" variableName="[resourceKind.getEClassName().toLowerCase()/]instance">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="['['/]'[resourceKind.name.toLowerFirst()/]' + self.eContainer(occi::Configuration).resources->size().toString()/[']'/]">
+                        <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="[annotation.eContainer().oclAsType(Kind).eContainer().oclAsType(Extension).getEPackage().name/]::[annotation.eContainer().oclAsType(Kind).getEClassName()/]" referenceName="links" variableName="[annotation.eContainer().oclAsType(Kind).name.toLowerCase()/]instance">
+                           [comment the following if then else block was added to choose what resource must own the link: the container or the contained/]
+							[if (annotation.eContainer().oclAsType(Kind).getSourceResourceKinds(Sequence{annotation.eContainer().oclAsType(Kind).eContainer().oclAsType(Extension)})->includes(annotation.getResourceKindContainer()))]
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:container"/>
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:[resourceKind.getEClassName().toLowerCase()/]instance"/>
+                            [else]
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:[resourceKind.getEClassName().toLowerCase()/]instance"/>
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:container"/>
+                           	[/if]
+                          </subModelOperations>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </cases>
+[/for]
+[/if]
+[comment end added to manage resource container/]
+                <cases conditionExpression="aql:container.oclIsKindOf(occi::Configuration)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="[resourceKind.eContainer().oclAsType(Extension).getEPackage().name/]::[resourceKind.getEClassName()/]" referenceName="resources">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="['['/]'[resourceKind.name.toLowerFirst()/]' + container.oclAsType(Configuration).resources->size().toString()/[']'/]"/>
+                  </subModelOperations>
+                </cases>
+                <default/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+[/template]
+
+[template public LinkKindCreation(linkKind : Kind, aExtension : Extension, annotation: Annotation)]
+          <ownedTools xsi:type="tool:EdgeCreationDescription"
+			name="Create [linkKind.name/]"
+			edgeMappings="//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@edgeMappings['['/]name='[linkKind.name/]Edge'[']'/]"> 
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="[linkKind.eContainer().oclAsType(Extension).getEPackage().name/]::[linkKind.getEClassName()/]" referenceName="links" variableName="link">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+[/template]
+
+
+[template public MixinCreation(mixin : Mixin, aExtension : Extension, annotation: Annotation)]
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create [mixin.name/]" containerMappings="
+[comment the for block is to collect the different kinds applied on a mixin AND ALSO their children/]
+[for (kind : Kind | (mixin.applies->union(mixin.applies->collect(k:Kind|k.getAllChildrenKind(aExtension.getAllExtensionsExceptCore()->asSequence()))->asOrderedSet()))->asOrderedSet() )]
+[if (aExtension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.kinds)->includes(kind) )]
+[comment the following two nested if blocks serve to manage with the Sub containers created in generateKindNodes template (line 238)/]
+//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[kind.name/]Container'[']'/][if (kind.occiIsKindOf(annotation.getResourceKindContainer()))][if (kind.getAllRelatedMixins(aExtension.getAllExtensionsExceptCore()->asSequence())->includes(mixin))]/@subContainerMappings['['/]name='Sub[kind.name/]Container'[']'/][/if][/if]/@subContainerMappings['['/]name='[mixin.name/]Mixin'[']'/]
+[/if]
+[/for]
+[comment collect the different fathers of mixin/]
+[for (mixina : Mixin | mixin->closure(depends))]
+[comment for each mixin father collect the different kinds applied on AND ALSO thier children/]
+[for (kind : Kind | (mixina.applies->union(mixina.applies->collect(k:Kind|k.getAllChildrenKind(aExtension.getAllExtensionsExceptCore()->asSequence()))->asOrderedSet()))->asOrderedSet() )]
+[if (aExtension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.kinds)->includes(kind))]
+[comment the following two nested if blocks serve to manage with the Sub containers created in generateKindNodes template (line 238)/]
+//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[kind.name/]Container'[']'/][if (kind.occiIsKindOf(annotation.getResourceKindContainer()))][if (kind.getAllRelatedMixins(aExtension.getAllExtensionsExceptCore()->asSequence())->includes(mixin))]/@subContainerMappings['['/]name='Sub[kind.name/]Container'[']'/][/if][/if]/@subContainerMappings['['/]name='[mixin.name/]Mixin'[']'/]
+[/if]
+[/for]
+[/for]
+[comment added to manage resource container/]
+[comment for mixins, at first, we verify that the mixin can potentially created inside a contained resource (or a child contained resource)/]
+[if (annotation <> null)]
+[if (annotation.getResourceKindContained()->collect(containedResourceKind: Kind|containedResourceKind.getAllChildrenKind(aExtension.getAllExtensionsExceptCore()->asSequence()))->collect(aContainedResourceKind:Kind|aContainedResourceKind.getAllRelatedMixins(aExtension.getAllExtensionsExceptCore()->asSequence()))->includes(mixin) )]
+[comment we collect the different eventual container resource kind (container and children)/]
+[for (containerkind : Kind | annotation.getResourceKindContainer()->union(annotation.getResourceKindContainer().getAllChildrenKind(mixin.eContainer().oclAsType(Extension).getAllExtensionsExceptCore()->asSequence()))) separator(' ')]
+[comment we collect the different eventual contained resource kind (contained and children)/]
+[for (containedkind : Kind | annotation.getResourceKindContained()->union(annotation.getResourceKindContained().getAllChildrenKind(mixin.eContainer().oclAsType(Extension).getAllExtensionsExceptCore()->asSequence())))]
+[comment we verify that this mixin can be created in the contained resource kind. This situation occurs when a mixin, m1, is applied in a resource kind, srs1, which is a child of a contained resource, rs1./]
+[comment therefore m1 can be created inside srs1 but not inside rs1, because applied mixins can be created inside children and not inside parent. It is like Java attribute inside a sub Class./]
+[if (containedkind.getAllRelatedMixins(aExtension.getAllExtensionsExceptCore()->asSequence())->includes(mixin))]
+//@ownedViewpoints['['/]name='[aExtension.name.toUpperFirst()/]Configuration'[']'/]/@ownedRepresentations['['/]name='[aExtension.RepresentationName(annotation)/]Configuration%20Diagram'[']'/]/@defaultLayer/@containerMappings['['/]name='[containerkind.name/]Container'[']'/]/@subContainerMappings['['/]name='FreeSub[containerkind.name/]Container'[']'/]/@subContainerMappings['['/]name='Contained[containedkind.name/]Container'[']'/]/@subContainerMappings['['/]name='[mixin.name/]Mixin'[']'/]
+[/if]
+[/for]
+[/for]
+[/if]
+[/if]
+[comment end added to manage resource container/]
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="[mixin.eContainer().oclAsType(Extension).getEPackage().name/]::[mixin.getEClassName()/]" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+[/template]
+
+
+[template public EditTitleAttributes(aExtension:Extension)]
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditEntityTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+[/template]
+
+[template public EditTypeFeatures(type:Type)]
+[for (attribute : EAttribute | type.getEClass().eAllAttributes)]
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Edit[type.name/][attribute.name.toUpperFirst()/]" inputLabelExpression="feature:[attribute.name/]">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="[attribute.name/]" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+[/for]
+[for (action : Action | type.actions)]
+[if (action.attributes->isEmpty())]
+          <ownedTools xsi:type="tool_1:OperationAction" name="[type.name/][action.name.toUpperFirst()/]Action" label="[action.name.toUpperFirst()/]" precondition="['['/]self.oclIsKindOf([type.eContainer().oclAsType(Extension).getEPackage().name/]::[type.getEClassName()/])/[']'/]">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType([type.eContainer().oclAsType(Extension).getEPackage().name/]::[type.getEClassName()/]).[action.term/]()/[']'/]"/>
+            </initialOperation>
+          </ownedTools>
+[else]
+[if (action.attributes->size() = 1)]
+[if (not getFirstParameterEnumType(action).oclIsUndefined())]
+[let enumType : EnumerationType = getFirstParameterEnumType(action)]
+          <ownedTools xsi:type="tool_1:PopupMenu" name="[type.name/][action.name.toUpperFirst()/]Action" label="[action.name.toUpperFirst()/]" precondition="['['/]self.oclIsKindOf([type.eContainer().oclAsType(Extension).getEPackage().name/]::[type.getEClassName()/])/[']'/]">
+[for (literal : EnumerationLiteral | enumType.literals)]
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="[enumType.name/][literal.name.toUpperFirst()/]" label="[literal.name.toUpperFirst()/]">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType([type.eContainer().oclAsType(Extension).getEPackage().name/]::[type.getEClass()/]).[action.term/]([enumType.name/]::[literal.name/])/[']'/]"/>
+              </initialOperation>
+            </menuItemDescription>
+[/for]
+          </ownedTools>
+[/let]
+[/if]
+[/if]
+[/if]
+[/for]
+[/template]
+
+[template public CRUDOperationsMenu(aExtension:Extension)]
+          <ownedTools xsi:type="tool_1:PopupMenu" name="CRUD operations" precondition="['['/]self.oclIsKindOf(Entity)/[']'/]">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Create">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType(Entity).occiCreate()/[']'/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Retrieve">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType(Entity).occiRetrieve()/[']'/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Update">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType(Entity).occiUpdate()/[']'/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Delete">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="['['/]self.oclAsType(Entity).occiDelete()/[']'/]"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+        </toolSections>
+[/template]
+
+[comment this query returns is an annotation is a containment one/]
+[query public isContainmentAnnotation(annotation : Annotation) : Boolean = 
+annotation.key.equalsIgnoreCase('containment')/] 
+
+[comment this query returns if a link kind is a containement link. It means if the link kind has an annotation whose the key is 'containement'/]
+[query public isContainmentLink(linkKind : Kind) : Boolean = 
+linkKind.annotations->exists(annotation:Annotation|annotation.isContainmentAnnotation())/]
+
+[comment from a link kind, this query returns the list of its containment annotations /]
+[query public getContainmentAnnotations(linkKind : Kind) : OrderedSet(Annotation) = 
+linkKind.annotations->select(annotation:Annotation|annotation.isContainmentAnnotation())/]
+
+[comment this query returns the whole containment annotations defined in an extension/]
+[query public getAllContainmentAnnotation(aExtension : Extension) : OrderedSet(Annotation) = 
+aExtension.getAllLinkKinds()->collect(linkKind:Kind|linkKind.getContainmentAnnotations())->asOrderedSet()/] 
+
+[comment this query returns the container resource kind specified by a containment annotation /]
+[query public getResourceKindContainer(annotation : Annotation) : Kind = 
+if (annotation <> null) 
+then 
+let extension :Extension = annotation.eContainer().oclAsType(Kind).eContainer().oclAsType(Extension)
+in 
+	extension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.kinds)->select(kind:Kind|kind.name = getContainerResourceKindName(annotation))->asOrderedSet()->first() 
+else 
+	null 
+endif/] 
+
+[comment this query returns if a kind is a resource kind container/]
+[query public isResourceKindContainer(r : Kind) : Boolean = 
+let extension :Extension = r.eContainer().oclAsType(Extension)
+in extension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.getAllLinkKinds())->collect(linkKind:Kind|linkKind.annotations)->exists(annotation:Annotation|annotation.getResourceKindContainer() = r)/] 
+
+[comment this query returns if a kind is a resource kind contained/]
+[query public isResourceKindContained(r : Kind) : Boolean = 
+let extension :Extension = r.eContainer().oclAsType(Extension)
+in extension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.getAllLinkKinds())->collect(linkKind:Kind|linkKind.annotations)->exists(annotation:Annotation|annotation.getResourceKindContained() = r)/] 
+
+[comment this query returns if a kind is a resource kind contained/]
+[query public getContainementAnnotationsFromResourceKindContained(r : Kind) : OrderedSet(Annotation) = 
+let extension :Extension = r.eContainer().oclAsType(Extension)
+in extension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.getAllLinkKinds())->collect(linkKind:Kind|linkKind.annotations)->select(annotation:Annotation|annotation.getResourceKindContained() = r)->asOrderedSet()/] 
+
+[comment this query returns the contained resource kind specified by a containment annotation /]
+[query public getResourceKindContained(annotation : Annotation) : Kind = 
+if (annotation <> null) 
+then 
+let extension : Extension = annotation.eContainer().oclAsType(Kind).eContainer().oclAsType(Extension)
+in 
+	extension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.kinds)->select(kind:Kind|kind.name = getContainedResourceKindName(annotation))->asOrderedSet()->first()
+else
+	null
+endif/] 
+
+[comment this query returns the whole resource kinds contained by a specific resource kind/]
+[query public getAllResourceKindContainedByAResourceKind(containerResourceKind : Kind) : Sequence(Kind) = 
+let extension :Extension = containerResourceKind.eContainer().oclAsType(Extension)
+in extension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.getAllLinkKinds())->collect(linkKind:Kind|linkKind.annotations)
+->select(a : Annotation | containerResourceKind.occiIsKindOf(a.getResourceKindContainer()))->collect(a: Annotation|a.getResourceKindContained())->asSequence()/] 
+
+[comment this query returns the whole annotations from a contained resource kind (containedResourceKind)/]
+[query public getAllAnnotationsFromAContainedResourceKind(containedResourceKind : Kind) : Collection(Annotation) = 
+let extension :Extension = containedResourceKind.eContainer().oclAsType(Extension)
+in extension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.getAllLinkKinds())->collect(linkKind:Kind|linkKind.annotations)
+->select(a : Annotation | a.getResourceKindContained() = containedResourceKind)/] 
+
+[comment this query returns the whole annotations from a container resource kind (containerResourceKind)/]
+[query public getAllAnnotationsFromAContainerResourceKind(containerResourceKind : Kind) : Collection(Annotation) = 
+let extension :Extension = containerResourceKind.eContainer().oclAsType(Extension)
+in extension.getAllExtensionsExceptCore()->collect(ext:Extension|ext.getAllLinkKinds())->collect(linkKind:Kind|linkKind.annotations)
+->select(a : Annotation | a.getResourceKindContainer() = containerResourceKind)/] 
+
+[comment this query returns the whole resource kinds container of a specific contained resource kind; it must returns a sequence with one element /]
+[query public getAllResourceKindContainerFromAContainedResourceKind(containedResourceKind : Kind) : Collection(Kind) = 
+containedResourceKind.getAllAnnotationsFromAContainedResourceKind()->collect(a: Annotation|a.getResourceKindContainer())
+->collect(parentKind:Kind|parentKind.getAllChildrenKind(Sequence{parentKind.eContainer().oclAsType(Extension)}))/] 
+
+[comment from a link kind, this query returns the list of resource kind containers/]
+[query public getAllResourceKindsContainer(linkKind : Kind) : OrderedSet(Kind) = 
+linkKind.getContainmentAnnotations()->collect(annotation:Annotation|annotation.getResourceKindContainer())->asOrderedSet()/] 
+
+[comment this query returns the whole contained resource kinds on which a mixin is applied on (containedResourceKind)/]
+[query public getAllContainedResourceKindsFromAMixin(mixin : Mixin) : Collection(Kind) = 
+mixin.applies->select(containedResourceKind:Kind|containedResourceKind.isResourceKindContained())/] 
+
+[comment A contained linkd is link where the contained resource of the annotation can be a source resource/]
+[query public isSourceLinkOfAnnotationContainedResource(linkKind : Kind, aExtension:Extension, annotation:Annotation) : Boolean  = 
+linkKind.getSourceResourceKinds(aExtension.getAllExtensionsExceptCore()->asSequence())->exists(resourceK:Kind|resourceK.occiIsKindOf(annotation.getResourceKindContained()))/] 
+
+[query public getContainerResourceKindName(annotation : Annotation) : String
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.design.extended.services.GenUtils', 
+	'getContainerResourceKindName(org.eclipse.cmf.occi.core.Annotation)', 
+	Sequence{annotation})/] 
+
+
+[query public getContainedResourceKindName(annotation : Annotation) : String
+	= invoke(
+	'org.eclipse.cmf.occi.core.gen.design.extended.services.GenUtils', 
+	'getContainedResourceKindName(org.eclipse.cmf.occi.core.Annotation)', 
+	Sequence{annotation})/] 
+
+
 [query public convertOcciScheme2EcoreNamespace(aExtension : Extension) : String
 	= invoke(
 	'org.eclipse.cmf.occi.core.gen.design.extended.services.GenUtils', 

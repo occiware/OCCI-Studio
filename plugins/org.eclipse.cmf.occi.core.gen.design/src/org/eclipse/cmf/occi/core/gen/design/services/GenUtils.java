@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.cmf.occi.core.Action;
+import org.eclipse.cmf.occi.core.Annotation;
 import org.eclipse.cmf.occi.core.Attribute;
 import org.eclipse.cmf.occi.core.EnumerationLiteral;
 import org.eclipse.cmf.occi.core.Extension;
@@ -298,5 +299,13 @@ public class GenUtils {
 		String extensionFile = OcciRegistry.getInstance().getFileURI(extension.getScheme());
 		String[] args = extensionFile.split("\\/");
 		return args[args.length-3];
+	}
+	public String getContainerResourceKindName(Annotation annotation) {
+		String value = annotation.getValue();
+		return value.substring(0, value.indexOf(" "));
+	}
+	public String getContainedResourceKindName(Annotation annotation) {
+		String value = annotation.getValue();
+		return value.substring(value.lastIndexOf(" ")+1, value.length());
 	}
 }
