@@ -535,6 +535,7 @@ and not (diagram.containers->exists(con:DDiagramElementContainer|con.semanticEle
           </ownedTools>
 [else]
 [if (action.attributes->size() = 1)]
+[if (action.attributes->at(1).type.oclIsTypeOf(EnumerationType))]
 [if (not getFirstParameterEnumType(action).oclIsUndefined())]
 [let enumType : EnumerationType = getFirstParameterEnumType(action)]
           <ownedTools xsi:type="tool_1:PopupMenu" name="[type.name/][action.name.toUpperFirst()/]Action" label="[action.name.toUpperFirst()/]" precondition="['['/]self.oclIsKindOf([type.eContainer().oclAsType(Extension).getEPackage().name/]::[type.getEClassName()/])/[']'/]">
@@ -548,6 +549,7 @@ and not (diagram.containers->exists(con:DDiagramElementContainer|con.semanticEle
 [/for]
           </ownedTools>
 [/let]
+[/if]
 [/if]
 [/if]
 [/if]
