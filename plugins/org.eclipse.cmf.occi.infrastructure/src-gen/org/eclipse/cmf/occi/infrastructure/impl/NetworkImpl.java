@@ -456,7 +456,7 @@ public class NetworkImpl extends ResourceImpl implements Network {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (occiNetworkVlan: ");
 		result.append(occiNetworkVlan);
 		result.append(", occiNetworkLabel: ");

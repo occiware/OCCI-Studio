@@ -401,7 +401,7 @@ public class NetworkinterfaceImpl extends LinkImpl implements Networkinterface {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (occiNetworkinterfaceInterface: ");
 		result.append(occiNetworkinterfaceInterface);
 		result.append(", occiNetworkinterfaceMac: ");

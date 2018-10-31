@@ -32,6 +32,9 @@ public enum SaveMethod implements Enumerator {
 	 * The '<em><b>Hot</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * hot documentation
+	 * <!-- end-model-doc -->
 	 * @see #HOT_VALUE
 	 * @generated
 	 * @ordered

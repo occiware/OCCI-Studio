@@ -304,7 +304,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link InfrastructurePackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -318,7 +318,8 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		if (isInited) return (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
 
 		// Obtain or create and register package
-		InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof InfrastructurePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new InfrastructurePackageImpl());
+		Object registeredInfrastructurePackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		InfrastructurePackageImpl theInfrastructurePackage = registeredInfrastructurePackage instanceof InfrastructurePackageImpl ? (InfrastructurePackageImpl)registeredInfrastructurePackage : new InfrastructurePackageImpl();
 
 		isInited = true;
 
@@ -333,7 +334,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
-			(theInfrastructurePackage, 
+			(theInfrastructurePackage,
 			 new EValidator.Descriptor() {
 				 public EValidator getEValidator() {
 					 return InfrastructureValidator.INSTANCE;
@@ -343,7 +344,6 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 		// Mark meta-data to indicate it can't be changed
 		theInfrastructurePackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(InfrastructurePackage.eNS_URI, theInfrastructurePackage);
 		return theInfrastructurePackage;
@@ -1475,59 +1475,59 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
 		addAnnotation
-		  (this, 
-		   source, 
+		  (this,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (networkEClass, 
-		   source, 
+		  (networkEClass,
+		   source,
 		   new String[] {
-			 "constraints", "UniqueVlan"
-		   });	
+			   "constraints", "UniqueVlan"
+		   });
 		addAnnotation
-		  (networkinterfaceEClass, 
-		   source, 
+		  (networkinterfaceEClass,
+		   source,
 		   new String[] {
-			 "constraints", "targetConstraint"
-		   });	
+			   "constraints", "targetConstraint"
+		   });
 		addAnnotation
-		  (ipnetworkEClass, 
-		   source, 
+		  (ipnetworkEClass,
+		   source,
 		   new String[] {
-			 "constraints", "appliesConstraint"
-		   });	
+			   "constraints", "appliesConstraint"
+		   });
 		addAnnotation
-		  (ipnetworkinterfaceEClass, 
-		   source, 
+		  (ipnetworkinterfaceEClass,
+		   source,
 		   new String[] {
-			 "constraints", "IPAdressesMustBeUnique"
-		   });	
+			   "constraints", "IPAdressesMustBeUnique"
+		   });
 		addAnnotation
-		  (os_tplEClass, 
-		   source, 
+		  (os_tplEClass,
+		   source,
 		   new String[] {
-			 "constraints", "appliesConstraint"
-		   });	
+			   "constraints", "appliesConstraint"
+		   });
 		addAnnotation
-		  (resource_tplEClass, 
-		   source, 
+		  (resource_tplEClass,
+		   source,
 		   new String[] {
-			 "constraints", "appliesConstraint"
-		   });	
+			   "constraints", "appliesConstraint"
+		   });
 		addAnnotation
-		  (ssh_keyEClass, 
-		   source, 
+		  (ssh_keyEClass,
+		   source,
 		   new String[] {
-			 "constraints", "appliesConstraint"
-		   });	
+			   "constraints", "appliesConstraint"
+		   });
 		addAnnotation
-		  (user_dataEClass, 
-		   source, 
+		  (user_dataEClass,
+		   source,
 		   new String[] {
-			 "constraints", "appliesConstraint"
+			   "constraints", "appliesConstraint"
 		   });
 	}
 
@@ -1538,37 +1538,37 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";	
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
 		addAnnotation
-		  (vlanEDataType, 
-		   source, 
+		  (vlanEDataType,
+		   source,
 		   new String[] {
-			 "MinInclusive", "0",
-			 "MaxInclusive", "4095"
-		   });	
+			   "minInclusive", "0",
+			   "maxInclusive", "4095"
+		   });
 		addAnnotation
-		  (coreEDataType, 
-		   source, 
+		  (coreEDataType,
+		   source,
 		   new String[] {
-			 "MinExclusive", "0"
-		   });	
+			   "minExclusive", "0"
+		   });
 		addAnnotation
-		  (gHzEDataType, 
-		   source, 
+		  (gHzEDataType,
+		   source,
 		   new String[] {
-			 "MinExclusive", "0"
-		   });	
+			   "minExclusive", "0"
+		   });
 		addAnnotation
-		  (giBEDataType, 
-		   source, 
+		  (giBEDataType,
+		   source,
 		   new String[] {
-			 "MinExclusive", "0"
-		   });	
+			   "minExclusive", "0"
+		   });
 		addAnnotation
-		  (shareEDataType, 
-		   source, 
+		  (shareEDataType,
+		   source,
 		   new String[] {
-			 "MinInclusive", "0"
+			   "minInclusive", "0"
 		   });
 	}
 

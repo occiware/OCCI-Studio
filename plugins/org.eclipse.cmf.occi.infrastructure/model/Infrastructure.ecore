@@ -8,7 +8,7 @@
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
-    <details key="core" value="http://schemas.ogf.org/occi/core/ecore"/>
+    <details key="occi" value="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#/"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EEnum" name="SuspendMethod">
     <eLiterals name="hibernate" literal="hibernate"/>
@@ -16,8 +16,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Vlan" instanceClassName="java.lang.Integer">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="MinInclusive" value="0"/>
-      <details key="MaxInclusive" value="4095"/>
+      <details key="minInclusive" value="0"/>
+      <details key="maxInclusive" value="4095"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Token" instanceClassName="java.lang.String"/>
@@ -68,24 +68,24 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Core" instanceClassName="java.lang.Integer">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="MinExclusive" value="0"/>
+      <details key="minExclusive" value="0"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="GHz" instanceClassName="java.lang.Float">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="MinExclusive" value="0"/>
+      <details key="minExclusive" value="0"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="GiB" instanceClassName="java.lang.Float">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="MinExclusive" value="0"/>
+      <details key="minExclusive" value="0"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="IpAddressRange" instanceClassName="java.lang.String"/>
   <eClassifiers xsi:type="ecore:EDataType" name="Mac" instanceClassName="java.lang.String"/>
   <eClassifiers xsi:type="ecore:EDataType" name="Share" instanceClassName="java.lang.Integer">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="MinInclusive" value="0"/>
+      <details key="minInclusive" value="0"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="SaveMethod">

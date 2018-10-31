@@ -930,6 +930,24 @@ public interface InfrastructurePackage extends EPackage {
 	int STORAGELINK___OCCI_DELETE = OCCIPackage.LINK___OCCI_DELETE;
 
 	/**
+	 * The operation id for the '<em>Link Target Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORAGELINK___LINK_TARGET_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_TARGET_INVARIANT__KIND_KIND;
+
+	/**
+	 * The operation id for the '<em>Link Source Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORAGELINK___LINK_SOURCE_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_SOURCE_INVARIANT__KIND_KIND;
+
+	/**
 	 * The number of operations of the '<em>Storagelink</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1109,6 +1127,24 @@ public interface InfrastructurePackage extends EPackage {
 	 * @ordered
 	 */
 	int NETWORKINTERFACE___OCCI_DELETE = OCCIPackage.LINK___OCCI_DELETE;
+
+	/**
+	 * The operation id for the '<em>Link Target Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKINTERFACE___LINK_TARGET_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_TARGET_INVARIANT__KIND_KIND;
+
+	/**
+	 * The operation id for the '<em>Link Source Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKINTERFACE___LINK_SOURCE_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_SOURCE_INVARIANT__KIND_KIND;
 
 	/**
 	 * The operation id for the '<em>Target Constraint</em>' operation.
@@ -2542,7 +2578,7 @@ public interface InfrastructurePackage extends EPackage {
 	 * @return the meta object for data type '<em>Vlan</em>'.
 	 * @see java.lang.Integer
 	 * @model instanceClass="java.lang.Integer"
-	 *        extendedMetaData="MinInclusive='0' MaxInclusive='4095'"
+	 *        extendedMetaData="minInclusive='0' maxInclusive='4095'"
 	 * @generated
 	 */
 	EDataType getVlan();
@@ -2576,7 +2612,7 @@ public interface InfrastructurePackage extends EPackage {
 	 * @return the meta object for data type '<em>Core</em>'.
 	 * @see java.lang.Integer
 	 * @model instanceClass="java.lang.Integer"
-	 *        extendedMetaData="MinExclusive='0'"
+	 *        extendedMetaData="minExclusive='0'"
 	 * @generated
 	 */
 	EDataType getCore();
@@ -2588,7 +2624,7 @@ public interface InfrastructurePackage extends EPackage {
 	 * @return the meta object for data type '<em>GHz</em>'.
 	 * @see java.lang.Float
 	 * @model instanceClass="java.lang.Float"
-	 *        extendedMetaData="MinExclusive='0'"
+	 *        extendedMetaData="minExclusive='0'"
 	 * @generated
 	 */
 	EDataType getGHz();
@@ -2600,7 +2636,7 @@ public interface InfrastructurePackage extends EPackage {
 	 * @return the meta object for data type '<em>Gi B</em>'.
 	 * @see java.lang.Float
 	 * @model instanceClass="java.lang.Float"
-	 *        extendedMetaData="MinExclusive='0'"
+	 *        extendedMetaData="minExclusive='0'"
 	 * @generated
 	 */
 	EDataType getGiB();
@@ -2634,7 +2670,7 @@ public interface InfrastructurePackage extends EPackage {
 	 * @return the meta object for data type '<em>Share</em>'.
 	 * @see java.lang.Integer
 	 * @model instanceClass="java.lang.Integer"
-	 *        extendedMetaData="MinInclusive='0'"
+	 *        extendedMetaData="minInclusive='0'"
 	 * @generated
 	 */
 	EDataType getShare();

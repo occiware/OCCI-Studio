@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 	
+ *
  * Contributors:
  * - William Piers <william.piers@obeo.fr>
  * - Philippe Merle <philippe.merle@inria.fr>
@@ -43,7 +43,6 @@ import org.eclipse.ocl.pivot.utilities.TypeUtil;
  * In order to ensure correct static initialization, a top level class element must be accessed
  * before any nested class element. Therefore an access to PACKAGE.getClass() is recommended.
  */
-@SuppressWarnings("nls")
 public class InfrastructureTables
 {
 	static {
@@ -532,280 +531,280 @@ public class InfrastructureTables
 		}
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Allocation =
-		{
-			Fragments._Allocation__OclAny /* 0 */,
-			Fragments._Allocation__OclElement /* 1 */,
-			Fragments._Allocation__OclType /* 2 */,
-			Fragments._Allocation__OclEnumeration /* 3 */,
-			Fragments._Allocation__Allocation /* 4 */
-		};
+			{
+				Fragments._Allocation__OclAny /* 0 */,
+				Fragments._Allocation__OclElement /* 1 */,
+				Fragments._Allocation__OclType /* 2 */,
+				Fragments._Allocation__OclEnumeration /* 3 */,
+				Fragments._Allocation__Allocation /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Allocation = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Architecture =
-		{
-			Fragments._Architecture__OclAny /* 0 */,
-			Fragments._Architecture__OclElement /* 1 */,
-			Fragments._Architecture__OclType /* 2 */,
-			Fragments._Architecture__OclEnumeration /* 3 */,
-			Fragments._Architecture__Architecture /* 4 */
-		};
+			{
+				Fragments._Architecture__OclAny /* 0 */,
+				Fragments._Architecture__OclElement /* 1 */,
+				Fragments._Architecture__OclType /* 2 */,
+				Fragments._Architecture__OclEnumeration /* 3 */,
+				Fragments._Architecture__Architecture /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Architecture = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Compute =
-		{
-			Fragments._Compute__OclAny /* 0 */,
-			Fragments._Compute__OclElement /* 1 */,
-			Fragments._Compute__Entity /* 2 */,
-			Fragments._Compute__Resource /* 3 */,
-			Fragments._Compute__Compute /* 4 */
-		};
+			{
+				Fragments._Compute__OclAny /* 0 */,
+				Fragments._Compute__OclElement /* 1 */,
+				Fragments._Compute__Entity /* 2 */,
+				Fragments._Compute__Resource /* 3 */,
+				Fragments._Compute__Compute /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Compute = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _ComputeStatus =
-		{
-			Fragments._ComputeStatus__OclAny /* 0 */,
-			Fragments._ComputeStatus__OclElement /* 1 */,
-			Fragments._ComputeStatus__OclType /* 2 */,
-			Fragments._ComputeStatus__OclEnumeration /* 3 */,
-			Fragments._ComputeStatus__ComputeStatus /* 4 */
-		};
+			{
+				Fragments._ComputeStatus__OclAny /* 0 */,
+				Fragments._ComputeStatus__OclElement /* 1 */,
+				Fragments._ComputeStatus__OclType /* 2 */,
+				Fragments._ComputeStatus__OclEnumeration /* 3 */,
+				Fragments._ComputeStatus__ComputeStatus /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __ComputeStatus = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Core =
-		{
-			Fragments._Core__OclAny /* 0 */,
-			Fragments._Core__Core /* 1 */
-		};
+			{
+				Fragments._Core__OclAny /* 0 */,
+				Fragments._Core__Core /* 1 */
+			};
 		private static final int /*@NonNull*/ [] __Core = { 1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _GHz =
-		{
-			Fragments._GHz__OclAny /* 0 */,
-			Fragments._GHz__GHz /* 1 */
-		};
+			{
+				Fragments._GHz__OclAny /* 0 */,
+				Fragments._GHz__GHz /* 1 */
+			};
 		private static final int /*@NonNull*/ [] __GHz = { 1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _GiB =
-		{
-			Fragments._GiB__OclAny /* 0 */,
-			Fragments._GiB__GiB /* 1 */
-		};
+			{
+				Fragments._GiB__OclAny /* 0 */,
+				Fragments._GiB__GiB /* 1 */
+			};
 		private static final int /*@NonNull*/ [] __GiB = { 1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _IpAddress =
-		{
-			Fragments._IpAddress__OclAny /* 0 */,
-			Fragments._IpAddress__IpAddress /* 1 */
-		};
+			{
+				Fragments._IpAddress__OclAny /* 0 */,
+				Fragments._IpAddress__IpAddress /* 1 */
+			};
 		private static final int /*@NonNull*/ [] __IpAddress = { 1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _IpAddressRange =
-		{
-			Fragments._IpAddressRange__OclAny /* 0 */,
-			Fragments._IpAddressRange__IpAddressRange /* 1 */
-		};
+			{
+				Fragments._IpAddressRange__OclAny /* 0 */,
+				Fragments._IpAddressRange__IpAddressRange /* 1 */
+			};
 		private static final int /*@NonNull*/ [] __IpAddressRange = { 1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Ipnetwork =
-		{
-			Fragments._Ipnetwork__OclAny /* 0 */,
-			Fragments._Ipnetwork__OclElement /* 1 */,
-			Fragments._Ipnetwork__MixinBase /* 2 */,
-			Fragments._Ipnetwork__Ipnetwork /* 3 */
-		};
+			{
+				Fragments._Ipnetwork__OclAny /* 0 */,
+				Fragments._Ipnetwork__OclElement /* 1 */,
+				Fragments._Ipnetwork__MixinBase /* 2 */,
+				Fragments._Ipnetwork__Ipnetwork /* 3 */
+			};
 		private static final int /*@NonNull*/ [] __Ipnetwork = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Ipnetworkinterface =
-		{
-			Fragments._Ipnetworkinterface__OclAny /* 0 */,
-			Fragments._Ipnetworkinterface__OclElement /* 1 */,
-			Fragments._Ipnetworkinterface__MixinBase /* 2 */,
-			Fragments._Ipnetworkinterface__Ipnetworkinterface /* 3 */
-		};
+			{
+				Fragments._Ipnetworkinterface__OclAny /* 0 */,
+				Fragments._Ipnetworkinterface__OclElement /* 1 */,
+				Fragments._Ipnetworkinterface__MixinBase /* 2 */,
+				Fragments._Ipnetworkinterface__Ipnetworkinterface /* 3 */
+			};
 		private static final int /*@NonNull*/ [] __Ipnetworkinterface = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Mac =
-		{
-			Fragments._Mac__OclAny /* 0 */,
-			Fragments._Mac__Mac /* 1 */
-		};
+			{
+				Fragments._Mac__OclAny /* 0 */,
+				Fragments._Mac__Mac /* 1 */
+			};
 		private static final int /*@NonNull*/ [] __Mac = { 1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Network =
-		{
-			Fragments._Network__OclAny /* 0 */,
-			Fragments._Network__OclElement /* 1 */,
-			Fragments._Network__Entity /* 2 */,
-			Fragments._Network__Resource /* 3 */,
-			Fragments._Network__Network /* 4 */
-		};
+			{
+				Fragments._Network__OclAny /* 0 */,
+				Fragments._Network__OclElement /* 1 */,
+				Fragments._Network__Entity /* 2 */,
+				Fragments._Network__Resource /* 3 */,
+				Fragments._Network__Network /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Network = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _NetworkInterfaceStatus =
-		{
-			Fragments._NetworkInterfaceStatus__OclAny /* 0 */,
-			Fragments._NetworkInterfaceStatus__OclElement /* 1 */,
-			Fragments._NetworkInterfaceStatus__OclType /* 2 */,
-			Fragments._NetworkInterfaceStatus__OclEnumeration /* 3 */,
-			Fragments._NetworkInterfaceStatus__NetworkInterfaceStatus /* 4 */
-		};
+			{
+				Fragments._NetworkInterfaceStatus__OclAny /* 0 */,
+				Fragments._NetworkInterfaceStatus__OclElement /* 1 */,
+				Fragments._NetworkInterfaceStatus__OclType /* 2 */,
+				Fragments._NetworkInterfaceStatus__OclEnumeration /* 3 */,
+				Fragments._NetworkInterfaceStatus__NetworkInterfaceStatus /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __NetworkInterfaceStatus = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _NetworkStatus =
-		{
-			Fragments._NetworkStatus__OclAny /* 0 */,
-			Fragments._NetworkStatus__OclElement /* 1 */,
-			Fragments._NetworkStatus__OclType /* 2 */,
-			Fragments._NetworkStatus__OclEnumeration /* 3 */,
-			Fragments._NetworkStatus__NetworkStatus /* 4 */
-		};
+			{
+				Fragments._NetworkStatus__OclAny /* 0 */,
+				Fragments._NetworkStatus__OclElement /* 1 */,
+				Fragments._NetworkStatus__OclType /* 2 */,
+				Fragments._NetworkStatus__OclEnumeration /* 3 */,
+				Fragments._NetworkStatus__NetworkStatus /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __NetworkStatus = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Networkinterface =
-		{
-			Fragments._Networkinterface__OclAny /* 0 */,
-			Fragments._Networkinterface__OclElement /* 1 */,
-			Fragments._Networkinterface__Entity /* 2 */,
-			Fragments._Networkinterface__Link /* 3 */,
-			Fragments._Networkinterface__Networkinterface /* 4 */
-		};
+			{
+				Fragments._Networkinterface__OclAny /* 0 */,
+				Fragments._Networkinterface__OclElement /* 1 */,
+				Fragments._Networkinterface__Entity /* 2 */,
+				Fragments._Networkinterface__Link /* 3 */,
+				Fragments._Networkinterface__Networkinterface /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Networkinterface = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Os_tpl =
-		{
-			Fragments._Os_tpl__OclAny /* 0 */,
-			Fragments._Os_tpl__OclElement /* 1 */,
-			Fragments._Os_tpl__MixinBase /* 2 */,
-			Fragments._Os_tpl__Os_tpl /* 3 */
-		};
+			{
+				Fragments._Os_tpl__OclAny /* 0 */,
+				Fragments._Os_tpl__OclElement /* 1 */,
+				Fragments._Os_tpl__MixinBase /* 2 */,
+				Fragments._Os_tpl__Os_tpl /* 3 */
+			};
 		private static final int /*@NonNull*/ [] __Os_tpl = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Resource_tpl =
-		{
-			Fragments._Resource_tpl__OclAny /* 0 */,
-			Fragments._Resource_tpl__OclElement /* 1 */,
-			Fragments._Resource_tpl__MixinBase /* 2 */,
-			Fragments._Resource_tpl__Resource_tpl /* 3 */
-		};
+			{
+				Fragments._Resource_tpl__OclAny /* 0 */,
+				Fragments._Resource_tpl__OclElement /* 1 */,
+				Fragments._Resource_tpl__MixinBase /* 2 */,
+				Fragments._Resource_tpl__Resource_tpl /* 3 */
+			};
 		private static final int /*@NonNull*/ [] __Resource_tpl = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _RestartMethod =
-		{
-			Fragments._RestartMethod__OclAny /* 0 */,
-			Fragments._RestartMethod__OclElement /* 1 */,
-			Fragments._RestartMethod__OclType /* 2 */,
-			Fragments._RestartMethod__OclEnumeration /* 3 */,
-			Fragments._RestartMethod__RestartMethod /* 4 */
-		};
+			{
+				Fragments._RestartMethod__OclAny /* 0 */,
+				Fragments._RestartMethod__OclElement /* 1 */,
+				Fragments._RestartMethod__OclType /* 2 */,
+				Fragments._RestartMethod__OclEnumeration /* 3 */,
+				Fragments._RestartMethod__RestartMethod /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __RestartMethod = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _SaveMethod =
-		{
-			Fragments._SaveMethod__OclAny /* 0 */,
-			Fragments._SaveMethod__OclElement /* 1 */,
-			Fragments._SaveMethod__OclType /* 2 */,
-			Fragments._SaveMethod__OclEnumeration /* 3 */,
-			Fragments._SaveMethod__SaveMethod /* 4 */
-		};
+			{
+				Fragments._SaveMethod__OclAny /* 0 */,
+				Fragments._SaveMethod__OclElement /* 1 */,
+				Fragments._SaveMethod__OclType /* 2 */,
+				Fragments._SaveMethod__OclEnumeration /* 3 */,
+				Fragments._SaveMethod__SaveMethod /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __SaveMethod = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Share =
-		{
-			Fragments._Share__OclAny /* 0 */,
-			Fragments._Share__Share /* 1 */
-		};
+			{
+				Fragments._Share__OclAny /* 0 */,
+				Fragments._Share__Share /* 1 */
+			};
 		private static final int /*@NonNull*/ [] __Share = { 1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Ssh_key =
-		{
-			Fragments._Ssh_key__OclAny /* 0 */,
-			Fragments._Ssh_key__OclElement /* 1 */,
-			Fragments._Ssh_key__MixinBase /* 2 */,
-			Fragments._Ssh_key__Ssh_key /* 3 */
-		};
+			{
+				Fragments._Ssh_key__OclAny /* 0 */,
+				Fragments._Ssh_key__OclElement /* 1 */,
+				Fragments._Ssh_key__MixinBase /* 2 */,
+				Fragments._Ssh_key__Ssh_key /* 3 */
+			};
 		private static final int /*@NonNull*/ [] __Ssh_key = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _StopMethod =
-		{
-			Fragments._StopMethod__OclAny /* 0 */,
-			Fragments._StopMethod__OclElement /* 1 */,
-			Fragments._StopMethod__OclType /* 2 */,
-			Fragments._StopMethod__OclEnumeration /* 3 */,
-			Fragments._StopMethod__StopMethod /* 4 */
-		};
+			{
+				Fragments._StopMethod__OclAny /* 0 */,
+				Fragments._StopMethod__OclElement /* 1 */,
+				Fragments._StopMethod__OclType /* 2 */,
+				Fragments._StopMethod__OclEnumeration /* 3 */,
+				Fragments._StopMethod__StopMethod /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __StopMethod = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Storage =
-		{
-			Fragments._Storage__OclAny /* 0 */,
-			Fragments._Storage__OclElement /* 1 */,
-			Fragments._Storage__Entity /* 2 */,
-			Fragments._Storage__Resource /* 3 */,
-			Fragments._Storage__Storage /* 4 */
-		};
+			{
+				Fragments._Storage__OclAny /* 0 */,
+				Fragments._Storage__OclElement /* 1 */,
+				Fragments._Storage__Entity /* 2 */,
+				Fragments._Storage__Resource /* 3 */,
+				Fragments._Storage__Storage /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Storage = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _StorageLinkStatus =
-		{
-			Fragments._StorageLinkStatus__OclAny /* 0 */,
-			Fragments._StorageLinkStatus__OclElement /* 1 */,
-			Fragments._StorageLinkStatus__OclType /* 2 */,
-			Fragments._StorageLinkStatus__OclEnumeration /* 3 */,
-			Fragments._StorageLinkStatus__StorageLinkStatus /* 4 */
-		};
+			{
+				Fragments._StorageLinkStatus__OclAny /* 0 */,
+				Fragments._StorageLinkStatus__OclElement /* 1 */,
+				Fragments._StorageLinkStatus__OclType /* 2 */,
+				Fragments._StorageLinkStatus__OclEnumeration /* 3 */,
+				Fragments._StorageLinkStatus__StorageLinkStatus /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __StorageLinkStatus = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _StorageStatus =
-		{
-			Fragments._StorageStatus__OclAny /* 0 */,
-			Fragments._StorageStatus__OclElement /* 1 */,
-			Fragments._StorageStatus__OclType /* 2 */,
-			Fragments._StorageStatus__OclEnumeration /* 3 */,
-			Fragments._StorageStatus__StorageStatus /* 4 */
-		};
+			{
+				Fragments._StorageStatus__OclAny /* 0 */,
+				Fragments._StorageStatus__OclElement /* 1 */,
+				Fragments._StorageStatus__OclType /* 2 */,
+				Fragments._StorageStatus__OclEnumeration /* 3 */,
+				Fragments._StorageStatus__StorageStatus /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __StorageStatus = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Storagelink =
-		{
-			Fragments._Storagelink__OclAny /* 0 */,
-			Fragments._Storagelink__OclElement /* 1 */,
-			Fragments._Storagelink__Entity /* 2 */,
-			Fragments._Storagelink__Link /* 3 */,
-			Fragments._Storagelink__Storagelink /* 4 */
-		};
+			{
+				Fragments._Storagelink__OclAny /* 0 */,
+				Fragments._Storagelink__OclElement /* 1 */,
+				Fragments._Storagelink__Entity /* 2 */,
+				Fragments._Storagelink__Link /* 3 */,
+				Fragments._Storagelink__Storagelink /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Storagelink = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _SuspendMethod =
-		{
-			Fragments._SuspendMethod__OclAny /* 0 */,
-			Fragments._SuspendMethod__OclElement /* 1 */,
-			Fragments._SuspendMethod__OclType /* 2 */,
-			Fragments._SuspendMethod__OclEnumeration /* 3 */,
-			Fragments._SuspendMethod__SuspendMethod /* 4 */
-		};
+			{
+				Fragments._SuspendMethod__OclAny /* 0 */,
+				Fragments._SuspendMethod__OclElement /* 1 */,
+				Fragments._SuspendMethod__OclType /* 2 */,
+				Fragments._SuspendMethod__OclEnumeration /* 3 */,
+				Fragments._SuspendMethod__SuspendMethod /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __SuspendMethod = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Token =
-		{
-			Fragments._Token__OclAny /* 0 */,
-			Fragments._Token__Token /* 1 */
-		};
+			{
+				Fragments._Token__OclAny /* 0 */,
+				Fragments._Token__Token /* 1 */
+			};
 		private static final int /*@NonNull*/ [] __Token = { 1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _User_data =
-		{
-			Fragments._User_data__OclAny /* 0 */,
-			Fragments._User_data__OclElement /* 1 */,
-			Fragments._User_data__MixinBase /* 2 */,
-			Fragments._User_data__User_data /* 3 */
-		};
+			{
+				Fragments._User_data__OclAny /* 0 */,
+				Fragments._User_data__OclElement /* 1 */,
+				Fragments._User_data__MixinBase /* 2 */,
+				Fragments._User_data__User_data /* 3 */
+			};
 		private static final int /*@NonNull*/ [] __User_data = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Vlan =
-		{
-			Fragments._Vlan__OclAny /* 0 */,
-			Fragments._Vlan__Vlan /* 1 */
-		};
+			{
+				Fragments._Vlan__OclAny /* 0 */,
+				Fragments._Vlan__Vlan /* 1 */
+			};
 		private static final int /*@NonNull*/ [] __Vlan = { 1,1 };
 
 		/**
@@ -939,12 +938,8 @@ public class InfrastructureTables
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Compute__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Compute__OclAny = {
@@ -1187,12 +1182,8 @@ public class InfrastructureTables
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Network__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Network__OclAny = {
@@ -1294,15 +1285,14 @@ public class InfrastructureTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Networkinterface__Networkinterface = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Networkinterface__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Networkinterface__Link = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Networkinterface__Link = {
+			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
+			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */
+		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Networkinterface__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
@@ -1544,12 +1534,8 @@ public class InfrastructureTables
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storage__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storage__OclAny = {
@@ -1651,15 +1637,14 @@ public class InfrastructureTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagelink__Storagelink = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagelink__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagelink__Link = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagelink__Link = {
+			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
+			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */
+		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagelink__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,

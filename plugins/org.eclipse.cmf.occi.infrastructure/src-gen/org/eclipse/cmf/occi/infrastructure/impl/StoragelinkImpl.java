@@ -321,7 +321,7 @@ public class StoragelinkImpl extends LinkImpl implements Storagelink {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (occiStoragelinkDeviceid: ");
 		result.append(occiStoragelinkDeviceid);
 		result.append(", occiStoragelinkMountpoint: ");

@@ -263,6 +263,7 @@ public class InfrastructureValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(network, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(network, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(network, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(network, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(network, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNetwork_UniqueVlan(network, diagnostics, context);
 		return result;
@@ -296,6 +297,7 @@ public class InfrastructureValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(compute, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(compute, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(compute, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(compute, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(compute, diagnostics, context);
 		return result;
 	}
@@ -318,6 +320,7 @@ public class InfrastructureValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(storage, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(storage, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(storage, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(storage, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(storage, diagnostics, context);
 		return result;
 	}
@@ -340,6 +343,7 @@ public class InfrastructureValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(storagelink, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(storagelink, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(storagelink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(storagelink, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(storagelink, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(storagelink, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(storagelink, diagnostics, context);
@@ -364,6 +368,7 @@ public class InfrastructureValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(networkinterface, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(networkinterface, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(networkinterface, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(networkinterface, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(networkinterface, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(networkinterface, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(networkinterface, diagnostics, context);
@@ -671,7 +676,51 @@ public class InfrastructureValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateVlan(Integer vlan, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
+		boolean result = validateVlan_Min(vlan, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVlan_Max(vlan, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validateVlan_Min
+	 */
+	public static final Integer VLAN__MIN__VALUE = new Integer(0);
+
+	/**
+	 * Validates the Min constraint of '<em>Vlan</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVlan_Min(Integer vlan, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = vlan.compareTo(VLAN__MIN__VALUE) >= 0;
+		if (!result && diagnostics != null)
+			reportMinViolation(InfrastructurePackage.Literals.VLAN, vlan, VLAN__MIN__VALUE, true, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validateVlan_Max
+	 */
+	public static final Integer VLAN__MAX__VALUE = new Integer(4095);
+
+	/**
+	 * Validates the Max constraint of '<em>Vlan</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVlan_Max(Integer vlan, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = vlan.compareTo(VLAN__MAX__VALUE) <= 0;
+		if (!result && diagnostics != null)
+			reportMaxViolation(InfrastructurePackage.Literals.VLAN, vlan, VLAN__MAX__VALUE, true, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -698,7 +747,29 @@ public class InfrastructureValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCore(Integer core, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
+		boolean result = validateCore_Min(core, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validateCore_Min
+	 */
+	public static final Integer CORE__MIN__VALUE = new Integer(0);
+
+	/**
+	 * Validates the Min constraint of '<em>Core</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCore_Min(Integer core, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = core.compareTo(CORE__MIN__VALUE) > 0;
+		if (!result && diagnostics != null)
+			reportMinViolation(InfrastructurePackage.Literals.CORE, core, CORE__MIN__VALUE, false, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -707,7 +778,29 @@ public class InfrastructureValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateGHz(Float gHz, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
+		boolean result = validateGHz_Min(gHz, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validateGHz_Min
+	 */
+	public static final Float GHZ__MIN__VALUE = new Float(0.0F);
+
+	/**
+	 * Validates the Min constraint of '<em>GHz</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGHz_Min(Float gHz, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = gHz.compareTo(GHZ__MIN__VALUE) > 0;
+		if (!result && diagnostics != null)
+			reportMinViolation(InfrastructurePackage.Literals.GHZ, gHz, GHZ__MIN__VALUE, false, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -716,7 +809,29 @@ public class InfrastructureValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateGiB(Float giB, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
+		boolean result = validateGiB_Min(giB, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validateGiB_Min
+	 */
+	public static final Float GI_B__MIN__VALUE = new Float(0.0F);
+
+	/**
+	 * Validates the Min constraint of '<em>Gi B</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGiB_Min(Float giB, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = giB.compareTo(GI_B__MIN__VALUE) > 0;
+		if (!result && diagnostics != null)
+			reportMinViolation(InfrastructurePackage.Literals.GI_B, giB, GI_B__MIN__VALUE, false, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -743,7 +858,29 @@ public class InfrastructureValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateShare(Integer share, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
+		boolean result = validateShare_Min(share, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validateShare_Min
+	 */
+	public static final Integer SHARE__MIN__VALUE = new Integer(0);
+
+	/**
+	 * Validates the Min constraint of '<em>Share</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateShare_Min(Integer share, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = share.compareTo(SHARE__MIN__VALUE) >= 0;
+		if (!result && diagnostics != null)
+			reportMinViolation(InfrastructurePackage.Literals.SHARE, share, SHARE__MIN__VALUE, true, diagnostics, context);
+		return result;
 	}
 
 	/**
