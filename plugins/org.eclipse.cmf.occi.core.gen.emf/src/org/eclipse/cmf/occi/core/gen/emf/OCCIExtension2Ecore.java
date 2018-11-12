@@ -123,7 +123,7 @@ public class OCCIExtension2Ecore {
 					if(type.getName().equals("Boolean"))
 						res = EcorePackage.eINSTANCE.getEBoolean();
 					if(type.getName().equals("Integer"))
-						res = EcorePackage.eINSTANCE.getEBigInteger();
+						res = EcorePackage.eINSTANCE.getEInt();
 				} else {
 					// retrieve from installed extensions.
 					EPackage p = ConverterUtils.getEPackage(type);
