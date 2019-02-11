@@ -144,6 +144,8 @@ public class DesignServices {
 			if (!resource.getContents().isEmpty() && (resource.getContents().get(0) instanceof Extension)
 					&& !extension.getImport().contains(resource.getContents().get(0))) {
 				extension.getImport().add((Extension) resource.getContents().get(0));
+				System.out.println("uriiii"+uri);
+				System.out.println("uriiii2"+URI.createPlatformResourceURI(uri.path(), true));
 			}
 		}
 	}
