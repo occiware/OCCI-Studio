@@ -3,6 +3,8 @@ sudo: true
 
 language: java
 
+dist: trusty
+
 matrix:
   fast_finish: true
   include:
