@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- Copyright (c) 2015-2017 Obeo, Inria
-  
+ Copyright (c) 2015-2021 Obeo, Inria
+
  All rights reserved. This program and the accompanying materials
  are made available under the terms of the Eclipse Public License v1.0
  which accompanies this distribution, and is available at
  http://www.eclipse.org/legal/epl-v10.html
- 
+
  Contributors:
  - William Piers <william.piers@obeo.fr>
  - Philippe Merle <philippe.merle@inria.fr>
@@ -26,10 +26,10 @@
     <module>plugins/org.eclipse.cmf.occi.core.editor</module>
     <module>plugins/org.eclipse.cmf.occi.core.tests</module>
     <module>plugins/org.eclipse.cmf.occi.core.design</module>
-    
+
     <!-- OCCI Utilities -->
     <module>plugins/org.eclipse.cmf.occi.core.ui</module>
-    
+
     <!-- OCCI Xtext -->
     <module>plugins/org.eclipse.cmf.occi.core.xtext</module>
     <module>plugins/org.eclipse.cmf.occi.core.xtext.ide</module>
@@ -44,15 +44,15 @@
     <!-- OCCI Designer Generator -->
     <module>plugins/org.eclipse.cmf.occi.core.gen.design</module>
     <module>plugins/org.eclipse.cmf.occi.core.gen.design.ui</module>
-    
+
     <!-- OCCI Extended Designer Generator -->
     <module>plugins/org.eclipse.cmf.occi.core.gen.design.extended</module>
-    <module>plugins/org.eclipse.cmf.occi.core.gen.design.extended.ui</module>    
-    
+    <module>plugins/org.eclipse.cmf.occi.core.gen.design.extended.ui</module>
+
     <!-- Connector Generator -->
     <module>plugins/org.eclipse.cmf.occi.core.gen.connector</module>
     <module>plugins/org.eclipse.cmf.occi.core.gen.connector.ui</module>
-    
+
     <!-- Textile documentation Generator -->
     <module>plugins/org.eclipse.cmf.occi.core.gen.textile</module>
     <module>plugins/org.eclipse.cmf.occi.core.gen.textile.ui</module>
@@ -60,7 +60,7 @@
     <!-- Latex documentation Generator -->
     <module>plugins/org.eclipse.cmf.occi.core.gen.latex</module>
     <module>plugins/org.eclipse.cmf.occi.core.gen.latex.ui</module>
-    
+
     <!-- URIs Generator -->
     <module>plugins/org.eclipse.cmf.occi.core.gen.uris</module>
     <module>plugins/org.eclipse.cmf.occi.core.gen.uris.ui</module>
@@ -79,10 +79,10 @@
 
     <!-- jOCCI Connector -->
     <module>plugins/org.eclipse.cmf.occi.core.connector.jocci</module>
-    
+
     <!-- OCCI Examples -->
     <module>plugins/org.eclipse.cmf.examples</module>
-    
+
     <!-- OCCI Infrastructure extension -->
     <module>plugins/org.eclipse.cmf.occi.infrastructure</module>
     <module>plugins/org.eclipse.cmf.occi.infrastructure.edit</module>
@@ -90,8 +90,8 @@
     <module>plugins/org.eclipse.cmf.occi.infrastructure.tests</module>
     <module>plugins/org.eclipse.cmf.occi.infrastructure.design</module>
     <module>plugins/org.eclipse.cmf.occi.infrastructure.connector.dummy</module>
-	<module>plugins/org.eclipse.cmf.occi.infrastructure.example</module>
-	
+    <module>plugins/org.eclipse.cmf.occi.infrastructure.example</module>
+
     <!-- OCCI crtp extension -->
     <module>plugins/org.eclipse.cmf.occi.crtp</module>
     <module>plugins/org.eclipse.cmf.occi.crtp.edit</module>
@@ -99,17 +99,17 @@
     <module>plugins/org.eclipse.cmf.occi.crtp.tests</module>
     <module>plugins/org.eclipse.cmf.occi.crtp.design</module>
     <module>plugins/org.eclipse.cmf.occi.crtp.design.extended</module>
-    <module>plugins/org.eclipse.cmf.occi.crtp.connector.dummy</module>   
-    <module>plugins/org.eclipse.cmf.occi.crtp.example</module>     
-    
+    <module>plugins/org.eclipse.cmf.occi.crtp.connector.dummy</module>
+    <module>plugins/org.eclipse.cmf.occi.crtp.example</module>
+
     <!-- OCCI platform extension -->
     <module>plugins/org.eclipse.cmf.occi.platform</module>
     <module>plugins/org.eclipse.cmf.occi.platform.edit</module>
     <module>plugins/org.eclipse.cmf.occi.platform.editor</module>
     <module>plugins/org.eclipse.cmf.occi.platform.tests</module>
     <module>plugins/org.eclipse.cmf.occi.platform.design</module>
-    <module>plugins/org.eclipse.cmf.occi.platform.connector.dummy</module>        
-    <module>plugins/org.eclipse.cmf.occi.platform.example</module>  
+    <module>plugins/org.eclipse.cmf.occi.platform.connector.dummy</module>
+    <module>plugins/org.eclipse.cmf.occi.platform.example</module>
 
     <!-- OCCI sla extension -->
     <module>plugins/org.eclipse.cmf.occi.sla</module>
@@ -117,21 +117,21 @@
     <module>plugins/org.eclipse.cmf.occi.sla.editor</module>
     <module>plugins/org.eclipse.cmf.occi.sla.tests</module>
     <module>plugins/org.eclipse.cmf.occi.sla.design</module>
-    <module>plugins/org.eclipse.cmf.occi.sla.connector.dummy</module>     
-    <module>plugins/org.eclipse.cmf.occi.sla.example</module>  
-    
+    <module>plugins/org.eclipse.cmf.occi.sla.connector.dummy</module>
+    <module>plugins/org.eclipse.cmf.occi.sla.example</module>
+
     <!-- OCCI monitoring extension -->
     <module>plugins/org.eclipse.cmf.occi.monitoring</module>
     <module>plugins/org.eclipse.cmf.occi.monitoring.edit</module>
     <module>plugins/org.eclipse.cmf.occi.monitoring.editor</module>
     <module>plugins/org.eclipse.cmf.occi.monitoring.tests</module>
     <module>plugins/org.eclipse.cmf.occi.monitoring.design</module>
-    <module>plugins/org.eclipse.cmf.occi.monitoring.connector.dummy</module> 
-    <module>plugins/org.eclipse.cmf.occi.monitoring.example</module>    
-    
+    <module>plugins/org.eclipse.cmf.occi.monitoring.connector.dummy</module>
+    <module>plugins/org.eclipse.cmf.occi.monitoring.example</module>
+
     <!-- Releng -->
     <module>features/org.eclipse.cmf.occi</module>
-    
+
   </modules>
 
   <profiles>
@@ -157,7 +157,6 @@
       <layout>p2</layout>
       <url>http://download.eclipse.org/releases/photon</url>
     </repository>
- 
     <repository>
       <id>mvnrepository</id>
       <url>http://repo1.maven.org/maven2</url>
@@ -168,14 +167,12 @@
         <enabled>true</enabled>
       </releases>
     </repository>
-    
     <repository>
-    <id>epsilonrepository</id>  
-     <url>http://download.eclipse.org/epsilon/updates/</url> 
+    <id>epsilonrepository</id>
+     <url>http://download.eclipse.org/epsilon/updates</url>
      <layout>p2</layout>
     </repository>
   </repositories>
-
   <distributionManagement>
     <snapshotRepository>
       <id>oss.sonatype.org-snapshots</id>
