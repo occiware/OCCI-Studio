@@ -3,10 +3,20 @@
 
 OCCI-Studio is a set of Eclipse plugins implementing the [current Open Cloud Computing Interface (OCCI) specification](http://occi-wg.org/about/specification/).
 
+# Building OCCI-Studio with maven
+
+''mvn clean install -Pbuild.products''
+
+The product binaries will be in ''occi-studio/repositories/org.eclipse.cmf.occi.product/target/*.zip''
+
 # Usage
 
 You can refer to the following materials in order to familiarize with OCCI-Studio:
 
 * The OCCI-Studio tutorial is available <a href="https://drive.google.com/open?id=0B7zqdAuZr708VWZCYVZRZzY3YVE">here</a>.
 * The necessary materials to ensure the hands-on experience with OCCI-Studio are available <a href="https://drive.google.com/file/d/1Y6cESS8v9BXJA4H_I6H8RVE1Xzrrx3x_/view?usp=sharing">here</a>.
+
+# Eclipse version 
+
+The current version of the based eclipse platform is : 2022-09
 

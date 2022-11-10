@@ -226,9 +226,30 @@ litigation.
    </license>
 
    <requires>
-      <import feature="org.eclipse.egit" version="5.0.1.201806211838-r"/>
+   <import feature="org.eclipse.egit" version="6.3.0" match="greaterOrEqual"/>
+   <import feature="org.eclipse.emf" version="2.26.0" match="greaterOrEqual"/>
+   <import feature="org.eclipse.emf.compare.egit" version="1.2.4" match="greaterOrEqual"/>
+   <import feature="org.eclipse.emf.ecoretools.design" version="3.4.0" match="greaterOrEqual"/>
+   <import feature="org.eclipse.epsilon.core.dt.feature" version="1.4.0" match="greaterOrEqual"/>
+   <import feature="org.eclipse.epsilon.core.feature" version="1.4.0" match="greaterOrEqual"/>
+   <import feature="org.eclipse.epsilon.emf.dt.feature" version="1.4.0" match="greaterOrEqual"/>
+   <import feature="org.eclipse.epsilon.emf.feature" version="1.4.0" match="greaterOrEqual"/>
+   <import feature="org.eclipse.mylyn.wikitext_feature" version="3.0.42" match="greaterOrEqual"/>
+   <import feature="org.eclipse.ocl.all.sdk" version="5.4.0" match="greaterOrEqual"/>
+   <import feature="org.eclipse.ocl.examples" version="6.4.0" match="greaterOrEqual"/>
+   <import feature="org.eclipse.pde" version="3.13.100" match="greaterOrEqual"/>
+   <import feature="org.eclipse.sdk" version="4.25.0" match="greaterOrEqual"/>
+   <import feature="org.eclipse.sirius.runtime" version="7.0.4" match="greaterOrEqual"/>
+   <import feature="org.eclipse.sirius.runtime.aql" version="7.0.4" match="greaterOrEqual"/>
+   <import feature="org.eclipse.sirius.runtime.ide.ui" version="7.0.4" match="greaterOrEqual"/>
+   <import feature="org.eclipse.sirius.specifier" version="7.0.4" match="greaterOrEqual"/>
+   <import feature="org.eclipse.xtend.sdk" version="2.28.0" match="greaterOrEqual"/>
+   <import feature="org.eclipse.xtext.sdk" version="2.28.0" match="greaterOrEqual"/>
+   
+      <!-- 
+	  <import feature="org.eclipse.egit" version="5.0.1.201806211838-r"/>
       <import feature="org.eclipse.emf" version="2.14.0.v20180529-1144"/>
-      <import feature="org.eclipse.emf.compare.egit" version="1.2.3.201805161152"/>
+      <import feature="org.eclipse.emf.compare.egit" version="1.2.3.201805161152"/>	
       <import feature="org.eclipse.emf.ecoretools.design" version="3.3.0.201706121316"/>
       <import feature="org.eclipse.epsilon.core.dt.feature" version="1.4.0.201611012202"/>
       <import feature="org.eclipse.epsilon.core.feature" version="1.4.0.201611012202"/>
@@ -245,6 +266,7 @@ litigation.
       <import feature="org.eclipse.sirius.specifier" version="6.0.0.201806111309"/>
       <import feature="org.eclipse.xtend.sdk" version="2.14.0.v20180523-0937"/>
       <import feature="org.eclipse.xtext.sdk" version="2.14.0.v20180523-0937"/>
+	  -->
    </requires>
 
    <plugin
