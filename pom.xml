@@ -146,17 +146,23 @@
   </profiles>
 
   <properties>
-    <tycho-version>1.0.0</tycho-version>
+    <!-- <tycho-version>1.4.0</tycho-version> -->
+	<tycho-version>2.3.0</tycho-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <repositories>
     <!-- configure p2 repository to resolve against -->
 	<repository>
-      <id>photon</id>
+      <id>2022-09</id>
       <layout>p2</layout>
-      <url>http://download.eclipse.org/releases/photon</url>
+      <url>https://download.eclipse.org/releases/2022-09/</url>
     </repository>
+	<repository>
+		<id>orbit</id>
+		<layout>p2</layout>
+		<url>https://download.eclipse.org/tools/orbit/downloads/drops/R20220830213456/repository</url>
+	</repository>
     <repository>
       <id>mvnrepository</id>
       <url>http://repo1.maven.org/maven2</url>
@@ -167,11 +173,16 @@
         <enabled>true</enabled>
       </releases>
     </repository>
-    <repository>
+    <!-- <repository>
     <id>epsilonrepository</id>
      <url>http://download.eclipse.org/epsilon/updates/1.4</url>
      <layout>p2</layout>
-    </repository>
+    </repository> -->
+	<repository>
+            <id>epsilonrepository</id>
+            <url>http://download.eclipse.org/epsilon/updates/2.4/</url>
+            <layout>p2</layout>
+   </repository>
   </repositories>
   <distributionManagement>
     <snapshotRepository>
@@ -194,6 +205,22 @@
         <artifactId>target-platform-configuration</artifactId>
         <version>${tycho-version}</version>
         <configuration>
+		  <executionEnvironment>JavaSE-11</executionEnvironment>
+		  <!-- <resolveWithExecutionEnvironmentConstraints>false</resolveWithExecutionEnvironmentConstraints> -->
+		  <dependency-resolution>
+                    <extraRequirements>
+                        <requirement>
+                            <type>eclipse-plugin</type>
+                            <id>org.eclipse.equinox.event</id>
+                            <versionRange>0.0.0</versionRange>
+                        </requirement>
+						<requirement>
+                            <type>eclipse-plugin</type>
+                            <id>org.eclipse.equinox.ds</id>
+                            <versionRange>0.0.0</versionRange>
+                        </requirement>
+                    </extraRequirements> 
+                </dependency-resolution>
           <environments>
             <environment>
               <os>win32</os>
